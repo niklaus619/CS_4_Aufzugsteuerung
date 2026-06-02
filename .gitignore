@@ -51,3 +51,5 @@ LSE.ini
 LSE.cif
 LoadDocuments.lse
 
+# macOS Finder metadata
+.DS_Store

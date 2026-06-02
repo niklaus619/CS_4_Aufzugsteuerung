@@ -1,0 +1,65 @@
+<mxfile host="65bd71144e" modified="2026-06-02T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="aufzug-architecture-simple" name="Architektur">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="note" value="Der Hauptablauf steuert das Aufzug Modul. Das Aufzug Modul koordiniert den Türantrieb, den Aufzugantrieb und die Rückmeldungen der Etagen- und Türsensorik. Das HMI kommuniziert mit dem Hauptablauf." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff9cc;strokeColor=none;fontSize=18;align=left;verticalAlign=middle;spacing=14;" vertex="1" parent="1">
+          <mxGeometry x="120" y="55" width="960" height="95" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="main" value="Hauptablauf" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#ffd700;strokeColor=#665c00;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="205" y="315" width="200" height="95" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="hmi" value="Bedienung /&lt;br&gt;Anzeige" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#ffd700;strokeColor=#665c00;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="205" y="500" width="200" height="95" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="module" value="Aufzug&lt;br&gt;Modul" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#ffd700;strokeColor=#665c00;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="290" width="210" height="245" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="doorDrive" value="Türantrieb" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#ffd700;strokeColor=#665c00;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="865" y="260" width="235" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="liftDrive" value="Aufzugantrieb" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#ffd700;strokeColor=#665c00;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="865" y="390" width="235" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="sensors" value="Etagen- und&lt;br&gt;Türsensorik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#ffd700;strokeColor=#665c00;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="865" y="520" width="235" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="bonus" value="Notstopp /&lt;br&gt;Lichtschranke&lt;br&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Bonus&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#ffe699;strokeColor=#665c00;fontSize=17;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="620" width="210" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="caption" value="Abbildung: Architektur Aufzugssteuerung" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="370" y="760" width="460" height="35" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="eMainModule" value="" style="endArrow=block;startArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="main" target="module">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eMainHmi" value="" style="endArrow=block;startArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="main" target="hmi">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eModuleDoor" value="" style="endArrow=block;startArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="module" target="doorDrive">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eModuleLift" value="" style="endArrow=block;startArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="module" target="liftDrive">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eModuleSensors" value="" style="endArrow=block;startArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="module" target="sensors">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eModuleBonus" value="" style="endArrow=block;startArrow=block;html=1;rounded=0;strokeWidth=2;dashed=1;" edge="1" parent="1" source="module" target="bonus">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

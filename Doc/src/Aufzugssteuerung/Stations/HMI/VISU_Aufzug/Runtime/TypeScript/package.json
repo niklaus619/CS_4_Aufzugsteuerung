@@ -1,0 +1,18 @@
+{
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "if exist ./tsconfig.local.json (npm run build-local) else (npm run build-default)",
+    "watch": "if exist ./tsconfig.local.json (npm run watch-local) else (npm run watch-default)",
+    "//": "***** Sublevel tasks which should not be run directly ****",
+    "build-default": "npx tsc --build ./tsconfig.json",
+    "build-local": "npx tsc --build ./tsconfig.local.json",
+    "watch-default": "npx tsc --watch --project ./tsconfig.json --preserveWatchOutput",
+    "watch-local": "npx tsc --watch --project ./tsconfig.local.json --preserveWatchOutput",
+    "install-local": "if not exist ./package-lock.json (npm install)"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3"
+  }
+}

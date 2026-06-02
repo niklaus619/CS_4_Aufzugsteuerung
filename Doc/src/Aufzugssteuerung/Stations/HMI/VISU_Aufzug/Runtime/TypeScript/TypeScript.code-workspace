@@ -1,0 +1,93 @@
+{
+	"folders": [
+		{
+			"name": "TypeScript",
+			"path": ".",
+		},
+		{
+			"name": "CodeModules",
+			"path": "../../CodeModules"
+		},
+		{
+			"name": "Components",
+			"path": "../DesignerRuntime/res/components"
+		}
+	],
+	"settings": {
+		"terminal.integrated.cwd": "${workspaceFolder}"
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "TypeScript Install",
+				"type": "shell",
+				"command": "npm run build",
+				"windows": {
+					"command": "npm run install-local"
+				},
+				"group": "none",
+				"presentation": {
+					"reveal": "always",
+					"panel": "shared",
+					"close": true
+				},
+				"runOptions": {
+					"runOn": "default",
+					"instanceLimit": 1
+				},
+			},
+			{
+				"label": "Typescript Build",
+				"type": "shell",
+				"command": "npm run build",
+				"windows": {
+					"command": "npm run build"
+				},
+				"group": "build",
+				"presentation": {
+					"reveal": "always",
+					"revealProblems": "onProblem",
+					"panel": "shared"
+				},
+				"runOptions": {
+					"runOn": "default",
+					"instanceLimit": 1
+				}
+			},
+			{
+				"label": "TypeScript Watch",
+				"type": "shell",
+				"command": "npm run watch",
+				"windows": {
+					"command": "npm run watch"
+				},
+				"group": "none",
+				"presentation": {
+					"reveal": "silent",
+					"revealProblems": "onProblem",
+					"panel": "new",
+				},
+				"runOptions": {
+					"runOn": "default",
+					"instanceLimit": 1
+				},
+			},
+			{
+				"label": "TypeScript Autostart",
+				"dependsOn": [
+					"TypeScript Install",
+					"TypeScript Watch"
+				],
+				"dependsOrder": "sequence",
+				"presentation": {
+					"clear": true
+				},
+				"runOptions": {
+					"runOn": "folderOpen",
+					"instanceLimit": 1
+				},
+			}
+		]
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"type": "userRoles",
+	"version": "0.0.96",
+	"userRoles": [
+		{
+			"type": "UserRole",
+			"designTimeId": "40536967-7375-7065-7275-736572726f6c",
+			"name": "superuser",
+			"description": "It can do everything",
+			"writeAccess": "1",
+			"readAccess": "1",
+			"accessNumber": 65535,
+			"privilegeBits": "0x5FFF",
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
+}

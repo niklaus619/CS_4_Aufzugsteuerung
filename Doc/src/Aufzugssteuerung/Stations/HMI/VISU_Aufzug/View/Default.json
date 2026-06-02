@@ -1,0 +1,59 @@
+{
+	"type": "view",
+	"version": "0.0.96",
+	"designTimeId": "5d541b54-68c6-49fc-aafd-bdf8397c022a",
+	"name": "Default",
+	"revision": {
+		"type": "Revision"
+	},
+	"width": "1024px",
+	"height": "600px",
+	"default": true,
+	"isActive": true,
+	"backgroundColor": {
+		"value": "DefaultColors:color250",
+		"typeId": 9,
+		"propTypeId": 2
+	},
+	"defaultFontStyle": {
+		"value": "Default",
+		"typeId": 26,
+		"propTypeId": 1,
+		"refId": "e6fa569f-4c46-4ea3-a83d-e953104b983b"
+	},
+	"defaultFontStyleScheme": {
+		"value": null,
+		"typeId": 27,
+		"propTypeId": 6,
+		"targetName": "DefaultFontStyle"
+	},
+	"windowViewEntries": [],
+	"keyboardViewEntries": [],
+	"dashboardViewEntries": [
+		{
+			"type": "viewEntry",
+			"designTimeId": "d29cbbd0-674e-4998-af83-3c57e7d8a6e2",
+			"isStartDashboard": true,
+			"typeId": 2,
+			"value": {
+				"value": "Dashboard0",
+				"typeId": 12,
+				"propTypeId": 1,
+				"refId": "8a0b3c05-b00b-4f50-9126-0e644d802452"
+			}
+		}
+	],
+	"globalDashboardViewEntries": [
+		{
+			"type": "viewEntry",
+			"designTimeId": "353abbb8-c0e9-4ef9-aa9b-22b2b0a8e787",
+			"typeId": 3,
+			"value": {
+				"value": "GlobalDashboard0",
+				"typeId": 40,
+				"propTypeId": 1,
+				"refId": "5e31f5de-5779-47f9-8a89-e7a72b523200"
+			}
+		}
+	]
+}

@@ -1,0 +1,25 @@
+[
+	{
+		"type": "setting",
+		"key": "ProjectRevision",
+		"value": {
+			"type": "Revision",
+			"revisionNr": "0.0"
+		}
+	},
+	{
+		"type": "setting",
+		"key": "ReferenceLanguageID",
+		"value": 1031
+	},
+	{
+		"type": "setting",
+		"key": "ProjectLanguageID",
+		"value": 1031
+	},
+	{
+		"type": "setting",
+		"key": "PlaceDatapointTextControl",
+		"value": "sig-control-datapoint-text"
+	}
+]

@@ -1,0 +1,31 @@
+{
+	"type": "users",
+	"version": "0.0.96",
+	"users": [
+		{
+			"type": "User",
+			"designTimeId": "40536967-7375-7065-7275-736572757365",
+			"name": "superuser",
+			"password": "sigmatek",
+			"firstName": "Super",
+			"lastName": "User",
+			"description": "It can do everything",
+			"accessNumber": 65535,
+			"roles": [
+				{
+					"type": "UserEntry",
+					"role": {
+						"value": "superuser",
+						"typeId": 46,
+						"propTypeId": 1,
+						"refId": "40536967-7375-7065-7275-736572726f6c"
+					},
+					"designTimeId": "d04d8c5c-1a01-4ff5-be7a-ca86109d4c61"
+				}
+			],
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
+}

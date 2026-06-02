@@ -1,0 +1,53 @@
+# Sigamtek CH 09.10.2024 (Schchr3)
+#=========================================================================
+#-------------------------------------------------------------------------
+# LASAL Class Projekte
+#-------------------------------------------------------------------------
+# Dateien, Ordner welche nicht ins Repository aufgenommen werden
+#-------------------------------------------------------------------------
+**/BAK
+**/Language
+ProjectInternal
+Internal
+**/Network/*/*.st
+**/Drive/*.st
+*.ldi
+*.bak
+*.lob
+*.lba
+*.lcb
+*.lock
+*.plc
+*.7z
+*.zip
+*.lcc
+*.lds
+MaeExp.txt
+
+# ! = Negierte Bedingungen: Es werden alle Dateien aufgenommen
+#-------------------------------------------------------------------------
+!**/Class/OPC_UA*/**
+!**/Class/SigCLib/cObjLib.*
+
+#-------------------------------------------------------------------------
+# LASAL Visu Designer Projekte
+#-------------------------------------------------------------------------
+**/TempPreview
+**/Publish
+**/.tmp
+**/1
+**/Runtime/DesignerRuntime/res/styles/sig-default-css.js
+**/designer.html
+**/designerResourcePreview.html
+**/designerToolbox.html
+OpenViews.json
+
+#-------------------------------------------------------------------------
+# LASAL Screen Projekte
+#-------------------------------------------------------------------------
+# Für Lasal Screen Projekte ist das separate .ignore File ins Root des Screens Projektes zu kopieren !
+
+LSE.ini
+LSE.cif
+LoadDocuments.lse
+

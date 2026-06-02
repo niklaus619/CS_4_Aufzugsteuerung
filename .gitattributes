@@ -1,0 +1,303 @@
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+#
+# 20231204 Schchr3: Bugfix Rtv.txt File von LASAL Screen
+# 20231220 Schchr3: Bugfix Rezeptdateien users.cfg, accuserdata.cfg
+###############################################################################
+*                             text=auto
+
+# *.7z
+*.7[zZ]                        binary
+
+# *.awl
+*.[aA][wW][lL]                 text eol=crlf diff=pascal
+
+# *.bak
+*.[bB][aA][kK]                 text eol=crlf
+
+# *.bat
+*.[bB][aA][tT]                 text eol=crlf
+
+# *.bin
+*.[bB][iI][nN]                 binary
+
+# *.bmp
+*.[bB][mM][pP]                 binary
+
+# *.c
+*.[cC]                         text eol=crlf diff=cpp
+
+# *.cfg
+*.[cC][fF][gG]                 text eol=crlf
+
+# 20231220 Schchr3: Bugfix Rezeptdateien
+[uU][sS][eE][rR][sS].[cC][fF][gG]   -text
+[aA][cC][cC][uU][sS][eE][rR][dD][aA][tT][aA].[cC][fF][gG]   -text
+
+# *.chk
+*.[cC][hH][kK]                 binary
+
+# *.cif
+*.[cC][iI][fF]                 binary
+
+# *.clb
+*.[cC][lL][bB]                 text eol=crlf
+
+# *.cmd
+*.[cC][mM][dD]                 text eol=crlf
+
+# *.cod
+*.[cC][oO][dD]                 binary
+
+# *.cpp
+*.[cC][pP][pP]                 text eol=crlf diff=cpp
+
+# *.crc
+*.[cC][rR][cC]                 binary
+
+# *.css
+*.[cC][sS][sS]                 text eol=crlf diff=css
+
+# *.csv
+*.[cC][sS][vV]                 text eol=crlf
+
+# *.dat
+*.[dD][aA][tT]                 binary
+
+# *.db
+*.[dD][bB]                     binary
+
+# *.deb
+*.[dD][eE][bB]                 binary
+
+# *.dlm
+*.[dD][lL][mM]                 binary
+
+# *.doc
+*.[dD][oO][cC]                 binary
+
+# *.docx
+*.[dD][oO][cC][xX]             binary
+
+# *.dsp
+*.[dD][sS][pP]                 text eol=crlf
+
+# *.err
+*.[eE][rR][rR]                 binary
+
+# *.exe
+*.[eE][xX][eE]                 binary
+
+# *.fg
+*.[fF][gG]                     text eol=crlf
+
+# *.fnt
+*.[fF][nN][tT]                 binary
+
+# *.gitattributes
+*.[gG][iI][tT][aA][tT][tT][rR][iI][bB][uU][tT][eE][sS] text eol=crlf
+
+# *.gitconfig
+*.[gG][iI][tT][cC][oO][nN][fF][iI][gG] text eol=crlf
+
+# *.graphml
+*.[gG][rR][aA][pP][hH][mM][lL] text eol=crlf
+
+# *.h
+*.[hH]                         text eol=crlf diff=cpp
+
+# *.hdump
+*.[hH][dD][uU][mM][pP]         binary
+
+# *.htm
+*.[hH][tT][mM]                 text eol=crlf diff=html
+
+# *.html
+*.[hH][tT][mM][lL]             text eol=crlf diff=html
+
+# *.ico
+*.[iI][cC][oO]                 binary
+
+# *.idx
+*.[iI][dD][xX]                 text eol=crlf -diff
+
+# *.ini
+*.[iI][nN][iI]                 text eol=crlf
+
+# *.ipr
+*.[iI][pP][rR]                 text eol=crlf
+
+# *.jpg
+*.[jJ][pP][gG]                 binary
+
+# *.js
+*.[jJ][sS]                     text eol=crlf
+
+# *.json
+*.[jJ][sS][oO][nN]             text eol=crlf
+
+# *.jsx
+*.[jJ][sS][xX]                 text eol=crlf
+
+# *.lb2
+*.[lL][bB]2                    text eol=crlf
+
+# *.lba
+*.[lL][bB][aA]                 binary
+
+# *.lbi
+*.[lL][bB][iI]                 binary
+
+# *.lcb
+*.[lL][cC][bB]                 binary
+
+# *.lcc
+*.[lL][cC][cC]                 text eol=crlf
+
+# *.lce
+*.[lL][cC][eE]                 text eol=crlf
+
+# *.lcn
+*.[lL][cC][nN]                 text eol=crlf
+
+# *.lcp
+*.[lL][cC][pP]                 text eol=crlf
+
+# *.lcz
+*.[lL][cC][zZ]                 binary
+
+# *.ldi
+*.[lL][dD][iI]                 binary
+
+# *.lhd
+*.[lL][hH][dD]                 text eol=crlf
+
+# *.lob
+*.[lL][oO][bB]                 binary
+
+# *.lock
+*.[lL][oO][cC][kK]             text eol=lf
+
+# *.log
+*.[lL][oO][gG]                 text eol=crlf
+
+# *.lpr
+*.[lL][pP][rR]                 binary
+
+# *.lse
+*.[lL][sS][eE]                 binary
+
+# *.lsl
+*.[lL][sS][lL]                 text eol=crlf
+
+# *.lsm
+*.[lL][sS][mM]                 text eol=crlf
+
+# *.lsn
+*.[lL][sS][nN]                 binary
+
+# *.lss
+*.[lL][sS][sS]                 text eol=crlf
+
+# *.lst
+*.[lL][sS][tT]                 text eol=crlf
+
+# *.lwl
+*.[lL][wW][lL]                 text eol=crlf
+
+# *.lwn
+*.[lL][wW][nN]                 binary
+
+# *.lzp
+*.[lL][zZ][pP]                 binary
+
+# *.markdown
+*.[mM][aA][rR][kK][dD][oO][wW][nN] text eol=crlf diff=markdown
+
+# *.md
+*.[mM][dD]                     text eol=crlf diff=markdown
+
+# *.memopad
+*.[mM][eE][mM][oO][pP][aA][dD] binary
+
+# *.mmc
+*.[mM][mM][cC]                 text eol=crlf
+
+# *.mme
+*.[mM][mM][eE]                 text eol=crlf
+
+# *.mpc
+*.[mM][pP][cC]                 binary
+
+# *.obj
+*.[oO][bB][jJ]                 binary
+
+# *.pdf
+*.[pP][dD][fF]                 binary
+
+# *.png
+*.[pP][nN][gG]                 binary
+
+# *.ppd
+*.[pP][pP][dD]                 text eol=crlf
+
+# *.pro
+*.[pP][rR][oO]                 text eol=crlf
+
+# *.project
+*.[pP][rR][oO][jJ][eE][cC][tT] binary
+
+# *.py
+*.[pP][yY]                     text eol=crlf diff=python
+
+# *.rar
+*.[rR][aA][rR]                 binary
+
+# *.rex
+*.[rR][eE][xX]                 text eol=crlf
+
+# *.sca
+*.[sS][cC][aA]                 text eol=crlf
+
+# *.scss
+*.[sS][cC][sS][sS]             text eol=crlf diff=css
+
+# *.sml
+*.[sS][mM][lL]                 text eol=crlf
+
+# *.st
+*.[sS][tT]                     text eol=crlf diff=pascal
+
+# *.stdump
+*.[sS][tT][dD][uU][mM][pP]     text eol=crlf
+
+# *.tmp
+*.[tT][mM][pP]                 binary
+
+# *.txt
+*.[tT][xX][tT]                 text eol=crlf
+
+# 20231204 Schchr3: Bugfix Rtv.txt File von LASAL Screen
+[rR][tT][vV].[tT][xX][tT]      -text
+
+# *.udc
+*.[uU][dD][cC]                 binary
+
+# *.vov
+*.[vV][oO][vV]                 binary
+
+# *.xhtml
+*.[xX][hH][tT][mM][lL]         text eol=crlf diff=html
+
+# *.xls
+*.[xX][lL][sS]                 binary
+
+# *.xlsx
+*.[xX][lL][sS][xX]             binary
+
+# *.xml
+*.[xX][mM][lL]                 text eol=crlf
+
+# *.zip
+*.[zZ][iI][pP]                 binary
+

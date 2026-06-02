@@ -1,0 +1,2726 @@
+{
+    "version": "1.0.0",
+    "textLists": [
+        {
+            "name": "SystemTexts",
+            "texts": [
+                {
+                    "text": "undefined",
+                    "aliasName": "_sysUndefined"
+                },
+                {
+                    "text": "user \"%any\" logged in",
+                    "aliasName": "_sysUserLogIn",
+                    "format": true
+                },
+                {
+                    "text": "user \"%any\" logged out",
+                    "aliasName": "_sysUserLogOut",
+                    "format": true
+                },
+                {
+                    "text": "power off",
+                    "aliasName": "_sysPowerOFF"
+                },
+                {
+                    "text": "power on",
+                    "aliasName": "_sysPowerON"
+                },
+                {
+                    "text": "%s",
+                    "aliasName": "_sysAlarmOFF",
+                    "format": true
+                },
+                {
+                    "text": "%s",
+                    "aliasName": "_sysAlarmON",
+                    "format": true
+                },
+                {
+                    "text": "%s",
+                    "aliasName": "_sysAlarmQUIT",
+                    "format": true
+                },
+                {
+                    "text": "%s1 changed from %pu1 to %pu2 by user \"%c1\"",
+                    "aliasName": "_sysDBChanged",
+                    "format": true
+                },
+                {
+                    "text": "%s1 changed from \"%p\" to \"%p\" by user \"%c1\"",
+                    "aliasName": "_sysDBStrChanged",
+                    "format": true
+                },
+                {
+                    "text": "loading the recipe file on %any was started",
+                    "aliasName": "_sysRecipeLoadBegin",
+                    "format": true
+                },
+                {
+                    "text": "recipe file was loaded from %any",
+                    "aliasName": "_sysRecipeLoadEnd",
+                    "format": true
+                },
+                {
+                    "text": "An error occurred while loading the recipe file from %any. (Error: %any)",
+                    "aliasName": "_sysRecipeLoadError",
+                    "format": true
+                },
+                {
+                    "text": "saving the recipe file to %any was started",
+                    "aliasName": "_sysRecipeSaveBegin",
+                    "format": true
+                },
+                {
+                    "text": "recipe file was saved on %any",
+                    "aliasName": "_sysRecipeSaveEnd",
+                    "format": true
+                },
+                {
+                    "text": "An error occurred while saving the recipe file to %any. (Error: %any)",
+                    "aliasName": "_sysRecipeSaveError",
+                    "format": true
+                },
+                {
+                    "text": "station \"%any\" reconnected",
+                    "aliasName": "_sysStationReconnect",
+                    "format": true
+                },
+                {
+                    "text": "%s1 changed from %pu1 to %pu2",
+                    "aliasName": "_sysServerPointChanged",
+                    "format": true
+                },
+                {
+                    "text": "%s1 changed from \"%p1\" to \"%p2\"",
+                    "aliasName": "_sysStringPointChanged",
+                    "format": true
+                },
+                {
+                    "text": " [\"%any\"]",
+                    "aliasName": "_sysJournalMessage",
+                    "format": true
+                },
+                {
+                    "text": " [\"%any\"]",
+                    "aliasName": "_sysJournalWarning",
+                    "format": true
+                },
+                {
+                    "text": " [\"%any\"]",
+                    "aliasName": "_sysJournalError",
+                    "format": true
+                },
+                {
+                    "text": "Eventjournal was deleted by user \"%any\"",
+                    "aliasName": "_sysJournalDeleteAll",
+                    "format": true
+                },
+                {
+                    "text": "ERROR on station \"%any\"",
+                    "aliasName": "errorOnStation",
+                    "format": true
+                },
+                {
+                    "text": "Run RAM on station \"%any\"",
+                    "aliasName": "runRAMOnStation",
+                    "format": true
+                },
+                {
+                    "text": "RESET on station \"%any\"",
+                    "aliasName": "resetOnStation",
+                    "format": true
+                },
+                {
+                    "text": "LOADER INIT on station \"%any\"",
+                    "aliasName": "loaderInitOnStation",
+                    "format": true
+                },
+                {
+                    "text": "CPU IDLE on station \"%any\"",
+                    "aliasName": "cpuIdleOnStation",
+                    "format": true
+                },
+                {
+                    "text": "Station \"%any\" is offline",
+                    "aliasName": "stationOffline",
+                    "format": true
+                },
+                {
+                    "text": "STOP BREAKPOINT on station \"%any\"",
+                    "aliasName": "stopBreakpointOnStation",
+                    "format": true
+                },
+                {
+                    "text": "SINGLE STEP on station \"%any\"",
+                    "aliasName": "singleStepOnStation",
+                    "format": true
+                },
+                {
+                    "text": "all",
+                    "aliasName": "_sysAlarmQuitAll"
+                },
+                {
+                    "text": "information",
+                    "aliasName": "_sysEventjournalInformation"
+                },
+                {
+                    "text": "Icon",
+                    "aliasName": "_sysEventjournalIcon"
+                },
+                {
+                    "text": "outgoing alarm",
+                    "aliasName": "_sysEventjournalAlarmOutgoing"
+                },
+                {
+                    "text": "incoming alarm",
+                    "aliasName": "_sysEventjournalAlarmIncoming"
+                },
+                {
+                    "text": "ID",
+                    "aliasName": "_sysEventjournalId"
+                },
+                {
+                    "text": "No.",
+                    "aliasName": "_sysEventjournalIndex"
+                },
+                {
+                    "text": "AlarmNo.",
+                    "aliasName": "_sysEventjournalAlarmNr"
+                },
+                {
+                    "text": "Param1",
+                    "aliasName": "_sysEventjournalAlarmParam1"
+                },
+                {
+                    "text": "date / time",
+                    "aliasName": "_sysEventjournalDateTime"
+                },
+                {
+                    "text": "date",
+                    "aliasName": "_sysEventjournalDate"
+                },
+                {
+                    "text": "time",
+                    "aliasName": "_sysEventjournalTime"
+                },
+                {
+                    "text": "from / to",
+                    "aliasName": "_sysEventjournalFromTo"
+                },
+                {
+                    "text": "from",
+                    "aliasName": "_sysEventjournalFrom"
+                },
+                {
+                    "text": "to",
+                    "aliasName": "_sysEventjournalTo"
+                },
+                {
+                    "text": "OK",
+                    "aliasName": "_sysEventjournalOk"
+                },
+                {
+                    "text": "Cancel",
+                    "aliasName": "_sysEventjournalCancel"
+                },
+                {
+                    "text": "Event Filter Configuration",
+                    "aliasName": "_sysEventjournalConfigFilter"
+                },
+                {
+                    "text": "Column Configuration",
+                    "aliasName": "_sysEventjournalConfigColumn"
+                },
+                {
+                    "text": "Power on/off",
+                    "aliasName": "_sysEventjournalFilterPowerOnOff"
+                },
+                {
+                    "text": "Log on/off",
+                    "aliasName": "_sysEventjournalFilterLogOnOff"
+                },
+                {
+                    "text": "Error",
+                    "aliasName": "_sysEventjournalFilterError"
+                },
+                {
+                    "text": "Warning",
+                    "aliasName": "_sysEventjournalFilterWarning"
+                },
+                {
+                    "text": "Message",
+                    "aliasName": "_sysEventjournalFilterMessage"
+                },
+                {
+                    "text": "Alarm",
+                    "aliasName": "_sysEventjournalFilterAlarm"
+                },
+                {
+                    "text": "Receipe load",
+                    "aliasName": "_sysEventjournalFilterReceipeLoad"
+                },
+                {
+                    "text": "Receipe save",
+                    "aliasName": "_sysEventjournalFilterReceipeSave"
+                },
+                {
+                    "text": "Set point",
+                    "aliasName": "_sysEventjournalFilterSetPoint"
+                },
+                {
+                    "text": "Set point string",
+                    "aliasName": "_sysEventjournalFilterSetPointString"
+                },
+                {
+                    "text": "Column",
+                    "aliasName": "_sysEventjournalConfigField"
+                },
+                {
+                    "text": "View",
+                    "aliasName": "_sysEventjournalConfigView"
+                },
+                {
+                    "text": "Event",
+                    "aliasName": "_sysEventjournalFilterField"
+                },
+                {
+                    "text": "View",
+                    "aliasName": "_sysEventjournalFilterView"
+                },
+                {
+                    "text": "Export",
+                    "aliasName": "_sysEventjournalFilterExport"
+                },
+                {
+                    "text": "first column",
+                    "aliasName": "_sysEventjournalFirstColumn"
+                },
+                {
+                    "text": "last column",
+                    "aliasName": "_sysEventjournalLastColumn"
+                },
+                {
+                    "text": "no column",
+                    "aliasName": "_sysEventjournalNoneColumn"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_logging",
+            "texts": [
+                {
+                    "text": "date",
+                    "aliasName": "textlabeldate"
+                },
+                {
+                    "text": "time",
+                    "aliasName": "textlabeltime"
+                },
+                {
+                    "text": "date / time",
+                    "aliasName": "textlabeldatetime"
+                },
+                {
+                    "text": "information",
+                    "aliasName": "textlabelinformation"
+                },
+                {
+                    "text": "ID",
+                    "aliasName": "textlabelid"
+                },
+                {
+                    "text": "No.",
+                    "aliasName": "textlabelindex"
+                },
+                {
+                    "text": "AlarmNo",
+                    "aliasName": "textlabelalarmnr"
+                },
+                {
+                    "text": "Param1",
+                    "aliasName": "textlabelalarmparam1"
+                },
+                {
+                    "text": "",
+                    "aliasName": "textlabelicon"
+                },
+                {
+                    "text": "from",
+                    "aliasName": "textlabelfrom"
+                },
+                {
+                    "text": "to",
+                    "aliasName": "textlabelto"
+                },
+                {
+                    "text": "from / to",
+                    "aliasName": "textlabelfromto"
+                },
+                {
+                    "text": "OK",
+                    "aliasName": "textlabelok"
+                },
+                {
+                    "text": "Cancel",
+                    "aliasName": "textlabelcancel"
+                },
+                {
+                    "text": "Detail",
+                    "aliasName": "textlabeldetail"
+                },
+                {
+                    "text": "of",
+                    "aliasName": "textcounterof"
+                },
+                {
+                    "text": "Event Filter Configuration",
+                    "aliasName": "textlabelconfigfilter"
+                },
+                {
+                    "text": "Column Configuration",
+                    "aliasName": "textlabelconfigcolumn"
+                },
+                {
+                    "text": "icon column",
+                    "aliasName": "textlabelconfigicon"
+                },
+                {
+                    "text": "First",
+                    "aliasName": "textlabelconfigfirstcolumn"
+                },
+                {
+                    "text": "Last",
+                    "aliasName": "textlabelconfiglastcolumn"
+                },
+                {
+                    "text": "None",
+                    "aliasName": "textlabelconfignonecolumn"
+                },
+                {
+                    "text": "",
+                    "aliasName": "filterinputsheadertext"
+                },
+                {
+                    "text": "Alarm",
+                    "aliasName": "textlabelfilteralarm"
+                },
+                {
+                    "text": "incoming alarm",
+                    "aliasName": "textlabelfilteralarmin"
+                },
+                {
+                    "text": "outgoing alarm",
+                    "aliasName": "textlabelfilteralarmout"
+                },
+                {
+                    "text": "Message",
+                    "aliasName": "textlabelfiltermessage"
+                },
+                {
+                    "text": "Warning",
+                    "aliasName": "textlabelfilterwarning"
+                },
+                {
+                    "text": "Error",
+                    "aliasName": "textlabelfiltererror"
+                },
+                {
+                    "text": "Log on/off",
+                    "aliasName": "textlabelfilterlogonoff"
+                },
+                {
+                    "text": "Power on/off",
+                    "aliasName": "textlabelfilterpoweronoff"
+                },
+                {
+                    "text": "Receipe load",
+                    "aliasName": "textlabelfilterreceipeload"
+                },
+                {
+                    "text": "Receipe save",
+                    "aliasName": "textlabelfilterreceipesave"
+                },
+                {
+                    "text": "Set point",
+                    "aliasName": "textlabelfiltersetpoint"
+                },
+                {
+                    "text": "Set point string",
+                    "aliasName": "textlabelfiltersetpointstring"
+                },
+                {
+                    "text": "User text",
+                    "aliasName": "textlabelfilteruserText"
+                },
+                {
+                    "text": "Station reconnected",
+                    "aliasName": "textlabelfilterstationReconnect"
+                },
+                {
+                    "text": "Delete all events",
+                    "aliasName": "textlabelfilterdelAll"
+                },
+                {
+                    "text": "all",
+                    "aliasName": "textlabelallalarm"
+                },
+                {
+                    "text": "Column",
+                    "aliasName": "textlabelconfigfield"
+                },
+                {
+                    "text": "View",
+                    "aliasName": "textlabelconfigview"
+                },
+                {
+                    "text": "Event",
+                    "aliasName": "textlabelconfigfilterfield"
+                },
+                {
+                    "text": "View",
+                    "aliasName": "textlabelconfigfilterview"
+                },
+                {
+                    "text": "Export",
+                    "aliasName": "textlabelconfigfilterexport"
+                },
+                {
+                    "text": "filter",
+                    "aliasName": "textlabelfilter"
+                },
+                {
+                    "text": "Eventjournal",
+                    "aliasName": "caption"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_alert",
+            "texts": [
+                {
+                    "text": "Fatal Execution Error - App stopped!",
+                    "aliasName": "fatalExecutionError"
+                },
+                {
+                    "text": "Download project...",
+                    "aliasName": "downloadProject"
+                },
+                {
+                    "text": "Download 0%",
+                    "aliasName": "noDownloadProgress"
+                },
+                {
+                    "text": "Download %any%%",
+                    "aliasName": "downloadProgress",
+                    "format": true
+                },
+                {
+                    "text": "Download runtime...",
+                    "aliasName": "downloadRuntime"
+                },
+                {
+                    "text": "Websocket",
+                    "aliasName": "websocket"
+                },
+                {
+                    "text": "Connecting to %any",
+                    "aliasName": "connectingTo",
+                    "format": true
+                },
+                {
+                    "text": "Initializing connection",
+                    "aliasName": "initConnection"
+                },
+                {
+                    "text": "Trying to connect to %any...",
+                    "aliasName": "tryToConnect",
+                    "format": true
+                },
+                {
+                    "text": "Closing connection to %any",
+                    "aliasName": "closingConnectionTo",
+                    "format": true
+                },
+                {
+                    "text": "Connection to %any is closed",
+                    "aliasName": "connectionToClosed",
+                    "format": true
+                },
+                {
+                    "text": "Lost Connection to %any",
+                    "aliasName": "lostConnection",
+                    "format": true
+                },
+                {
+                    "text": "Station",
+                    "aliasName": "station"
+                },
+                {
+                    "text": "Wrong loader version detected",
+                    "aliasName": "wrongLoaderVersionTitle"
+                },
+                {
+                    "text": "Wrong loader version in station %any",
+                    "aliasName": "wrongLoaderVersion",
+                    "format": true
+                },
+                {
+                    "text": "Browser Error !",
+                    "aliasName": "unsupportedBrowserTitle"
+                },
+                {
+                    "text": "Browser \"%any\"  version \"%any\" is not supported",
+                    "aliasName": "unsupportedBrowser",
+                    "format": true
+                },
+                {
+                    "text": "Different data point lists !",
+                    "aliasName": "wrongDatapointlistCRCTitle"
+                },
+                {
+                    "text": "The data point lists of DataService and Runtime are different !",
+                    "aliasName": "wrongDatapointlistCRC",
+                    "format": true
+                },
+                {
+                    "text": "Views Management",
+                    "aliasName": "viewSelectionAlertTitle"
+                },
+                {
+                    "text": "Waiting for connection",
+                    "aliasName": "viewSelectionAlertWaitingForConnection"
+                },
+                {
+                    "text": "Automatic logout of the current user !",
+                    "aliasName": "currentUserChangedTitle"
+                },
+                {
+                    "text": "The current user was changed or deleted and therefore automatically logged out !",
+                    "aliasName": "currentUserChanged"
+                },
+                {
+                    "text": "EventJournal/AlarmList !",
+                    "aliasName": "errorEventJournalSizeTitle"
+                },
+                {
+                    "text": "The user defined size of eventjournal/alarmlist is not allowed. The default sizes are used: eventjournal = %any  alarmlist = %any ! Please update the values in project.",
+                    "aliasName": "errorEventJournalFallback",
+                    "format": true
+                },
+                {
+                    "text": "The user defined size for eventjournal = %any and alarmlist = %any were applied. All entries were deleted !",
+                    "aliasName": "errorEventJournalDeleted",
+                    "format": true
+                },
+                {
+                    "text": "The user defined size of eventjournal/alarmlist is not allowed. The following sizes are used: eventjournal = %any  alarmlist = %any ! Please update the values in project.",
+                    "aliasName": "errorEventJournalSize",
+                    "format": true
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_enum",
+            "texts": [
+                {
+                    "text": "--no-Selection--",
+                    "aliasName": "noSelection"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_keyboard",
+            "texts": [
+                {
+                    "text": "min: ",
+                    "aliasName": "min"
+                },
+                {
+                    "text": "max: ",
+                    "aliasName": "max"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_menu",
+            "texts": [
+                {
+                    "text": "--choose Option--",
+                    "aliasName": "defaultOption"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_listview",
+            "texts": [
+                {
+                    "text": "New record",
+                    "aliasName": "addrecord"
+                },
+                {
+                    "text": "Delete record",
+                    "aliasName": "deleterecord"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_language_selection",
+            "texts": [
+                {
+                    "text": "Language",
+                    "aliasName": "language"
+                },
+                {
+                    "text": "Flag",
+                    "aliasName": "flag"
+                },
+                {
+                    "text": "Language selection",
+                    "aliasName": "titletext"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_usermanager",
+            "texts": [
+                {
+                    "text": "Forename",
+                    "aliasName": "forename"
+                },
+                {
+                    "text": "Surname",
+                    "aliasName": "surname"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_filemanager",
+            "texts": [
+                {
+                    "text": "Filemanager",
+                    "aliasName": "caption"
+                },
+                {
+                    "text": "tap to activate",
+                    "aliasName": "tapToActivate"
+                },
+                {
+                    "text": "OK",
+                    "aliasName": "ok"
+                },
+                {
+                    "text": "Cancel",
+                    "aliasName": "cancel"
+                },
+                {
+                    "text": "Cancel All",
+                    "aliasName": "cancelAll"
+                },
+                {
+                    "text": "Pause",
+                    "aliasName": "pause"
+                },
+                {
+                    "text": "Continue",
+                    "aliasName": "continue"
+                },
+                {
+                    "text": "HOME",
+                    "aliasName": "home"
+                },
+                {
+                    "text": "Name",
+                    "aliasName": "colName"
+                },
+                {
+                    "text": "Modified",
+                    "aliasName": "colModified"
+                },
+                {
+                    "text": "Size",
+                    "aliasName": "colSize"
+                },
+                {
+                    "text": "Ready",
+                    "aliasName": "defaultStatus"
+                },
+                {
+                    "text": "Delete selection",
+                    "aliasName": "deleteSelection"
+                },
+                {
+                    "text": "You can not delete a volume of the drive overview!",
+                    "aliasName": "canNotDeleteDriveInRoot"
+                },
+                {
+                    "text": "Delete canceled",
+                    "aliasName": "deleteCanceled"
+                },
+                {
+                    "text": "Do you want to delete %any1 item(s) in %any2?",
+                    "aliasName": "deleteItemsInPath",
+                    "format": true
+                },
+                {
+                    "text": "Please select some files or folders!",
+                    "aliasName": "pleaseSelectSomeFilesOrFolders"
+                },
+                {
+                    "text": "Note",
+                    "aliasName": "note"
+                },
+                {
+                    "text": "Reload Panes",
+                    "aliasName": "reloadPanes"
+                },
+                {
+                    "text": "Do you really want to reload all panes?",
+                    "aliasName": "doYouRealyWantToRealoadAllPanes"
+                },
+                {
+                    "text": "Reloading all panes ...",
+                    "aliasName": "tryingToRelaodAllPanes"
+                },
+                {
+                    "text": "Create Folder",
+                    "aliasName": "createFolder"
+                },
+                {
+                    "text": "New Folder",
+                    "aliasName": "newFolder"
+                },
+                {
+                    "text": "Please enter a name for new folder in: %any1",
+                    "aliasName": "pleaseEnterNameForNewFolderIn",
+                    "format": true
+                },
+                {
+                    "text": "Please enter a valid folder name!",
+                    "aliasName": "pleaseEnterValidFolderName"
+                },
+                {
+                    "text": "Folder creation canceled",
+                    "aliasName": "folderCreationCanceled"
+                },
+                {
+                    "text": "You can not create a folder in drive overview!",
+                    "aliasName": "canNotCreateFolderInRoot"
+                },
+                {
+                    "text": "Rename file or folder",
+                    "aliasName": "renameFileOrFolder"
+                },
+                {
+                    "text": "You can not rename a volume in the drive overview!",
+                    "aliasName": "canNotRenameDriveInRoot"
+                },
+                {
+                    "text": "Please enter a new name for \"%any1\"",
+                    "aliasName": "PleaseEnterNewNameFor",
+                    "format": true
+                },
+                {
+                    "text": "Trying to rename \"%any1\" to \"%any2\" ...",
+                    "aliasName": "tryingToRename",
+                    "format": true
+                },
+                {
+                    "text": "Please enter a valid new name!",
+                    "aliasName": "pleaseEnterValidNewName"
+                },
+                {
+                    "text": "Canceled renaming of \"%any1\"",
+                    "aliasName": "canceledRenamingOf",
+                    "format": true
+                },
+                {
+                    "text": "Please select a file or folder first",
+                    "aliasName": "pleaseSelectFileOrFolderFirst"
+                },
+                {
+                    "text": "Copied %any1 item(s) to the clipboard",
+                    "aliasName": "copiedItemsToTheClipboard",
+                    "format": true
+                },
+                {
+                    "text": "Nothing copied to the clipboard",
+                    "aliasName": "NothingCopiedToTheClipboard"
+                },
+                {
+                    "text": "Do you want to cut %any1 item(s) from \"%any2\" ?",
+                    "aliasName": "doYouWantToCutItemsFrom",
+                    "format": true
+                },
+                {
+                    "text": "Nothing cut to the clipboard",
+                    "aliasName": "NothingCutToTheClipboard"
+                },
+                {
+                    "text": "Do you want to paste %any1 item(s) to \"%any2\"?",
+                    "aliasName": "doYouWantToPasteItemsTo",
+                    "format": true
+                },
+                {
+                    "text": "Paste selection",
+                    "aliasName": "pasteSelection"
+                },
+                {
+                    "text": "Can not paste items to root!",
+                    "aliasName": "canNotPasteItemsToRoot"
+                },
+                {
+                    "text": "Can not paste items. Clipboard is empty!",
+                    "aliasName": "canNotPasteItemsCipboardIsEmpty"
+                },
+                {
+                    "text": "Canceled paste from clipboard",
+                    "aliasName": "canceledPasteFromClipboard"
+                },
+                {
+                    "text": "Do you want to copy %any1 item(s) to \"%any2\"?",
+                    "aliasName": "doYouWantToCopyItemsTo",
+                    "format": true
+                },
+                {
+                    "text": "Can not copy items to drive overview!",
+                    "aliasName": "canNotCopyFilesToRoot"
+                },
+                {
+                    "text": "Copy selection",
+                    "aliasName": "copySelection"
+                },
+                {
+                    "text": "Canceled copy selection",
+                    "aliasName": "canceledCopyItems"
+                },
+                {
+                    "text": "Do you want to move %any1 items(s) to \"%any2\"?",
+                    "aliasName": "doYouWantToMoveItemsTo",
+                    "format": true
+                },
+                {
+                    "text": "Move Selection",
+                    "aliasName": "moveSelection"
+                },
+                {
+                    "text": "Can not move item(s) to drive overview!",
+                    "aliasName": "canNotMoveItemsToRoot"
+                },
+                {
+                    "text": "Canceled to move selection",
+                    "aliasName": "canceledMoveSelection"
+                },
+                {
+                    "text": "Move to parent",
+                    "aliasName": "moveToParent"
+                },
+                {
+                    "text": "You can not move outside the drive overview.",
+                    "aliasName": "catNotMoveOutsideRoot"
+                },
+                {
+                    "text": "Reload panes (P)",
+                    "aliasName": "tReloadPanes"
+                },
+                {
+                    "text": "Delete selection (DEL)",
+                    "aliasName": "tDeleteSelection"
+                },
+                {
+                    "text": "Create new folder (F)",
+                    "aliasName": "tCreateFolder"
+                },
+                {
+                    "text": "Copy selection to clipboard (CTRL-C)",
+                    "aliasName": "tCopySelectionToClipboard"
+                },
+                {
+                    "text": "Paste selection from clipboard (CTRL-V)",
+                    "aliasName": "tPasteSelectionFromClipboard"
+                },
+                {
+                    "text": "Rename active item (R)",
+                    "aliasName": "tRenameActiveItem"
+                },
+                {
+                    "text": "Move to parent directory (U)",
+                    "aliasName": "tFolderUp"
+                },
+                {
+                    "text": "Move selection (M)",
+                    "aliasName": "tMoveSelection"
+                },
+                {
+                    "text": "Copy selection (C)",
+                    "aliasName": "tCopySelection"
+                },
+                {
+                    "text": "Move \"%any1\" to \"%any2\"",
+                    "aliasName": "moveSoureToDestination",
+                    "format": true
+                },
+                {
+                    "text": "Copy \"%any1\" to \"%any2\"",
+                    "aliasName": "copySoureToDestination",
+                    "format": true
+                },
+                {
+                    "text": "Create \"%any1\" in \"%any2\"",
+                    "aliasName": "createFolderInPath",
+                    "format": true
+                },
+                {
+                    "text": "Rename \"%any1\" to \"%any2\"",
+                    "aliasName": "renameOldnameToNewname",
+                    "format": true
+                },
+                {
+                    "text": "Delete of \"%any1\"",
+                    "aliasName": "deletePath",
+                    "format": true
+                },
+                {
+                    "text": "%any1",
+                    "aliasName": "executeMessage",
+                    "format": true
+                },
+                {
+                    "text": "%any1 finished successfully in %any2ms. Commands left in queue %any3.",
+                    "aliasName": "finishedMessage",
+                    "format": true
+                },
+                {
+                    "text": "%any1 finished with error \"%any2\"!",
+                    "aliasName": "finishedWithErrorMessage",
+                    "format": true
+                },
+                {
+                    "text": "Error %any1",
+                    "aliasName": "errorCode",
+                    "format": true
+                },
+                {
+                    "text": "%any1 canceled after %any2ms. Commands left in queue %any3.",
+                    "aliasName": "canceledMessage",
+                    "format": true
+                },
+                {
+                    "text": "Can not cancel command. No command active!",
+                    "aliasName": "canNotCancelCommandNoCommandActive"
+                },
+                {
+                    "text": "Connection established",
+                    "aliasName": "connectionEstablished"
+                },
+                {
+                    "text": "Waiting for connection",
+                    "aliasName": "waitingForConnection"
+                },
+                {
+                    "text": "Added command \"%any1\" to the queue.",
+                    "aliasName": "addMessage",
+                    "format": true
+                },
+                {
+                    "text": "Trying to cancel active command ...",
+                    "aliasName": "tryingToCancelActiveCommand"
+                },
+                {
+                    "text": "Trying to cancel all commands ...",
+                    "aliasName": "tryingToCancelAllCommand"
+                },
+                {
+                    "text": "Waiting for active command to finish ...",
+                    "aliasName": "waitingForActiveCommandToFisish"
+                },
+                {
+                    "text": "Starting the queue ...",
+                    "aliasName": "startingTheQueue"
+                },
+                {
+                    "text": "Dual panes",
+                    "aliasName": "oDualpanes"
+                },
+                {
+                    "text": "Title",
+                    "aliasName": "oTitle"
+                },
+                {
+                    "text": "Path",
+                    "aliasName": "oPath"
+                },
+                {
+                    "text": "Actions",
+                    "aliasName": "oActions"
+                },
+                {
+                    "text": "Status",
+                    "aliasName": "oStatus"
+                },
+                {
+                    "text": "Folders",
+                    "aliasName": "oFolders"
+                },
+                {
+                    "text": "completed.",
+                    "aliasName": "progressCompleted"
+                },
+                {
+                    "text": "Invalid path detected! Falling back to drive overview!",
+                    "aliasName": "invalidPathDetectedFallingBackToRoot"
+                },
+                {
+                    "text": "The startpath of this pane is locked!",
+                    "aliasName": "theStartPathOfThePaneIsLocked"
+                },
+                {
+                    "text": "You are not allowed to navigate any further!",
+                    "aliasName": "youCanNotNavigateFurther"
+                }
+            ]
+        },
+        {
+            "name": "dateTimeFormats",
+            "texts": [
+                {
+                    "text": "Mo",
+                    "aliasName": "mo"
+                },
+                {
+                    "text": "Tu",
+                    "aliasName": "tu"
+                },
+                {
+                    "text": "We",
+                    "aliasName": "we"
+                },
+                {
+                    "text": "Th",
+                    "aliasName": "th"
+                },
+                {
+                    "text": "Fr",
+                    "aliasName": "fr"
+                },
+                {
+                    "text": "Sa",
+                    "aliasName": "sa"
+                },
+                {
+                    "text": "Su",
+                    "aliasName": "su"
+                },
+                {
+                    "text": "AM",
+                    "aliasName": "am"
+                },
+                {
+                    "text": "PM",
+                    "aliasName": "pm"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_user_login",
+            "texts": [
+                {
+                    "text": "User login",
+                    "aliasName": "caption"
+                },
+                {
+                    "text": "Login",
+                    "aliasName": "login"
+                },
+                {
+                    "text": "Logout",
+                    "aliasName": "logout"
+                },
+                {
+                    "text": "Close",
+                    "aliasName": "close"
+                },
+                {
+                    "text": "Username",
+                    "aliasName": "username"
+                },
+                {
+                    "text": "Password",
+                    "aliasName": "password"
+                },
+                {
+                    "text": "Enter Username",
+                    "aliasName": "enterUsername"
+                },
+                {
+                    "text": "Enter password",
+                    "aliasName": "enterPassword"
+                },
+                {
+                    "text": "Note (Code: %any)",
+                    "aliasName": "alertTitle",
+                    "format": true
+                },
+                {
+                    "text": "Users",
+                    "aliasName": "users"
+                },
+                {
+                    "text": "User could not be logged in - please check username and password",
+                    "aliasName": "userCouldnotBeLoggedIn"
+                },
+                {
+                    "text": "for the user \"%any\"",
+                    "aliasName": "forUsername",
+                    "format": true
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_user_detail",
+            "texts": [
+                {
+                    "text": "User detail",
+                    "aliasName": "caption"
+                },
+                {
+                    "text": "Close",
+                    "aliasName": "close"
+                },
+                {
+                    "text": "User name",
+                    "aliasName": "userName"
+                },
+                {
+                    "text": "First Name",
+                    "aliasName": "firstName"
+                },
+                {
+                    "text": "Last Name",
+                    "aliasName": "lastName"
+                },
+                {
+                    "text": "Description",
+                    "aliasName": "description"
+                },
+                {
+                    "text": "Password",
+                    "aliasName": "password"
+                },
+                {
+                    "text": "New Password",
+                    "aliasName": "newPassword"
+                },
+                {
+                    "text": "Repeat Password",
+                    "aliasName": "repeatPassword"
+                },
+                {
+                    "text": "Roles",
+                    "aliasName": "roles"
+                },
+                {
+                    "text": "Note (Code: %any)",
+                    "aliasName": "alertTitle",
+                    "format": true
+                },
+                {
+                    "text": "Users",
+                    "aliasName": "users"
+                },
+                {
+                    "text": "please select a user first from the list!",
+                    "aliasName": "pleaseSelectUserFirst"
+                },
+                {
+                    "text": "or add a new user!",
+                    "aliasName": "orAddUser"
+                },
+                {
+                    "text": "user password does not match",
+                    "aliasName": "userPasswordNotMatch"
+                },
+                {
+                    "text": "The password contains invalid characters.",
+                    "aliasName": "userPasswordInvalid"
+                },
+                {
+                    "text": "user could not be created - please check the user data.",
+                    "aliasName": "userCouldnotBeCreated"
+                },
+                {
+                    "text": "User could not be updated - please check the user data.",
+                    "aliasName": "userCouldnotBeUpdated"
+                },
+                {
+                    "text": "Username contains invalid characters.",
+                    "aliasName": "userNameInvalid"
+                },
+                {
+                    "text": "The access number is invalid.",
+                    "aliasName": "accessNumberInvalid"
+                },
+                {
+                    "text": "Enter user id",
+                    "aliasName": "kbEnterUserID"
+                },
+                {
+                    "text": "Enter username",
+                    "aliasName": "kbEnterUserName"
+                },
+                {
+                    "text": "Enter first name",
+                    "aliasName": "kbEnterFirstName"
+                },
+                {
+                    "text": "Enter last name",
+                    "aliasName": "kbEnterLastName"
+                },
+                {
+                    "text": "Enter description",
+                    "aliasName": "kbEnterDescription"
+                },
+                {
+                    "text": "Enter new password",
+                    "aliasName": "kbEnterNewPassword"
+                },
+                {
+                    "text": "Repeat new password",
+                    "aliasName": "kbRepeatNewPassword"
+                },
+                {
+                    "text": "Accessnumber",
+                    "aliasName": "accessNumber"
+                },
+                {
+                    "text": "New",
+                    "aliasName": "new"
+                },
+                {
+                    "text": "Edit",
+                    "aliasName": "edit"
+                },
+                {
+                    "text": "View",
+                    "aliasName": "view"
+                },
+                {
+                    "text": "Cancel",
+                    "aliasName": "cancel"
+                },
+                {
+                    "text": "Save",
+                    "aliasName": "save"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_role_detail",
+            "texts": [
+                {
+                    "text": "Role Detail",
+                    "aliasName": "caption"
+                },
+                {
+                    "text": "Role Name",
+                    "aliasName": "roleName"
+                },
+                {
+                    "text": "Description",
+                    "aliasName": "description"
+                },
+                {
+                    "text": "Logout after",
+                    "aliasName": "timeout"
+                },
+                {
+                    "text": "Access logic writing",
+                    "aliasName": "accessLevel"
+                },
+                {
+                    "text": "Access logic reading",
+                    "aliasName": "accessLevelRead"
+                },
+                {
+                    "text": "Accessnumber",
+                    "aliasName": "accessNumber"
+                },
+                {
+                    "text": "Permissions",
+                    "aliasName": "permissions"
+                },
+                {
+                    "text": "please select role first from the list!",
+                    "aliasName": "pleaseSelectRoleFirst"
+                },
+                {
+                    "text": "or add a new role!",
+                    "aliasName": "orAddRole"
+                },
+                {
+                    "text": "Could not create role - please check the input data",
+                    "aliasName": "roleCouldnotBeCreated"
+                },
+                {
+                    "text": "Note (Code: %any)",
+                    "aliasName": "alertTitle",
+                    "format": true
+                },
+                {
+                    "text": "New",
+                    "aliasName": "new"
+                },
+                {
+                    "text": "Edit",
+                    "aliasName": "edit"
+                },
+                {
+                    "text": "View",
+                    "aliasName": "view"
+                },
+                {
+                    "text": "Cancel",
+                    "aliasName": "cancel"
+                },
+                {
+                    "text": "Save",
+                    "aliasName": "save"
+                },
+                {
+                    "text": "Enter a role id",
+                    "aliasName": "kbEnterRoleId"
+                },
+                {
+                    "text": "Enter a role name",
+                    "aliasName": "kbEnterRoleName"
+                },
+                {
+                    "text": "Enter a description",
+                    "aliasName": "kbEnterDescription"
+                },
+                {
+                    "text": "Enter a timout",
+                    "aliasName": "kbEnterTimeout"
+                },
+                {
+                    "text": "Enter a accesslevel",
+                    "aliasName": "kbEnterAccessLevel"
+                },
+                {
+                    "text": "Enter a accesslevel for read",
+                    "aliasName": "kbEnterAccessLevelRead"
+                },
+                {
+                    "text": "Enter a accessnumber",
+                    "aliasName": "kbEnterAccessNumber"
+                },
+                {
+                    "text": "The access number is invalid.",
+                    "aliasName": "accessNumberInvalid"
+                },
+                {
+                    "text": "Could not update role - please check the input data",
+                    "aliasName": "roleCouldnotBeUpdated"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_user_list",
+            "texts": [
+                {
+                    "text": "User list",
+                    "aliasName": "caption"
+                },
+                {
+                    "text": "ID",
+                    "aliasName": "id"
+                },
+                {
+                    "text": "User name",
+                    "aliasName": "userName"
+                },
+                {
+                    "text": "First name",
+                    "aliasName": "firstName"
+                },
+                {
+                    "text": "Last name",
+                    "aliasName": "lastName"
+                },
+                {
+                    "text": "Info",
+                    "aliasName": "info"
+                },
+                {
+                    "text": "Roles",
+                    "aliasName": "roles"
+                },
+                {
+                    "text": "Last login",
+                    "aliasName": "lastLogin"
+                },
+                {
+                    "text": "Last logout",
+                    "aliasName": "lastLogout"
+                },
+                {
+                    "text": "Logout after",
+                    "aliasName": "timeout"
+                },
+                {
+                    "text": "Export",
+                    "aliasName": "export"
+                },
+                {
+                    "text": "Import",
+                    "aliasName": "import"
+                },
+                {
+                    "text": "Link token",
+                    "aliasName": "linkToken"
+                },
+                {
+                    "text": "Reset",
+                    "aliasName": "reset"
+                },
+                {
+                    "text": "Delete",
+                    "aliasName": "delete"
+                },
+                {
+                    "text": "Restore",
+                    "aliasName": "restore"
+                },
+                {
+                    "text": "New",
+                    "aliasName": "new"
+                },
+                {
+                    "text": "Edit",
+                    "aliasName": "edit"
+                },
+                {
+                    "text": "View",
+                    "aliasName": "view"
+                },
+                {
+                    "text": "Please login to see all options!",
+                    "aliasName": "pleaseLoginToSeeAllOptions"
+                },
+                {
+                    "text": "none",
+                    "aliasName": "none"
+                },
+                {
+                    "text": "not Available",
+                    "aliasName": "notAvailable"
+                },
+                {
+                    "text": "Are you sure to reset the storage?",
+                    "aliasName": "areYouSureToResetTheStorage"
+                },
+                {
+                    "text": "No permission to reset the storage!",
+                    "aliasName": "noPermissionToResetTheStorage"
+                },
+                {
+                    "text": "Do you really want to delete %any User(s)?",
+                    "aliasName": "doYouRealyWantToDeleteUsers",
+                    "format": true
+                },
+                {
+                    "text": "Do you really want to restore %any User(s)?",
+                    "aliasName": "doYouRealyWantToRestoreUsers",
+                    "format": true
+                },
+                {
+                    "text": "No Permission to delete user(s)!",
+                    "aliasName": "noPermissionToDeleteUsers"
+                },
+                {
+                    "text": "No Permission to restore user(s)!",
+                    "aliasName": "noPermissionToRestoreUsers"
+                },
+                {
+                    "text": "Please select a user first!",
+                    "aliasName": "pleaseSelectUserFirst"
+                },
+                {
+                    "text": "User exists and therefore cannot be restored!",
+                    "aliasName": "userExistsCannotRestore"
+                },
+                {
+                    "text": "No Permission to update the user!",
+                    "aliasName": "noPermissionToUpdateTheUser"
+                },
+                {
+                    "text": "No permission to create a user!",
+                    "aliasName": "noPermissionToCreateUser"
+                },
+                {
+                    "text": "No Permission to link a token!",
+                    "aliasName": "noPermissionToLinkToken"
+                },
+                {
+                    "text": "No Permission to import users!",
+                    "aliasName": "noPermissionToImportUsers"
+                },
+                {
+                    "text": "No Permission to export users",
+                    "aliasName": "noPermissionToExportUsers"
+                },
+                {
+                    "text": "Note (Code: %any)",
+                    "aliasName": "alertTitle",
+                    "format": true
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_role_list",
+            "texts": [
+                {
+                    "text": "Role list",
+                    "aliasName": "caption"
+                },
+                {
+                    "text": "ID",
+                    "aliasName": "id"
+                },
+                {
+                    "text": "Role name",
+                    "aliasName": "roleName"
+                },
+                {
+                    "text": "Export",
+                    "aliasName": "export"
+                },
+                {
+                    "text": "Import",
+                    "aliasName": "import"
+                },
+                {
+                    "text": "Reset",
+                    "aliasName": "reset"
+                },
+                {
+                    "text": "Delete",
+                    "aliasName": "delete"
+                },
+                {
+                    "text": "New",
+                    "aliasName": "new"
+                },
+                {
+                    "text": "Edit",
+                    "aliasName": "edit"
+                },
+                {
+                    "text": "View",
+                    "aliasName": "view"
+                },
+                {
+                    "text": "Please login to see all options!",
+                    "aliasName": "pleaseLoginToSeeAllOptions"
+                },
+                {
+                    "text": "none",
+                    "aliasName": "none"
+                },
+                {
+                    "text": "not Available",
+                    "aliasName": "notAvailable"
+                },
+                {
+                    "text": "Are you sure to reset the storage?",
+                    "aliasName": "areYouSureToResetTheStorage"
+                },
+                {
+                    "text": "No permission to reset the storage!",
+                    "aliasName": "noPermissionToResetTheStorage"
+                },
+                {
+                    "text": "Do you really want to delete %any role(s)?",
+                    "aliasName": "doYouRealyWantToDeleteRoles",
+                    "format": true
+                },
+                {
+                    "text": " %any role(s) are in use, do you really want to delete them?",
+                    "aliasName": "doYouRealyWantToDeleteRolesInUse",
+                    "format": true
+                },
+                {
+                    "text": "No Permission to delete role(s)!",
+                    "aliasName": "noPermissionToDeleteRoles"
+                },
+                {
+                    "text": "Please select a role first!",
+                    "aliasName": "pleaseSelectRoleFirst"
+                },
+                {
+                    "text": "No Permission to update the role!",
+                    "aliasName": "noPermissionToUpdateTheRole"
+                },
+                {
+                    "text": "No permission to create a role!",
+                    "aliasName": "noPermissionToCreateRole"
+                },
+                {
+                    "text": "No Permission to link a token!",
+                    "aliasName": "noPermissionToLinkToken"
+                },
+                {
+                    "text": "No Permission to import roles!",
+                    "aliasName": "noPermissionToImportRoles"
+                },
+                {
+                    "text": "No Permission to export roles",
+                    "aliasName": "noPermissionToExportRoles"
+                },
+                {
+                    "text": "Note (Code: %any)",
+                    "aliasName": "alertTitle",
+                    "format": true
+                }
+            ]
+        },
+        {
+            "name": "systemWindows",
+            "texts": [
+                {
+                    "text": "OK",
+                    "aliasName": "ok"
+                },
+                {
+                    "text": "Cancel",
+                    "aliasName": "cancel"
+                },
+                {
+                    "text": "Title",
+                    "aliasName": "title"
+                },
+                {
+                    "text": "Information",
+                    "aliasName": "information"
+                },
+                {
+                    "text": "Please Confirm",
+                    "aliasName": "pleaseConfirm"
+                },
+                {
+                    "text": "Please Enter",
+                    "aliasName": "pleaseEnter"
+                },
+                {
+                    "text": "",
+                    "aliasName": "emptyString"
+                },
+                {
+                    "text": "Keyboard",
+                    "aliasName": "keyboard"
+                }
+            ]
+        },
+        {
+            "name": "systemErrors",
+            "texts": [
+                {
+                    "text": "No error",
+                    "aliasName": "ERROR_NONE"
+                },
+                {
+                    "text": "Unknown error",
+                    "aliasName": "ERROR_UNKNOWN"
+                },
+                {
+                    "text": "Unknown variable number",
+                    "aliasName": "ERROR_INVALID_VARNO"
+                },
+                {
+                    "text": "Invalid Lasal id",
+                    "aliasName": "ERROR_INVALID_LASALID"
+                },
+                {
+                    "text": "Invalid variable type",
+                    "aliasName": "ERROR_INVALID_VARTYPE"
+                },
+                {
+                    "text": "Access denied",
+                    "aliasName": "ERROR_ACCESS_DENIED"
+                },
+                {
+                    "text": "value is outside the limits",
+                    "aliasName": "ERROR_INVALID_LIMIT"
+                },
+                {
+                    "text": "communication error",
+                    "aliasName": "ERROR_COMMUNICATION"
+                },
+                {
+                    "text": "variable is not in the refresh list",
+                    "aliasName": "ERROR_NOT_IN_REFLIST"
+                },
+                {
+                    "text": "invalid channel",
+                    "aliasName": "ERROR_INVALID_CHANNEL"
+                },
+                {
+                    "text": "login failed",
+                    "aliasName": "ERROR_LOGIN_FAILED"
+                },
+                {
+                    "text": "unknown user id",
+                    "aliasName": "ERROR_UNKNOWN_USERID"
+                },
+                {
+                    "text": "unknown username",
+                    "aliasName": "ERROR_UNKNOWN_USERNAME"
+                },
+                {
+                    "text": "invalid username",
+                    "aliasName": "ERROR_INVALID_USERNAME"
+                },
+                {
+                    "text": "user is disabled",
+                    "aliasName": "ERROR_USER_DISABLED"
+                },
+                {
+                    "text": "user has already been deleted",
+                    "aliasName": "ERROR_ALREADY_DELETED"
+                },
+                {
+                    "text": "an entry with this name already exists",
+                    "aliasName": "ERROR_NAME_NOT_UNIQUE"
+                },
+                {
+                    "text": "invalid user parameter",
+                    "aliasName": "ERROR_INVALID_USER_PARAM"
+                },
+                {
+                    "text": "invalid username or password",
+                    "aliasName": "ERROR_INVALID_CREDENTIALS"
+                },
+                {
+                    "text": "insufficient privileges",
+                    "aliasName": "ERROR_INSUFFICIENT_PRIVILEGES"
+                },
+                {
+                    "text": "user not logged in",
+                    "aliasName": "ERROR_USER_NOT_LOGGED"
+                },
+                {
+                    "text": "no userconfig file found",
+                    "aliasName": "ERROR_CFG_FILE_NOT_UPLOADED"
+                },
+                {
+                    "text": "new passwords does not match",
+                    "aliasName": "ERROR_NEW_PASSWORDS_DONOT_MATCH"
+                },
+                {
+                    "text": "predefined users can not be changed",
+                    "aliasName": "ERROR_SECRET_USER"
+                },
+                {
+                    "text": "Number of users exceeded",
+                    "aliasName": "ERROR_LIMIT_EXCEEDED"
+                },
+                {
+                    "text": "Invalid message format",
+                    "aliasName": "ERROR_MSG_INVALID_FORMAT"
+                },
+                {
+                    "text": "Wrong loader version in station \"%any\"",
+                    "aliasName": "ERROR_VERSION",
+                    "format": true
+                },
+                {
+                    "text": "Station offline",
+                    "aliasName": "ERROR_STATION_OFFLINE"
+                },
+                {
+                    "text": "No corresponding entry was found",
+                    "aliasName": "ERROR_NOT_FOUND"
+                },
+                {
+                    "text": "The element already exists, but should be unique",
+                    "aliasName": "ERROR_ALREADY_EXISTS"
+                },
+                {
+                    "text": "Changing or deleting this element is not possible",
+                    "aliasName": "ERROR_NOT_MODIFIABLE"
+                },
+                {
+                    "text": "Invalid alarm id",
+                    "aliasName": "ERROR_INVALID_ALARMID"
+                },
+                {
+                    "text": "Invalid command for a global station",
+                    "aliasName": "ERROR_INVALID_STATION"
+                },
+                {
+                    "text": "Error while parsing the station string",
+                    "aliasName": "ERROR_PARSE_STATION"
+                },
+                {
+                    "text": "Error while saving the station",
+                    "aliasName": "ERROR_SAVE_STATION"
+                },
+                {
+                    "text": "No response from SPS to a request from DataService",
+                    "aliasName": "ERROR_TIMED_OUT"
+                },
+                {
+                    "text": "Role is in use",
+                    "aliasName": "ERROR_ROLE_IN_USE"
+                },
+                {
+                    "text": "Invalid Access logic reading",
+                    "aliasName": "ERROR_READACCESS_STRING"
+                },
+                {
+                    "text": "Invalid Access logic writing",
+                    "aliasName": "ERROR_WRITEACCESS_STRING"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_user_info",
+            "texts": [
+                {
+                    "text": "You are not logged on",
+                    "aliasName": "loggedOut"
+                },
+                {
+                    "text": "You are logged on",
+                    "aliasName": "loggedOn"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_listview_ag",
+            "texts": [
+                {
+                    "text": "(Select All)",
+                    "aliasName": "selectAll"
+                },
+                {
+                    "text": "(Select All Search Results)",
+                    "aliasName": "selectAllSearchResults"
+                },
+                {
+                    "text": "Search...",
+                    "aliasName": "searchOoo"
+                },
+                {
+                    "text": "(Blanks)",
+                    "aliasName": "blanks"
+                },
+                {
+                    "text": "No matches",
+                    "aliasName": "noMatches"
+                },
+                {
+                    "text": "Filter...",
+                    "aliasName": "filterOoo"
+                },
+                {
+                    "text": "Equals",
+                    "aliasName": "equals"
+                },
+                {
+                    "text": "Not equal",
+                    "aliasName": "notEqual"
+                },
+                {
+                    "text": "Choose One",
+                    "aliasName": "empty"
+                },
+                {
+                    "text": "Less than",
+                    "aliasName": "lessThan"
+                },
+                {
+                    "text": "Greater than",
+                    "aliasName": "greaterThan"
+                },
+                {
+                    "text": "Less than or equal",
+                    "aliasName": "lessThanOrEqual"
+                },
+                {
+                    "text": "Greater than or equal",
+                    "aliasName": "greaterThanOrEqual"
+                },
+                {
+                    "text": "In range",
+                    "aliasName": "inRange"
+                },
+                {
+                    "text": "from",
+                    "aliasName": "inRangeStart"
+                },
+                {
+                    "text": "to",
+                    "aliasName": "inRangeEnd"
+                },
+                {
+                    "text": "Contains",
+                    "aliasName": "contains"
+                },
+                {
+                    "text": "Not contains",
+                    "aliasName": "notContains"
+                },
+                {
+                    "text": "Starts with",
+                    "aliasName": "startsWith"
+                },
+                {
+                    "text": "Ends with",
+                    "aliasName": "endsWith"
+                },
+                {
+                    "text": "yyyy-mm-dd",
+                    "aliasName": "dateFormatOoo"
+                },
+                {
+                    "text": "AND",
+                    "aliasName": "andCondition"
+                },
+                {
+                    "text": "OR",
+                    "aliasName": "orCondition"
+                },
+                {
+                    "text": "Apply",
+                    "aliasName": "applyFilter"
+                },
+                {
+                    "text": "Reset",
+                    "aliasName": "resetFilter"
+                },
+                {
+                    "text": "Clear",
+                    "aliasName": "clearFilter"
+                },
+                {
+                    "text": "Cancel",
+                    "aliasName": "cancelFilter"
+                },
+                {
+                    "text": "Text Filter",
+                    "aliasName": "textFilter"
+                },
+                {
+                    "text": "Number Filter",
+                    "aliasName": "numberFilter"
+                },
+                {
+                    "text": "Date Filter",
+                    "aliasName": "dateFilter"
+                },
+                {
+                    "text": "Set Filter",
+                    "aliasName": "setFilter"
+                },
+                {
+                    "text": "Columns",
+                    "aliasName": "columns"
+                },
+                {
+                    "text": "Filters",
+                    "aliasName": "filters"
+                },
+                {
+                    "text": "Pivot Mode",
+                    "aliasName": "pivotMode"
+                },
+                {
+                    "text": "Row Groups",
+                    "aliasName": "groups"
+                },
+                {
+                    "text": "Drag here to set row groups",
+                    "aliasName": "rowGroupColumnsEmptyMessage"
+                },
+                {
+                    "text": "Values",
+                    "aliasName": "values"
+                },
+                {
+                    "text": "Drag here to aggregate",
+                    "aliasName": "valueColumnsEmptyMessage"
+                },
+                {
+                    "text": "Column Labels",
+                    "aliasName": "pivots"
+                },
+                {
+                    "text": "Drag here to set column labels",
+                    "aliasName": "pivotColumnsEmptyMessage"
+                },
+                {
+                    "text": "Group",
+                    "aliasName": "group"
+                },
+                {
+                    "text": "Loading...",
+                    "aliasName": "loadingOoo"
+                },
+                {
+                    "text": "No Rows To Show",
+                    "aliasName": "noRowsToShow"
+                },
+                {
+                    "text": "Enabled",
+                    "aliasName": "enabled"
+                },
+                {
+                    "text": "Pin Column",
+                    "aliasName": "pinColumn"
+                },
+                {
+                    "text": "Pin Left",
+                    "aliasName": "pinLeft"
+                },
+                {
+                    "text": "Pin Right",
+                    "aliasName": "pinRight"
+                },
+                {
+                    "text": "No Pin",
+                    "aliasName": "noPin"
+                },
+                {
+                    "text": "Value Aggregation",
+                    "aliasName": "valueAggregation"
+                },
+                {
+                    "text": "Autosize This Column",
+                    "aliasName": "autosizeThiscolumn"
+                },
+                {
+                    "text": "Autosize All Columns",
+                    "aliasName": "autosizeAllColumns"
+                },
+                {
+                    "text": "Group by",
+                    "aliasName": "groupBy"
+                },
+                {
+                    "text": "Un-Group by",
+                    "aliasName": "ungroupBy"
+                },
+                {
+                    "text": "Reset Columns",
+                    "aliasName": "resetColumns"
+                },
+                {
+                    "text": "Expand All",
+                    "aliasName": "expandAll"
+                },
+                {
+                    "text": "Close All",
+                    "aliasName": "collapseAll"
+                },
+                {
+                    "text": "Copy",
+                    "aliasName": "copy"
+                },
+                {
+                    "text": "Ctrl+C",
+                    "aliasName": "ctrlC"
+                },
+                {
+                    "text": "Copy With Headers",
+                    "aliasName": "copyWithHeaders"
+                },
+                {
+                    "text": "Paste",
+                    "aliasName": "paste"
+                },
+                {
+                    "text": "Ctrl+V",
+                    "aliasName": "ctrlV"
+                },
+                {
+                    "text": "Export",
+                    "aliasName": "export"
+                },
+                {
+                    "text": "CSV Export",
+                    "aliasName": "csvExport"
+                },
+                {
+                    "text": "Excel Export (.xlsx)",
+                    "aliasName": "excelExport"
+                },
+                {
+                    "text": "Excel Export (.xml)",
+                    "aliasName": "excelXmlExport"
+                },
+                {
+                    "text": "Sum",
+                    "aliasName": "sum"
+                },
+                {
+                    "text": "Min",
+                    "aliasName": "min"
+                },
+                {
+                    "text": "Max",
+                    "aliasName": "max"
+                },
+                {
+                    "text": "None",
+                    "aliasName": "none"
+                },
+                {
+                    "text": "Count",
+                    "aliasName": "count"
+                },
+                {
+                    "text": "Average",
+                    "aliasName": "avg"
+                },
+                {
+                    "text": "Filtered",
+                    "aliasName": "filteredRows"
+                },
+                {
+                    "text": "Selected",
+                    "aliasName": "selectedRows"
+                },
+                {
+                    "text": "Total Rows",
+                    "aliasName": "totalRows"
+                },
+                {
+                    "text": "Rows",
+                    "aliasName": "totalAndFilteredRows"
+                },
+                {
+                    "text": "More",
+                    "aliasName": "more"
+                },
+                {
+                    "text": "to",
+                    "aliasName": "to"
+                },
+                {
+                    "text": "of",
+                    "aliasName": "of"
+                },
+                {
+                    "text": "Page",
+                    "aliasName": "page"
+                },
+                {
+                    "text": "Next Page",
+                    "aliasName": "nextPage"
+                },
+                {
+                    "text": "Last Page",
+                    "aliasName": "lastPage"
+                },
+                {
+                    "text": "First Page",
+                    "aliasName": "firstPage"
+                },
+                {
+                    "text": "Previous Page",
+                    "aliasName": "previousPage"
+                },
+                {
+                    "text": "Pivot Chart & Pivot Mode",
+                    "aliasName": "pivotChartAndPivotMode"
+                },
+                {
+                    "text": "Pivot Chart",
+                    "aliasName": "pivotChart"
+                },
+                {
+                    "text": "Chart Range",
+                    "aliasName": "chartRange"
+                },
+                {
+                    "text": "Column",
+                    "aliasName": "columnChart"
+                },
+                {
+                    "text": "Grouped",
+                    "aliasName": "groupedColumn"
+                },
+                {
+                    "text": "Stacked",
+                    "aliasName": "stackedColumn"
+                },
+                {
+                    "text": "100% Stacked",
+                    "aliasName": "normalizedColumn"
+                },
+                {
+                    "text": "Bar",
+                    "aliasName": "barChart"
+                },
+                {
+                    "text": "Grouped",
+                    "aliasName": "groupedBar"
+                },
+                {
+                    "text": "Stacked",
+                    "aliasName": "stackedBar"
+                },
+                {
+                    "text": "100% Stacked",
+                    "aliasName": "normalizedBar"
+                },
+                {
+                    "text": "Pie",
+                    "aliasName": "pieChart"
+                },
+                {
+                    "text": "Pie",
+                    "aliasName": "pie"
+                },
+                {
+                    "text": "Doughnut",
+                    "aliasName": "doughnut"
+                },
+                {
+                    "text": "Line",
+                    "aliasName": "line"
+                },
+                {
+                    "text": "X Y (Scatter)",
+                    "aliasName": "xyChart"
+                },
+                {
+                    "text": "Scatter",
+                    "aliasName": "scatter"
+                },
+                {
+                    "text": "Bubble",
+                    "aliasName": "bubble"
+                },
+                {
+                    "text": "Area",
+                    "aliasName": "areaChart"
+                },
+                {
+                    "text": "Area",
+                    "aliasName": "area"
+                },
+                {
+                    "text": "Stacked",
+                    "aliasName": "stackedArea"
+                },
+                {
+                    "text": "100% Stacked",
+                    "aliasName": "normalizedArea"
+                },
+                {
+                    "text": "Histogram",
+                    "aliasName": "histogramChart"
+                },
+                {
+                    "text": "Pivot Chart",
+                    "aliasName": "pivotChartTitle"
+                },
+                {
+                    "text": "Range Chart",
+                    "aliasName": "rangeChartTitle"
+                },
+                {
+                    "text": "Settings",
+                    "aliasName": "settings"
+                },
+                {
+                    "text": "Data",
+                    "aliasName": "data"
+                },
+                {
+                    "text": "Format",
+                    "aliasName": "format"
+                },
+                {
+                    "text": "Categories",
+                    "aliasName": "categories"
+                },
+                {
+                    "text": "(None)",
+                    "aliasName": "defaultCategory"
+                },
+                {
+                    "text": "Series",
+                    "aliasName": "series"
+                },
+                {
+                    "text": "X Y Values",
+                    "aliasName": "xyValues"
+                },
+                {
+                    "text": "Paired Mode",
+                    "aliasName": "paired"
+                },
+                {
+                    "text": "Axis",
+                    "aliasName": "axis"
+                },
+                {
+                    "text": "Navigator",
+                    "aliasName": "navigator"
+                },
+                {
+                    "text": "Color",
+                    "aliasName": "color"
+                },
+                {
+                    "text": "Thickness",
+                    "aliasName": "thickness"
+                },
+                {
+                    "text": "X Type",
+                    "aliasName": "xType"
+                },
+                {
+                    "text": "Automatic",
+                    "aliasName": "automatic"
+                },
+                {
+                    "text": "Category",
+                    "aliasName": "category"
+                },
+                {
+                    "text": "Number",
+                    "aliasName": "number"
+                },
+                {
+                    "text": "Time",
+                    "aliasName": "time"
+                },
+                {
+                    "text": "X Rotation",
+                    "aliasName": "xRotation"
+                },
+                {
+                    "text": "Y Rotation",
+                    "aliasName": "yRotation"
+                },
+                {
+                    "text": "Ticks",
+                    "aliasName": "ticks"
+                },
+                {
+                    "text": "Width",
+                    "aliasName": "width"
+                },
+                {
+                    "text": "Height",
+                    "aliasName": "height"
+                },
+                {
+                    "text": "Length",
+                    "aliasName": "length"
+                },
+                {
+                    "text": "Padding",
+                    "aliasName": "padding"
+                },
+                {
+                    "text": "Spacing",
+                    "aliasName": "spacing"
+                },
+                {
+                    "text": "Chart",
+                    "aliasName": "chart"
+                },
+                {
+                    "text": "Title",
+                    "aliasName": "title"
+                },
+                {
+                    "text": "Chart title - double click to edit",
+                    "aliasName": "titlePlaceholder"
+                },
+                {
+                    "text": "Background",
+                    "aliasName": "background"
+                },
+                {
+                    "text": "Font",
+                    "aliasName": "font"
+                },
+                {
+                    "text": "Top",
+                    "aliasName": "top"
+                },
+                {
+                    "text": "Right",
+                    "aliasName": "right"
+                },
+                {
+                    "text": "Bottom",
+                    "aliasName": "bottom"
+                },
+                {
+                    "text": "Left",
+                    "aliasName": "left"
+                },
+                {
+                    "text": "Labels",
+                    "aliasName": "labels"
+                },
+                {
+                    "text": "Size",
+                    "aliasName": "size"
+                },
+                {
+                    "text": "Minimum Size",
+                    "aliasName": "minSize"
+                },
+                {
+                    "text": "Maximum Size",
+                    "aliasName": "maxSize"
+                },
+                {
+                    "text": "Legend",
+                    "aliasName": "legend"
+                },
+                {
+                    "text": "Position",
+                    "aliasName": "position"
+                },
+                {
+                    "text": "Marker Size",
+                    "aliasName": "markerSize"
+                },
+                {
+                    "text": "Marker Stroke",
+                    "aliasName": "markerStroke"
+                },
+                {
+                    "text": "Marker Padding",
+                    "aliasName": "markerPadding"
+                },
+                {
+                    "text": "Item Spacing",
+                    "aliasName": "itemSpacing"
+                },
+                {
+                    "text": "Item Padding X",
+                    "aliasName": "itemPaddingX"
+                },
+                {
+                    "text": "Item Padding Y",
+                    "aliasName": "itemPaddingY"
+                },
+                {
+                    "text": "Horizontal Spacing",
+                    "aliasName": "layoutHorizontalSpacing"
+                },
+                {
+                    "text": "Vertical Spacing",
+                    "aliasName": "layoutVerticalSpacing"
+                },
+                {
+                    "text": "Stroke Width",
+                    "aliasName": "strokeWidth"
+                },
+                {
+                    "text": "Offset",
+                    "aliasName": "offset"
+                },
+                {
+                    "text": "Offsets",
+                    "aliasName": "offsets"
+                },
+                {
+                    "text": "Tooltips",
+                    "aliasName": "tooltips"
+                },
+                {
+                    "text": "Callout",
+                    "aliasName": "callout"
+                },
+                {
+                    "text": "Markers",
+                    "aliasName": "markers"
+                },
+                {
+                    "text": "Shadow",
+                    "aliasName": "shadow"
+                },
+                {
+                    "text": "Blur",
+                    "aliasName": "blur"
+                },
+                {
+                    "text": "X Offset",
+                    "aliasName": "xOffset"
+                },
+                {
+                    "text": "Y Offset",
+                    "aliasName": "yOffset"
+                },
+                {
+                    "text": "Line Width",
+                    "aliasName": "lineWidth"
+                },
+                {
+                    "text": "Normal",
+                    "aliasName": "normal"
+                },
+                {
+                    "text": "Bold",
+                    "aliasName": "bold"
+                },
+                {
+                    "text": "Italic",
+                    "aliasName": "italic"
+                },
+                {
+                    "text": "Bold Italic",
+                    "aliasName": "boldItalic"
+                },
+                {
+                    "text": "Predefined",
+                    "aliasName": "predefined"
+                },
+                {
+                    "text": "Fill Opacity",
+                    "aliasName": "fillOpacity"
+                },
+                {
+                    "text": "Line Opacity",
+                    "aliasName": "strokeOpacity"
+                },
+                {
+                    "text": "Bin Count",
+                    "aliasName": "histogramBinCount"
+                },
+                {
+                    "text": "Column",
+                    "aliasName": "columnGroup"
+                },
+                {
+                    "text": "Bar",
+                    "aliasName": "barGroup"
+                },
+                {
+                    "text": "Pie",
+                    "aliasName": "pieGroup"
+                },
+                {
+                    "text": "Line",
+                    "aliasName": "lineGroup"
+                },
+                {
+                    "text": "X Y (Scatter)",
+                    "aliasName": "scatterGroup"
+                },
+                {
+                    "text": "Area",
+                    "aliasName": "areaGroup"
+                },
+                {
+                    "text": "Histogram",
+                    "aliasName": "histogramGroup"
+                },
+                {
+                    "text": "Grouped",
+                    "aliasName": "groupedColumnTooltip"
+                },
+                {
+                    "text": "Stacked",
+                    "aliasName": "stackedColumnTooltip"
+                },
+                {
+                    "text": "100% Stacked",
+                    "aliasName": "normalizedColumnTooltip"
+                },
+                {
+                    "text": "Grouped",
+                    "aliasName": "groupedBarTooltip"
+                },
+                {
+                    "text": "Stacked",
+                    "aliasName": "stackedBarTooltip"
+                },
+                {
+                    "text": "100% Stacked",
+                    "aliasName": "normalizedBarTooltip"
+                },
+                {
+                    "text": "Pie",
+                    "aliasName": "pieTooltip"
+                },
+                {
+                    "text": "Doughnut",
+                    "aliasName": "doughnutTooltip"
+                },
+                {
+                    "text": "Line",
+                    "aliasName": "lineTooltip"
+                },
+                {
+                    "text": "Area",
+                    "aliasName": "groupedAreaTooltip"
+                },
+                {
+                    "text": "Stacked",
+                    "aliasName": "stackedAreaTooltip"
+                },
+                {
+                    "text": "100% Stacked",
+                    "aliasName": "normalizedAreaTooltip"
+                },
+                {
+                    "text": "Scatter",
+                    "aliasName": "scatterTooltip"
+                },
+                {
+                    "text": "Bubble",
+                    "aliasName": "bubbleTooltip"
+                },
+                {
+                    "text": "Histogram",
+                    "aliasName": "histogramTooltip"
+                },
+                {
+                    "text": "No data available to be charted.",
+                    "aliasName": "noDataToChart"
+                },
+                {
+                    "text": "Pivot Chart requires Pivot Mode enabled.",
+                    "aliasName": "pivotChartRequiresPivotMode"
+                },
+                {
+                    "text": "Filter for",
+                    "aliasName": "filterFor"
+                },
+                {
+                    "text": "Enter a filter value",
+                    "aliasName": "filterPlaceholder"
+                },
+                {
+                    "text": "Enter a filter value to filter rows",
+                    "aliasName": "filterWindowTitle"
+                }
+            ]
+        },
+        {
+            "name": "controlTexts_sig_control_paginator",
+            "texts": [
+                {
+                    "text": "of",
+                    "aliasName": "textcounterof"
+                },
+                {
+                    "text": "Jump to row",
+                    "aliasName": "caption"
+                }
+            ]
+        }
+    ]
+}

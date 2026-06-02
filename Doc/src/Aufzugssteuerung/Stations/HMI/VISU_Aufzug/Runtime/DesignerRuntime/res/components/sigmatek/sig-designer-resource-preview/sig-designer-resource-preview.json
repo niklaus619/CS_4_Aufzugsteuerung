@@ -1,0 +1,60 @@
+{
+    "name": "sig-designer-resource-preview",
+    "shortName": {
+        "en": "Resource Preview",
+        "de": "Resource Preview"
+    },
+    "controlType": {
+        "en": "Designer",
+        "de": "Designer"
+    },
+    "version": "01.01.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a resource preview as a polymer custom element.",
+        "de": "Implements a resource preview as a polymer custom element."
+    },
+    "main": [
+        "sig-designer-resource-preview.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-designer-resource-preview.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0",
+        "sig-designer-resource-detail": "components/sigmatek/sig-designer-resource-detail#^1.1.0"
+    },
+    "defaultDimensions": {
+        "width": "50px",
+        "height": "50px"
+    },
+    "resources": [
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-designer-resource-detail"
+        }
+    ],
+    "toolbox": false,
+    "slotted": false,
+    "styleClassEditor": false,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [],
+    "properties": []
+}

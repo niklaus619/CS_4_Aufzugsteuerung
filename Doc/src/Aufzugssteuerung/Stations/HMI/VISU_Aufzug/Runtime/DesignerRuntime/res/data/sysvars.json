@@ -1,0 +1,65 @@
+{
+ "version": "2.0.0",
+ "datapoints": [
+  {
+   "id": 4294967292,
+   "type": 4294967290,
+   "name": "LANGUAGE_INDEX",
+   "accId": 1
+  },
+  {
+   "id": 4294967293,
+   "type": 4294967272,
+   "name": "LANGUAGE_CODE",
+   "accId": 2
+  },
+  {
+   "id": 4294967294,
+   "type": 4294967289,
+   "name": "LANGUAGE_ID",
+   "accId": 1
+  },
+  {
+   "id": 4294967291,
+   "type": 4294967294,
+   "name": "ALTERNATIVE_DATE_FORMAT",
+   "accId": 1
+  },
+  {
+   "id": 4294967290,
+   "type": 4294967294,
+   "name": "ALTERNATIVE_TIME_FORMAT",
+   "accId": 1
+  },
+  {
+   "id": 4294967289,
+   "type": 4294967294,
+   "name": "COMMA_AS_DECIMAL_SIGN",
+   "accId": 1
+  },
+  {
+   "id": 4294967287,
+   "type": 4294967289,
+   "name": "DOWNLOAD_PROJECT_STATUS",
+   "accId": 1
+  },
+  {
+   "id": 4294967288,
+   "type": 4294967289,
+   "name": "DOWNLOAD_RT_STATUS",
+   "accId": 1
+  },
+  {
+   "id": 4294967286,
+   "type": 4294967289,
+   "name": "CLIENT_ID",
+   "accId": 1
+  },
+  {
+   "id": 4294967285,
+   "type": 4294967294,
+   "name": "IS_LOCAL_CLIENT",
+   "accId": 1
+  }
+ ]
+}

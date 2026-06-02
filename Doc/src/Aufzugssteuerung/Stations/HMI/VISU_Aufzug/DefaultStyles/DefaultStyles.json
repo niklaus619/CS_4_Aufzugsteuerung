@@ -1,0 +1,237 @@
+{
+	"type": "ComponentStyles",
+	"version": "0.0.96",
+	"componentStyles": [
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "8dc4f97b-d35f-4824-8f26-01fd35d1dfef",
+			"componentId": "sig-window-container",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "70d812df-c866-45a8-a6ca-b196947f94fd",
+			"componentId": "sig-window-container-keyboard",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "1474c174-9923-466b-ba69-81349f354d7c",
+			"componentId": "sig-composite-container",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "9080455b-72f9-46c3-b900-654ee867094c",
+			"componentId": "sig-control-button",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "d4b1bee2-49db-4fe5-b8e4-02642eb7e96a",
+			"componentId": "sig-control-datapoint-text",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "786f3efa-ff4a-4fc7-876a-5847060d2a99",
+			"componentId": "sig-control-image",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "9ca0ff31-7b65-47c4-976c-73db5ba2036e",
+			"componentId": "sig-control-input",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "83f476e4-bbaa-4212-ada1-978bd45c7aaf",
+			"componentId": "sig-control-led",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "31df6343-4818-4a04-b5c5-b1e98672344c",
+			"componentId": "sig-control-mediacontainer",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "f67857d3-78e3-4c42-a012-cf24480b39b2",
+			"componentId": "sig-control-menu",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "f602a30d-6773-49e4-b722-813ba67a53c1",
+			"componentId": "sig-control-menu-input",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "4a502098-9166-4149-a429-5d005177048c",
+			"componentId": "sig-control-output",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "30953455-5efb-4023-bc58-33a6af5a1ca2",
+			"componentId": "sig-control-rectangle",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "103dab71-77d0-439f-9943-2aefc3420684",
+			"componentId": "sig-control-scrollbar",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isDefaultStyleOnly": true,
+			"styleClassPrefix": "scrollbar-",
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "c27ecff9-74d3-47c9-bdd1-480c704fe3ce",
+			"componentId": "sig-control-splash-screen",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isDefaultStyleOnly": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "c393cc60-4cdc-4f6c-95b0-f801e7007259",
+			"componentId": "sig-control-text",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "ec0587a2-972e-40e9-a9d4-267923c3118a",
+			"componentId": "sig-control-title",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "950916ef-f801-48dd-a81d-5da0027fc533",
+			"componentId": "sig-control-video",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "5d7068a2-cec6-4196-978c-013e2e724d36",
+			"componentId": "sig-keyboard",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+    "version": "1.0.0",
+    "texts": [
+        {
+            "text": "min: ",
+            "aliasName": "min"
+        },
+        {
+            "text": "max: ",
+            "aliasName": "max"
+        }
+    ]
+}

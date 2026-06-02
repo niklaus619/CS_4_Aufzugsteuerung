@@ -1,0 +1,3048 @@
+{
+    "name": "sig-window-container",
+    "shortName": {
+        "en": "WindowContainer",
+        "de": "WindowContainer"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "01.03.003",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a base window container for internal use in the LVD.",
+        "de": "Implements a base window container for internal use in the LVD."
+    },
+    "main": [
+        "sig-window-container.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-window-container.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-window-container-css.js"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-utils-jspanel"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "800px",
+        "height": "600px"
+    },
+    "toolbox": false,
+    "styleClassEditor": true,
+    "slotted": false,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "designer"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "selectorSettings": {
+        "selectorDefaultStyle": ".jsPanel-theme-default"
+    },
+    "properties": [
+        {
+            "name": "rotation",
+            "userLevel": -1
+        },
+        {
+            "name": "isdraggable",
+            "userLevel": -1
+        },
+        {
+            "name": "isdroppable",
+            "userLevel": -1
+        },
+        {
+            "name": "dragonlongpress",
+            "userLevel": -1
+        },
+        {
+            "name": "longpressdelay",
+            "userLevel": -1
+        },
+        {
+            "name": "--theme-sig-element-dragged-opacity",
+            "userLevel": -1
+        },
+        {
+            "name": "state",
+            "userLevel": -1
+        },
+        {
+            "name": "--theme-sig-element-active-opacity",
+            "userLevel": -1
+        },
+        {
+            "name": "--theme-sig-element-inactive-opacity",
+            "userLevel": -1
+        },
+        {
+            "name": "selGr",
+            "userLevel": -1
+        },
+        {
+            "valueSourceTypes": [
+                "text",
+                "textScheme"
+            ],
+            "propertyType": "windowproperty",
+            "name": "headerTitle",
+            "sortIndex": 10000100,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "",
+            "shortName": {
+                "en": "Title",
+                "de": "Title"
+            },
+            "description": {
+                "en": "The title of the window.",
+                "de": "The title of the window."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "windowproperty",
+            "name": "headerLogo",
+            "sortIndex": 10000150,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Logo",
+                "de": "Logo"
+            },
+            "description": {
+                "en": "The logo of the header.",
+                "de": "The logo of the header."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "windowproperty",
+            "name": "setStatus",
+            "sortIndex": 10100100,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "normal",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "normal",
+                        "de": "normal"
+                    },
+                    "value": "normalized"
+                },
+                {
+                    "shortName": {
+                        "en": "minimized",
+                        "de": "minimized"
+                    },
+                    "value": "minimized"
+                },
+                {
+                    "shortName": {
+                        "en": "maximized",
+                        "de": "maximized"
+                    },
+                    "value": "maximized"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Default state",
+                "de": "Default state"
+            },
+            "description": {
+                "en": "Defines the default state of the window.",
+                "de": "Defines the default state of the window."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "name": "isModal",
+            "sortIndex": 10100150,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": false,
+            "shortName": {
+                "en": "Modal",
+                "de": "Modal"
+            },
+            "description": {
+                "en": "If true the window is opened as a modal dialog.",
+                "de": "If true the window is opened as a modal dialog."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "name": "closeOnBackdropClick",
+            "sortIndex": 10100200,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": false,
+            "shortName": {
+                "en": "Close modal on background click",
+                "de": "Close modal on background click"
+            },
+            "description": {
+                "en": "Closes a modal window by click on its background.",
+                "de": "Closes a modal window by click on its background."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-modal-background-color",
+            "sortIndex": 10100250,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Modal background color",
+                "de": "Modal background color"
+            },
+            "description": {
+                "en": "The background color of the modal-panel.",
+                "de": "The background color of the modal-panel."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-modal-opacity",
+            "sortIndex": 10100300,
+            "dataType": "number",
+            "lockStyleCopy": true,
+            "validationRule": "/^(0(\\.\\d+)?|1(\\.0+)?)$/",
+            "default": 1,
+            "shortName": {
+                "en": "Modal background opacity",
+                "de": "Modal background opacity"
+            },
+            "description": {
+                "en": "The overall opacity of the modal background (0.0 to 1.0). This setting overrides the alpha value of the color.",
+                "de": "The overall opacity of the modal background (0.0 to 1.0). This setting overrides the alpha value of the color."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowProperty",
+            "name": "saveStats",
+            "sortIndex": 10100350,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": true,
+            "shortName": {
+                "en": "Save stats",
+                "de": "Save stats"
+            },
+            "description": {
+                "en": "Saves the windows stats (position, size) and applies it on the next open.",
+                "de": "Saves the windows stats (position, size) and applies it on the next open."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "number",
+            "lockStyleCopy": true,
+            "name": "autoclose",
+            "sortIndex": 10100400,
+            "shortName": {
+                "en": "Autoclose",
+                "de": "Autoclose"
+            },
+            "description": {
+                "en": "Closes the window after the given amount of milliseconds.",
+                "de": "Closes the window after the given amount of milliseconds."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "name": "closeOnEscape",
+            "sortIndex": 10100450,
+            "default": false,
+            "shortName": {
+                "en": "Close on esc",
+                "de": "Close on esc"
+            },
+            "description": {
+                "en": "Closes the window if the escape key is pressed.",
+                "de": "Closes the window if the escape key is pressed."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "name": "hideOnClose",
+            "sortIndex": 10000800,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": true,
+            "shortName": {
+                "en": "Cache",
+                "de": "Cache"
+            },
+            "description": {
+                "en": "If true, the window will only be hidden and not removed from the DOM if it is closed.",
+                "de": "If true, the window will only be hidden and not removed from the DOM if it is closed."
+            },
+            "group": {
+                "en": "General",
+                "de": "General"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "name": "reopenOnReload",
+            "sortIndex": 10100545,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": true,
+            "shortName": {
+                "en": "Reopen on reload",
+                "de": "Reopen on reload"
+            },
+            "description": {
+                "en": "If true, the window will be opened after a reload if it was open before the reload.",
+                "de": "If true, the window will be opened after a reload if it was open before the reload."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "name": "overloadOnReopen",
+            "sortIndex": 10100550,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": true,
+            "shortName": {
+                "en": "Overload on reopen",
+                "de": "Overload on reopen"
+            },
+            "description": {
+                "en": "Overloads the opened window if open is called again.",
+                "de": "Overloads the opened window if open is called again."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "name": "centerWindow",
+            "sortIndex": 10100560,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": false,
+            "shortName": {
+                "en": "Center",
+                "de": "Center"
+            },
+            "description": {
+                "en": "Center window.",
+                "de": "Center window."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "name": "dragit-enable",
+            "sortIndex": 10100600,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": true,
+            "shortName": {
+                "en": "Dragable",
+                "de": "Dragable"
+            },
+            "description": {
+                "en": "If true the window can be dragged.",
+                "de": "If true the window can be dragged."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "name": "dragit-axis",
+            "sortIndex": 10100650,
+            "default": "",
+            "shortName": {
+                "en": "Drag direction",
+                "de": "Drag direction"
+            },
+            "description": {
+                "en": "Defines the dragability to x or the y axis.",
+                "de": "Defines the dragability to x or the y axis."
+            },
+            "options": [
+                {
+                    "shortName": {
+                        "en": "all",
+                        "de": "all"
+                    },
+                    "value": ""
+                },
+                {
+                    "shortName": {
+                        "en": "horizontal",
+                        "de": "horizontal"
+                    },
+                    "value": "x"
+                },
+                {
+                    "shortName": {
+                        "en": "vertical",
+                        "de": "vertical"
+                    },
+                    "value": "y"
+                }
+            ],
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "dragit-opacity",
+            "sortIndex": 10100700,
+            "dataType": "number",
+            "default": 0.8,
+            "shortName": {
+                "en": "Drag opacity",
+                "de": "Drag opacity"
+            },
+            "description": {
+                "en": "The opacity if the window is dragged (0.0 - 1.0).",
+                "de": "The opacity if the window is dragged (0.0 - 1.0)."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "resizeit-enable",
+            "sortIndex": 10100750,
+            "dataType": "boolean",
+            "default": true,
+            "shortName": {
+                "en": "Resizeable",
+                "de": "Resizeable"
+            },
+            "description": {
+                "en": "If true the window can be resized with the handles.",
+                "de": "If true the window can be resized with the handles."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "resizeit-minWidth",
+            "sortIndex": 10100800,
+            "dataType": "number",
+            "default": 128,
+            "units": "px",
+            "shortName": {
+                "en": "Min width",
+                "de": "Min width"
+            },
+            "description": {
+                "en": "The minimum width of the window.",
+                "de": "The minimum width of the window."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "resizeit-minHeight",
+            "sortIndex": 10100850,
+            "dataType": "number",
+            "default": 38,
+            "units": "px",
+            "shortName": {
+                "en": "Min height",
+                "de": "Min height"
+            },
+            "description": {
+                "en": "The minimum height of the window.",
+                "de": "The minimum height of the window."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "resizeit-maxWidth",
+            "sortIndex": 10100900,
+            "dataType": "number",
+            "units": "px",
+            "shortName": {
+                "en": "Max width",
+                "de": "Max width"
+            },
+            "description": {
+                "en": "The maximal width of the window.",
+                "de": "The maximal width of the window."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "resizeit-maxHeight",
+            "sortIndex": 10100950,
+            "dataType": "number",
+            "units": "px",
+            "shortName": {
+                "en": "Max height",
+                "de": "Max height"
+            },
+            "description": {
+                "en": "The maximal height of the window.",
+                "de": "The maximal height of the window."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "hasMinButton",
+            "sortIndex": 10200100,
+            "dataType": "boolean",
+            "default": true,
+            "shortName": {
+                "en": "Show minimize",
+                "de": "Show minimize"
+            },
+            "description": {
+                "en": "If true the title bar has a minimize button. This setting is ignored if the window is modal.",
+                "de": "If true the title bar has a minimize button. This setting is ignored if the window is modal."
+            },
+            "group": {
+                "en": "Title settings",
+                "de": "Title settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "hasMaxButton",
+            "sortIndex": 10200150,
+            "dataType": "boolean",
+            "default": true,
+            "shortName": {
+                "en": "Show maximize",
+                "de": "Show maximize"
+            },
+            "description": {
+                "en": "If true the title bar has a maximize button.",
+                "de": "If true the title bar has a maximize button."
+            },
+            "group": {
+                "en": "Title settings",
+                "de": "Title settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "hasCloseButton",
+            "sortIndex": 10200200,
+            "dataType": "boolean",
+            "default": true,
+            "shortName": {
+                "en": "Show close",
+                "de": "Show close"
+            },
+            "description": {
+                "en": "If true the title bar has a close button.",
+                "de": "If true the title bar has a close button."
+            },
+            "group": {
+                "en": "Title settings",
+                "de": "Title settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "hasSmallifyButton",
+            "sortIndex": 10200250,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Show toggle content",
+                "de": "Show toggle content"
+            },
+            "description": {
+                "en": "If true the title bar has a smallify button.",
+                "de": "If true the title bar has a smallify button."
+            },
+            "group": {
+                "en": "Title settings",
+                "de": "Title settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "name": "rtl",
+            "sortIndex": 10200300,
+            "default": false,
+            "shortName": {
+                "en": "Right to left",
+                "de": "Right to left"
+            },
+            "description": {
+                "en": "The option makes the title bar of the window 'right to left' (The buttons appear on the left side).",
+                "de": "The option makes the title bar of the window 'right to left' (The buttons appear on the left side)."
+            },
+            "group": {
+                "en": "Title settings",
+                "de": "Title settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "windowproperty",
+            "lockStyleCopy": true,
+            "name": "header",
+            "sortIndex": 10200350,
+            "default": true,
+            "shortName": {
+                "en": "Visibility",
+                "de": "Visibility"
+            },
+            "description": {
+                "en": "The visibility of the title bar.",
+                "de": "The visibility of the title bar."
+            },
+            "options": [
+                {
+                    "shortName": {
+                        "en": "visible",
+                        "de": "visible"
+                    },
+                    "value": true
+                },
+                {
+                    "shortName": {
+                        "en": "invisible",
+                        "de": "invisible"
+                    },
+                    "value": false
+                },
+                {
+                    "shortName": {
+                        "en": "visible on hover",
+                        "de": "visible on hover"
+                    },
+                    "value": "auto-show-hide"
+                }
+            ],
+            "group": {
+                "en": "Title settings",
+                "de": "Title settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-hdr-height",
+            "sortIndex": 10400100,
+            "dataType": "string",
+            "units": "px",
+            "default": "36px",
+            "shortName": {
+                "en": "Height",
+                "de": "Height"
+            },
+            "description": {
+                "en": "The minimum height of the title bar. If the height of the header should be fixed, change the 'Height Behavior' property to 'Fixed Height'. Warning: If the height is set using the min-height and the content of the header is larger than the min-height, scrollbars might appear as the panel does not account for the larger header size.",
+                "de": "The minimum height of the title bar. If the height of the header should be fixed, change the 'Height Behavior' property to 'Fixed Height'. Warning: If the height is set using the min-height and the content of the header is larger than the min-height, scrollbars might appear as the panel does not account for the larger header size."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "variable",
+            "dataType": "string",
+            "name": "headerheightbehavior",
+            "sortIndex": 10400125,
+            "default": "minHeight",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "Min height",
+                        "de": "Min height"
+                    },
+                    "value": "minHeight"
+                },
+                {
+                    "shortName": {
+                        "en": "Fixed height",
+                        "de": "Fixed height"
+                    },
+                    "value": "fixedHeight"
+                }
+            ],
+            "shortName": {
+                "en": "Height behavior",
+                "de": "Height behavior"
+            },
+            "description": {
+                "en": "The header's height property behavior.",
+                "de": "The header's height property behavior."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-hdr-text-align",
+            "sortIndex": 10400150,
+            "dataType": "string",
+            "default": "left",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "left"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Text align horizontal",
+                "de": "Text align horizontal"
+            },
+            "description": {
+                "en": "The horizontal alignment of the title text.",
+                "de": "The horizontal alignment of the title text."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-hdr-text-margin-horizontal",
+            "sortIndex": 10400175,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Title margin horizontal",
+                "de": "Title margin horizontal"
+            },
+            "description": {
+                "en": "The horizontal margin of the header title.",
+                "de": "The horizontal margin of the header title."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-hdr-background-color",
+            "sortIndex": 10400200,
+            "dataType": "string",
+            "units": "#,rgba",
+            "editor": "colorpicker",
+            "default": "rgba(174, 200, 26, 1)",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the title bar.",
+                "de": "The background color of the title bar."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-hdr-color",
+            "sortIndex": 10400250,
+            "dataType": "string",
+            "units": "#,rgba",
+            "editor": "colorpicker",
+            "default": "rgba(51, 51, 51, 1)",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "The text color of the title bar.",
+                "de": "The text color of the title bar."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-hdr-border-color",
+            "sortIndex": 10400300,
+            "dataType": "string",
+            "units": "#,rgba",
+            "editor": "colorpicker",
+            "default": "transparent",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the title bar.",
+                "de": "The border color of the title bar."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-hdr-border-width",
+            "sortIndex": 10400350,
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the title bar.",
+                "de": "The border width of the title bar."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-hdr-border-style",
+            "sortIndex": 10400400,
+            "dataType": "string",
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the title bar.",
+                "de": "The border style of the title bar."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-window-panel-hdr-border-radius",
+            "sortIndex": 10400450,
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the title component.",
+                "de": "The border radius of the title component."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-content-background-color",
+            "sortIndex": 10300100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(255, 255, 255, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component.",
+                "de": "The background color of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-border-color",
+            "sortIndex": 10300150,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(128, 128, 128, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the component.",
+                "de": "The border color of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-border-width",
+            "sortIndex": 10300200,
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the component.",
+                "de": "The border width of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-border-style",
+            "sortIndex": 10300250,
+            "dataType": "string",
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the component.",
+                "de": "The border style of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-window-panel-border-radius",
+            "sortIndex": 10300300,
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the component.",
+                "de": "The border radius of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-window-panel-content-border-top-height",
+            "sortIndex": 10300350,
+            "units": "px",
+            "default": "1px",
+            "shortName": {
+                "en": "Separator height",
+                "de": "Separator height"
+            },
+            "description": {
+                "en": "The height of the separator between title and content.",
+                "de": "The height of the separator between title and content."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-content-border-top-color",
+            "sortIndex": 10300360,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(128, 128, 128, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Separator border color",
+                "de": "Separator border color"
+            },
+            "description": {
+                "en": "The border color of the separator between title and content.",
+                "de": "The border color of the separator between title and content."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-content-border-top-style",
+            "sortIndex": 10300370,
+            "dataType": "string",
+            "default": "solid",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Separator border style",
+                "de": "Separator border style"
+            },
+            "description": {
+                "en": "The border style of the separator between title and content.",
+                "de": "The border style of the separator between title and content."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-content-border-top-margin-horizontal",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "sortIndex": 10300380,
+            "shortName": {
+                "en": "Separator horizontal margin",
+                "de": "Separator horizontal margin"
+            },
+            "description": {
+                "en": "The horizontal margin of the separator.",
+                "de": "The horizontal margin of the separator."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-content-border-top-background-color",
+            "sortIndex": 10300390,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Separator background color",
+                "de": "Separator background color"
+            },
+            "description": {
+                "en": "The background color of the separator between title and content.",
+                "de": "The background color of the separator between title and content."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "number",
+            "name": "boxShadow",
+            "sortIndex": 10300400,
+            "default": 3,
+            "options": [
+                {
+                    "shortName": {
+                        "en": "no",
+                        "de": "no"
+                    },
+                    "value": 0
+                },
+                {
+                    "shortName": {
+                        "en": "extrem low",
+                        "de": "extrem low"
+                    },
+                    "value": 1
+                },
+                {
+                    "shortName": {
+                        "en": "low",
+                        "de": "low"
+                    },
+                    "value": 2
+                },
+                {
+                    "shortName": {
+                        "en": "normal",
+                        "de": "normal"
+                    },
+                    "value": 3
+                },
+                {
+                    "shortName": {
+                        "en": "high",
+                        "de": "high"
+                    },
+                    "value": 4
+                },
+                {
+                    "shortName": {
+                        "en": "extrem high",
+                        "de": "extrem high"
+                    },
+                    "value": 5
+                }
+            ],
+            "shortName": {
+                "en": "Box shadow",
+                "de": "Box shadow"
+            },
+            "description": {
+                "en": "The box shadow of the component.",
+                "de": "The box shadow of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-icon-size",
+            "sortIndex": 10500100,
+            "dataType": "string",
+            "units": "px",
+            "default": "20px",
+            "shortName": {
+                "en": "Size",
+                "de": "Size"
+            },
+            "description": {
+                "en": "The size of the title bar buttons.",
+                "de": "The size of the title bar buttons."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "windowproperty",
+            "name": "jsPanelIconClose",
+            "sortIndex": 10500150,
+            "dataType": "string",
+            "units": "url",
+            "default": "res/components/sigmatek/sig-utils-jspanel/themes/icons/close-icon.svg",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Close icon",
+                "de": "Close icon"
+            },
+            "description": {
+                "en": "The close icon of the window.",
+                "de": "The close icon of the window."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "windowproperty",
+            "name": "jsPanelIconMaximize",
+            "sortIndex": 10500200,
+            "dataType": "string",
+            "units": "url",
+            "default": "res/components/sigmatek/sig-utils-jspanel/themes/icons/maximize-icon.svg",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Maximize icon",
+                "de": "Maximize icon"
+            },
+            "description": {
+                "en": "The Maximize icon of the window.",
+                "de": "The Maximize icon of the window."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "windowproperty",
+            "name": "jsPanelIconMinimize",
+            "sortIndex": 10500250,
+            "dataType": "string",
+            "units": "url",
+            "default": "res/components/sigmatek/sig-utils-jspanel/themes/icons/minimize-icon.svg",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Minimize icon",
+                "de": "Minimize icon"
+            },
+            "description": {
+                "en": "The minimize icon of the window.",
+                "de": "The minimize icon of the window."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "windowproperty",
+            "name": "jsPanelIconNormalize",
+            "sortIndex": 10500300,
+            "dataType": "string",
+            "units": "url",
+            "default": "res/components/sigmatek/sig-utils-jspanel/themes/icons/normalize-icon.svg",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Normalize icon",
+                "de": "Normalize icon"
+            },
+            "description": {
+                "en": "The normalize icon of the window.",
+                "de": "The normalize icon of the window."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "windowproperty",
+            "name": "jsPanelIconSmallify",
+            "sortIndex": 10500350,
+            "dataType": "string",
+            "units": "url",
+            "default": "res/components/sigmatek/sig-utils-jspanel/themes/icons/smallify-icon.svg",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Smallify icon",
+                "de": "Smallify icon"
+            },
+            "description": {
+                "en": "The smallify icon of the window.",
+                "de": "The smallify icon of the window."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-icon-padding-vertical",
+            "sortIndex": 10500400,
+            "dataType": "string",
+            "units": "px",
+            "default": "6px",
+            "shortName": {
+                "en": "Padding vertical",
+                "de": "Padding vertical"
+            },
+            "description": {
+                "en": "The vertical padding of the title bar buttons.",
+                "de": "The vertical padding of the title bar buttons."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-icon-padding-horizontal",
+            "sortIndex": 10500450,
+            "dataType": "string",
+            "units": "px",
+            "default": "4px",
+            "shortName": {
+                "en": "Padding horizontal",
+                "de": "Padding horizontal"
+            },
+            "description": {
+                "en": "The horizontal padding of the title bar buttons.",
+                "de": "The horizontal padding of the title bar buttons."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-icon-padding-horizontal-last-child",
+            "sortIndex": 10500500,
+            "dataType": "string",
+            "units": "px",
+            "default": "8px",
+            "shortName": {
+                "en": "Padding horizontal first/last",
+                "de": "Padding horizontal first/last"
+            },
+            "description": {
+                "en": "The horizontal padding of the first/last button, depending on the 'right to left' setting.",
+                "de": "The horizontal padding of the first/last button, depending on the 'right to left' setting."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "event"
+            ],
+            "propertyType": "eventHandler",
+            "lockStyleCopy": true,
+            "name": "open",
+            "sortIndex": 10600100,
+            "shortName": {
+                "en": "Open",
+                "de": "Open"
+            },
+            "description": {
+                "en": "Event which opens the window.",
+                "de": "Event which opens the window."
+            },
+            "group": {
+                "en": "Event actions",
+                "de": "Event actions"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "event"
+            ],
+            "propertyType": "eventHandler",
+            "lockStyleCopy": true,
+            "name": "close",
+            "sortIndex": 10600150,
+            "shortName": {
+                "en": "Close",
+                "de": "Close"
+            },
+            "description": {
+                "en": "Event which closes the window.",
+                "de": "Event which closes the window."
+            },
+            "group": {
+                "en": "Event actions",
+                "de": "Event actions"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelloaded",
+            "sortIndex": 10700100,
+            "shortName": {
+                "en": "On opened",
+                "de": "On opened"
+            },
+            "description": {
+                "en": "Function block called when the window is opened.",
+                "de": "Function block called when the window is opened."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelclosed",
+            "sortIndex": 10700150,
+            "shortName": {
+                "en": "On closed",
+                "de": "On closed"
+            },
+            "description": {
+                "en": "Function block called when the window is closed.",
+                "de": "Function block called when the window is closed."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelbeforeclose",
+            "sortIndex": 10700200,
+            "shortName": {
+                "en": "On before closing",
+                "de": "On before closing"
+            },
+            "description": {
+                "en": "Function block called before the window closes.",
+                "de": "Function block called before the window closes."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelstatuschange",
+            "sortIndex": 10700250,
+            "shortName": {
+                "en": "On state changed",
+                "de": "On state changed"
+            },
+            "description": {
+                "en": "Function block called when the window state changed.",
+                "de": "Function block called when the window state changed."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelfronted",
+            "sortIndex": 10700300,
+            "shortName": {
+                "en": "On show",
+                "de": "On show"
+            },
+            "description": {
+                "en": "Function block called when the window gets shown.",
+                "de": "Function block called when the window gets shown."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspaneldragstart",
+            "sortIndex": 10700350,
+            "shortName": {
+                "en": "On drag start",
+                "de": "On drag start"
+            },
+            "description": {
+                "en": "Function block called before the window is dragged.",
+                "de": "Function block called before the window is dragged."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspaneldrag",
+            "sortIndex": 10700400,
+            "shortName": {
+                "en": "On dragging",
+                "de": "On dragging"
+            },
+            "description": {
+                "en": "Function block called while the window is being dragged.",
+                "de": "Function block called while the window is being dragged."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspaneldragstop",
+            "sortIndex": 10700450,
+            "shortName": {
+                "en": "On drag stop",
+                "de": "On drag stop"
+            },
+            "description": {
+                "en": "Function block called after the window is dragged.",
+                "de": "Function block called after the window is dragged."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelresizestart",
+            "sortIndex": 10700500,
+            "shortName": {
+                "en": "On resize start",
+                "de": "On resize start"
+            },
+            "description": {
+                "en": "Function block called before the window is resized.",
+                "de": "Function block called before the window is resized."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelresize",
+            "sortIndex": 10700550,
+            "shortName": {
+                "en": "On resizing",
+                "de": "On resizing"
+            },
+            "description": {
+                "en": "Function block called while the window is being resized.",
+                "de": "Function block called while the window is being resized."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelresizestop",
+            "sortIndex": 10700600,
+            "shortName": {
+                "en": "On resize stop",
+                "de": "On resize stop"
+            },
+            "description": {
+                "en": "Function block called after the window is resized.",
+                "de": "Function block called after the window is resized."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelbeforemaximize",
+            "sortIndex": 10700650,
+            "shortName": {
+                "en": "On before maximized",
+                "de": "On before maximized"
+            },
+            "description": {
+                "en": "Function block called before the window is maximized.",
+                "de": "Function block called before the window is maximized."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelmaximized",
+            "sortIndex": 10700700,
+            "shortName": {
+                "en": "On maximized",
+                "de": "On maximized"
+            },
+            "description": {
+                "en": "Function block called after the window is maximized.",
+                "de": "Function block called after the window is maximized."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelbeforeminimize",
+            "sortIndex": 10700750,
+            "shortName": {
+                "en": "On before minimized",
+                "de": "On before minimized"
+            },
+            "description": {
+                "en": "Function block called before the window is minimized.",
+                "de": "Function block called before the window is minimized."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelminimized",
+            "sortIndex": 10700800,
+            "shortName": {
+                "en": "On minimized",
+                "de": "On minimized"
+            },
+            "description": {
+                "en": "Function block called after the window is minimized.",
+                "de": "Function block called after the window is minimized."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelbeforenormalize",
+            "sortIndex": 10700850,
+            "shortName": {
+                "en": "On before normalized",
+                "de": "On before normalized"
+            },
+            "description": {
+                "en": "Function block called before the window is normalized.",
+                "de": "Function block called before the window is normalized."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelnormalized",
+            "sortIndex": 10700900,
+            "shortName": {
+                "en": "On normalized",
+                "de": "On normalized"
+            },
+            "description": {
+                "en": "Function block called after the window is normalized.",
+                "de": "Function block called after the window is normalized."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelbeforeunsmallify",
+            "sortIndex": 10700950,
+            "shortName": {
+                "en": "On before show content",
+                "de": "On before show content"
+            },
+            "description": {
+                "en": "Function block called before the window is unsmallified and the content is shown.",
+                "de": "Function block called before the window is unsmallified and the content is shown."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelunsmallified",
+            "sortIndex": 10701000,
+            "shortName": {
+                "en": "On show content",
+                "de": "On show content"
+            },
+            "description": {
+                "en": "Function block called after the window is unsmallified and the content is shown.",
+                "de": "Function block called after the window is unsmallified and the content is shown."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelbeforesmallify",
+            "sortIndex": 10701050,
+            "shortName": {
+                "en": "On before hide content",
+                "de": "On before hide content"
+            },
+            "description": {
+                "en": "Function block called before the window is smallified and the content is hidden.",
+                "de": "Function block called before the window is smallified and the content is hidden."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelsmallified",
+            "sortIndex": 10701100,
+            "shortName": {
+                "en": "On hide content",
+                "de": "On hide content"
+            },
+            "description": {
+                "en": "Function block called after the window is smallified and the content is hidden.",
+                "de": "Function block called after the window is smallified and the content is hidden."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "functionBlock"
+            ],
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "jspanelsmallifiedmax",
+            "sortIndex": 10701150,
+            "shortName": {
+                "en": "On maximized to hidden content",
+                "de": "On maximized to hidden content"
+            },
+            "description": {
+                "en": "Function block called if the maximized window is smallified and the content is hidden.",
+                "de": "Function block called if the maximized window is smallified and the content is hidden."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "boolean",
+            "name": "enableAnimateIn",
+            "sortIndex": 10800100,
+            "default": false,
+            "shortName": {
+                "en": "Open animation",
+                "de": "Open animation"
+            },
+            "description": {
+                "en": "Enables animation when the window is opened. By default the 'fadeIn' animation is used. This could be overwritten with the 'Open animation class' property.",
+                "de": "Enables animation when the window is opened. By default the 'fadeIn' animation is used. This could be overwritten with the 'Open animation class' property."
+            },
+            "group": {
+                "en": "Animation",
+                "de": "Animation"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "string",
+            "name": "animationInClass",
+            "sortIndex": 10800150,
+            "shortName": {
+                "en": "Open animation class",
+                "de": "Open animation class"
+            },
+            "description": {
+                "en": "Specifies the css class used for animation.",
+                "de": "Specifies the css class used for animation."
+            },
+            "group": {
+                "en": "Animation",
+                "de": "Animation"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "boolean",
+            "name": "enableAnimateOut",
+            "sortIndex": 10800200,
+            "default": false,
+            "shortName": {
+                "en": "Close animation",
+                "de": "Close animation"
+            },
+            "description": {
+                "en": "Enables animation when the window is closed. By default the 'fadeOut' animation is used. This could be overwritten with the 'Close animation class' property.",
+                "de": "Enables animation when the window is closed. By default the 'fadeOut' animation is used. This could be overwritten with the 'Close animation class' property."
+            },
+            "group": {
+                "en": "Animation",
+                "de": "Animation"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "string",
+            "name": "animationOutClass",
+            "sortIndex": 10800250,
+            "shortName": {
+                "en": "Close animation class",
+                "de": "Close animation class"
+            },
+            "description": {
+                "en": "Specifies the css class used for animation.",
+                "de": "Specifies the css class used for animation."
+            },
+            "group": {
+                "en": "Animation",
+                "de": "Animation"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "boolean",
+            "name": "enableModalAnimateIn",
+            "sortIndex": 10800300,
+            "default": false,
+            "shortName": {
+                "en": "Modal backdrop open animation",
+                "de": "Modal backdrop open animation"
+            },
+            "description": {
+                "en": "Enables animation on the backdrop when the modal window is opened. By default the 'fadeIn' animation is used. This could be overwritten with the 'Open modal animation class' property.",
+                "de": "Enables animation on the backdrop when the modal window is opened. By default the 'fadeIn' animation is used. This could be overwritten with the 'Open modal animation class' property."
+            },
+            "group": {
+                "en": "Animation",
+                "de": "Animation"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "string",
+            "name": "modalAnimationInClass",
+            "sortIndex": 10800350,
+            "shortName": {
+                "en": "Modal open animation class",
+                "de": "Modal open animation class"
+            },
+            "description": {
+                "en": "Specifies the css class used for animation.",
+                "de": "Specifies the css class used for animation."
+            },
+            "group": {
+                "en": "Animation",
+                "de": "Animation"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "boolean",
+            "name": "enableModalAnimateOut",
+            "sortIndex": 10800400,
+            "default": false,
+            "shortName": {
+                "en": "Modal backdrop close animation",
+                "de": "Modal backdrop close animation"
+            },
+            "description": {
+                "en": "Enables animation on the backdrop when the modal window is closed. By default the 'fadeOut' animation is used. This could be overwritten with the 'Modal close animation class' property.",
+                "de": "Enables animation on the backdrop when the modal window is closed. By default the 'fadeOut' animation is used. This could be overwritten with the 'Modal close animation class' Property."
+            },
+            "group": {
+                "en": "Animation",
+                "de": "Animation"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "windowproperty",
+            "dataType": "string",
+            "name": "modalAnimationOutClass",
+            "sortIndex": 10800450,
+            "shortName": {
+                "en": "Modal close animation class",
+                "de": "Modal close animation class"
+            },
+            "description": {
+                "en": "Specifies the css class used for animation.",
+                "de": "Specifies the css class used for animation."
+            },
+            "group": {
+                "en": "Animation",
+                "de": "Animation"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "previewtext",
+            "sortIndex": 10900100,
+            "dataType": "string",
+            "default": "text",
+            "shortName": {
+                "en": "Preview text",
+                "de": "Preview text"
+            },
+            "description": {
+                "en": "The preview text of the component in the style class editor.",
+                "de": "The preview text of the component in the style class editor."
+            },
+            "group": {
+                "en": "Preview settings",
+                "de": "Preview settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

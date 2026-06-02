@@ -1,0 +1,812 @@
+{
+    "name": "sig-control-video",
+    "shortName": {
+        "en": "Video",
+        "de": "Video"
+    },
+    "controlType": {
+        "en": "Media",
+        "de": "Media"
+    },
+    "version": "02.01.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a video component as a polymer custom element.",
+        "de": "Implementiert eine Video-Komponente als benutzerdefiniertes Polymer-Element."
+    },
+    "main": [
+        "sig-control-video.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-video.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-control-video-css.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./play.svg"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "250px",
+        "height": "180px"
+    },
+    "toolbox": true,
+    "slotted": false,
+    "styleClassEditor": true,
+    "usableInShadowDom": true,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [
+        {
+            "default": true,
+            "name": "place-video-default",
+            "shortName": {
+                "en": "Video",
+                "de": "Video"
+            },
+            "typeId": "mediaItem",
+            "valueSourceTypes": "mediaVideo",
+            "src": []
+        }
+    ],
+    "properties": [
+        /*****************************************************************************************************
+        // Hide properties from the base
+        *****************************************************************************************************/
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-dragged-opacity",
+            "userLevel": -1,
+            "userLevelStyling": -1
+        },
+        {
+            "valueSourceTypes": [
+                "font",
+                "fontScheme"
+            ],
+            "propertyType": "font",
+            "name": "elementMainFont",
+            "userLevel": -1,
+            "userLevelStyling": -1
+        },
+        /*****************************************************************************************************
+        // Data
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Video
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "variable",
+            "name": "src",
+            "sortIndex": 150000,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "",
+            "shortName": {
+                "en": "Video",
+                "de": "Video"
+            },
+            "editor": "urlpicker",
+            "description": {
+                "en": "The relative path or absolute url of the video.",
+                "de": "Der relative Pfad oder die absolute URL des Videos."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+		/*----------------------------------------------------------------------------------------------------
+        // property External source
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString",
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "externalsrc",
+            "sortIndex": 150100,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "",
+            "shortName": {
+                "en": "External source",
+                "de": "External source"
+            },
+            "description": {
+                "en": "An external source path of an video which isn't configured in the lvd project. If something is configured at this property, this source is used instead the one configured at the Video property.",
+                "de": "Ein Pfad eines externen Videos, welches nicht im LVD Projekt verwaltet wird. Ist hier etwas konfiguriert, so wird diese Quelle verwendet anstatt der am Video Property konfigurierten."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                20,
+                20,
+                20
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },        
+        /*****************************************************************************************************
+        // Settings
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Show controls
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "controls",
+            "sortIndex": 150100,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": false,
+            "shortName": {
+                "en": "Show controls",
+                "de": "Show controls"
+            },
+            "description": {
+                "en": "If true, the video has playback controls.",
+                "de": "Wenn auf True gesetzt, hat das Video Wiedergabesteuerungen."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Autoplay
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "autoplay",
+            "sortIndex": 150200,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": false,
+            "shortName": {
+                "en": "Autoplay",
+                "de": "Autoplay"
+            },
+            "description": {
+                "en": "If true, the video starts automatically if the browser allows it.\nSee control help for more information.",
+                "de": "Wenn auf True gesetzt, startet das Video automatisch wenn der verwendete Browser es erlaubt.\nSiehe Hilfe des Controls für weitere Informationen dazu."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Loop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "loop",
+            "sortIndex": 150300,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": false,
+            "shortName": {
+                "en": "Loop",
+                "de": "Loop"
+            },
+            "description": {
+                "en": "If true, the video restarts automatically.",
+                "de": "Wenn auf True gesetzt, startet das Video autmatisch erneut."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Muted
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constNumber",
+                "datapoint"
+            ],
+            "propertyType": "variable",
+            "name": "muted",
+            "sortIndex": 150400,
+            "dataType": "number",
+            "lockStyleCopy": true,
+            "default": 0,
+            "shortName": {
+                "en": "Muted",
+                "de": "Muted"
+            },
+            "description": {
+                "en": "If the value is not 0, the video sound is muted.",
+                "de": "Wenn auf ungleich 0 gesetzt, wird der Videoton stumm geschaltet."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Poster
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "variable",
+            "name": "poster",
+            "sortIndex": 150500,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "",
+            "shortName": {
+                "en": "Poster",
+                "de": "Poster"
+            },
+            "editor": "urlpicker",
+            "description": {
+                "en": "The relative path or absolute url of the poster image.",
+                "de": "Der relative Pfad oder die absolute URL des Posterbildes."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": [
+                10,
+                20,
+                20
+            ],
+            "userLevelStyling": [
+                10,
+                20,
+                20
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // General styling
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Background color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-video-background-color",
+            "sortIndex": 500000,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component.",
+                "de": "Die Hintergrundfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-video-border-color",
+            "sortIndex": 500100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the component.",
+                "de": "Die Rahmenfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border width
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-video-border-width",
+            "sortIndex": 500200,
+            "dataType": "string",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "Width of the border. This value can be set as shorthand property.",
+                "de": "Breite des Rahmens. Dieser Wert kann als shorthand property angegeben werden."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border style
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-video-border-style",
+            "sortIndex": 500300,
+            "dataType": "string",
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the component.",
+                "de": "Die Rahmenart der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-video-border-radius",
+            "sortIndex": 500400,
+            "dataType": "string",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "Radius of the border. This value can be set as shorthand property.",
+                "de": "Radius des Rahmens. Dieser Wert kann als shorthand property angegeben werden."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // Function block
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Paused
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "functionBlock",
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "sig-control-video-paused",
+            "sortIndex": 150600,
+            "shortName": {
+                "en": "Paused",
+                "de": "Paused"
+            },
+            "description": {
+                "en": "This event is fired, when the video is paused.",
+                "de": "Dieses Ereignis wird ausgelöst, wenn das Video pausiert wird."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Playing
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "functionBlock",
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "sig-control-video-playing",
+            "sortIndex": 150700,
+            "shortName": {
+                "en": "Playing",
+                "de": "Playing"
+            },
+            "description": {
+                "en": "This event is fired, when the video starts playing.",
+                "de": "Dieses Ereignis wird ausgelöst, wenn das Video startet."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Ended
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "functionBlock",
+            "propertyType": "event",
+            "lockStyleCopy": true,
+            "name": "sig-control-video-ended",
+            "sortIndex": 150800,
+            "shortName": {
+                "en": "Ended",
+                "de": "Ended"
+            },
+            "description": {
+                "en": "This event is fired, when the video has ended.",
+                "de": "Dieses Ereignis wird ausgelöst, wenn das Video beendet ist."
+            },
+            "group": {
+                "en": "Function block",
+                "de": "Function block"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Event actions
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Play
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "event",
+            "propertyType": "eventhandler",
+            "lockStyleCopy": true,
+            "name": "play",
+            "sortIndex": 150900,
+            "shortName": {
+                "en": "Play",
+                "de": "Play"
+            },
+            "description": {
+                "en": "Call this method to start the video playback.",
+                "de": "Rufen Sie diese Methode auf, um die Videowiedergabe zu starten."
+            },
+            "group": {
+                "en": "Event actions",
+                "de": "Event actions"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Pause
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "event",
+            "propertyType": "eventhandler",
+            "lockStyleCopy": true,
+            "name": "pause",
+            "sortIndex": 151000,
+            "shortName": {
+                "en": "Pause",
+                "de": "Pause"
+            },
+            "description": {
+                "en": "Call this method to pause the video playback.",
+                "de": "Rufen Sie diese Methode auf, um die Videowiedergabe anzuhalten."
+            },
+            "group": {
+                "en": "Event actions",
+                "de": "Event actions"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "event",
+            "propertyType": "eventhandler",
+            "lockStyleCopy": true,
+            "name": "stop",
+            "sortIndex": 151100,
+            "shortName": {
+                "en": "Stop",
+                "de": "Stop"
+            },
+            "description": {
+                "en": "Call this method to stop the video playback.",
+                "de": "Rufen Sie diese Methode auf, um die Videowiedergabe zu stoppen."
+            },
+            "group": {
+                "en": "Event actions",
+                "de": "Event actions"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }
+    ],
+    "helpFiles": [
+        {
+            "language": "de",
+            "default": true,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Video_DE.chm"
+                }
+            ]
+        },
+        {
+            "language": "en",
+            "default": false,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Video_EN.chm"
+                }
+            ]
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "name": "sig-utils-c3",
+    "shortName": {
+        "en": "C3 library",
+        "de": "C3 library"
+    },
+    "controlType": {
+        "en": "Libraries",
+        "de": "Libraries"
+    },
+    "version": "01.02.004",
+    "authors": [
+        "https://github.com/masayuki0812"
+    ],
+    "description": {
+        "en": "Helper element to load the c3 library.",
+        "de": "Helper element to load the c3 library."
+    },
+    "main": [
+        "sig-utils-c3.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "https://github.com/c3js/c3/blob/master/LICENSE",
+    "homepage": "https://github.com/c3js/c3",
+    "private": true,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "toolbox": false,
+    "dependencies": {
+        "sig-element": "controls/sigmatek/sig-element#^1.2.0",
+        "sig-utils-d3": "components/sigmatek/sig-utils-d3#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0",
+        "c3": "c3/c3#0.7.1"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-utils-c3-css.js"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-utils-d3"
+        }
+    ],
+    "properties": []
+}

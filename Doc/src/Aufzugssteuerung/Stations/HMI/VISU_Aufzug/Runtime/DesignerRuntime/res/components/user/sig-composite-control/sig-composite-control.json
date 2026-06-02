@@ -1,0 +1,52 @@
+{
+    "name": "sig-composite-control",
+    "shortName": {
+        "en": "Composite control",
+        "de": "Composite control"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "01.02.002",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a composite control for composite components.",
+        "de": "Implements a composite control for composite components."
+    },
+    "main": [
+        "sig-composite-control.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-composite-control.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "defaultDimensions": {
+        "width": "100px",
+        "height": "100px"
+    },
+    "toolbox": false,
+    "slotted": false,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [],
+    "properties": []
+}

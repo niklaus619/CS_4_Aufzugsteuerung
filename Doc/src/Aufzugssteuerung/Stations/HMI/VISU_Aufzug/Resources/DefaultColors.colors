@@ -1,0 +1,1547 @@
+{
+	"type": "ColorPalette",
+	"version": "0.0.96",
+	"id": "5fc09a61-0c78-4f1b-a87b-135a9f9ac0cb",
+	"name": "DefaultColors",
+	"colors": [
+		{
+			"type": "ColorItem",
+			"id": "a19e0975-83bc-4eab-b045-6c1f15221896",
+			"name": "color000",
+			"color": "#000000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "7aff9a46-1fac-41aa-90d7-fc8027465f3c",
+			"name": "color001",
+			"color": "#0000A8"
+		},
+		{
+			"type": "ColorItem",
+			"id": "a0e335ae-5807-42de-adcd-37e93e540d96",
+			"name": "color002",
+			"color": "#00A800"
+		},
+		{
+			"type": "ColorItem",
+			"id": "a616156c-ab2a-438d-9dac-54388dc60851",
+			"name": "color003",
+			"color": "#00A8A8"
+		},
+		{
+			"type": "ColorItem",
+			"id": "fcf1b200-4b33-4a0b-ac8a-311eb49f9d45",
+			"name": "color004",
+			"color": "#A80000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c549226b-fda3-4b79-a52b-cdee5ae1bb75",
+			"name": "color005",
+			"color": "#A800A8"
+		},
+		{
+			"type": "ColorItem",
+			"id": "811914c4-ddf2-4e0f-934b-2a0c6baec0e5",
+			"name": "color006",
+			"color": "#A85400"
+		},
+		{
+			"type": "ColorItem",
+			"id": "a62657b8-863a-434a-b2ff-be33b6b0be4e",
+			"name": "color007",
+			"color": "#A8A8A8"
+		},
+		{
+			"type": "ColorItem",
+			"id": "3e9ad259-8ea4-40e3-a5af-b4848c2dd3d9",
+			"name": "color008",
+			"color": "#545454"
+		},
+		{
+			"type": "ColorItem",
+			"id": "73da5d0c-05a7-4214-bdb9-22d76a40277c",
+			"name": "color009",
+			"color": "#5454FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c2043df3-adb5-45d2-98a6-95aca48f961d",
+			"name": "color010",
+			"color": "#54FF54"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8a4928d2-6bea-40ee-91c2-3a223fe26b05",
+			"name": "color011",
+			"color": "#54FFFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c70fb812-9a87-450f-8abd-b1b7e295bdf2",
+			"name": "color012",
+			"color": "#FF5454"
+		},
+		{
+			"type": "ColorItem",
+			"id": "cad60471-df57-40d9-8ce6-958d7c8e5a97",
+			"name": "color013",
+			"color": "#FF54FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "69d4bf8c-f495-4e6b-842f-bcfef9c0fabf",
+			"name": "color014",
+			"color": "#FFFF54"
+		},
+		{
+			"type": "ColorItem",
+			"id": "b0856f9a-72f7-4cc9-ad6b-a1f17159c49e",
+			"name": "color015",
+			"color": "#FFFFFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "1bb73dc7-2a4a-49b8-8d69-709b39b74f25",
+			"name": "color016",
+			"color": "#000000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "d3990292-80cf-44c3-96ba-d4d691c20232",
+			"name": "color017",
+			"color": "#141414"
+		},
+		{
+			"type": "ColorItem",
+			"id": "49d5bbca-98e6-4d62-89ad-df2db8a26310",
+			"name": "color018",
+			"color": "#202020"
+		},
+		{
+			"type": "ColorItem",
+			"id": "ee00e81a-01f1-474f-a0e2-7f6fd1970eec",
+			"name": "color019",
+			"color": "#2C2C2C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "36573c6d-be42-4a34-a515-0b34f24f1f55",
+			"name": "color020",
+			"color": "#383838"
+		},
+		{
+			"type": "ColorItem",
+			"id": "b2e116ee-1adf-4a5f-aaa0-d01805253334",
+			"name": "color021",
+			"color": "#444444"
+		},
+		{
+			"type": "ColorItem",
+			"id": "3abe2978-9eb8-48d9-b74f-9673d2dc955d",
+			"name": "color022",
+			"color": "#505050"
+		},
+		{
+			"type": "ColorItem",
+			"id": "f01891da-b47d-4f8a-afd3-6e7c5a887181",
+			"name": "color023",
+			"color": "#606060"
+		},
+		{
+			"type": "ColorItem",
+			"id": "fc7cf4e9-c9c2-4441-a40c-6e2de725cf59",
+			"name": "color024",
+			"color": "#707070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "3e6c7e58-788c-4e03-a434-4e0374c266b3",
+			"name": "color025",
+			"color": "#808080"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4683920c-9ff9-479f-9e81-809fab0e08fb",
+			"name": "color026",
+			"color": "#909090"
+		},
+		{
+			"type": "ColorItem",
+			"id": "eb1fe654-1603-4647-8129-b8f4d7fa07e1",
+			"name": "color027",
+			"color": "#A0A0A0"
+		},
+		{
+			"type": "ColorItem",
+			"id": "50c27e81-da1d-4fdb-b126-cbcab0ee630f",
+			"name": "color028",
+			"color": "#B4B4B4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "132fa763-054b-42f5-8b5e-d428ac6b6214",
+			"name": "color029",
+			"color": "#C8C8C8"
+		},
+		{
+			"type": "ColorItem",
+			"id": "732a1017-a0f1-4aba-b375-c344b3531edf",
+			"name": "color030",
+			"color": "#E0E0E0"
+		},
+		{
+			"type": "ColorItem",
+			"id": "165cdb3d-6a80-47b6-ba98-35e598fff2fa",
+			"name": "color031",
+			"color": "#FFFFFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "ae4ff037-c558-4c27-a233-e9a06e880797",
+			"name": "color032",
+			"color": "#0000FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "f7a52a88-54bc-4776-aa7f-360b330bbcad",
+			"name": "color033",
+			"color": "#4000FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "3b4fbbe1-f556-4851-8f43-6b242cb5bd76",
+			"name": "color034",
+			"color": "#7C00FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "30b10abb-68da-4df4-b1bb-75daefbd0688",
+			"name": "color035",
+			"color": "#BC00FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "ca2aeae3-13f4-4579-8d2c-8925c74b52fe",
+			"name": "color036",
+			"color": "#FF00FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "16026649-1761-43e4-9dd4-ed8251479fe0",
+			"name": "color037",
+			"color": "#FF00BC"
+		},
+		{
+			"type": "ColorItem",
+			"id": "601c40be-64ad-49c6-a6a3-ddbeb0279351",
+			"name": "color038",
+			"color": "#FF007C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "cf9c6483-d464-424c-a42b-d97af37278a4",
+			"name": "color039",
+			"color": "#FF0040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "ba5b5fc7-09cb-4a1e-8b05-38bc26857138",
+			"name": "color040",
+			"color": "#FF0000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4619e42a-142b-4457-b335-4541d50eb4a7",
+			"name": "color041",
+			"color": "#FF4000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "375326d3-f3b3-4265-a13c-5dbf45c25c5b",
+			"name": "color042",
+			"color": "#FF7C00"
+		},
+		{
+			"type": "ColorItem",
+			"id": "64ba46f7-b884-475f-91e1-0834ecae6062",
+			"name": "color043",
+			"color": "#FFBC00"
+		},
+		{
+			"type": "ColorItem",
+			"id": "12661f5e-be28-407d-8e03-90d8bb442907",
+			"name": "color044",
+			"color": "#FFFF00"
+		},
+		{
+			"type": "ColorItem",
+			"id": "6c1d8a76-eab9-4aa0-b2fc-96d9a248a5b3",
+			"name": "color045",
+			"color": "#BCFF00"
+		},
+		{
+			"type": "ColorItem",
+			"id": "6f3ba8bb-7ef0-4100-b2c0-5537ee0816ad",
+			"name": "color046",
+			"color": "#7CFF00"
+		},
+		{
+			"type": "ColorItem",
+			"id": "5be0e1d0-d21c-428c-9258-134fcb255f89",
+			"name": "color047",
+			"color": "#40FF00"
+		},
+		{
+			"type": "ColorItem",
+			"id": "da03befd-c7b1-4b5e-b485-9dd40ffa85df",
+			"name": "color048",
+			"color": "#00FF00"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c78bf8dc-7765-4dc1-a9e8-1d427916106b",
+			"name": "color049",
+			"color": "#00FF40"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9e785b9f-3fdf-42e1-8958-4d5e3248d577",
+			"name": "color050",
+			"color": "#00FF7C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "882c6775-ce24-4af6-a9f6-f0f06a3f915d",
+			"name": "color051",
+			"color": "#00FFBC"
+		},
+		{
+			"type": "ColorItem",
+			"id": "88766b93-be07-475d-bb2a-7dca2abb32e1",
+			"name": "color052",
+			"color": "#00FFFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "7f67c9ca-53c8-4787-9d1b-19a8e6269ba7",
+			"name": "color053",
+			"color": "#00BCFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "7d1a671d-8039-474e-87b8-06173de64911",
+			"name": "color054",
+			"color": "#007CFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "876b1b3a-066c-4362-a5af-d48588eab109",
+			"name": "color055",
+			"color": "#0040FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "f9ed0afb-9f58-40b9-b72e-704386527865",
+			"name": "color056",
+			"color": "#7C7CFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "0355fdf7-f8f6-4ad0-912c-bce0808f3b19",
+			"name": "color057",
+			"color": "#9C7CFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "bcf44737-ba29-40ad-93b0-0a66eaa97180",
+			"name": "color058",
+			"color": "#BC7CFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "b4a2d810-73c2-4a04-86c3-19035bfd8a4a",
+			"name": "color059",
+			"color": "#DC7CFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c2d88e02-cffb-4e3b-9da5-53f3da65719a",
+			"name": "color060",
+			"color": "#FF7CFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "bcc42440-6f56-4707-9031-cf5319019699",
+			"name": "color061",
+			"color": "#FF7CDC"
+		},
+		{
+			"type": "ColorItem",
+			"id": "ece236d4-b1c7-4186-b061-bcc3763264b0",
+			"name": "color062",
+			"color": "#FF7CBC"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9eda8efc-698e-4ab2-be2b-68207365f071",
+			"name": "color063",
+			"color": "#FF7C9C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "ea12daf0-c5de-48e1-abea-478d86a22f04",
+			"name": "color064",
+			"color": "#FF7C7C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "40b02564-dba9-436e-9331-8a2d02fb9a8d",
+			"name": "color065",
+			"color": "#FF9C7C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9ab4b945-d2de-42da-8454-2139c6647f63",
+			"name": "color066",
+			"color": "#FFBC7C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "2510a2d1-9965-471b-ab27-36938ceda2e2",
+			"name": "color067",
+			"color": "#FFDC7C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8bc5ea2d-6379-453c-81b9-b0ff469af0ff",
+			"name": "color068",
+			"color": "#FFFF7C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "dfe5b5d2-0159-440b-854a-544ca229555e",
+			"name": "color069",
+			"color": "#DCFF7C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "d910a464-1a9e-4a24-879f-b3a0e63874a6",
+			"name": "color070",
+			"color": "#BCFF7C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "2abdd25c-b629-4d66-a856-59016d8d8064",
+			"name": "color071",
+			"color": "#9CFF7C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8ed0d668-fc60-4231-b202-25d8bf4161d0",
+			"name": "color072",
+			"color": "#7CFF7C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "57248199-548a-44a0-82a2-6b16f3395727",
+			"name": "color073",
+			"color": "#7CFF9C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "77e8b345-21c0-4544-a7b2-f67f3d4d1230",
+			"name": "color074",
+			"color": "#7CFFBC"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4a6c679d-ac36-44ce-9486-7707271940c7",
+			"name": "color075",
+			"color": "#7CFFDC"
+		},
+		{
+			"type": "ColorItem",
+			"id": "5859080f-9997-408b-9d28-80e6e2db321a",
+			"name": "color076",
+			"color": "#7CFFFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "effe0d83-f8cc-4023-a739-e3683da62c6a",
+			"name": "color077",
+			"color": "#7CDCFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "54288bc3-2c27-4b71-9275-987ca8545179",
+			"name": "color078",
+			"color": "#7CBCFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8d9e7d55-29da-409f-a811-7bc8cccc00c7",
+			"name": "color079",
+			"color": "#7C9CFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "0ae1c59d-5bfd-4913-894a-868f74db69a5",
+			"name": "color080",
+			"color": "#B4B4FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "6cbe445c-5106-4be9-94ad-84b56e932c11",
+			"name": "color081",
+			"color": "#C4B4FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "045cb1be-324f-4080-9c47-dbc088785d1a",
+			"name": "color082",
+			"color": "#D8B4FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4a04bddc-4660-4dbb-abdc-aef4f7d9e2eb",
+			"name": "color083",
+			"color": "#E8B4FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "be17dcad-1946-4f47-8a35-d6edc19e0985",
+			"name": "color084",
+			"color": "#FFB4FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "5a8a2979-6b26-4548-a41e-6681cdae1f0e",
+			"name": "color085",
+			"color": "#FFB4E8"
+		},
+		{
+			"type": "ColorItem",
+			"id": "358bf5dc-9a45-4862-9285-a31fdb92cd90",
+			"name": "color086",
+			"color": "#FFB4D8"
+		},
+		{
+			"type": "ColorItem",
+			"id": "67938dbd-0955-400c-bb47-7be12eaa5bac",
+			"name": "color087",
+			"color": "#FFB4C4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "f8bf5851-6696-485f-aeef-83e41e60755c",
+			"name": "color088",
+			"color": "#FFB4B4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "45ed3051-2d25-4370-8a6e-9c9144ef2510",
+			"name": "color089",
+			"color": "#FFC4B4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "1ae25544-430c-454d-8f9b-fa6d702112f9",
+			"name": "color090",
+			"color": "#FFD8B4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "895dd7c7-b421-4160-a6a0-f81ca85ba222",
+			"name": "color091",
+			"color": "#FFE8B4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "5c91a171-c24e-4550-a0f5-17ab2219cf89",
+			"name": "color092",
+			"color": "#FFFFB4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "70ccc44b-7ef0-401f-8e22-62f9a1c1f100",
+			"name": "color093",
+			"color": "#E8FFB4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "59bbb179-d6d9-4e49-b965-040723bb6578",
+			"name": "color094",
+			"color": "#D8FFB4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9346a390-40f9-4c77-9ebe-9dfa01cb3c1c",
+			"name": "color095",
+			"color": "#C4FFB4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "940c9aa0-523d-424a-9db2-860cb5487ffb",
+			"name": "color096",
+			"color": "#B4FFB4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4fa4bcbb-28e1-4421-ab99-e1f9e369d98e",
+			"name": "color097",
+			"color": "#B4FFC4"
+		},
+		{
+			"type": "ColorItem",
+			"id": "e5670191-b1ea-4a19-a2c7-63695b37cb2b",
+			"name": "color098",
+			"color": "#B4FFD8"
+		},
+		{
+			"type": "ColorItem",
+			"id": "5f1a53d2-12ec-4f26-9bef-2f3720f5e334",
+			"name": "color099",
+			"color": "#B4FFE8"
+		},
+		{
+			"type": "ColorItem",
+			"id": "a3f8dbbf-580e-4150-bbb7-5ddcdb027731",
+			"name": "color100",
+			"color": "#B4FFFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8e30688c-0782-4557-adcb-ba888472ed31",
+			"name": "color101",
+			"color": "#B4E8FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c3c712a3-5b5a-4953-8fca-f6a3f8724338",
+			"name": "color102",
+			"color": "#B4D8FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "591e3e38-a81f-4b2d-9ac6-a34260549167",
+			"name": "color103",
+			"color": "#B4C4FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "a88703e9-e552-4f48-963e-c0326b2c4756",
+			"name": "color104",
+			"color": "#000070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "d7465f95-2561-4271-af5a-05bbad8b5bf3",
+			"name": "color105",
+			"color": "#1C0070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "6d5bcd20-33a9-4d7a-a732-5a1afcd8de67",
+			"name": "color106",
+			"color": "#380070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "de535804-4b89-42f5-bb2e-962d41e6d31f",
+			"name": "color107",
+			"color": "#540070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "aa4c238d-9bc8-49ab-be0c-d6648e12a6a8",
+			"name": "color108",
+			"color": "#700070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "423a8057-4d03-4fe9-b526-a02960d8ef18",
+			"name": "color109",
+			"color": "#700054"
+		},
+		{
+			"type": "ColorItem",
+			"id": "253f7a71-fa20-4198-96d2-69077cb1bbf4",
+			"name": "color110",
+			"color": "#700038"
+		},
+		{
+			"type": "ColorItem",
+			"id": "26103ab2-33d1-4415-89d7-2544d948b48e",
+			"name": "color111",
+			"color": "#70001C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "eb248a93-076e-4348-865e-4b5b4ca7d86b",
+			"name": "color112",
+			"color": "#700000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "bb81a5c7-dfdd-4c2f-ac2b-e8eeb5be6675",
+			"name": "color113",
+			"color": "#701C00"
+		},
+		{
+			"type": "ColorItem",
+			"id": "b5e1bc71-8101-4c1c-a31b-1abc0b027852",
+			"name": "color114",
+			"color": "#703800"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c3c65309-8254-4c0d-a8ac-35012a055d08",
+			"name": "color115",
+			"color": "#705400"
+		},
+		{
+			"type": "ColorItem",
+			"id": "646c1855-a487-4131-8085-c17904a9af3a",
+			"name": "color116",
+			"color": "#707000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "7388bc46-58be-40ef-8a96-b61512898826",
+			"name": "color117",
+			"color": "#547000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "994d8dac-bde9-40ac-9044-c62091a22d81",
+			"name": "color118",
+			"color": "#387000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "e4acae1f-be30-4cd6-b588-ae88e867da02",
+			"name": "color119",
+			"color": "#1C7000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "e5c4778b-3b5f-4f44-85a9-865d126d9c53",
+			"name": "color120",
+			"color": "#007000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "1882062e-054b-4d44-bf5d-47a450eb7c69",
+			"name": "color121",
+			"color": "#00701C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4686327c-40e9-41ba-8937-4937453cbb6a",
+			"name": "color122",
+			"color": "#007038"
+		},
+		{
+			"type": "ColorItem",
+			"id": "10bf0331-2e6a-4482-adab-5436b2436b30",
+			"name": "color123",
+			"color": "#007054"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9fe7e6e5-3813-4c29-a90a-f2257f316b90",
+			"name": "color124",
+			"color": "#007070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4c7bd433-bcbb-48f7-9ef7-27cf3c43c757",
+			"name": "color125",
+			"color": "#005470"
+		},
+		{
+			"type": "ColorItem",
+			"id": "189e11d6-cb6c-4e13-b9e8-058814630428",
+			"name": "color126",
+			"color": "#003870"
+		},
+		{
+			"type": "ColorItem",
+			"id": "6656a442-815f-433e-8b6b-7c566dac2cec",
+			"name": "color127",
+			"color": "#001C70"
+		},
+		{
+			"type": "ColorItem",
+			"id": "3815b3e0-e20a-4c73-afe1-ed4befaa5800",
+			"name": "color128",
+			"color": "#383870"
+		},
+		{
+			"type": "ColorItem",
+			"id": "15ae3543-7b65-466a-8fc6-d5c388934e02",
+			"name": "color129",
+			"color": "#443870"
+		},
+		{
+			"type": "ColorItem",
+			"id": "a1db3450-563c-4289-b39a-290d90bfa2c8",
+			"name": "color130",
+			"color": "#543870"
+		},
+		{
+			"type": "ColorItem",
+			"id": "64b3028f-4c18-489a-8fff-fc22bb6d2702",
+			"name": "color131",
+			"color": "#603870"
+		},
+		{
+			"type": "ColorItem",
+			"id": "7a53178c-e062-45cb-b191-7ca9c19abeb5",
+			"name": "color132",
+			"color": "#703870"
+		},
+		{
+			"type": "ColorItem",
+			"id": "07da32d1-4d00-44e6-b745-b5b9743233b3",
+			"name": "color133",
+			"color": "#703860"
+		},
+		{
+			"type": "ColorItem",
+			"id": "691e4a1d-17ac-4397-8465-37bb1bf83d1b",
+			"name": "color134",
+			"color": "#703854"
+		},
+		{
+			"type": "ColorItem",
+			"id": "71afea5e-78ba-455e-849c-8df7c92ab136",
+			"name": "color135",
+			"color": "#703844"
+		},
+		{
+			"type": "ColorItem",
+			"id": "a2c97d87-6bec-40e8-82ec-8ecdd7eb15fc",
+			"name": "color136",
+			"color": "#703838"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c3c494d7-41a5-4d35-b5a7-1c94980ec6f5",
+			"name": "color137",
+			"color": "#704438"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9fd67e72-c96e-408f-a717-0b8bf248bdd6",
+			"name": "color138",
+			"color": "#705438"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8b9b4d54-af44-44b1-80e1-8a266d5a7fb5",
+			"name": "color139",
+			"color": "#706038"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9645c15c-3f19-4b1f-805f-fde1f0995fb0",
+			"name": "color140",
+			"color": "#707038"
+		},
+		{
+			"type": "ColorItem",
+			"id": "0129b360-5e18-41c7-b4db-5952f67c3e36",
+			"name": "color141",
+			"color": "#607038"
+		},
+		{
+			"type": "ColorItem",
+			"id": "36d6217c-c8df-406a-8936-4043088b7713",
+			"name": "color142",
+			"color": "#547038"
+		},
+		{
+			"type": "ColorItem",
+			"id": "1f041dad-ffce-46bb-926f-cdcbba71121c",
+			"name": "color143",
+			"color": "#447038"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4872ec9f-e898-473a-9d02-ad3ca6bb8619",
+			"name": "color144",
+			"color": "#387038"
+		},
+		{
+			"type": "ColorItem",
+			"id": "5761d646-88fe-416a-9e21-62a71174931f",
+			"name": "color145",
+			"color": "#387044"
+		},
+		{
+			"type": "ColorItem",
+			"id": "1fa22038-c486-4af8-87df-9967fe36d353",
+			"name": "color146",
+			"color": "#387054"
+		},
+		{
+			"type": "ColorItem",
+			"id": "1cbd3818-17fc-4c06-abeb-152ae3b8a204",
+			"name": "color147",
+			"color": "#387060"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c2449202-4906-4a61-a02d-ee46e05ee495",
+			"name": "color148",
+			"color": "#387070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "cfab5bad-dabc-4370-bad6-a9e053e0a633",
+			"name": "color149",
+			"color": "#386070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "5d49b295-b398-479b-99e6-cbac89dde115",
+			"name": "color150",
+			"color": "#385470"
+		},
+		{
+			"type": "ColorItem",
+			"id": "441afa49-a8a1-4aa5-9375-70afe79c6066",
+			"name": "color151",
+			"color": "#384470"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4a5e8c02-2369-4668-96ca-92bebffbe89d",
+			"name": "color152",
+			"color": "#505070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9cb2a1e6-96c1-4088-8faa-a25d0e544d11",
+			"name": "color153",
+			"color": "#585070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9c7450b1-39da-43b8-91e3-d69eb9f6fc60",
+			"name": "color154",
+			"color": "#605070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4e352bef-94c9-4359-8970-98087cd03cde",
+			"name": "color155",
+			"color": "#685070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "3ed8a98b-e188-4535-bc45-4f4fc668bd09",
+			"name": "color156",
+			"color": "#705070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4eebaac3-c5d7-43eb-91e4-2bd9135c28c8",
+			"name": "color157",
+			"color": "#705068"
+		},
+		{
+			"type": "ColorItem",
+			"id": "7ee56798-a303-4ede-9d94-a596a5433a90",
+			"name": "color158",
+			"color": "#705060"
+		},
+		{
+			"type": "ColorItem",
+			"id": "fb2765a9-b7d6-4fb1-a780-2c85571acc3a",
+			"name": "color159",
+			"color": "#705058"
+		},
+		{
+			"type": "ColorItem",
+			"id": "df6284da-c9e8-44bf-ae72-9d2ef3e73bf1",
+			"name": "color160",
+			"color": "#705050"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8128fce9-b5d7-4c1e-9080-14cbe3fa003f",
+			"name": "color161",
+			"color": "#705850"
+		},
+		{
+			"type": "ColorItem",
+			"id": "67855950-fbad-4e88-a7a8-146968c9c58e",
+			"name": "color162",
+			"color": "#706050"
+		},
+		{
+			"type": "ColorItem",
+			"id": "e48032d8-0efc-4619-84c2-0875ac81ae6d",
+			"name": "color163",
+			"color": "#706850"
+		},
+		{
+			"type": "ColorItem",
+			"id": "3d6b69c9-2bd2-489a-bc78-94f708c71670",
+			"name": "color164",
+			"color": "#707050"
+		},
+		{
+			"type": "ColorItem",
+			"id": "bbca46d4-160f-4674-b327-19b1f06da654",
+			"name": "color165",
+			"color": "#687050"
+		},
+		{
+			"type": "ColorItem",
+			"id": "bc168cca-f22d-4cb3-9209-7a5891f890c1",
+			"name": "color166",
+			"color": "#607050"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c590d7b3-3cfa-49d4-9713-06ebb7006ca0",
+			"name": "color167",
+			"color": "#587050"
+		},
+		{
+			"type": "ColorItem",
+			"id": "e37b9792-cf94-47c8-8643-321cc80b661b",
+			"name": "color168",
+			"color": "#507050"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8d83f123-697c-4531-a66a-79d5019b4200",
+			"name": "color169",
+			"color": "#507058"
+		},
+		{
+			"type": "ColorItem",
+			"id": "bff6e8a1-4d9e-4b22-9bde-c03f2371bd17",
+			"name": "color170",
+			"color": "#507060"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8202033f-9798-4776-b9e6-9e0fc811ae56",
+			"name": "color171",
+			"color": "#507068"
+		},
+		{
+			"type": "ColorItem",
+			"id": "f1b5c70b-99cc-4b7a-b9b2-fce666c630aa",
+			"name": "color172",
+			"color": "#507070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "00008811-b1b9-4aba-b048-bc340d41c98d",
+			"name": "color173",
+			"color": "#506870"
+		},
+		{
+			"type": "ColorItem",
+			"id": "f024d808-841d-4690-a7e3-42f053ce6d41",
+			"name": "color174",
+			"color": "#506070"
+		},
+		{
+			"type": "ColorItem",
+			"id": "0f1cb04e-12f4-4e6a-a6f7-7e2032eb204b",
+			"name": "color175",
+			"color": "#505870"
+		},
+		{
+			"type": "ColorItem",
+			"id": "d2a4162e-bafc-423f-bbb1-ee2edde1b29b",
+			"name": "color176",
+			"color": "#000040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "62f0dcc8-716b-4a9c-b7a3-4d27eb9995da",
+			"name": "color177",
+			"color": "#100040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "cdfa3376-cae7-4704-b32f-36daec6f33e6",
+			"name": "color178",
+			"color": "#200040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "0727dd07-6d3d-4908-a877-860e60132d4d",
+			"name": "color179",
+			"color": "#300040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "7c170e17-af87-40cd-a501-a7b9a0108f4d",
+			"name": "color180",
+			"color": "#400040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "82184498-8ce8-4d93-a7bd-8d058f6e1b90",
+			"name": "color181",
+			"color": "#400030"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9c895a68-ffea-436c-9d1b-116c2b7bb876",
+			"name": "color182",
+			"color": "#400020"
+		},
+		{
+			"type": "ColorItem",
+			"id": "87a6dcbc-7b57-4b50-a0ec-3286addb3d70",
+			"name": "color183",
+			"color": "#400010"
+		},
+		{
+			"type": "ColorItem",
+			"id": "55727109-a9aa-4003-b06f-c1e44d4986fa",
+			"name": "color184",
+			"color": "#400000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "873aba54-47bb-4d91-9466-d181a898ccf6",
+			"name": "color185",
+			"color": "#401000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "d81f8904-d305-4b67-a101-a9439f5cff63",
+			"name": "color186",
+			"color": "#402000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "587cc770-b12c-49d6-9fd8-3f3e427fa9cd",
+			"name": "color187",
+			"color": "#403000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c050d68a-4279-4855-a4bf-bad10fcb108e",
+			"name": "color188",
+			"color": "#404000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "ebfb09fe-140b-4c36-80b5-53c3893056d7",
+			"name": "color189",
+			"color": "#304000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "f04ff187-80b5-4ef6-b20c-e9debbc37153",
+			"name": "color190",
+			"color": "#204000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "5179bce8-703b-4b36-835e-bffba9095528",
+			"name": "color191",
+			"color": "#104000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8bf85b95-8ca0-4c4d-8489-d97ee7cadb40",
+			"name": "color192",
+			"color": "#004000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "989cd737-2e25-44ed-a213-687f4c36e8fb",
+			"name": "color193",
+			"color": "#004010"
+		},
+		{
+			"type": "ColorItem",
+			"id": "7fe5acf7-2794-484b-9d1a-0f320ae60587",
+			"name": "color194",
+			"color": "#004020"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9ed9ee94-0d84-4a17-b24a-b841a8f191f8",
+			"name": "color195",
+			"color": "#004030"
+		},
+		{
+			"type": "ColorItem",
+			"id": "897374c8-ab0d-4fa4-bac7-fbeec0888064",
+			"name": "color196",
+			"color": "#004040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "f8f66cdc-b92f-4197-92f4-9e443888fce0",
+			"name": "color197",
+			"color": "#003040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "d7f6a801-84ef-4bfe-be36-849c02055fb8",
+			"name": "color198",
+			"color": "#002040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "2820464a-61a7-4a9a-983b-a1b827fed12b",
+			"name": "color199",
+			"color": "#001040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "eefcf146-4bba-48ce-84fb-5901c1624830",
+			"name": "color200",
+			"color": "#202040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "fddd71cd-2a9b-4ca5-9851-911af278e1fe",
+			"name": "color201",
+			"color": "#282040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "90f80dd5-de69-4de8-bf09-4340b986522d",
+			"name": "color202",
+			"color": "#302040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "6ee74641-06dc-40fd-a6e9-c24b29ea8d99",
+			"name": "color203",
+			"color": "#382040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "af7f2df5-e25a-4387-91bc-b43e6807806e",
+			"name": "color204",
+			"color": "#402040"
+		},
+		{
+			"type": "ColorItem",
+			"id": "d58da7fb-0334-4136-8f3d-2ce8fd8862e4",
+			"name": "color205",
+			"color": "#402038"
+		},
+		{
+			"type": "ColorItem",
+			"id": "54e28986-09e6-4283-ac72-206a0f723ee6",
+			"name": "color206",
+			"color": "#402030"
+		},
+		{
+			"type": "ColorItem",
+			"id": "549097d3-6204-478a-b8c0-5e143fc3018e",
+			"name": "color207",
+			"color": "#402028"
+		},
+		{
+			"type": "ColorItem",
+			"id": "47b307b9-4b4d-409b-85c1-6b5d3601613b",
+			"name": "color208",
+			"color": "#402020"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c1381afe-9818-4574-a9b0-900451f55528",
+			"name": "color209",
+			"color": "#402820"
+		},
+		{
+			"type": "ColorItem",
+			"id": "1db19d8a-4752-4a83-a7f2-751240b7a072",
+			"name": "color210",
+			"color": "#403020"
+		},
+		{
+			"type": "ColorItem",
+			"id": "d30acb13-f2ce-4358-af76-0d29c8f50238",
+			"name": "color211",
+			"color": "#403820"
+		},
+		{
+			"type": "ColorItem",
+			"id": "bca4fe56-a135-4319-87e4-4de68125d683",
+			"name": "color212",
+			"color": "#404020"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c52fb273-e9bc-416b-8494-ea60fded1e24",
+			"name": "color213",
+			"color": "#384020"
+		},
+		{
+			"type": "ColorItem",
+			"id": "846997fc-20ce-4d0f-a93a-1d451232d4ca",
+			"name": "color214",
+			"color": "#304020"
+		},
+		{
+			"type": "ColorItem",
+			"id": "701442ab-6e05-4b9d-9ac7-6158dd3fdbb0",
+			"name": "color215",
+			"color": "#284020"
+		},
+		{
+			"type": "ColorItem",
+			"id": "6e17e329-69b6-4930-a6e3-2791abb43d57",
+			"name": "color216",
+			"color": "#204020"
+		},
+		{
+			"type": "ColorItem",
+			"id": "6495815b-0ee7-481b-8c37-c4b8c92fff11",
+			"name": "color217",
+			"color": "#204028"
+		},
+		{
+			"type": "ColorItem",
+			"id": "bd1d2ffe-4a7b-40cd-b1a3-2cbb04752744",
+			"name": "color218",
+			"color": "#0B68B6"
+		},
+		{
+			"type": "ColorItem",
+			"id": "4b1fc217-f72b-4545-af23-1a481d93d9f8",
+			"name": "color219",
+			"color": "#192B74"
+		},
+		{
+			"type": "ColorItem",
+			"id": "df8db50e-1e5b-4730-ac31-fbce3d12ad59",
+			"name": "color220",
+			"color": "#AFC81A"
+		},
+		{
+			"type": "ColorItem",
+			"id": "0d7c870c-a36a-43e5-a7b7-466345a3078a",
+			"name": "color221",
+			"color": "#B3B9BD"
+		},
+		{
+			"type": "ColorItem",
+			"id": "699b7e5d-5c46-4df2-8404-e27efb0e273c",
+			"name": "color222",
+			"color": "#E3E3E3"
+		},
+		{
+			"type": "ColorItem",
+			"id": "b3a0554d-5c3d-4a75-9d4b-567a6bbcc524",
+			"name": "color223",
+			"color": "#B6B9B6"
+		},
+		{
+			"type": "ColorItem",
+			"id": "0a4445bf-7773-440f-ba79-74d3476db352",
+			"name": "color224",
+			"color": "#37423C"
+		},
+		{
+			"type": "ColorItem",
+			"id": "9b9ed271-ccf4-49d3-9264-bc32dbd1bb91",
+			"name": "color225",
+			"color": "#BCD528"
+		},
+		{
+			"type": "ColorItem",
+			"id": "3dd35dac-5293-4383-b38a-0f69ad9dce87",
+			"name": "color226",
+			"color": "#8DBA00"
+		},
+		{
+			"type": "ColorItem",
+			"id": "515b154d-865d-4c44-b8dc-94616761ac49",
+			"name": "color227",
+			"color": "#EBEBEB"
+		},
+		{
+			"type": "ColorItem",
+			"id": "2ba9b441-bf15-40f7-985f-d83a3139ff9b",
+			"name": "color228",
+			"color": "#28322D"
+		},
+		{
+			"type": "ColorItem",
+			"id": "04582722-c84b-450a-8e84-eb662706e86e",
+			"name": "color229",
+			"color": "#AFC81A"
+		},
+		{
+			"type": "ColorItem",
+			"id": "b8e3818d-d0a5-4025-bed3-2e3bdb181ec4",
+			"name": "color230",
+			"color": "#00C5FF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "6621d12b-ed38-4ed3-b097-2e28730d2193",
+			"name": "color231",
+			"color": "#A5ABB0"
+		},
+		{
+			"type": "ColorItem",
+			"id": "be448c1e-a2ad-4d03-81ba-ac279ffd7c03",
+			"name": "color232",
+			"color": "#0B68B6"
+		},
+		{
+			"type": "ColorItem",
+			"id": "283e475f-2f66-47fa-b61c-99fcd42ce062",
+			"name": "color233",
+			"color": "#D2D7D7"
+		},
+		{
+			"type": "ColorItem",
+			"id": "93dcc80b-07d0-46ec-95c0-663624e34700",
+			"name": "color234",
+			"color": "#DE453B"
+		},
+		{
+			"type": "ColorItem",
+			"id": "2a6d8336-a42f-49f5-a849-ad2fb26c051c",
+			"name": "color235",
+			"color": "#FF0000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "d1c49f57-f6b7-465a-ba68-91a9e20b2386",
+			"name": "color236",
+			"color": "rgba(255,50,50,0.6)"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8e8c0bf5-72e7-4838-a9b8-9cb20d251e0a",
+			"name": "color237",
+			"color": "#E5F2F8"
+		},
+		{
+			"type": "ColorItem",
+			"id": "8c6a5e24-a3f3-457e-96ba-13b9f9099673",
+			"name": "color238",
+			"color": "#DEF755"
+		},
+		{
+			"type": "ColorItem",
+			"id": "314296ed-2d40-48be-812c-df88080b7ff0",
+			"name": "color239",
+			"color": "#007700"
+		},
+		{
+			"type": "ColorItem",
+			"id": "3ea6a80e-aead-42b8-a6e1-787348e69149",
+			"name": "color240",
+			"color": "#AEC81A"
+		},
+		{
+			"type": "ColorItem",
+			"id": "71f8d28f-be3a-4cd5-a1f4-7adb81fadc62",
+			"name": "color241",
+			"color": "rgba(255,255,255,0.3)"
+		},
+		{
+			"type": "ColorItem",
+			"id": "3846af18-655f-431d-9bee-f0963bcdd683",
+			"name": "color242",
+			"color": "rgba(255,250,100,0.6)"
+		},
+		{
+			"type": "ColorItem",
+			"id": "015ed25d-c95e-40fd-933a-7e63b7f38aba",
+			"name": "color243",
+			"color": "#82D5D5"
+		},
+		{
+			"type": "ColorItem",
+			"id": "1882ede9-01ee-45cb-a6a1-ced97a3ff7b3",
+			"name": "color244",
+			"color": "#007FC5"
+		},
+		{
+			"type": "ColorItem",
+			"id": "17c1d6ac-fec6-4c62-9788-4e7150c2ccce",
+			"name": "color245",
+			"color": "rgba(100,255,100,0.6)"
+		},
+		{
+			"type": "ColorItem",
+			"id": "10878b87-481e-4d6c-aa50-6973a8cf85ef",
+			"name": "color246",
+			"color": "#D7D7D7"
+		},
+		{
+			"type": "ColorItem",
+			"id": "b513030a-8e7a-4e81-81ab-219bd652fc13",
+			"name": "color247",
+			"color": "rgba(42,42,42,0.3)"
+		},
+		{
+			"type": "ColorItem",
+			"id": "78650a7a-0de1-4414-930b-06c6daa83aec",
+			"name": "color248",
+			"color": "#A0A0A0"
+		},
+		{
+			"type": "ColorItem",
+			"id": "61a5790c-f9f0-4d9d-927c-b1a4f9ca2f60",
+			"name": "color249",
+			"color": "rgba(42,42,42,0.8)"
+		},
+		{
+			"type": "ColorItem",
+			"id": "5543cda2-adcf-49b6-b9c2-9562e97ae8b6",
+			"name": "color250",
+			"color": "#5F5F64"
+		},
+		{
+			"type": "ColorItem",
+			"id": "aef4012f-6bd5-4422-9d87-fdac2f7b6992",
+			"name": "color251",
+			"color": "#404247"
+		},
+		{
+			"type": "ColorItem",
+			"id": "c0239423-52c6-467d-a65c-bc6b1ecfe07b",
+			"name": "color252",
+			"color": "#2F2F2F"
+		},
+		{
+			"type": "ColorItem",
+			"id": "0440a762-ac47-456d-b3db-e34c775beb30",
+			"name": "color253",
+			"color": "#FFFFFF"
+		},
+		{
+			"type": "ColorItem",
+			"id": "ddb68499-b96d-465f-b5c3-01f82ae11f69",
+			"name": "color254",
+			"color": "#000000"
+		},
+		{
+			"type": "ColorItem",
+			"id": "42610d45-5cc6-41f0-96d7-9a07771719e7",
+			"name": "color255",
+			"color": "rgba(255,255,255,0)"
+		}
+	],
+	"revision": {
+		"type": "Revision"
+	}
+}

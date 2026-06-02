@@ -1,0 +1,15 @@
+{
+	"type": "AlarmManager",
+	"version": "0.0.96",
+	"alarms": [
+		{
+			"type": "Alarm",
+			"designTimeId": "1ccc3a54-7e52-4a22-a8e9-7ffe22ce0cd7",
+			"name": "Default",
+			"isDefault": true,
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
+}

@@ -1,0 +1,265 @@
+{
+    "name": "sig-alarm-config",
+    "shortName": {
+        "en": "Alarm Configuration",
+        "de": "Alarm Configuration"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "02.00.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements an Alarm Configuration component.",
+        "de": "Implementiert eine Alarm Konfigurations-Komponente."
+    },
+    "main": [
+        "sig-alarm-config.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-alarm-config.html",
+    "private": true,
+    "baseComponent": "sig-alarm-config-base",
+    "dependencies": {
+        "sig-alarm-config-base": "components/sigmatek/sig-alarm-config-base#^1.0.0"
+    },
+    "resources": [
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-alarm-config-base"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "100px",
+        "height": "100px"
+    },
+    "toolbox": false,
+    "slotted": false,
+    "styleClassEditor": false,
+    "usableInShadowDom": false,
+    "moduleImport": {},
+    "placementTemplates": [],
+    "selectorSettings": {},
+    "properties": [
+        /*****************************************************************************************************
+        // Images
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Active image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "variable",
+            "name": "activeimg",
+            "dataType": "string",
+            "units": "url",
+            "default": "",
+            "lockStylyCopy": true,
+            "shortName": {
+                "en": "Active image",
+                "de": "Active image"
+            },
+            "editor": "urlpicker",
+            "description": {
+                "en": "The image which gets shown if the alarm is active.",
+                "de": "Das Bild welches angezeigt wird, wenn der Alarm aktiv ist."
+            },
+            "group": {
+                "en": "Images",
+                "de": "Images"
+            },
+            "sortIndex": 500000,
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Inactive image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "variable",
+            "name": "inactiveimg",
+            "dataType": "string",
+            "units": "url",
+            "default": "",
+            "lockStylyCopy": true,
+            "shortName": {
+                "en": "Inactive image",
+                "de": "Inactive image"
+            },
+            "editor": "urlpicker",
+            "description": {
+                "en": "The image which gets shown if the alarm is inactive.",
+                "de": "Das Bild welches angezeigt wird, wenn der Alarm inaktiv ist."
+            },
+            "group": {
+                "en": "Images",
+                "de": "Images"
+            },
+            "sortIndex": 500100,
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Ackn. active image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "variable",
+            "name": "acknactiveimg",
+            "dataType": "string",
+            "units": "url",
+            "default": "",
+            "lockStylyCopy": true,
+            "shortName": {
+                "en": "Ackn active image",
+                "de": "Ackn active image"
+            },
+            "editor": "urlpicker",
+            "description": {
+                "en": "The image which gets shown when the alarm is acknowledged but still active.",
+                "de": "Das Bild welches angezeigt wird, wenn der Alarm quittiert aber noch aktiv ist."
+            },
+            "group": {
+                "en": "Images",
+                "de": "Images"
+            },
+            "sortIndex": 500200,
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Ackn inactive image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "variable",
+            "name": "ackninactiveimg",
+            "dataType": "string",
+            "units": "url",
+            "default": "",
+            "lockStylyCopy": true,
+            "shortName": {
+                "en": "Ackn inactive image",
+                "de": "Ackn inactive image"
+            },
+            "editor": "urlpicker",
+            "description": {
+                "en": "The image which gets shown when the alarm is acknowledged and inactive.",
+                "de": "Das Bild welches angezeigt wird, wenn der Alarm quittiert und inaktiv ist."
+            },
+            "group": {
+                "en": "Images",
+                "de": "Images"
+            },
+            "sortIndex": 500300,
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Group image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "variable",
+            "name": "groupimg",
+            "dataType": "string",
+            "units": "url",
+            "default": "",
+            "lockStylyCopy": true,
+            "shortName": {
+                "en": "Group image",
+                "de": "Group image"
+            },
+            "editor": "urlpicker",
+            "description": {
+                "en": "The image which gets shown in the group column of the alarmlist.",
+                "de": "Das Bild welches in der Gruppenspalte der Alarmliste angezeigt wird."
+            },
+            "group": {
+                "en": "Images",
+                "de": "Images"
+            },
+            "sortIndex": 500400,
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // Texts
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Group text
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "text"
+            ],
+            "propertyType": "variable",
+            "name": "grouptext",
+            "dataType": "string",
+            "default": "",
+            "lockStylyCopy": true,
+            "shortName": {
+                "en": "Group text",
+                "de": "Group text"
+            },
+            "description": {
+                "en": "The text which gets shown in the group column of the alarmlist.",
+                "de": "Der Text welcher in der Gruppen Spalte der Alarmliste angezeigt wird."
+            },
+            "group": {
+                "en": "Texts",
+                "de": "Texts"
+            },
+            "sortIndex": 150000,
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }
+    ]
+}

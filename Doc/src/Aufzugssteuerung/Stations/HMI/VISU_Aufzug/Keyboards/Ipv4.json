@@ -1,0 +1,78 @@
+{
+	"type": "keyboard",
+	"version": "0.0.96",
+	"prerender": 2,
+	"isSystemWindow": true,
+	"gridWidth": "10px",
+	"gridHeight": "10px",
+	"gridColor": "#000000",
+	"gridStyle": "dotgrid",
+	"revision": {
+		"type": "Revision"
+	},
+	"designTimeId": "97822c29-c1da-415a-9dbe-4e52739522cb",
+	"name": "Ipv4",
+	"instanceId": "systemWindow_keyboard_ipv4",
+	"controlId": "sig-window-container-keyboard",
+	"properties": [
+		{
+			"name": "--theme-sig-element-width",
+			"value": "255px",
+			"typeId": 0,
+			"propTypeId": 2
+		},
+		{
+			"name": "--theme-sig-element-height",
+			"value": "310px",
+			"typeId": 0,
+			"propTypeId": 2
+		}
+	],
+	"controls": [
+		{
+			"type": "control",
+			"designTimeId": "bf1e5231-70b5-4739-bd84-f7cab6feb972",
+			"name": "Keyboard",
+			"instanceId": "Keyboard_systemWindow_keyboard_ipv4",
+			"controlId": "sig-keyboard",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "0px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "0px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "310px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "255px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "keyboardtype",
+					"value": "ipv4",
+					"typeId": 0,
+					"propTypeId": 1
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "101",
+					"typeId": 0,
+					"propTypeId": 2
+				}
+			]
+		}
+	]
+}

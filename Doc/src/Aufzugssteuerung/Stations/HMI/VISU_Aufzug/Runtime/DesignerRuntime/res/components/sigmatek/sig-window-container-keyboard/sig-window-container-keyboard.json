@@ -1,0 +1,373 @@
+{
+    "name": "sig-window-container-keyboard",
+    "shortName": {
+        "en": "KeyboardContainer",
+        "de": "KeyboardContainer"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "01.02.001",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a base keyboard container for internal use in the LVD.",
+        "de": "Implements a base keyboard container for internal use in the LVD."
+    },
+    "main": [
+        "sig-window-container-keyboard.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-window-container-keyboard.html",
+    "private": true,
+    "baseComponent": "sig-window-container",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-window-container-keyboard-css.js"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-utils-jspanel"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-window-container"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "745px",
+        "height": "335px"
+    },
+    "toolbox": false,
+    "styleClassEditor": true,
+    "slotted": true,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "designer"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "selectorSettings": {
+        "selectorDefaultStyle": ".jsPanel-theme-keyboard"
+    },
+    "properties": [
+        {
+            "userLevel": -1,
+            "name": "hasCloseButton"
+        },
+        {
+            "userLevel": -1,
+            "name": "hasMaxButton"
+        },
+        {
+            "userLevel": -1,
+            "name": "hasMinButton"
+        },
+        {
+            "userLevel": -1,
+            "name": "hasSmallifyButton"
+        },
+        {
+            "userLevel": -1,
+            "name": "headerTitle"
+        },
+        {
+            "userLevel": -1,
+            "name": "hideOnClose"
+        },
+        {
+            "userLevel": -1,
+            "name": "isModal"
+        },
+        {
+            "userLevel": -1,
+            "name": "setStatus"
+        },
+        {
+            "userLevel": -1,
+            "name": "dragit-enable"
+        },
+        {
+            "userLevel": -1,
+            "name": "resizeit-enable"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelresizestart"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelresize"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelresizestop"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelbeforemaximize"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelmaximized"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelbeforeminimize"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelminimized"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelbeforenormalize"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelnormalized"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelbeforeunsmallify"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelunsmallified"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelbeforesmallify"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelsmallified"
+        },
+        {
+            "userLevel": -1,
+            "name": "jspanelsmallifiedmax"
+        },
+        {
+            "userLevel": -1,
+            "name": "jsPanelIconMaximize"
+        },
+        {
+            "userLevel": -1,
+            "name": "jsPanelIconMinimize"
+        },
+        {
+            "userLevel": -1,
+            "name": "jsPanelIconNormalize"
+        },
+        {
+            "userLevel": -1,
+            "name": "jsPanelIconSmallify"
+        },
+        {
+            "userLevel": -1,
+            "name": "open"
+        },
+        {
+            "userLevel": -1,
+            "name": "close"
+        },
+        {
+            "userLevel": -1,
+            "name": "enableAnimateIn"
+        },
+        {
+            "userLevel": -1,
+            "name": "animationInClass"
+        },
+        {
+            "userLevel": -1,
+            "name": "enableAnimateOut"
+        },
+        {
+            "userLevel": -1,
+            "name": "animationOutClass"
+        },
+        {
+            "userLevel": -1,
+            "name": "enableModalAnimateIn"
+        },
+        {
+            "userLevel": -1,
+            "name": "modalAnimationInClass"
+        },
+        {
+            "userLevel": -1,
+            "name": "enableModalAnimateOut"
+        },
+        {
+            "userLevel": -1,
+            "name": "modalAnimationOutClass"
+        },
+        {
+            "userLevel": -1,
+            "name": "reopenOnReload"
+        },
+        {
+            "valueSourceTypes": [
+                "accessNumber"
+            ],
+            "propertyType": "none",
+            "name": "accessNumber",
+            "dataType": "number",
+            "shortName": {
+                "en": "Access number",
+                "de": "Access number"
+            },
+            "description": {
+                "en": "The access number needed to use this control.",
+                "de": "The access number needed to use this control."
+            },
+            "group": {
+                "en": "State",
+                "de": "State"
+            },
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowProperty",
+            "name": "saveStats",
+            "sortIndex": 10100350,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": false,
+            "shortName": {
+                "en": "Save stats",
+                "de": "Save stats"
+            },
+            "description": {
+                "en": "Saves the keyboard windows stats (position) and applies it on the next open.",
+                "de": "Saves the keyboard windows stats (position) and applies it on the next open."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "windowproperty",
+            "name": "closeOnBackdropClick",
+            "sortIndex": 10100200,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": true,
+            "shortName": {
+                "en": "Close on background click",
+                "de": "Close on background click"
+            },
+            "description": {
+                "en": "Closes a keyboard window by click on its background.",
+                "de": "Closes a keyboard window by click on its background."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-hdr-background-color",
+            "sortIndex": 10400200,
+            "dataType": "string",
+            "units": "#,rgba",
+            "editor": "colorpicker",
+            "default": "rgba(0,127,197,1)",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the title bar.",
+                "de": "The background color of the title bar."
+            },
+            "group": {
+                "en": "Title styling",
+                "de": "Title styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-window-panel-content-background-color",
+            "sortIndex": 10300100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(95, 95, 100, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component.",
+                "de": "The background color of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<SlnStation Name="HMI" Color="12813661">
+	<SlnProjects>
+		<SlnVISUDesignerProject Name="VISU_Aufzug" LoadAtStartup ="true" File=".\VISU_Aufzug\VISU_Aufzug.lvp">
+		</SlnVISUDesignerProject>
+	</SlnProjects>
+</SlnStation>

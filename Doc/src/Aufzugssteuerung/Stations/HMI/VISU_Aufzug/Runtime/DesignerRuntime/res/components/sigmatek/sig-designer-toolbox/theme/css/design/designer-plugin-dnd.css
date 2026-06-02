@@ -1,0 +1,26 @@
+#jstree-marker.jstree-designer {
+  border-left-color: #999;
+  background: transparent;
+}
+#jstree-dnd.jstree-designer {
+  line-height: 24px;
+  padding: 0 4px;
+}
+#jstree-dnd.jstree-designer .jstree-ok,
+#jstree-dnd.jstree-designer .jstree-er {
+  background-image: url("32px.png");
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+#jstree-dnd.jstree-designer i {
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+#jstree-dnd.jstree-designer .jstree-ok {
+  background-position: -4px -68px;
+}
+#jstree-dnd.jstree-designer .jstree-er {
+  background-position: -36px -68px;
+}

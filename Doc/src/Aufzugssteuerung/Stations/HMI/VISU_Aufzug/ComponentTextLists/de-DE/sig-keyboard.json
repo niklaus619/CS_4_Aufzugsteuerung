@@ -1,0 +1,23 @@
+{
+	"type": "componentTextList",
+	"version": "0.0.96",
+	"id": "e1c2a8f5-bfd9-4f7f-bbae-c32c8f5e54c7",
+	"name": "sig-keyboard",
+	"texts": [
+		{
+			"type": "textElement",
+			"id": "49641612-da00-4178-82e7-24307bd4f8b1",
+			"aliasName": "min",
+			"text": "min: "
+		},
+		{
+			"type": "textElement",
+			"id": "0401dd0a-5beb-4d75-a1d7-357a0fb7f17f",
+			"aliasName": "max",
+			"text": "max: "
+		}
+	],
+	"revision": {
+		"type": "Revision"
+	}
+}

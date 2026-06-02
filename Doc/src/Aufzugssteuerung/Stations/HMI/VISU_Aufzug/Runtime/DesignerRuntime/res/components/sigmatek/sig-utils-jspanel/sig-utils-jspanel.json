@@ -1,0 +1,67 @@
+{
+    "name": "sig-utils-jspanel",
+    "shortName": {
+        "en": "jsPanel",
+        "de": "JsPanel"
+    },
+    "controlType": {
+        "en": "Libraries",
+        "de": "Libraries"
+    },
+    "version": "01.02.017",
+    "authors": [
+        "https://github.com/Flyer53"
+    ],
+    "description": {
+        "en": "Helper element to include the jspanel library.",
+        "de": "Helper element to include the jspanel library."
+    },
+    "main": [
+        "sig-utils-jspanel.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "https://github.com/Flyer53/jsPanel4/blob/master/LICENSE.TXT",
+    "homepage": "https://github.com/Flyer53/jsPanel4",
+    "private": true,
+    "dependencies": {
+        "sig-element": "controls/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0",
+        "jspanel4": "jspanel4/jspanel4#4.7.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./extensions/hideonclose/*.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./extensions/sigelement/*.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./extensions/modal/*.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./themes/*.css"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./themes/icons/*.svg"
+        }
+    ],
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "index",
+            "designer"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "toolbox": false,
+    "properties": []
+}

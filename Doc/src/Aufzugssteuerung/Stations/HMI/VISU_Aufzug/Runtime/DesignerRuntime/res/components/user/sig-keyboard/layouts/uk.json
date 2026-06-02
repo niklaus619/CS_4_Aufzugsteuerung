@@ -1,0 +1,98 @@
+{
+    "lang": "uk",
+    "name": "Ukrainian",
+    "author": "SIGMATEK GmbH & Co KG",
+    "version": "2.0",
+    "layouts": {
+        "alpha": {
+            "layers": {
+                "normal": [
+                    "\u0451 1 2 3 4 5 6 7 8 9 0 - = {bksp}",
+                    "{tab} \u0439 \u0446 \u0443 \u043a \u0435 \u043d \u0433 \u0448 \u0449 \u0437 \u0445 \u0457 \u005c",
+                    "\u0444 \u0456 \u0432 \u0430 \u043f \u0440 \u043e \u043b \u0434 \u0436 \u0454 {accept}",
+                    "{shift} \u0491 \u044f \u0447 \u0441 \u043c \u0438 \u0442 \u044c \u0431 \u044e / {shift}",
+                    "{alt} {undo} {curleft} {space} {curright} {clear} {alt}"
+                ],
+                "shift": [
+                    "\u0401 ! \u0022 \u2116 ; % : ? * ( ) _ + {bksp}",
+                    "{tab} \u0419 \u0426 \u0423 \u041a \u0415 \u041d \u0413 \u0428 \u0429 \u0417 \u0425 \u0407 /",
+                    "\u0424 \u0406 \u0412 \u0410 \u041f \u0420 \u041e \u041b \u0414 \u0416 \u0404 {accept}",
+                    "{shift} \u0490 \u042f \u0427 \u0421 \u041c \u0418 \u0422 \u042c \u0411 \u042e / {shift}",
+                    "{alt} {undo} {curleft} {space} {curright} {clear} {alt}"
+                ],
+                "alt": [
+                    "{off} {off} {off} {off} {off} {off} {off} {off} {off} {off} {off} {off} {off} {bksp}",
+                    "{tab} {off} {off} {off} {off} \u0490 {off} \u0491 {off} {off} {off} {off} {off} {off}",
+                    "{off} {off} {off} {off} {off} {off} {off} {off} {off} {off} {off} {accept}",
+                    "{shift} {off} {off} {off} {off} {off} {off} {off} {off} {off} {off} {off} {shift}",
+                    "{alt} {undo} {curleft} {space} {curright} {clear} {alt}"
+                ]
+            }
+        },
+        "numeric": {
+            "config": {
+                "regexValidation": "numeric"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {increase}",
+                    "1 2 3 {decrease}",
+                    ". 0 {minus} {accept}"
+                ]
+            }
+        },
+        "ipv4": {
+            "config": {
+                "regexValidation": "ipv4"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {undo}",
+                    "1 2 3 {clear}",
+                    ". 0 {off} {accept}"
+                ]
+            }
+        },
+        "hex": {
+            "config": {
+                "regexValidation": "hex"
+            },
+            "layers": {
+                "normal": [
+                    "C D E F {bksp}",
+                    "8 9 A B {undo}",
+                    "4 5 6 7 {clear}",
+                    "0 1 2 3 {accept}"
+                ]
+            }
+        },
+        "time": {
+            "config": {
+                "regexValidation": "time"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {undo}",
+                    "1 2 3 {clear}",
+                    ": 0 {off} {accept}"
+                ]
+            }
+        },
+        "date": {
+            "config": {
+                "regexValidation": "date"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {undo}",
+                    "1 2 3 {clear}",
+                    ". 0 - {accept}"
+                ]
+            }
+        }
+    }
+}

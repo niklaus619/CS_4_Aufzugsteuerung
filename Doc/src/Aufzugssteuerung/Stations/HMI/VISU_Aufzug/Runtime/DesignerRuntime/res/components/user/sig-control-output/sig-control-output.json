@@ -1,0 +1,1627 @@
+{
+    "name": "sig-control-output",
+    "shortName": {
+        "en": "Output",
+        "de": "Output"
+    },
+    "controlType": {
+        "en": "Output",
+        "de": "Output"
+    },
+    "version": "02.00.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a value output component as a polymer custom element.",
+        "de": "Implementiert eine Ausgabe-Komponente als benutzerdefiniertes Polymer-Element."
+    },
+    "main": [
+        "sig-control-output.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-output.html",
+    "private": true,
+    "baseComponent": "sig-element-light",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element-light#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "defaultDimensions": {
+        "width": "150px",
+        "height": "30px"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-control-output-css.js"
+        }
+    ],
+    "toolbox": true,
+    "slotted": false,
+    "usableInShadowDom": true,
+    "styleClassEditor": true,
+    "defaultStyleOnly": false,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [
+        {
+            "default": true,
+            "name": "place-datapoint-default",
+            "shortName": {
+                "en": "Output",
+                "de": "Output"
+            },
+            "typeId": "datapoint",
+            "value": []
+        }
+    ],
+    "predefinedProperties": [
+        {
+            "src": "value",
+            "dest": "unittext",
+            "path": "Unit"
+        }
+    ],
+    "properties": [
+        /*****************************************************************************************************
+        // Data
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "value",
+            "sortIndex": 150000,
+            "dataType": "string",
+            "default": "",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Value",
+                "de": "Value"
+            },
+            "description": {
+                "en": "The source of the output value of the component.",
+                "de": "Die Quelle des Ausgabewertes der Komponente."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Settings
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Format
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "format",
+            "name": "format",
+            "sortIndex": 150100,
+            "dataType": "string",
+            "default": "none",
+            "lockStyleCopy": true,
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": ""
+                },
+                {
+                    "shortName": {
+                        "en": "DD.MM",
+                        "de": "DD.MM"
+                    },
+                    "value": "DD.MM"
+                },
+                {
+                    "shortName": {
+                        "en": "DD.MM.YYYY",
+                        "de": "DD.MM.YYYY"
+                    },
+                    "value": "DD.MM.YYYY"
+                },
+                {
+                    "shortName": {
+                        "en": "WD DD.MM.YYYY",
+                        "de": "WD DD.MM.YYYY"
+                    },
+                    "value": "DoW DD.MM.YYYY"
+                },
+                {
+                    "shortName": {
+                        "en": "DD.MM.YY",
+                        "de": "DD.MM.YY"
+                    },
+                    "value": "DD.MM.YY"
+                },
+                {
+                    "shortName": {
+                        "en": "YY-MM-DD",
+                        "de": "YY-MM-DD"
+                    },
+                    "value": "YY-MM-DD"
+                },
+                {
+                    "shortName": {
+                        "en": "YYYY-MM-DD",
+                        "de": "YYYY-MM-DD"
+                    },
+                    "value": "YYYY-MM-DD"
+                },
+                {
+                    "shortName": {
+                        "en": "YY-MM",
+                        "de": "YY-MM"
+                    },
+                    "value": "YY-MM"
+                },
+                {
+                    "shortName": {
+                        "en": "HH:MM:SS",
+                        "de": "HH:MM:SS"
+                    },
+                    "value": "hh:mm:ss"
+                },
+                {
+                    "shortName": {
+                        "en": "HH:MM",
+                        "de": "HH:MM"
+                    },
+                    "value": "hh:mm"
+                },
+                {
+                    "shortName": {
+                        "en": "MM:SS",
+                        "de": "MM:SS"
+                    },
+                    "value": "mm:ss"
+                },
+                {
+                    "shortName": {
+                        "en": "Hexadecimal",
+                        "de": "Hexadecimal"
+                    },
+                    "value": "hex"
+                },
+                {
+                    "shortName": {
+                        "en": "IPv4",
+                        "de": "IPv4"
+                    },
+                    "value": "ipv4"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Format",
+                "de": "Format"
+            },
+            "description": {
+                "en": "Defines the format of a value.",
+                "de": "Definiert das Format eines Wertes."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Overflow
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-text-overflow",
+            "sortIndex": 150200,
+            "dataType": "string",
+            "default": "clip",
+            "lockStyleCopy": true,
+            "options": [
+                {
+                    "shortName": {
+                        "en": "clip",
+                        "de": "clip"
+                    },
+                    "value": "clip"
+                },
+                {
+                    "shortName": {
+                        "en": "dots",
+                        "de": "dots"
+                    },
+                    "value": "ellipsis"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Overflow",
+                "de": "Overflow"
+            },
+            "description": {
+                "en": "Defines how overflowed content that cannot be displayed should be presented.",
+                "de": "Definiert, wie überlaufender Inhalt, der nicht angezeigt werden kann, dargestellt werden soll."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // General styling
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Background color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-background-color",
+            "sortIndex": 500000,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component.",
+                "de": "Die Hintergrundfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Background color stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-background-color-stop",
+            "sortIndex": 500100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color stop",
+                "de": "Background color stop"
+            },
+            "description": {
+                "en": "The stop color of the background gradient.",
+                "de": "Die Begrenzungsfarbe des Hintergrundverlaufs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Background gradient direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-background-color-direction",
+            "sortIndex": 500200,
+            "dataType": "string",
+            "default": "to bottom",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "to bottom",
+                        "de": "to bottom"
+                    },
+                    "value": "to bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to top",
+                        "de": "to top"
+                    },
+                    "value": "to top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left",
+                        "de": "to left"
+                    },
+                    "value": "to left"
+                },
+                {
+                    "shortName": {
+                        "en": "to right",
+                        "de": "to right"
+                    },
+                    "value": "to right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Background gradient direction",
+                "de": "Background gradient direction"
+            },
+            "description": {
+                "en": "The direction of the background gradient.",
+                "de": "Die Richtung des Hintergrundverlaufs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-color",
+            "sortIndex": 500300,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "The text color of the component.",
+                "de": "Die Textfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text align horizontal
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-value-align",
+            "sortIndex": 500400,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "left"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Text align horizontal",
+                "de": "Text align horizontal"
+            },
+            "description": {
+                "en": "The horizontal alignment of the component's text.",
+                "de": "Die horizontale Ausrichtung des Textes der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text align vertical
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-value-vertical-align",
+            "sortIndex": 500500,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "start"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "end"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Text align vertical",
+                "de": "Text align vertical"
+            },
+            "description": {
+                "en": "The vertical alignment of the component's text.",
+                "de": "Die vertikale Ausrichtung des Textes der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text margin left and right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-margin-leftright",
+            "sortIndex": 500600,
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Text margin left and right",
+                "de": "Text margin left and right"
+            },
+            "description": {
+                "en": "When text is horizontally left aligned, it is the distance from the left side of the container to the beginning of the output text. When text is horizontally right aligned, it is the distance from the right side of the container to the beginning of the output text.",
+                "de": "Wenn Text horizontal linksbündig ausgerichtet ist, ist dies der Abstand von der linken Seite des Containers zum Anfang des Ausgabetextes. Wenn Text horizontal rechts ausgerichtet ist, ist dies der Abstand von der rechten Seite des Containers bis zum Anfang des Ausgabetextes."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text margin top and bottom
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-margin-top",
+            "sortIndex": 500700,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Text margin top and bottom",
+                "de": "Text margin top and bottom"
+            },
+            "description": {
+                "en": "When text is vertically top aligned, it is the distance from the top to the beginning of the output text. When text is vertically bottom aligned, it is the distance from the bottom to the beginning of the output text.",
+                "de": "Wenn Text vertikal oben ausgerichtet ist, ist dies der Abstand von der Oberkante zum Anfang des Ausgabetextes. Wenn Text vertikal unten ausgerichtet ist, ist dies der Abstand von unten zum Anfang des Ausgabetextes."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-border-color",
+            "sortIndex": 500800,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the component.",
+                "de": "Die Rahmenfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-border-color-stop",
+            "sortIndex": 500900,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color stop",
+                "de": "Border color stop"
+            },
+            "description": {
+                "en": "The stop color of the border gradient.",
+                "de": "Die Begrenzungsfarbe des Rahmenverlaufs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border gradient
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "bordergradient",
+            "sortIndex": 501000,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Border gradient",
+                "de": "Border gradient"
+            },
+            "description": {
+                "en": "Activates the border gradient of the component.",
+                "de": "Aktiviert den Rahmenverlauf der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border gradient direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-border-color-direction",
+            "sortIndex": 501100,
+            "dataType": "string",
+            "default": "to bottom",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "to bottom",
+                        "de": "to bottom"
+                    },
+                    "value": "to bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to top",
+                        "de": "to top"
+                    },
+                    "value": "to top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left",
+                        "de": "to left"
+                    },
+                    "value": "to left"
+                },
+                {
+                    "shortName": {
+                        "en": "to right",
+                        "de": "to right"
+                    },
+                    "value": "to right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border gradient direction",
+                "de": "Border gradient direction"
+            },
+            "description": {
+                "en": "The direction of the border gradient.",
+                "de": "Die Richtung des Rahmenverlaufs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border width
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-border-width",
+            "sortIndex": 501200,
+            "dataType": "string",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the component. This value can be set as shorthand property.",
+                "de": "Die Rahmenbreite der Komponente. Dieser Wert kann als shorthand property angegeben werden."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border style
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-border-style",
+            "sortIndex": 501300,
+            "dataType": "string",
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the component.",
+                "de": "Die Rahmenart der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-border-radius",
+            "sortIndex": 501400,
+            "dataType": "string",
+            "units": "px",
+            "default": "3px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the component.",
+                "de": "Der Rahmenradius der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius top left
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-border-radius-tl",
+            "sortIndex": 501500,
+            "dataType": "string",
+            "units": "px",
+            "default": "3px",
+            "shortName": {
+                "en": "Border radius top left",
+                "de": "Border radius top left"
+            },
+            "description": {
+                "en": "The top-left border radius of the component.",
+                "de": "Der Rahmenradius oben-links der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius top right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-border-radius-tr",
+            "sortIndex": 501600,
+            "dataType": "string",
+            "units": "px",
+            "default": "3px",
+            "shortName": {
+                "en": "Border radius top right",
+                "de": "Border radius top right"
+            },
+            "description": {
+                "en": "The top-right border radius of the component.",
+                "de": "Der Rahmenradius oben-rechts der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius bottom left
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-border-radius-bl",
+            "sortIndex": 501700,
+            "dataType": "string",
+            "units": "px",
+            "default": "3px",
+            "shortName": {
+                "en": "Border radius bottom left",
+                "de": "Border radius bottom left"
+            },
+            "description": {
+                "en": "The bottom-left border radius of the component.",
+                "de": "Der Rahmenradius unten-links der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius bottom right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-border-radius-br",
+            "sortIndex": 501800,
+            "dataType": "string",
+            "units": "px",
+            "default": "3px",
+            "shortName": {
+                "en": "Border radius bottom right",
+                "de": "Border radius bottom right"
+            },
+            "description": {
+                "en": "The bottom-right border radius of the component.",
+                "de": "Der Rahmenradius unten-rechts der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "shadowactive",
+            "sortIndex": 501900,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Border shadow",
+                "de": "Border shadow"
+            },
+            "description": {
+                "en": "Activates the border shadow of the component.",
+                "de": "Aktiviert den Rahmenschatten der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow size
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-shadow-size",
+            "sortIndex": 502000,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Border shadow size",
+                "de": "Border shadow size"
+            },
+            "description": {
+                "en": "The size of the border shadow of the component.",
+                "de": "Die Größe des Rahmenschatten der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-shadow-color",
+            "sortIndex": 502100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border shadow color",
+                "de": "Border shadow color"
+            },
+            "description": {
+                "en": "The color of the border shadow of the component.",
+                "de": "Die Farbe des Rahmenschatten der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // Unit
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Show
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "unitactiv",
+            "sortIndex": 30000000,
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": false,
+            "shortName": {
+                "en": "Show",
+                "de": "Show"
+            },
+            "description": {
+                "en": "If true the unit text is shown in the output.",
+                "de": "Wenn auf True gesetzt, wird der Einheitentext der Ausgabe angezeigt."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Font style
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "font",
+                "fontScheme"
+            ],
+            "propertyType": "font",
+            "name": "label",
+            "sortIndex": 30000100,
+            "publishName": "#label",
+            "shortName": {
+                "en": "Font style",
+                "de": "Font style"
+            },
+            "description": {
+                "en": "The custom font of the unit text.",
+                "de": "Die Schriftart des Einheitentextes."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-unit-color",
+            "sortIndex": 30000200,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Color",
+                "de": "Color"
+            },
+            "description": {
+                "en": "The font color of the unit text.",
+                "de": "Die Textfarbe des Einheitentextes."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Position related to text
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "unitposition",
+            "sortIndex": 30000300,
+            "dataType": "string",
+            "default": "rightside",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "uppertop"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "lowerbottom"
+                },
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "leftside"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "rightside"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Position related to text",
+                "de": "Position related to text"
+            },
+            "description": {
+                "en": "Defines the position of the unit in the output.",
+                "de": "Definiert die Position der Einheit im Ausgabefeld."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Align horizontal
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-unit-text-align",
+            "sortIndex": 30000400,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "left"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Align horizontal",
+                "de": "Align horizontal"
+            },
+            "description": {
+                "en": "Defines how the unit text is horizontally aligned.",
+                "de": "Definiert die horizontale Ausrichtung des Einheitentextes."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Align vertical
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-unit-vertical-align",
+            "sortIndex": 30000500,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "start"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "end"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Align vertical",
+                "de": "Align vertical"
+            },
+            "description": {
+                "en": "Defines the vertical alignment of the unit.",
+                "de": "Definiert die vertikale Ausrichtung des Einheitentextes."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Margin left and right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-unit-margin-leftright",
+            "sortIndex": 30000600,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Margin left and right",
+                "de": "Margin left and right"
+            },
+            "description": {
+                "en": "When unit is horizontally left aligned, it is the distance from the left side of the container to the beginning of the unit. When unit is horizontally right aligned, it is the distance from the right side of the container to the beginning of the unit.",
+                "de": "Wenn die Einheit horizontal links ausgerichtet ist, ist dies der Abstand von der linken Seite des Ausgabefeldes bis zum Anfang der Einheit. Wenn die Einheit horizontal rechts ausgerichtet ist, ist dies der Abstand von der rechten Seite des Ausgabefeldes bis zum Anfang der Einheit."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Margin top and bottom
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-unit-margin-bottom",
+            "sortIndex": 30000700,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Margin top and bottom",
+                "de": "Margin top and bottom"
+            },
+            "description": {
+                "en": "When unit is vertically top aligned, it is the distance from the top to the beginning of the unit. When unit is vertically bottom aligned, it is the distance from the bottom to the beginning of the unit.",
+                "de": "Wenn die Einheit vertikal oben ausgerichtet ist, ist dies der Abstand von der Oberkante zum Anfang der Einheit. Wenn die Einheit vertikal unten ausgerichtet ist, ist dies der Abstand von unten zum Anfang der Einheit."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Width
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-output-grid-column-width-unit",
+            "sortIndex": 30000800,
+            "dataType": "string",
+            "units": "%",
+            "default": "default",
+            "shortName": {
+                "en": "Width",
+                "de": "Width"
+            },
+            "description": {
+                "en": "The Output is a one line table divided in two columns. Set the relative width of the unit to fine adjust the placement.",
+                "de": "Das Output Control ist eine Tabelle bestehend aus zwei Spalten. Hier wird die relative Breite der Einheitsspalte eingestellt."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*****************************************************************************************************
+        // Preview settings
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Preview text
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "previewtext",
+            "sortIndex": 150300,
+            "dataType": "string",
+            "default": "-- Output --",
+            "shortName": {
+                "en": "Preview text",
+                "de": "Preview text"
+            },
+            "description": {
+                "en": "The preview text of the component in the designer, if no datapoint is assigned. This text is also displayed in the style class editor.",
+                "de": "Der Vorschautext der Komponente im Designer, wenn kein Datenpunkt hinterlegt ist. Dieser Text wird auch im style class Editor angezeigt."
+            },
+            "group": {
+                "en": "Preview settings",
+                "de": "Preview settings"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }
+    ],
+    "helpFiles": [
+        {
+            "language": "de",
+            "default": true,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Output_DE.chm"
+                }
+            ]
+        },
+        {
+            "language": "en",
+            "default": false,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Output_EN.chm"
+                }
+            ]
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

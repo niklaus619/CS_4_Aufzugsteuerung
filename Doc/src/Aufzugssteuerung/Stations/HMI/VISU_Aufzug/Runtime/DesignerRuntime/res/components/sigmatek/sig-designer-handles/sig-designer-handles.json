@@ -1,0 +1,64 @@
+{
+    "name": "sig-designer-handles",
+    "shortName": {
+        "en": "Designer handles",
+        "de": "Designer handles"
+    },
+    "controlType": {
+        "en": "Designer",
+        "de": "Designer"
+    },
+    "version": "01.02.003",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a designer handles as a polymer custom element.",
+        "de": "Implements a designer handles as a polymer custom element."
+    },
+    "main": [
+        "sig-designer-handles.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-title.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-designer-handle-ghosts.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-designer-handles-mixin.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-designer-handle.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-designer-handles-css.js"
+        }
+    ],
+    "toolbox": false,
+    "slotted": false,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "designer"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [],
+    "properties": []
+}

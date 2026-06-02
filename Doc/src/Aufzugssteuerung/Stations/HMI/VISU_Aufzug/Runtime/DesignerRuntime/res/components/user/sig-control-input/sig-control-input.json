@@ -1,0 +1,2263 @@
+{
+    "name": "sig-control-input",
+    "shortName": {
+        "en": "Input",
+        "de": "Input"
+    },
+    "controlType": {
+        "en": "Input",
+        "de": "Input"
+    },
+    "version": "02.00.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements an input field as a polymer custom element.",
+        "de": "Implementiert ein Eingabefeld als benutzerdefiniertes Polymer-Element."
+    },
+    "main": [
+        "sig-control-input.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-input.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "defaultDimensions": {
+        "width": "150px",
+        "height": "30px"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-control-input-css.js"
+        }
+    ],
+    "toolbox": true,
+    "slotted": false,
+    "styleClassEditor": true,
+    "usableInShadowDom": true,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [
+        {
+            "default": true,
+            "name": "place-datapoint-default",
+            "shortName": {
+                "en": "Input",
+                "de": "Input"
+            },
+            "typeId": "datapoint",
+            "value": []
+        }
+    ],
+    "predefinedProperties": [
+        {
+            "src": "value",
+            "dest": "unittext",
+            "path": "Unit"
+        }
+    ],
+    "properties": [
+        /*****************************************************************************************************
+        // Hide properties from the base
+        *****************************************************************************************************/
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-dragged-opacity",
+            "userLevel": -1,
+            "userLevelStyling": -1
+        },
+        /*****************************************************************************************************
+        // State
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Access number
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "accessNumber"
+            ],
+            "propertyType": "none",
+            "name": "accessNumber",
+            "sortIndex": 200500,
+            "dataType": "number",
+            "shortName": {
+                "en": "Access number",
+                "de": "Access number"
+            },
+            "description": {
+                "en": "The access number needed to use this control.",
+                "de": "Die benötigte Zugriffsnummer, um die Komponente verwenden zu können."
+            },
+            "group": {
+                "en": "State",
+                "de": "State"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Data
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constNumber",
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "value",
+            "sortIndex": 150000,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "",
+            "shortName": {
+                "en": "Value",
+                "de": "Value"
+            },
+            "description": {
+                "en": "The input value of the component.",
+                "de": "Der Eingabewert der Komponente."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Settings
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Format
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "format",
+            "name": "format",
+            "sortIndex": 150100,
+            "dataType": "string",
+            "default": "none",
+            "lockStyleCopy": true,
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": ""
+                },
+                {
+                    "shortName": {
+                        "en": "DD.MM",
+                        "de": "DD.MM"
+                    },
+                    "value": "DD.MM"
+                },
+                {
+                    "shortName": {
+                        "en": "DD.MM.YYYY",
+                        "de": "DD.MM.YYYY"
+                    },
+                    "value": "DD.MM.YYYY"
+                },
+                {
+                    "shortName": {
+                        "en": "WD DD.MM.YYYY",
+                        "de": "WD DD.MM.YYYY"
+                    },
+                    "value": "DoW DD.MM.YYYY"
+                },
+                {
+                    "shortName": {
+                        "en": "DD.MM.YY",
+                        "de": "DD.MM.YY"
+                    },
+                    "value": "DD.MM.YY"
+                },
+                {
+                    "shortName": {
+                        "en": "YY-MM-DD",
+                        "de": "YY-MM-DD"
+                    },
+                    "value": "YY-MM-DD"
+                },
+                {
+                    "shortName": {
+                        "en": "YYYY-MM-DD",
+                        "de": "YYYY-MM-DD"
+                    },
+                    "value": "YYYY-MM-DD"
+                },
+                {
+                    "shortName": {
+                        "en": "YY-MM",
+                        "de": "YY-MM"
+                    },
+                    "value": "YY-MM"
+                },
+                {
+                    "shortName": {
+                        "en": "HH:MM:SS",
+                        "de": "HH:MM:SS"
+                    },
+                    "value": "hh:mm:ss"
+                },
+                {
+                    "shortName": {
+                        "en": "HH:MM",
+                        "de": "HH:MM"
+                    },
+                    "value": "hh:mm"
+                },
+                {
+                    "shortName": {
+                        "en": "MM:SS",
+                        "de": "MM:SS"
+                    },
+                    "value": "mm:ss"
+                },
+                {
+                    "shortName": {
+                        "en": "Hexadecimal",
+                        "de": "Hexadecimal"
+                    },
+                    "value": "hex"
+                },
+                {
+                    "shortName": {
+                        "en": "IPv4",
+                        "de": "IPv4"
+                    },
+                    "value": "ipv4"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Format",
+                "de": "Format"
+            },
+            "description": {
+                "en": "Defines the format of a value.",
+                "de": "Definiert das Format eines Wertes."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Password mask
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "ispassword",
+            "sortIndex": 150200,
+            "dataType": "boolean",
+            "default": false,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Password mask",
+                "de": "Password mask"
+            },
+            "description": {
+                "en": "Set true to hide the input value behind a dot mask.",
+                "de": "Auf True setzen, um den Eingabewert hinter Punkten zu verbergen."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Keyboard ID
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "keyboardid",
+            "sortIndex": 150300,
+            "dataType": "string",
+            "default": "",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Keyboard ID",
+                "de": "Keyboard ID"
+            },
+            "description": {
+                "en": "The instance ID of a keyboard on dashboard which should be activated by the input.",
+                "de": "Die ID der Tastatur platziert auf Dashboard, die durch das Eingabefeld aktiviert werden soll."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Write on inc/dec
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "writeonincrement",
+            "sortIndex": 150400,
+            "dataType": "boolean",
+            "default": false,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Write on inc/dec",
+                "de": "Write on inc/dec"
+            },
+            "description": {
+                "en": "If true the increment and decrement buttons directly write the value.",
+                "de": "Wenn auf True gesetzt, schreiben die Erhöhungs- und Erniedrigungs-Buttons den Wert direkt."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Open keyboard beside input
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "openkeyboardbeside",
+            "sortIndex": 150500,
+            "dataType": "boolean",
+            "default": false,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Open keyboard beside input",
+                "de": "Open keyboard beside input"
+            },
+            "description": {
+                "en": "If true, the keyboard window is positioned in a way it does not cover the active input. If false, the keyboard window is positioned in the middle.",
+                "de": "Wenn auf True gesetzt, ist das Tastaturfenster neben dem Eingabefeld positioniert. Wenn auf False gesetzt, ist das Tastaturfenster immer mittig positioniert."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Keyboard
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "keyboard",
+                "keyboardScheme"
+            ],
+            "propertyType": "variable",
+            "name": "keyboardwindow",
+            "sortIndex": 150600,
+            "dataType": "number",
+            "default": null,
+            "shortName": {
+                "en": "Keyboard",
+                "de": "Keyboard"
+            },
+            "description": {
+                "en": "Keyboard window, which should be opened, when the user clicks on the input.",
+                "de": "Das Tastaturfenster, das geöffnet werden soll, wenn der Benutzer auf das Eingabefeld drückt."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Update on same value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "name": "updateonsamevalue",
+            "sortIndex": 150700,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Update on same value",
+                "de": "Update on same value"
+            },
+            "description": {
+                "en": "The data point which is configured at the property Value, is also written if the entered value is the same as the current value.",
+                "de": "Der Datenpunkt, der am Property Value konfiguriert ist, wird auch geschrieben wenn der eingegebene Wert sich nicht vom Aktuellen unterscheidet."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },        
+        /*****************************************************************************************************
+        // General styling
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Background color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-background-color",
+            "sortIndex": 500000,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component.",
+                "de": "Die Hintergrundfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Background color stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-background-color-stop",
+            "sortIndex": 500100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color stop",
+                "de": "Background color stop"
+            },
+            "description": {
+                "en": "The stop color of the background gradient.",
+                "de": "Die Begrenzungsfarbe des Hintergrundverlaufs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Background gradient direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-background-color-direction",
+            "sortIndex": 500200,
+            "dataType": "string",
+            "default": "to bottom",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "to bottom",
+                        "de": "to bottom"
+                    },
+                    "value": "to bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to top",
+                        "de": "to top"
+                    },
+                    "value": "to top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left",
+                        "de": "to left"
+                    },
+                    "value": "to left"
+                },
+                {
+                    "shortName": {
+                        "en": "to right",
+                        "de": "to right"
+                    },
+                    "value": "to right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Background gradient direction",
+                "de": "Background gradient direction"
+            },
+            "description": {
+                "en": "The direction of the background gradient.",
+                "de": "Die Richtung des Hintergrundverlaufs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-color",
+            "sortIndex": 500300,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "The text color of the component.",
+                "de": "Die Schriftfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text align horizontal
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-value-text-align",
+            "sortIndex": 500400,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "left"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Text align horizontal",
+                "de": "Text align horizontal"
+            },
+            "description": {
+                "en": "The horizontal alignment of the component's text.",
+                "de": "Die horizontale Ausrichtung des Textes der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text align vertical
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-value-vertical-align",
+            "sortIndex": 500500,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "start"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "end"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Text align vertical",
+                "de": "Text align vertical"
+            },
+            "description": {
+                "en": "The vertical alignment of the component text.",
+                "de": "Die vertikale Ausrichtung des Textes der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text margin left right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-margin-leftright",
+            "sortIndex": 500600,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Text margin left right",
+                "de": "Text margin left right"
+            },
+            "description": {
+                "en": "The distance from the left and the right to the beginning of the input-field.",
+                "de": "Der Abstand von links und rechts zum Anfang des Eingabefeldes."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text margin top
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-margin-top",
+            "sortIndex": 500700,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Text margin top",
+                "de": "Text margin top"
+            },
+            "description": {
+                "en": "The distance from the top to the beginning of the input-field.",
+                "de": "Der Abstand von oben zum Anfgang des Eingabefeldes."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-border-color",
+            "sortIndex": 500800,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the component.",
+                "de": "Die Rahmenfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-border-color-stop",
+            "sortIndex": 500900,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color stop",
+                "de": "Border color stop"
+            },
+            "description": {
+                "en": "The stop color of the border gradient.",
+                "de": "Die Begrenzungsfarbe des Hintergrundfarbverlaufs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border gradient
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "bordergradient",
+            "sortIndex": 501000,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Border gradient",
+                "de": "Border gradient"
+            },
+            "description": {
+                "en": "Activates the border gradient of the component.",
+                "de": "Aktiviert den Farbverlauf des Rahmens der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border gradient direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-border-color-direction",
+            "sortIndex": 501100,
+            "dataType": "string",
+            "default": "to bottom",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "to bottom",
+                        "de": "to bottom"
+                    },
+                    "value": "to bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to top",
+                        "de": "to top"
+                    },
+                    "value": "to top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left",
+                        "de": "to left"
+                    },
+                    "value": "to left"
+                },
+                {
+                    "shortName": {
+                        "en": "to right",
+                        "de": "to right"
+                    },
+                    "value": "to right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border gradient direction",
+                "de": "Border gradient direction"
+            },
+            "description": {
+                "en": "The direction of the border gradient.",
+                "de": "Die Richtung des Rahmenverlaufs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border width
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-border-width",
+            "sortIndex": 501200,
+            "dataType": "string",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the component. This value can be set as shorthand property.",
+                "de": "Die Rahmenbreite der Komponente. Dieser Wert kann als shorthand property angegeben werden."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border style
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-border-style",
+            "sortIndex": 501300,
+            "dataType": "string",
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the component.",
+                "de": "Die Rahmenart der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-border-radius",
+            "sortIndex": 501400,
+            "dataType": "string",
+            "units": "px",
+            "default": "3px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the component.",
+                "de": "Der Rahmenradius der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius top left
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-border-radius-tl",
+            "sortIndex": 501500,
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border radius top left",
+                "de": "Border radius top left"
+            },
+            "description": {
+                "en": "The top-left border radius of the component.",
+                "de": "Der Rahmenradius oben-links der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius top right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-border-radius-tr",
+            "sortIndex": 501600,
+            "dataType": "string",
+            "units": "px",
+            "default": "3px",
+            "shortName": {
+                "en": "Border radius top right",
+                "de": "Border radius top right"
+            },
+            "description": {
+                "en": "The top-right border radius of the component.",
+                "de": "Der Rahmenradius oben-rechts der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius bottom left
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-border-radius-bl",
+            "sortIndex": 501700,
+            "dataType": "string",
+            "units": "px",
+            "default": "3px",
+            "shortName": {
+                "en": "Border radius bottom left",
+                "de": "Border radius bottom left"
+            },
+            "description": {
+                "en": "The bottom-left border radius of the component.",
+                "de": "Der Rahmenradius unten-links der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius bottom right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-border-radius-br",
+            "sortIndex": 501800,
+            "dataType": "string",
+            "units": "px",
+            "default": "3px",
+            "shortName": {
+                "en": "Border radius bottom right",
+                "de": "Border radius bottom right"
+            },
+            "description": {
+                "en": "The bottom-right border radius of the component.",
+                "de": "Der Rahmenradius unten-rechts der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "shadowactive",
+            "sortIndex": 501900,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Border shadow",
+                "de": "Border shadow"
+            },
+            "description": {
+                "en": "Activates the border shadow of the component.",
+                "de": "Aktiviert den Rahmenschatten der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow size
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-shadow-size",
+            "sortIndex": 502000,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Border shadow size",
+                "de": "Border shadow size"
+            },
+            "description": {
+                "en": "The size of the border shadow of the component.",
+                "de": "Die Größe des Rahmenschatten der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-shadow-color",
+            "sortIndex": 502100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "#000000",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border shadow color",
+                "de": "Border shadow color"
+            },
+            "description": {
+                "en": "Defines the color of the border shadow.",
+                "de": "Definiert die Farbe des Rahmenschatten."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // General styling active state
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Background color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-value-active-background-color",
+            "sortIndex": 502200,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "#ccc",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "Defines the background color in active state (the component has the focus and the keyboard is opened).",
+                "de": "Definiert die Hintergrundfarbe im aktiven Zustand (die Komponente den Fokus hat und die Tastatur geöffnet ist)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Background color stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-value-active-background-color-stop",
+            "sortIndex": 502300,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color stop",
+                "de": "Background color stop"
+            },
+            "description": {
+                "en": "Defines the background stop color in active state (the component has the focus and the keyboard is opened).",
+                "de": "Definiert die Begrenzungshintergrundfarbe im aktiven Zustand  (die Komponente den Fokus hat und die Tastatur geöffnet ist)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Background gradient direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-active-background-color-direction",
+            "sortIndex": 502400,
+            "dataType": "string",
+            "default": "to bottom",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "to bottom",
+                        "de": "to bottom"
+                    },
+                    "value": "to bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to top",
+                        "de": "to top"
+                    },
+                    "value": "to top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left",
+                        "de": "to left"
+                    },
+                    "value": "to left"
+                },
+                {
+                    "shortName": {
+                        "en": "to right",
+                        "de": "to right"
+                    },
+                    "value": "to right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Background gradient direction",
+                "de": "Background gradient direction"
+            },
+            "description": {
+                "en": "The direction of the background gradient in active state (the component has the focus and the keyboard is opened).",
+                "de": "Die Richtung des Hintergrundverlaufs im aktiven Zustand (die Komponente hat den Fokus und die Tastatur ist geöffnet)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-value-active-color",
+            "sortIndex": 502500,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "Defines the text color in active state (the component has the focus and the keyboard is opened).",
+                "de": "Definiert die Textfarbe im aktiven Zustand (die Komponente hat den Fokus und die Tastatur ist geöffnet)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-activ-border-color",
+            "sortIndex": 502600,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color in active state (the component has the focus and the keyboard is opened).",
+                "de": "Die Rahmenfarbe im aktiven Zustand (die Komponente hat den Fokus und die Tastatur ist geöffnet)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-activ-border-color-stop",
+            "sortIndex": 502700,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color stop",
+                "de": "Border color stop"
+            },
+            "description": {
+                "en": "The border stop color in active state (the component has the focus and the keyboard is opened).",
+                "de": "Die Begrenzungsfarbe des Rahmens im aktiven Zustand (die Komponente hat den Fokus und die Tastatur ist geöffnet)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border gradient
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "bordergradientactiv",
+            "sortIndex": 502800,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Border gradient",
+                "de": "Border gradient"
+            },
+            "description": {
+                "en": "Activates the border gradient in active state (the component has the focus and the keyboard is opened).",
+                "de": "Aktiviert den Farbverlauf im aktiven Zustand (die Komponente hat den Fokus und die Tastatur ist geöffnet)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border gradient direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-activ-border-color-direction",
+            "sortIndex": 502900,
+            "dataType": "string",
+            "default": "to bottom",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "to bottom",
+                        "de": "to bottom"
+                    },
+                    "value": "to bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to top",
+                        "de": "to top"
+                    },
+                    "value": "to top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left",
+                        "de": "to left"
+                    },
+                    "value": "to left"
+                },
+                {
+                    "shortName": {
+                        "en": "to right",
+                        "de": "to right"
+                    },
+                    "value": "to right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border gradient direction",
+                "de": "Border gradient direction"
+            },
+            "description": {
+                "en": "The direction of the border gradient in active state (the component has the focus and the keyboard is opened).",
+                "de": "Die Richtung des Rahmenverlaufs im aktiven Zustand (die Komponente hat den Fokus und die Tastatur ist geöffnet)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "shadowactivactive",
+            "sortIndex": 503000,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Border shadow",
+                "de": "Border shadow"
+            },
+            "description": {
+                "en": "Activates the border shadow in active state (the component has the focus and the keyboard is opened).",
+                "de": "Aktiviert den Rahmenschatten im aktiven Zustand (die Komponente hat den Fokus und die Tastatur ist geöffnet)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow size
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-pressed-shadow-size",
+            "sortIndex": 503100,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Border shadow size",
+                "de": "Border shadow size"
+            },
+            "description": {
+                "en": "The size of the border shadow in active state (the component has the focus and the keyboard is opened).",
+                "de": "Die Größe des Rahmenschatten im aktiven Zustand (die Komponente hat den Fokus und die Tastatur ist geöffnet)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-pressed-shadow-color",
+            "sortIndex": 503200,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "#000000",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border shadow color",
+                "de": "Border shadow color"
+            },
+            "description": {
+                "en": "The color of the border shadow in active state (the component has the focus and the keyboard is opened).",
+                "de": "Die Farbe des Rahmenschatten im aktiven Zustand (die Komponente hat den Fokus und die Tastatur ist geöffnet)."
+            },
+            "group": {
+                "en": "General styling active state",
+                "de": "General styling active state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // Unit
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Show
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "unitactiv",
+            "sortIndex": 30000000,
+            "dataType": "boolean",
+            "default": false,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Show",
+                "de": "Show"
+            },
+            "description": {
+                "en": "If true the unit text is shown in the input.",
+                "de": "Wenn auf True gesetzt, wird der Einheitentext in der Eingabe angezeigt."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Font style
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "font",
+                "fontScheme"
+            ],
+            "propertyType": "font",
+            "name": "label",
+            "sortIndex": 30000100,
+            "publishName": "#label",
+            "shortName": {
+                "en": "Font style",
+                "de": "Font style"
+            },
+            "description": {
+                "en": "A custom font for the unit of the component.",
+                "de": "Eine benutzerdefinierte Schriftart für die Einheit der Komponente."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-unit-color",
+            "sortIndex": 30000200,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Color",
+                "de": "Color"
+            },
+            "description": {
+                "en": "The font color of the unit text.",
+                "de": "Die Schriftfarbe des Einheitentextes."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Position related to text
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "unitposition",
+            "sortIndex": 30000300,
+            "dataType": "string",
+            "default": "rightside",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "uppertop"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "lowerbottom"
+                },
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "leftside"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "rightside"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Position related to text",
+                "de": "Position related to text"
+            },
+            "description": {
+                "en": "Defines the position of the unit in the input.",
+                "de": "Definiert die Position der Einheit im Eingabefeld."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Align horizontal
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-unit-text-align",
+            "sortIndex": 30000400,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "left"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Align horizontal",
+                "de": "Align horizontal"
+            },
+            "description": {
+                "en": "Defines how the unit text is horizontally aligned.",
+                "de": "Definiert, wie der Einheitentext horizontal ausgerichtet ist."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Align vertical
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-unit-vertical-align",
+            "sortIndex": 30000500,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "start"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "end"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Align vertical",
+                "de": "Align vertical"
+            },
+            "description": {
+                "en": "Defines the vertical alignment of the unit.",
+                "de": "Definiert die vertikale Ausrichtung des Einheitentextes."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Margin left right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-unit-margin-leftright",
+            "sortIndex": 30000600,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Margin left right",
+                "de": "Margin left right"
+            },
+            "description": {
+                "en": "The distance from the left and the right to the beginning of the unit text.",
+                "de": "Der Abstand von links und rechts zum Anfang des Einheitentextes."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Margin bottom
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-unit-margin-bottom",
+            "sortIndex": 30000700,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Margin bottom",
+                "de": "Margin bottom"
+            },
+            "description": {
+                "en": "The distance from the bottom to the beginning of the unit text.",
+                "de": "Der Abstand von oben zum Anfang des Einheitentextes."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Unit width
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-input-grid-column-width-unit",
+            "sortIndex": 30000800,
+            "dataType": "string",
+            "units": "%",
+            "default": "default",
+            "shortName": {
+                "en": "Unit width",
+                "de": "Unit width"
+            },
+            "description": {
+                "en": "The Input is a one line table divided in two columns. Set the relative width of the unit to fine adjust the placement.",
+                "de": "Das Input Control ist eine Tabelle bestehend aus zwei Spalten. Hier wird die relative Breite der Einheitsspalte eingestellt."
+            },
+            "group": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Unit",
+                "de": "Unit"
+            },
+            "tabIndex": 300
+        },
+        /*****************************************************************************************************
+        // Preview settings
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Preview text
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "previewtext",
+            "sortIndex": 150700,
+            "dataType": "string",
+            "default": "-- Input --",
+            "shortName": {
+                "en": "Preview text",
+                "de": "Preview text"
+            },
+            "description": {
+                "en": "The preview text of the component in the designer, if no datapoint is assigned. This text is also displayed in the style class editor.",
+                "de": "Der Vorschautext der Komponente im Designer, wenn kein Datenpunkt hinterlegt ist. Dieser Text wird auch im style class Editor angezeigt."
+            },
+            "group": {
+                "en": "Preview settings",
+                "de": "Preview settings"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }
+    ],
+    "helpFiles": [
+        {
+            "language": "de",
+            "default": true,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Input_DE.chm"
+                }
+            ]
+        },
+        {
+            "language": "en",
+            "default": false,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Input_EN.chm"
+                }
+            ]
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

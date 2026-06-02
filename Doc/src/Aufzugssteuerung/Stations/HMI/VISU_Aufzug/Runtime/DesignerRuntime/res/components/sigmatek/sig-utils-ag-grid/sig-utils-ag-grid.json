@@ -1,0 +1,50 @@
+{
+    "name": "sig-utils-ag-grid",
+    "shortName": {
+        "en": "ag grid library",
+        "de": "ag grid library"
+    },
+    "controlType": {
+        "en": "Libraries",
+        "de": "Libraries"
+    },
+    "version": "01.01.005",
+    "authors": [
+        "https://www.ag-grid.com/about.php"
+    ],
+    "description": {
+        "en": "Helper element to load the ag grid library.",
+        "de": "Helper element to load the ag grid library."
+    },
+    "main": [
+        "sig-utils-ag-grid.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "https://github.com/ag-grid/ag-grid/blob/master/LICENSE.txt",
+    "homepage": "https://github.com/ag-grid/ag-grid",
+    "private": true,
+    "dependencies": {
+        "ag-grid-community": "ag-grid-community#24.0.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-utils-ag-grid-styles.js"
+        }
+    ],
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "toolbox": false,
+    "properties": []
+}

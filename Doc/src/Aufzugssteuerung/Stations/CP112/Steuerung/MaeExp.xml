@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<File CRC="7544D54C" Version="1.1" SubVersion="2">
+	<UnitDefinitions>
+		<UnitGrp Name="Acceleration">
+			<Units>
+				<Unit Name="mmPsec2" Factor="1" Divisor="1"/>
+			</Units>
+		</UnitGrp>
+		<UnitGrp Name="Angle">
+			<Units>
+				<Unit Name="deg" Factor="1" Divisor="10000"/>
+			</Units>
+		</UnitGrp>
+		<UnitGrp Name="Area">
+			<Units>
+				<Unit Name="mm2" Factor="1" Divisor="10"/>
+			</Units>
+		</UnitGrp>
+		<UnitGrp Name="Force">
+			<Units>
+				<Unit Name="kN" Factor="1" Divisor="1000" Base="N"/>
+				<Unit Name="N" Factor="1" Divisor="1"/>
+			</Units>
+		</UnitGrp>
+		<UnitGrp Name="Length">
+			<Units>
+				<Unit Name="m" Factor="1" Divisor="1000" Base="mm"/>
+				<Unit Name="mm" Factor="1" Divisor="10000"/>
+			</Units>
+		</UnitGrp>
+		<UnitGrp Name="Memory">
+			<Units>
+				<Unit Name="GB" Factor="1" Divisor="1024" Base="MB"/>
+				<Unit Name="kB" Factor="1" Divisor="1024"/>
+				<Unit Name="MB" Factor="1" Divisor="1024" Base="kB"/>
+			</Units>
+		</UnitGrp>
+		<UnitGrp Name="Pressure">
+			<Units>
+				<Unit Name="bar" Factor="1" Divisor="1000"/>
+			</Units>
+		</UnitGrp>
+		<UnitGrp Name="Revolution">
+			<Units>
+				<Unit Name="RPM" Factor="1" Divisor="1000"/>
+			</Units>
+		</UnitGrp>
+		<UnitGrp Name="Speed">
+			<Units>
+				<Unit Name="mlpmin" Factor="1" Divisor="1"/>
+				<Unit Name="mmpsec" Factor="1" Divisor="10000"/>
+			</Units>
+		</UnitGrp>
+		<UnitGrp Name="Time">
+			<Units>
+				<Unit Name="hours" Factor="1" Divisor="60" Base="min"/>
+				<Unit Name="min" Factor="1" Divisor="60" Base="secs"/>
+				<Unit Name="ms" Factor="1" Divisor="1"/>
+				<Unit Name="sec" Factor="1" Divisor="1000"/>
+				<Unit Name="secs" Factor="1" Divisor="1000" Base="ms"/>
+			</Units>
+		</UnitGrp>
+		<UnitGrp Name="Volume">
+			<Units>
+				<Unit Name="ccm" Factor="1" Divisor="1"/>
+			</Units>
+		</UnitGrp>
+	</UnitDefinitions>
+</File>

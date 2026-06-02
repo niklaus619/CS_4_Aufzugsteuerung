@@ -1,0 +1,542 @@
+{
+    "lang": "zh-ime",
+    "name": "Chinese EN (IME) ",
+    "author": "SIGMATEK GmbH & Co KG",
+    "version": "3.0",
+    "layouts": {
+        "alpha": {
+            "config": {
+                "display": "grid",
+                "render": {
+                    "cols": 28,
+                    "rows": 5,
+                    "colSpan": 2,
+                    "rowSpan": 1,
+                    "colGap": "0px",
+                    "rowGap": "0px"
+                }
+            },
+            "layers": {
+                "normal": [
+                    {
+                        "key": "`"
+                    },
+                    {
+                        "key": "1"
+                    },
+                    {
+                        "key": "2"
+                    },
+                    {
+                        "key": "3"
+                    },
+                    {
+                        "key": "4"
+                    },
+                    {
+                        "key": "5"
+                    },
+                    {
+                        "key": "6"
+                    },
+                    {
+                        "key": "7"
+                    },
+                    {
+                        "key": "8"
+                    },
+                    {
+                        "key": "9"
+                    },
+                    {
+                        "key": "0"
+                    },
+                    {
+                        "key": "-"
+                    },
+                    {
+                        "key": "="
+                    },
+                    {
+                        "key": "{bksp}"
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 1
+                        }
+                    },
+                    {
+                        "key": "{tab}"
+                    },
+                    {
+                        "key": "q"
+                    },
+                    {
+                        "key": "w"
+                    },
+                    {
+                        "key": "e"
+                    },
+                    {
+                        "key": "r"
+                    },
+                    {
+                        "key": "t"
+                    },
+                    {
+                        "key": "y"
+                    },
+                    {
+                        "key": "u"
+                    },
+                    {
+                        "key": "i"
+                    },
+                    {
+                        "key": "o"
+                    },
+                    {
+                        "key": "p"
+                    },
+                    {
+                        "key": "["
+                    },
+                    {
+                        "key": "]"
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 1
+                        }
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 1
+                        }
+                    },
+                    {
+                        "key": "a"
+                    },
+                    {
+                        "key": "s"
+                    },
+                    {
+                        "key": "d"
+                    },
+                    {
+                        "key": "f"
+                    },
+                    {
+                        "key": "g"
+                    },
+                    {
+                        "key": "h"
+                    },
+                    {
+                        "key": "j"
+                    },
+                    {
+                        "key": "k"
+                    },
+                    {
+                        "key": "l"
+                    },
+                    {
+                        "key": ";"
+                    },
+                    {
+                        "key": "'"
+                    },
+                    {
+                        "key": "\\"
+                    },
+                    {
+                        "key": "{accept}"
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 1
+                        }
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 2
+                        }
+                    },
+                    {
+                        "key": "{shift}"
+                    },
+                    {
+                        "key": "z"
+                    },
+                    {
+                        "key": "x"
+                    },
+                    {
+                        "key": "c"
+                    },
+                    {
+                        "key": "v"
+                    },
+                    {
+                        "key": "b"
+                    },
+                    {
+                        "key": "n"
+                    },
+                    {
+                        "key": "m"
+                    },
+                    {
+                        "key": ","
+                    },
+                    {
+                        "key": "."
+                    },
+                    {
+                        "key": "/"
+                    },
+                    {
+                        "key": "{shift}"
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 2
+                        }
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 6
+                        }
+                    },
+                    {
+                        "key": "{undo}"
+                    },
+                    {
+                        "key": "{curleft}"
+                    },
+                    {
+                        "key": "{space}",
+                        "grid": {
+                            "colSpan": 8
+                        }
+                    },
+                    {
+                        "key": "{curright}"
+                    },
+                    {
+                        "key": "{clear}"
+                    },
+                    {
+                        "key": "{imetoggle}"
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 4
+                        }
+                    }
+                ],
+                "shift": [
+                    {
+                        "key": "~"
+                    },
+                    {
+                        "key": "!"
+                    },
+                    {
+                        "key": "@"
+                    },
+                    {
+                        "key": "#"
+                    },
+                    {
+                        "key": "$"
+                    },
+                    {
+                        "key": "%"
+                    },
+                    {
+                        "key": "^"
+                    },
+                    {
+                        "key": "&"
+                    },
+                    {
+                        "key": "*"
+                    },
+                    {
+                        "key": "("
+                    },
+                    {
+                        "key": ")"
+                    },
+                    {
+                        "key": "_"
+                    },
+                    {
+                        "key": "+"
+                    },
+                    {
+                        "key": "{bksp}"
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 1
+                        }
+                    },
+                    {
+                        "key": "{tab}"
+                    },
+                    {
+                        "key": "Q"
+                    },
+                    {
+                        "key": "W"
+                    },
+                    {
+                        "key": "E"
+                    },
+                    {
+                        "key": "R"
+                    },
+                    {
+                        "key": "T"
+                    },
+                    {
+                        "key": "Y"
+                    },
+                    {
+                        "key": "U"
+                    },
+                    {
+                        "key": "I"
+                    },
+                    {
+                        "key": "O"
+                    },
+                    {
+                        "key": "P"
+                    },
+                    {
+                        "key": "{"
+                    },
+                    {
+                        "key": "}"
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 1
+                        }
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 1
+                        }
+                    },
+                    {
+                        "key": "A"
+                    },
+                    {
+                        "key": "S"
+                    },
+                    {
+                        "key": "D"
+                    },
+                    {
+                        "key": "F"
+                    },
+                    {
+                        "key": "G"
+                    },
+                    {
+                        "key": "H"
+                    },
+                    {
+                        "key": "J"
+                    },
+                    {
+                        "key": "K"
+                    },
+                    {
+                        "key": "L"
+                    },
+                    {
+                        "key": ":"
+                    },
+                    {
+                        "key": "\""
+                    },
+                    {
+                        "key": "|"
+                    },
+                    {
+                        "key": "{accept}"
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 1
+                        }
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 2
+                        }
+                    },
+                    {
+                        "key": "{shift}"
+                    },
+                    {
+                        "key": "Z"
+                    },
+                    {
+                        "key": "X"
+                    },
+                    {
+                        "key": "C"
+                    },
+                    {
+                        "key": "V"
+                    },
+                    {
+                        "key": "B"
+                    },
+                    {
+                        "key": "N"
+                    },
+                    {
+                        "key": "M"
+                    },
+                    {
+                        "key": "<"
+                    },
+                    {
+                        "key": ">"
+                    },
+                    {
+                        "key": "?"
+                    },
+                    {
+                        "key": "{shift}"
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 2
+                        }
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 6
+                        }
+                    },
+                    {
+                        "key": "{undo}"
+                    },
+                    {
+                        "key": "{curleft}"
+                    },
+                    {
+                        "key": "{space}",
+                        "grid": {
+                            "colSpan": 8
+                        }
+                    },
+                    {
+                        "key": "{curright}"
+                    },
+                    {
+                        "key": "{clear}"
+                    },
+                    {
+                        "key": "{imetoggle}"
+                    },
+                    {
+                        "key": "{empty}",
+                        "grid": {
+                            "colSpan": 4
+                        }
+                    }
+                ]
+            }
+        },
+        "numeric": {
+            "config": {
+                "regexValidation": "numeric"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {increase}",
+                    "1 2 3 {decrease}",
+                    ". 0 {minus} {accept}"
+                ]
+            }
+        },
+        "ipv4": {
+            "config": {
+                "regexValidation": "ipv4"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {undo}",
+                    "1 2 3 {clear}",
+                    ". 0 {off} {accept}"
+                ]
+            }
+        },
+        "hex": {
+            "config": {
+                "regexValidation": "hex"
+            },
+            "layers": {
+                "normal": [
+                    "C D E F {bksp}",
+                    "8 9 A B {undo}",
+                    "4 5 6 7 {clear}",
+                    "0 1 2 3 {accept}"
+                ]
+            }
+        },
+        "time": {
+            "config": {
+                "regexValidation": "time"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {undo}",
+                    "1 2 3 {clear}",
+                    ": 0 {off} {accept}"
+                ]
+            }
+        },
+        "date": {
+            "config": {
+                "regexValidation": "date"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {undo}",
+                    "1 2 3 {clear}",
+                    ". 0 - {accept}"
+                ]
+            }
+        }
+    }
+}

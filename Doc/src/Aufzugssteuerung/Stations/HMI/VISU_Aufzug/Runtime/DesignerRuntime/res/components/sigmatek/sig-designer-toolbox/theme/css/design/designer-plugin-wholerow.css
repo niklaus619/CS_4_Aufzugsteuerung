@@ -1,0 +1,31 @@
+.jstree-designer > .jstree-wholerow-ul .jstree-hovered,
+.jstree-designer > .jstree-wholerow-ul .jstree-clicked {
+  background: transparent;
+}
+.jstree-designer .jstree-wholerow {
+  box-sizing: border-box;
+}
+.jstree-designer .jstree-wholerow-hovered,
+.jstree-designer .jstree-wholerow-clicked.jstree-wholerow-hovered {
+  background: var(--jstree-hover-background-color);
+}
+.jstree-designer .jstree-wholerow-clicked {
+  background: var(--jstree-clicked-background-color);
+}
+.jstree-designer .jstree-wholerow {
+  transition: background-color 0.15s;
+}
+.jstree-designer .jstree-wholerow {
+  height: var(--jstree-node-height, 24px);
+}
+
+.jstree-designer .jstree-disabled {
+  color: var(--jstree-disabled-color);
+}
+.jstree-designer .jstree-disabled.jstree-wholerow-hovered,
+.jstree-designer .jstree-disabled.jstree-wholerow-clicked.jstree-wholerow-hovered {
+  background: var(--jstree-hover-disabled-background-color) !important;
+}
+.jstree-designer .jstree-disabled.jstree-wholerow-clicked {
+  background: var(--jstree-clicked-disabled-background-color) !important;
+}

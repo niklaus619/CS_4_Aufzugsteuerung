@@ -1,0 +1,34 @@
+{
+    "name": "sig-ime-extension",
+    "shortName": {
+        "en": "Ime Extension Base",
+        "de": "Ime Extension Base"
+    },
+    "controlType": {
+        "en": "Ime Extensions",
+        "de": "Ime Extensions"
+    },
+    "version": "01.00.002",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Provides the IME Extension Base Class",
+        "de": "Provides the IME Extension Base Class"
+    },
+    "main": [
+        "sig-ime-extension.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-ime-extension.html",
+    "private": true,
+    "dependencies": {},
+    "resources": [],
+    "usableInShadowDom": false,
+    "toolbox": false,
+    "styleClassEditor": false,
+    "properties": []
+}

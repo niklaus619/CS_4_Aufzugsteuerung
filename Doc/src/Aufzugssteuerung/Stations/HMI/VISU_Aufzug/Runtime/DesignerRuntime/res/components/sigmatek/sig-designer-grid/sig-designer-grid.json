@@ -1,0 +1,52 @@
+{
+    "name": "sig-designer-grid",
+    "shortName": {
+        "en": "Designer grid",
+        "de": "Designer grid"
+    },
+    "controlType": {
+        "en": "Designer",
+        "de": "Designer"
+    },
+    "version": "01.02.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a designer grid as a polymer custom element.",
+        "de": "Implements a designer grid as a polymer custom element."
+    },
+    "main": [
+        "sig-designer-grid.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-title.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-designer-grid-css.js"
+        }
+    ],
+    "toolbox": false,
+    "slotted": false,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "designer"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [],
+    "properties": []
+}

@@ -1,0 +1,404 @@
+{
+    "name": "sig-alarm-config-base",
+    "shortName": {
+        "en": "Alarm Configuration Base",
+        "de": "Alarm Configuration Base"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "01.02.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a base Alarm Configuration component.",
+        "de": "Implementiert eine Basis Alarm Konfigurations-Komponente."
+    },
+    "main": [
+        "sig-alarm-config-base.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-alarm-config-base.html",
+    "private": true,
+    "dependencies": {},
+    "resources": [],
+    "defaultDimensions": {
+        "width": "100px",
+        "height": "100px"
+    },
+    "toolbox": false,
+    "slotted": false,
+    "styleClassEditor": false,
+    "usableInShadowDom": false,
+    "moduleImport": {},
+    "placementTemplates": [],
+    "selectorSettings": {},
+    "properties": [
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "generateText1FromObjectHierarchy",
+            "lockStylyCopy": true,
+            "default": false,
+            "shortName": {
+                "en": "Text1 from object hierarchy",
+                "de": "Text1 from object hierarchy"
+            },
+            "description": {
+                "en": "Automatically generate alarm text1 property from object names of the object hierarchy, if no text1 property is set.",
+                "de": "Automatische Generierung der Alarm Eigenschaft text1 aus den Objektnamen in der Objekthierarchie, wenn die Eigenschaft text1 nicht gesetzt ist."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "sortIndex": 110,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "color"
+            ],
+            "propertyType": "variable",
+            "name": "activeTextColor",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "rgba(255,255,255,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Active Text Color",
+                "de": "Active Text Color"
+            },
+            "description": {
+                "en": "The text color of an active alarm.",
+                "de": "Die Textfarbe eines aktiven Alarms."
+            },
+            "group": {
+                "en": "Colors",
+                "de": "Colors"
+            },
+            "sortIndex": 210,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color"
+            ],
+            "propertyType": "variable",
+            "name": "activeBgColor",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "rgba(255,84,84,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Active Background Color",
+                "de": "Active Background Color"
+            },
+            "description": {
+                "en": "The background color of an active alarm.",
+                "de": "Die Hintergrundfarbe eines aktiven Alarms."
+            },
+            "group": {
+                "en": "Colors",
+                "de": "Colors"
+            },
+            "sortIndex": 220,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color"
+            ],
+            "propertyType": "variable",
+            "name": "inactiveTextColor",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "rgba(255,255,255,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Inactive Text Color",
+                "de": "Inactive Text Color"
+            },
+            "description": {
+                "en": "The text color of an inactive alarm.",
+                "de": "Die Textfarbe eines inaktiven Alarms."
+            },
+            "group": {
+                "en": "Colors",
+                "de": "Colors"
+            },
+            "sortIndex": 230,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color"
+            ],
+            "propertyType": "variable",
+            "name": "inactiveBgColor",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "rgba(255,84,255,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Inactive Background Color",
+                "de": "Inactive Background Color"
+            },
+            "description": {
+                "en": "The background color of an inactive alarm.",
+                "de": "Die Hintergrundfarbe eines inaktiven Alarms."
+            },
+            "group": {
+                "en": "Colors",
+                "de": "Colors"
+            },
+            "sortIndex": 240,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color"
+            ],
+            "propertyType": "variable",
+            "name": "acknActiveTextColor",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "rgba(168,168,168,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Ackn. Active Text Color",
+                "de": "Ackn. Active Text Color"
+            },
+            "description": {
+                "en": "The text color of an acknowledged, active alarm.",
+                "de": "Die Textfarbe eines bestätigten, aktiven Alarms."
+            },
+            "group": {
+                "en": "Colors",
+                "de": "Colors"
+            },
+            "sortIndex": 250,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color"
+            ],
+            "propertyType": "variable",
+            "name": "acknActiveBgColor",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "rgba(255,84,84,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Ackn. Active Background Color",
+                "de": "Ackn. Active Background Color"
+            },
+            "description": {
+                "en": "The background color of an acknowledged, active alarm.",
+                "de": "Die Hintergrundfarbe eines bestätigten, aktiven Alarms."
+            },
+            "group": {
+                "en": "Colors",
+                "de": "Colors"
+            },
+            "sortIndex": 260,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color"
+            ],
+            "propertyType": "variable",
+            "name": "acknInactiveTextColor",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "rgba(168,168,168,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Ackn. Inactive Text Color",
+                "de": "Ackn. Inactive Text Color"
+            },
+            "description": {
+                "en": "The text color of an acknowledged, inactive alarm.",
+                "de": "Die Textfarbe eines bestätigten, inaktiven Alarms."
+            },
+            "group": {
+                "en": "Colors",
+                "de": "Colors"
+            },
+            "sortIndex": 270,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color"
+            ],
+            "propertyType": "variable",
+            "name": "acknInactiveBgColor",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "rgba(255,84,255,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Ackn. Inactive Backgound Color",
+                "de": "Ackn. Inactive Backgound Color"
+            },
+            "description": {
+                "en": "The background color of an acknowledged, inactive alarm.",
+                "de": "Die Hintergrundfarbe eines bestätigten, inaktiven Alarms."
+            },
+            "group": {
+                "en": "Colors",
+                "de": "Colors"
+            },
+            "sortIndex": 280,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "font",
+                "fontScheme"
+            ],
+            "propertyType": "font",
+            "name": "activeFont",
+            "shortName": {
+                "en": "Active Font",
+                "de": "Active Font"
+            },
+            "description": {
+                "en": "The font of an active alarm.",
+                "de": "Die Schriftart eines aktiven Alarms."
+            },
+            "group": {
+                "en": "Font",
+                "de": "Font"
+            },
+            "sortIndex": 300,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "font",
+                "fontScheme"
+            ],
+            "propertyType": "font",
+            "name": "inactiveFont",
+            "shortName": {
+                "en": "Inactive Font",
+                "de": "Inactive Font"
+            },
+            "description": {
+                "en": "The font of an inactive alarm.",
+                "de": "Die Schriftart eines inaktiven Alarms."
+            },
+            "group": {
+                "en": "Font",
+                "de": "Font"
+            },
+            "sortIndex": 310,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "font",
+                "fontScheme"
+            ],
+            "propertyType": "font",
+            "name": "acknActiveFont",
+            "shortName": {
+                "en": "Ackn. Active Font",
+                "de": "Ackn. Active Font"
+            },
+            "description": {
+                "en": "The font of an acknowledged, active alarm.",
+                "de": "Die Schriftart eines bestätigten, aktiven Alarms."
+            },
+            "group": {
+                "en": "Font",
+                "de": "Font"
+            },
+            "sortIndex": 320,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "font",
+                "fontScheme"
+            ],
+            "propertyType": "font",
+            "name": "acknInactiveFont",
+            "shortName": {
+                "en": "Ackn. Inactive Font",
+                "de": "Ackn. Inactive Font"
+            },
+            "description": {
+                "en": "The font of an acknowledged, inactive alarm.",
+                "de": "Die Schriftart eines bestätigten, inaktiven Alarms."
+            },
+            "group": {
+                "en": "Font",
+                "de": "Font"
+            },
+            "sortIndex": 330,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        }
+    ]
+}

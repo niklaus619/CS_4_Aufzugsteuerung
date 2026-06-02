@@ -1,0 +1,725 @@
+{
+    "name": "sig-composite-container",
+    "shortName": {
+        "en": "Composite Container",
+        "de": "Composite Container"
+    },
+    "controlType": {
+        "en": "Container",
+        "de": "Container"
+    },
+    "version": "01.03.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a container for composite components.",
+        "de": "Implementiert einen Container für Composite Controls."
+    },
+    "main": [
+        "sig-composite-container.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-composite-container.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-composite-container-css.js"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-composite-control"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "100px",
+        "height": "100px"
+    },
+    "toolbox": true,
+    "slotted": false,
+    "usableInShadowDom": false,
+    "styleClassEditor": true,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [],
+    "properties": [
+        {
+            "valueSourceTypes": [
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "dpTop",
+            "sortIndex": 1000101,
+            "dataType": "number",
+            "units": "",
+            "default": "",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Top",
+                "de": "Top"
+            },
+            "description": {
+                "en": "The dynamic vertical position of the component.",
+                "de": "Die dynamische vertikale Position der Komponente."
+            },
+            "group": {
+                "en": "Dynamic dimensions",
+                "de": "Dynamic dimensions"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": [
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "dpLeft",
+            "sortIndex": 1000201,
+            "dataType": "number",
+            "units": "",
+            "default": "",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Left",
+                "de": "Left"
+            },
+            "description": {
+                "en": "The dynamic horizontal position of the component.",
+                "de": "Die dynamische horizontale Position der Komponente."
+            },
+            "group": {
+                "en": "Dynamic dimensions",
+                "de": "Dynamic dimensions"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": [
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "dpWidth",
+            "sortIndex": 1000301,
+            "dataType": "number",
+            "units": "",
+            "default": "",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Width",
+                "de": "Width"
+            },
+            "description": {
+                "en": "The dynamic width of the component.",
+                "de": "Die dynamische Breite der Komponente."
+            },
+            "group": {
+                "en": "Dynamic dimensions",
+                "de": "Dynamic dimensions"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": [
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "dpHeight",
+            "sortIndex": 1000401,
+            "dataType": "number",
+            "units": "",
+            "default": "",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Height",
+                "de": "Height"
+            },
+            "description": {
+                "en": "The dynamic height of the component.",
+                "de": "Die dynamische Höhe der Komponente."
+            },
+            "group": {
+                "en": "Dynamic dimensions",
+                "de": "Dynamic dimensions"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "transition",
+            "sortIndex": 1000501,
+            "dataType": "boolean",
+            "default": false,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Enabled",
+                "de": "Enabled"
+            },
+            "description": {
+                "en": "If true, a transition is applied between a change of the dynamic position.",
+                "de": "Wenn aktiviert, wird bei einer Änderung der Abmessungen eine Übergangsanimation angewendet."
+            },
+            "group": {
+                "en": "Transition",
+                "de": "Transition"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-composite-container-transition-duration",
+            "sortIndex": 1000601,
+            "dataType": "string",
+            "default": "1000ms",
+            "units": "ms",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Duration",
+                "de": "Duration"
+            },
+            "description": {
+                "en": "The transition duration time in milliseconds.",
+                "de": "Die Übergangsdauer in Millisekunden."
+            },
+            "group": {
+                "en": "Transition",
+                "de": "Transition"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": [
+                "compositeControl",
+                "compositeControlScheme"
+            ],
+            "propertyType": "compositecontrol",
+            "name": "sigcompositectrl",
+            "sortIndex": 100,
+            "default": "",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Composite control",
+                "de": "Composite control"
+            },
+            "description": {
+                "en": "The class template of the component.",
+                "de": "Die Klassenvorlage der Komponente."
+            },
+            "group": {
+                "de": "Data",
+                "en": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": -1,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "datapointObject",
+                "datapointScheme"
+            ],
+            "propertyType": "staticoverload",
+            "name": "sigoverloadcontent",
+            "sortIndex": 200,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "",
+            "shortName": {
+                "en": "Value",
+                "de": "Value"
+            },
+            "description": {
+                "en": "The value which is to be statically applied to all elements of the component.",
+                "de": "Der Wert, der statisch auf alle Elemente der Komponente anzuwenden ist."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": -1,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-composite-container-background-color",
+            "sortIndex": 510100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component.",
+                "de": "Die Hintergrundfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                10,
+                20,
+                20
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-composite-container-border-color",
+            "sortIndex": 510200,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the component.",
+                "de": "Die Rahmenfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                10,
+                20,
+                20
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-composite-container-border-width",
+            "sortIndex": 510300,
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the component.",
+                "de": "Die Rahmenbreite der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-composite-container-border-style",
+            "sortIndex": 510400,
+            "dataType": "string",
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the component.",
+                "de": "Die Rahmenart der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-composite-container-border-radius",
+            "sortIndex": 510500,
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the component.",
+                "de": "Der Rahmenradius der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "stretchmode",
+            "sortIndex": 520100,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "stretch",
+                        "de": "stretch"
+                    },
+                    "value": "stretch"
+                },
+                {
+                    "shortName": {
+                        "en": "aspect",
+                        "de": "aspect"
+                    },
+                    "value": "aspect"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Stretchmode",
+                "de": "Stretchmode"
+            },
+            "description": {
+                "en": "Defines how the content of the component should be stretched.",
+                "de": "Definiert, wie der Inhalt der Komponente gedehnt werden soll."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "halign",
+            "sortIndex": 520200,
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "left",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "left"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Horizontal alignment",
+                "de": "Horizontal alignment"
+            },
+            "description": {
+                "en": "Defines the horizontal alignment of the component if the stretchmode is set to \"none\" or \"aspect\".",
+                "de": "Definiert die horizontale Ausrichtung der Komponente wenn der Stretchmode zu \"none\" oder \"aspect\" gesetzt ist."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "valign",
+            "sortIndex": 520300,
+            "dataType": "string",
+            "default": "top",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "top"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "bottom"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Vertical alignment",
+                "de": "Vertical alignment"
+            },
+            "description": {
+                "en": "Defines the vertical alignment of the component if the stretchmode is set to \"none\" or \"aspect\".",
+                "de": "Definiert die vertikale Ausrichtung der Komponente wenn der Stretchmode zu \"none\" oder \"aspect\" gesetzt ist."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }
+    ],
+    "helpFiles": [
+        {
+            "language": "de",
+            "default": true,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Composite Container_DE.chm"
+                }
+            ]
+        },
+        {
+            "language": "en",
+            "default": false,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Composite Container_EN.chm"
+                }
+            ]
+        }
+    ]
+}

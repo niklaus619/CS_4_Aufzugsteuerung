@@ -1,0 +1,605 @@
+{
+    "name": "sig-element",
+    "shortName": {
+        "en": "Sigmatek base element",
+        "de": "Sigmatek base element"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "01.03.002",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements the base class of the components.",
+        "de": "Implementiert die Basisklasse der Komponenten."
+    },
+    "main": [
+        "sig-element.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-element.html",
+    "private": true,
+    "dependencies": {
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-element-css.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-element-helpers.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-element-polymer.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-element-gestures.js"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "100px",
+        "height": "100px"
+    },
+    "slotted": false,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "toolbox": false,
+    "styleClassEditor": false,
+    "selectorSettings": {
+        "selectorDefaultStyle": "",
+        "selectorComponentStyle": ""
+    },
+    "properties": [
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-top",
+            "sortIndex": 1000100,
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Top",
+                "de": "Top"
+            },
+            "description": {
+                "en": "The vertical position of the component.",
+                "de": "Die vertikale Position der Komponente."
+            },
+            "group": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-left",
+            "sortIndex": 1000200,
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Left",
+                "de": "Left"
+            },
+            "description": {
+                "en": "The horizontal position of the component.",
+                "de": "Die horizontale Position der Komponente."
+            },
+            "group": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-width",
+            "sortIndex": 1000300,
+            "dataType": "string",
+            "units": "px",
+            "default": "100px",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Width",
+                "de": "Width"
+            },
+            "description": {
+                "en": "The width of the component.",
+                "de": "Die Breite der Komponente."
+            },
+            "group": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-height",
+            "sortIndex": 1000400,
+            "dataType": "string",
+            "units": "px",
+            "default": "100px",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Height",
+                "de": "Height"
+            },
+            "description": {
+                "en": "The height of the component.",
+                "de": "Die Höhe der Komponente."
+            },
+            "group": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber",
+                "dataPoint",
+                "dataPointScheme"
+            ],
+            "propertyType": "rotation",
+            "name": "rotation",
+            "sortIndex": 1000500,
+            "dataType": "number",
+            "default": 0,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Rotation",
+                "de": "Rotation"
+            },
+            "description": {
+                "en": "The rotation angle of the component.",
+                "de": "Der Drehwinkel der Komponente."
+            },
+            "group": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "userLevel": [
+                10,
+                -1,
+                -1
+            ],
+            "tab": {
+                "en": "Dimensions",
+                "de": "Dimensions"
+            },
+            "tabIndex": 1000
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber",
+                "stateScheme"
+            ],
+            "propertyType": "variable",
+            "name": "state",
+            "sortIndex": 200100,
+            "dataType": "number",
+            "default": 1,
+            "options": [
+                {
+                    "shortName": {
+                        "en": "active",
+                        "de": "active"
+                    },
+                    "value": 1
+                },
+                {
+                    "shortName": {
+                        "en": "inactive",
+                        "de": "inactive"
+                    },
+                    "value": 2
+                },
+                {
+                    "shortName": {
+                        "en": "invisible",
+                        "de": "invisible"
+                    },
+                    "value": 3
+                }
+            ],
+            "multiSelect": false,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "State",
+                "de": "State"
+            },
+            "description": {
+                "en": "The state of the component.",
+                "de": "Der Zustand der Komponente."
+            },
+            "group": {
+                "en": "State",
+                "de": "State"
+            },
+            "userLevel": [
+                20,
+                0,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-active-opacity",
+            "sortIndex": 200200,
+            "dataType": "number",
+            "validationRule": "/^(0(\\.\\d+)?|1(\\.0+)?)$/",
+            "default": 1,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Active opacity",
+                "de": "Active opacity"
+            },
+            "description": {
+                "en": "The opacity of the component in active state (0.0 to 1.0).",
+                "de": "Die Opazität der Komponente im aktiven Zustand (0,0 bis 1,0)."
+            },
+            "group": {
+                "en": "State",
+                "de": "State"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-inactive-opacity",
+            "sortIndex": 200300,
+            "dataType": "number",
+            "validationRule": "/^(0(\\.\\d+)?|1(\\.0+)?)$/",
+            "default": 1,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Inactive opacity",
+                "de": "Inactive opacity"
+            },
+            "description": {
+                "en": "The opacity of the component in inactive state (0.0 to 1.0).",
+                "de": "Die Opazität der Komponente im inaktiven Zustand (0,0 bis 1,0)."
+            },
+            "group": {
+                "en": "State",
+                "de": "State"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-dragged-opacity",
+            "sortIndex": 200400,
+            "dataType": "number",
+            "validationRule": "/^(0(\\.\\d+)?|1(\\.0+)?)$/",
+            "default": 0.8,
+            "lockStyleCopy": false,
+            "shortName": {
+                "en": "Dragged opacity",
+                "de": "Dragged opacity"
+            },
+            "description": {
+                "en": "The opacity of the component while it is being dragged (0.0 to 1.0).",
+                "de": "Die Opazität der Komponente während sie gezogen wird (0,0 bis 1,0)."
+            },
+            "group": {
+                "en": "State",
+                "de": "State"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "font",
+                "fontScheme"
+            ],
+            "propertyType": "font",
+            "lockStyleCopy": false,
+            "name": "elementMainFont",
+            "sortIndex": 400100,
+            "shortName": {
+                "en": "Font style",
+                "de": "Font style"
+            },
+            "description": {
+                "en": "The font style of the component.",
+                "de": "Der Schriftstil der Komponente."
+            },
+            "group": {
+                "en": "Font",
+                "de": "Font"
+            },
+            "userLevel": [
+                20,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "styleClass"
+            ],
+            "propertyType": "styleClass",
+            "default": "",
+            "name": "elementMainClass",
+            "sortIndex": 100100,
+            "shortName": {
+                "en": "Style class",
+                "de": "Style class"
+            },
+            "description": {
+                "en": "The main style class which should be applied to the component.",
+                "de": "Die Hauptstilklasse, die auf die Komponente angewendet werden soll."
+            },
+            "group": {
+                "en": "Style settings",
+                "de": "Style settings"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "none",
+            "name": "lockOv",
+            "sortIndex": 1500100,
+            "dataType": "boolean",
+            "default": false,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Lock",
+                "de": "Lock"
+            },
+            "description": {
+                "en": "Exclude the component from overloading.",
+                "de": "Die Komponente von der Überladung ausschließen."
+            },
+            "group": {
+                "en": "Overload",
+                "de": "Overload"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "none",
+            "name": "selGr",
+            "sortIndex": 1500200,
+            "dataType": "number",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Selection group",
+                "de": "Selection group"
+            },
+            "description": {
+                "en": "The selection group of the component.",
+                "de": "Die Selektionsgruppe der Komponente."
+            },
+            "group": {
+                "en": "Overload",
+                "de": "Overload"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "name": "isdraggable",
+            "sortIndex": 2000100,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Is draggable",
+                "de": "Is draggable"
+            },
+            "description": {
+                "en": "The component can be dragged.",
+                "de": "Die Komponente kann gezogen werden."
+            },
+            "group": {
+                "en": "Drag and drop",
+                "de": "Drag and drop"
+            },
+            "userLevel": -1
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "name": "isdroppable",
+            "sortIndex": 2000200,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Is droppable",
+                "de": "Is droppable"
+            },
+            "description": {
+                "en": "Other components can be dropped to this component.",
+                "de": "Andere Komponenten können auf diese Komponente abgelegt werden."
+            },
+            "group": {
+                "en": "Drag and drop",
+                "de": "Drag and drop"
+            },
+            "userLevel": -1
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "name": "dragonlongpress",
+            "sortIndex": 2000300,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Enable drag mode on longpress",
+                "de": "Enable drag mode on longpress"
+            },
+            "description": {
+                "en": "Enables the drag mode by longpress on the component.",
+                "de": "Aktiviert den Ziehen- und Ablege-Modus durch langes Drücken auf die Komponente."
+            },
+            "group": {
+                "en": "Drag and drop",
+                "de": "Drag and drop"
+            },
+            "userLevel": -1
+        },
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "variable",
+            "name": "longpressdelay",
+            "sortIndex": 2000400,
+            "dataType": "string",
+            "default": "1000",
+            "shortName": {
+                "en": "Longpress delay",
+                "de": "Longpress delay"
+            },
+            "description": {
+                "en": "The longpress delay in milliseconds.",
+                "de": "Die Druckverzögerung in Millisekunden."
+            },
+            "group": {
+                "en": "Drag and drop",
+                "de": "Drag and drop"
+            },
+            "userLevel": -1
+        },
+        {
+            "valueSourceTypes": [
+                "checkbit"
+            ],
+            "propertyType": "variable",
+            "name": "checkbit",
+            "sortIndex": 300100,
+            "dataType": "string",
+            "shortName": {
+                "en": "Checkbit",
+                "de": "Checkbit"
+            },
+            "description": {
+                "en": "The selected checkbit.",
+                "de": "Das ausgewählte Checkbit."
+            },
+            "group": {
+                "en": "Checkbit",
+                "de": "Checkbit"
+            },
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }
+    ]
+}

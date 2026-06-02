@@ -1,0 +1,63 @@
+{
+"version":"1.0.0",
+
+
+"allowed":
+[
+
+{"OSName":"Windows",
+"browser":
+[
+
+{"name":"Chrome", "minVersion":"64.0.3282"}
+
+]
+
+},
+
+{"OSName":"iOS", "platformType":"tablet",
+"browser":
+[
+
+{"name":"Safari", "minVersion":"13.0.4"}
+
+]
+},
+
+{"OSName":"iOS", "platformType":"mobile",
+"browser":
+[
+
+{"name":"Safari", "minVersion":"13.0.4"}
+
+]
+},
+
+{"OSName":"Linux",
+"browser":
+[
+
+{"name":"Chrome", "minVersion":"71.0.0"}
+
+]
+},
+
+{"OSName":"Android",
+"browser":
+[
+
+{"name":"Chrome", "minVersion":"64.0.0"}
+
+]
+}
+
+],
+
+
+"blocked":
+[
+
+]
+
+
+}

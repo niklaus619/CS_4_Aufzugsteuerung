@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Solution Version="3" Name="Aufzugssteuerung">
+	<SlnStationFiles>
+		<File Path=".\Stations\HMI\HMI.lss"/>
+		<File Path=".\Stations\CP112\CP112.lss"/>
+	</SlnStationFiles>
+</Solution>

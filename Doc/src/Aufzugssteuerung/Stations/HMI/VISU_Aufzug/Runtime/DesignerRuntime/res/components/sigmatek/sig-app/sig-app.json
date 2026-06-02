@@ -1,0 +1,217 @@
+{
+    "name": "sig-app",
+    "shortName": {
+        "en": "Main",
+        "de": "Main"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "01.03.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Main entry point of the visualization application",
+        "de": "Main entry point of the visualization application"
+    },
+    "main": [
+        "sig-app.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-app.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-app-css.js"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-element"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-element-light"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-element-lit"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-keyboard"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-alert"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-wrapper"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-dashboard"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-window-layer"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-utils-jspanel"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-control-button"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-control-text"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-control-rectangle"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-control-input"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-window-container"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-window-container-keyboard"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-control-scrollbar"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-control-splash-screen"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-control-menu"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-utils-pwacompat"
+        },
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-element-mixins"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "1024px",
+        "height": "768px"
+    },
+    "toolbox": false,
+    "slotted": true,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "properties": [
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-app-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component",
+                "de": "The background color of the component"
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "usescaling",
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Scale the viewport",
+                "de": "Scale the viewport"
+            },
+            "description": {
+                "en": "Activates the proportional scaling of the app based on the viewport size",
+                "de": "Activates the proportional scaling of the app based on the viewport size"
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "use3dscaling",
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Use 3d scaling",
+                "de": "Use 3d scaling"
+            },
+            "description": {
+                "en": "Activates to use transform(scale3d) instead of  transform(sclae)",
+                "de": "Activates to use transform(scale3d) instead of  transform(sclae)"
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }
+    ]
+}

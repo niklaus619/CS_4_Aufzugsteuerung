@@ -1,0 +1,21 @@
+{
+	"type": "fontStyleManager",
+	"version": "0.0.96",
+	"fontStyles": [
+		{
+			"type": "FontStyle",
+			"designTimeId": "e6fa569f-4c46-4ea3-a83d-e953104b983b",
+			"name": "Default",
+			"size": 16,
+			"fontFamily": {
+				"value": "Resources\\Fonts\\roboto-regular.ttf",
+				"typeId": 15,
+				"propTypeId": 1,
+				"refId": "9c34ba44-1566-4206-a5d7-2455abc1f0e7"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
+}

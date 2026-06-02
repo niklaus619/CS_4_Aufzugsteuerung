@@ -1,0 +1,1179 @@
+{
+    "name": "sig-control-splash-screen",
+    "shortName": {
+        "en": "Splash Screen",
+        "de": "Splash Screen"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "01.03.003",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a Splash Screen as a polymer custom element.",
+        "de": "Implements a Splash Screen as a polymer custom element."
+    },
+    "main": [
+        "sig-control-splash-screen.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-splash-screen.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-control-splash-screen-css.js"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "300px",
+        "height": "400px"
+    },
+    "toolbox": true,
+    "styleClassEditor": true,
+    "defaultStyleOnly": true,
+    "slotted": false,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "index"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "properties": [
+        {
+            "userLevel": -1,
+            "name": "checkbit"
+        },
+        {
+            "userLevel": -1,
+            "name": "state"
+        },
+        {
+            "userLevel": -1,
+            "name": "--theme-sig-element-active-opacity"
+        },
+        {
+            "userLevel": -1,
+            "name": "--theme-sig-element-inactive-opacity"
+        },
+        {
+            "userLevel": -1,
+            "name": "--theme-sig-element-dragged-opacity"
+        },
+        {
+            "userLevel": -1,
+            "name": "elementMainFont"
+        },
+        {
+            "userLevel": -1,
+            "name": "lockOv"
+        },
+        {
+            "userLevel": -1,
+            "name": "selGr"
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(255, 255, 255, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component.",
+                "de": "The background color of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "The text color of the component.",
+                "de": "The text color of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-font-size",
+            "dataType": "string",
+            "units": "px",
+            "default": "12px",
+            "shortName": {
+                "en": "Text size",
+                "de": "Text size"
+            },
+            "description": {
+                "en": "The text size of the component.",
+                "de": "The text size of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-border-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the component.",
+                "de": "The border color of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-border-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the component.",
+                "de": "The border width of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-border-style",
+            "dataType": "string",
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the component.",
+                "de": "The border style of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-spinner-size",
+            "dataType": "string",
+            "units": "px,%",
+            "default": "100%",
+            "shortName": {
+                "en": "Size",
+                "de": "Size"
+            },
+            "description": {
+                "en": "The size of the spinner given in px or in % of the spinner container.",
+                "de": "The size of the spinner given in px or in % of the spinner container."
+            },
+            "group": {
+                "en": "Spinner styling",
+                "de": "Spinner styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-spinner-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(100,100,100,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Stroke color",
+                "de": "Stroke color"
+            },
+            "description": {
+                "en": "The color of the spinner.",
+                "de": "The color of the spinner."
+            },
+            "group": {
+                "en": "Spinner styling",
+                "de": "Spinner styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "mediaItem",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-spinner-background-image",
+            "dataType": "string",
+            "units": "url",
+            "default": "",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Spinner image",
+                "de": "Spinner image"
+            },
+            "description": {
+                "en": "The background image of the spinner. If defined the stroke color setting has no effect.",
+                "de": "The background image of the spinner. If defined the stroke color setting has no effect."
+            },
+            "group": {
+                "en": "Spinner styling",
+                "de": "Spinner styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-animation-name",
+            "dataType": "string",
+            "default": "spin",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "None",
+                        "de": "None"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "Spin",
+                        "de": "Spin"
+                    },
+                    "value": "spin"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "CSS Animation",
+                "de": "CSS Animation"
+            },
+            "description": {
+                "en": "The css animation applied to the spinner.",
+                "de": "The css animation applied to the spinner."
+            },
+            "group": {
+                "en": "Spinner styling",
+                "de": "Spinner styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-animation-duration",
+            "dataType": "string",
+            "default": "1s",
+            "validationRule": "/^[1-9]\\d*(s|ms)$/",
+            "multiSelect": false,
+            "shortName": {
+                "en": "CSS Animation duration",
+                "de": "CSS Animation duration"
+            },
+            "description": {
+                "en": "The css animation duration in milliseconds (ms) or seconds (s).",
+                "de": "The css animation duration in milliseconds (ms) or seconds (s)."
+            },
+            "group": {
+                "en": "Spinner styling",
+                "de": "Spinner styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-reload-button-size",
+            "dataType": "string",
+            "units": "px,%",
+            "default": "100%",
+            "shortName": {
+                "en": "Size",
+                "de": "Size"
+            },
+            "description": {
+                "en": "The size of the reload button given in px or in % of the reload container.",
+                "de": "The size of the reload button given in px or in % of the reload container."
+            },
+            "group": {
+                "en": "Reload button styling",
+                "de": "Reload button styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-reload-button-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the reload button.",
+                "de": "The background color of the reload button."
+            },
+            "group": {
+                "en": "Reload button styling",
+                "de": "Reload button styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-reload-button-border-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the reload button.",
+                "de": "The border color of the reload button."
+            },
+            "group": {
+                "en": "Reload button styling",
+                "de": "Reload button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-reload-button-border-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the reload button.",
+                "de": "The border width of the reload button."
+            },
+            "group": {
+                "en": "Reload button styling",
+                "de": "Reload button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-reload-button-border-style",
+            "dataType": "string",
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the reload button.",
+                "de": "The border style of the reload button."
+            },
+            "group": {
+                "en": "Reload button styling",
+                "de": "Reload button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-reload-button-border-radius",
+            "dataType": "string",
+            "units": "px,%",
+            "default": "0px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the reload button.",
+                "de": "The border radius of the reload button."
+            },
+            "group": {
+                "en": "Reload button styling",
+                "de": "Reload button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-reload-button-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(100,100,100,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Icon stroke color",
+                "de": "Icon stroke color"
+            },
+            "description": {
+                "en": "The icon stroke color of the reload button.",
+                "de": "The icon stroke color of the reload button."
+            },
+            "group": {
+                "en": "Reload button styling",
+                "de": "Reload button styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "mediaItem",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-reload-button-background-image",
+            "dataType": "string",
+            "units": "url",
+            "default": "",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Reload icon image",
+                "de": "Reload icon image"
+            },
+            "description": {
+                "en": "The icon image of the reload button. If defined the icon stroke color will be ignored.",
+                "de": "The icon image of the reload button. If defined the icon stroke color will be ignored."
+            },
+            "group": {
+                "en": "Reload button styling",
+                "de": "Reload button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-message-font-size",
+            "dataType": "string",
+            "units": "px",
+            "default": "12px",
+            "shortName": {
+                "en": "Message font size",
+                "de": "Message font size"
+            },
+            "description": {
+                "en": "The text size of the messages.",
+                "de": "The text size of the messages."
+            },
+            "group": {
+                "en": "Message styling",
+                "de": "Message styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-msg-info-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Info message background color",
+                "de": "Info message background color"
+            },
+            "description": {
+                "en": "The background color of the info message.",
+                "de": "The background color of the info message."
+            },
+            "group": {
+                "en": "Message styling",
+                "de": "Message styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-msg-info-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(0,0,0,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Info message color",
+                "de": "Info message color"
+            },
+            "description": {
+                "en": "The text color of the info message.",
+                "de": "The text color of the info message."
+            },
+            "group": {
+                "en": "Message styling",
+                "de": "Message styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-msg-warning-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(255,255,0,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Warning message background color",
+                "de": "Warning message background color"
+            },
+            "description": {
+                "en": "The background color of the warning message.",
+                "de": "The background color of the warning message."
+            },
+            "group": {
+                "en": "Message styling",
+                "de": "Message styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-msg-warning-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(0,0,0,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Warning message color",
+                "de": "Warning message color"
+            },
+            "description": {
+                "en": "The text color of the warning message.",
+                "de": "The text color of the warning message."
+            },
+            "group": {
+                "en": "Message styling",
+                "de": "Message styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-msg-error-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(255,0,0,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Error message background color",
+                "de": "Error message background color"
+            },
+            "description": {
+                "en": "The background color of the error message.",
+                "de": "The background color of the error message."
+            },
+            "group": {
+                "en": "Message styling",
+                "de": "Message styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-msg-error-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(255,255,255,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Error message color",
+                "de": "Error message color"
+            },
+            "description": {
+                "en": "The text color of the error message.",
+                "de": "The text color of the error message."
+            },
+            "group": {
+                "en": "Message styling",
+                "de": "Message styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constNumber ",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-container-spinner-order",
+            "dataType": "string",
+            "default": "0",
+            "shortName": {
+                "en": "Spinner container order number",
+                "de": "Spinner container order number"
+            },
+            "description": {
+                "en": "The order number of the spinner container.",
+                "de": "The order number of the spinner container."
+            },
+            "group": {
+                "en": "Layout styling",
+                "de": "Layout styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constNumber ",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-container-spinner-spacing",
+            "dataType": "string",
+            "default": "70%",
+            "units": "%",
+            "shortName": {
+                "en": "Spinner container spacing",
+                "de": "Spinner container spacing"
+            },
+            "description": {
+                "en": "The vertical space the spinner container fills. All containers need to sum up to 100%.",
+                "de": "The vertical space the spinner container fills. All containers need to sum up to 100%."
+            },
+            "group": {
+                "en": "Layout styling",
+                "de": "Layout styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-container-spinner-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Spinner container background color",
+                "de": "Spinner container background color"
+            },
+            "description": {
+                "en": "The background color of the spinner container.",
+                "de": "The background color of the spinner container."
+            },
+            "group": {
+                "en": "Layout styling",
+                "de": "Layout styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constNumber ",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-container-reload-order",
+            "dataType": "string",
+            "default": "0",
+            "shortName": {
+                "en": "Reload container order number",
+                "de": "Reload container order number"
+            },
+            "description": {
+                "en": "The order number of the reload container.",
+                "de": "The order number of the reload container."
+            },
+            "group": {
+                "en": "Layout styling",
+                "de": "Layout styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constNumber ",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-container-reload-spacing",
+            "dataType": "string",
+            "default": "15",
+            "units": "%",
+            "shortName": {
+                "en": "Reload container spacing",
+                "de": "Reload container spacing"
+            },
+            "description": {
+                "en": "The vertical space the reload container fills. All containers need to sum up to 100%.",
+                "de": "The vertical space the reload container fills. All containers need to sum up to 100%."
+            },
+            "group": {
+                "en": "Layout styling",
+                "de": "Layout styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-container-reload-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Reload container background color",
+                "de": "Reload container background color"
+            },
+            "description": {
+                "en": "The background color of the reload container.",
+                "de": "The background color of the reload container."
+            },
+            "group": {
+                "en": "Layout styling",
+                "de": "Layout styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constNumber ",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-container-messages-order",
+            "dataType": "string",
+            "default": "0",
+            "shortName": {
+                "en": "Messages container order number",
+                "de": "Messages container order number"
+            },
+            "description": {
+                "en": "The order number of the messages container.",
+                "de": "The order number of the messages container."
+            },
+            "group": {
+                "en": "Layout styling",
+                "de": "Layout styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constNumber ",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-container-messages-spacing",
+            "dataType": "string",
+            "default": "15",
+            "units": "%",
+            "shortName": {
+                "en": "Messages container spacing",
+                "de": "Messages container spacing"
+            },
+            "description": {
+                "en": "The vertical space the messages container fills. All containers need to sum up to 100%.",
+                "de": "The vertical space the messages container fills. All containers need to sum up to 100%."
+            },
+            "group": {
+                "en": "Layout styling",
+                "de": "Layout styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "color",
+            "propertyType": "css",
+            "name": "--theme-sig-control-splash-screen-container-messages-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Messages container background color",
+                "de": "Messages container background color"
+            },
+            "description": {
+                "en": "The background color of the messages container.",
+                "de": "The background color of the messages container."
+            },
+            "group": {
+                "en": "Layout styling",
+                "de": "Layout styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "forceanimation",
+            "dataType": "boolean",
+            "lockStyleCopy": true,
+            "default": false,
+            "shortName": {
+                "en": "Show animation",
+                "de": "Show animation"
+            },
+            "description": {
+                "en": "Set true to show a preview of the selected css animation. In case you use an animated spinner image this setting has no effect. After 20 seconds the animation will be stopped. To show the animation again simply toggle the checkbox off and on.",
+                "de": "Zeigt eine Vorschau der CSS Animation wenn auf true gesetzt. Wenn ein animiertes spinner image verwendet wird, hat diese Einstellung keinen Effekt. Nach 20 Sekunden wird die Animation gestoppt. Um sie erneut anzuzeigen muss die Checkbox deaktiviert und erneut aktiviert werden."
+            },
+            "group": {
+                "en": "Preview settings",
+                "de": "Preview settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

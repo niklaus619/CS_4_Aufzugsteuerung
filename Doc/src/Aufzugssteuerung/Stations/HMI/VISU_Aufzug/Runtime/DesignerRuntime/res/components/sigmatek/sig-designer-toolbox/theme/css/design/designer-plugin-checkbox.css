@@ -1,0 +1,43 @@
+.jstree-designer .jstree-no-checkboxes .jstree-checkbox {
+  display: none !important;
+}
+/* .jstree-designer.jstree-checkbox-no-clicked .jstree-clicked {
+  background: transparent !;
+}
+.jstree-designer.jstree-checkbox-no-clicked .jstree-clicked.jstree-hovered {
+  background: blue;
+} */
+/* .jstree-designer.jstree-checkbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked {
+  background: transparent;
+} */
+/* .jstree-designer.jstree-checkbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked.jstree-wholerow-hovered {
+  background: red;
+} */
+.jstree-designer .jstree-checkbox {
+  background-image: var(--jstree-img-checkbox-unchecked);
+  /* background-position: -164px -4px; */
+}
+.jstree-designer .jstree-checkbox:hover {
+  background-image: var(--jstree-img-checkbox-unchecked-hover);
+  /* background-position: -164px -36px; */
+}
+.jstree-designer.jstree-checkbox-selection .jstree-clicked > .jstree-checkbox,
+.jstree-designer .jstree-checked > .jstree-checkbox {
+   background-image: var(--jstree-img-checkbox-checked);
+  /* background-position: -228px -4px; */
+}
+.jstree-designer.jstree-checkbox-selection .jstree-clicked > .jstree-checkbox:hover,
+.jstree-designer .jstree-checked > .jstree-checkbox:hover {
+  background-image: var(--jstree-img-checkbox-checked-hover);
+  /* background-position: -228px -36px; */
+}
+.jstree-designer .jstree-anchor > .jstree-undetermined {
+  background-image: var(--jstree-img-checkbox-undetermined);
+}
+.jstree-designer .jstree-anchor > .jstree-undetermined:hover {
+   background-image: var(--jstree-img-checkbox-undetermined-hover);
+}
+.jstree-designer .jstree-checkbox-disabled {
+  opacity: 0.8;
+  filter: grayscale(100%);
+}

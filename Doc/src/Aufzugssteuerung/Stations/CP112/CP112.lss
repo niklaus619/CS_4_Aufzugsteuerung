@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<SlnStation Name="CP112" Color="9811536">
+	<SlnProjects>
+		<SlnClassProject Name="Steuerung" LoadAtStartup ="true" File=".\Steuerung\Steuerung.lcp">
+		</SlnClassProject>
+	</SlnProjects>
+</SlnStation>

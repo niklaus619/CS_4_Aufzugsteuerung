@@ -1,0 +1,48 @@
+{
+    "name": "sig-utils-pwacompat",
+    "shortName": {
+        "en": "Pwacompat library",
+        "de": "Pwacompat library"
+    },
+    "controlType": {
+        "en": "Libraries",
+        "de": "Libraries"
+    },
+    "version": "01.02.003",
+    "authors": [
+        "https://github.com/GoogleChromeLabs"
+    ],
+    "description": {
+        "en": "Helper element to load the pwacompat library.",
+        "de": "Helper element to load the pwacompat library."
+    },
+    "main": [
+        "sig-utils-pwacompat.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "https://github.com/GoogleChromeLabs/pwacompat/blob/master/LICENSE",
+    "homepage": "https://github.com/GoogleChromeLabs/pwacompat",
+    "private": true,
+    "dependencies": {},
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./pwacompat.min.js"
+        }
+    ],
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "toolbox": false,
+    "properties": []
+}

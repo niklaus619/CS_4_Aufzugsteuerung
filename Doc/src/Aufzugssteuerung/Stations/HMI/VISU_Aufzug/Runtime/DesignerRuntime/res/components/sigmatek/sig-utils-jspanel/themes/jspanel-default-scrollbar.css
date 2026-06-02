@@ -1,0 +1,197 @@
+.jsPanel-content {
+    --button-size-inc1: calc(var(--theme-sig-control-scrollbar-button-size, 43%) + 1%);
+    --button-size-dec12: calc(var(--theme-sig-control-scrollbar-button-size, 43%) - 12%);
+    --button-size-dec10: calc(var(--theme-sig-control-scrollbar-button-size, 43%) - 10%);
+    --button-size-dec9: calc(var(--theme-sig-control-scrollbar-button-size, 43%) - 9%);
+}
+
+.jsPanel-content::-webkit-scrollbar {
+    width: var(--theme-sig-control-scrollbar-width,25px);
+    font-size: inherit;
+    background-color: var(--theme-sig-control-scrollbar-background-color, rgba(64, 66, 72, 1));
+}
+
+.jsPanel-content::-webkit-scrollbar:horizontal {
+    height: var(--theme-sig-control-scrollbar-width,25px);
+}
+
+/* resize corner */
+.jsPanel-content::-webkit-scrollbar-corner {
+    background: var(--theme-sig-control-scrollbar-background-color,rgba(64, 66, 72, 1));
+}
+
+/* Track */
+.jsPanel-content::-webkit-scrollbar-track:vertical {
+    /*border-width: var(--theme-sig-control-scrollbar-track-border-width,0px);*/
+    border-top-width: var(--theme-sig-control-scrollbar-track-border-top-width, var(--theme-sig-control-scrollbar-track-border-width, 1px));
+    border-bottom-width: var(--theme-sig-control-scrollbar-track-border-bottom-width, var(--theme-sig-control-scrollbar-track-border-width, 1px));
+    border-left-width: var(--theme-sig-control-scrollbar-track-border-left-width, var(--theme-sig-control-scrollbar-track-border-width, 8px));
+    border-right-width: var(--theme-sig-control-scrollbar-track-border-right-width, var(--theme-sig-control-scrollbar-track-border-width, 8px));        
+    border-style: var(--theme-sig-control-scrollbar-track-border-style, solid);
+    border-color: var(--theme-sig-control-scrollbar-track-border-color, rgba(64, 66, 72, 1));
+    border-radius: var(--theme-sig-control-scrollbar-track-border-radius, 0px);
+    background-color: var(--theme-sig-control-scrollbar-track-background-color, rgba(221, 221, 221, 1));
+}
+
+.jsPanel-content::-webkit-scrollbar-track:horizontal {
+    overflow:hidden;          
+    /*border-width: var(--theme-sig-control-scrollbar-track-border-width,0px);*/
+    border-top-width: var(--theme-sig-control-scrollbar-track-border-left-width, var(--theme-sig-control-scrollbar-track-border-width, 8px));
+    border-bottom-width: var(--theme-sig-control-scrollbar-track-border-right-width, var(--theme-sig-control-scrollbar-track-border-width, 8px));
+    border-left-width: var(--theme-sig-control-scrollbar-track-border-bottom-width, var(--theme-sig-control-scrollbar-track-border-width, 1px));
+    border-right-width: var(--theme-sig-control-scrollbar-track-border-top-width, var(--theme-sig-control-scrollbar-track-border-width, 1px));        
+    border-style: var(--theme-sig-control-scrollbar-track-border-style, solid);
+    border-color: var(--theme-sig-control-scrollbar-track-border-color, rgba(64, 66, 72, 1));
+    border-radius: var(--theme-sig-control-scrollbar-track-border-radius, 0px);
+    background-color: var(--theme-sig-control-scrollbar-track-background-color, rgba(221, 221, 221, 1));
+}
+
+/* Handle */
+
+.jsPanel-content::-webkit-scrollbar-thumb:vertical {     
+    /*border-width: var(--theme-sig-control-scrollbar-thumb-border-width,0px);*/
+    border-top-width: var(--theme-sig-control-scrollbar-thumb-border-top-width, var(--theme-sig-control-scrollbar-thumb-border-width, 1px));
+    border-bottom-width: var(--theme-sig-control-scrollbar-thumb-border-bottom-width, var(--theme-sig-control-scrollbar-thumb-border-width, 1px));
+    border-left-width: var(--theme-sig-control-scrollbar-thumb-border-left-width, var(--theme-sig-control-scrollbar-thumb-border-width, 8px));
+    border-right-width: var(--theme-sig-control-scrollbar-thumb-border-right-width, var(--theme-sig-control-scrollbar-thumb-border-width, 8px));
+    border-style: var(--theme-sig-control-scrollbar-thumb-border-style, solid);
+    border-color: var(--theme-sig-control-scrollbar-thumb-border-color,rgba(64, 66, 72, 1));
+    border-radius: var(--theme-sig-control-scrollbar-thumb-border-radius, 0px);
+    background: var(--theme-sig-control-scrollbar-thumb-background-color, rgba(174, 200, 26, 1));
+    height: var(--theme-sig-control-scrollbar-height, 20px);
+}
+
+.jsPanel-content::-webkit-scrollbar-thumb:horizontal {
+    /*border-width: var(--theme-sig-control-scrollbar-thumb-border-width,0px);*/
+    border-top-width: var(--theme-sig-control-scrollbar-thumb-border-left-width, var(--theme-sig-control-scrollbar-thumb-border-width, 8px));
+    border-bottom-width: var(--theme-sig-control-scrollbar-thumb-border-right-width, var(--theme-sig-control-scrollbar-thumb-border-width, 8px));
+    border-left-width: var(--theme-sig-control-scrollbar-thumb-border-bottom-width, var(--theme-sig-control-scrollbar-thumb-border-width, 1px));
+    border-right-width: var(--theme-sig-control-scrollbar-thumb-border-top-width, var(--theme-sig-control-scrollbar-thumb-border-width, 1px));
+    border-style: var(--theme-sig-control-scrollbar-thumb-border-style, solid);
+        
+    border-color: var(--theme-sig-control-scrollbar-thumb-border-color, rgba(64, 66, 72, 1));
+    border-radius: var(--theme-sig-control-scrollbar-thumb-border-radius, 0px);
+    background: var(--theme-sig-control-scrollbar-thumb-background-color, rgba(174, 200, 26, 1));
+    height: var(--theme-sig-control-scrollbar-height, 20px);
+}
+
+/*Active thumb and track settings */
+.jsPanel-content::-webkit-scrollbar-thumb:active {
+    background: var(--theme-sig-control-scrollbar-thumb-active-background-color, rgba(174, 200, 26, 1));
+    border-color: var(--theme-sig-control-scrollbar-thumb-active-border-color, rgba(64, 66, 72, 1));
+}
+
+.jsPanel-content::-webkit-scrollbar-track:active {
+    background: var(--theme-sig-control-scrollbar-track-active-background-color, rgba(221, 221, 221, 1));
+    border-color: var(--theme-sig-control-scrollbar-track-active-border-color,rgba(64, 66, 72, 1));
+}
+
+/* buttons */
+@media (min-resolution:.001dpcm) { 
+.jsPanel-content::-webkit-scrollbar-button {
+    display: block;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transform: unset !important;
+
+    background-position: center;
+    border-width: var(--theme-sig-control-scrollbar-button-border-width, 0px);
+    border-style: var(--theme-sig-control-scrollbar-button-border-style, none);
+    border-color: var(--theme-sig-control-scrollbar-button-border-color, rgba(255, 255, 255, 0));
+    border-radius: var(--theme-sig-control-scrollbar-button-border-radius, 0px);
+}
+
+.jsPanel-content::-webkit-scrollbar-button:vertical {
+    height: var(--theme-sig-control-scrollbar-button-height, 24px);
+}
+
+.jsPanel-content::-webkit-scrollbar-button:horizontal {
+    width: var(--theme-sig-control-scrollbar-button-height, 24px);
+}
+
+.jsPanel-content::-webkit-scrollbar-button:end:increment,
+.jsPanel-content::-webkit-scrollbar-button:start:decrement {
+    display: block;
+}
+
+.jsPanel-content::-webkit-scrollbar-button:end:decrement,
+.jsPanel-content::-webkit-scrollbar-button:start:increment {
+    display: none;
+}
+
+.jsPanel-content::-webkit-scrollbar-button:vertical:start:decrement {
+    background-image: var(--theme-sig-control-scrollbar-up-image,  linear-gradient(120deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(240deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(0deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--button-size-dec12), rgba(0, 0, 0, 0) var(--button-size-dec12)));
+    background-size: contain;
+    background-color: var(--theme-sig-control-scrollbar-button-color, rgba(221, 221, 221, 1));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jsPanel-content::-webkit-scrollbar-button:vertical:end:increment {
+    background-color: var(--theme-sig-control-scrollbar-button-color, rgba(221, 221, 221, 1));
+    background-image: var(--theme-sig-control-scrollbar-down-image, linear-gradient(300deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(60deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(180deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--button-size-dec10), rgba(0, 0, 0, 0) var(--button-size-dec9)));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jsPanel-content::-webkit-scrollbar-button:horizontal:end:increment {
+    background-color: var(--theme-sig-control-scrollbar-button-color, rgba(221, 221, 221, 1));
+    background-image:var(--theme-sig-control-scrollbar-right-image, linear-gradient(210deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(330deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(90deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--button-size-dec10), rgba(0, 0, 0, 0) var(--button-size-dec9)));
+}
+
+.jsPanel-content::-webkit-scrollbar-button:horizontal:start:decrement {
+    background-color: var(--theme-sig-control-scrollbar-button-color, rgba(221, 221, 221, 1));
+    background-image: var(--theme-sig-control-scrollbar-left-image, linear-gradient(30deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(150deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(270deg, var(--theme-sig-control-scrollbar-button-background-color,rgba(64, 66, 72, 1)) var(--button-size-dec10), rgba(0, 0, 0, 0) var(--button-size-dec9)));
+}
+
+/* Active button settings */
+
+
+.jsPanel-content::-webkit-scrollbar-button:active {
+    border-color: var(--theme-sig-control-scrollbar-button-active-border-color, rgba(255, 255, 255, 0));
+}
+
+
+.jsPanel-content::-webkit-scrollbar-button:active:vertical:start:decrement {
+    background-image: var(--theme-sig-control-scrollbar-active-up-image, var(--theme-sig-control-scrollbar-up-image,  linear-gradient(120deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(240deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(0deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--button-size-dec12), rgba(0, 0, 0, 0) var(--button-size-dec12))));
+    background-size: contain;
+    background-color: var(--theme-sig-control-scrollbar-button-active-color, rgba(221, 221, 221, 1));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jsPanel-content::-webkit-scrollbar-button:active:vertical:end:increment {
+    background-color: var(--theme-sig-control-scrollbar-button-active-color, rgba(221, 221, 221, 1)) !important;
+    background-image: var(--theme-sig-control-scrollbar-active-down-image, var(--theme-sig-control-scrollbar-down-image, linear-gradient(300deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(60deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(180deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--button-size-dec10), rgba(0, 0, 0, 0) var(--button-size-dec9))));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jsPanel-content::-webkit-scrollbar-button:active:horizontal:end:increment {
+    background-color: var(--theme-sig-control-scrollbar-button-active-color, rgba(221, 221, 221, 1)) !important;
+    background-image:var(--theme-sig-control-scrollbar-active-right-image, var(--theme-sig-control-scrollbar-right-image, linear-gradient(210deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(330deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(90deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--button-size-dec10), rgba(0, 0, 0, 0) var(--button-size-dec9))));
+}
+
+.jsPanel-content::-webkit-scrollbar-button:active:horizontal:start:decrement {
+    background-color: var(--theme-sig-control-scrollbar-button-active-color, rgba(221, 221, 221, 1)) !important;
+    background-image: var(--theme-sig-control-scrollbar-active-left-image, var(--theme-sig-control-scrollbar-left-image, linear-gradient(30deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(150deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--theme-sig-control-scrollbar-button-size, 43%), rgba(0, 0, 0, 0) var(--button-size-inc1)),
+    linear-gradient(270deg, var(--theme-sig-control-scrollbar-button-active-background-color,rgba(64, 66, 72, 1)) var(--button-size-dec10), rgba(0, 0, 0, 0) var(--button-size-dec9))));
+}
+}

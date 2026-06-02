@@ -1,0 +1,38 @@
+.jstree-designer.jstree-rtl .jstree-node {
+  margin-right: var(--jstree-node-height, 24px);
+  margin-left:0;
+}
+.jstree-designer.jstree-rtl > .jstree-container-ul > .jstree-node {
+  margin-left: 0;
+  margin-right: 0;
+}
+.jstree-designer.jstree-rtl .jstree-node {
+  background-image: var(--jstree-img-line);
+  background-position: 100% 1px;
+  background-repeat: repeat-y;
+}
+.jstree-designer.jstree-rtl .jstree-last {
+  background: transparent;
+}
+.jstree-designer.jstree-rtl .jstree-open > .jstree-ocl {
+  background-image:var(--jstree-img-node-opened-rtl);
+}
+.jstree-designer.jstree-rtl .jstree-closed > .jstree-ocl {
+  background-image:var(--jstree-img-node-closed-rtl);
+}
+.jstree-designer.jstree-rtl .jstree-leaf > .jstree-ocl {
+  background-image: var(--jstree-img-node-rtl);
+}
+.jstree-designer.jstree-rtl > .jstree-no-dots .jstree-node,
+.jstree-designer.jstree-rtl > .jstree-no-dots .jstree-leaf > .jstree-ocl {
+  background: transparent;
+}
+.jstree-designer.jstree-rtl > .jstree-no-dots .jstree-open > .jstree-ocl {
+  background-image: var(--jstree-img-node-opened-arrrow);
+}
+.jstree-designer.jstree-rtl > .jstree-no-dots .jstree-closed > .jstree-ocl {
+   background-image: var(--jstree-img-node-closed-arrow);
+}
+.jstree-designer.jstree-rtl .jstree-last {
+  background: transparent;
+}

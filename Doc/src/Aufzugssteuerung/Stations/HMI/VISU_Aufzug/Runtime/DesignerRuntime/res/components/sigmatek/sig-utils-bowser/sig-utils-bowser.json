@@ -1,0 +1,42 @@
+{
+    "name": "sig-utils-bowser",
+    "shortName": {
+        "en": "Bowser library",
+        "de": "Bowser library"
+    },
+    "controlType": {
+        "en": "Libraries",
+        "de": "Libraries"
+    },
+    "version": "02.00.001",
+    "authors": [
+        "https://github.com/lancedikson/bowser"
+    ],
+    "description": {
+        "en": "A browser detector",
+        "de": "Ein Browser-Detektor"
+    },
+    "main": [
+        "sig-utils-bowser.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "https://github.com/lancedikson/bowser/blob/master/LICENSE",
+    "homepage": "https://github.com/lancedikson/bowser",
+    "private": true,
+    "dependencies": {},
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "toolbox": false,
+    "properties": []
+}

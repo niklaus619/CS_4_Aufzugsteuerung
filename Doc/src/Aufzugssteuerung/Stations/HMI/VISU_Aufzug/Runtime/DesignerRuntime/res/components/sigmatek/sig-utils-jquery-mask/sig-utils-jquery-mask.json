@@ -1,0 +1,53 @@
+{
+    "name": "sig-utils-jquery-mask",
+    "shortName": {
+        "en": "jQuery mask plugin",
+        "de": "jQuery mask plugin"
+    },
+    "controlType": {
+        "en": "Libraries",
+        "de": "Libraries"
+    },
+    "version": "01.02.004",
+    "authors": [
+        "https://github.com/igorescobar"
+    ],
+    "description": {
+        "en": "Helper element to load the jquery mask plugin.",
+        "de": "Helper element to load the jquery mask plugin."
+    },
+    "main": [
+        "sig-utils-jquery-mask.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "https://github.com/igorescobar/jQuery-Mask-Plugin/blob/master/LICENSE",
+    "homepage": "https://github.com/igorescobar/jQuery-Mask-Plugin",
+    "private": true,
+    "dependencies": {
+        "sig-element": "controls/sigmatek/sig-element#^1.2.0",
+        "sig-utils-jquery": "components/sigmatek/sig-utils-jquery#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0",
+        "jquery-mask-plugin": "jquery-mask-plugin/jquery-mask-plugin#1.14.15"
+    },
+    "resources": [
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-utils-jquery"
+        }
+    ],
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "toolbox": false,
+    "properties": []
+}

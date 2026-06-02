@@ -1,0 +1,822 @@
+{
+    "name": "sig-control-led",
+    "shortName": {
+        "en": "Led",
+        "de": "Led"
+    },
+    "controlType": {
+        "en": "Output",
+        "de": "Output"
+    },
+    "version": "02.00.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a LED as a Polymer Custom Element.",
+        "de": "Implementiert eine LED als Polymer Custom Element"
+    },
+    "main": [
+        "sig-control-led.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-led.html",
+    "private": true,
+    "baseComponent": "sig-element-light",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element-light#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-control-led-css.js"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "20px",
+        "height": "20px"
+    },
+    "toolbox": false,
+    "styleClassEditor": true,
+    "slotted": false,
+    "usableInShadowDom": true,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "properties": [
+        /*****************************************************************************************************
+        // Data
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "value",
+            "sortIndex": 150000,
+            "dataType": "number",
+            "lockStyleCopy": true,
+            "shortName": {
+                "de": "Value",
+                "en": "Value"
+            },    
+            "description": {
+                "en": "If not 0 the LED is in the activ state.",
+                "de": "Wenn der Wert nicht 0 ist, ist die LED aktiv."
+            },
+            "group": {
+                "de": "Data",
+                "en": "Data"
+            },    
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Preview settings
+        *****************************************************************************************************/
+        /*----------------------------------------------------------------------------------------------------
+        // property Preview
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "dataType": "boolean",
+            "default": false,
+            "name": "preview",
+            "sortIndex": 150100,
+            "shortName": {
+                "en": "Preview active led",
+                "de": "Preview active led"
+            },
+            "description": {
+                "en": "Shows a preview of the active led.",
+                "de": "Zeigt eine Vorschau der aktiven LED."
+            },
+            "group": {
+                "en": "Preview settings",
+                "de": "Preview settings"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },    
+        /*****************************************************************************************************
+        // General styling
+        *****************************************************************************************************/            
+        /*----------------------------------------------------------------------------------------------------
+        // property Background color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-background-color",
+            "sortIndex": 500000,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "#ccc",
+            "editor": "colorpicker",
+            "shortName": {
+                "de": "Background color",
+                "en": "Background color"
+            },    
+            "description": {
+                "en": "The background color of the control",
+                "de": "Die Hintergrundfarbe der Komponente"
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },    
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Active background color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-pressed-background-color",
+            "sortIndex": 500100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "#070",
+            "editor": "colorpicker",
+            "shortName": {
+                "de": "Active background color",
+                "en": "Active background color"
+            },    
+            "description": {
+                "en": "The background color of the led in active state.",
+                "de": "Die Hintergrundfarbe der Led im aktiven Zustand."
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },    
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border width
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-border-width",
+            "sortIndex": 500200,
+            "dataType": "string",
+            "units": "px",
+            "default": "1px",
+            "shortName": {
+                "de": "Border width",
+                "en": "Border width"
+            },    
+            "description": {
+                "en": "The border width of the control",
+                "de": "Die Randbreite der Komponente"
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },  
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-border-color",
+            "sortIndex": 500300,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "#fff",
+            "editor": "colorpicker",
+            "shortName": {
+                "de": "Border color",
+                "en": "Border color"
+            },    
+            "description": {
+                "en": "The border color of the control",
+                "de": "Die Rahmenfarbe der Komponente"
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },  
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border style
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-border-style",
+            "sortIndex": 500400,
+            "dataType": "string",
+            "default": "solid",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "de": "Border style",
+                "en": "Border style"
+            },    
+            "description": {
+                "en": "Defines the border style of the main control",
+                "de": "Definiert den Randstil der Hauptkomponente"
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },  
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius top left
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-border-radius-top-left",
+            "sortIndex": 500500,
+            "dataType": "string",
+            "units": "px,%",
+            "default": "2px",
+            "shortName": {
+                "de": "Border radius top left",
+                "en": "Border radius top left"
+            },    
+            "description": {
+                "en": "The top left border radius of the control.",
+                "de": "Der obere Linke Randradius der Komponente."
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },   
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius top right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-border-radius-top-right",
+            "sortIndex": 500600,
+            "dataType": "string",
+            "units": "px,%",
+            "default": "2px",
+            "shortName": {
+                "de": "Border radius top right",
+                "en": "Border radius top right"
+            },    
+            "description": {
+                "en": "The top right border radius of the control.",
+                "de": "Der obere Rechte Randradius der Komponente."
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },   
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius bottom right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-border-radius-bottom-right",
+            "sortIndex": 500700,
+            "dataType": "string",
+            "units": "px,%",
+            "default": "2px",
+            "shortName": {
+                "de": "Border radius bottom right",
+                "en": "Border radius bottom right"
+            },    
+            "description": {
+                "en": "The bottom right border radius of the control",
+                "de": "Der untere Rechte Randradius der Komponente"
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },   
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius bottom left
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-border-radius-bottom-left",
+            "sortIndex": 500800,
+            "dataType": "string",
+            "units": "px,%",
+            "default": "2px",
+            "shortName": {
+                "de": "Border radius bottom left",
+                "en": "Border radius bottom left"
+            },    
+            "description": {
+                "en": "The bottom left border radius of the control",
+                "de": "Der untere Linke Randradius der Komponente"
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },   
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Show box shadow
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "showboxshadow",
+            "sortIndex": 500900,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "de": "Show box shadow",
+                "en": "Show box shadow"
+            },    
+            "description": {
+                "en": "If true the Box Shadow is drawn.",
+                "de": "Bei true wird der Boxschatten gezeichnet."
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },   
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },        
+        /*----------------------------------------------------------------------------------------------------
+        // property Image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-background-image",
+            "sortIndex": 500900,
+            "dataType": "string",
+            "units": "url",
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "de": "Image",
+                "en": "Image"
+            },    
+            "description": {
+                "en": "The background Image of the control.",
+                "de": "Das Hintergrundbild der Komponente."
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },  
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Active image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-pressed-background-image",
+            "sortIndex": 501000,
+            "dataType": "string",
+            "units": "url",
+            "default": "inherit",
+            "editor": "urlpicker",
+            "shortName": {
+                "de": "Active image",
+                "en": "Active image"
+            },    
+            "description": {
+                "en": "The background image of the led in pressed state",
+                "de": "Das Hintergrundbild der Led im gedrückten Zustand"
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },  
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },        
+        /*----------------------------------------------------------------------------------------------------
+        // property Horizontal alignment
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-background-position-x",
+            "sortIndex": 501100,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "left"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "right"
+                }
+            ],            
+            "multiSelect": false,
+            "shortName": {
+                "de": "Horizontal alignment",
+                "en": "Horizontal alignment"
+            },    
+            "description": {
+                "en": "Defines the horizontal alignment of the background image of the main control",
+                "de": "Definiert die horizontale Ausrichtung des Hintergrundbilds der Hauptkomponte"
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },  
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Vertical alignment
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-background-position-y",
+            "sortIndex": 501200,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "top"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "bottom"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "de": "Vertical alignment",
+                "en": "Vertical alignment"
+            },    
+            "description": {
+                "en": "Defines the vertical alignment of the background image of the main control",
+                "de": "Definiert die vertikale Ausrichtung des Hintergrundbilds der Hauptkomponente"
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },  
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Stetchmode
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-led-background-size",
+            "sortIndex": 501300,
+            "dataType": "string",
+            "default": "cover",
+            "options": [
+                {
+                    "shortName": "Automatic",
+                    "value": "auto"
+                },
+                {
+                    "shortName": "Cover",
+                    "value": "cover"
+                },
+                {
+                    "shortName": "Contain",
+                    "value": "contain"
+                },
+                {
+                    "shortName": "Stretch",
+                    "value": "100% 100%"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "de": "Stretchmode",
+                "en": "Stretchmode"
+            },    
+            "description": {
+                "en": "Defines how the background image is scaled",
+                "de": "Legt fest, wie das Hintergrundbild skaliert wird"
+            },
+            "group": {
+                "de": "General styling",
+                "en": "General styling"
+            },  
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        }
+    ],
+    "helpFiles": [
+        {
+            "language": "de",
+            "default": true,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Led_DE.chm"
+                }
+            ]
+        },
+        {
+            "language": "en",
+            "default": false,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Led_EN.chm"
+                }
+            ]
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

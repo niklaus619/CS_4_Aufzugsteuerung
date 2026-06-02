@@ -1,0 +1,105 @@
+{
+    "lang": "en",
+    "name": "English",
+    "author": "SIGMATEK GmbH & Co KG",
+    "version": "2.0",
+    "layouts": {
+        "alpha": {
+            "layers": {
+                "normal": [
+                    "` 1 2 3 4 5 6 7 8 9 0 - = {bksp}",
+                    "{tab} q w e r t y u i o p [ ]",
+                    "a s d f g h j k l ; ' \u005C {accept}",
+                    "{shift} z x c v b n m , . / {shift}",
+                    "{alt} {undo} {curleft} {space} {curright} {clear} {more}"
+                ],
+                "shift": [
+                    "~ ! @ # $ % ^ & * ( ) _ + {bksp}",
+                    "{tab} Q W E R T Y U I O P { }",
+                    "A S D F G H J K L : \u0022 | {accept}",
+                    "{shift} Z X C V B N M < > ? {shift}",
+                    "{alt} {undo} {curleft} {space} {curright} {clear} {more}"
+                ],
+                "alt": [
+                    "{off} \u00A1 \u00B2 \u00B3 \u00A4 \u20AC \u00BC \u00BD \u00BE \u2018 \u2019 \u00A5 \u00D7 {bksp}",
+                    "{tab} \u00E4 \u00E5 \u00E9 \u00AE \u00FE \u00FC \u00FA \u00ED \u00F3 \u00F6 \u00AB \u00BB",
+                    "\u00E1 \u00DF \u00F0 {off} {off} {off} {off} {off} \u00F8 \u00B6 \u00B4 \u00AC {accept}",
+                    "{shift} \u00E6 {off} \u00A9 {off} {off} \u00F1 \u00B5 \u00E7 {off} \u00BF {shift}",
+                    "{alt} {undo} {curleft} {space} {curright} {clear} {more}"
+                ],
+                "more": [
+                    "{off} \u00B9 {off} {off} \u00A3 {off} {off} {off} {off} {off} {off} {off} \u00F7 {bksp}",
+                    "{tab} \u00C4 \u00C5 \u00C9 {off} \u00DE \u00DC \u00DA \u00CD \u00D3 \u00D6 {off} {off}",
+                    "\u00C1 \u00A7 \u00D0 {off} {off} {off} {off} {off} \u00D8 \u00B0 \u00A8 \u00A6 {off}",
+                    "{shift} \u00C6 {off} \u00A2 {off} {off} \u00D1 {off} \u00C7 {off} {off} {shift}",
+                    "{alt} {undo} {curleft} {space} {curright} {clear} {more}"
+                ]
+            }
+        },
+        "numeric": {
+            "config": {
+                "regexValidation": "numeric"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {increase}",
+                    "1 2 3 {decrease}",
+                    ". 0 {minus} {accept}"
+                ]
+            }
+        },
+        "ipv4": {
+            "config": {
+                "regexValidation": "ipv4"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {undo}",
+                    "1 2 3 {clear}",
+                    ". 0 {off} {accept}"
+                ]
+            }
+        },
+        "hex": {
+            "config": {
+                "regexValidation": "hex"
+            },
+            "layers": {
+                "normal": [
+                    "C D E F {bksp}",
+                    "8 9 A B {undo}",
+                    "4 5 6 7 {clear}",
+                    "0 1 2 3 {accept}"
+                ]
+            }
+        },
+        "time": {
+            "config": {
+                "regexValidation": "time"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {undo}",
+                    "1 2 3 {clear}",
+                    ": 0 {off} {accept}"
+                ]
+            }
+        },
+        "date": {
+            "config": {
+                "regexValidation": "date"
+            },
+            "layers": {
+                "normal": [
+                    "7 8 9 {bksp}",
+                    "4 5 6 {undo}",
+                    "1 2 3 {clear}",
+                    ". 0 - {accept}"
+                ]
+            }
+        }
+    }
+}

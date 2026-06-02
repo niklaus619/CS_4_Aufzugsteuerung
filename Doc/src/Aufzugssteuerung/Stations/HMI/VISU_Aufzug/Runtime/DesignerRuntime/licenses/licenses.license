@@ -1,0 +1,498 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang3079\deflangfe3079{\fonttbl{\f0\fswiss\fprq2\fcharset0 Calibri Light;}{\f1\fswiss\fprq2\fcharset0 Calibri;}{\f2\fmodern\fprq1\fcharset0 Consolas;}{\f3\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red118\green113\blue113;\red217\green217\blue217;}
+{\stylesheet{ Normal;}{\s1 heading 1;}{\s2 heading 2;}}
+{\*\generator Riched20 10.0.19041}{\*\mmathPr\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\keepn\widctlpar\s1\sb240\sa60\sl252\slmult1\kerning32\b\f0\fs32 1. Information\par
+
+\pard\widctlpar\kerning0\b0\f1\fs22\par
+SIGMATEK GmbH & Co KG\par
+Sigmatekstra\'dfe 1\par
+5112 Lamprechtshausen\par
+\lang2057 Austria \par
+\par
+\par
+\fs32 1.1 Terms of use\par
+ \par
+\fs24 The copyright holders do not provide any warranty and assume no liability for the free and open source software components. Note that any modification can void any warranty claim.\par
+\par
+The system allows the integration of external sources, such as character sets / videos / Javascript code etc. It is the responsibility of the user of the LVD tool to ensure that these sources are royalty-free or free of copyright. \par
+\par
+\fs32 1.2 Warranty and Liability\par
+ \par
+\fs24 Please note the applicable terms and conditions of Third Party Software included in SIGMATEK\rquote s products, namely packages listed under section "3. Package details for License usage".\par
+\par
+The parties are aware that SIGMATEK\rquote s products and services contain or use software and/ or technology that cannot be fully tested for flawlessness. In light of this fact that the standardised regulations on warranty and liability for \ldblquote everyday goods\rdblquote  cannot apply SIGMATEK\rquote s products and services, the parties agree the following:\par
+\par
+The Parties agree that no legal warranty shall apply on and in the context of SIGMATEK\rquote s products and/ or services. SIGMATEK\rquote s products and/ or services are provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement.\par
+\par
+SIGMATEK shall only be held liable by the Customer and or parties falling into the sphere of the Customer in the event of gross negligence with regard to cardinal contractual obligations - in this respect exclusively up to the maximum liability limit agreed herewith, which corresponds to the payments actually made by the Customer - and otherwise SIGMATEK shall only be held liable in the event of intent, personal injury or mandatory liability provisions (in particular in accordance with the statutory provisions on product liability).\par
+The limitation of SIGMATEK\rquote s liability shall also apply to all employees, subcontractors, etc.\par
+\par
+The relationship between SIGMATEK and the Customer shall be governed exclusively by Austrian law, excluding the conflict of laws rules and excluding the UN Convention on Contracts for the International Sale of Goods. The exclusive place of jurisdiction shall be that of SIGMATEK.\par
+\par
+
+\pard\keepn\widctlpar\s1\sb240\sa60\sl252\slmult1\kerning32\b\f0\fs32 2. Licenses used in this application\par
+\trowd\trgaph70\trleft-108\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl70\trpaddr70\trpaddfl3\trpaddfr3
+\clcbpat5\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx3570\clcbpat5\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx5838 
+\pard\intbl\widctlpar\qc\cf1\kerning0\b0\f1\fs22 License name\cell\lang3079 Terms and conditions\cell\row\trowd\trgaph70\trleft-108\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl70\trpaddr70\trpaddfl3\trpaddfr3
+\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx3570\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx5838 
+\pard\intbl\widctlpar\cf0\lang2057 MIT License\cell Refer section 4.1\cell\row\trowd\trgaph70\trleft-108\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl70\trpaddr70\trpaddfl3\trpaddfr3
+\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx3570\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx5838 
+\pard\intbl\widctlpar Apache License 2.0\cell Refer section 4.2\cell\row\trowd\trgaph70\trleft-108\trrh240\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl70\trpaddr70\trpaddfl3\trpaddfr3
+\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx3570\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx5838 
+\pard\intbl\widctlpar BSD\cell Refer section 4.3\cell\row\trowd\trgaph70\trleft-108\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl70\trpaddr70\trpaddfl3\trpaddfr3
+\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx3570\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx5838 
+\pard\intbl\widctlpar The Unlicense\f0\cell\f1 Refer section 4.4\cell\row\trowd\trgaph70\trleft-108\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl70\trpaddr70\trpaddfl3\trpaddfr3
+\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx3570\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx5838 
+\pard\intbl\widctlpar ISC License\cell Refer section 4.5\cell\row\trowd\trgaph70\trleft-108\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl70\trpaddr70\trpaddfl3\trpaddfr3
+\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx3570\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx5838 
+\pard\intbl\widctlpar BSD 3-Clause "New" or "Revised"\cell Refer section 4.6\cell\row\trowd\trgaph70\trleft-108\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl70\trpaddr70\trpaddfl3\trpaddfr3
+\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx3570\clbrdrl\brdrw10\brdrs\brdrcf4\clbrdrt\brdrw10\brdrs\brdrcf4\clbrdrr\brdrw10\brdrs\brdrcf4\clbrdrb\brdrw10\brdrs\brdrcf4 \cellx5838 
+\pard\intbl\widctlpar SIL Open Font License 1.1\cell Refer section 4.7\cell\row 
+\pard\widctlpar\sa160\sl252\slmult1\par
+
+\pard\keepn\widctlpar\s1\sb240\sa60\sl252\slmult1\kerning32\b\f0\fs32 3. Package details for License usage\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\kerning0\i\fs28 jQuery Mask Plugin \endash  1.14.15\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: MIT License\line Copyright \'a9: 2012 Igor Escobar\line Homepage: {{\field{\*\fldinst{HYPERLINK http://blog.igorescobar.com }}{\fldrslt{http://blog.igorescobar.com\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.1\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 jQuery - 3.3.1\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: MIT License\line Copyright \'a9: JS Foundation and other contributors\line Homepage: {{\field{\*\fldinst{HYPERLINK https://js.foundation/ }}{\fldrslt{https://js.foundation/\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.1\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 jsPanel4 \endash  4.16.1\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: MIT License\line Copyright \'a9: 2013 - 2018 Stefan Str\'e4\'dfer\line Homepage: {{\field{\*\fldinst{HYPERLINK http://stefanstraesser.eu/ }}{\fldrslt{http://stefanstraesser.eu/\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.1\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 Babel \endash  6.26.0\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: MIT License\line Copyright \'a9: 2014-present Sebastian McKenzie and other contributors\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/babel/babel }}{\fldrslt{https://github.com/babel/babel\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.1\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 loadjs \endash  4.2.0\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: MIT License\line Copyright \'a9: 2015 Andres Morey\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/muicss/loadjs/ }}{\fldrslt{https://github.com/muicss/loadjs/\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.1\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 C3 \endash  0.7.1\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: MIT License\line Copyright \'a9: 2013-present Masayuki Tanaka\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/c3js/c3/ }}{\fldrslt{https://github.com/c3js/c3/\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.1\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 bowser \endash  2.10.0\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: MIT License\line Copyright \'a9: 2015 Denis Demchenko\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/lancedikson/bowser }}{\fldrslt{https://github.com/lancedikson/bowser\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.1\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 ag-grid-community \endash  26.2.0\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: MIT License\line Copyright \'a9: 2015-2020 AG GRID LTD\line Homepage: {{\field{\*\fldinst{HYPERLINK https://www.ag-grid.com/ }}{\fldrslt{https://www.ag-grid.com/\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.1\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 Roboto Font\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: Apache License 2.0\line Copyright \'a9: 2011 Google Inc\line Homepage: {{\field{\*\fldinst{HYPERLINK https://fonts.google.com/specimen/Roboto }}{\fldrslt{https://fonts.google.com/specimen/Roboto\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.2\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 pwacompat \endash  2.0.15\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: Apache License 2.0\line Copyright \'a9: GoogleChromeLabs\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/GoogleChromeLabs/pwacompat/ }}{\fldrslt{https://github.com/GoogleChromeLabs/pwacompat/\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.2\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 Polymer \endash  3.5.1\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: BSD 3-Clause "New" or "Revised" License\line Copyright \'a9: 2017 The Polymer Authors. All rights reserved.\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/Polymer/polymer }}{\fldrslt{https://github.com/Polymer/polymer\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.6\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 Webcomponentsjs \endash  2.2.10 \par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: BSD License\line Copyright \'a9: 2015 The Polymer Authors. All rights reserved.\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/webcomponents/webcomponentsjs }}{\fldrslt{https://github.com/webcomponents/webcomponentsjs\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.3\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 ShadyCSS \endash  1.11.2\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: BSD License\line Copyright \'a9: 2015 The Polymer Authors. All rights reserved.\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/webcomponents/shadycss }}{\fldrslt{https://github.com/webcomponents/shadycss\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.3\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 D3 \endash  5.9.1 \par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: ISC License\line Copyright \'a9: 2010-2017 Mike Bostock\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/d3/d3 }}{\fldrslt{https://github.com/d3/d3\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.5\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 Big Integer \endash  1.6.48\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: The Unlicense\line Copyright \'a9: Peter Olson and other contributors\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/peterolson/BigInteger.js }}{\fldrslt{https://github.com/peterolson/BigInteger.js\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.4\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 LIT Element \endash  2.4.0\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: BSD 3-Clause "New" or "Revised" License\line Copyright \'a9: 2017 Google LLC\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/lit/lit/ }}{\fldrslt{https://github.com/lit/lit/\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.6\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 LIT Html \endash  1.4.1\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: BSD 3-Clause "New" or "Revised" License\line Copyright \'a9: 2017 Google LLC\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/lit/lit/ }}{\fldrslt{https://github.com/lit/lit/\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.6\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 Font Awesome Font\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: SIL Open Font License 1.1\line Copyright \'a9: 2011 Google Inc\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/FortAwesome/Font-Awesome }}{\fldrslt{https://github.com/FortAwesome/Font-Awesome\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.7\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 Definitely Typed \endash  TypeScript Type Definitions\par
+
+\pard\widctlpar\li576\sa160\sl252\slmult1\b0\i0\f1\fs22 Available under the license: MIT License\line Copyright \'a9: Masahiro Wakame and various contributors\line Homepage: {{\field{\*\fldinst{HYPERLINK https://github.com/DefinitelyTyped/DefinitelyTyped }}{\fldrslt{https://github.com/DefinitelyTyped/DefinitelyTyped\ul0\cf0}}}}\f1\fs22\line Terms and Conditions: Refer section 4.1\line Used Packages:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-215\li1134\sa160\sl-200\slmult0 @types/c3 - 0.7.1\par
+{\pntext\f3\'B7\tab}@types/d3 - 5.9.5\par
+{\pntext\f3\'B7\tab}@types/jquery - 3.3.1\par
+{\pntext\f3\'B7\tab}@types/jquery-mask-plugin \endash  1.14.4\par
+{\pntext\f3\'B7\tab}@types/loadjs - 4.0.2\par
+
+\pard\keepn\widctlpar\s1\sb240\sa60\sl252\slmult1\kerning32\b\f0\fs32 4. License Terms & Condition\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\kerning0\i\fs28 4.1 MIT License\par
+
+\pard\nowidctlpar\li720\b0\i0\f2\fs16 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), \line to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, \line and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\line\line The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\line\line THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 4.2 Apache License 2.0\par
+
+\pard\nowidctlpar\li720\b0\i0\f2\fs16 Apache License\line Version 2.0, January 2004\line {{\field{\*\fldinst{HYPERLINK http://www.apache.org/licenses/ }}{\fldrslt{http://www.apache.org/licenses/\ul0\cf0}}}}\f2\fs16\line\line TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\par
+\par
+   1. Definitions.\par
+\par
+      "License" shall mean the terms and conditions for use, reproduction,\par
+      and distribution as defined by Sections 1 through 9 of this document.\par
+\par
+      "Licensor" shall mean the copyright owner or entity authorized by\par
+      the copyright owner that is granting the License.\par
+\par
+      "Legal Entity" shall mean the union of the acting entity and all\par
+      other entities that control, are controlled by, or are under common\par
+      control with that entity. For the purposes of this definition,\par
+      "control" means (i) the power, direct or indirect, to cause the\par
+      direction or management of such entity, whether by contract or\par
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the\par
+      outstanding shares, or (iii) beneficial ownership of such entity.\par
+\par
+      "You" (or "Your") shall mean an individual or Legal Entity\par
+      exercising permissions granted by this License.\par
+\par
+      "Source" form shall mean the preferred form for making modifications,\par
+      including but not limited to software source code, documentation\par
+      source, and configuration files.\par
+\par
+      "Object" form shall mean any form resulting from mechanical\par
+      transformation or translation of a Source form, including but\par
+      not limited to compiled object code, generated documentation,\par
+      and conversions to other media types.\par
+\par
+      "Work" shall mean the work of authorship, whether in Source or\par
+      Object form, made available under the License, as indicated by a\par
+      copyright notice that is included in or attached to the work\par
+      (an example is provided in the Appendix below).\par
+\par
+      "Derivative Works" shall mean any work, whether in Source or Object\par
+      form, that is based on (or derived from) the Work and for which the\par
+      editorial revisions, annotations, elaborations, or other modifications\par
+      represent, as a whole, an original work of authorship. For the purposes\par
+      of this License, Derivative Works shall not include works that remain\par
+      separable from, or merely link (or bind by name) to the interfaces of,\par
+      the Work and Derivative Works thereof.\par
+\par
+      "Contribution" shall mean any work of authorship, including\par
+      the original version of the Work and any modifications or additions\par
+      to that Work or Derivative Works thereof, that is intentionally\par
+      submitted to Licensor for inclusion in the Work by the copyright owner\par
+      or by an individual or Legal Entity authorized to submit on behalf of\par
+      the copyright owner. For the purposes of this definition, "submitted"\par
+      means any form of electronic, verbal, or written communication sent\par
+      to the Licensor or its representatives, including but not limited to\par
+      communication on electronic mailing lists, source code control systems,\par
+      and issue tracking systems that are managed by, or on behalf of, the\par
+      Licensor for the purpose of discussing and improving the Work, but\par
+      excluding communication that is conspicuously marked or otherwise\par
+      designated in writing by the copyright owner as "Not a Contribution."\par
+\par
+      "Contributor" shall mean Licensor and any individual or Legal Entity\par
+      on behalf of whom a Contribution has been received by Licensor and\par
+      subsequently incorporated within the Work.\par
+\par
+   2. Grant of Copyright License. Subject to the terms and conditions of\par
+      this License, each Contributor hereby grants to You a perpetual,\par
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\par
+      copyright license to reproduce, prepare Derivative Works of,\par
+      publicly display, publicly perform, sublicense, and distribute the\par
+      Work and such Derivative Works in Source or Object form.\par
+\par
+   3. Grant of Patent License. Subject to the terms and conditions of\par
+      this License, each Contributor hereby grants to You a perpetual,\par
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\par
+      (except as stated in this section) patent license to make, have made,\par
+      use, offer to sell, sell, import, and otherwise transfer the Work,\par
+      where such license applies only to those patent claims licensable\par
+      by such Contributor that are necessarily infringed by their\par
+      Contribution(s) alone or by combination of their Contribution(s)\par
+      with the Work to which such Contribution(s) was submitted. If You\par
+      institute patent litigation against any entity (including a\par
+      cross-claim or counterclaim in a lawsuit) alleging that the Work\par
+      or a Contribution incorporated within the Work constitutes direct\par
+      or contributory patent infringement, then any patent licenses\par
+      granted to You under this License for that Work shall terminate\par
+      as of the date such litigation is filed.\par
+\par
+   4. Redistribution. You may reproduce and distribute copies of the\par
+      Work or Derivative Works thereof in any medium, with or without\par
+      modifications, and in Source or Object form, provided that You\par
+      meet the following conditions:\par
+\par
+      (a) You must give any other recipients of the Work or\par
+          Derivative Works a copy of this License; and\par
+\par
+      (b) You must cause any modified files to carry prominent notices\par
+          stating that You changed the files; and\par
+\par
+      (c) You must retain, in the Source form of any Derivative Works\par
+          that You distribute, all copyright, patent, trademark, and\par
+          attribution notices from the Source form of the Work,\par
+          excluding those notices that do not pertain to any part of\par
+          the Derivative Works; and\par
+\par
+      (d) If the Work includes a "NOTICE" text file as part of its\par
+          distribution, then any Derivative Works that You distribute must\par
+          include a readable copy of the attribution notices contained\par
+          within such NOTICE file, excluding those notices that do not\par
+          pertain to any part of the Derivative Works, in at least one\par
+          of the following places: within a NOTICE text file distributed\par
+          as part of the Derivative Works; within the Source form or\par
+          documentation, if provided along with the Derivative Works; or,\par
+          within a display generated by the Derivative Works, if and\par
+          wherever such third-party notices normally appear. The contents\par
+          of the NOTICE file are for informational purposes only and\par
+          do not modify the License. You may add Your own attribution\par
+          notices within Derivative Works that You distribute, alongside\par
+          or as an addendum to the NOTICE text from the Work, provided\par
+          that such additional attribution notices cannot be construed\par
+          as modifying the License.\par
+\par
+      You may add Your own copyright statement to Your modifications and\par
+      may provide additional or different license terms and conditions\par
+      for use, reproduction, or distribution of Your modifications, or\par
+      for any such Derivative Works as a whole, provided Your use,\par
+      reproduction, and distribution of the Work otherwise complies with\par
+      the conditions stated in this License.\par
+\par
+   5. Submission of Contributions. Unless You explicitly state otherwise,\par
+      any Contribution intentionally submitted for inclusion in the Work\par
+      by You to the Licensor shall be under the terms and conditions of\par
+      this License, without any additional terms or conditions.\par
+      Notwithstanding the above, nothing herein shall supersede or modify\par
+      the terms of any separate license agreement you may have executed\par
+      with Licensor regarding such Contributions.\par
+\par
+   6. Trademarks. This License does not grant permission to use the trade\par
+      names, trademarks, service marks, or product names of the Licensor,\par
+      except as required for reasonable and customary use in describing the\par
+      origin of the Work and reproducing the content of the NOTICE file.\par
+\par
+   7. Disclaimer of Warranty. Unless required by applicable law or\par
+      agreed to in writing, Licensor provides the Work (and each\par
+      Contributor provides its Contributions) on an "AS IS" BASIS,\par
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\par
+      implied, including, without limitation, any warranties or conditions\par
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\par
+      PARTICULAR PURPOSE. You are solely responsible for determining the\par
+      appropriateness of using or redistributing the Work and assume any\par
+      risks associated with Your exercise of permissions under this License.\par
+\par
+   8. Limitation of Liability. In no event and under no legal theory,\par
+      whether in tort (including negligence), contract, or otherwise,\par
+      unless required by applicable law (such as deliberate and grossly\par
+      negligent acts) or agreed to in writing, shall any Contributor be\par
+      liable to You for damages, including any direct, indirect, special,\par
+      incidental, or consequential damages of any character arising as a\par
+      result of this License or out of the use or inability to use the\par
+      Work (including but not limited to damages for loss of goodwill,\par
+      work stoppage, computer failure or malfunction, or any and all\par
+      other commercial damages or losses), even if such Contributor\par
+      has been advised of the possibility of such damages.\par
+\par
+   9. Accepting Warranty or Additional Liability. While redistributing\par
+      the Work or Derivative Works thereof, You may choose to offer,\par
+      and charge a fee for, acceptance of support, warranty, indemnity,\par
+      or other liability obligations and/or rights consistent with this\par
+      License. However, in accepting such obligations, You may act only\par
+      on Your own behalf and on Your sole responsibility, not on behalf\par
+      of any other Contributor, and only if You agree to indemnify,\par
+      defend, and hold each Contributor harmless for any liability\par
+      incurred by, or claims asserted against, such Contributor by reason\par
+      of your accepting any such warranty or additional liability.\par
+\par
+   END OF TERMS AND CONDITIONS\par
+\par
+APPENDIX: How to apply the Apache License to your work.\par
+\par
+      To apply the Apache License to your work, attach the following\par
+      boilerplate notice, with the fields enclosed by brackets "[]"\par
+      replaced with your own identifying information. (Don't include\par
+      the brackets!)  The text should be enclosed in the appropriate\par
+      comment syntax for the file format. We also recommend that a\par
+      file or class name and description of purpose be included on the\par
+      same "printed page" as the copyright notice for easier\par
+      identification within third-party archives.\par
+\par
+   Copyright [yyyy] [name of copyright owner]\par
+\par
+   Licensed under the Apache License, Version 2.0 (the "License");\par
+   you may not use this file except in compliance with the License.\par
+   You may obtain a copy of the License at\par
+\par
+       {{\field{\*\fldinst{HYPERLINK http://www.apache.org/licenses/LICENSE-2.0 }}{\fldrslt{http://www.apache.org/licenses/LICENSE-2.0\ul0\cf0}}}}\f2\fs16\par
+\par
+   Unless required by applicable law or agreed to in writing, software\par
+   distributed under the License is distributed on an "AS IS" BASIS,\par
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\par
+   See the License for the specific language governing permissions and\par
+   limitations under the License.\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 4.3 BSD License\par
+
+\pard\nowidctlpar\li720\b0\i0\f2\fs16 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\par
+\par
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\par
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\par
+* Neither the name of Google Inc. nor the name Chromium Embedded Framework nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\line\par
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\par
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\par
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\par
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\par
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\par
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\par
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\par
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\par
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\par
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\par
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 4.4 The Unlicense\par
+
+\pard\nowidctlpar\li720\b0\i0\f2\fs16 This is free and unencumbered software released into the public domain.\par
+\par
+Anyone is free to copy, modify, publish, use, compile, sell, or\par
+distribute this software, either in source code form or as a compiled\par
+binary, for any purpose, commercial or non-commercial, and by any\par
+means.\par
+\par
+In jurisdictions that recognize copyright laws, the author or authors\par
+of this software dedicate any and all copyright interest in the\par
+software to the public domain. We make this dedication for the benefit\par
+of the public at large and to the detriment of our heirs and\par
+successors. We intend this dedication to be an overt act of\par
+relinquishment in perpetuity of all present and future rights to this\par
+software under copyright law.\par
+\par
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,\par
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\par
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\par
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR\par
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,\par
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\par
+OTHER DEALINGS IN THE SOFTWARE.\par
+\par
+For more information, please refer to <{{\field{\*\fldinst{HYPERLINK "http://unlicense.org"}}{\fldrslt{http://unlicense.org\ul0\cf0}}}}\f2\fs16 >\par
+
+\pard\keepn\widctlpar\s2\sb240\sa60\sl252\slmult1\b\i\f0\fs28 4.5 ISC Licence\par
+
+\pard\nowidctlpar\li720\b0\i0\f2\fs16 Copyright (c) [year] [fullname]\par
+\par
+Permission to use, copy, modify, and/or distribute this software for any\par
+purpose with or without fee is hereby granted, provided that the above\par
+copyright notice and this permission notice appear in all copies.\par
+\par
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH\par
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY\par
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,\par
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM\par
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR\par
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR\par
+PERFORMANCE OF THIS SOFTWARE.\par
+\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b\i\f0\fs28 4.6 BSD 3-Clause \ldblquote New\rdblquote  or \ldblquote Revised\rdblquote  License\b0\i0\f1\fs22\par
+
+\pard\nowidctlpar\li720\f2\fs16 BSD 3-Clause License\par
+Copyright (c) [year], [fullname]\par
+\par
+Redistribution and use in source and binary forms, with or without\par
+modification, are permitted provided that the following conditions are met:\par
+\par
+1. Redistributions of source code must retain the above copyright notice, this\par
+   list of conditions and the following disclaimer.\par
+\par
+2. Redistributions in binary form must reproduce the above copyright notice,\par
+   this list of conditions and the following disclaimer in the documentation\par
+   and/or other materials provided with the distribution.\par
+\par
+3. Neither the name of the copyright holder nor the names of its\par
+   contributors may be used to endorse or promote products derived from\par
+   this software without specific prior written permission.\par
+\par
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"\par
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\par
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\par
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\par
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\par
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\par
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\par
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\par
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\par
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\par
+
+\pard\nowidctlpar\f0\fs24\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b\i\fs28 4.7 \i0 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007\i\par
+
+\pard\nowidctlpar\li720\b0\i0\f2\fs16 Copyright (c) year(s), Copyright Holder (URL|email),\par
+with Reserved Font Name \ldblquote Reserved Font Name\rdblquote .\par
+\par
+Copyright (c) year(s), additional Copyright Holder (URL|email),\par
+with Reserved Font Name \ldblquote additional Reserved Font Name\rdblquote .\par
+\par
+Copyright (c) year(s), additional Copyright Holder (URL|email).\par
+ \par
+\par
+This Font Software is licensed under the SIL Open Font License, Version 1.1.\par
+This license is copied below, and is also available with a FAQ at:\par
+{{\field{\*\fldinst{HYPERLINK https://openfontlicense.org }}{\fldrslt{https://openfontlicense.org\ul0\cf0}}}}\f2\fs16\par
+ \par
+-----------------------------------------------------------\par
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007\par
+-----------------------------------------------------------\par
+\par
+PREAMBLE\par
+\par
+The goals of the Open Font License (OFL) are to stimulate worldwide development of collaborative font projects, to support the font creation efforts of academic and linguistic communities, and to provide a free and open framework in which fonts may be shared and improved in partnership with others.\par
+\par
+The OFL allows the licensed fonts to be used, studied, modified and redistributed freely as long as they are not sold by themselves. The fonts, including any derivative works, can be bundled, embedded, redistributed and/or sold with any software provided that any reserved names are not used by derivative works. The fonts and derivatives, however, cannot be released under any other type of license. The requirement for fonts to remain under this license does not apply to any document created using the fonts or their derivatives.\par
+\par
+DEFINITIONS\par
+\par
+\ldblquote Font Software\rdblquote  refers to the set of files released by the Copyright Holder(s) under this license and clearly marked as such. This may include source files, build scripts and documentation.\par
+\par
+\ldblquote Reserved Font Name\rdblquote  refers to any names specified as such after the copyright statement(s).\par
+\par
+\ldblquote Original Version\rdblquote  refers to the collection of Font Software components as distributed by the Copyright Holder(s).\par
+\par
+\ldblquote Modified Version\rdblquote  refers to any derivative made by adding to, deleting, or substituting \endash  in part or in whole \endash  any of the components of the Original Version, by changing formats or by porting the Font Software to a new environment.\par
+\par
+\ldblquote Author\rdblquote  refers to any designer, engineer, programmer, technical writer or other person who contributed to the Font Software.\par
+\par
+PERMISSION & CONDITIONS\par
+\par
+Permission is hereby granted, free of charge, to any person obtaining a copy of the Font Software, to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of the Font Software, subject to the following conditions:\par
+\par
+Neither the Font Software nor any of its individual components, in Original or Modified Versions, may be sold by itself.\par
+\par
+Original or Modified Versions of the Font Software may be bundled, redistributed and/or sold with any software, provided that each copy contains the above copyright notice and this license. These can be included either as stand-alone text files, human-readable headers or in the appropriate machine-readable metadata fields within text or binary files as long as those fields can be easily viewed by the user.\par
+\par
+No Modified Version of the Font Software may use the Reserved Font Name(s) unless explicit written permission is granted by the corresponding Copyright Holder. This restriction only applies to the primary font name as presented to the users.\par
+\par
+The name(s) of the Copyright Holder(s) or the Author(s) of the Font Software shall not be used to promote, endorse or advertise any Modified Version, except to acknowledge the contribution(s) of the Copyright Holder(s) and the Author(s) or with their explicit written permission.\par
+\par
+The Font Software, modified or unmodified, in part or in whole, must be distributed entirely under this license, and must not be distributed under any other license. The requirement for fonts to remain under this license does not apply to any document created using the Font Software.\par
+\par
+TERMINATION\par
+\par
+This license becomes null and void if any of the above conditions are not met.\par
+\par
+DISCLAIMER\par
+\par
+THE FONT SOFTWARE IS PROVIDED \ldblquote AS IS\rdblquote , WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.\par
+}
+ 

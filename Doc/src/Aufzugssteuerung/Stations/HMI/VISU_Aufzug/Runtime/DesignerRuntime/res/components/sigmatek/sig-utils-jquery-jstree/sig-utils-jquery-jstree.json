@@ -1,0 +1,51 @@
+{
+    "name": "sig-utils-jquery-jstree",
+    "shortName": {
+        "en": "jQuery jsTree plugin",
+        "de": "jQuery jsTree plugin"
+    },
+    "controlType": {
+        "en": "Libraries",
+        "de": "Libraries"
+    },
+    "version": "01.01.001",
+    "authors": [
+        "https://github.com/vakata"
+    ],
+    "description": {
+        "en": "Helper element to load the jquery jsTree plugin.",
+        "de": "Helper element to load the jquery jsTree plugin."
+    },
+    "main": [
+        "sig-utils-jquery-jstree.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "https://github.com/vakata/jstree/blob/master/LICENSE-MIT",
+    "homepage": "https://github.com/vakata/jstree",
+    "private": true,
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "sig-utils-jquery": "components/sigmatek/sig-utils-jquery#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0",
+        "jstree": "jstree#^3.3.11"
+    },
+    "resources": [
+        {
+            "designerAction": "componentDependency",
+            "path": "sig-utils-jquery"
+        }
+    ],
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "toolbox": false,
+    "properties": []
+}

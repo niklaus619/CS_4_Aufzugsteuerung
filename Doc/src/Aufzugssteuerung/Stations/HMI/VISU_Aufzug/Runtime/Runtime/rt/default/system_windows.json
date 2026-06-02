@@ -1,0 +1,2327 @@
+{
+    "version": "1.0.0",
+    "windows": [
+        {
+            "name": "systemWindow_alert_info",
+            "instanceId": "systemWindow_alert_info",
+            "systemWindowType": 0,
+            "systemWindowStatus": 0,
+            "controls": [
+                {
+                    "name": "okButton",
+                    "instanceId": "okButton_systemWindow_alert_info",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "330px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "60px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CONFIRM"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:ok"
+                        }
+                    }
+                },
+                {
+                    "name": "Text",
+                    "instanceId": "Text_systemWindow_alert_info",
+                    "controlId": "sig-control-text",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "3px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "140px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-text-value-align": {
+                            "value": "left",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Rectangle",
+                    "instanceId": "Rectangle_systemWindow_alert_info",
+                    "controlId": "sig-control-rectangle",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "150px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "1px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-rectangle-border-color": {
+                            "value": "#A0A0A0",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                }
+            ],
+            "props": {
+                "--theme-sig-element-height": {
+                    "value": "210px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-element-width": {
+                    "value": "400px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "isModal": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "setStatus": {
+                    "value": "normalized",
+                    "src": 0,
+                    "dest": 9
+                },
+                "header": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasCloseButton": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasSmallifyButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMaxButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMinButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "dragit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "resizeit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-content-background-color": {
+                    "value": "#565961",
+                    "src": 0,
+                    "dest": 2
+                },
+                "saveStats": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "headerTitle": {
+                    "src": 2,
+                    "dest": 9,
+                    "value": "systemWindows:title"
+                },
+                "hideOnClose": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "reopenOnReload": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-my": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-at": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                }
+            }
+        },
+        {
+            "name": "systemWindow_alert_warning",
+            "instanceId": "systemWindow_alert_warning",
+            "systemWindowType": 0,
+            "systemWindowStatus": 1,
+            "controls": [
+                {
+                    "name": "okButton",
+                    "instanceId": "okButton_systemWindow_alert_warning",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "330px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "60px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CONFIRM"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:ok"
+                        }
+                    }
+                },
+                {
+                    "name": "Text",
+                    "instanceId": "Text_systemWindow_alert_warning",
+                    "controlId": "sig-control-text",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "3px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "140px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-text-value-align": {
+                            "value": "left",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Rectangle",
+                    "instanceId": "Rectangle_systemWindow_alert_warning",
+                    "controlId": "sig-control-rectangle",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "150px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "1px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-rectangle-border-color": {
+                            "value": "#A0A0A0",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                }
+            ],
+            "props": {
+                "--theme-sig-element-height": {
+                    "value": "210px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-element-width": {
+                    "value": "400px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "isModal": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "setStatus": {
+                    "value": "normalized",
+                    "src": 0,
+                    "dest": 9
+                },
+                "header": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasSmallifyButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMaxButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMinButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasCloseButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "dragit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "resizeit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-content-background-color": {
+                    "value": "#565961",
+                    "src": 0,
+                    "dest": 2
+                },
+                "saveStats": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "headerTitle": {
+                    "src": 2,
+                    "dest": 9,
+                    "value": "systemWindows:title"
+                },
+                "hideOnClose": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "reopenOnReload": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-my": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-at": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-hdr-background-color": {
+                    "value": "#FFFF00",
+                    "src": 0,
+                    "dest": 2
+                }
+            }
+        },
+        {
+            "name": "systemWindow_alert_error",
+            "instanceId": "systemWindow_alert_error",
+            "systemWindowType": 0,
+            "systemWindowStatus": 2,
+            "controls": [
+                {
+                    "name": "okButton",
+                    "instanceId": "okButton_systemWindow_alert_error",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "330px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "60px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CONFIRM"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:ok"
+                        }
+                    }
+                },
+                {
+                    "name": "Text",
+                    "instanceId": "Text_systemWindow_alert_error",
+                    "controlId": "sig-control-text",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "3px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "140px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-text-value-align": {
+                            "value": "left",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Rectangle",
+                    "instanceId": "Rectangle_systemWindow_alert_error",
+                    "controlId": "sig-control-rectangle",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "150px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "1px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-rectangle-border-color": {
+                            "value": "#A0A0A0",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                }
+            ],
+            "props": {
+                "--theme-sig-element-height": {
+                    "value": "210px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-element-width": {
+                    "value": "400px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "isModal": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "setStatus": {
+                    "value": "normalized",
+                    "src": 0,
+                    "dest": 9
+                },
+                "header": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasCloseButton": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasSmallifyButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMaxButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMinButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "dragit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "resizeit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-content-background-color": {
+                    "value": "#565961",
+                    "src": 0,
+                    "dest": 2
+                },
+                "saveStats": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "headerTitle": {
+                    "src": 2,
+                    "dest": 9,
+                    "value": "systemWindows:title"
+                },
+                "hideOnClose": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "reopenOnReload": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-my": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-at": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-hdr-background-color": {
+                    "value": "#FF0000",
+                    "src": 0,
+                    "dest": 2
+                }
+            }
+        },
+        {
+            "name": "systemWindow_confirm_info",
+            "instanceId": "systemWindow_confirm_info",
+            "systemWindowType": 1,
+            "systemWindowStatus": 0,
+            "controls": [
+                {
+                    "name": "okButton",
+                    "instanceId": "okButton_systemWindow_confirm_info",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "330px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "60px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CONFIRM"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:ok"
+                        }
+                    }
+                },
+                {
+                    "name": "cancelButton",
+                    "instanceId": "cancelButton_systemWindow_confirm_info",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "230px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "90px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CANCEL"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:cancel"
+                        }
+                    }
+                },
+                {
+                    "name": "Text",
+                    "instanceId": "Text_systemWindow_confirm_info",
+                    "controlId": "sig-control-text",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "3px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "140px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-text-value-align": {
+                            "value": "left",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Rectangle",
+                    "instanceId": "Rectangle_systemWindow_confirm_info",
+                    "controlId": "sig-control-rectangle",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "150px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "1px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-rectangle-border-color": {
+                            "value": "#A0A0A0",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                }
+            ],
+            "props": {
+                "--theme-sig-element-height": {
+                    "value": "210px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-element-width": {
+                    "value": "400px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "isModal": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "setStatus": {
+                    "value": "normalized",
+                    "src": 0,
+                    "dest": 9
+                },
+                "header": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasCloseButton": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasSmallifyButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMaxButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMinButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "dragit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "resizeit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-content-background-color": {
+                    "value": "#565961",
+                    "src": 0,
+                    "dest": 2
+                },
+                "saveStats": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "headerTitle": {
+                    "src": 2,
+                    "dest": 9,
+                    "value": "systemWindows:title"
+                },
+                "hideOnClose": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "reopenOnReload": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-my": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-at": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                }
+            }
+        },
+        {
+            "name": "systemWindow_confirm_warning",
+            "instanceId": "systemWindow_confirm_warning",
+            "systemWindowType": 1,
+            "systemWindowStatus": 1,
+            "controls": [
+                {
+                    "name": "okButton",
+                    "instanceId": "okButton_systemWindow_confirm_warning",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "330px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "60px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CONFIRM"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:ok"
+                        }
+                    }
+                },
+                {
+                    "name": "cancelButton",
+                    "instanceId": "cancelButton_systemWindow_confirm_warning",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "230px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "90px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CANCEL"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:cancel"
+                        }
+                    }
+                },
+                {
+                    "name": "Text",
+                    "instanceId": "Text_systemWindow_confirm_warning",
+                    "controlId": "sig-control-text",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "3px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "140px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-text-value-align": {
+                            "value": "left",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Rectangle",
+                    "instanceId": "Rectangle_systemWindow_confirm_warning",
+                    "controlId": "sig-control-rectangle",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "150px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "1px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-rectangle-border-color": {
+                            "value": "#A0A0A0",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                }
+            ],
+            "props": {
+                "--theme-sig-element-height": {
+                    "value": "210px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-element-width": {
+                    "value": "400px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "isModal": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "setStatus": {
+                    "value": "normalized",
+                    "src": 0,
+                    "dest": 9
+                },
+                "header": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasCloseButton": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasSmallifyButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMaxButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMinButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "dragit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "resizeit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-content-background-color": {
+                    "value": "#565961",
+                    "src": 0,
+                    "dest": 2
+                },
+                "saveStats": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "headerTitle": {
+                    "src": 2,
+                    "dest": 9,
+                    "value": "systemWindows:title"
+                },
+                "hideOnClose": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "reopenOnReload": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-my": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-at": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-hdr-background-color": {
+                    "value": "#FFFF00",
+                    "src": 0,
+                    "dest": 2
+                }
+            }
+        },
+        {
+            "name": "systemWindow_confirm_error",
+            "instanceId": "systemWindow_confirm_error",
+            "systemWindowType": 1,
+            "systemWindowStatus": 2,
+            "controls": [
+                {
+                    "name": "okButton",
+                    "instanceId": "okButton_systemWindow_confirm_error",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "330px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "60px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CONFIRM"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:ok"
+                        }
+                    }
+                },
+                {
+                    "name": "cancelButton",
+                    "instanceId": "cancelButton_systemWindow_confirm_error",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "230px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "90px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CANCEL"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:cancel"
+                        }
+                    }
+                },
+                {
+                    "name": "Text",
+                    "instanceId": "Text_systemWindow_confirm_error",
+                    "controlId": "sig-control-text",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "3px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "140px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-text-value-align": {
+                            "value": "left",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Rectangle",
+                    "instanceId": "Rectangle_systemWindow_confirm_error",
+                    "controlId": "sig-control-rectangle",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "150px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "1px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-rectangle-border-color": {
+                            "value": "#A0A0A0",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                }
+            ],
+            "props": {
+                "--theme-sig-element-height": {
+                    "value": "210px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-element-width": {
+                    "value": "400px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "isModal": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "setStatus": {
+                    "value": "normalized",
+                    "src": 0,
+                    "dest": 9
+                },
+                "header": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasCloseButton": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasSmallifyButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMaxButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMinButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "dragit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "resizeit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-content-background-color": {
+                    "value": "#565961",
+                    "src": 0,
+                    "dest": 2
+                },
+                "saveStats": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "headerTitle": {
+                    "src": 2,
+                    "dest": 9,
+                    "value": "systemWindows:title"
+                },
+                "hideOnClose": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "reopenOnReload": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-my": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-at": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-hdr-background-color": {
+                    "value": "#FF0000",
+                    "src": 0,
+                    "dest": 2
+                }
+            }
+        },
+        {
+            "name": "systemWindow_prompt_info",
+            "instanceId": "systemWindow_prompt_info",
+            "systemWindowType": 2,
+            "systemWindowStatus": 0,
+            "controls": [
+                {
+                    "name": "okButton",
+                    "instanceId": "okButton_systemWindow_prompt_info",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "330px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "60px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CONFIRM"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:ok"
+                        }
+                    }
+                },
+                {
+                    "name": "cancelButton",
+                    "instanceId": "cancelButton_systemWindow_prompt_info",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "230px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "90px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CANCEL"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:cancel"
+                        }
+                    }
+                },
+                {
+                    "name": "Text",
+                    "instanceId": "Text_systemWindow_prompt_info",
+                    "controlId": "sig-control-text",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "3px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "37px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-text-value-align": {
+                            "value": "left",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Rectangle",
+                    "instanceId": "Rectangle_systemWindow_prompt_info",
+                    "controlId": "sig-control-rectangle",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "150px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "1px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-rectangle-border-color": {
+                            "value": "#A0A0A0",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Input",
+                    "instanceId": "Input_systemWindow_prompt_info",
+                    "controlId": "sig-control-input",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "10px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "50px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "380px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        }
+                    }
+                }
+            ],
+            "props": {
+                "--theme-sig-element-height": {
+                    "value": "210px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-element-width": {
+                    "value": "400px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "isModal": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "setStatus": {
+                    "value": "normalized",
+                    "src": 0,
+                    "dest": 9
+                },
+                "header": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasCloseButton": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasSmallifyButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMaxButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMinButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "dragit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "resizeit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-content-background-color": {
+                    "value": "#565961",
+                    "src": 0,
+                    "dest": 2
+                },
+                "saveStats": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "headerTitle": {
+                    "src": 2,
+                    "dest": 9,
+                    "value": "systemWindows:title"
+                },
+                "hideOnClose": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "reopenOnReload": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-my": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-at": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                }
+            }
+        },
+        {
+            "name": "systemWindow_prompt_warning",
+            "instanceId": "systemWindow_prompt_warning",
+            "systemWindowType": 2,
+            "systemWindowStatus": 1,
+            "controls": [
+                {
+                    "name": "okButton",
+                    "instanceId": "okButton_systemWindow_prompt_warning",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "330px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "60px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CONFIRM"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:ok"
+                        }
+                    }
+                },
+                {
+                    "name": "cancelButton",
+                    "instanceId": "cancelButton_systemWindow_prompt_warning",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "230px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "90px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CANCEL"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:cancel"
+                        }
+                    }
+                },
+                {
+                    "name": "Text",
+                    "instanceId": "Text_systemWindow_prompt_warning",
+                    "controlId": "sig-control-text",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "3px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "37px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-text-value-align": {
+                            "value": "left",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Rectangle",
+                    "instanceId": "Rectangle_systemWindow_prompt_warning",
+                    "controlId": "sig-control-rectangle",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "150px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "1px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-rectangle-border-color": {
+                            "value": "#A0A0A0",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Input",
+                    "instanceId": "Input_systemWindow_prompt_warning",
+                    "controlId": "sig-control-input",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "10px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "50px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "380px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        }
+                    }
+                }
+            ],
+            "props": {
+                "--theme-sig-element-height": {
+                    "value": "210px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-element-width": {
+                    "value": "400px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "isModal": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "setStatus": {
+                    "value": "normalized",
+                    "src": 0,
+                    "dest": 9
+                },
+                "header": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasCloseButton": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasSmallifyButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMaxButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMinButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "dragit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "resizeit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-content-background-color": {
+                    "value": "#565961",
+                    "src": 0,
+                    "dest": 2
+                },
+                "saveStats": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "headerTitle": {
+                    "src": 2,
+                    "dest": 9,
+                    "value": "systemWindows:title"
+                },
+                "hideOnClose": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "reopenOnReload": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-my": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-at": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-hdr-background-color": {
+                    "value": "#FFFF00",
+                    "src": 0,
+                    "dest": 2
+                }
+            }
+        },
+        {
+            "name": "systemWindow_prompt_error",
+            "instanceId": "systemWindow_prompt_error",
+            "systemWindowType": 2,
+            "systemWindowStatus": 2,
+            "controls": [
+                {
+                    "name": "okButton",
+                    "instanceId": "okButton_systemWindow_prompt_error",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "330px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "60px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CONFIRM"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:ok"
+                        }
+                    }
+                },
+                {
+                    "name": "cancelButton",
+                    "instanceId": "cancelButton_systemWindow_prompt_error",
+                    "controlId": "sig-control-button",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "230px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "160px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "90px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "sig-control-button-tap": {
+                            "src": 5,
+                            "dest": 3,
+                            "value": "0:SYSWIN_CANCEL"
+                        },
+                        "sigbtntext": {
+                            "src": 2,
+                            "dest": 1,
+                            "value": "systemWindows:cancel"
+                        }
+                    }
+                },
+                {
+                    "name": "Text",
+                    "instanceId": "Text_systemWindow_prompt_error",
+                    "controlId": "sig-control-text",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "3px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "37px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-text-value-align": {
+                            "value": "left",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Rectangle",
+                    "instanceId": "Rectangle_systemWindow_prompt_error",
+                    "controlId": "sig-control-rectangle",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "0px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "150px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "1px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "400px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        },
+                        "--theme-sig-control-rectangle-border-color": {
+                            "value": "#A0A0A0",
+                            "src": 0,
+                            "dest": 2
+                        }
+                    }
+                },
+                {
+                    "name": "Input",
+                    "instanceId": "Input_systemWindow_prompt_error",
+                    "controlId": "sig-control-input",
+                    "props": {
+                        "--theme-sig-element-left": {
+                            "value": "10px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-top": {
+                            "value": "50px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-height": {
+                            "value": "30px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "--theme-sig-element-width": {
+                            "value": "380px",
+                            "src": 0,
+                            "dest": 2
+                        },
+                        "rotation": {
+                            "value": 0.0,
+                            "src": 0,
+                            "dest": 12
+                        }
+                    }
+                }
+            ],
+            "props": {
+                "--theme-sig-element-height": {
+                    "value": "210px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-element-width": {
+                    "value": "400px",
+                    "src": 0,
+                    "dest": 9
+                },
+                "isModal": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "setStatus": {
+                    "value": "normalized",
+                    "src": 0,
+                    "dest": 9
+                },
+                "header": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasCloseButton": {
+                    "value": true,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasSmallifyButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMaxButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "hasMinButton": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "dragit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "resizeit-enable": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-content-background-color": {
+                    "value": "#565961",
+                    "src": 0,
+                    "dest": 2
+                },
+                "saveStats": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "headerTitle": {
+                    "src": 2,
+                    "dest": 9,
+                    "value": "systemWindows:title"
+                },
+                "hideOnClose": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "reopenOnReload": {
+                    "value": false,
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-my": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "position-at": {
+                    "value": "center",
+                    "src": 0,
+                    "dest": 9
+                },
+                "--theme-sig-window-panel-hdr-background-color": {
+                    "value": "#FF0000",
+                    "src": 0,
+                    "dest": 2
+                }
+            }
+        }
+    ]
+}

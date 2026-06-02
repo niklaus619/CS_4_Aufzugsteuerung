@@ -1,0 +1,89 @@
+{
+    "name": "sig-element-mixins",
+    "shortName": {
+        "en": "Element Mixins",
+        "de": "Element Mixins"
+    },
+    "controlType": {
+        "en": "Element Management",
+        "de": "Element Management"
+    },
+    "version": "01.01.025",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements an element mixins component.",
+        "de": "Implements an element mixins component."
+    },
+    "main": [
+        "sig-element-mixins.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-element-mixins.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./drag-drop-support-mixin.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./base-mixin.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./mixin-manager.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./gestures-support-mixin.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./polymer-element-mixin.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./utils-mixin.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./browser-detection-mixin.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./shadow-dom-styling-mixin.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./unit-conversion-mixin.js"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "100px",
+        "height": "100px"
+    },
+    "toolbox": false,
+    "slotted": false,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [],
+    "properties": []
+}

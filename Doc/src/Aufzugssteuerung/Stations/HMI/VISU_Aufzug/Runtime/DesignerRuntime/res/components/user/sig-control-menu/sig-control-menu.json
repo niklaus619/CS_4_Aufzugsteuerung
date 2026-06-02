@@ -1,0 +1,1508 @@
+{
+    "name": "sig-control-menu",
+    "shortName": {
+        "en": "Menu",
+        "de": "Menu"
+    },
+    "controlType": {
+        "en": "List",
+        "de": "List"
+    },
+    "version": "01.02.002",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a menu component as a polymer custom element.",
+        "de": "Implements a menu component as a polymer custom element."
+    },
+    "main": [
+        "sig-control-menu.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-menu.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-control-menu-css.js"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "250px",
+        "height": "200px"
+    },
+    "toolbox": false,
+    "slotted": false,
+    "styleClassEditor": true,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "selectorSettings": {
+        "selectorDefaultStyle": ".__menu",
+        "selectorComponentStyle": ".__menu"
+    },
+    "placementTemplates": [],
+    "dataproperties": [
+        {
+            "name": "menuitemproperties",
+            "properties": [
+                {
+                    "valueSourceTypes": [
+                        "checkbit"
+                    ],
+                    "propertyType": "variable",
+                    "name": "checkbit",
+                    "dataType": "string",
+                    "shortName": {
+                        "en": "Checkbit",
+                        "de": "Checkbit"
+                    },
+                    "description": {
+                        "en": "The selected checkbit.",
+                        "de": "Das ausgewählte Checkbit."
+                    },
+                    "group": {
+                        "en": "Checkbit",
+                        "de": "Checkbit"
+                    }
+                },
+                {
+                    "valueSourceTypes": [
+                        "constNumber",
+                        "stateScheme"
+                    ],
+                    "propertyType": "variable",
+                    "name": "state",
+                    "dataType": "number",
+                    "default": 1,
+                    "options": [
+                        {
+                            "shortName": {
+                                "en": "active",
+                                "de": "active"
+                            },
+                            "value": 1
+                        },
+                        {
+                            "shortName": {
+                                "en": "inactive",
+                                "de": "inactive"
+                            },
+                            "value": 2
+                        },
+                        {
+                            "shortName": {
+                                "en": "invisible",
+                                "de": "invisible"
+                            },
+                            "value": 3
+                        }
+                    ],
+                    "multiSelect": false,
+                    "lockStyleCopy": true,
+                    "shortName": {
+                        "en": "State",
+                        "de": "State"
+                    },
+                    "description": {
+                        "en": "The state of the menu item.",
+                        "de": "Der State des Items."
+                    },
+                    "group": {
+                        "en": "State",
+                        "de": "State"
+                    }
+                },
+                {
+                    "valueSourceTypes": "constBool",
+                    "propertyType": "variable",
+                    "name": "keepopen",
+                    "dataType": "boolean",
+                    "default": false,
+                    "shortName": {
+                        "en": "Keep open",
+                        "de": "Keep open"
+                    },
+                    "description": {
+                        "en": "Keep the menu open after submitting this item.",
+                        "de": "Das Menü offen lassen nachdem das Item ausgewählt wurde."
+                    },
+                    "group": {
+                        "en": "Settings",
+                        "de": "Settings"
+                    },
+                    "userLevel": 20
+                },
+                {
+                    "valueSourceTypes": "constBool",
+                    "propertyType": "variable",
+                    "name": "isseparator",
+                    "dataType": "boolean",
+                    "default": false,
+                    "shortName": {
+                        "en": "Separator",
+                        "de": "Separator"
+                    },
+                    "description": {
+                        "en": "If true, the item is rendered as separator line.",
+                        "de": "Wenn True, dann wird dieses Item als Trennlinie dargestellt."
+                    },
+                    "group": {
+                        "en": "Settings",
+                        "de": "Settings"
+                    },
+                    "userLevel": 20
+                },
+                {
+                    "valueSourceTypes": [
+                        "constNumber",
+                        "dataPoint"
+                    ],
+                    "propertyType": "variable",
+                    "name": "value",
+                    "dataType": "number",
+                    "shortName": {
+                        "en": "Data source",
+                        "de": "Data source"
+                    },
+                    "description": {
+                        "en": "Value of the menu item",
+                        "de": "Wert des Menü Items"
+                    },
+                    "group": {
+                        "en": "Data",
+                        "de": "Data"
+                    }
+                },
+                {
+                    "valueSourceTypes": [
+                        "text",
+                        "textScheme"
+                    ],
+                    "propertyType": "variable",
+                    "name": "text",
+                    "default": "",
+                    "lockStyleCopy": true,
+                    "dataType": "string",
+                    "shortName": {
+                        "en": "Text",
+                        "de": "Text"
+                    },
+                    "description": {
+                        "en": "The text source of the menu item.",
+                        "de": "Die Textquelle des Menü Items."
+                    },
+                    "group": {
+                        "en": "Data",
+                        "de": "Data"
+                    }
+                },
+                {
+                    "valueSourceTypes": [
+                        "menu"
+                    ],
+                    "propertyType": "variable",
+                    "name": "menu",
+                    "dataType": "string",
+                    "lockStyleCopy": true,
+                    "default": "",
+                    "shortName": {
+                        "en": "Open submenu",
+                        "de": "Open submenu"
+                    },
+                    "description": {
+                        "en": "The menu source of the submenu which should be opened.",
+                        "de": "Die Menüquelle des Untermenüs das geöffnet werden soll."
+                    },
+                    "group": {
+                        "en": "Data",
+                        "de": "Data"
+                    }
+                },
+                {
+                    "valueSourceTypes": [
+                        "mediaItem",
+                        "mediaItemScheme"
+                    ],
+                    "propertyType": "variable",
+                    "name": "icon",
+                    "dataType": "string",
+                    "units": "url",
+                    "default": "",
+                    "editor": "urlpicker",
+                    "shortName": {
+                        "en": "Icon image",
+                        "de": "Icon image"
+                    },
+                    "description": {
+                        "en": "The icon of the menu item.",
+                        "de": "Das Icon des Menü Items."
+                    },
+                    "group": {
+                        "en": "Image",
+                        "de": "Image"
+                    },
+                    "userLevel": 10
+                },
+                {
+                    "valueSourceTypes": "functionBlock",
+                    "propertyType": "event",
+                    "name": "functionblock",
+                    "lockStyleCopy": true,
+                    "shortName": {
+                        "en": "On submit",
+                        "de": "On submit"
+                    },
+                    "description": {
+                        "en": "The function block will be executed, after the menu item is submitted.",
+                        "de": "Der Funktionsblock der ausgeführt wird, nachdem das Menü Item ausgewählt wurde."
+                    },
+                    "group": {
+                        "en": "Function block",
+                        "de": "Function block"
+                    }
+                }
+            ]
+        }
+    ],
+    "properties": [
+        {
+            "valueSourceTypes": [
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "value",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "",
+            "shortName": {
+                "en": "Value",
+                "de": "Value"
+            },
+            "description": {
+                "en": "The data source of the menu component.",
+                "de": "Die Datenquelle der Menü Komponente."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "showicons",
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Show icons",
+                "de": "Show icons"
+            },
+            "description": {
+                "en": "Shows item icons.",
+                "de": "Zeigt die Item Icons."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "showshadow",
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Show shadow",
+                "de": "Show shadow"
+            },
+            "description": {
+                "en": "Shows shadow around the menu.",
+                "de": "Zeigt einen Schatten um das Menü."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "usechildstyling",
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Use child styling",
+                "de": "Use child styling"
+            },
+            "description": {
+                "en": "If true, submenus do not inherit parent styling and properties.",
+                "de": "Wenn True, dann übernehmen Untermenüs nicht das Styling des Parent-Menüs."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "keepitemactive",
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Keep item active styling",
+                "de": "Keep item active styling"
+            },
+            "description": {
+                "en": "If true, an item that opens a submenu keeps its active styling.",
+                "de": "Wenn True, dann behält ein Item, das ein Untermenü öffnet, das aktive Styling."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "direction",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "default": "down",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "up",
+                        "de": "up"
+                    },
+                    "value": "up"
+                },
+                {
+                    "shortName": {
+                        "en": "down",
+                        "de": "down"
+                    },
+                    "value": "down"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Opening direction",
+                "de": "Opening direction"
+            },
+            "description": {
+                "en": "The direction in which the menu opens.",
+                "de": "Die Richting in die das Menü geöffnet wird."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "selectOnDoubleTap",
+            "dataType": "boolean",
+            "default": true,
+            "shortName": {
+                "en": "Double tap to submit",
+                "de": "Double tap to submit"
+            },
+            "description": {
+                "en": "If true, a menu item has to be tapped twice to be submitted.",
+                "de": "Wenn True, muss ein Item zweimal gedrückt werden um ausgewählt zu werden."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "donotselectitemonreopen",
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Do not select active item",
+                "de": "Do not select active item"
+            },
+            "description": {
+                "en": "If true, the item previously selected will not appear selected on next menu open.",
+                "de": "Wenn True, wird das zuvor ausgewählte Item nicht beim nächsten Öffnen des Menüs selektiert."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-ul-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(215,215,215,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component.",
+                "de": "Die Hintergrundfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-ul-border-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "transparent",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the component.",
+                "de": "Die Rahmenfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-ul-border-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the component.",
+                "de": "Die Rahmenbreite der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-ul-border-style",
+            "dataType": "string",
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the component.",
+                "de": "Der Rahmenstil der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-ul-border-radius",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the menu.",
+                "de": "Der Rahmenradius der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-ul-shadow-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(47, 47, 47, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Shadow color",
+                "de": "Shadow color"
+            },
+            "description": {
+                "en": "The shadow color of the menu.",
+                "de": "Die Rahmenfarbe des Menüs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-ul-box-shadow-size",
+            "dataType": "string",
+            "units": "px",
+            "default": "7px",
+            "shortName": {
+                "en": "Shadow size",
+                "de": "Shadow size"
+            },
+            "description": {
+                "en": "The size of the menu shadow.",
+                "de": "Die Größe des Menü-Schattens."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-min-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "150px",
+            "shortName": {
+                "en": "Minimal width",
+                "de": "Minimal width"
+            },
+            "description": {
+                "en": "Minimal width of the menu.",
+                "de": "Die minimale Breite des Menüs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-max-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "300px",
+            "shortName": {
+                "en": "Maximal width",
+                "de": "Maximal width"
+            },
+            "description": {
+                "en": "Maximal width of the menu.",
+                "de": "Die maximale Breite des Menüs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-min-height",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Minimal height",
+                "de": "Minimal height"
+            },
+            "description": {
+                "en": "Minimal height of the menu.",
+                "de": "Die minimale Höhe des Menüs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-max-height",
+            "dataType": "string",
+            "units": "px",
+            "default": "500px",
+            "shortName": {
+                "en": "Maximal height",
+                "de": "Maximal height"
+            },
+            "description": {
+                "en": "Maximal height of the menu.",
+                "de": "Die maximale Höhe des Menüs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constNumber",
+            "propertyType": "variable",
+            "name": "linesperpage",
+            "dataType": "number",
+            "default": "0",
+            "shortName": {
+                "en": "Lines per page",
+                "de": "Lines per page"
+            },
+            "description": {
+                "en": "Determines the maximal number of lines that are shown in a menu.",
+                "de": "Bestimmt die maximale Anzahl an Zeilen die in einem Menü angezeigt werden."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-text-overflow",
+            "dataType": "string",
+            "default": "nowrap",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "Ellipsis",
+                        "de": "Ellipsis"
+                    },
+                    "value": "nowrap"
+                },
+                {
+                    "shortName": {
+                        "en": "Word break",
+                        "de": "Word break"
+                    },
+                    "value": "normal"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Text behavior",
+                "de": "Text behavior"
+            },
+            "description": {
+                "en": "The text behavior of the menu item. Ellipsis hides the overflowing text and puts 3 dots at the end. Word break breaks the overflowing menu-item text into the new line.",
+                "de": "Das Textverhalten des Menü Items. Ellipsis versteckt einen Text-Überlauf, und zeigt 3 Punkte am Ende. Word break zeigt einen Text-Überlauf in einer neuen Zeile an."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(215, 215, 215, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the menu item.",
+                "de": "Die Hintergrundfarbe des Menü Items."
+            },
+            "group": {
+                "en": "Item styling",
+                "de": "Item styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(0,0,0,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "The text color of the menu item.",
+                "de": "Die Textfarbe des Menü-Items."
+            },
+            "group": {
+                "en": "Item styling",
+                "de": "Item styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-text-align",
+            "dataType": "string",
+            "default": "left",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "left"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Text align horizontal",
+                "de": "Text align horizontal"
+            },
+            "description": {
+                "en": "The horizontal alignment of the item's text.",
+                "de": "Die horizontale Ausrichtung des Item Textes."
+            },
+            "group": {
+                "en": "Item styling",
+                "de": "Item styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-text-align-vertical",
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "flex-end"
+                },
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "flex-start"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Text align vertical",
+                "de": "Text align vertical"
+            },
+            "description": {
+                "en": "The vertical alignment of the item's text.",
+                "de": "Die vertikale Ausrichtung des Item Textes."
+            },
+            "group": {
+                "en": "Item styling",
+                "de": "Item styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-line-height",
+            "dataType": "string",
+            "units": "px",
+            "default": "20px",
+            "shortName": {
+                "en": "Item height",
+                "de": "Item height"
+            },
+            "description": {
+                "en": "The height of one menu item.",
+                "de": "Die Höhe eines Menü Items."
+            },
+            "group": {
+                "en": "Item styling",
+                "de": "Item styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-padding",
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Padding",
+                "de": "Padding"
+            },
+            "description": {
+                "en": "The padding of the menu item.",
+                "de": "Das Padding des Menü Items."
+            },
+            "group": {
+                "en": "Item styling",
+                "de": "Item styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-icon-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "25px",
+            "shortName": {
+                "en": "Icon width",
+                "de": "Icon width"
+            },
+            "description": {
+                "en": "The width of the item icon image.",
+                "de": "Die Breite des Icons."
+            },
+            "group": {
+                "en": "Item icon styling",
+                "de": "Item icon styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-icon-height",
+            "dataType": "string",
+            "units": "px",
+            "default": "auto",
+            "shortName": {
+                "en": "Icon height",
+                "de": "Icon height"
+            },
+            "description": {
+                "en": "The height of the item icon image. The height of the icon is limited to the line-height of the menu item.",
+                "de": "Die Höhe des Icons. Die Höhe ist limitiert auf die Zeilenhöhe des Menü Items."
+            },
+            "group": {
+                "en": "Item icon styling",
+                "de": "Item icon styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-icon-padding-right",
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Right padding",
+                "de": "Right padding"
+            },
+            "description": {
+                "en": "The right padding of the item icon.",
+                "de": "Das rechte Padding des Icons."
+            },
+            "group": {
+                "en": "Item icon styling",
+                "de": "Item icon styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "variable",
+            "name": "menuicon",
+            "dataType": "string",
+            "default": "",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Icon",
+                "de": "Icon"
+            },
+            "description": {
+                "en": "The icon shown on the right side of a submenu item.",
+                "de": "Das Icon das auf der rechten Seite eines Untermenü Items angezeigt wird."
+            },
+            "group": {
+                "en": "Submenu icon",
+                "de": "Submenu icon"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-submenu-icon-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "20px",
+            "shortName": {
+                "en": "Icon width",
+                "de": "Icon width"
+            },
+            "description": {
+                "en": "The width of the submenu icon image.",
+                "de": "Die Breite des Untermenü Icons."
+            },
+            "group": {
+                "en": "Submenu icon",
+                "de": "Submenu icon"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-submenu-icon-left-padding",
+            "dataType": "string",
+            "units": "px",
+            "default": "1px",
+            "shortName": {
+                "en": "Left padding",
+                "de": "Left padding"
+            },
+            "description": {
+                "en": "The left padding of the submenu icon image.",
+                "de": "Das linke Padding des Untermenü Icons."
+            },
+            "group": {
+                "en": "Submenu icon",
+                "de": "Submenu icon"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-selected-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(174,200,26,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the active menu item.",
+                "de": "Die Hintergrundfarbe des aktiven Menü Items."
+            },
+            "group": {
+                "en": "Item active styling",
+                "de": "Item active styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-selected-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(0,0,0,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "The text color of the active menu item.",
+                "de": "Die Textfarbe des aktiven Menü Items."
+            },
+            "group": {
+                "en": "Item active styling",
+                "de": "Item active styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-submenu-li-selected-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(174,200,26,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the selected submenu item.",
+                "de": "Die Hintergrundfarbe des aktiven Submenü Items."
+            },
+            "group": {
+                "en": "Submenu item active styling",
+                "de": "Submenu item active styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-submenu-li-selected-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(0,0,0,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "The text color of the active submenu item.",
+                "de": "Die Textfarbe des aktiven Submenü Items."
+            },
+            "group": {
+                "en": "Submenu item active styling",
+                "de": "Submenu item active styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "variable",
+            "name": "menuiconactive",
+            "dataType": "string",
+            "default": "",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Submenu icon image",
+                "de": "Submenu icon image"
+            },
+            "description": {
+                "en": "The icon shown on the right side of a submenu item in active state.",
+                "de": "Das Icon das auf der rechten Seite eines Untermenüs im aktiven Zustand angezeigt wird."
+            },
+            "group": {
+                "en": "Item active submenu icon",
+                "de": "Item active submenu icon"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-inactive-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(160,160,160,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the inactive menu item.",
+                "de": "Die Hintergrundfarbe eines inaktiven Menü Items."
+            },
+            "group": {
+                "en": "Item inactive styling",
+                "de": "Item inactive styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-menu-li-inactive-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(0,0,0,1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "The text color of the inactive menu item.",
+                "de": "Die Textfarbe des inaktiven Menü Items."
+            },
+            "group": {
+                "en": "Item inactive styling",
+                "de": "Item inactive styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

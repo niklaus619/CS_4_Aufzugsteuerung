@@ -1,0 +1,1522 @@
+{
+    "name": "sig-control-scrollbar",
+    "shortName": {
+        "en": "Scrollbar",
+        "de": "Scrollbar"
+    },
+    "controlType": {
+        "en": "Utilities",
+        "de": "Utilities"
+    },
+    "version": "01.03.001",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a scrollbar as a polymer custom element.",
+        "de": "Implements a scrollbar as a polymer custom element."
+    },
+    "main": [
+        "sig-control-scrollbar.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-scrollbar.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "defaultDimensions": {
+        "width": "300px",
+        "height": "200px"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-control-scrollbar-css.js"
+        },
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-control-scrollbar-css.css"
+        }
+    ],
+    "toolbox": false,
+    "slotted": false,
+    "styleClassEditor": true,
+    "defaultStyleOnly": true,
+    "usableInShadowDom": true,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [],
+    "selectorSettings": {
+        "selectorDefaultStyle": ".jsPanel-content",
+        "selectorComponentStyle": "",
+        "classPrefix": "scrollbar-"
+    },
+    "properties": [
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "25px",
+            "shortName": {
+                "en": "Width",
+                "de": "Width"
+            },
+            "description": {
+                "en": "The width of the scrollbar and scrollbar buttons.",
+                "de": "The width of the scrollbar and scrollbar buttons."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(64, 66, 72, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component.",
+                "de": "The background color of the component."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(221, 221, 221, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the scrollbar track.",
+                "de": "The background color of the scrollbar track."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-border-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(64, 66, 72, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the scrollbar track.",
+                "de": "The border color of the scrollbar track."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-border-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the scrollbar track.",
+                "de": "The border width of the scrollbar track."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-border-left-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "8px",
+            "shortName": {
+                "en": "Border left width",
+                "de": "Border left width"
+            },
+            "description": {
+                "en": "The left border width of the scrollbar track.",
+                "de": "The left border width of the scrollbar track."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-border-right-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "8px",
+            "shortName": {
+                "en": "Border right width",
+                "de": "Border right width"
+            },
+            "description": {
+                "en": "The right border width of the scrollbar track.",
+                "de": "The right border width of the scrollbar track."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-border-bottom-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "1px",
+            "shortName": {
+                "en": "Border bottom width",
+                "de": "Border bottom width"
+            },
+            "description": {
+                "en": "The bottom border width of the scrollbar track.",
+                "de": "The bottom border width of the scrollbar track."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-border-top-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "1px",
+            "shortName": {
+                "en": "Border top width",
+                "de": "Border top width"
+            },
+            "description": {
+                "en": "The top border width of the scrollbar track.",
+                "de": "The top border width of the scrollbar track."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-border-style",
+            "dataType": "string",
+            "default": "solid",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the scrollbar track.",
+                "de": "The border style of the scrollbar track."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-border-radius",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the scrollbar track.",
+                "de": "The border radius of the scrollbar track."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-active-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(221, 221, 221, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the scrollbar track in the pressed state.",
+                "de": "The background color of the scrollbar track in the pressed state."
+            },
+            "group": {
+                "en": "Track active state",
+                "de": "Track active state"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-track-active-border-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(64, 66, 72, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the scrollbar track in the pressed state.",
+                "de": "The border color of the scrollbar track in the pressed state."
+            },
+            "group": {
+                "en": "Track active state",
+                "de": "Track active state"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(174, 200, 26, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the scrollbar thumb.",
+                "de": "The background color of the scrollbar thumb."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-border-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(64, 66, 72, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the scrollbar thumb.",
+                "de": "The border color of the scrollbar thumb."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-border-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the scrollbar thumb.",
+                "de": "The border width of the scrollbar thumb."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-border-top-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "1px",
+            "shortName": {
+                "en": "Border top width",
+                "de": "Border top width"
+            },
+            "description": {
+                "en": "The top border width of the scrollbar thumb.",
+                "de": "The top border width of the scrollbar thumb."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-border-bottom-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "1px",
+            "shortName": {
+                "en": "Border bottom width",
+                "de": "Border bottom width"
+            },
+            "description": {
+                "en": "The bottom border width of the scrollbar thumb.",
+                "de": "The bottom border width of the scrollbar thumb."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-border-left-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "8px",
+            "shortName": {
+                "en": "Border left width",
+                "de": "Border left width"
+            },
+            "description": {
+                "en": "The left border width of the scrollbar thumb.",
+                "de": "The left border width of the scrollbar thumb."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-border-right-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "8px",
+            "shortName": {
+                "en": "Border right width",
+                "de": "Border right width"
+            },
+            "description": {
+                "en": "The right border width of the scrollbar thumb.",
+                "de": "The right border width of the scrollbar thumb."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-border-style",
+            "dataType": "string",
+            "default": "solid",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the scrollbar thumb.",
+                "de": "The border style of the scrollbar thumb."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-border-radius",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the scrollbar thumb.",
+                "de": "The border radius of the scrollbar thumb."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-active-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(200, 200, 200, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the scrollbar thumb in the pressed state.",
+                "de": "The background color of the scrollbar thumb in the pressed state."
+            },
+            "group": {
+                "en": "Thumb active state",
+                "de": "Thumb active state"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-thumb-active-border-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(64, 66, 72, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the scrollbar thumb in the pressed state.",
+                "de": "The border color of the scrollbar thumb in the pressed state."
+            },
+            "group": {
+                "en": "Thumb active state",
+                "de": "Thumb active state"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-height",
+            "dataType": "string",
+            "units": "px",
+            "default": "20px",
+            "shortName": {
+                "en": "Size",
+                "de": "Size"
+            },
+            "description": {
+                "en": "The height/width of scrollbar buttons in vertical/horizontal scrollbar position respectively.",
+                "de": "The height/width of scrollbar buttons in vertical/horizontal scrollbar position respectively."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(64, 66, 72, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the scrollbar buttons.",
+                "de": "The background color of the scrollbar buttons"
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(221, 221, 221, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Symbol color",
+                "de": "Symbol color"
+            },
+            "description": {
+                "en": "The symbol color of the scrollbar buttons.",
+                "de": "The symbol color of the scrollbar buttons."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-size",
+            "dataType": "string",
+            "default": "43%",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "small",
+                        "de": "small"
+                    },
+                    "value": "45%"
+                },
+                {
+                    "shortName": {
+                        "en": "middle",
+                        "de": "middle"
+                    },
+                    "value": "43%"
+                },
+                {
+                    "shortName": {
+                        "en": "big",
+                        "de": "big"
+                    },
+                    "value": "38%"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Symbol size",
+                "de": "Symbol size"
+            },
+            "description": {
+                "en": "The symbol (triangle) size of the scrollbar buttons.",
+                "de": "The symbol (triangle) size of the scrollbar buttons."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-border-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(255, 255, 255, 0)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the scrollbar buttons.",
+                "de": "The border color of the scrollbar buttons."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-border-width",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the scrollbar buttons.",
+                "de": "The border width of the scrollbar buttons."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-border-style",
+            "dataType": "string",
+            "default": "none",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the scrollbar buttons.",
+                "de": "The border style of the scrollbar buttons."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-border-radius",
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the scrollbar buttons.",
+                "de": "The border radius of the scrollbar buttons."
+            },
+            "group": {
+                "en": "Button styling",
+                "de": "Button styling"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-active-background-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(64, 66, 72, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the scrollbar buttons in the pressed state.",
+                "de": "The background color of the scrollbar buttons in the pressed state."
+            },
+            "group": {
+                "en": "Button active state",
+                "de": "Button active state"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-active-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(221, 221, 221, 1)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Symbol color",
+                "de": "Symbol color"
+            },
+            "description": {
+                "en": "The symbol color of the scrollbar buttons in the pressed state.",
+                "de": "The symbol color of the scrollbar buttons in the pressed state."
+            },
+            "group": {
+                "en": "Button active state",
+                "de": "Button active state"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-button-active-border-color",
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "rgba(255, 255, 255, 0)",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the scrollbar buttons in the pressed state.",
+                "de": "The border color of the scrollbar buttons in the pressed state."
+            },
+            "group": {
+                "en": "Button active state",
+                "de": "Button active state"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-up-image",
+            "dataType": "string",
+            "units": "url",
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Up icon",
+                "de": "Up icon"
+            },
+            "description": {
+                "en": "The icon of the up scrollbar button.",
+                "de": "The icon of the up scrollbar button."
+            },
+            "group": {
+                "en": "Image",
+                "de": "Image"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-down-image",
+            "dataType": "string",
+            "units": "url",
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Down icon",
+                "de": "Down icon"
+            },
+            "description": {
+                "en": "The icon of the down scrollbar button.",
+                "de": "The icon of the down scrollbar button."
+            },
+            "group": {
+                "en": "Image",
+                "de": "Image"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-left-image",
+            "dataType": "string",
+            "units": "url",
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Left icon",
+                "de": "Left icon"
+            },
+            "description": {
+                "en": "The icon of the left scrollbar button.",
+                "de": "The icon of the left scrollbar button."
+            },
+            "group": {
+                "en": "Image",
+                "de": "Image"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-right-image",
+            "dataType": "string",
+            "units": "url",
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Right icon",
+                "de": "Right icon"
+            },
+            "description": {
+                "en": "The icon of the right scrollbar button.",
+                "de": "The icon of the right scrollbar button."
+            },
+            "group": {
+                "en": "Image",
+                "de": "Image"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-active-up-image",
+            "dataType": "string",
+            "units": "url",
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Up icon",
+                "de": "Up icon"
+            },
+            "description": {
+                "en": "The icon of the up scrollbar button in the pressed state.",
+                "de": "The icon of the up scrollbar button in the pressed state."
+            },
+            "group": {
+                "en": "Image active state",
+                "de": "Image active state"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-active-down-image",
+            "dataType": "string",
+            "units": "url",
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Down icon",
+                "de": "Down icon"
+            },
+            "description": {
+                "en": "The icon of the down scrollbar button in the pressed state.",
+                "de": "The icon of the down scrollbar button in the pressed state."
+            },
+            "group": {
+                "en": "Image active state",
+                "de": "Image active state"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-active-left-image",
+            "dataType": "string",
+            "units": "url",
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Left icon",
+                "de": "Left icon"
+            },
+            "description": {
+                "en": "The icon of the left scrollbar button in the pressed state.",
+                "de": "The icon of the left scrollbar button in the pressed state."
+            },
+            "group": {
+                "en": "Image active state",
+                "de": "Image active state"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-scrollbar-active-right-image",
+            "dataType": "string",
+            "units": "url",
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Right icon",
+                "de": "Right icon"
+            },
+            "description": {
+                "en": "The icon of the right scrollbar button in the pressed state.",
+                "de": "The icon of the right scrollbar button in the pressed state."
+            },
+            "group": {
+                "en": "Image active state",
+                "de": "Image active state"
+            },
+            "userLevel": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "name": "simulationmode",
+            "dataType": "boolean",
+            "default": false,
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Show active styling",
+                "de": "Show active styling"
+            },
+            "description": {
+                "en": "Only applies at design time to preview the active state.",
+                "de": "Gilt nur zur Designzeit um eine Vorschau des aktiven Status anzuzeigen."
+            },
+            "group": {
+                "en": "Preview settings",
+                "de": "Preview settings"
+            },
+            "userLevel": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

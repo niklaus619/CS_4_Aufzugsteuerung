@@ -1,0 +1,223 @@
+@import url('./jspanel-default-scrollbar.css');
+
+.jsPanel-theme-default,
+.jsPanel-theme-keyboard {
+    /* box-sizing: content-box; */
+    /* background-color: var(--theme-sig-window-panel-background-color, var(--theme-sig-window-panel-default-background-color, grey)) !important; */
+    background-color: transparent !important;
+}
+
+.jsPanel.jsPanel-theme-default,
+.jsPanel.jsPanel-theme-keyboard {
+    background-color: var(--theme-sig-window-panel-content-background-color, var(--theme-sig-window-panel-default-content-background-color, rgba(255, 255, 255, 1))) !important;
+
+    border-color: var(--theme-sig-window-panel-border-color, var(--theme-sig-window-panel-default-border-color, rgba(128, 128, 128, 1))) !important;
+    border-style: var(--theme-sig-window-panel-border-style, var(--theme-sig-window-panel-default-border-style, none)) !important;
+    border-width: var(--theme-sig-window-panel-border-width, var(--theme-sig-window-panel-default-border-width, 0px));
+    border-radius: var(--theme-sig-window-panel-border-radius, var(--theme-sig-window-panel-default-border-radius, 0px)) !important;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+    overflow: hidden;
+}
+
+.jsPanel-theme-default .jsPanel-icon,
+.jsPanel-theme-keyboard .jsPanel-icon {
+    width: var(--theme-sig-window-panel-icon-size, var(--theme-sig-window-panel-default-icon-size, 20px)) !important;
+    height: var(--theme-sig-window-panel-icon-size, var(--theme-sig-window-panel-default-icon-size, 20px)) !important;
+    padding: 0px !important;
+}
+
+.jsPanel-theme-default>.jsPanel-hdr,
+.jsPanel-theme-keyboard>.jsPanel-hdr {
+    font-family: inherit;
+    font-style: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+}
+
+.jsPanel-theme-default>.jsPanel-hdr *,
+.jsPanel-theme-keyboard>.jsPanel-hdr * {
+    color: var(--theme-sig-window-panel-hdr-color, var(--theme-sig-window-panel-default-hdr-color, rgba(51, 51, 51, 1))) !important;
+
+    font-family: inherit;
+    font-style: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+}
+
+.jsPanel-theme-default>.jsPanel-hdr>.jsPanel-headerbar,
+.jsPanel-theme-keyboard>.jsPanel-hdr>.jsPanel-headerbar {
+    background-color: var(--theme-sig-window-panel-hdr-background-color, var(--theme-sig-window-panel-default-hdr-background-color, rgba(174, 200, 26, 1))) !important;
+    border-color: var(--theme-sig-window-panel-hdr-border-color, var(--theme-sig-window-panel-default-border-color, transparent)) !important;
+    border-style: var(--theme-sig-window-panel-hdr-border-style, var(--theme-sig-window-panel-default-border-style, none)) !important;
+    border-width: var(--theme-sig-window-panel-hdr-border-width, var(--theme-sig-window-panel-default-border-width, 0px));
+    border-radius: var(--theme-sig-window-panel-hdr-border-radius, var(--theme-sig-window-panel-default-border-radius, 0px)) !important;
+    min-height: var(--theme-sig-window-panel-hdr-height, 36px);
+}
+
+/* This fixes a strange bug where the .jsPanel-content node has a weird 3px added to its size.*/
+.jsPanel-theme-default>.jsPanel-hdr>.jsPanel-headerbar .jsPanel-titlebar,
+.jsPanel-theme-keyboard>.jsPanel-hdr>.jsPanel-headerbar .jsPanel-titlebar {
+    min-height: var(--theme-sig-window-panel-hdr-height, 36px);
+}
+
+.jsPanel-theme-default[headerheightbehavior=fixedHeight]>.jsPanel-hdr>.jsPanel-headerbar,
+.jsPanel-theme-keyboard[headerheightbehavior=fixedHeight]>.jsPanel-hdr>.jsPanel-headerbar {
+    min-height: initial;
+    height: var(--theme-sig-window-panel-hdr-height, 36px);
+    overflow: hidden;
+}
+
+#windowPanel .jsPanel-titlebar {
+    /*
+        This triggers the ellipse text-overflow of the title text in designmode.
+        In normal mode the width is constantly applied by jsPanel itself.
+    */
+    width: 0px;
+}
+
+.jsPanel-theme-default>.jsPanel-hdr>.jsPanel-headerbar .jsPanel-titlebar .jsPanel-title,
+.jsPanel-theme-keyboard>.jsPanel-hdr>.jsPanel-headerbar .jsPanel-titlebar .jsPanel-title {
+    width: 100%;
+    text-align: var(--theme-sig-window-panel-hdr-text-align, 'left');
+    font-variant: initial !important;
+    margin: 5px var(--theme-sig-window-panel-hdr-text-margin-horizontal, 5px);
+}
+
+.jsPanel-theme-default>.jsPanel-hdr-toolbar,
+.jsPanel-theme-keyboard>.jsPanel-hdr-toolbar {
+    /* border-top: 1px var(--theme-sig-window-panel-hdr-toolbar-border-top-color, var(--theme-sig-window-panel-default-hdr-toolbar-border-top-color, rgba(255, 255, 255, 1))) !important; */
+}
+
+.jsPanel-theme-default>.jsPanel-content,
+.jsPanel-theme-keyboard>.jsPanel-content {
+    background: transparent !important;
+    /* border-top: 1px solid var(--theme-sig-window-panel-content-border-top-color, var(--theme-sig-window-panel-default-content-border-top-color, rgba(255, 255, 255, 1))) !important; */
+
+    /* Fix the missing horizontal scrollbar in jsPanel */
+    overflow-x: auto;
+    overflow-y: auto;
+    text-decoration: unset;
+    /* Inherit the font from sig-app */
+    font-family: inherit;
+    font-style: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.jsPanel-theme-default>.jsPanel-sig-separator,
+.jsPanel-theme-keyboard>.jsPanel-sig-separator {
+    position: relative;
+    height: var(--theme-sig-window-panel-content-border-top-height, 1px);
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--theme-sig-window-panel-content-border-top-background-color, transparent);
+}
+
+.jsPanel-theme-default .jsPanel-sig-separator-border,
+.jsPanel-theme-keyboard .jsPanel-sig-separator-border {
+    height: 0;
+    width: auto;
+    border-top: var(--theme-sig-window-panel-content-border-top-height, 1px) var(--theme-sig-window-panel-content-border-top-style, solid) var(--theme-sig-window-panel-content-border-top-color, var(--theme-sig-window-panel-border-color, rgba(128, 128, 128, 1)));
+    margin: 0px var(--theme-sig-window-panel-content-border-top-margin-horizontal, 0px);
+}
+
+.jsPanel-theme-default>.jsPanel-content.jsPanel-content-noheader,
+.jsPanel-theme-keyboard>.jsPanel-content.jsPanel-content-noheader {
+    border-top: none !important;
+}
+
+.jsPanel-theme-default .jsPanel-btn,
+.jsPanel-theme-keyboard .jsPanel-btn {
+    padding: var(--theme-sig-window-panel-icon-padding-vertical, var(--theme-sig-window-panel-default-icon-padding-vertical, 6px)) var(--theme-sig-window-panel-icon-padding-horizontal, var(--theme-sig-window-panel-default-icon-padding-horizontal, 4px));
+}
+
+.jsPanel-theme-default .jsPanel-controlbar button:last-child,
+.jsPanel-theme-keyboard .jsPanel-controlbar button:last-child {
+    padding-left: var(--theme-sig-window-panel-icon-padding-horizontal, var(--theme-sig-window-panel-default-icon-padding-horizontal, 4px));
+    padding-right: var(--theme-sig-window-panel-icon-padding-horizontal-last-child, var(--theme-sig-window-panel-default-icon-padding-horizontal-last-child, 8px));
+}
+
+.jsPanel-theme-default .jsPanel-hdr[dir=rtl] .jsPanel-controlbar button:last-child,
+.jsPanel-theme-keyboard .jsPanel-hdr[dir=rtl] .jsPanel-controlbar button:last-child {
+    padding-right: var(--theme-sig-window-panel-icon-padding-horizontal, var(--theme-sig-window-panel-default-icon-padding-horizontal, 4px));
+    padding-left: var(--theme-sig-window-panel-icon-padding-horizontal-last-child, var(--theme-sig-window-panel-default-icon-padding-horizontal-last-child, 8px));
+}
+
+/* in designer */
+.jsPanel-theme-default .jsPanel-controlbar.jsPanel-rtl button:last-child,
+.jsPanel-theme-keyboard .jsPanel-controlbar.jsPanel-rtl button:last-child {
+    padding-right: var(--theme-sig-window-panel-icon-padding-horizontal, var(--theme-sig-window-panel-default-icon-padding-horizontal, 4px));
+    padding-left: var(--theme-sig-window-panel-icon-padding-horizontal-last-child, var(--theme-sig-window-panel-default-icon-padding-horizontal-last-child, 8px));
+}
+
+.jsPanel .jsPanel-controlbar {
+    margin: 0px !important;
+}
+
+.jsPanel-theme-default.jsPanel-modal-backdrop,
+.jsPanel-theme-keyboard.jsPanel-modal-backdrop {
+    background-color: var(--theme-sig-window-panel-modal-background-color, var(--theme-sig-window-panel-default-modal-background-color, transparent)) !important;
+    /* This is needed to unset the hardcoded animation of the modal background */
+    animation: initial;
+    animation-fill-mode: initial;
+    animation-duration: initial;
+    opacity: var(--theme-sig-window-panel-modal-opacity, var(--theme-sig-window-panel-default-modal-opacity, 1));
+}
+
+.jsPanel-theme-default.jsPanel-modal-backdrop.jsPanelModalFadeIn,
+.jsPanel-theme-keyboard.jsPanel-modal-backdrop.jsPanelModalFadeIn {
+    animation: jsPanelModalFadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: .6s;
+    opacity: 0;
+}
+
+.jsPanel-theme-default.jsPanel-modal-backdrop.jsPanelModalFadeOut,
+.jsPanel-theme-keyboard.jsPanel-modal-backdrop.jsPanelModalFadeOut {
+    animation: jsPanelModalFadeOut ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: .6s;
+}
+
+@keyframes jsPanelModalFadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: var(--theme-sig-window-panel-modal-opacity, var(--theme-sig-window-panel-default-modal-opacity, 1));
+    }
+}
+
+@keyframes jsPanelModalFadeOut {
+    from {
+        opacity: var(--theme-sig-window-panel-modal-opacity, var(--theme-sig-window-panel-default-modal-opacity, 1));
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+/* 
+.jsPanel-theme-default>.jsPanel-content.jsPanel-content-filled {
+    background-color: var(--theme-sig-window-panel-content-content-filled-background-color, var(--theme-sig-window-panel-default-content-content-filled-background-color, grey)) !important;
+    border-top: 1px solid var(--theme-sig-window-panel-content-content-filled-broder-top-color, var(--theme-sig-window-panel-default--content-content-filled-broder-top-color, lightgray)) !important;
+    color: var(--theme-sig-window-panel-content-content-filled-color, var(--theme-sig-window-panel-default-content-content-filled-color, lightgrey)) !important;
+}
+.jsPanel-theme-default>.jsPanel-content.jsPanel-content-filledlight {
+    background-color: var(--theme-sig-window-panel-content-content-filledlight-background-color, var(--theme-sig-window-panel-content-content-filledlight-background-color, lightgray)) !important;
+    border-top: 1px solid var(--theme-sig-window-panel-content-content-filledlight-broder-top-color, var(--theme-sig-window-panel-content-content-filledlight-broder-top-color, lightgray)) !important;
+    color: var(--theme-sig-window-panel-content-content-filledlight-color, var(--theme-sig-window-panel-content-content-filledlight-color, darkgrey)) !important;
+} */
+
+/* Fix so the container does not ovberlay other controls */
+.jsPanel-minimized-container {
+    width: auto !important;
+}

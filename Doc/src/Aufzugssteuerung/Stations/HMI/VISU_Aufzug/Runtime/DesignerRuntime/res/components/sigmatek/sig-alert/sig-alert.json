@@ -1,0 +1,56 @@
+{
+    "name": "sig-alert",
+    "shortName": {
+        "en": "Alert",
+        "de": "Alert"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "01.02.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements an alert container as a polymer custom element",
+        "de": "Implements an alert container as a polymer custom element"
+    },
+    "main": [
+        "sig-alert.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-alert.html",
+    "private": true,
+    "dependencies": {
+        "sig-element": "components/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "defaultDimensions": {
+        "width": "100%",
+        "height": "100%"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-alert-css.js"
+        }
+    ],
+    "toolbox": false,
+    "slotted": false,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "properties": []
+}

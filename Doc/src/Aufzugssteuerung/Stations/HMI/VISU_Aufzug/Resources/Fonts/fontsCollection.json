@@ -1,0 +1,17 @@
+{
+	"type": "MediaFontsCollection",
+	"version": "0.0.96",
+	"name": "MediaFontsCollection",
+	"mediaType": "Fonts",
+	"mediaItems": [
+		{
+			"type": "MediaItem",
+			"id": "9c34ba44-1566-4206-a5d7-2455abc1f0e7",
+			"name": "roboto-regular.ttf",
+			"path": "Resources\\Fonts",
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
+}

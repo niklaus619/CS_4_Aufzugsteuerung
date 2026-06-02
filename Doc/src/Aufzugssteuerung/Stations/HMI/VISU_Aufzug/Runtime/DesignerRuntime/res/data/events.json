@@ -1,0 +1,4217 @@
+{
+ "version": "2.0.0",
+ "int": [
+  {
+   "name": "CEM_SEND",
+   "maId": 65296,
+   "miId": 61696,
+   "desc": "",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DP_ON_ERROR",
+   "maId": 65296,
+   "miId": 62464,
+   "desc": "Fired if the error state of the Datapoint changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CHANGE_DPS",
+   "maId": 65296,
+   "miId": 1360,
+   "desc": "Fired if the used Datepoints on the Screen changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LANGUAGE_CHG",
+   "maId": 65296,
+   "miId": 63488,
+   "desc": "Fired if the language changes",
+   "src": 2,
+   "canSubscribe": true,
+   "canPublish": false
+  },
+  {
+   "name": "INT_SET_VALUE",
+   "maId": 65296,
+   "miId": 61440,
+   "desc": "Fired if a datapoint was set internal",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_WS_START",
+   "maId": 65296,
+   "miId": 61441,
+   "desc": "Fired if the websocket is started",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_STATION_CPU_STATE",
+   "maId": 65296,
+   "miId": 61444,
+   "desc": "Fired if the cpu-state of a station changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_STATIONS_CPU_STATES_CHG",
+   "maId": 65296,
+   "miId": 61445,
+   "desc": "Fired if the cpu-state of a station in the stationlist changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_DOWNLOAD_CANCEL",
+   "maId": 65296,
+   "miId": 61447,
+   "desc": "Fired when the designer cancels the download",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_DOWNLOAD_START",
+   "maId": 65296,
+   "miId": 61448,
+   "desc": "Fired when the designer starts the download",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_DOWNLOAD_END",
+   "maId": 65296,
+   "miId": 61449,
+   "desc": "Fired when the designer finished the download",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_DOWNLOAD_PRJ_START",
+   "maId": 65296,
+   "miId": 61456,
+   "desc": "Fired if the designer starts the project download",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_DOWNLOAD_PRJ_POS",
+   "maId": 65296,
+   "miId": 61457,
+   "desc": "Fires the progress position of the designer project download",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_DOWNLOAD_PRJ_END",
+   "maId": 65296,
+   "miId": 61458,
+   "desc": "Fired if the designer has finished the project download",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_DOWNLOAD_RT_START",
+   "maId": 65296,
+   "miId": 61459,
+   "desc": "Fired if the designer starts the runtime download",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_DOWNLOAD_RT_POS",
+   "maId": 65296,
+   "miId": 61460,
+   "desc": "Fires the progress position of the designer runtime download",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_DOWNLOAD_RT_END",
+   "maId": 65296,
+   "miId": 61461,
+   "desc": "Fired if the designer has finished the runtime download",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_RELOAD",
+   "maId": 65296,
+   "miId": 61462,
+   "desc": "If this event is fired, the current document will be reloaded",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_WS_MESSAGE",
+   "maId": 65296,
+   "miId": 61463,
+   "desc": "Fired if the Websocket receives a message",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_WS_MESSAGE_SEND",
+   "maId": 65280,
+   "miId": 61464,
+   "desc": "Fired if the ws send an frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_ALARM_NEW",
+   "maId": 65296,
+   "miId": 61465,
+   "desc": "Fired if a new active alarm occurs",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_ALARM_HI_PRIO",
+   "maId": 65296,
+   "miId": 61466,
+   "desc": "Fired if a new active alarm with higest priority occurs",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_ERROR_WRONG_LOADER_VERSION",
+   "maId": 65296,
+   "miId": 61467,
+   "desc": "Fired if a Station with wrong loader version is detected",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_ERROR_UNSUPPORTED_BROWSER_VERSION",
+   "maId": 65296,
+   "miId": 61468,
+   "desc": "Fired if the current browser is not supported",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_ERROR_WRONG_DATAPOINTLIST_CRC",
+   "maId": 65296,
+   "miId": 61469,
+   "desc": "Fired if the data point lists of DataService and Runtime are different",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_CURRENT_USER_CHANGED",
+   "maId": 65296,
+   "miId": 61470,
+   "desc": "Fired if the current user has been changed or deleted",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_ERROR_EVENT_JOURNAL_SIZE",
+   "maId": 65296,
+   "miId": 61471,
+   "desc": "Fired if the userdefined size of the eventjournal or alarmlist is invalid",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "NEW_EVENTJOURNAL_UPDATE_DATA",
+   "maId": 65296,
+   "miId": 61472,
+   "desc": "Fired if new eventjournal data has been received",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USR_START_ANIMATION",
+   "maId": 65296,
+   "miId": 1638,
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "APPROUTE_LOCALSET",
+   "maId": 65296,
+   "miId": 1639,
+   "desc": "Fired if the route changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "APPROUTE_LOCALSET_HOME",
+   "maId": 65296,
+   "miId": 1641,
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "APPROUTE_SET",
+   "maId": 65296,
+   "miId": 1637,
+   "desc": "Fired if the route was set",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "APPROUTE_CHG",
+   "maId": 65296,
+   "miId": 1640,
+   "desc": "Fired if the route changed",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "NOTIFY_ERROR",
+   "maId": 65296,
+   "miId": 1636,
+   "desc": "Fired if error occurs",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INT_SET_SCROLL",
+   "maId": 65296,
+   "miId": 1689,
+   "desc": "Fired Scroll event",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "NOTIFY_FPS",
+   "maId": 65296,
+   "miId": 1642,
+   "desc": "Fired if a FPS update is send from the FpsCounter",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CLEAR_LOCAL_STORAGE",
+   "maId": 65296,
+   "miId": 1643,
+   "desc": "If this event is fired, all internal system varaibles, which are stored in the local storage of the browser are removed from the storage",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": true
+  },
+  {
+   "name": "RESET_WINDOWS",
+   "maId": 65296,
+   "miId": 1647,
+   "desc": "If this events is fired, all windows are closed and reset to their default settings",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "REGISTER_WS_EVENTS",
+   "maId": 65296,
+   "miId": 1644,
+   "desc": "Fired to notify the ws to register his events",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "VIEW_SELECTION_MANAGERS_READY",
+   "maId": 65296,
+   "miId": 1645,
+   "desc": "Fired if all managers supported in view selection callback are ready",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "MANAGERS_READY",
+   "maId": 65296,
+   "miId": 1646,
+   "desc": "Fired if all critical managers are ready",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "RT_READY",
+   "maId": 65296,
+   "miId": 1650,
+   "desc": "Fired if the RT is ready",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DASHBOARD_OPENED",
+   "maId": 65296,
+   "miId": 1648,
+   "desc": "Fired if a dashboard has been opened. The parameter is the instanceId of the opened dashboard",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DASHBOARD_CLOSED",
+   "maId": 65296,
+   "miId": 1649,
+   "desc": "Fired if a dashboard has been closed. The parameter is the instanceId of the closed dashboard",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "BROWSER_ORIENTATION_CHANGED",
+   "maId": 65296,
+   "miId": 1651,
+   "desc": "Fired if the orientation of the browser has changed",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATE_CHANGED",
+   "maId": 65296,
+   "miId": 1652,
+   "desc": "Fired if a corresponding status change occurs. The content of the passed parameters depends on the respective status change",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DS_VERSION_RSP",
+   "maId": 65296,
+   "miId": 1653,
+   "desc": "Fired if the the version of the dataservice is known",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "WS_STATE_CHG",
+   "maId": 65296,
+   "miId": 61968,
+   "desc": "Fired if the state of the websocket changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DPM_STATE_CHG",
+   "maId": 65296,
+   "miId": 62465,
+   "desc": "Fired if the state of the Datapoint Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_STATE_CHG",
+   "maId": 65296,
+   "miId": 62720,
+   "desc": "Fired if the state of the User Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROUTER_STATE_CHG",
+   "maId": 65296,
+   "miId": 62800,
+   "desc": "Fired if the state of the Router changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "TYPE_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62801,
+   "desc": "Fired if the state of the Type Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "RULE_ENGINE_STATE_CHG",
+   "maId": 65296,
+   "miId": 62802,
+   "desc": "Fired if the state of the Rule Engine changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "UNIT_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62803,
+   "desc": "Fired if the state of the Unit Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62804,
+   "desc": "Fired if the state of the EventJournal Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SCHEME_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62805,
+   "desc": "Fired if the state of the Scheme Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTS_STATE_CHG",
+   "maId": 65296,
+   "miId": 62806,
+   "desc": "Fired if the state of the events changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "COMP_CONTROL_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62807,
+   "desc": "Fired if the state of the Composite Control Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "TEXT_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62808,
+   "desc": "Fired if the state of the TextManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DEFAULT_TEXT_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62809,
+   "desc": "Fired if the state of the DefaultTextManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LANGUAGE_STATE_CHG",
+   "maId": 65296,
+   "miId": 62810,
+   "desc": "Fired if the state of the Language changes (Nothing loaded, LangInfo loaded or LangInfo and TextLists loaded)",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "RESOURCE_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62811,
+   "desc": "Fired if the state of the resourceManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FONT_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62812,
+   "desc": "Fired if the state of the fontManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FORMAT_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62813,
+   "desc": "Fired if the state of the formatManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "WINDOW_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62814,
+   "desc": "Fired if the state of the windowManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATION_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62815,
+   "desc": "Fired if hte state of the stationManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SYS_WINDOW_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62816,
+   "desc": "Fired if the state of the system-windowManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DRAG_AND_DROP_MRG_STATE_CHG",
+   "maId": 65296,
+   "miId": 62817,
+   "desc": "Fired if the state of the drag-and-drop-windowManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CHECKBIT_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62818,
+   "desc": "Fired if the state of the checkbitManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DEFAULT_STYLE_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62819,
+   "desc": "Fired if the state of the defaultStyleManager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "TEMP_ALARM_MGR_ALARM_STATE_CHG",
+   "maId": 65296,
+   "miId": 62820,
+   "desc": "Fired if the state of the alarm list in Alarm Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "TEMP_ALARM_MGR_HOTALARM_STATE_CHG",
+   "maId": 65296,
+   "miId": 62821,
+   "desc": "Fired if the state of a hotalarm in Alarm Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "BROWSER_UTILS_STATE_CHG",
+   "maId": 65296,
+   "miId": 62822,
+   "desc": "Fired if the state of the browser utils changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "MENU_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62823,
+   "desc": "Fired if the state of the Menu Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_FILTER_SORT_RESULT_CHG",
+   "maId": 65296,
+   "miId": 62824,
+   "desc": "Fired if the filter and/or sort result of the EventJournal Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATION_STATE_CHG",
+   "maId": 65296,
+   "miId": 62976,
+   "desc": "Fired if the state of the station Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARMS_MGR_STATE_CHG",
+   "maId": 65296,
+   "miId": 62977,
+   "desc": "Fired if the state of the Alarm Config Manager changes",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SHOW_SPLASH_SCREEN",
+   "maId": 65296,
+   "miId": 62992,
+   "desc": "Fired when the splash screen should be shown",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "HIDE_SPLASH_SCREEN",
+   "maId": 65296,
+   "miId": 62993,
+   "desc": "Fired when the splash screen should be hidden",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SEND_TO_ALL",
+   "maId": 65280,
+   "miId": 157,
+   "desc": "Recive a multi-command Frame",
+   "src": 1,
+   "canSubscribe": true,
+   "canPublish": true
+  },
+  {
+   "name": "SEND_TO_ALL_RSP",
+   "maId": 65280,
+   "miId": 158,
+   "desc": "Received a multi-command response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SEND_FRAGMENT_RT_RSP",
+   "maId": 65280,
+   "miId": 50,
+   "desc": "Receives a response for a fragment",
+   "src": 1,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SEND_FRAGMENT_DS",
+   "maId": 65280,
+   "miId": 49,
+   "desc": "Receives a fragment of a frame",
+   "src": 1,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_EVENT_RSP",
+   "maId": 65280,
+   "miId": 32,
+   "desc": "Receives a user events response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VERSION_RSP",
+   "maId": 65280,
+   "miId": 17,
+   "desc": "Received a Get Version Frame",
+   "src": 1,
+   "canSubscribe": true,
+   "canPublish": true
+  },
+  {
+   "name": "GET_PROJECTINFO_RSP",
+   "maId": 65280,
+   "miId": 23,
+   "desc": "Received a Get Project Info Frame",
+   "src": 1,
+   "canSubscribe": true,
+   "canPublish": true
+  },
+  {
+   "name": "GET_CLIENT_CONNECTION_INFO_RSP",
+   "maId": 65280,
+   "miId": 25,
+   "desc": "Received a Get Client Connection Info Frame",
+   "src": 1,
+   "canSubscribe": true,
+   "canPublish": true
+  },
+  {
+   "name": "LOOP_RSP",
+   "maId": 65280,
+   "miId": 99,
+   "desc": "Received a Loop Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LOGIN_RSP",
+   "maId": 65280,
+   "miId": 257,
+   "desc": "Received a User Login Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LOGOUT_RSP",
+   "maId": 65280,
+   "miId": 259,
+   "desc": "Received a User Logout Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_PW_CHANGE_RSP",
+   "maId": 65280,
+   "miId": 261,
+   "desc": "Received a Password Change Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LOGIN_REQ",
+   "maId": 65280,
+   "miId": 262,
+   "desc": "Received a User Login Request Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LOGOUT_REQ",
+   "maId": 65280,
+   "miId": 264,
+   "desc": "Received a User Logout Request Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LOGIN_PSH",
+   "maId": 65280,
+   "miId": 265,
+   "desc": "Received a User Login Request Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CHECK_ACCESS_LEVEL_RSP",
+   "maId": 65280,
+   "miId": 267,
+   "desc": "Received a User Logout Request Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_CREATE_RSP",
+   "maId": 65280,
+   "miId": 273,
+   "desc": "Received a User Create Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_CHANGE_RSP",
+   "maId": 65280,
+   "miId": 275,
+   "desc": "Received a User Settings Change Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_DELETE_RSP",
+   "maId": 65280,
+   "miId": 277,
+   "desc": "Received a User Delete Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LIST_RSP",
+   "maId": 65280,
+   "miId": 279,
+   "desc": "Received a User List Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_DETAIL_RSP",
+   "maId": 65280,
+   "miId": 281,
+   "desc": "Received a User Detail Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_RESTORE_RSP",
+   "maId": 65280,
+   "miId": 283,
+   "desc": "Received a User Restore Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USERS_CLEAN_UP_RSP",
+   "maId": 65280,
+   "miId": 312,
+   "desc": "Received a Users Clean Up Restore Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_EXPORT_RSP",
+   "maId": 65280,
+   "miId": 320,
+   "desc": "Received a User Export Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_IMPORT_RSP",
+   "maId": 65280,
+   "miId": 322,
+   "desc": "Received a User Import Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_CREATE_RSP",
+   "maId": 65280,
+   "miId": 289,
+   "desc": "Received a Role Create Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_CHANGE_RSP",
+   "maId": 65280,
+   "miId": 291,
+   "desc": "Received a Role Change Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_DELETE_RSP",
+   "maId": 65280,
+   "miId": 293,
+   "desc": "Received a Role Delete Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_LIST_RSP",
+   "maId": 65280,
+   "miId": 295,
+   "desc": "Received a Role List Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_DETAIL_RSP",
+   "maId": 65280,
+   "miId": 297,
+   "desc": "Received a Role Detail Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_EXPORT_RSP",
+   "maId": 65280,
+   "miId": 324,
+   "desc": "Received a Role Export Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_IMPORT_RSP",
+   "maId": 65280,
+   "miId": 326,
+   "desc": "Received a Role Import Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USERS_DETAILS_PSH",
+   "maId": 65280,
+   "miId": 303,
+   "desc": "Received a Users Details Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLES_DETAILS_PSH",
+   "maId": 65280,
+   "miId": 304,
+   "desc": "Received a Roles Details Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LIST_PSH",
+   "maId": 65280,
+   "miId": 305,
+   "desc": "Received a User List Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_LIST_PSH",
+   "maId": 65280,
+   "miId": 306,
+   "desc": "Received a Role List Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "IS_VAR_VALIDE_RSP",
+   "maId": 65280,
+   "miId": 513,
+   "desc": "Received a Is Var Valid Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CREATE_VAR_RSP",
+   "maId": 65280,
+   "miId": 515,
+   "desc": "Received a Create Variable Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VAR_ID_FROM_NAME_RSP",
+   "maId": 65280,
+   "miId": 517,
+   "desc": "Received a Get Var Id From Name Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VAR_ID_FROM_LASAL_ID_RSP",
+   "maId": 65280,
+   "miId": 519,
+   "desc": "Received a Get Var Id From Lasal Id Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_LASAL_ID_FROM_NAME_RSP",
+   "maId": 65280,
+   "miId": 521,
+   "desc": "Received a Get Lasal Id From Name Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_LASAL_ID_FROM_VAR_ID_RSP",
+   "maId": 65280,
+   "miId": 523,
+   "desc": "Received a Get Lasal Id From Var Id Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_NAME_FROM_VAR_ID_RSP",
+   "maId": 65280,
+   "miId": 525,
+   "desc": "Received a Get Name From Var Id Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_NAME_FROM_LASAL_ID_RSP",
+   "maId": 65280,
+   "miId": 527,
+   "desc": "Received a Get Name From Var Id Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_DP_LIST_RSP",
+   "maId": 65280,
+   "miId": 529,
+   "desc": "Received a Get Dp List Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_DP_INFO_RSP",
+   "maId": 65280,
+   "miId": 531,
+   "desc": "Received a Get DP Info Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VAR_ID_FROM_CRC_RSP",
+   "maId": 65280,
+   "miId": 533,
+   "desc": "Received a Get Var Id from CRC Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_CRC_FROM_VAR_ID_RSP",
+   "maId": 65280,
+   "miId": 535,
+   "desc": "Received a Get CRC From Var Id Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VALUE_RSP",
+   "maId": 65280,
+   "miId": 545,
+   "desc": "Received a Get Value Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_STRING_RSP",
+   "maId": 65280,
+   "miId": 547,
+   "desc": "Received a Get String Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_DATA_RSP",
+   "maId": 65280,
+   "miId": 549,
+   "desc": "Received a Get Data Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SET_VALUE_RSP",
+   "maId": 65280,
+   "miId": 561,
+   "desc": "Received a Set Value Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SET_STRING_RSP",
+   "maId": 65280,
+   "miId": 563,
+   "desc": "Received a Set String Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SET_DATA_RSP",
+   "maId": 65280,
+   "miId": 565,
+   "desc": "Received a Set Data Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ADD_REFLIST_RSP",
+   "maId": 65280,
+   "miId": 577,
+   "desc": "Received a Add Ref List Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SUB_REFLIST_RSP",
+   "maId": 65280,
+   "miId": 579,
+   "desc": "Received a Sub Reflist Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CLEAR_REFLIST_RSP",
+   "maId": 65280,
+   "miId": 581,
+   "desc": "Received a Clear Reflist Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "START_REFLIST_RSP",
+   "maId": 65280,
+   "miId": 583,
+   "desc": "Received a Start Reflist Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STOP_REFLIST_RSP",
+   "maId": 65280,
+   "miId": 585,
+   "desc": "Received a Stop Reflist Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "UPDATE_REFLIST",
+   "maId": 65280,
+   "miId": 586,
+   "desc": "Received a Update Reflist Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "UPDATE_STR_REFLIST",
+   "maId": 65280,
+   "miId": 587,
+   "desc": "Received a Update String Reflist Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CHANGE_STATION_PARAMETERS_RSP",
+   "maId": 65280,
+   "miId": 59,
+   "desc": "Received a Change Station Parameters Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATION_INFO_PSH",
+   "maId": 65280,
+   "miId": 60,
+   "desc": "Received a Station Info Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATION_CON_RSP",
+   "maId": 65280,
+   "miId": 769,
+   "desc": "Received a Station Connection Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATION_DISCON_RSP",
+   "maId": 65280,
+   "miId": 771,
+   "desc": "Received a Station Disconnection Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATION_UPDATE",
+   "maId": 65280,
+   "miId": 772,
+   "desc": "Received a Station Update Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATION_SETCON_RSP",
+   "maId": 65280,
+   "miId": 774,
+   "desc": "Received a Set Connection Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_ADD_RSP",
+   "maId": 65281,
+   "miId": 1025,
+   "desc": "Received a Add EventJournal Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_GET_RSP",
+   "maId": 65281,
+   "miId": 1027,
+   "desc": "Received a Get EventJournal Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_GET_ALL_RSP",
+   "maId": 65281,
+   "miId": 1029,
+   "desc": "Received a Get All EventJournal Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_DEL_RSP",
+   "maId": 65281,
+   "miId": 1031,
+   "desc": "Received a Del EventJournal Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_DEL_ALL_RSP",
+   "maId": 65281,
+   "miId": 1033,
+   "desc": "Received a Del All EventJournal Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_UPDATE",
+   "maId": 65281,
+   "miId": 1036,
+   "desc": "Received a EventJournal Update Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_ALARM_QUIT_RSP",
+   "maId": 65281,
+   "miId": 1041,
+   "desc": "Received a Alarm Quit EventJournal Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_ALARM_QUIT_ALL_RSP",
+   "maId": 65281,
+   "miId": 1043,
+   "desc": "Received a Alarm Quit All EventJournal Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_UPDATE_ADD_RSP",
+   "maId": 65281,
+   "miId": 1068,
+   "desc": "Received a EventJournal Update Add Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_UPDATE_SUB_RSP",
+   "maId": 65281,
+   "miId": 1070,
+   "desc": "Received a EventJournal Update Sub Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARMLIST_UPDATE_ADD_RSP",
+   "maId": 65281,
+   "miId": 1045,
+   "desc": "Received a Alarmlist Update Add Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARMLIST_UPDATE_SUB_RSP",
+   "maId": 65281,
+   "miId": 1047,
+   "desc": "Received a Alarmlist Update Sub Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARMLIST_UPDATE",
+   "maId": 65281,
+   "miId": 1049,
+   "desc": "Received a Alarmlist Update Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "HOTALARM_UPDATE_ADD_RSP",
+   "maId": 65281,
+   "miId": 1057,
+   "desc": "Received a Hotalarm Update Add Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "HOTALARM_UPDATE_SUB_RSP",
+   "maId": 65281,
+   "miId": 1059,
+   "desc": "Received a Hotalarm Update Sub Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "HOTALARM_UPDATE",
+   "maId": 65281,
+   "miId": 1061,
+   "desc": "Received a Hotalarm Update Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARM_DEL_RSP",
+   "maId": 65281,
+   "miId": 1063,
+   "desc": "Received a Del Alarm Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARM_DEL_ALL_RSP",
+   "maId": 65281,
+   "miId": 1065,
+   "desc": "Received a Del All Alarm Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARM_DEL_UPDATE",
+   "maId": 65281,
+   "miId": 1066,
+   "desc": "Received a del Alarm Update Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARM_INFO_UPDATE_ADD_RSP",
+   "maId": 65281,
+   "miId": 1072,
+   "desc": "Received a Alarm Info Update Add Response Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARM_INFO_PSH",
+   "maId": 65281,
+   "miId": 1073,
+   "desc": "Received a Alarm Info Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "RECIPE_SAVE_RSP",
+   "maId": 65280,
+   "miId": 146,
+   "desc": "Received a Save Recipe Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "RECIPE_LOAD_RSP",
+   "maId": 65280,
+   "miId": 144,
+   "desc": "Received a Save Recipe Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "PROGRESS_STATUS",
+   "maId": 65280,
+   "miId": 128,
+   "desc": "Received a Progress Status Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_OPEN_RSP",
+   "maId": 65280,
+   "miId": 1281,
+   "desc": "Received a File Open Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_CLOSE_RSP",
+   "maId": 65280,
+   "miId": 1283,
+   "desc": "Received a File Close Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_SEEK_RSP",
+   "maId": 65280,
+   "miId": 1285,
+   "desc": "Received a File Seek Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_TELL_RSP",
+   "maId": 65280,
+   "miId": 1287,
+   "desc": "Received a File Tell Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_READ_RSP",
+   "maId": 65280,
+   "miId": 1289,
+   "desc": "Received a File Read Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_WRITE_RSP",
+   "maId": 65280,
+   "miId": 1291,
+   "desc": "Received a File Write Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_GET_RSP",
+   "maId": 65280,
+   "miId": 1293,
+   "desc": "Received a File Get Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_PUT_RSP",
+   "maId": 65280,
+   "miId": 1295,
+   "desc": "Received a File Put Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_LENGTH_RSP",
+   "maId": 65280,
+   "miId": 1297,
+   "desc": "Received a File Length Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_CONTENT_RSP",
+   "maId": 65280,
+   "miId": 1299,
+   "desc": "Received a File Content Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DIR_CREATE_RSP",
+   "maId": 65280,
+   "miId": 1313,
+   "desc": "Received a Create Dir/File Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DIR_READ_RSP",
+   "maId": 65280,
+   "miId": 1315,
+   "desc": "Received a Directory Read Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_REMOVE_RSP",
+   "maId": 65280,
+   "miId": 1329,
+   "desc": "Received a Remove Dir/File Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_COPY_RSP",
+   "maId": 65280,
+   "miId": 1331,
+   "desc": "Received a Copy Dir/File Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_INFO_RSP",
+   "maId": 65280,
+   "miId": 1333,
+   "desc": "Received a File Info Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_RENAME_RSP",
+   "maId": 65280,
+   "miId": 1335,
+   "desc": "Received a File Rename Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_SET_ATT_RSP",
+   "maId": 65280,
+   "miId": 1337,
+   "desc": "Received a File Set Attribut Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_DRIVE_LIST_RSP",
+   "maId": 65280,
+   "miId": 1339,
+   "desc": "Received a Drive List Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_MOVE_RSP",
+   "maId": 65280,
+   "miId": 1341,
+   "desc": "Received a Move Dir/File Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_DRIVE_INFO_RSP",
+   "maId": 65280,
+   "miId": 1343,
+   "desc": "Received a Drive Info Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DIRECTORY_EVENT_REGISTRATION_RSP",
+   "maId": 65280,
+   "miId": 1345,
+   "desc": "Received a Directory Event Registration Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DIRECTORY_EVENT_DEREGISTRATION_RSP",
+   "maId": 65280,
+   "miId": 1347,
+   "desc": "Received a Directory Event Deregistration Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DIRECTORY_EVENT_UPDATE",
+   "maId": 65280,
+   "miId": 1348,
+   "desc": "Received a Directory Event Update",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CANCEL_COMMAND_RSP",
+   "maId": 65280,
+   "miId": 15,
+   "desc": "Received a Cancel Command Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_CREATED",
+   "maId": 65296,
+   "miId": 1536,
+   "desc": "Fired if an user was created",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_UPDATED",
+   "maId": 65296,
+   "miId": 1537,
+   "desc": "Fired if an user was updated",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_DELETED",
+   "maId": 65296,
+   "miId": 1538,
+   "desc": "Fired if an user was deleted",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USERS_IMPORTED",
+   "maId": 65296,
+   "miId": 1539,
+   "desc": "Fired if users were imported",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_RESTORED",
+   "maId": 65296,
+   "miId": 1540,
+   "desc": "Fired if an user was restored",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "REGISTERD_TOKEN",
+   "maId": 65296,
+   "miId": 1546,
+   "desc": "Fired if an login-token was registered",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "UNREGISTERD_TOKEN",
+   "maId": 65296,
+   "miId": 1547,
+   "desc": "Fired if an login-token was unregistered",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_CREATED",
+   "maId": 65296,
+   "miId": 1552,
+   "desc": "Fired if an role was created",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_UPDATED",
+   "maId": 65296,
+   "miId": 1553,
+   "desc": "Fired if an role was updated",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_DELETED",
+   "maId": 65296,
+   "miId": 1554,
+   "desc": "Fired if an role was deleted",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLES_IMPORTED",
+   "maId": 65296,
+   "miId": 1555,
+   "desc": "Fired if roles were imported",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LOGGED_IN",
+   "maId": 65296,
+   "miId": 1568,
+   "desc": "Fired if an user logged in",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LOGGED_OUT",
+   "maId": 65296,
+   "miId": 1569,
+   "desc": "Fired if an user logged out",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CURR_USER_UPDATE",
+   "maId": 65296,
+   "miId": 1570,
+   "desc": "Fired if an dataupdate for the current user occured",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SEND_USER_DATA",
+   "maId": 65296,
+   "miId": 1578,
+   "desc": "Used by the usermanagement controls for communication",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "RECEIVE_USER_DATA",
+   "maId": 65296,
+   "miId": 1579,
+   "desc": "Used by the usermanagement controls for communication",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CANCLED_COMMAND",
+   "maId": 65296,
+   "miId": 1583,
+   "desc": "Fired if an command was cancled",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ACCESS_SEQUENCE_READY_STATE_CHANGED",
+   "maId": 65296,
+   "miId": 1584,
+   "desc": "Fired if the ready state of the access sequence changes. The state (true/false) is passed in the message argument.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ACCESS_SEQUENCE_CHANGED",
+   "maId": 65296,
+   "miId": 1585,
+   "desc": "Fired if the access sequence changes and needs to be checked again.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DRAG_DROP_ENABLED",
+   "maId": 65296,
+   "miId": 2304,
+   "desc": "Send if drag and drop mode is enable",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DRAG_DROP_DISABLED",
+   "maId": 65296,
+   "miId": 2305,
+   "desc": "Send if drag and drop mode is disabled",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DRAG_START",
+   "maId": 65296,
+   "miId": 2306,
+   "desc": "Send if drag of component starts",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DRAG_MOVE",
+   "maId": 65296,
+   "miId": 2307,
+   "desc": "Send if drag of component ends",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DRAG_ENTER",
+   "maId": 65296,
+   "miId": 2308,
+   "desc": "Send if the dragged component enters a dropzone",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DRAG_OVER",
+   "maId": 65296,
+   "miId": 2309,
+   "desc": "Send if the dragged component is over a dropzone",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DRAG_LEAVE",
+   "maId": 65296,
+   "miId": 2310,
+   "desc": "Send if the dragged component leaves a dropzone",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DRAG_DROP",
+   "maId": 65296,
+   "miId": 2312,
+   "desc": "Send if the dragged component is dropped over a dropzone",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DRAG_END",
+   "maId": 65296,
+   "miId": 2313,
+   "desc": "Send if drag of component ends",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SYSWIN_CONFIRM",
+   "maId": 65296,
+   "miId": 1792,
+   "desc": "Send if a dialog is confirmed",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SYSWIN_CANCEL",
+   "maId": 65296,
+   "miId": 1793,
+   "desc": "Send if a dialog is cancled",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SYSWIN_KEYBOARD_OPEN",
+   "maId": 65296,
+   "miId": 1794,
+   "desc": "Is fired to open an keyboard",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SYSWIN_KEYBOARD_VALUE",
+   "maId": 65296,
+   "miId": 1795,
+   "desc": "Fired if a keyboard value was entered",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SYSWIN_KEYBOARD_EXIT",
+   "maId": 65296,
+   "miId": 1796,
+   "desc": "Fired if the keyboard was closed without updating a value",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SYSWIN_KEYBOARD_CLOSE",
+   "maId": 65296,
+   "miId": 1797,
+   "desc": "Fired if the keyboard window was closed",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ADD_LOCAL_CLIENT_RSP",
+   "maId": 65280,
+   "miId": 177,
+   "desc": "Received a add an local client frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ADD_LOCAL_CLIENT_RANGE_RSP",
+   "maId": 65280,
+   "miId": 179,
+   "desc": "Received a add an local client range frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "REMOVE_THIS_AS_LOCAL_CLIENT_RSP",
+   "maId": 65280,
+   "miId": 181,
+   "desc": "Received a remove this as local client frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "REMOVE_LOCAL_CLIENT_RSP",
+   "maId": 65280,
+   "miId": 183,
+   "desc": "Received a remove local client frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "REMOVE_LOCAL_CLIENT_RANGE_RSP",
+   "maId": 65280,
+   "miId": 185,
+   "desc": "Received a remove local client range frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CLEAR_LOCAL_CLIENT_LIST_RSP",
+   "maId": 65280,
+   "miId": 187,
+   "desc": "Received a clear local client list frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_CURRENT_ID_RSP",
+   "maId": 65280,
+   "miId": 189,
+   "desc": "Received a get current id frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_LOCAL_CLIENT_LIST_RSP",
+   "maId": 65280,
+   "miId": 191,
+   "desc": "Received a get local client list frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_LOCAL_CLIENT_LIST_DETAILS_RSP",
+   "maId": 65280,
+   "miId": 193,
+   "desc": "Received a get local client list details frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_LOCAL_CLIENT_BY_ID_RSP",
+   "maId": 65280,
+   "miId": 195,
+   "desc": "Received a get local client by id frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SUBSCRIBE_STATE_RSP",
+   "maId": 65280,
+   "miId": 54,
+   "desc": "Received a subscribe state frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "UNSUBSCRIBE_STATE_RSP",
+   "maId": 65280,
+   "miId": 56,
+   "desc": "Received a unsubscribe state frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "UPDATE_STATE",
+   "maId": 65280,
+   "miId": 57,
+   "desc": "Received a update state Frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_STATE_RSP",
+   "maId": 65280,
+   "miId": 65,
+   "desc": "Received a get state frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ENABLE_LOG_TO_FILE_RSP",
+   "maId": 65280,
+   "miId": 81,
+   "desc": "Received a enable persisted browser log frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DISABLE_LOG_TO_FILE_RSP",
+   "maId": 65280,
+   "miId": 83,
+   "desc": "Received a disable persisted browser log frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_0_RECEIVED",
+   "maId": 65283,
+   "miId": 80,
+   "desc": "Received a LASAL_EVENT_0_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_1_RECEIVED",
+   "maId": 65283,
+   "miId": 81,
+   "desc": "Received a LASAL_EVENT_1_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_2_RECEIVED",
+   "maId": 65283,
+   "miId": 82,
+   "desc": "Received a LASAL_EVENT_2_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_3_RECEIVED",
+   "maId": 65283,
+   "miId": 83,
+   "desc": "Received a LASAL_EVENT_3_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_4_RECEIVED",
+   "maId": 65283,
+   "miId": 84,
+   "desc": "Received a LASAL_EVENT_4_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_5_RECEIVED",
+   "maId": 65283,
+   "miId": 85,
+   "desc": "Received a LASAL_EVENT_5_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_6_RECEIVED",
+   "maId": 65283,
+   "miId": 86,
+   "desc": "Received a LASAL_EVENT_6_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_7_RECEIVED",
+   "maId": 65283,
+   "miId": 87,
+   "desc": "Received a LASAL_EVENT_7_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_8_RECEIVED",
+   "maId": 65283,
+   "miId": 88,
+   "desc": "Received a LASAL_EVENT_8_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_9_RECEIVED",
+   "maId": 65283,
+   "miId": 89,
+   "desc": "Received a LASAL_EVENT_9_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_10_RECEIVED",
+   "maId": 65283,
+   "miId": 96,
+   "desc": "Received a LASAL_EVENT_10_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_11_RECEIVED",
+   "maId": 65283,
+   "miId": 97,
+   "desc": "Received a LASAL_EVENT_11_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_12_RECEIVED",
+   "maId": 65283,
+   "miId": 98,
+   "desc": "Received a LASAL_EVENT_12_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_13_RECEIVED",
+   "maId": 65283,
+   "miId": 99,
+   "desc": "Received a LASAL_EVENT_13_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_14_RECEIVED",
+   "maId": 65283,
+   "miId": 100,
+   "desc": "Received a LASAL_EVENT_14_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_15_RECEIVED",
+   "maId": 65283,
+   "miId": 101,
+   "desc": "Received a LASAL_EVENT_15_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_16_RECEIVED",
+   "maId": 65283,
+   "miId": 102,
+   "desc": "Received a LASAL_EVENT_16_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_17_RECEIVED",
+   "maId": 65283,
+   "miId": 103,
+   "desc": "Received a LASAL_EVENT_17_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_18_RECEIVED",
+   "maId": 65283,
+   "miId": 104,
+   "desc": "Received a LASAL_EVENT_18_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_19_RECEIVED",
+   "maId": 65283,
+   "miId": 105,
+   "desc": "Received a LASAL_EVENT_19_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_20_RECEIVED",
+   "maId": 65283,
+   "miId": 112,
+   "desc": "Received a LASAL_EVENT_20_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_21_RECEIVED",
+   "maId": 65283,
+   "miId": 113,
+   "desc": "Received a LASAL_EVENT_21_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_22_RECEIVED",
+   "maId": 65283,
+   "miId": 114,
+   "desc": "Received a LASAL_EVENT_22_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_23_RECEIVED",
+   "maId": 65283,
+   "miId": 115,
+   "desc": "Received a LASAL_EVENT_23_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_24_RECEIVED",
+   "maId": 65283,
+   "miId": 116,
+   "desc": "Received a LASAL_EVENT_24_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_25_RECEIVED",
+   "maId": 65283,
+   "miId": 117,
+   "desc": "Received a LASAL_EVENT_25_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_26_RECEIVED",
+   "maId": 65283,
+   "miId": 118,
+   "desc": "Received a LASAL_EVENT_26_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_27_RECEIVED",
+   "maId": 65283,
+   "miId": 119,
+   "desc": "Received a LASAL_EVENT_27_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_28_RECEIVED",
+   "maId": 65283,
+   "miId": 120,
+   "desc": "Received a LASAL_EVENT_28_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_29_RECEIVED",
+   "maId": 65283,
+   "miId": 121,
+   "desc": "Received a LASAL_EVENT_29_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_30_RECEIVED",
+   "maId": 65283,
+   "miId": 128,
+   "desc": "Received a LASAL_EVENT_30_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_31_RECEIVED",
+   "maId": 65283,
+   "miId": 129,
+   "desc": "Received a LASAL_EVENT_31_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_32_RECEIVED",
+   "maId": 65283,
+   "miId": 130,
+   "desc": "Received a LASAL_EVENT_32_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_33_RECEIVED",
+   "maId": 65283,
+   "miId": 131,
+   "desc": "Received a LASAL_EVENT_33_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_34_RECEIVED",
+   "maId": 65283,
+   "miId": 132,
+   "desc": "Received a LASAL_EVENT_34_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_35_RECEIVED",
+   "maId": 65283,
+   "miId": 133,
+   "desc": "Received a LASAL_EVENT_35_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_36_RECEIVED",
+   "maId": 65283,
+   "miId": 134,
+   "desc": "Received a LASAL_EVENT_36_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_37_RECEIVED",
+   "maId": 65283,
+   "miId": 135,
+   "desc": "Received a LASAL_EVENT_37_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_38_RECEIVED",
+   "maId": 65283,
+   "miId": 136,
+   "desc": "Received a LASAL_EVENT_38_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_39_RECEIVED",
+   "maId": 65283,
+   "miId": 137,
+   "desc": "Received a LASAL_EVENT_39_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_40_RECEIVED",
+   "maId": 65283,
+   "miId": 144,
+   "desc": "Received a LASAL_EVENT_40_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_41_RECEIVED",
+   "maId": 65283,
+   "miId": 145,
+   "desc": "Received a LASAL_EVENT_41_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_42_RECEIVED",
+   "maId": 65283,
+   "miId": 146,
+   "desc": "Received a LASAL_EVENT_42_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_43_RECEIVED",
+   "maId": 65283,
+   "miId": 147,
+   "desc": "Received a LASAL_EVENT_43_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_44_RECEIVED",
+   "maId": 65283,
+   "miId": 148,
+   "desc": "Received a LASAL_EVENT_44_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_45_RECEIVED",
+   "maId": 65283,
+   "miId": 149,
+   "desc": "Received a LASAL_EVENT_45_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_46_RECEIVED",
+   "maId": 65283,
+   "miId": 150,
+   "desc": "Received a LASAL_EVENT_46_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_47_RECEIVED",
+   "maId": 65283,
+   "miId": 151,
+   "desc": "Received a LASAL_EVENT_47_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_48_RECEIVED",
+   "maId": 65283,
+   "miId": 152,
+   "desc": "Received a LASAL_EVENT_48_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_49_RECEIVED",
+   "maId": 65283,
+   "miId": 153,
+   "desc": "Received a LASAL_EVENT_49_RECEIVED frame",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CONTROL_INACTIVE_INTERACTION",
+   "maId": 65296,
+   "miId": 1654,
+   "desc": "Fired if interaction was handled on an inactive component.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INSUFFICIENT_PRIVILEGES_EVENT",
+   "maId": 65296,
+   "miId": 1655,
+   "desc": "Fired if the access was denied because of insufficient privileges.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INSUFFICIENT_PRIVILEGES_WINDOW",
+   "maId": 65296,
+   "miId": 1656,
+   "desc": "Fired if the access was denied because of insufficient privileges.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INSUFFICIENT_CHECKBITS_WINDOW",
+   "maId": 65296,
+   "miId": 1657,
+   "desc": "Fired if the access was denied because of insufficient checkbits.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INSUFFICIENT_PRIVILEGES_ROUTE",
+   "maId": 65296,
+   "miId": 1658,
+   "desc": "Fired if the access was denied because of insufficient privileges.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "INSUFFICIENT_CHECKBITS_ROUTE",
+   "maId": 65296,
+   "miId": 1659,
+   "desc": "Fired if the access was denied because of insufficient checkbits.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CONTROL_INACTIVE_INTERACTION_TYPE_STATE",
+   "maId": 65296,
+   "miId": 1660,
+   "desc": "Fired if interaction was handled on an inactive component.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CONTROL_INACTIVE_INTERACTION_TYPE_ACCESS_NUMBER_CONTROL",
+   "maId": 65296,
+   "miId": 1661,
+   "desc": "Fired if interaction was handled on an inactive component.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CONTROL_INACTIVE_INTERACTION_TYPE_ACCESS_NUMBER_DATAPOINT",
+   "maId": 65296,
+   "miId": 1662,
+   "desc": "Fired if interaction was handled on an inactive component.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CONTROL_INACTIVE_INTERACTION_TYPE_WRITE_PROTECTED_DATAPOINT",
+   "maId": 65296,
+   "miId": 1663,
+   "desc": "Fired if interaction was handled on an inactive component.",
+   "src": 2,
+   "canSubscribe": false,
+   "canPublish": false
+  }
+ ],
+ "ext": [
+  {
+   "name": "INT_WS_SEND",
+   "maId": 65296,
+   "miId": 61442,
+   "desc": "Fired if some data needs to be send via the websocket",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SEND_TO_ALL_PSH",
+   "maId": 65280,
+   "miId": 157,
+   "desc": "Send a multi-command Frame",
+   "src": 0,
+   "canSubscribe": true,
+   "canPublish": true
+  },
+  {
+   "name": "SEND_FRAGMENT_RT",
+   "maId": 65280,
+   "miId": 49,
+   "desc": "Send a fragment of a frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SEND_FRAGMENT_DS_RSP",
+   "maId": 65280,
+   "miId": 50,
+   "desc": "Send a response for a fragment",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VERSION",
+   "maId": 65280,
+   "miId": 16,
+   "desc": "Send a Get Version Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VERSION_PSH",
+   "maId": 65280,
+   "miId": 17,
+   "desc": "Send a Get Version Response Frame",
+   "src": 0,
+   "canSubscribe": true,
+   "canPublish": true
+  },
+  {
+   "name": "GET_PROJECTINFO",
+   "maId": 65280,
+   "miId": 22,
+   "desc": "Send a Get Project Info Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_CLIENT_CONNECTION_INFO",
+   "maId": 65280,
+   "miId": 24,
+   "desc": "Send a Get Client Connection Info Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LOOP",
+   "maId": 65280,
+   "miId": 98,
+   "desc": "Send a Loop Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LOGIN",
+   "maId": 65280,
+   "miId": 256,
+   "desc": "Send a User Login Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LOGOUT",
+   "maId": 65280,
+   "miId": 258,
+   "desc": "Send a User Logout Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_PW_CHANGE",
+   "maId": 65280,
+   "miId": 260,
+   "desc": "Send a Password Change Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CHECK_ACCESS_LEVEL",
+   "maId": 65280,
+   "miId": 266,
+   "desc": "Send a User Logout Response Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_CREATE",
+   "maId": 65280,
+   "miId": 272,
+   "desc": "Send a User Create Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_CHANGE",
+   "maId": 65280,
+   "miId": 274,
+   "desc": "Send a User Settings Change Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_DELETE",
+   "maId": 65280,
+   "miId": 276,
+   "desc": "Send a User Delete Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_LIST",
+   "maId": 65280,
+   "miId": 278,
+   "desc": "Send a Get User List Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_DETAIL",
+   "maId": 65280,
+   "miId": 280,
+   "desc": "Send a User Detail Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_RESTORE",
+   "maId": 65280,
+   "miId": 282,
+   "desc": "Send a User Restore Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USERS_CLEAN_UP",
+   "maId": 65280,
+   "miId": 311,
+   "desc": "Send a Users Clean Up Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_EXPORT",
+   "maId": 65280,
+   "miId": 313,
+   "desc": "Send a User Export Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "USER_IMPORT",
+   "maId": 65280,
+   "miId": 321,
+   "desc": "Send a User Import Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_CREATE",
+   "maId": 65280,
+   "miId": 288,
+   "desc": "Send a Role Create Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_CHANGE",
+   "maId": 65280,
+   "miId": 290,
+   "desc": "Send a Role Change Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_DELETE",
+   "maId": 65280,
+   "miId": 292,
+   "desc": "Send a Role Delete Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_LIST",
+   "maId": 65280,
+   "miId": 294,
+   "desc": "Send a Get Role List Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_DETAIL",
+   "maId": 65280,
+   "miId": 296,
+   "desc": "Send a Get Role Detail Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_EXPORT",
+   "maId": 65280,
+   "miId": 323,
+   "desc": "Send a Role Export Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ROLE_IMPORT",
+   "maId": 65280,
+   "miId": 325,
+   "desc": "Send a Role Import Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "IS_VAR_VALIDE",
+   "maId": 65280,
+   "miId": 512,
+   "desc": "Send a Is Var Valid Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CREATE_VAR",
+   "maId": 65280,
+   "miId": 514,
+   "desc": "Send a Create Variable Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VAR_ID_FROM_NAME",
+   "maId": 65280,
+   "miId": 516,
+   "desc": "Send a Get Var Id From Name Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VAR_ID_FROM_LASAL_ID",
+   "maId": 65280,
+   "miId": 518,
+   "desc": "Send a Get Var Id From Lasal Id Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_LASAL_ID_FROM_NAME",
+   "maId": 65280,
+   "miId": 520,
+   "desc": "Send a Get Lasal Id From Name Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_LASAL_ID_FROM_VAR_ID",
+   "maId": 65280,
+   "miId": 522,
+   "desc": "Send a Get Lasal Id From Var Id Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_NAME_FROM_VAR_ID",
+   "maId": 65280,
+   "miId": 524,
+   "desc": "Send a Get Name From Var Id Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_NAME_FROM_LASAL_ID",
+   "maId": 65280,
+   "miId": 526,
+   "desc": "Send a Get Name From Var Id Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_DP_LIST",
+   "maId": 65280,
+   "miId": 528,
+   "desc": "Send a Get DP List Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_DP_INFO",
+   "maId": 65280,
+   "miId": 530,
+   "desc": "Send a Get DP Info Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VAR_ID_FROM_CRC",
+   "maId": 65280,
+   "miId": 532,
+   "desc": "Send a Get Var Id from CRC Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_CRC_FROM_VAR_ID",
+   "maId": 65280,
+   "miId": 534,
+   "desc": "Send a Get CRC From Var Id Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_VALUE",
+   "maId": 65280,
+   "miId": 544,
+   "desc": "Send a Get Value Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_STRING",
+   "maId": 65280,
+   "miId": 546,
+   "desc": "Send a Get String Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_DATA",
+   "maId": 65280,
+   "miId": 548,
+   "desc": "Send a Get Data Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SET_VALUE",
+   "maId": 65280,
+   "miId": 560,
+   "desc": "Send a Set Value Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SET_STRING",
+   "maId": 65280,
+   "miId": 562,
+   "desc": "Send a Set String Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SET_DATA",
+   "maId": 65280,
+   "miId": 564,
+   "desc": "Send a Set Data Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ADD_REFLIST",
+   "maId": 65280,
+   "miId": 576,
+   "desc": "Send a Add Ref List Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SUB_REFLIST",
+   "maId": 65280,
+   "miId": 578,
+   "desc": "Send a Sub Reflist Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CLEAR_REFLIST",
+   "maId": 65280,
+   "miId": 580,
+   "desc": "Send a Clear Reflist Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "START_REFLIST",
+   "maId": 65280,
+   "miId": 582,
+   "desc": "Send a Start Reflist Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STOP_REFLIST",
+   "maId": 65280,
+   "miId": 584,
+   "desc": "Send a Stop Reflist Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CHANGE_STATION_PARAMETERS",
+   "maId": 65280,
+   "miId": 58,
+   "desc": "Send a Change Station Parameters Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATION_CON",
+   "maId": 65280,
+   "miId": 768,
+   "desc": "Send a Station Connection Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATION_DISCON",
+   "maId": 65280,
+   "miId": 770,
+   "desc": "Send a Station Disconnection Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "STATION_SETCON",
+   "maId": 65280,
+   "miId": 773,
+   "desc": "Send a Set Connection Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_ADD",
+   "maId": 65281,
+   "miId": 1024,
+   "desc": "Send a Add EventJournal Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_GET",
+   "maId": 65281,
+   "miId": 1026,
+   "desc": "Send a Get EventJournal Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_GET_ALL",
+   "maId": 65281,
+   "miId": 1028,
+   "desc": "Send a Get All EventJournal Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_DEL",
+   "maId": 65281,
+   "miId": 1030,
+   "desc": "Send a Del EventJournal Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_DEL_ALL",
+   "maId": 65281,
+   "miId": 1032,
+   "desc": "Send a Del All EventJournal Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_ALARM_QUIT",
+   "maId": 65281,
+   "miId": 1040,
+   "desc": "Send a Alarm Quit EventJournal Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_ALARM_QUIT_ALL",
+   "maId": 65281,
+   "miId": 1042,
+   "desc": "Send a Alarm Quit All EventJournal Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_UPDATE_ADD",
+   "maId": 65281,
+   "miId": 1067,
+   "desc": "Send a EventJournal Update Add Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "EVENTJOURNAL_UPDATE_SUB",
+   "maId": 65281,
+   "miId": 1069,
+   "desc": "Send a EventJournal Update Sub Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARMLIST_UPDATE_ADD",
+   "maId": 65281,
+   "miId": 1044,
+   "desc": "Send a Alarmlist Update Add Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARMLIST_UPDATE_SUB",
+   "maId": 65281,
+   "miId": 1046,
+   "desc": "Send a Alarmlist Update Sub Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "HOTALARM_UPDATE_ADD",
+   "maId": 65281,
+   "miId": 1056,
+   "desc": "Send a Hotalarm Update Add Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "HOTALARM_UPDATE_SUB",
+   "maId": 65281,
+   "miId": 1058,
+   "desc": "Send a Hotalarm Update Sub Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARM_DEL",
+   "maId": 65281,
+   "miId": 1062,
+   "desc": "Send a Del Alarm Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARM_DEL_ALL",
+   "maId": 65281,
+   "miId": 1064,
+   "desc": "Send a Del All Alarm Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ALARM_INFO_UPDATE_ADD",
+   "maId": 65281,
+   "miId": 1071,
+   "desc": "Send a Alarm Info Update Add Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "RECIPE_SAVE",
+   "maId": 65280,
+   "miId": 147,
+   "desc": "Send a Save Recipe Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "RECIPE_LOAD",
+   "maId": 65280,
+   "miId": 145,
+   "desc": "Send a Load Recipe Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_OPEN",
+   "maId": 65280,
+   "miId": 1280,
+   "desc": "Send a File Open Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_CLOSE",
+   "maId": 65280,
+   "miId": 1282,
+   "desc": "Send a File Close Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_SEEK",
+   "maId": 65280,
+   "miId": 1284,
+   "desc": "Send a File Seek Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_TELL",
+   "maId": 65280,
+   "miId": 1286,
+   "desc": "Send a File Tell Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_READ",
+   "maId": 65280,
+   "miId": 1288,
+   "desc": "Send a File Read Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_WRITE",
+   "maId": 65280,
+   "miId": 1290,
+   "desc": "Send a File Write Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_GET",
+   "maId": 65280,
+   "miId": 1292,
+   "desc": "Send a File Get Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_PUT",
+   "maId": 65280,
+   "miId": 1294,
+   "desc": "Send a File Put Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_LENGTH",
+   "maId": 65280,
+   "miId": 1296,
+   "desc": "Send a File Length Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_CONTENT",
+   "maId": 65280,
+   "miId": 1298,
+   "desc": "Send a File Content Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DIR_CREATE",
+   "maId": 65280,
+   "miId": 1312,
+   "desc": "Send a Create Dir/File Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DIR_READ",
+   "maId": 65280,
+   "miId": 1314,
+   "desc": "Send a Directory Read Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_REMOVE",
+   "maId": 65280,
+   "miId": 1328,
+   "desc": "Send a Remove Dir/File Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_COPY",
+   "maId": 65280,
+   "miId": 1330,
+   "desc": "Send a Copy Dir/File Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_INFO",
+   "maId": 65280,
+   "miId": 1332,
+   "desc": "Send a File Info Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_RENAME",
+   "maId": 65280,
+   "miId": 1334,
+   "desc": "Send a File Rename Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_SET_ATT",
+   "maId": 65280,
+   "miId": 1336,
+   "desc": "Send a File Set Attribut Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_DRIVE_LIST",
+   "maId": 65280,
+   "miId": 1338,
+   "desc": "Send a Drive List Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "FILE_MOVE",
+   "maId": 65280,
+   "miId": 1340,
+   "desc": "Send a Move Dir/File Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_DRIVE_INFO",
+   "maId": 65280,
+   "miId": 1342,
+   "desc": "Send a Drive Info Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DIRECTORY_EVENT_REGISTRATION",
+   "maId": 65280,
+   "miId": 1344,
+   "desc": "Send a Directory Event Registration Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DIRECTORY_EVENT_DEREGISTRATION",
+   "maId": 65280,
+   "miId": 1346,
+   "desc": "Send a Directory Event Deregistration Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CANCEL_COMMAND",
+   "maId": 65280,
+   "miId": 14,
+   "desc": "Send a Cancel Command Frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ADD_LOCAL_CLIENT",
+   "maId": 65280,
+   "miId": 176,
+   "desc": "Send a add an local client frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ADD_LOCAL_CLIENT_RANGE",
+   "maId": 65280,
+   "miId": 178,
+   "desc": "Send a add an local client range frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "REMOVE_THIS_AS_LOCAL_CLIENT",
+   "maId": 65280,
+   "miId": 180,
+   "desc": "Send a remove this as local client frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "REMOVE_LOCAL_CLIENT",
+   "maId": 65280,
+   "miId": 182,
+   "desc": "Send a remove local client frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "REMOVE_LOCAL_CLIENT_RANGE",
+   "maId": 65280,
+   "miId": 184,
+   "desc": "Send a remove local client range frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "CLEAR_LOCAL_CLIENT_LIST",
+   "maId": 65280,
+   "miId": 186,
+   "desc": "Send a clear local client list frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_CURRENT_ID",
+   "maId": 65280,
+   "miId": 188,
+   "desc": "Send a get current id frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_LOCAL_CLIENT_LIST",
+   "maId": 65280,
+   "miId": 190,
+   "desc": "Send a get local client list frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_LOCAL_CLIENT_LIST_DETAILS",
+   "maId": 65280,
+   "miId": 192,
+   "desc": "Send a get local client list details frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_LOCAL_CLIENT_BY_ID",
+   "maId": 65280,
+   "miId": 194,
+   "desc": "Send a get local client by id frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SUBSCRIBE_STATE",
+   "maId": 65280,
+   "miId": 53,
+   "desc": "Send a subscribe state frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "UNSUBSCRIBE_STATE",
+   "maId": 65280,
+   "miId": 55,
+   "desc": "Send a unsubscribe state frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "GET_STATE",
+   "maId": 65280,
+   "miId": 64,
+   "desc": "Send a get state frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "ENABLE_LOG_TO_FILE",
+   "maId": 65280,
+   "miId": 80,
+   "desc": "Send a enable persisted browser log frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "DISABLE_LOG_TO_FILE",
+   "maId": 65280,
+   "miId": 82,
+   "desc": "Send a disable persisted browser log frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LOG_TO_FILE",
+   "maId": 65280,
+   "miId": 84,
+   "desc": "Send a persisted browser log frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_0_SEND",
+   "maId": 65283,
+   "miId": 0,
+   "desc": "Send a LASAL_EVENT_0_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_1_SEND",
+   "maId": 65283,
+   "miId": 1,
+   "desc": "Send a LASAL_EVENT_1_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_2_SEND",
+   "maId": 65283,
+   "miId": 2,
+   "desc": "Send a LASAL_EVENT_2_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_3_SEND",
+   "maId": 65283,
+   "miId": 3,
+   "desc": "Send a LASAL_EVENT_3_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_4_SEND",
+   "maId": 65283,
+   "miId": 4,
+   "desc": "Send a LASAL_EVENT_4_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_5_SEND",
+   "maId": 65283,
+   "miId": 5,
+   "desc": "Send a LASAL_EVENT_5_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_6_SEND",
+   "maId": 65283,
+   "miId": 6,
+   "desc": "Send a LASAL_EVENT_6_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_7_SEND",
+   "maId": 65283,
+   "miId": 7,
+   "desc": "Send a LASAL_EVENT_7_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_8_SEND",
+   "maId": 65283,
+   "miId": 8,
+   "desc": "Send a LASAL_EVENT_8_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_9_SEND",
+   "maId": 65283,
+   "miId": 9,
+   "desc": "Send a LASAL_EVENT_9_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_10_SEND",
+   "maId": 65283,
+   "miId": 16,
+   "desc": "Send a LASAL_EVENT_10_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_11_SEND",
+   "maId": 65283,
+   "miId": 17,
+   "desc": "Send a LASAL_EVENT_11_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_12_SEND",
+   "maId": 65283,
+   "miId": 18,
+   "desc": "Send a LASAL_EVENT_12_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_13_SEND",
+   "maId": 65283,
+   "miId": 19,
+   "desc": "Send a LASAL_EVENT_13_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_14_SEND",
+   "maId": 65283,
+   "miId": 20,
+   "desc": "Send a LASAL_EVENT_14_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_15_SEND",
+   "maId": 65283,
+   "miId": 21,
+   "desc": "Send a LASAL_EVENT_15_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_16_SEND",
+   "maId": 65283,
+   "miId": 22,
+   "desc": "Send a LASAL_EVENT_16_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_17_SEND",
+   "maId": 65283,
+   "miId": 23,
+   "desc": "Send a LASAL_EVENT_17_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_18_SEND",
+   "maId": 65283,
+   "miId": 24,
+   "desc": "Send a LASAL_EVENT_18_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_19_SEND",
+   "maId": 65283,
+   "miId": 25,
+   "desc": "Send a LASAL_EVENT_19_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_20_SEND",
+   "maId": 65283,
+   "miId": 32,
+   "desc": "Send a LASAL_EVENT_20_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_21_SEND",
+   "maId": 65283,
+   "miId": 33,
+   "desc": "Send a LASAL_EVENT_21_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_22_SEND",
+   "maId": 65283,
+   "miId": 34,
+   "desc": "Send a LASAL_EVENT_22_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_23_SEND",
+   "maId": 65283,
+   "miId": 35,
+   "desc": "Send a LASAL_EVENT_23_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_24_SEND",
+   "maId": 65283,
+   "miId": 36,
+   "desc": "Send a LASAL_EVENT_24_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_25_SEND",
+   "maId": 65283,
+   "miId": 37,
+   "desc": "Send a LASAL_EVENT_25_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_26_SEND",
+   "maId": 65283,
+   "miId": 38,
+   "desc": "Send a LASAL_EVENT_26_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_27_SEND",
+   "maId": 65283,
+   "miId": 39,
+   "desc": "Send a LASAL_EVENT_27_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_28_SEND",
+   "maId": 65283,
+   "miId": 40,
+   "desc": "Send a LASAL_EVENT_28_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_29_SEND",
+   "maId": 65283,
+   "miId": 41,
+   "desc": "Send a LASAL_EVENT_29_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_30_SEND",
+   "maId": 65283,
+   "miId": 48,
+   "desc": "Send a LASAL_EVENT_30_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_31_SEND",
+   "maId": 65283,
+   "miId": 49,
+   "desc": "Send a LASAL_EVENT_31_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_32_SEND",
+   "maId": 65283,
+   "miId": 50,
+   "desc": "Send a LASAL_EVENT_32_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_33_SEND",
+   "maId": 65283,
+   "miId": 51,
+   "desc": "Send a LASAL_EVENT_33_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_34_SEND",
+   "maId": 65283,
+   "miId": 52,
+   "desc": "Send a LASAL_EVENT_34_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_35_SEND",
+   "maId": 65283,
+   "miId": 53,
+   "desc": "Send a LASAL_EVENT_35_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_36_SEND",
+   "maId": 65283,
+   "miId": 54,
+   "desc": "Send a LASAL_EVENT_36_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_37_SEND",
+   "maId": 65283,
+   "miId": 55,
+   "desc": "Send a LASAL_EVENT_37_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_38_SEND",
+   "maId": 65283,
+   "miId": 56,
+   "desc": "Send a LASAL_EVENT_38_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_39_SEND",
+   "maId": 65283,
+   "miId": 57,
+   "desc": "Send a LASAL_EVENT_39_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_40_SEND",
+   "maId": 65283,
+   "miId": 64,
+   "desc": "Send a LASAL_EVENT_40_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_41_SEND",
+   "maId": 65283,
+   "miId": 65,
+   "desc": "Send a LASAL_EVENT_41_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_42_SEND",
+   "maId": 65283,
+   "miId": 66,
+   "desc": "Send a LASAL_EVENT_42_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_43_SEND",
+   "maId": 65283,
+   "miId": 67,
+   "desc": "Send a LASAL_EVENT_43_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_44_SEND",
+   "maId": 65283,
+   "miId": 68,
+   "desc": "Send a LASAL_EVENT_44_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_45_SEND",
+   "maId": 65283,
+   "miId": 69,
+   "desc": "Send a LASAL_EVENT_45_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_46_SEND",
+   "maId": 65283,
+   "miId": 70,
+   "desc": "Send a LASAL_EVENT_46_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_47_SEND",
+   "maId": 65283,
+   "miId": 71,
+   "desc": "Send a LASAL_EVENT_47_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_48_SEND",
+   "maId": 65283,
+   "miId": 72,
+   "desc": "Send a LASAL_EVENT_48_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "LASAL_EVENT_49_SEND",
+   "maId": 65283,
+   "miId": 73,
+   "desc": "Send a LASAL_EVENT_49_SEND frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  },
+  {
+   "name": "SET_TEXT",
+   "maId": 65297,
+   "miId": 0,
+   "desc": "Send a setText frame",
+   "src": 0,
+   "canSubscribe": false,
+   "canPublish": false
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+# Changelog for sig-designer-rulers
+
+## [01.02.001] - 2022-01-18
+by _Oliver Tomondy_ of _SIGMATEK GmbH & Co KG_
+
+### Changed
+- Removed obsolete if statements.
+
+## [01.02.000] - 2019-09-20
+by _Oliver Tomondy_ of _SIGMATEK GmbH & Co KG_
+
+### Changed
+- Converted element to default styling
+
+## [01.01.001] - 2019-07-19
+by _RSC_ of _SIGMATEK GmbH & Co KG_
+
+### Changed
+- Converted element to polymer 3
+
+## [01.01.000] - 2019-03-11
+by _Robert Schild_ of _SIGMATEK GmbH & Co KG_
+
+### Added
+- initial release

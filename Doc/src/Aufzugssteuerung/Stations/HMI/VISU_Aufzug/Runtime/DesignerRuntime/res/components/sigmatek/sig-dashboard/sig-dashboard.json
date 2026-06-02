@@ -1,0 +1,56 @@
+{
+    "name": "sig-dashboard",
+    "shortName": {
+        "en": "Dashboard",
+        "de": "Dashboard"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "01.02.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a dashboard container as a polymer custom element",
+        "de": "Implements a dashboard container as a polymer custom element"
+    },
+    "main": [
+        "sig-dashboard.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-dashboard.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "defaultDimensions": {
+        "width": "0px",
+        "height": "0px"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-dashboard-css.js"
+        }
+    ],
+    "toolbox": false,
+    "slotted": true,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "index",
+            "designer"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "properties": []
+}

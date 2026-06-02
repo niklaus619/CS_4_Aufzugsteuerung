@@ -1,0 +1,52 @@
+{
+    "name": "sig-designer-placeholder",
+    "shortName": {
+        "en": "Designer placeholder",
+        "de": "Designer placeholder"
+    },
+    "controlType": {
+        "en": "Designer",
+        "de": "Designer"
+    },
+    "version": "01.01.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a designer placeholder as a polymer custom element.",
+        "de": "Implements a designer placeholder as a polymer custom element."
+    },
+    "main": [
+        "sig-designer-placeholder.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-designer-placeholder.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sigmatek/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-designer-placeholder-css.js"
+        }
+    ],
+    "toolbox": false,
+    "slotted": false,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "designer"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [],
+    "properties": []
+}

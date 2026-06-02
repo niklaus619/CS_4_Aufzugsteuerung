@@ -1,0 +1,55 @@
+{
+    "name": "sig-window-layer",
+    "shortName": {
+        "en": "Window layer",
+        "de": "Window layer"
+    },
+    "controlType": {
+        "en": "System",
+        "de": "System"
+    },
+    "version": "01.02.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a window layer a polymer custom element",
+        "de": "Implements a window layer a polymer custom element"
+    },
+    "main": [
+        "sig-window-layer.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-window-layer.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "components/sig-element#^1.2.0",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "defaultDimensions": {
+        "width": "100%",
+        "height": "100%"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-window-layer-css.js"
+        }
+    ],
+    "toolbox": false,
+    "slotted": true,
+    "usableInShadowDom": false,
+    "moduleImport": {
+        "importType": "static",
+        "area": [
+            "index"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "properties": []
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Network Name="default" Revision="0.0">
+	<!-- List of Components in this network -->
+	<Components>
+		<Object
+			Name       = "clsTest1"
+			GUID       = "{CD6D4B54-FC7B-4081-962D-6E5B5BF91F69}"
+			Class      = "clsTest"
+			Position   = "(810,600)"
+			Visualized = "false"
+			CyclicTime = "1 ms">
+			<Channels>
+				<Server Name="ClassSvr"/>
+			</Channels>
+		</Object>
+	</Components>
+	<Comments>
+	</Comments>
+	<!-- List of Connections in this network -->
+	<Connections>
+	</Connections>
+	<!-- Headerfiles -->
+	<Options>
+	</Options>
+</Network>

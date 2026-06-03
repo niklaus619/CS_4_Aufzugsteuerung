@@ -16,6 +16,12 @@
 		<File Path=".\Include\C_channels.h"/>
 		<File Path=".\Include\lslpublictypes.h"/>
 	</HeaderFiles>
+	<ClassFiles>
+		<File Path=".\Class\clsTest\clsTest.st"/>
+	</ClassFiles>
+	<NetworkFiles>
+		<File Path=".\Network\default\default.lcn"/>
+	</NetworkFiles>
 	<ObjectFiles>
 		<File Path=".\Loader\Source\Loader.lob" Downloadable="false"/>
 	</ObjectFiles>

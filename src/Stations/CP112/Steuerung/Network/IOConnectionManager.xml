@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<IOConnectionManager Version="2" Detail="0" PLC="">
+	<!-- List of Entries -->
+	<Entry Name="**IOCONN_EMPTY**" GUID="{9B338A1E-576C-4BA0-BF00-90FD16012DEA}" Objectsize="284">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="_DriveMng_DC0621" Server="CmdState" ObjClt="_DriveMng_DC0621_Axis1" Client="DriveMng" IOI="IOState" SortIndex="5" KeyName="000000" Advanced="0"/>
+			<IOConnection ObjSrv="_DriveMng_DC0622" Server="CmdState" ObjClt="_DriveMng_DC0622_Axis1" Client="DriveMng" IOI="IOState" SortIndex="6" KeyName="000001" Advanced="0"/>
+			<IOConnection ObjSrv="_DriveMng_DC0621_Axis1" Server="CmdState" ObjClt="DrivePosControl1" Client="cDriveAxis" IOI="IOState" SortIndex="7" KeyName="000002" Advanced="0"/>
+			<IOConnection ObjSrv="_DriveMng_DC0621_Axis1" Server="ActPos" ObjClt="_LMCAxis1" Client="ActPosition" IOI="Input" Type="Analog" SortIndex="8" KeyName="000003" Advanced="0"/>
+			<IOConnection ObjSrv="_DriveMng_DC0622_Axis1" Server="CmdState" ObjClt="DrivePosControl2" Client="cDriveAxis" IOI="IOState" SortIndex="9" KeyName="000004" Advanced="0"/>
+			<IOConnection SortIndex="0" KeyName="000005" Advanced="0"/>
+			<IOConnection ObjSrv="_DriveMng_DC0622_Axis1" Server="ActPos" ObjClt="_LMCAxis2" Client="ActPosition" IOI="Input" Type="Analog" SortIndex="10" KeyName="000010" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "IO_Element1"
+		GUID       = "{A9980A06-AE0C-4504-838F-363C51F06801}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM1611" Server="Input1" ObjClt="clsHMI1" Client="sTaster1" IOI="Input" Type="Digital" SortIndex="1" KeyName="000006" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "IO_Element2"
+		GUID       = "{1CB4956A-8FEA-4160-A071-61D65219C967}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM1611" Server="Input2" ObjClt="clsHMI1" Client="sTaster2" IOI="Input" Type="Digital" SortIndex="2" KeyName="000007" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "IO_Element3"
+		GUID       = "{0C4F6025-12EF-42E4-8999-731E84AF0109}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM1611" Server="Input3" ObjClt="clsHMI1" Client="sTaster3" IOI="Input" Type="Digital" SortIndex="3" KeyName="000008" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "IO_Element4"
+		GUID       = "{1921FDC2-96DC-47AD-992D-1E777B75E3C5}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM1611" Server="Input4" ObjClt="clsHMI1" Client="sTaster4" IOI="Input" Type="Digital" SortIndex="4" KeyName="000009" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<!-- List of Folders -->
+</IOConnectionManager>

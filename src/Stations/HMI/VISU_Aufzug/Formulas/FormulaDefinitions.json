@@ -1,0 +1,268 @@
+{
+	"type": "FormulaDefinitions",
+	"version": "0.0.96",
+	"formulas": [
+		{
+			"type": "StandardFormula",
+			"designTimeId": "c8e954c2-d0e5-4b52-8bd9-dd2d93aba6d1",
+			"name": "Acceleration_mmPsec2",
+			"divisor": "1",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "a7973440-c5c8-4490-bc20-62f905b6965a",
+			"name": "Angle_deg",
+			"divisor": "10000",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "3d931258-9977-4a37-8994-20b0aafaa943",
+			"name": "Area_mm2",
+			"divisor": "10",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "c38d9a17-59e8-4d1b-b8f1-199296989c0d",
+			"name": "Force_kN",
+			"divisor": "1000",
+			"factor": "1",
+			"offset": "0",
+			"baseFormula": {
+				"value": "Force_N",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "71d579e9-b795-4ace-9f0d-22214f9af23c"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "71d579e9-b795-4ace-9f0d-22214f9af23c",
+			"name": "Force_N",
+			"divisor": "1",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "092d9e03-e31f-48a9-8936-29baf5dd28bf",
+			"name": "Length_m",
+			"divisor": "1000",
+			"factor": "1",
+			"offset": "0",
+			"baseFormula": {
+				"value": "Length_mm",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "b53fb6f6-2019-4162-bd19-28aa1192d607"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "b53fb6f6-2019-4162-bd19-28aa1192d607",
+			"name": "Length_mm",
+			"divisor": "10000",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "93d06d55-d3b1-4907-87d7-31243c2353c7",
+			"name": "Memory_GB",
+			"divisor": "1024",
+			"factor": "1",
+			"offset": "0",
+			"baseFormula": {
+				"value": "Memory_MB",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "2c5799e4-b83f-4b51-b3ef-80eea99aff7a"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "f11511a5-a13b-4b12-a419-77f7368c3997",
+			"name": "Memory_kB",
+			"divisor": "1024",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "2c5799e4-b83f-4b51-b3ef-80eea99aff7a",
+			"name": "Memory_MB",
+			"divisor": "1024",
+			"factor": "1",
+			"offset": "0",
+			"baseFormula": {
+				"value": "Memory_kB",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "f11511a5-a13b-4b12-a419-77f7368c3997"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "399618e8-4ef3-462a-a814-cf248cd553ae",
+			"name": "Pressure_bar",
+			"divisor": "1000",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "ec16c62b-37e3-44d6-b515-759bf3f4807c",
+			"name": "Revolution_RPM",
+			"divisor": "1000",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "981eed86-6ad5-4554-835b-729250a43338",
+			"name": "Speed_mlpmin",
+			"divisor": "1",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "3c97848f-9bcb-4550-bcd3-96ce5b60a0e0",
+			"name": "Speed_mmpsec",
+			"divisor": "10000",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "669a9019-df59-4c01-b7f8-1fd708c2c472",
+			"name": "Time_hours",
+			"divisor": "60",
+			"factor": "1",
+			"offset": "0",
+			"baseFormula": {
+				"value": "Time_min",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "a31a5943-e231-4ae0-9a22-d0856b9c2202"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "a31a5943-e231-4ae0-9a22-d0856b9c2202",
+			"name": "Time_min",
+			"divisor": "60",
+			"factor": "1",
+			"offset": "0",
+			"baseFormula": {
+				"value": "Time_secs",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "662a1fea-6c12-41ae-a445-a9fcc981adbf"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "bb228d8b-cafe-4d2e-a590-c6d574230023",
+			"name": "Time_ms",
+			"divisor": "1",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "03029888-9de7-428d-bc39-f7ece49c6e68",
+			"name": "Time_sec",
+			"divisor": "1000",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "662a1fea-6c12-41ae-a445-a9fcc981adbf",
+			"name": "Time_secs",
+			"divisor": "1000",
+			"factor": "1",
+			"offset": "0",
+			"baseFormula": {
+				"value": "Time_ms",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "bb228d8b-cafe-4d2e-a590-c6d574230023"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "StandardFormula",
+			"designTimeId": "3dae6ec6-a512-42ab-b721-820b397bd975",
+			"name": "Volume_ccm",
+			"divisor": "1",
+			"factor": "1",
+			"offset": "0",
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"type": "StationManager",
+	"version": "0.0.96",
+	"stations": [
+		{
+			"type": "station",
+			"designTimeId": "2b914b7b-ba4e-4c25-a728-b4006e46dde5",
+			"name": "Station0",
+			"connection": "INTERN",
+			"importFilePath": "C:\\git\\CS_4_Aufzugsteuerung\\src\\Stations\\CP112\\Steuerung\\MaeExp.xml",
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
+}

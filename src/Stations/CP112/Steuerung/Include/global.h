@@ -11,6 +11,25 @@
 
 #include <Lsl_String.h>
 
+//Project Headerfiles
+#include "..\Class\DiasMasterC\MasterSettings.h"
+#include "..\Class\DiasMaster\DIASMaster.h"
+#include <LSL_STITask.h>
+#include "..\Class\I2CCDIAS\EEFuncDef.h"
+#include "..\Class\VaranManager_Base\VaranManager_Base.h"
+#include "..\Source\interfaces\lsl_st_sdias.h"
+#include "..\Class\HwControl\HwControlLogging.h"
+#include "..\Source\interfaces\lsl_st_tcp_user.h"
+#include "..\Source\interfaces\lsl_st_varan.h"
+#include "..\Source\interfaces\lsl_st_cdias.h"
+#include <SystemTypes.h>
+#include <File_IOTypes.h>
+#include <MultiTaskTypes.h>
+#include <CanTypes.h>
+#include "..\Class\StringInternal\StringDefs.h"
+#include <lsl_st_serial.h>
+#include <LinkerTypes.h>
+
 #include "unit.h"
 #include "UserDef.h"
 #include "types.h"

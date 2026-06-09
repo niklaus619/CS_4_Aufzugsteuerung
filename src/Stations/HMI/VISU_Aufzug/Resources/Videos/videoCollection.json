@@ -1,0 +1,7 @@
+{
+	"type": "MediaVideoCollection",
+	"version": "0.0.96",
+	"name": "MediaVideoCollection",
+	"mediaType": "Video",
+	"mediaItems": []
+}

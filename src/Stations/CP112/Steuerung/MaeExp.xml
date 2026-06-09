@@ -1,5 +1,1471 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<File CRC="7544D54C" Version="1.1" SubVersion="2">
+<File CRC="7CA4D7DB" Version="1.1" SubVersion="2">
+	<Types>
+		<Type Name="_DRIVETYPE" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="_NotFound" Value="0"/>
+				<Type Name="_SDD_310" Value="1"/>
+				<Type Name="_SDD_315" Value="2"/>
+				<Type Name="_SDD_105" Value="3"/>
+				<Type Name="_SDD_120" Value="4"/>
+				<Type Name="_SDD_305" Value="5"/>
+				<Type Name="_SDD_335" Value="6"/>
+				<Type Name="_SDD_215" Value="7"/>
+				<Type Name="_SDD_205" Value="8"/>
+				<Type Name="_SDD_210" Value="9"/>
+				<Type Name="_MDD_100" Value="10"/>
+				<Type Name="_S_340" Value="11"/>
+				<Type Name="_SDD_115" Value="12"/>
+				<Type Name="_SDD_1300" Value="811237"/>
+				<Type Name="_SDD_1400" Value="811238"/>
+				<Type Name="_SDD_1500" Value="811239"/>
+				<Type Name="_SDD_1600" Value="811240"/>
+				<Type Name="_MDD_2000" Value="811300"/>
+				<Type Name="_VSDC_151" Value="811301"/>
+				<Type Name="_VSDC_152" Value="811302"/>
+				<Type Name="_DC061" Value="881042"/>
+				<Type Name="_DC062" Value="881801"/>
+				<Type Name="_SR011" Value="881802"/>
+				<Type Name="_SR012" Value="881803"/>
+				<Type Name="_DC101" Value="881804"/>
+				<Type Name="_DC102" Value="881805"/>
+				<Type Name="_DC064" Value="881806"/>
+				<Type Name="_DC104" Value="881807"/>
+				<Type Name="_SR011_1" Value="881808"/>
+				<Type Name="_WA011" Value="991800"/>
+				<Type Name="_WA012" Value="991801"/>
+			</Elements>
+		</Type>
+		<Type
+			Name      = "_I_HC_Type"
+			TypeId    = "STRUCT"
+			Size      = "4"
+			Alignment = "1">
+			<Elements>
+				<Type Name="HardwareCodePowerStage" Datatype="HSINT" Offset="0"/>
+				<Type Name="FPGAVersion" Datatype="HSINT" Offset="1"/>
+				<Type Name="HardwareCodeControlBoard" Datatype="HINT" Offset="2"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_CMDERROR" Datatype="BDINT" TypeId="BIT">
+			<Elements>
+				<Type Name="PowerOff" BitNo="1"/>
+				<Type Name="NoReference" BitNo="2"/>
+				<Type Name="HWError" BitNo="3"/>
+				<Type Name="ActPosError" BitNo="4"/>
+				<Type Name="ContouringError" BitNo="5"/>
+				<Type Name="CommandError" BitNo="6"/>
+				<Type Name="SWMinError" BitNo="7"/>
+				<Type Name="SWMaxError" BitNo="8"/>
+				<Type Name="vError" BitNo="9"/>
+				<Type Name="aError" BitNo="10"/>
+				<Type Name="HWMinError" BitNo="11"/>
+				<Type Name="HWMaxError" BitNo="12"/>
+				<Type Name="DirError" BitNo="13"/>
+				<Type Name="EmergencyError" BitNo="14"/>
+				<Type Name="ResolutionError" BitNo="15"/>
+				<Type Name="GlobalError" BitNo="16"/>
+				<Type Name="JError" BitNo="17"/>
+				<Type Name="SafeError" BitNo="18"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_ERROR" Datatype="BDINT" TypeId="BIT">
+			<Elements>
+				<Type Name="HwError" BitNo="1"/>
+				<Type Name="SwMinError" BitNo="2"/>
+				<Type Name="SwMaxError" BitNo="3"/>
+				<Type Name="HwMinError" BitNo="4"/>
+				<Type Name="HwMaxError" BitNo="5"/>
+				<Type Name="ReferenceError" BitNo="6"/>
+				<Type Name="ContouringError" BitNo="7"/>
+				<Type Name="ActPosError" BitNo="8"/>
+				<Type Name="AbsOffsetError" BitNo="9"/>
+				<Type Name="OverFlowError" BitNo="10"/>
+				<Type Name="EmergencyError" BitNo="11"/>
+				<Type Name="ResolutionError" BitNo="12"/>
+				<Type Name="PowerOnError" BitNo="13"/>
+				<Type Name="PowerOffError" BitNo="14"/>
+				<Type Name="GlobErr" BitNo="16"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_ERROR_CONFIG" Datatype="BDINT" TypeId="BIT">
+			<Elements>
+				<Type Name="vError" BitNo="1"/>
+				<Type Name="aError" BitNo="2"/>
+				<Type Name="SWMinError" BitNo="3"/>
+				<Type Name="SWMaxError" BitNo="4"/>
+				<Type Name="CommandError" BitNo="5"/>
+				<Type Name="EmergencyError" BitNo="6"/>
+				<Type Name="CoupleMonitoring" BitNo="7"/>
+				<Type Name="JError" BitNo="8"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_MOVE_RELATIVE_MODE" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="LMCAXIS_MOVE_RELATIVE_TO_DESTINATION" Value="0"/>
+				<Type Name="LMCAXIS_MOVE_RELATIVE_TO_POSITION" Value="1"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_MOVEDIRECTION" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="LMCAXIS_MOVE_ANY_WAY" Value="0"/>
+				<Type Name="LMCAXIS_MOVE_NEG_DIR" Value="1"/>
+				<Type Name="LMCAXIS_MOVE_SHORTEST_WAY" Value="2"/>
+				<Type Name="LMCAXIS_MOVE_POS_DIR" Value="3"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_MOVEPROFILE" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="_RAMP_PROFILE" Value="0"/>
+				<Type Name="_SCURVE_PROFILE" Value="1"/>
+				<Type Name="_JERK_PROFILE" Value="10"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_OPMODE" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="PASSIVE_LMCAXIS" Value="0"/>
+				<Type Name="WAITIDLE_LMCAXIS" Value="1"/>
+				<Type Name="IDLE_LMCAXIS" Value="2"/>
+				<Type Name="MOVE_LMCAXIS" Value="3"/>
+				<Type Name="FOLLOW_LMCAXIS" Value="4"/>
+				<Type Name="STOPED_LMCAXIS" Value="5"/>
+				<Type Name="LOCKED_LMCAXIS" Value="6"/>
+				<Type Name="REFRUN_LMCAXIS" Value="7"/>
+				<Type Name="TUNEPOS_LMCAXIS" Value="8"/>
+				<Type Name="TUNENEG_LMCAXIS" Value="9"/>
+				<Type Name="ERROR_LMCAXIS" Value="10"/>
+				<Type Name="WAITPASSIVE_LMCAXIS" Value="11"/>
+				<Type Name="SBT_LMCAXIS" Value="12"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_POSMODE" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="_Positioning" Value="0"/>
+				<Type Name="_NCPositioning" Value="1"/>
+				<Type Name="_StdSyncPositioning" Value="2"/>
+				<Type Name="_UserSyncPositioning" Value="3"/>
+				<Type Name="_CAMSyncPositioning" Value="4"/>
+				<Type Name="_ProfileSyncPositioning" Value="5"/>
+				<Type Name="_SyncVelocity" Value="6"/>
+				<Type Name="_StartPolynomPositioning" Value="7"/>
+				<Type Name="_SyncPolynomPositioning" Value="8"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_POWER_OFF_MODE" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="LMCAXIS_IMMEDIATE_STOPP" Value="0"/>
+				<Type Name="LMCAXIS_SMOOTH_STOPP" Value="1"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_REFMODE" Datatype="BDINT" TypeId="BIT">
+			<Elements>
+				<Type Name="NoZImpulse" BitNo="1"/>
+				<Type Name="NoEndSwitch" BitNo="2"/>
+				<Type Name="RefDirection" BitNo="3"/>
+				<Type Name="NoTurnOnSwitch" BitNo="4"/>
+				<Type Name="ESEqualRef" BitNo="5"/>
+				<Type Name="NoSet" BitNo="6"/>
+				<Type Name="RefLatchPos" BitNo="7"/>
+				<Type Name="RefFirstEdge" BitNo="8"/>
+				<Type Name="SafeReferenceAxis" BitNo="9"/>
+				<Type Name="SafeReferenceOnly" BitNo="10"/>
+				<Type Name="SafeInvRefDirection" BitNo="11"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_SETPARAMETER" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="LMCAXIS_PAR_SET_COUPLING_MODE" Value="0"/>
+				<Type Name="LMCAXIS_PAR_SET_DESTINATION" Value="1"/>
+				<Type Name="LMCAXIS_PAR_SET_OVERRIDE" Value="2"/>
+				<Type Name="LMCAXIS_PAR_SET_LOGMODE" Value="3"/>
+				<Type Name="LMCAXIS_PAR_RESET_REF_STATE" Value="4"/>
+				<Type Name="LMCAXIS_PAR_SET_CHANGE_SW_LIMITS" Value="5"/>
+				<Type Name="LMCAXIS_PAR_SET_JERK_LIMITATION" Value="6"/>
+				<Type Name="LMCAXIS_PAR_SET_SHIFT_BREAKPOS" Value="7"/>
+				<Type Name="LMCAXIS_PAR_SET_OVERFLOW_POS" Value="8"/>
+				<Type Name="LMCAXIS_PAR_SET_MIN_POSITION" Value="9"/>
+				<Type Name="LMCAXIS_PAR_SET_MAX_POSITION" Value="10"/>
+				<Type Name="LMCAXIS_PAR_SET_HARDLOCK" Value="11"/>
+				<Type Name="LMCAXIS_PAR_SET_SWLIM_STANDSTILL" Value="12"/>
+				<Type Name="LMCAXIS_PAR_SET_SWLIM_DIR_CHANGE" Value="13"/>
+				<Type Name="LMCAXIS_PAR_SET_SWLIM_MOVING" Value="14"/>
+				<Type Name="LMCAXIS_PAR_SET_INIT_JERK_FILTER" Value="15"/>
+				<Type Name="LMCAXIS_PAR_SET_BINOFFSET" Value="16"/>
+				<Type Name="LMCAXIS_PAR_SET_VJUMP" Value="17"/>
+				<Type Name="LMCAXIS_PAR_SET_SW_LIMIT_FLAGS" Value="18"/>
+				<Type Name="LMCAXIS_PAR_SET_SW_LIM_WINDOW" Value="19"/>
+				<Type Name="LMCAXIS_PAR_SET_MOVE_DIR" Value="20"/>
+				<Type Name="LMCAXIS_PAR_SET_TIMEBASE" Value="21"/>
+				<Type Name="LMCAXIS_PAR_SET_CONTROLLERPAR" Value="22"/>
+				<Type Name="LMCAXIS_PAR_SET_ACTVELFILTER" Value="23"/>
+				<Type Name="LMCAXIS_PAR_SET_SHAPE_SPLINE" Value="24"/>
+				<Type Name="LMCAXIS_PAR_SET_NO_OVERFLOWERROR" Value="25"/>
+				<Type Name="LMCAXIS_PAR_SET_MASTERPOS_OLD" Value="26"/>
+				<Type Name="LMCAXIS_PAR_SET_MASTER_DELAY" Value="27"/>
+				<Type Name="LMCAXIS_PAR_SET_MAXMODULO" Value="28"/>
+				<Type Name="LMCAXIS_PAR_SET_MAX_OVERRIDE" Value="29"/>
+				<Type Name="LMCAXIS_PAR_SET_NORM_OVERRIDE" Value="30"/>
+				<Type Name="LMCAXIS_PAR_SET_MASTERLOCK_DELAYCYCLES" Value="31"/>
+				<Type Name="LMCAXIS_PAR_SET_ALLOWED_ACC_JUMP" Value="32"/>
+				<Type Name="LMCAXIS_PAR_SET_SIMULATE_MODE" Value="33"/>
+				<Type Name="LMCAXIS_PAR_SET_DEACTIVATE_CALC_BRAKEPOS" Value="34"/>
+				<Type Name="LMCAXIS_PAR_SET_COUPLE_SLAVE_ERROR" Value="35"/>
+				<Type Name="LMCAXIS_PAR_SET_COUPLE_MASTER_ERROR" Value="36"/>
+				<Type Name="LMCAXIS_PAR_SET_COUPLE_MONITOR_CONFIG" Value="37"/>
+				<Type Name="LMCAXIS_PAR_SET_DELAYEDMASTERLOCK_WINDOW" Value="38"/>
+				<Type Name="LMCAXIS_PAR_SET_MASTERVEL_OLD" Value="39"/>
+				<Type Name="LMCAXIS_PAR_SET_POWERON_TIMEOUT" Value="40"/>
+				<Type Name="LMCAXIS_PAR_SET_CHANGECONTROLLERTYPE" Value="41"/>
+				<Type Name="LMCAXIS_PAR_SET_COUPLE_SLAVEOFFSET" Value="42"/>
+				<Type Name="LMCAXIS_PAR_SET_REFPOSOFF" Value="43"/>
+				<Type Name="LMCAXIS_PAR_SET_CALC_BRAKE_DIST_RAMP_125" Value="44"/>
+				<Type Name="LMCAXIS_PAR_SET_CAMCOUPLE_USELREAL" Value="45"/>
+				<Type Name="LMCAXIS_PAR_SET_COUPLE_USERESOLUTION" Value="46"/>
+				<Type Name="LMCAXIS_PAR_SET_SBTATPOWERON" Value="47"/>
+				<Type Name="LMCAXIS_PAR_SET_SBTATPOWERONTIMEOUT" Value="48"/>
+				<Type Name="LMCAXIS_PAR_SET_SBTATPOWERONIGNORE" Value="49"/>
+				<Type Name="LMCAXIS_PAR_SET_SBTATPOWERONERRORREACTION" Value="50"/>
+				<Type Name="LMCAXIS_PAR_SET_AUTOMATICSS2" Value="51"/>
+				<Type Name="LMCAXIS_PAR_SET_MASTERPOINTER" Value="52"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_SETPOSITION" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="LMCAXIS_SET_ACTPOS_APPUNIT" Value="0"/>
+				<Type Name="LMCAXIS_SET_SETPOS_APPUNIT" Value="1"/>
+				<Type Name="LMCAXIS_SET_ACTPOS_INTUNIT" Value="2"/>
+				<Type Name="LMCAXIS_SET_SETPOS_INTUNIT" Value="3"/>
+				<Type Name="LMCAXIS_SET_SETPOS_INTUNIT_SPEC" Value="4"/>
+				<Type Name="LMCAXIS_SET_ACTPOS_INTUNIT_WO_MOD" Value="5"/>
+				<Type Name="LMCAXIS_SET_SETPOS_INTUNIT_WO_MOD" Value="6"/>
+				<Type Name="LMCAXIS_SET_ACTPOS_INTUNIT_WO_MOD_SW" Value="7"/>
+				<Type Name="LMCAXIS_SET_SETPOS_INTUNIT_WO_MOD_SW" Value="8"/>
+				<Type Name="LMCAXIS_SET_ACTPOS_APPUNIT_DEST" Value="9"/>
+				<Type Name="LMCAXIS_SET_SETPOS_APPUNIT_DEST" Value="10"/>
+				<Type Name="LMCAXIS_SET_ACTPOS_APPUNIT_WO_MOD_SW" Value="11"/>
+				<Type Name="LMCAXIS_SET_SETPOS_APPUNIT_WO_MOD_SW" Value="12"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_SETSWENDPOS" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="LMCAXIS_SET_SWMAX_APPUNIT" Value="0"/>
+				<Type Name="LMCAXIS_SET_SWMIN_APPUNIT" Value="1"/>
+				<Type Name="LMCAXIS_SET_SWMAX_INTUNIT" Value="2"/>
+				<Type Name="LMCAXIS_SET_SWMIN_INTUNIT" Value="3"/>
+				<Type Name="LMCAXIS_SET_SWMAX_INTUNIT_WO_MOD" Value="4"/>
+				<Type Name="LMCAXIS_SET_SWMIN_INTUNIT_WO_MOD" Value="5"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCAXIS_STATUS" Datatype="BDINT" TypeId="BIT">
+			<Elements>
+				<Type Name="PowerOn" BitNo="1"/>
+				<Type Name="IsReferenced" BitNo="2"/>
+				<Type Name="InPosition" BitNo="3"/>
+				<Type Name="FiltRdy" BitNo="4"/>
+				<Type Name="Decell" BitNo="5"/>
+				<Type Name="PosLimActive" BitNo="6"/>
+				<Type Name="SetFlg" BitNo="7"/>
+				<Type Name="EnLesFlg" BitNo="8"/>
+				<Type Name="DirFlg" BitNo="9"/>
+				<Type Name="EmergStop" BitNo="10"/>
+				<Type Name="Overflow" BitNo="11"/>
+				<Type Name="MasterLock" BitNo="12"/>
+				<Type Name="DirLock" BitNo="13"/>
+				<Type Name="DynSwLimit" BitNo="14"/>
+				<Type Name="ActDirFlg" BitNo="15"/>
+				<Type Name="HandFlg" BitNo="16"/>
+				<Type Name="ModuloFlg" BitNo="17"/>
+				<Type Name="NCMotion" BitNo="18"/>
+				<Type Name="NoActPosMeth" BitNo="19"/>
+				<Type Name="NoControlMeth" BitNo="20"/>
+				<Type Name="NoRefMeth" BitNo="21"/>
+				<Type Name="NoActPosChk" BitNo="22"/>
+				<Type Name="NoPreRtWork" BitNo="23"/>
+				<Type Name="NoPostRtWork" BitNo="24"/>
+				<Type Name="DelayedMasterLock" BitNo="25"/>
+				<Type Name="Standstill" BitNo="26"/>
+				<Type Name="BrakeForPowerOff" BitNo="27"/>
+				<Type Name="MasterError" BitNo="28"/>
+				<Type Name="SlaveError" BitNo="29"/>
+				<Type Name="ReadyToPowerOn" BitNo="30"/>
+			</Elements>
+		</Type>
+		<Type Name="_LMCCONTROLLERTYPE" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="_LMCNOCONTROLLER" Value="0"/>
+				<Type Name="_LMCUSERCONTROLLER" Value="1"/>
+				<Type Name="_LMCDUMMYCONTROLLER" Value="2"/>
+				<Type Name="_LMCHYDROCONTROLLER" Value="3"/>
+				<Type Name="_LMCKV_CONTROLLER" Value="4"/>
+				<Type Name="_LMCNCCONTROLLER" Value="5"/>
+				<Type Name="_LMCPOSCONTROLLER" Value="6"/>
+				<Type Name="_LMCDRIVEPOSONTROL" Value="7"/>
+				<Type Name="_LMCSTEPPERCONTROL" Value="8"/>
+				<Type Name="_LMCVFDCONTROL" Value="9"/>
+				<Type Name="_LMCDRIVEPOSCONTROLSAFETY" Value="10"/>
+				<Type Name="_LMCSTEPPERCONTROLST152" Value="11"/>
+				<Type Name="_LMCUSERCONTROLLER_NEW" Value="101"/>
+				<Type Name="_LMCKV_CONTROLLER_NEW" Value="104"/>
+				<Type Name="_LMCPOSCONTROLLER_NEW" Value="106"/>
+				<Type Name="_LMCSIGMATEKCONTROLLER" Value="107"/>
+				<Type Name="_LMCCALCMODEL_CONTROLLER" Value="108"/>
+			</Elements>
+		</Type>
+		<Type Name="_POSFLAGS" Datatype="BDINT" TypeId="BIT">
+			<Elements>
+				<Type Name="SetSFF" BitNo="1"/>
+				<Type Name="XWCalcInt" BitNo="2"/>
+				<Type Name="WaitPowerOff" BitNo="3"/>
+			</Elements>
+		</Type>
+		<Type Name="_SDDAXISSTATE" Datatype="BDINT" TypeId="BIT">
+			<Elements>
+				<Type Name="NoHW" BitNo="1"/>
+				<Type Name="NoParameter" BitNo="2"/>
+				<Type Name="NotOnline" BitNo="3"/>
+				<Type Name="NotInitialized" BitNo="4"/>
+				<Type Name="SFFLimitationActive" BitNo="5"/>
+				<Type Name="DiagModeActive" BitNo="6"/>
+			</Elements>
+		</Type>
+		<Type Name="_SDDUSERCMD" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="_SDDIDLE" Value="0"/>
+				<Type Name="_SDDREADALL" Value="1"/>
+				<Type Name="_SDDINIT" Value="2"/>
+				<Type Name="_SDDURINIT" Value="3"/>
+				<Type Name="_SDDEXDATA" Value="4"/>
+				<Type Name="_SDDEXDATAXML" Value="6"/>
+				<Type Name="_SDDIMDATAXML" Value="7"/>
+				<Type Name="_SDDERROR" Value="8"/>
+				<Type Name="_SDDEXLOGFILE" Value="9"/>
+			</Elements>
+		</Type>
+		<Type Name="DS402_Control" Datatype="BDINT" TypeId="BIT">
+			<Elements>
+				<Type Name="SwitchOn" BitNo="1"/>
+				<Type Name="EnableVoltage" BitNo="2"/>
+				<Type Name="QuickStop" BitNo="3"/>
+				<Type Name="EnableOperation" BitNo="4"/>
+				<Type Name="OperationModeSpec1" BitNo="5"/>
+				<Type Name="OperationModeSpec2" BitNo="6"/>
+				<Type Name="OperationModeSpec3" BitNo="7"/>
+				<Type Name="ResetFault" BitNo="8"/>
+				<Type Name="Halt" BitNo="9"/>
+				<Type Name="Reserved1" BitNo="10"/>
+				<Type Name="Reserved2" BitNo="11"/>
+				<Type Name="ManufactureSpec1" BitNo="12"/>
+				<Type Name="ManufactureSpec2" BitNo="13"/>
+				<Type Name="ManufactureSpec3" BitNo="14"/>
+				<Type Name="ManufactureSpec4" BitNo="15"/>
+				<Type Name="ManufactureSpec5" BitNo="16"/>
+			</Elements>
+		</Type>
+		<Type Name="DS402_State" Datatype="BDINT" TypeId="BIT">
+			<Elements>
+				<Type Name="ReadyToSwitchOn" BitNo="1"/>
+				<Type Name="SwitchedOn" BitNo="2"/>
+				<Type Name="OperationEnabled" BitNo="3"/>
+				<Type Name="Fault" BitNo="4"/>
+				<Type Name="VoltageEnabled" BitNo="5"/>
+				<Type Name="QuickStop" BitNo="6"/>
+				<Type Name="SwitchOnDisabled" BitNo="7"/>
+				<Type Name="Warning" BitNo="8"/>
+				<Type Name="ManufactureSpec1" BitNo="9"/>
+				<Type Name="Remote" BitNo="10"/>
+				<Type Name="TargetReached" BitNo="11"/>
+				<Type Name="InternalLimitActive" BitNo="12"/>
+				<Type Name="OperationModeSpec1" BitNo="13"/>
+				<Type Name="OperationModeSpec2" BitNo="14"/>
+				<Type Name="ManufactureSpec2" BitNo="15"/>
+				<Type Name="ManufactureSpec3" BitNo="16"/>
+			</Elements>
+		</Type>
+		<Type Name="iprStates" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="READY" Value="0"/>
+				<Type Name="ERROR" Value="1"/>
+				<Type Name="ERROR_BUSY" Value="2"/>
+				<Type Name="BUSY" Value="3"/>
+				<Type Name="QUIT" Value="4"/>
+				<Type Name="STOP_BP" Value="5"/>
+				<Type Name="SINGLESTEP" Value="6"/>
+			</Elements>
+		</Type>
+		<Type Name="SafetyConfigStateType" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="_ModuleNotFound" Value="0"/>
+				<Type Name="_SafetyClassOK" Value="1"/>
+				<Type Name="_ReinitConfig" Value="2"/>
+				<Type Name="_UnsafeVarNotFound" Value="3"/>
+				<Type Name="_ModFromCfgNotFound" Value="4"/>
+				<Type Name="_MemAllocFailed" Value="5"/>
+				<Type Name="_ReadFWVerFailed" Value="6"/>
+				<Type Name="_UnknownCfgError" Value="7"/>
+				<Type Name="_WaitForSynchronicity" Value="8"/>
+				<Type Name="_AsyncComError" Value="9"/>
+				<Type Name="_DOsIncreasedRestartApp" Value="10"/>
+				<Type Name="_LostPowerSupply" Value="11"/>
+				<Type Name="_WrongSafetyHW" Value="12"/>
+			</Elements>
+		</Type>
+		<Type Name="t_e_VaranErrors" Datatype="UDINT" TypeId="ENUM">
+			<Elements>
+				<Type Name="_ClassOk" Value="0"/>
+				<Type Name="_NotInitialized" Value="1"/>
+				<Type Name="_CallBackError" Value="2"/>
+				<Type Name="_RequiredError" Value="3"/>
+				<Type Name="_RootError" Value="4"/>
+				<Type Name="_NoHardware" Value="5"/>
+				<Type Name="_WrongHardware" Value="6"/>
+				<Type Name="_CreateDOFailed" Value="7"/>
+				<Type Name="_DirectAccessFailed" Value="8"/>
+				<Type Name="_PllError" Value="9"/>
+				<Type Name="_TimeoutInInit" Value="10"/>
+				<Type Name="_HardwareRequiredIRQ" Value="11"/>
+				<Type Name="_HardwareNotRequiredIRQ" Value="12"/>
+				<Type Name="_HardwareFatalErrorIRQ" Value="13"/>
+				<Type Name="_ManagerError" Value="14"/>
+				<Type Name="_DisableError" Value="15"/>
+				<Type Name="_EnableError" Value="16"/>
+				<Type Name="_MultipleError" Value="17"/>
+				<Type Name="_SPIError" Value="18"/>
+				<Type Name="_ErrorBootImageFPGA" Value="19"/>
+				<Type Name="_NoCDIASInterface" Value="20"/>
+				<Type Name="_EEPromError" Value="21"/>
+				<Type Name="_NoVaranInterface" Value="22"/>
+				<Type Name="_MemoryFault" Value="23"/>
+				<Type Name="_TimesliceError" Value="24"/>
+				<Type Name="_TimesliceErrorIRQ" Value="25"/>
+				<Type Name="_WatchdogError" Value="26"/>
+				<Type Name="_VaranTimeError" Value="27"/>
+				<Type Name="_DiasTimeError" Value="28"/>
+				<Type Name="_DORamFull" Value="29"/>
+				<Type Name="_PortNoLink" Value="30"/>
+				<Type Name="_VaranDriverNotExists" Value="31"/>
+				<Type Name="_WrongDOLType" Value="32"/>
+				<Type Name="_WrongRunStatus" Value="33"/>
+				<Type Name="_DOHandleInvalid" Value="34"/>
+				<Type Name="_DOCmdInvalid" Value="35"/>
+				<Type Name="_ManagerNotExists" Value="36"/>
+				<Type Name="_DOLAddressInvalid" Value="37"/>
+				<Type Name="_UnknownCommand" Value="38"/>
+				<Type Name="_ComponentNotExists" Value="39"/>
+				<Type Name="_ClientNotExists" Value="40"/>
+				<Type Name="_CdiasEEPromNotExists" Value="41"/>
+				<Type Name="_CdiasEEPromNoGrant" Value="42"/>
+				<Type Name="_CdiasEEPromNack" Value="43"/>
+				<Type Name="_PortNotExists" Value="44"/>
+				<Type Name="_PortIsUplink" Value="45"/>
+				<Type Name="_NoMutex" Value="46"/>
+				<Type Name="_NoTask" Value="47"/>
+				<Type Name="_IDNotFound" Value="48"/>
+				<Type Name="_IDNotInitialized" Value="49"/>
+				<Type Name="_InvalidDeviceAddress" Value="50"/>
+				<Type Name="_CallbackNotHandled" Value="51"/>
+				<Type Name="_NoMem" Value="52"/>
+				<Type Name="_NoLegacyWd" Value="53"/>
+				<Type Name="_AdminDOLExecutionError" Value="54"/>
+				<Type Name="_DADOLExecutionError" Value="55"/>
+				<Type Name="_SPIFlashNoAccess" Value="56"/>
+				<Type Name="_ClientNotready" Value="57"/>
+				<Type Name="_TimeoutVaran" Value="58"/>
+				<Type Name="_UnknownFault" Value="59"/>
+				<Type Name="_DiasError" Value="60"/>
+				<Type Name="_DeviceError" Value="61"/>
+				<Type Name="_VaranTimeWarning" Value="62"/>
+				<Type Name="_OnlyASYSupported" Value="63"/>
+				<Type Name="_InvalidSerialNo" Value="64"/>
+				<Type Name="_CDIASRequiredError" Value="65"/>
+				<Type Name="_DIASRequiredError" Value="66"/>
+				<Type Name="_NoCalibDataFound" Value="67"/>
+				<Type Name="_ModuleFoundButManagerIsOff" Value="68"/>
+				<Type Name="_InvalidConfguration" Value="69"/>
+				<Type Name="_ClientDisabled" Value="70"/>
+				<Type Name="_ClientCantEnable" Value="71"/>
+				<Type Name="_CdiasAddressInvalid" Value="72"/>
+				<Type Name="_SPIFlashInvalid" Value="73"/>
+				<Type Name="_SPIDOLIDInvalid" Value="74"/>
+				<Type Name="_SPIDOLInvalid" Value="75"/>
+				<Type Name="_SPIRequiredListError" Value="76"/>
+				<Type Name="_SPIChksumError" Value="77"/>
+				<Type Name="_ParameterInvalid" Value="78"/>
+				<Type Name="_DOTypeNotSupported" Value="79"/>
+				<Type Name="_DMAError" Value="80"/>
+				<Type Name="_PropertyIDInvalid" Value="81"/>
+				<Type Name="_PropertyValueInvalid" Value="82"/>
+				<Type Name="_DONumberOverflow" Value="83"/>
+				<Type Name="_APIUsageNotAllowed" Value="84"/>
+				<Type Name="_NodeTypeWrong" Value="85"/>
+				<Type Name="_DataLengthInvalid" Value="86"/>
+				<Type Name="_DOTypeInvalid" Value="87"/>
+				<Type Name="_OperationNotAllowed" Value="88"/>
+				<Type Name="_NodeNumberOverflow" Value="89"/>
+				<Type Name="_NoHandleFound" Value="90"/>
+				<Type Name="_TopologyNotAllowed" Value="91"/>
+			</Elements>
+		</Type>
+	</Types>
+	<Classes>
+		<Class
+			Name     = "_AxisBase"
+			Datatype = "_LMCAXIS_OPMODE"
+			Size     = "32"
+			Guid     = "F52EA0ED-F06F-4DF2-8326-9B4FEA0E0D45">
+		</Class>
+		<Class
+			Name     = "_DriveAxis"
+			Datatype = "iprStates"
+			Base     = "_DriveAxisBase"
+			Size     = "1236"
+			Guid     = "D4A343A9-F912-421E-88C9-1F83FBC77300">
+			<Servers>
+				<Server Name="CmdState" Datatype="iprStates" Guid="C0257BBF-174C-49D2-8201-0B4BED56BBE1" WriteProtected="true"/>
+				<Server Name="Online" Datatype="DINT" Guid="CAF477F1-A28E-4611-B487-DA521DD0D7C0" WriteProtected="true"/>
+				<Server Name="AxisState" Datatype="_SDDAXISSTATE" Guid="EEED7FBD-A988-45AA-8AB2-7B31AACE0D4D" WriteProtected="true"/>
+				<Server Name="ActPos" Datatype="DINT" Guid="6F0037A2-4EFC-4C21-858C-56747F96DCF4" WriteProtected="true"/>
+				<Server Name="SetPos" Datatype="DINT" Guid="6DF1B3E9-47D4-4546-8623-8AD85F70BA26" WriteProtected="false"/>
+				<Server Name="ActSpeed" Datatype="DINT" Guid="4BF4E26C-9B5D-4C6B-B539-680C91F94D93" WriteProtected="true"/>
+				<Server Name="SetSpeed" Datatype="DINT" Guid="382251C3-26AE-4ACF-934B-8E791A6D7A7C" WriteProtected="false"/>
+				<Server Name="ActCurrent" Datatype="DINT" Guid="C242FEDD-FE6C-40BF-8C5D-6F84B9B3430C" WriteProtected="true"/>
+				<Server Name="SetCurrent" Datatype="DINT" Guid="87B48CDD-0309-480B-8CAB-A29F3177BDDD" WriteProtected="false"/>
+				<Server Name="ActXw" Datatype="DINT" Guid="CA6D2A2C-FA5F-4B90-84A2-7ED7256FED96" WriteProtected="true"/>
+				<Server Name="StateWord" Datatype="DS402_State" Guid="2D345FE9-CF3F-43E2-A31A-A944ADB63B30" WriteProtected="true"/>
+				<Server Name="ControlWord" Datatype="DS402_Control" Guid="604148D0-8DFE-480F-B27B-6546BAEE08CB" WriteProtected="false"/>
+				<Server Name="AxEnable" Datatype="DINT" Guid="D6308C36-33EB-401B-BF18-9290087CB5EC" WriteProtected="false"/>
+				<Server Name="AxError" Datatype="DINT" Guid="AB399615-2D37-44C2-8BBF-5D6D506DF075" WriteProtected="true"/>
+				<Server Name="AxErrorQuit" Datatype="DINT" Guid="3AA1B785-46E0-41CD-A4ED-90935075A5E3" WriteProtected="false"/>
+				<Server Name="ZPulsLatch" Datatype="DINT" Guid="90CCCE9D-9849-4DA5-9BD8-BF7C7C2A2308" WriteProtected="true"/>
+				<Server Name="AxTorqueControl" Datatype="UDINT" Guid="A4AA77E4-9AAF-4B94-8313-9C5FAF9A43D0" WriteProtected="false"/>
+				<Server Name="SDDCmdIntfc" Datatype="_SDDUSERCMD" Guid="24EEE8C3-EAC3-433F-ACDD-DAB261FE5FAB" WriteProtected="false"/>
+				<Server Name="I_HC" Datatype="_I_HC_Type" Guid="8AFC09FE-5A20-47C3-BC1E-F4D9F439F5BE" WriteProtected="true"/>
+				<Server Name="SerialNo" Datatype="DINT" Guid="1F2B66E1-39C5-490A-9A9A-D23553AD8EAC" WriteProtected="true"/>
+				<Server Name="Input1" Datatype="DINT" Guid="453B7EB5-CAC8-4C1E-BF02-53163B5841E4" WriteProtected="true"/>
+				<Server Name="Input2" Datatype="DINT" Guid="D6FA7D72-5CD5-432D-BA84-B8FFE2954A0A" WriteProtected="true"/>
+				<Server Name="Input3" Datatype="DINT" Guid="35987825-0670-4CAA-8166-A25D1CA5384E" WriteProtected="true"/>
+				<Server Name="Input4" Datatype="DINT" Guid="E590220A-538D-4CE6-B607-AF8B4EBFB906" WriteProtected="true"/>
+				<Server Name="Input5" Datatype="DINT" Guid="6E7F3C54-B89C-45BA-850D-9698CF0F6276" WriteProtected="true"/>
+				<Server Name="Input6" Datatype="DINT" Guid="3884FEC0-072E-4CCB-A2E8-FF6ED8C9B025" WriteProtected="true"/>
+				<Server Name="Input7" Datatype="DINT" Guid="7F923B72-1779-49F4-AB3E-31ED66CCEF1E" WriteProtected="true"/>
+				<Server Name="Input8" Datatype="DINT" Guid="ABA2FEC0-00F4-4673-A989-3DFAA9C6CC33" WriteProtected="true"/>
+				<Server Name="Output1" Datatype="DINT" Guid="51C979FB-C07B-4E89-A260-796244EE4BF1" WriteProtected="false"/>
+				<Server Name="Output2" Datatype="DINT" Guid="7CCE096B-881F-46E1-8FD1-CA90A4154931" WriteProtected="false"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "_DriveAxisBase"
+			Datatype = "iprStates"
+			Size     = "1140"
+			Guid     = "B2F0B15E-D553-4717-AD13-714436E0A3E3">
+		</Class>
+		<Class
+			Name     = "_DriveMng_DC062"
+			Datatype = "t_e_VaranErrors"
+			Base     = "_DriveMngBase"
+			Size     = "2196"
+			Guid     = "FCCD6A43-4771-4A9D-8ADA-1F4AD3E24FEF">
+			<Servers>
+				<Server Name="CmdState" Datatype="t_e_VaranErrors" Guid="FFDBDD1F-F79F-4421-82FE-4A79EBC8DDD3" WriteProtected="true"/>
+				<Server Name="Online" Datatype="DINT" Guid="8DD02114-1255-424F-8068-43DB6CF9AA29" WriteProtected="true"/>
+				<Server Name="Release" Datatype="HDINT" Guid="A767F68C-C82B-4431-9CC5-48BE683AF508" WriteProtected="true"/>
+				<Server Name="DeviceID" Datatype="UDINT" Guid="231A140A-3E55-46D4-9CF0-02342E5F162B" WriteProtected="true"/>
+				<Server Name="RetryCounter" Datatype="UDINT" Guid="185803BD-6490-49CB-A817-392EC27BB40F" WriteProtected="true"/>
+				<Server Name="DriveType" Datatype="_DRIVETYPE" Guid="2CD724BB-F850-4E23-A992-17AC359D72F0" WriteProtected="false"/>
+				<Server Name="SerialNo" Datatype="DINT" Guid="CB763006-5D9B-4E8F-9CD5-51DF099BDB20" WriteProtected="true"/>
+				<Server Name="HWVersion" Datatype="DINT" Guid="B1DBAB01-D190-40A9-8FF9-84ED0E0E8561" WriteProtected="true"/>
+				<Server Name="HWVersionSdias" Datatype="HDINT" Guid="ED29E0B3-B611-4D87-9F20-0A5B5933F2F7" WriteProtected="true"/>
+				<Server Name="LEDControl" Datatype="DINT" Guid="82D2620C-5FCC-4724-B558-5203129EEA0F" WriteProtected="false"/>
+			</Servers>
+			<Objects>
+				<Object Name="FWDateString" Datatype="String" Guid="EE657DEE-B72E-4956-9044-1DD7D18F9B90"/>
+				<Object Name="FWNumSTring" Datatype="String" Guid="4BF1C716-9D25-4DBB-90D6-3B3D9F3813F8"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "_DriveMngBase"
+			Datatype = "t_e_VaranErrors"
+			Size     = "2064"
+			Guid     = "8C853AD9-097C-4EED-8B6F-2AAA594D12AE">
+		</Class>
+		<Class
+			Name     = "_LMCABSEncoder"
+			Datatype = "DINT"
+			Size     = "84"
+			Guid     = "A87B03B3-9ACE-407F-A7F0-8A3812C2BC0D">
+			<Servers>
+				<Server Name="PosOffset" Datatype="DINT" Guid="E19365E6-5C80-4796-8D4A-010C2771E122" WriteProtected="false"/>
+				<Server Name="PosOffsetOk" Datatype="DINT" Guid="4CE00223-3F48-4637-9F60-754699D716BF" WriteProtected="false"/>
+				<Server Name="PosCRC32" Datatype="UDINT" Guid="3CDBD60B-E4C9-4226-883F-2EB990DEDE02" WriteProtected="false"/>
+				<Server Name="AbsEncoder" Datatype="DINT" Guid="C7199EBB-1EB3-4291-A2F4-EE6B49682C67" WriteProtected="false"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "_LMCAxis"
+			Datatype = "_LMCAXIS_OPMODE"
+			Base     = "_LMCAxisBase"
+			Size     = "7548"
+			Guid     = "BBF26E8B-9881-449D-9540-93990A63ECAD">
+			<Servers>
+				<Server Name="Control" Datatype="_LMCAXIS_OPMODE" Guid="813CA014-8D4F-4BB9-954A-F20F4611CBBF" WriteProtected="true"/>
+				<Server Name="AxisStatus" Datatype="_LMCAXIS_STATUS" Guid="68B6CC31-3184-4BD8-9AEF-5517DF33D4FB" WriteProtected="true"/>
+				<Server Name="PosMode" Datatype="_LMCAXIS_POSMODE" Guid="CDFCD1F3-6AB5-4624-A6A9-C75262DE1C51" WriteProtected="true"/>
+				<Server Name="AxisError" Datatype="_LMCAXIS_ERROR" Guid="D915F1B2-0033-45ED-95CD-98E5AC15454C" WriteProtected="true"/>
+				<Server Name="ActPos" Datatype="DINT" Guid="864367D4-AA4F-4D63-B05E-6A13737A7360" WriteProtected="false"/>
+				<Server Name="SetPos" Datatype="DINT" Guid="A24425E6-4E11-412C-83A7-960537ADB33E" WriteProtected="false"/>
+				<Server Name="Destination" Datatype="DINT" Guid="291661D9-1815-4147-8350-8B61B9B02D38" WriteProtected="true"/>
+				<Server Name="Override" Datatype="DINT" Guid="FF96B1A2-F449-4E94-BD43-CD91AB79A05F" WriteProtected="false"/>
+				<Server Name="ActVelocity" Datatype="DINT" Guid="43EADA72-7000-4485-8C9B-A3472AA6CA4E" WriteProtected="true"/>
+				<Server Name="SetVelocity" Datatype="DINT" Guid="7691CDA2-0D42-445A-8364-865F948A8BAB" WriteProtected="true"/>
+				<Server Name="SimulateMode" Datatype="DINT" Guid="22BE35A3-9C0D-4FF6-B5E2-4ECB033D46B6" WriteProtected="false"/>
+				<Server Name="ExUnits" Datatype="DINT" Guid="9FE2BF63-FF3B-4C14-B568-13EB87B3E07C" WriteProtected="false"/>
+				<Server Name="IntUnits" Datatype="DINT" Guid="FA32FE70-022F-4ED1-8CFE-BDD41F6AD0D7" WriteProtected="false"/>
+				<Server Name="VMax" Datatype="DINT" Guid="26F9E93C-F21E-4BA6-AED9-4EF7C79E11F7" WriteProtected="false"/>
+				<Server Name="AMax" Datatype="DINT" Guid="ADBEB5C9-4395-4FCF-80BA-D40753878DA4" WriteProtected="false"/>
+				<Server Name="Tjerk" Datatype="DINT" Guid="57A5493C-1735-4622-BB13-42B699CCBC9D" WriteProtected="false"/>
+				<Server Name="MoveType" Datatype="_LMCAXIS_MOVEPROFILE" Guid="69DE3781-2054-4C7E-94C1-D8816EBD029B" WriteProtected="false"/>
+				<Server Name="Resolution" Datatype="DINT" Guid="DAF3A77D-F362-45C0-9B72-8734F61E4225" WriteProtected="true"/>
+				<Server Name="Modulo" Datatype="DINT" Guid="384697FA-6383-4042-B2B5-869B06B81AC4" WriteProtected="false"/>
+				<Server Name="SWMinPos" Datatype="DINT" Guid="61F22F0F-46A7-49AA-A29C-03B86C420418" WriteProtected="false"/>
+				<Server Name="SWMaxPos" Datatype="DINT" Guid="BDE8F6A7-C046-4CA2-BA01-A8416D226E14" WriteProtected="false"/>
+				<Server Name="ErrorConfig" Datatype="_LMCAXIS_ERROR_CONFIG" Guid="161823E3-9952-44E8-B3A0-9B1AD627E0F6" WriteProtected="false"/>
+				<Server Name="AEmergency" Datatype="DINT" Guid="804104B7-F4D7-40B5-855F-6D0F785617EC" WriteProtected="false"/>
+				<Server Name="JMax" Datatype="DINT" Guid="F40EF8AA-6964-4819-9DA6-F1FBB2CBF180" WriteProtected="false"/>
+				<Server Name="SafeAxisState" Datatype="_LMCAxisBase::t_s_LMCAxis_SafetyState" Guid="5E791631-FB9C-4D2A-A438-488E91177476" WriteProtected="true"/>
+				<Server Name="AbsEncoder" Datatype="DINT" Guid="67A9C60B-7109-4A29-B034-0B874C9F507E" WriteProtected="false"/>
+			</Servers>
+			<Objects>
+				<Object Name="_LMCABSEncoder1" Datatype="_LMCABSEncoder" Guid="4997BF67-81DA-49B7-8B08-D58CDF069D7E"/>
+				<Object Name="_LMCAxisRef1" Datatype="_LMCAxisRef" Guid="8527575C-8C8D-4427-B640-713377E99444"/>
+				<Object Name="_LMCAxisVis1" Datatype="_LMCAxisVis" Guid="3701FC36-2E16-4B1A-8232-F571CF23D782"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "_LMCAxisBase"
+			Datatype = "_LMCAXIS_OPMODE"
+			Base     = "_AxisBase"
+			Size     = "7332"
+			Guid     = "89D13859-4D83-44F4-B03C-BA933605CE62">
+			<Types>
+				<Type Name="_CommandList" Datatype="UDINT" TypeId="ENUM">
+					<Elements>
+						<Type Name="CPowerOn" Value="0"/>
+						<Type Name="CPowerOff" Value="1"/>
+						<Type Name="CInposition" Value="2"/>
+						<Type Name="CMoveHand" Value="3"/>
+						<Type Name="CMoveEndless" Value="4"/>
+						<Type Name="CMoveAbsolut" Value="5"/>
+						<Type Name="CMoveReference" Value="6"/>
+						<Type Name="CMoveRelative" Value="7"/>
+						<Type Name="CStopMove" Value="8"/>
+						<Type Name="CCoupleGearAbsolute" Value="9"/>
+						<Type Name="CCoupleGearRelative" Value="10"/>
+						<Type Name="CCoupleGearVelocity" Value="11"/>
+						<Type Name="CCoupleCurveTab" Value="12"/>
+						<Type Name="CCoupleUserPos" Value="13"/>
+						<Type Name="CCoupleDeltaPos" Value="14"/>
+						<Type Name="CCoupleProfilePos" Value="15"/>
+						<Type Name="CSetPosition" Value="16"/>
+						<Type Name="CSetAutoOffset" Value="17"/>
+						<Type Name="CSetCoupleParameter" Value="18"/>
+						<Type Name="CSetParameter" Value="19"/>
+						<Type Name="CReadPosition" Value="20"/>
+						<Type Name="CSetSWEndPos" Value="21"/>
+						<Type Name="CReadSWEndPos" Value="22"/>
+						<Type Name="CReadAxisError" Value="23"/>
+						<Type Name="CReadAxisStatus" Value="24"/>
+						<Type Name="CReadMasterInfo" Value="25"/>
+						<Type Name="CReadVelocity" Value="26"/>
+						<Type Name="CReadParameter" Value="27"/>
+						<Type Name="CTuneAxis" Value="28"/>
+						<Type Name="CInternModuloOverFlow" Value="29"/>
+						<Type Name="CFollowMode" Value="30"/>
+						<Type Name="CCoupleGearPolynom" Value="31"/>
+						<Type Name="CCoupleAdditivePosDiff" Value="32"/>
+						<Type Name="CCoupleCAM" Value="33"/>
+						<Type Name="CMoveShortestWay" Value="34"/>
+						<Type Name="CCalcMovingTime" Value="35"/>
+						<Type Name="CQuitError" Value="36"/>
+						<Type Name="CCalcMaxSlavePath" Value="37"/>
+						<Type Name="CCalcExtToAppliPos" Value="38"/>
+						<Type Name="CChangeMoveSettings" Value="39"/>
+						<Type Name="CGetPosInfoBeforeRampDown" Value="40"/>
+						<Type Name="CSetDynSWEndPos" Value="41"/>
+						<Type Name="CQuickStop" Value="42"/>
+						<Type Name="CSetSafetyData" Value="43"/>
+						<Type Name="CGetSafetyData" Value="44"/>
+					</Elements>
+				</Type>
+				<Type Name="t_s_LMCAxis_SafetyState" Datatype="BDINT" TypeId="BIT">
+					<Elements>
+						<Type Name="SafeAxis" BitNo="1"/>
+						<Type Name="SpeedLimited" BitNo="2"/>
+						<Type Name="AxisReady" BitNo="3"/>
+						<Type Name="AxisOperational" BitNo="4"/>
+						<Type Name="AxisError" BitNo="5"/>
+						<Type Name="ServiceModePending" BitNo="6"/>
+						<Type Name="SafeErrorQuitPending" BitNo="7"/>
+						<Type Name="AxisVerified" BitNo="8"/>
+						<Type Name="AxisVerifyFailed" BitNo="9"/>
+						<Type Name="AxisReferenced" BitNo="10"/>
+						<Type Name="AxisReferenceActive" BitNo="11"/>
+						<Type Name="AxisReferenceNeeded" BitNo="12"/>
+						<Type Name="AxisReferenceFailed" BitNo="13"/>
+						<Type Name="SBTAvailable" BitNo="14"/>
+						<Type Name="SBTActive" BitNo="15"/>
+						<Type Name="SBTFailed" BitNo="16"/>
+						<Type Name="FSoESetupFailed" BitNo="17"/>
+						<Type Name="AutomaticSS2Active" BitNo="18"/>
+					</Elements>
+				</Type>
+			</Types>
+		</Class>
+		<Class
+			Name     = "_LMCAxisRef"
+			Datatype = "DINT"
+			Base     = "_LMCRefBase"
+			Size     = "136"
+			Guid     = "04D2AAAB-7F37-4C17-BCEC-EC9C3304C3A1">
+			<Servers>
+				<Server Name="RefInput" Datatype="DINT" Guid="DDD0F2C7-31E3-4572-97EE-F88907467619" WriteProtected="false"/>
+				<Server Name="ZPulseDist" Datatype="DINT" Guid="5A0D5952-8A7D-4EA9-97CB-2960C3076E34" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "_LMCAxisVis"
+			Datatype = "DINT"
+			Size     = "132"
+			Guid     = "358DDDE7-4726-486D-A591-7B04200D8EB9">
+			<Servers>
+				<Server Name="ClassSvr" Datatype="DINT" Guid="B5FF3D28-E630-4648-87DF-BE7566AD2117" WriteProtected="false"/>
+			</Servers>
+			<Objects>
+				<Object Name="_LMCAxisVisInt1" Datatype="_LMCAxisVisInt" Guid="751FDDCB-9406-4719-9201-8CD0B1F5487A"/>
+				<Object Name="_LMCAxisVisLogHandle1" Datatype="_LMCAxisVisLogHandle" Guid="579CAA11-CCAF-46C4-9B4C-1691B5014CEB"/>
+				<Object Name="_LMCAxisVisLogViewer1" Datatype="_LMCAxisVisLogViewer" Guid="B293064B-AAFC-4E37-9DA9-594CE2821ABD"/>
+				<Object Name="_LMCAxisVisLogViewer2" Datatype="_LMCAxisVisLogViewer" Guid="E9ED5DC9-6217-4942-91BC-B6B48325142A"/>
+				<Object Name="_LMCAxisVisLogViewer3" Datatype="_LMCAxisVisLogViewer" Guid="D6B21B59-2B16-429B-9FF4-0F38C1D09724"/>
+				<Object Name="_LMCAxisVisLogViewer4" Datatype="_LMCAxisVisLogViewer" Guid="AD6791E0-AEDC-45CE-8D22-5E43317EBA0E"/>
+				<Object Name="_LMCAxisVisLogViewer5" Datatype="_LMCAxisVisLogViewer" Guid="455FAA6C-A801-4F92-9131-D41FDF56CED1"/>
+				<Object Name="_LMCAxisVisPara1" Datatype="_LMCAxisVisPara" Guid="0E6F8B42-A0D3-4291-A11B-F82C004100A2"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "_LMCAxisVisInt"
+			Datatype = "DINT"
+			Size     = "744"
+			Guid     = "A99D9DD0-82D4-47B3-B06B-08D3C5018D93">
+			<Servers>
+				<Server Name="Command" Datatype="DINT" Guid="DD647FB6-9E4F-42AB-9575-4562B11197E2" WriteProtected="false"/>
+				<Server Name="ControllerType" Datatype="_LMCCONTROLLERTYPE" Guid="B04F0C2A-3333-4EDE-8290-D057E17D583F" WriteProtected="true"/>
+				<Server Name="UnitSel" Datatype="DINT" Guid="164559CD-8C85-4AF3-B524-38DB3F8F2AEC" WriteProtected="false"/>
+				<Server Name="UnitFactorSel" Datatype="DINT" Guid="D582DDF2-2AF1-42BA-93DC-78B3A7B91D6E" WriteProtected="false"/>
+				<Server Name="UnitFactor" Datatype="DINT" Guid="6AD72B8A-F90E-4BAA-AACB-74E16DBB2558" WriteProtected="false"/>
+				<Server Name="UnitDecPoint" Datatype="DINT" Guid="23B42C57-150B-4783-993E-F8EF51D4CA4C" WriteProtected="false"/>
+				<Server Name="intUnitsadjusted" Datatype="DINT" Guid="F2AA206E-C9E7-4D23-9CE3-75B10D2A58EF" WriteProtected="false"/>
+				<Server Name="CommandState" Datatype="_LMCAXIS_CMDERROR" Guid="DF868433-6BD1-476B-AEBF-58998DB47663" WriteProtected="true"/>
+				<Server Name="MovPosSlow" Datatype="DINT" Guid="32A93867-1B55-4BC9-B80F-6407E1041F9C" WriteProtected="false"/>
+				<Server Name="MovPosFast" Datatype="DINT" Guid="045F4A9B-A5B5-42AE-A7EB-0519466FF6CE" WriteProtected="false"/>
+				<Server Name="MovNegSlow" Datatype="DINT" Guid="8AC5D283-236B-438E-AEAF-7E854CFA9B9E" WriteProtected="false"/>
+				<Server Name="MovNegFast" Datatype="DINT" Guid="539FEC67-00B0-4D53-B68F-AF30A0D3A812" WriteProtected="false"/>
+				<Server Name="MovPosFastEndless" Datatype="DINT" Guid="B78E1690-87D8-49DA-8A95-2118AAADE756" WriteProtected="false"/>
+				<Server Name="MovnegFastEndless" Datatype="DINT" Guid="382DB2B3-3864-4322-9132-6E17103A60E7" WriteProtected="false"/>
+				<Server Name="PowerOnOff" Datatype="DINT" Guid="880B4DC3-6857-4048-BD55-38583FE588A4" WriteProtected="false"/>
+				<Server Name="PowerOnMode" Datatype="_LMCAXIS_MOVEDIRECTION" Guid="E1DC992C-B184-4052-8BA0-F5F2AD0F48B7" WriteProtected="false"/>
+				<Server Name="Xw" Datatype="DINT" Guid="5FFC1E55-B7B9-434F-8483-BE35F1AEEC8F" WriteProtected="true"/>
+				<Server Name="XwMax" Datatype="DINT" Guid="AA0288EF-599A-45A2-A74C-7BF6668BF4F0" WriteProtected="true"/>
+				<Server Name="QuitAllError" Datatype="DINT" Guid="FF88E11F-9CFB-4FDD-AD60-D4D1D62A3C8F" WriteProtected="false"/>
+				<Server Name="CtrDraglimit" Datatype="DINT" Guid="4D3537F6-6FBA-4159-9F54-48FF0570C149" WriteProtected="false"/>
+				<Server Name="CtrPosOffset" Datatype="DINT" Guid="AE95C4DE-F8E2-4B8E-9FD0-077474D5F12B" WriteProtected="false"/>
+				<Server Name="CtrDragCalcDelay" Datatype="DINT" Guid="CE343020-401F-4001-9C9A-6A3960397559" WriteProtected="false"/>
+				<Server Name="CtrcMaxSignal" Datatype="DINT" Guid="C0AF341F-C13F-4A4B-823C-BF6BAE44A147" WriteProtected="false"/>
+				<Server Name="CtrcMaxSignalStepper" Datatype="DINT" Guid="64BBD891-D096-4DC9-AE37-B7530703B2FF" WriteProtected="false"/>
+				<Server Name="CtrcOffSignal" Datatype="DINT" Guid="46E6AF17-D232-4755-8876-33984130F59C" WriteProtected="false"/>
+				<Server Name="CtrcMaxSpeed" Datatype="DINT" Guid="18B6D18C-CA03-400D-8236-FC1A1A0A5444" WriteProtected="false"/>
+				<Server Name="CtrvKV" Datatype="DINT" Guid="CD636C86-F0F9-470C-ABD3-B75A42EF5FF8" WriteProtected="false"/>
+				<Server Name="CtrvKVVFDSTepper" Datatype="DINT" Guid="6AAD2DB7-8437-436C-8F27-8CC632E1E65E" WriteProtected="false"/>
+				<Server Name="CtrvVu" Datatype="DINT" Guid="9FC2AC38-DD55-4F3D-932D-F29F5326FDD2" WriteProtected="false"/>
+				<Server Name="CtrvKI" Datatype="DINT" Guid="6E190264-DD1A-47E6-BA2E-2614B1840F93" WriteProtected="false"/>
+				<Server Name="CtrvKD" Datatype="DINT" Guid="FD9825BC-D518-4F0F-A07E-AEEA4DD6B42D" WriteProtected="false"/>
+				<Server Name="CtrcImode" Datatype="DINT" Guid="022AD23A-37B9-4B74-8C93-FE4AB7AF3F80" WriteProtected="false"/>
+				<Server Name="CtrcEmerStop" Datatype="DINT" Guid="2C5581AA-F774-44A1-933E-62B03BA6AB69" WriteProtected="false"/>
+				<Server Name="CtrcXWOffset" Datatype="DINT" Guid="AEA9C05B-63A9-4387-A70C-0193A06B5FC5" WriteProtected="false"/>
+				<Server Name="CtrDeadbandEnable" Datatype="DINT" Guid="FA957266-AF3E-4F94-ADC3-B066D36AE52F" WriteProtected="false"/>
+				<Server Name="CtrDeadbandDisable" Datatype="DINT" Guid="7793456B-5521-4F5D-BCF9-47BA7383F032" WriteProtected="false"/>
+				<Server Name="CtrDisabledIfStopped" Datatype="DINT" Guid="F39298DB-527B-4015-B47C-E140688BC212" WriteProtected="false"/>
+				<Server Name="CtrDraglimitPowerOnDelay" Datatype="DINT" Guid="F539E3E4-A024-4CBD-9B85-D38620811CC0" WriteProtected="false"/>
+				<Server Name="VelHand" Datatype="DINT" Guid="261C309C-6CD0-467D-8DC4-1F9B6B352DA5" WriteProtected="false"/>
+				<Server Name="AccHand" Datatype="DINT" Guid="C335B4CA-4F60-4369-8A9D-D9271E8BFF3C" WriteProtected="false"/>
+				<Server Name="DecHand" Datatype="DINT" Guid="D32AD1A8-6E91-4610-A5B3-A68E0258CE84" WriteProtected="false"/>
+				<Server Name="ErrorConfig" Datatype="_LMCAXIS_ERROR_CONFIG" Guid="C937DD58-2B35-4FF5-B69C-356699C3D199" WriteProtected="false"/>
+				<Server Name="CtrSetConf" Datatype="_POSFLAGS" Guid="A5AC156D-8EF9-47F2-A033-ED1039E48894" WriteProtected="false"/>
+				<Server Name="TriangleMode" Datatype="DINT" Guid="D08C19B6-D86B-4E11-9994-7F05F02B0547" WriteProtected="false"/>
+				<Server Name="OverridePercent" Datatype="DINT" Guid="D18B923D-39A7-4C26-B145-5386DBCA1275" WriteProtected="false"/>
+				<Server Name="MaxOverridePercent" Datatype="DINT" Guid="7E18914F-8470-4DD0-BB2D-9C3D0D108B2B" WriteProtected="false"/>
+				<Server Name="InversControllerDiasDrive" Datatype="DINT" Guid="3708C464-C816-4105-BBCC-FA697F35725E" WriteProtected="false"/>
+				<Server Name="TabState" Datatype="DINT" Guid="CF162332-8E27-4BFC-BF0F-5234AFAEDDFB" WriteProtected="false"/>
+				<Server Name="GlobalTab" Datatype="DINT" Guid="7F8F9B04-F6E1-4900-86FC-4A3C898C1EC2" WriteProtected="false"/>
+				<Server Name="SettingsTab" Datatype="DINT" Guid="BC5C085C-A693-4249-AD4B-F24EDEB4F2D9" WriteProtected="false"/>
+				<Server Name="LogInfoMerker" Datatype="DINT" Guid="6FDE7795-FE21-482B-A76F-CDDD41AC727A" WriteProtected="false"/>
+				<Server Name="StateMerker" Datatype="DINT" Guid="4D1921D8-442F-4ED7-9545-DE8B68E0B41B" WriteProtected="false"/>
+				<Server Name="InitDone" Datatype="DINT" Guid="86A2D2BB-4DB8-4AA3-AABA-3E7EB58CE4D9" WriteProtected="true"/>
+				<Server Name="SetVerify" Datatype="DINT" Guid="AB2954C2-D1D4-40D4-8886-963317DEACAD" WriteProtected="false"/>
+				<Server Name="ClearVerify" Datatype="DINT" Guid="F932C1EE-4B90-453C-A2C0-2D04F01EAC0B" WriteProtected="false"/>
+				<Server Name="ClearSafeReference" Datatype="DINT" Guid="F12F4B58-7827-4426-9140-C34A3AFDDA4D" WriteProtected="false"/>
+				<Server Name="AxisOPMode" Datatype="_LMCAXIS_OPMODE" Guid="AEAE1CF9-462B-4C5D-8184-46ED09909769" WriteProtected="true"/>
+				<Server Name="PowerButtonState" Datatype="DINT" Guid="23C9900E-8248-4DEB-B414-9CEF4A379A0D" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "_LMCAxisVisLogHandle"
+			Datatype = "DINT"
+			Size     = "76"
+			Guid     = "9339F4DB-3648-45E7-8349-74B997685850">
+			<Servers>
+				<Server Name="LogMode" Datatype="DINT" Guid="BBE9F988-24AE-4EE6-B4F1-C2540DEB31FD" WriteProtected="false"/>
+				<Server Name="LogOffset" Datatype="DINT" Guid="AFD7152F-F363-4A1E-9DA8-476CA7975946" WriteProtected="false"/>
+				<Server Name="LogOffsetMax" Datatype="DINT" Guid="26C34576-73C1-43E3-A65D-F662922856CD" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "_LMCAxisVisLogViewer"
+			Datatype = "DINT"
+			Size     = "172"
+			Guid     = "CD81F08D-C063-49AC-9A2D-FED06A5427CD">
+			<Servers>
+				<Server Name="LogIndexVisu" Datatype="DINT" Guid="A606346E-8F2C-4C31-B2D3-8A2202DA09B6" WriteProtected="true"/>
+				<Server Name="LogCmd" Datatype="_LMCAxisBase::_CommandList" Guid="5C5B6D79-5609-427E-9173-04F53FEE944E" WriteProtected="true"/>
+				<Server Name="LogState" Datatype="_LMCAXIS_CMDERROR" Guid="E02284D9-AC96-40CE-AAF5-F0C9AD2CBEFF" WriteProtected="true"/>
+				<Server Name="LogTimeStamp" Datatype="UDINT" Guid="C2F9F0A8-92A4-4ABE-8F17-8A89D94003A5" WriteProtected="true"/>
+				<Server Name="LogTimeH" Datatype="UDINT" Guid="2161AC99-85B7-4E1C-A8CA-4D3B1DCB136E" WriteProtected="true"/>
+				<Server Name="LogTimeM" Datatype="UDINT" Guid="71031270-2418-4041-82B2-5AEA2BDB000A" WriteProtected="true"/>
+				<Server Name="LogTimeS" Datatype="UDINT" Guid="345BC8B2-7934-4CAC-B458-C516602E779E" WriteProtected="true"/>
+				<Server Name="LogTimeMS" Datatype="UDINT" Guid="4B4F415A-CD36-44F6-8B8A-E82F3B9A5976" WriteProtected="true"/>
+				<Server Name="LogRTStamp" Datatype="UDINT" Guid="DC7192D1-A35B-4880-9E9B-92362A99F896" WriteProtected="true"/>
+				<Server Name="LogValid" Datatype="DINT" Guid="30E72D16-DB15-4249-AFBE-6E0C6F74D8E7" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "_LMCAxisVisPara"
+			Datatype = "DINT"
+			Size     = "336"
+			Guid     = "5C8694ED-7458-410B-8EB4-4ED04D8D11E2">
+			<Servers>
+				<Server Name="Velocity" Datatype="DINT" Guid="198EB64A-689B-4604-9BB2-A90294787DE7" WriteProtected="false"/>
+				<Server Name="Accel" Datatype="DINT" Guid="DA434BFC-5DDB-4303-8527-5D12A64D972B" WriteProtected="false"/>
+				<Server Name="Decel" Datatype="DINT" Guid="7D01275C-35A0-4690-A4EF-D4F4C5251AEE" WriteProtected="false"/>
+				<Server Name="Position" Datatype="DINT" Guid="AAB8F33A-2CC6-46CE-A633-396F0A3B2E64" WriteProtected="false"/>
+				<Server Name="MovAbsPos" Datatype="DINT" Guid="F2C022EC-0E19-488F-8464-63A6DE804CD7" WriteProtected="false"/>
+				<Server Name="PowOffMode" Datatype="_LMCAXIS_POWER_OFF_MODE" Guid="8F20A834-DD59-490A-9AEE-A413DAF829B8" WriteProtected="false"/>
+				<Server Name="MovRefMode" Datatype="_LMCAXIS_REFMODE" Guid="B19CD4C1-F5AC-4862-8A29-D2CE8CB3502C" WriteProtected="false"/>
+				<Server Name="MovRefPos" Datatype="DINT" Guid="1130D175-826B-49E5-9D2E-40C0492460A9" WriteProtected="false"/>
+				<Server Name="MovRefVel1" Datatype="DINT" Guid="63AA7699-D7AB-4628-9092-6F37144AE90E" WriteProtected="false"/>
+				<Server Name="MovRefVel2" Datatype="DINT" Guid="3456A407-BE2C-426C-B989-1B51BDE2E05B" WriteProtected="false"/>
+				<Server Name="MovRefAcc" Datatype="DINT" Guid="9A5E06AC-A069-4FE2-90D5-8A67ED0A1D47" WriteProtected="false"/>
+				<Server Name="MovRefPosWindow" Datatype="DINT" Guid="41028867-58C9-4625-8306-57644096F5CC" WriteProtected="false"/>
+				<Server Name="MovRelPos" Datatype="DINT" Guid="52A9BF1D-382C-4254-9712-554AD81323B2" WriteProtected="false"/>
+				<Server Name="MovRelMode" Datatype="_LMCAXIS_MOVE_RELATIVE_MODE" Guid="90BE28BB-984C-42D2-A842-60D1413B4E12" WriteProtected="false"/>
+				<Server Name="TunePos" Datatype="DINT" Guid="8E9A814B-A5C4-4ACC-B27C-41473F26B4D3" WriteProtected="false"/>
+				<Server Name="TuneMode" Datatype="DINT" Guid="80F2266F-E534-4AD2-A4BC-4A2C9BFD043B" WriteProtected="false"/>
+				<Server Name="WaitTime" Datatype="UDINT" Guid="085689B6-611C-4518-AC04-7CD874809DCB" WriteProtected="false"/>
+				<Server Name="SetPosMode" Datatype="_LMCAXIS_SETPOSITION" Guid="6B55045E-F1FF-4331-AD6B-2734D97B2D17" WriteProtected="false"/>
+				<Server Name="SetPosVal" Datatype="DINT" Guid="D75195E1-6BDB-425B-A326-1C568BF13F10" WriteProtected="false"/>
+				<Server Name="SetParNo" Datatype="_LMCAXIS_SETPARAMETER" Guid="7F220B91-6058-42B6-B9CD-918A6CF6D600" WriteProtected="false"/>
+				<Server Name="SetParMode" Datatype="DINT" Guid="B02B8454-8EC0-4DA1-AB0F-22953E8952FD" WriteProtected="false"/>
+				<Server Name="SetParVal" Datatype="DINT" Guid="5573897E-4ECD-4A46-AFC1-44AAF2CA352E" WriteProtected="false"/>
+				<Server Name="SetSWPosMode" Datatype="_LMCAXIS_SETSWENDPOS" Guid="A4C84C9E-4B76-4F52-9808-45253C073C88" WriteProtected="false"/>
+				<Server Name="SetSWPosVal" Datatype="DINT" Guid="B0E4BF6F-97C5-404F-BE52-871E83B6B2E3" WriteProtected="false"/>
+				<Server Name="MovDirection" Datatype="DINT" Guid="C84E72A4-4A17-464D-997B-F2CE28D3BAED" WriteProtected="false"/>
+				<Server Name="Jerk" Datatype="DINT" Guid="1C109A84-45CD-4A2F-8F24-9D76F464CFB1" WriteProtected="false"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "_LMCRefBase"
+			Datatype = "DINT"
+			Size     = "12"
+			Guid     = "DDA02D7F-AF14-499F-90C1-3DCEBCBDC4D9">
+		</Class>
+		<Class
+			Name     = "AI043"
+			Datatype = "t_e_VaranErrors"
+			Base     = "SdiasBase"
+			Size     = "924"
+			Guid     = "60F7777C-F3F3-4B20-915B-C8F9D4BBCA83">
+			<Servers>
+				<Server Name="ClassState" Datatype="t_e_VaranErrors" Guid="070CD62D-F011-403B-A668-118E2A1842A7" WriteProtected="true"/>
+				<Server Name="DeviceID" Datatype="UDINT" Guid="1F67076F-D511-400A-8CEF-0F0E0579EC0B" WriteProtected="true"/>
+				<Server Name="FPGAVersion" Datatype="HDINT" Guid="D5EF701A-412A-4C34-AA2E-FFC7D82C2F86" WriteProtected="true"/>
+				<Server Name="HwVersion" Datatype="HDINT" Guid="6BF31076-362C-4517-9DA7-F776C9F85012" WriteProtected="true"/>
+				<Server Name="SerialNo" Datatype="STRING" Guid="68FBC413-E3CB-4059-BC09-1D975B4D4819" WriteProtected="true"/>
+				<Server Name="RetryCounter" Datatype="UDINT" Guid="833C80D1-4726-4DCB-B1AB-C268D7D72245" WriteProtected="true"/>
+				<Server Name="LEDControl" Datatype="DINT" Guid="FA9DCFC5-B668-4B7B-8E80-E0410DEF9ED8" WriteProtected="false"/>
+				<Server Name="FirmwareVersion" Datatype="HDINT" Guid="74ABB48A-A01C-4856-BC0B-2268E5981932" WriteProtected="true"/>
+				<Server Name="FWErrorBits" Datatype="SdiasBase::t_s_SdiasFWStateStandard" Guid="52BC0A9C-D330-4475-A685-12337C1BD543" WriteProtected="true"/>
+				<Server Name="AI1" Datatype="DINT" Guid="08A3C829-FE79-4197-9D60-296278BDCF8C" WriteProtected="true"/>
+				<Server Name="AI2" Datatype="DINT" Guid="817A5181-F870-4D7B-9002-7D4F5BFA549C" WriteProtected="true"/>
+				<Server Name="AI3" Datatype="DINT" Guid="44E8C4DB-7B34-4FD5-8156-6B50F5973B3F" WriteProtected="true"/>
+				<Server Name="AI4" Datatype="DINT" Guid="43267F4F-D9E0-4E74-9848-858B75487729" WriteProtected="true"/>
+				<Server Name="CableBreak" Datatype="BDINT" Guid="6F75EDE5-C8E1-4005-8AC7-1E9CB7F299CC" WriteProtected="true"/>
+				<Server Name="Range" Datatype="BDINT" Guid="C1B4CA0B-3900-40A9-9A71-DD5374B97B08" WriteProtected="true"/>
+			</Servers>
+			<Objects>
+				<Object Name="SerialNoStr" Datatype="String" Guid="016F794C-857F-482F-8C65-B5EE24158A3F"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "ASCII_BIN"
+			Datatype = "DINT"
+			Size     = "12"
+			Guid     = "CBAEE384-C115-4DE8-8094-C7D4F0EF8746">
+			<Servers>
+				<Server Name="Obj_channel" Datatype="DINT" Guid="AA790E5E-E4EC-4B0F-80BB-3FC837048BBA" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "BusInterfaceSdias"
+			Datatype = "t_e_VaranErrors"
+			Base     = "SdiasBase"
+			Size     = "4920"
+			Guid     = "74134B4E-6C37-4D4E-A553-14246973EFB6">
+		</Class>
+		<Class
+			Name     = "BusInterfaceSDIASInternal"
+			Datatype = "DINT"
+			Size     = "232"
+			Guid     = "0F88252F-E206-4746-9EE2-190EB96646AE">
+		</Class>
+		<Class
+			Name     = "BusInterfaceVARAN"
+			Datatype = "t_e_VaranErrors"
+			Base     = "Varan_Base"
+			Size     = "13076"
+			Guid     = "013BA757-940A-4EA8-B1BE-51A701626C2E">
+		</Class>
+		<Class
+			Name     = "clsHMI"
+			Datatype = "DINT"
+			Size     = "84"
+			Guid     = "7FA8BFF6-E8AB-4A85-9515-8DBAD82A5670">
+			<Servers>
+				<Server Name="sUbergabeHMI" Datatype="DINT" Guid="6CE70355-F024-47E5-8DE2-8F426953621C" WriteProtected="false"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "Controller"
+			Datatype = "DINT"
+			Size     = "16"
+			Guid     = "2EE15EB7-1F89-11D5-90C4-006063018AE8">
+		</Class>
+		<Class
+			Name     = "CP112_IOs"
+			Datatype = "DINT"
+			Base     = "XXXBase_IOs"
+			Size     = "204"
+			Guid     = "57313482-BD5C-4316-91BE-BC6D8D2B3999">
+			<Servers>
+				<Server Name="ClassState" Datatype="DINT" Guid="3A3AB6B3-8638-4EBF-BE1F-FF95BD2A673E" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "DM081"
+			Datatype = "t_e_VaranErrors"
+			Base     = "SdiasBase"
+			Size     = "592"
+			Guid     = "AED47534-93F9-4121-BB46-A4E10274E319">
+			<Servers>
+				<Server Name="ClassState" Datatype="t_e_VaranErrors" Guid="070CD62D-F011-403B-A668-118E2A1842A7" WriteProtected="true"/>
+				<Server Name="DeviceID" Datatype="UDINT" Guid="1F67076F-D511-400A-8CEF-0F0E0579EC0B" WriteProtected="true"/>
+				<Server Name="FPGAVersion" Datatype="HDINT" Guid="D5EF701A-412A-4C34-AA2E-FFC7D82C2F86" WriteProtected="true"/>
+				<Server Name="HwVersion" Datatype="HDINT" Guid="6BF31076-362C-4517-9DA7-F776C9F85012" WriteProtected="true"/>
+				<Server Name="SerialNo" Datatype="STRING" Guid="68FBC413-E3CB-4059-BC09-1D975B4D4819" WriteProtected="true"/>
+				<Server Name="RetryCounter" Datatype="UDINT" Guid="833C80D1-4726-4DCB-B1AB-C268D7D72245" WriteProtected="true"/>
+				<Server Name="LEDControl" Datatype="DINT" Guid="FA9DCFC5-B668-4B7B-8E80-E0410DEF9ED8" WriteProtected="false"/>
+				<Server Name="Input1" Datatype="DINT" Guid="78CBD8B5-A7E5-4EC2-BCDE-4759BC25EEDD" WriteProtected="true"/>
+				<Server Name="Input2" Datatype="DINT" Guid="D7C39510-5FCD-4378-8A69-1FF72705AE8A" WriteProtected="true"/>
+				<Server Name="Input3" Datatype="DINT" Guid="7809BB02-7249-4DE2-B5FA-5B0CED75A216" WriteProtected="true"/>
+				<Server Name="Input4" Datatype="DINT" Guid="D866B89D-89AA-4B29-9189-02212121E973" WriteProtected="true"/>
+				<Server Name="Output1" Datatype="DINT" Guid="C81EFEC1-7476-432A-9C96-D37900FDA024" WriteProtected="false"/>
+				<Server Name="Output2" Datatype="DINT" Guid="B209E941-75DE-4030-B33C-2A9A68AB8BF0" WriteProtected="false"/>
+				<Server Name="Output3" Datatype="DINT" Guid="0367AA3A-6FC2-4625-B25F-FF190877ED08" WriteProtected="false"/>
+				<Server Name="Output4" Datatype="DINT" Guid="39F4B835-9C40-4586-A2CA-6D0AF6A45C42" WriteProtected="false"/>
+				<Server Name="InputByte" Datatype="BDINT" Guid="3CF865A6-AD11-4C72-B153-1D28F9C2612E" WriteProtected="true"/>
+				<Server Name="OutputByte" Datatype="BDINT" Guid="5E2CF909-A843-41E9-9A25-D0ACF7D49B10" WriteProtected="false"/>
+				<Server Name="VoltageOk" Datatype="DINT" Guid="A9AF7DB6-2EE7-49EB-BBDA-3CB965C29463" WriteProtected="true"/>
+			</Servers>
+			<Objects>
+				<Object Name="SerialNoStr" Datatype="String" Guid="016F794C-857F-482F-8C65-B5EE24158A3F"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "DM161"
+			Datatype = "t_e_VaranErrors"
+			Base     = "SdiasBase"
+			Size     = "688"
+			Guid     = "32158574-3D84-4244-ABAE-F62BF4B89E96">
+			<Servers>
+				<Server Name="ClassState" Datatype="t_e_VaranErrors" Guid="070CD62D-F011-403B-A668-118E2A1842A7" WriteProtected="true"/>
+				<Server Name="DeviceID" Datatype="UDINT" Guid="1F67076F-D511-400A-8CEF-0F0E0579EC0B" WriteProtected="true"/>
+				<Server Name="FPGAVersion" Datatype="HDINT" Guid="D5EF701A-412A-4C34-AA2E-FFC7D82C2F86" WriteProtected="true"/>
+				<Server Name="HwVersion" Datatype="HDINT" Guid="6BF31076-362C-4517-9DA7-F776C9F85012" WriteProtected="true"/>
+				<Server Name="SerialNo" Datatype="STRING" Guid="68FBC413-E3CB-4059-BC09-1D975B4D4819" WriteProtected="true"/>
+				<Server Name="RetryCounter" Datatype="UDINT" Guid="833C80D1-4726-4DCB-B1AB-C268D7D72245" WriteProtected="true"/>
+				<Server Name="LEDControl" Datatype="DINT" Guid="FA9DCFC5-B668-4B7B-8E80-E0410DEF9ED8" WriteProtected="false"/>
+				<Server Name="Input1" Datatype="DINT" Guid="2D974C62-80E3-4625-828C-140BD0016A2D" WriteProtected="true"/>
+				<Server Name="Input2" Datatype="DINT" Guid="38869745-7485-4568-812C-843F8B105A11" WriteProtected="true"/>
+				<Server Name="Input3" Datatype="DINT" Guid="D70208B8-C9DE-4DE0-8909-3ADADBF462CE" WriteProtected="true"/>
+				<Server Name="Input4" Datatype="DINT" Guid="8B1558AC-FBE6-4997-8C8E-003BF3E07D4F" WriteProtected="true"/>
+				<Server Name="Input5" Datatype="DINT" Guid="FA430548-0138-41BD-B527-374169014476" WriteProtected="true"/>
+				<Server Name="Input6" Datatype="DINT" Guid="188D3054-6589-446F-A074-BA8D79AE341F" WriteProtected="true"/>
+				<Server Name="Input7" Datatype="DINT" Guid="F80FDD57-918F-45EE-8CEE-6F6CBBAE22CF" WriteProtected="true"/>
+				<Server Name="Input8" Datatype="DINT" Guid="30E9C9BB-DFBB-4C24-936D-3B2CB8EFA649" WriteProtected="true"/>
+				<Server Name="Output1" Datatype="DINT" Guid="6D9719FB-779C-4EAF-A41A-8726515E46F2" WriteProtected="false"/>
+				<Server Name="Output2" Datatype="DINT" Guid="04641EAB-5DB5-4164-8EBA-13EB02625D5A" WriteProtected="false"/>
+				<Server Name="Output3" Datatype="DINT" Guid="03C4CDF3-4B3F-4F73-A39E-0E8132C6A6E4" WriteProtected="false"/>
+				<Server Name="Output4" Datatype="DINT" Guid="C6CE0931-58EE-4E11-9D18-8C70B0390864" WriteProtected="false"/>
+				<Server Name="Output5" Datatype="DINT" Guid="D0C365FB-0386-4EF8-AFD5-BA86E56A7AA0" WriteProtected="false"/>
+				<Server Name="Output6" Datatype="DINT" Guid="C97A79B3-1A91-4A3E-AC64-F24DABC9A698" WriteProtected="false"/>
+				<Server Name="Output7" Datatype="DINT" Guid="807DE5FE-061C-45CA-BD0C-97155D91357D" WriteProtected="false"/>
+				<Server Name="Output8" Datatype="DINT" Guid="F72C0E69-3486-4186-A693-31D01551FE3D" WriteProtected="false"/>
+				<Server Name="InputByte" Datatype="BDINT" Guid="8E5F05B8-8D1B-4170-94CA-86E586096B3C" WriteProtected="true"/>
+				<Server Name="OutputByte" Datatype="BDINT" Guid="82951DB6-2149-49F8-9C40-64D33C503818" WriteProtected="false"/>
+				<Server Name="VoltageOk" Datatype="DINT" Guid="544B8C98-4878-4C59-BF98-FC0E29F32E2B" WriteProtected="true"/>
+			</Servers>
+			<Objects>
+				<Object Name="SerialNoStr" Datatype="String" Guid="016F794C-857F-482F-8C65-B5EE24158A3F"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "DrivePosControl"
+			Datatype = "DINT"
+			Base     = "Controller"
+			Size     = "872"
+			Guid     = "AA030600-8769-4405-9D7F-9C059AE18867">
+			<Servers>
+				<Server Name="Signal_Input" Datatype="DINT" Guid="2EE15EB8-1F89-11D5-90C4-006063018AE8" WriteProtected="false"/>
+				<Server Name="XW" Datatype="DINT" Guid="A8F2ADE4-1219-496D-925F-3827B1FCA309" WriteProtected="false"/>
+				<Server Name="XWMax" Datatype="DINT" Guid="4690AEAD-0857-484B-B187-9F3897CC61E9" WriteProtected="false"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "Hub_Base"
+			Datatype = "DINT"
+			Base     = "VaranManager_Base"
+			Size     = "72"
+			Guid     = "EF7BD0F8-81CC-4E01-A3FF-C2B56BBF8AD3">
+			<Servers>
+				<Server Name="Control" Datatype="DINT" Guid="217B6364-B62D-4D4A-A8F6-84A5BF141EC1" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "Hub_Base_Root"
+			Datatype = "DINT"
+			Base     = "Hub_Base"
+			Size     = "84"
+			Guid     = "64ED1FC4-EA8C-4B30-98C0-5BA271C4FFE8">
+			<Servers>
+				<Server Name="Control" Datatype="DINT" Guid="217B6364-B62D-4D4A-A8F6-84A5BF141EC1" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "HwControl"
+			Datatype = "DINT"
+			Base     = "HwControlBase"
+			Size     = "892"
+			Guid     = "4794F3F9-7ABA-4680-9933-0608225B5265">
+			<Servers>
+				<Server Name="Control" Datatype="DINT" Guid="6E0C095B-B92D-47BE-BA84-39E07206C58D" WriteProtected="true"/>
+				<Server Name="State" Datatype="t_e_VaranErrors" Guid="662C9213-4BB2-4CC6-AE9F-D19FC74B0F6B" WriteProtected="true"/>
+				<Server Name="DiasMaster" Datatype="DINT" Guid="346AEDBC-831D-4D5C-B71F-A1BF17D120A4" WriteProtected="false"/>
+				<Server Name="SafetyState" Datatype="DINT" Guid="7E088AB6-AB0A-450E-964A-E46FE15A0D4B" WriteProtected="true"/>
+			</Servers>
+			<Objects>
+				<Object Name="SafetyManager" Datatype="SafetyManager" Guid="4545C840-4FB2-4C80-B150-345DF08208A7"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "HwControlBase"
+			Datatype = "DINT"
+			Size     = "72"
+			Guid     = "25529921-015E-4979-B126-D406D2F83DDD">
+		</Class>
+		<Class
+			Name     = "RamFile"
+			Datatype = "UDINT"
+			Size     = "680"
+			Guid     = "D5F246E6-EA0F-4431-9134-C50A66E56711">
+			<Servers>
+				<Server Name="m_udLength" Datatype="UDINT" Guid="59B171D4-E9AA-4206-A049-717953C3466E" WriteProtected="true"/>
+				<Server Name="FileNameHex" Datatype="HDINT" Guid="0941D254-6150-4D02-BCD0-5C3DE24E87AD" WriteProtected="true"/>
+				<Server Name="SizeError" Datatype="DINT" Guid="B708A640-1A0C-476E-AE9E-F44A5B69576A" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "SafetyBaseFSoE"
+			Datatype = "DINT"
+			Size     = "10216"
+			Guid     = "7B09BE5F-9F0C-4D32-AF0D-D03A17AC196B">
+		</Class>
+		<Class
+			Name     = "SafetyManager"
+			Datatype = "DINT"
+			Base     = "SafetyUDP"
+			Size     = "39452"
+			Guid     = "186EBAC0-5F71-4A3F-BA36-ED9EA68EA059">
+			<Servers>
+				<Server Name="ClassState" Datatype="DINT" Guid="A6D9A0DC-20E2-414D-B902-67A7FC14ABB0" WriteProtected="true"/>
+				<Server Name="sErrorCount" Datatype="DINT" Guid="873197F2-33A7-4806-A999-3D24D4F6C9BB" WriteProtected="true"/>
+				<Server Name="sLastErrorMessage" Datatype="SafetyUDP::_FSM_UDP_ERROR" Guid="94E630A5-6991-4FA1-AF39-605514F6C930" WriteProtected="true"/>
+				<Server Name="sLastErrorNoOS" Datatype="DINT" Guid="ED25AD73-138F-4A20-90C9-1E2204E795D3" WriteProtected="true"/>
+				<Server Name="LoginCnt" Datatype="DINT" Guid="5FC5C929-C7F8-4BFB-8DF3-09B84403273D" WriteProtected="true"/>
+				<Server Name="MinSyncDuration" Datatype="UDINT" Guid="697A1FC7-1D68-4539-AE59-3800B4CF8373" WriteProtected="false"/>
+				<Server Name="SyncDuration" Datatype="UDINT" Guid="58439908-A73E-4D89-8216-1483D81B8572" WriteProtected="true"/>
+				<Server Name="MaxSyncDuration" Datatype="UDINT" Guid="7517B303-9F59-4B9A-AD1A-8766B8C07194" WriteProtected="false"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "SafetyUDP"
+			Datatype = "DINT"
+			Size     = "232"
+			Guid     = "5260DCC2-D171-4729-B965-8A7B43D0B86A">
+			<Types>
+				<Type Name="_FSM_UDP_ERROR" Datatype="DINT" TypeId="ENUM">
+					<Elements>
+						<Type Name="_NO_ERROR_UDP_ERROR" Value="0"/>
+						<Type Name="_INIT_TCP_USER_UDP_ERROR" Value="4294967295"/>
+						<Type Name="_NO_IP_ADDRESS_UDP_ERROR" Value="4294967294"/>
+						<Type Name="_NO_MEMORY_SOCKET_UDP_ERROR" Value="4294967293"/>
+						<Type Name="_NO_MEMORY_SENDBUFFER_UDP_ERROR" Value="4294967292"/>
+						<Type Name="_INVALID_HANDLE_UDP_ERROR" Value="4294967291"/>
+						<Type Name="_SHUTDOWN_UDP_ERROR" Value="4294967290"/>
+						<Type Name="_CLOSESOCKET_UDP_ERROR" Value="4294967289"/>
+						<Type Name="_ALLOCATE_SOCKET_UDP_ERROR" Value="4294967288"/>
+						<Type Name="_SET_BIND_UDP_ERROR" Value="4294967287"/>
+						<Type Name="_RECV_UDP_ERROR" Value="4294967286"/>
+						<Type Name="_SEND_UDP_ERROR" Value="4294967285"/>
+						<Type Name="_NO_LOCAL_IP_UDP_ERROR" Value="4294967284"/>
+						<Type Name="_NO_DESTINATION_IP_UDP_ERROR" Value="4294967283"/>
+						<Type Name="_INVALID_UDP_PORT_UDP_ERROR" Value="4294967284"/>
+						<Type Name="_INVALID_INTERFACE_NUMBER_UDP_ERROR" Value="4294967285"/>
+						<Type Name="_NO_MEMORY_RECEIVE_BUFFER_UDP_ERROR" Value="4294967286"/>
+						<Type Name="_NO_MEMORY_CONNECTION_BUFFER_UDP_ERROR" Value="4294967287"/>
+					</Elements>
+				</Type>
+			</Types>
+		</Class>
+		<Class
+			Name     = "SCP111"
+			Datatype = "t_e_VaranErrors"
+			Base     = "BusInterfaceSdias"
+			Size     = "5220"
+			Guid     = "0895B3E0-011E-422A-B14C-ABA587DF4D86">
+			<Servers>
+				<Server Name="ClassState" Datatype="t_e_VaranErrors" Guid="070CD62D-F011-403B-A668-118E2A1842A7" WriteProtected="true"/>
+				<Server Name="DeviceID" Datatype="UDINT" Guid="1F67076F-D511-400A-8CEF-0F0E0579EC0B" WriteProtected="true"/>
+				<Server Name="FPGAVersion" Datatype="HDINT" Guid="D5EF701A-412A-4C34-AA2E-FFC7D82C2F86" WriteProtected="true"/>
+				<Server Name="HwVersion" Datatype="HDINT" Guid="6BF31076-362C-4517-9DA7-F776C9F85012" WriteProtected="true"/>
+				<Server Name="SerialNo" Datatype="STRING" Guid="68FBC413-E3CB-4059-BC09-1D975B4D4819" WriteProtected="true"/>
+				<Server Name="RetryCounter" Datatype="UDINT" Guid="833C80D1-4726-4DCB-B1AB-C268D7D72245" WriteProtected="true"/>
+				<Server Name="SafetyState" Datatype="SafetyConfigStateType" Guid="1C61AEC1-1DB4-494A-BB65-88BAD86607BA" WriteProtected="true"/>
+				<Server Name="RunState" Datatype="DINT" Guid="505E7FD0-1D16-49C8-9046-FDC7C879ECAA" WriteProtected="true"/>
+				<Server Name="ServiceMode" Datatype="DINT" Guid="64B9AD40-F811-4EA4-A753-CD7DFD5C2230" WriteProtected="true"/>
+				<Server Name="ErrorState" Datatype="DINT" Guid="97F68A06-7C65-48EA-8747-7C685BBBBAF1" WriteProtected="true"/>
+				<Server Name="QuitComError" Datatype="DINT" Guid="8F2D6E32-DB61-4B9A-A52C-6566EFE9F015" WriteProtected="false"/>
+				<Server Name="FirmwareVersion" Datatype="HDINT" Guid="99D3F343-CFCA-4C79-A783-5B921AE2119D" WriteProtected="true"/>
+				<Server Name="SafetyNumber" Datatype="HDINT" Guid="6C2DC144-9119-4CA0-8B66-11868AB52785" WriteProtected="true"/>
+				<Server Name="ApplCRC" Datatype="HDINT" Guid="D5178D2C-980B-4282-8BC9-28A86B95A2C5" WriteProtected="true"/>
+				<Server Name="HwCRC" Datatype="HDINT" Guid="626D2522-8ED3-4F0D-865F-34190ACD588D" WriteProtected="true"/>
+				<Server Name="DesignerPrjName" Datatype="STRING" Guid="69E13CC5-FE82-48D1-973A-FD2671712AA7" WriteProtected="true"/>
+				<Server Name="DesignerPrjRev" Datatype="STRING" Guid="50F3C08D-F1EE-4447-91A9-758A83D53F3C" WriteProtected="true"/>
+				<Server Name="ValidationButtonState" Datatype="DINT" Guid="A0B1F955-6FEF-4898-A807-C9A614B77BF4" WriteProtected="true"/>
+				<Server Name="FastUnsafeInputs" Datatype="BDINT" Guid="F7E36086-DB61-4453-BD44-693DD3AB5FD4" WriteProtected="false"/>
+				<Server Name="FastUnsafeOutputs" Datatype="BDINT" Guid="9ADD5AEE-A374-43D2-ADAB-8CAB457DE785" WriteProtected="false"/>
+				<Server Name="SdiasSafetyOut" Datatype="DINT" Guid="87F1233D-548C-411B-BB97-ABC3F4C7A72E" WriteProtected="true"/>
+				<Server Name="SafetyRetryCounter" Datatype="DINT" Guid="53AF9255-7390-41E2-BA2F-967B9CAACF8A" WriteProtected="true"/>
+				<Server Name="FCN_Command" Datatype="UDINT" Guid="325FD72B-AEAC-439E-BE73-FC17DB6B8E0C" WriteProtected="false"/>
+				<Server Name="FCN_StateMachine" Datatype="UDINT" Guid="656029C6-63CC-41E0-A316-C2E1D06B4266" WriteProtected="true"/>
+				<Server Name="FCN_HostSafetyNumber" Datatype="HDINT" Guid="2D80BE68-8BF9-4870-B4D3-741A9EE41316" WriteProtected="true"/>
+			</Servers>
+			<Objects>
+				<Object Name="SdiasSafetyManagerFSoE1" Datatype="SdiasSafetyManagerFSoE" Guid="EF603F3E-5340-40A9-AAB0-BB16ED46D520"/>
+				<Object Name="SerialNoStr" Datatype="String" Guid="016F794C-857F-482F-8C65-B5EE24158A3F"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "SdiasBase"
+			Datatype = "t_e_VaranErrors"
+			Size     = "448"
+			Guid     = "A44D11C6-5133-4AE2-9A40-4704050522AE">
+			<Types>
+				<Type Name="t_b_SdiasFWState" Datatype="BINT" TypeId="BIT">
+					<Elements>
+						<Type Name="VoltageNotOk" BitNo="1"/>
+						<Type Name="NoSync" BitNo="2"/>
+						<Type Name="FlashDataCRCError" BitNo="3"/>
+						<Type Name="RAMDataCRCError" BitNo="4"/>
+						<Type Name="FlashUnsafe" BitNo="5"/>
+						<Type Name="BusTimeNotSupported" BitNo="6"/>
+						<Type Name="ToggleBit" BitNo="7"/>
+					</Elements>
+				</Type>
+				<Type
+					Name      = "t_s_SdiasFWStateStandard"
+					TypeId    = "STRUCT"
+					Size      = "4"
+					Alignment = "1">
+					<Elements>
+						<Type Name="ErrorBits" Datatype="SdiasBase::t_b_SdiasFWState" Offset="0"/>
+						<Type Name="Reserved" Datatype="UINT" Offset="2"/>
+					</Elements>
+				</Type>
+			</Types>
+		</Class>
+		<Class
+			Name     = "SdiasManager"
+			Datatype = "t_e_VaranErrors"
+			Size     = "7300"
+			Guid     = "394AF67B-8CC6-416D-B09C-7933A3E56E13">
+			<Servers>
+				<Server Name="ClassState" Datatype="t_e_VaranErrors" Guid="E6C8CCE7-B734-4664-8812-F515E1FE477F" WriteProtected="true"/>
+				<Server Name="RetryCounter" Datatype="UDINT" Guid="137B93FA-1521-4EAB-847F-D714446F712A" WriteProtected="true"/>
+				<Server Name="FirmwareVersion" Datatype="HDINT" Guid="33D83E48-6798-4F71-8AEC-B390D678A708" WriteProtected="true"/>
+				<Server Name="IsoWrTaskDuration" Datatype="UDINT" Guid="FA10A8DF-3224-4BE8-BB1A-0F7DC484B45D" WriteProtected="true"/>
+				<Server Name="IsoWrTaskMaxDuration" Datatype="UDINT" Guid="A06F001F-ACF6-457D-95D0-C51681D1E93C" WriteProtected="false"/>
+				<Server Name="IsoRdTaskDuration" Datatype="UDINT" Guid="84AD2B57-3AC4-4538-BDB4-2DAEE2EFB169" WriteProtected="true"/>
+				<Server Name="IsoRdTaskMaxDuration" Datatype="UDINT" Guid="EF301307-DE27-43B6-A903-8B0CC8527A83" WriteProtected="false"/>
+				<Server Name="IsoTaskErrorCount" Datatype="DINT" Guid="FA87199C-1736-4C34-AA25-9B13716E0332" WriteProtected="true"/>
+				<Server Name="ManagerOptionBits" Datatype="DINT" Guid="4DB931BE-ED72-4899-84E6-9E3B1687227E" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "SdiasPLC"
+			Datatype = "DINT"
+			Base     = "BusInterfaceSDIASInternal"
+			Size     = "404"
+			Guid     = "8EE0BE0E-BEE7-4218-A4AF-A0AB0DE83F43">
+			<Servers>
+				<Server Name="FirmwareVersion" Datatype="HDINT" Guid="110EDFDE-5D00-4525-834D-7E99AA65EEF4" WriteProtected="true"/>
+				<Server Name="ClassState" Datatype="t_e_VaranErrors" Guid="CC338568-5E5E-4B72-BB67-E573CD9CE59F" WriteProtected="true"/>
+				<Server Name="RetryCounter" Datatype="UDINT" Guid="3BC15DE0-3955-4B15-86D2-18FB43792F0F" WriteProtected="true"/>
+				<Server Name="IsoWrTaskDuration" Datatype="UDINT" Guid="107F6C59-3F86-4945-883C-1730324CE708" WriteProtected="true"/>
+				<Server Name="IsoWrTaskMaxDuration" Datatype="UDINT" Guid="732E66FA-8CD0-4FE7-BB47-F47F45CD63D4" WriteProtected="false"/>
+				<Server Name="IsoRdTaskDuration" Datatype="UDINT" Guid="6DEF0FB2-2B7B-4859-A498-992DF86A9C33" WriteProtected="true"/>
+				<Server Name="IsoRdTaskMaxDuration" Datatype="UDINT" Guid="7407C9C7-AEDD-478D-94B7-18DEC7EA7537" WriteProtected="false"/>
+				<Server Name="ManagerOptionBits" Datatype="DINT" Guid="1ACFAA3D-1F6C-4193-9962-DACD4520FB4A" WriteProtected="true"/>
+			</Servers>
+			<Objects>
+				<Object Name="SdiasManager1" Datatype="SdiasManager" Guid="A6CE8FF7-1B3C-49A6-976D-ED8995566590"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "SdiasSafetyBase"
+			Datatype = "t_e_VaranErrors"
+			Size     = "244"
+			Guid     = "C9D93D75-D00D-4F2B-9B1D-C9428267FFB5">
+		</Class>
+		<Class
+			Name     = "SdiasSafetyManagerFSoE"
+			Datatype = "DINT"
+			Base     = "SafetyBaseFSoE"
+			Size     = "11460"
+			Guid     = "5BC70C54-F263-445B-950C-3A230EA234A9">
+			<Servers>
+				<Server Name="ClassSvr" Datatype="DINT" Guid="3D1411CE-19C8-4543-AD7B-B5D6468E55FD" WriteProtected="true"/>
+				<Server Name="SafetyState" Datatype="SafetyConfigStateType" Guid="A8244A82-B5A2-481F-B2D6-D9F61CFF77FB" WriteProtected="true"/>
+				<Server Name="VoltageOK" Datatype="DINT" Guid="E7A96867-825D-4C1E-8DA0-79BC048837F3" WriteProtected="true"/>
+				<Server Name="RunState" Datatype="DINT" Guid="AA55B58D-145B-437C-86B5-344D77645EF9" WriteProtected="true"/>
+				<Server Name="ServiceMode" Datatype="DINT" Guid="63FC066A-4EB8-40EE-A881-715A0F7A57CD" WriteProtected="true"/>
+				<Server Name="ErrorState" Datatype="DINT" Guid="9CC210B0-1231-4523-AAD3-6ED052F7BE24" WriteProtected="true"/>
+				<Server Name="QuitComError" Datatype="DINT" Guid="0C9064D6-DD1D-44A6-9529-EDC23EDF3155" WriteProtected="false"/>
+				<Server Name="FirmwareVersion" Datatype="HDINT" Guid="36902EC1-1639-4CEF-AD06-B273246BF0B1" WriteProtected="true"/>
+				<Server Name="SafetyNumber" Datatype="HDINT" Guid="2E25F877-7C24-4A9B-BF75-3B6393B3C78F" WriteProtected="true"/>
+				<Server Name="SafetyRetryCounter" Datatype="DINT" Guid="CB6DBF5D-3482-4154-84FF-C4BD868CA0C5" WriteProtected="true"/>
+				<Server Name="DesignerPrjConfigCRC" Datatype="HDINT" Guid="E12043F9-5599-42B0-9770-CEE5696A2542" WriteProtected="true"/>
+				<Server Name="ApplCRC" Datatype="HDINT" Guid="C417B39A-384A-4DE1-9CA9-408891187AED" WriteProtected="true"/>
+				<Server Name="HwCRC" Datatype="HDINT" Guid="DC50FC4B-2EEC-40C9-A9AF-C2AC7D27D81D" WriteProtected="true"/>
+				<Server Name="DesignerPrjName" Datatype="STRING" Guid="3800216A-F78D-4566-9518-138D0F55C7EF" WriteProtected="true"/>
+				<Server Name="DesignerPrjRev" Datatype="STRING" Guid="8D8BA4D8-0422-454B-86B1-E7E52F9008D7" WriteProtected="true"/>
+				<Server Name="FastUnsafeInputs" Datatype="BDINT" Guid="7056D587-EC1A-4355-9927-0107A6F69388" WriteProtected="false"/>
+				<Server Name="FastUnsafeOutputs" Datatype="BDINT" Guid="3B2D285A-4040-493E-B44E-F076DA09CED6" WriteProtected="false"/>
+				<Server Name="SdiasSafetyOut" Datatype="DINT" Guid="FBE550CC-290F-46C6-89BA-6ED77B07552B" WriteProtected="true"/>
+				<Server Name="FCN_Command" Datatype="UDINT" Guid="BD77EAE8-7D94-446E-8A9B-BA667AE65218" WriteProtected="false"/>
+				<Server Name="FCN_StateMachine" Datatype="UDINT" Guid="969EBC6D-DE62-4DF8-B689-826FF32ABD6B" WriteProtected="true"/>
+				<Server Name="FCN_HostSafetyNumber" Datatype="HDINT" Guid="2186369F-B3F1-4FE5-B6B3-A632B71F6EBB" WriteProtected="true"/>
+			</Servers>
+			<Objects>
+				<Object Name="ProjectNameStr" Datatype="String" Guid="20EAAF8C-A7BC-4457-9625-E78943BD2412"/>
+				<Object Name="ProjectRevisionStr" Datatype="String" Guid="32AE3537-6A01-4AE2-A277-3B9212D50A2E"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "SDM081"
+			Datatype = "t_e_VaranErrors"
+			Base     = "SdiasSafetyBase"
+			Size     = "456"
+			Guid     = "1A0F98A1-0A73-491B-85FD-92EF0F0E722C">
+			<Servers>
+				<Server Name="ClassState" Datatype="t_e_VaranErrors" Guid="4183DCF5-56A8-44D9-9E66-0C0060095175" WriteProtected="true"/>
+				<Server Name="DeviceID" Datatype="UDINT" Guid="293FCB43-F362-434D-8B62-54FDB70DDEA9" WriteProtected="true"/>
+				<Server Name="HwVersion" Datatype="HDINT" Guid="D0A7359B-DC0E-4079-8A27-968B09CDBE21" WriteProtected="true"/>
+				<Server Name="SafetyNumber" Datatype="HDINT" Guid="0A1547FA-741C-4E4B-A246-D35D487F9A2E" WriteProtected="true"/>
+				<Server Name="RetryCounteruC1" Datatype="DINT" Guid="FDBE491B-4F19-4B40-90F6-E59B9DBD6C7E" WriteProtected="true"/>
+				<Server Name="RetryCounteruC2" Datatype="DINT" Guid="9B5859BB-3C7F-449E-B724-F7D1D267F8EE" WriteProtected="true"/>
+				<Server Name="QuitComError" Datatype="DINT" Guid="D9C01530-B0F7-4D32-A95E-9725071F0254" WriteProtected="false"/>
+				<Server Name="Safe_Input1" Datatype="DINT" Guid="DA7F861D-236B-4420-A748-0D3BA84BC4FC" WriteProtected="true"/>
+				<Server Name="Safe_Input2" Datatype="DINT" Guid="D1AB89B4-2CFD-4D9F-922A-5B8B90E6C948" WriteProtected="true"/>
+				<Server Name="Safe_Input3" Datatype="DINT" Guid="D5B37546-A741-4043-9F48-57F68004FCB9" WriteProtected="true"/>
+				<Server Name="Safe_Input4" Datatype="DINT" Guid="EAAB4928-C70C-4E63-8CB8-DF77750AF169" WriteProtected="true"/>
+				<Server Name="Safe_Input5" Datatype="DINT" Guid="5CE2E52B-2586-462D-8E7A-77AF785448C5" WriteProtected="true"/>
+				<Server Name="Safe_Input6" Datatype="DINT" Guid="554DF3DD-4612-44A2-8030-E430EE82606B" WriteProtected="true"/>
+				<Server Name="Safe_Output1" Datatype="DINT" Guid="2B676776-DD4F-4040-8460-CA1534FF39FC" WriteProtected="true"/>
+				<Server Name="Unsafe_Output1" Datatype="DINT" Guid="AF82D7B0-2E3A-4EE9-9FE4-65770371CB38" WriteProtected="false"/>
+				<Server Name="Safe_Output2" Datatype="DINT" Guid="59094D42-FE37-4647-A925-5E59275A4400" WriteProtected="true"/>
+				<Server Name="Unsafe_Output2" Datatype="DINT" Guid="82C3D54D-B1E3-41E3-9024-4CEE159CDFE9" WriteProtected="false"/>
+				<Server Name="SafeIOError" Datatype="BDINT" Guid="494367BD-AC42-4247-8353-F49010D60A9D" WriteProtected="true"/>
+			</Servers>
+			<Objects>
+				<Object Name="SerialNoStr" Datatype="String" Guid="CB4C4175-6645-4807-8DE2-8CCCC6A55AEE"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "String"
+			Datatype = "UDINT"
+			Base     = "StringInternal"
+			Size     = "60"
+			Guid     = "26C84422-A6E4-4372-A53C-A964595DA01D">
+			<Servers>
+				<Server Name="Data" Datatype="STRING" Guid="81990015-D505-4977-9326-733789F9FEAA" WriteProtected="false"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "StringInternal"
+			Datatype = "UDINT"
+			Base     = "VirtualBaseInit"
+			Size     = "48"
+			Guid     = "2C12408A-7CCA-458A-912B-98C634EE4BD9">
+		</Class>
+		<Class
+			Name     = "Varan_Base"
+			Datatype = "t_e_VaranErrors"
+			Size     = "1076"
+			Guid     = "7213D447-AFAF-4410-B44D-60C992779DEC">
+		</Class>
+		<Class
+			Name     = "VaranManager"
+			Datatype = "DINT"
+			Base     = "VaranManager_Base"
+			Size     = "7592"
+			Guid     = "2CF568E9-025C-4CAE-9A6D-3802AC2DB447">
+		</Class>
+		<Class
+			Name     = "VaranManager_1"
+			Datatype = "DINT"
+			Base     = "VaranManager"
+			Size     = "7616"
+			Guid     = "9A3C5E5A-54D9-4CA5-A40F-EDA41B52FEAD">
+			<Servers>
+				<Server Name="Control" Datatype="DINT" Guid="217B6364-B62D-4D4A-A8F6-84A5BF141EC1" WriteProtected="true"/>
+				<Server Name="State" Datatype="t_e_VaranErrors" Guid="A82B4B9F-AB6D-423E-97B9-D67D4AE9D9BE" WriteProtected="true"/>
+				<Server Name="ManagerOn" Datatype="DINT" Guid="3D57A698-3E86-4812-9F57-BCFA7179418A" WriteProtected="true"/>
+				<Server Name="Release" Datatype="HDINT" Guid="B0FAF2D9-DA3F-4F0E-93DE-130D37732570" WriteProtected="true"/>
+				<Server Name="RetryCounter" Datatype="DINT" Guid="E3E8AAA9-2CC2-4B74-AAFE-F03CBA5D574B" WriteProtected="false"/>
+				<Server Name="IsoVaranTime" Datatype="DINT" Guid="A21FDC9A-2A45-4D32-9D9F-16268E6DA2F3" WriteProtected="true"/>
+				<Server Name="IsoVaranTimeMax" Datatype="UDINT" Guid="D5EB16BB-6777-4076-8550-4754E7E31E6E" WriteProtected="false"/>
+				<Server Name="AsyVaranTime" Datatype="DINT" Guid="C1D6D199-88EA-4EFF-B4C4-3E5B075159E9" WriteProtected="true"/>
+				<Server Name="Act_RtTime" Datatype="UDINT" Guid="210878FF-5568-4CFA-BD03-CBAB5B1C1C27" WriteProtected="true"/>
+				<Server Name="Min_RtTime" Datatype="UDINT" Guid="6C3D2B3C-0907-45F7-9C81-AEFDFF92C841" WriteProtected="false"/>
+				<Server Name="Max_RtTime" Datatype="UDINT" Guid="A5565D8C-B6E2-4559-BC3D-FDD908F37782" WriteProtected="false"/>
+				<Server Name="Act_RtCallTime" Datatype="UDINT" Guid="86C8821F-08C9-4A88-B684-C7584BB5E1BB" WriteProtected="true"/>
+				<Server Name="Min_RtCallTime" Datatype="UDINT" Guid="EC5C52D8-64B5-4BFE-8297-4B42F3C4FB12" WriteProtected="false"/>
+				<Server Name="Max_RtCallTime" Datatype="UDINT" Guid="2EC877A1-3026-425A-A66B-F95D4EBC7A94" WriteProtected="false"/>
+				<Server Name="SuperiorSystemOK" Datatype="DINT" Guid="B2A1DA64-5A8A-47AC-89AD-B2EAB631558D" WriteProtected="true"/>
+				<Server Name="ManagerProtocolVersion" Datatype="HDINT" Guid="0D8AB714-B3BB-4F11-BE12-24EEB39635D1" WriteProtected="true"/>
+				<Server Name="VaranOut_1" Datatype="DINT" Guid="0BE4D2F2-F359-40DE-B933-9F51683D8A0B" WriteProtected="true"/>
+			</Servers>
+			<Objects>
+				<Object Name="Hub_Base_Root0" Datatype="Hub_Base_Root" Guid="F934CCA3-05BF-4D92-9C62-69704186A95F"/>
+				<Object Name="ASCII_BIN1" Datatype="ASCII_BIN" Guid="8C265742-AE37-41F3-9FFC-79C0C2DE41AA"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "VaranManager_Base"
+			Datatype = "DINT"
+			Size     = "48"
+			Guid     = "C7469E6D-58D6-464D-8C08-61D9F18730FD">
+		</Class>
+		<Class
+			Name     = "VI021"
+			Datatype = "t_e_VaranErrors"
+			Base     = "BusInterfaceVARAN"
+			Size     = "13248"
+			Guid     = "63AA481B-589D-4AF6-BD49-8D07DD14E91F">
+			<Servers>
+				<Server Name="State" Datatype="t_e_VaranErrors" Guid="E1B2C313-0B78-48A4-9E41-DECCCD6FD267" WriteProtected="true"/>
+				<Server Name="Online" Datatype="DINT" Guid="E1D79F53-53F1-4B06-90A0-A607940F73CE" WriteProtected="true"/>
+				<Server Name="Release" Datatype="HDINT" Guid="A28DDC77-1AC5-4E57-A42D-8741148B702E" WriteProtected="true"/>
+				<Server Name="HardwareVersion" Datatype="HDINT" Guid="3A157349-C799-4D08-BC21-1BB3A01BE1E2" WriteProtected="true"/>
+				<Server Name="DeviceAddress" Datatype="HDINT" Guid="A080B3C0-5C72-4786-821F-67B090196EE0" WriteProtected="true"/>
+				<Server Name="VendorID" Datatype="UDINT" Guid="9D8C5110-07EF-426A-B86A-743C5C7FC1E4" WriteProtected="true"/>
+				<Server Name="DeviceID" Datatype="UDINT" Guid="BC098D6A-D50F-4E69-B29E-2FD7BACEF5B7" WriteProtected="true"/>
+				<Server Name="SerialNo" Datatype="STRING" Guid="D1BF9B66-65D2-4212-8B5E-13E2E1A77915" WriteProtected="true"/>
+				<Server Name="RetryCounter" Datatype="UDINT" Guid="D16CA7CF-ABDD-407F-B021-9D2BF30F156D" WriteProtected="false"/>
+				<Server Name="ValidateSerNo" Datatype="DINT" Guid="5B28FD6D-A4BE-419D-933F-49B93A7F83C2" WriteProtected="false"/>
+				<Server Name="ProtocolVersion" Datatype="HDINT" Guid="2C0EB127-FA92-4FF6-B57C-DBF97753C955" WriteProtected="true"/>
+				<Server Name="FirmwareVersion" Datatype="HDINT" Guid="FAF6143D-5B39-429B-B146-3B5340256DA9" WriteProtected="true"/>
+				<Server Name="SdiasState" Datatype="t_e_VaranErrors" Guid="73D702EB-4832-4592-9D8E-011779142609" WriteProtected="true"/>
+				<Server Name="SdiasRetryCounter" Datatype="UDINT" Guid="3DD55758-40BE-4B2D-A0BF-F35940CB0D29" WriteProtected="true"/>
+				<Server Name="IsoWrTaskDuration" Datatype="UDINT" Guid="8CC2E7F5-1175-44F2-AECE-DD2E19D4D0A8" WriteProtected="true"/>
+				<Server Name="IsoWrTaskMaxDuration" Datatype="UDINT" Guid="B8501506-960C-479E-9CB3-B7696E346462" WriteProtected="false"/>
+				<Server Name="IsoRdTaskDuration" Datatype="UDINT" Guid="28B4D23D-7BC2-4271-9E26-EAFF7C4916A1" WriteProtected="true"/>
+				<Server Name="IsoRdTaskMaxDuration" Datatype="UDINT" Guid="418D8699-A5A5-4DA7-9EC6-B80D98712F41" WriteProtected="false"/>
+				<Server Name="ManagerOptionBits" Datatype="DINT" Guid="C62FA2D2-22AD-4879-B5E0-46958DC5F276" WriteProtected="true"/>
+				<Server Name="SdiasOut_1" Datatype="DINT" Guid="35802848-E320-4328-8E35-9321F964E7E8" WriteProtected="true"/>
+				<Server Name="VaranOut_1" Datatype="DINT" Guid="49FCA411-9414-4F70-9323-7AA42A533B03" WriteProtected="true"/>
+			</Servers>
+			<Objects>
+				<Object Name="Hub_Base1" Datatype="Hub_Base" Guid="A23A5171-D8BC-41D0-AE65-75CDE46C7654"/>
+				<Object Name="SerialNoStr" Datatype="String" Guid="DBAA28A2-B730-4B3D-BE77-52A87CFBF0B0"/>
+				<Object Name="SerNoBackup" Datatype="RamFile" Guid="7F2EEFF0-0F12-46DA-B0E6-9555A5C07FA2"/>
+			</Objects>
+		</Class>
+		<Class
+			Name     = "VirtualBaseInit"
+			Datatype = "UDINT"
+			Size     = "12"
+			Guid     = "9FBB5A34-CCCF-441F-A614-0CCECBD76648">
+		</Class>
+		<Class
+			Name     = "XXXBase_IOs"
+			Datatype = "DINT"
+			Size     = "204"
+			Guid     = "42E1B640-B96E-4F8F-89AF-47A9750E5F90">
+		</Class>
+	</Classes>
+	<Objects>
+		<Object Name="_DriveMng_DC0621" Datatype="_DriveMng_DC062" Guid="E9E4E600-CDFB-4C07-B93F-050532BE4DDE"/>
+		<Object Name="_DriveMng_DC0621_Axis1" Datatype="_DriveAxis" Guid="2058CCA8-66F5-4BA3-A153-9FFB9ED6BB86"/>
+		<Object Name="_DriveMng_DC0622" Datatype="_DriveMng_DC062" Guid="58B7CCC5-6573-4A90-A755-FBEA0148ED09"/>
+		<Object Name="_DriveMng_DC0622_Axis1" Datatype="_DriveAxis" Guid="956B6FE5-729A-414B-8BED-E8C61F250A0D"/>
+		<Object Name="_LMCAxis1" Datatype="_LMCAxis" Guid="0A7C13A8-7BBC-452F-9B64-082F441999A8"/>
+		<Object Name="_LMCAxis2" Datatype="_LMCAxis" Guid="D3911EE7-8282-47C5-9720-FCF3BF0B5162"/>
+		<Object Name="AI0431" Datatype="AI043" Guid="A0B4511D-86CB-4BDC-80E4-EF644B408663"/>
+		<Object Name="clsHMI1" Datatype="clsHMI" Guid="0F050788-F273-4D92-8CFC-C809040FE77C"/>
+		<Object Name="CP112_IOs1" Datatype="CP112_IOs" Guid="EFEA7052-7C43-4FE7-9A8A-7320E5FFF8BF"/>
+		<Object Name="DM0811" Datatype="DM081" Guid="C3CEE9FF-F164-4375-97F7-0F25239F765B"/>
+		<Object Name="DM1611" Datatype="DM161" Guid="088393A8-EB4D-4081-9920-425FD67F5135"/>
+		<Object Name="DrivePosControl1" Datatype="DrivePosControl" Guid="898CE7A8-42E7-4CF7-82E5-D23BDB3AE9E7"/>
+		<Object Name="DrivePosControl2" Datatype="DrivePosControl" Guid="D009CDCA-785E-4969-8E2D-2830B106EFE0"/>
+		<Object Name="HwControl1" Datatype="HwControl" Guid="429BB3BC-672B-4C78-909C-4C59A546D6E1"/>
+		<Object Name="SCP1111" Datatype="SCP111" Guid="D1743FF3-9B37-4F74-8A40-9F1E3DC8682A"/>
+		<Object Name="SdiasPLC1" Datatype="SdiasPLC" Guid="A6BFCCFB-ADD8-4F63-B5D6-2E288ACBAFEF"/>
+		<Object Name="SDM0811" Datatype="SDM081" Guid="5DA51DEA-D9C1-4122-B57C-48C5A2F7F434"/>
+		<Object Name="VaranManager_11" Datatype="VaranManager_1" Guid="2946DF37-4398-44A0-B5AB-ECC8373BB684"/>
+		<Object Name="VI0211" Datatype="VI021" Guid="907AEC32-8BA5-44B4-AF33-5A7F6C4F9047"/>
+	</Objects>
+	<IOElements>
+		<IOElement Name="IO_Element1" IOType="Input" Type="Digital" Datatype="DINT" Guid="A9980A06-AE0C-4504-838F-363C51F06801"/>
+		<IOElement Name="IO_Element2" IOType="Input" Type="Digital" Datatype="DINT" Guid="1CB4956A-8FEA-4160-A071-61D65219C967"/>
+		<IOElement Name="IO_Element3" IOType="Input" Type="Digital" Datatype="DINT" Guid="0C4F6025-12EF-42E4-8999-731E84AF0109"/>
+		<IOElement Name="IO_Element4" IOType="Input" Type="Digital" Datatype="DINT" Guid="1921FDC2-96DC-47AD-992D-1E777B75E3C5"/>
+	</IOElements>
 	<UnitDefinitions>
 		<UnitGrp Name="Acceleration">
 			<Units>

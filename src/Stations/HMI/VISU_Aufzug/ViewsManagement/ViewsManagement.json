@@ -1,0 +1,11 @@
+{
+	"type": "ViewsManagement",
+	"version": "0.0.97",
+	"name": "ViewsManagement",
+	"id": "_da12376a53bf40b7887b9d5631d205fc",
+	"xml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"vs_root\" id=\"_da12376a53bf40b7887b9d5631d205fc\" deletable=\"false\" movable=\"false\" x=\"0\" y=\"0\"><field name=\"timeout\">5</field></block></xml>",
+	"sourceCode": "class __da12376a53bf40b7887b9d5631d205fc extends window.viewSelectionBase\r\n{\r\n    constructor() {\r\n        super('_da12376a53bf40b7887b9d5631d205fc');\r\n    }\r\n\r\n    _execute() {\r\n\r\n    }\r\n}\r\n\r\n",
+	"revision": {
+		"type": "Revision"
+	}
+}

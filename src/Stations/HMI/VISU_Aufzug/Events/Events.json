@@ -1,0 +1,5618 @@
+{
+	"type": "RuntimeEventManager",
+	"version": "0.0.96",
+	"events": [
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "10bb9411-df24-4f65-872e-dac6ad8cd349",
+			"name": "CEM_SEND",
+			"maId": 65296,
+			"miId": 61696,
+			"eventType": 5,
+			"desc": "",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "75a8011e-65ca-4346-920a-9366ec35f52e",
+			"name": "DP_ON_ERROR",
+			"maId": 65296,
+			"miId": 62464,
+			"eventType": 5,
+			"desc": "Fired if the error state of the Datapoint changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d00b9e0c-2947-47fe-9642-0e3dbf249993",
+			"name": "CHANGE_DPS",
+			"maId": 65296,
+			"miId": 1360,
+			"eventType": 5,
+			"desc": "Fired if the used Datepoints on the Screen changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0776cffa-2549-4baf-84f2-2e64db53d55c",
+			"name": "LANGUAGE_CHG",
+			"maId": 65296,
+			"miId": 63488,
+			"eventType": 5,
+			"desc": "Fired if the language changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c8908070-2bf8-4127-807f-995bb68e0dc5",
+			"name": "INT_SET_VALUE",
+			"maId": 65296,
+			"miId": 61440,
+			"eventType": 5,
+			"desc": "Fired if a datapoint was set internal",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "712aea84-6913-4d87-acc3-2642d0a0a93d",
+			"name": "INT_WS_START",
+			"maId": 65296,
+			"miId": 61441,
+			"eventType": 5,
+			"desc": "Fired if the websocket is started",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ce6621dc-5f2e-4bde-9462-9e7f0c479281",
+			"name": "INT_STATION_CPU_STATE",
+			"maId": 65296,
+			"miId": 61444,
+			"eventType": 5,
+			"desc": "Fired if the cpu-state of a station changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7b9cfd43-cee4-49b6-8975-04e19892cdc1",
+			"name": "INT_STATIONS_CPU_STATES_CHG",
+			"maId": 65296,
+			"miId": 61445,
+			"eventType": 5,
+			"desc": "Fired if the cpu-state of a station in the stationlist changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "49b93faa-042a-4ec7-b7bc-297b1af1a4c1",
+			"name": "INT_DOWNLOAD_CANCEL",
+			"maId": 65296,
+			"miId": 61447,
+			"eventType": 5,
+			"desc": "Fired when the designer cancels the download",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "464e7170-3dd6-42cc-88a2-d1d811950196",
+			"name": "INT_DOWNLOAD_START",
+			"maId": 65296,
+			"miId": 61448,
+			"eventType": 5,
+			"desc": "Fired when the designer starts the download",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "24bcf5c2-588b-48db-87e5-c445e25bda54",
+			"name": "INT_DOWNLOAD_END",
+			"maId": 65296,
+			"miId": 61449,
+			"eventType": 5,
+			"desc": "Fired when the designer finished the download",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ceeb0a2b-016c-4aaa-a497-81b1d52dc6c3",
+			"name": "INT_DOWNLOAD_PRJ_START",
+			"maId": 65296,
+			"miId": 61456,
+			"eventType": 5,
+			"desc": "Fired if the designer starts the project download",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6f80960d-1684-4d27-95f3-13468fd4a22b",
+			"name": "INT_DOWNLOAD_PRJ_POS",
+			"maId": 65296,
+			"miId": 61457,
+			"eventType": 5,
+			"desc": "Fires the progress position of the designer project download",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f7783d29-3f3d-4386-bea8-5539a96ea755",
+			"name": "INT_DOWNLOAD_PRJ_END",
+			"maId": 65296,
+			"miId": 61458,
+			"eventType": 5,
+			"desc": "Fired if the designer has finished the project download",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1e4df557-5194-4730-b5b8-33b39d13bc69",
+			"name": "INT_DOWNLOAD_RT_START",
+			"maId": 65296,
+			"miId": 61459,
+			"eventType": 5,
+			"desc": "Fired if the designer starts the runtime download",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f58a12af-cc41-43f1-b86c-31c625945242",
+			"name": "INT_DOWNLOAD_RT_POS",
+			"maId": 65296,
+			"miId": 61460,
+			"eventType": 5,
+			"desc": "Fires the progress position of the designer runtime download",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "417a06ea-2317-47d3-9fb7-dc488f7c776a",
+			"name": "INT_DOWNLOAD_RT_END",
+			"maId": 65296,
+			"miId": 61461,
+			"eventType": 5,
+			"desc": "Fired if the designer has finished the runtime download",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d84ac2d3-889b-4523-b0d2-6c513cca8b4f",
+			"name": "INT_RELOAD",
+			"maId": 65296,
+			"miId": 61462,
+			"eventType": 5,
+			"desc": "If this event is fired, the current document will be reloaded",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f7d9279c-7d31-4cb9-9e70-3bd6caa543a1",
+			"name": "INT_WS_MESSAGE",
+			"maId": 65296,
+			"miId": 61463,
+			"eventType": 5,
+			"desc": "Fired if the Websocket receives a message",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "51e9b8dd-5103-417f-88a5-7f876367bfa4",
+			"name": "INT_WS_MESSAGE_SEND",
+			"maId": 65280,
+			"miId": 61464,
+			"eventType": 5,
+			"desc": "Fired if the ws send an frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1469ff58-f05f-4338-8ef2-e4be1bbbc677",
+			"name": "INT_ALARM_NEW",
+			"maId": 65296,
+			"miId": 61465,
+			"eventType": 5,
+			"desc": "Fired if a new active alarm occurs",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "32afbedb-2ae2-4dd2-981c-44918f5ec61d",
+			"name": "INT_ALARM_HI_PRIO",
+			"maId": 65296,
+			"miId": 61466,
+			"eventType": 5,
+			"desc": "Fired if a new active alarm with higest priority occurs",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "275f714c-5247-49b0-94ae-b43d05131fba",
+			"name": "INT_ERROR_WRONG_LOADER_VERSION",
+			"maId": 65296,
+			"miId": 61467,
+			"eventType": 5,
+			"desc": "Fired if a Station with wrong loader version is detected",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6ad5c405-c5d4-4347-a0f0-f3ddbac1dc46",
+			"name": "INT_ERROR_UNSUPPORTED_BROWSER_VERSION",
+			"maId": 65296,
+			"miId": 61468,
+			"eventType": 5,
+			"desc": "Fired if the current browser is not supported",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1ee2140b-5311-4d8b-a27a-3d1629c1562b",
+			"name": "INT_ERROR_WRONG_DATAPOINTLIST_CRC",
+			"maId": 65296,
+			"miId": 61469,
+			"eventType": 5,
+			"desc": "Fired if the data point lists of DataService and Runtime are different",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "34c37e78-5315-4b59-a83e-0aa13d21281a",
+			"name": "INT_CURRENT_USER_CHANGED",
+			"maId": 65296,
+			"miId": 61470,
+			"eventType": 5,
+			"desc": "Fired if the current user has been changed or deleted",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ef463d5b-583b-48fd-adaa-c135214b4e68",
+			"name": "INT_ERROR_EVENT_JOURNAL_SIZE",
+			"maId": 65296,
+			"miId": 61471,
+			"eventType": 5,
+			"desc": "Fired if the userdefined size of the eventjournal or alarmlist is invalid",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a894080e-421d-48ca-98f9-8b7092525e5a",
+			"name": "NEW_EVENTJOURNAL_UPDATE_DATA",
+			"maId": 65296,
+			"miId": 61472,
+			"eventType": 5,
+			"desc": "Fired if new eventjournal data has been received",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "391ed43b-a93f-4a71-98c5-67393498b380",
+			"name": "USR_START_ANIMATION",
+			"maId": 65296,
+			"miId": 1638,
+			"eventType": 5,
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "676f7e3c-c275-4878-9b02-7b6cf6c85351",
+			"name": "APPROUTE_LOCALSET",
+			"maId": 65296,
+			"miId": 1639,
+			"eventType": 5,
+			"desc": "Fired if the route changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "fe2ecc40-64a9-46b9-91e1-9a2fc0c50203",
+			"name": "APPROUTE_LOCALSET_HOME",
+			"maId": 65296,
+			"miId": 1641,
+			"eventType": 5,
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e2a95532-ffce-4642-b0f7-336cfc02af1a",
+			"name": "APPROUTE_SET",
+			"maId": 65296,
+			"miId": 1637,
+			"eventType": 5,
+			"desc": "Fired if the route was set",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "431898a1-a9c7-4d0d-9ea4-da57f6b82c51",
+			"name": "APPROUTE_CHG",
+			"maId": 65296,
+			"miId": 1640,
+			"eventType": 5,
+			"desc": "Fired if the route changed",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "41b06df5-55dc-4846-9087-ac274e640898",
+			"name": "NOTIFY_ERROR",
+			"maId": 65296,
+			"miId": 1636,
+			"eventType": 5,
+			"desc": "Fired if error occurs",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bdbbe975-cdbd-4cac-8471-e8b69f695c7a",
+			"name": "INT_SET_SCROLL",
+			"maId": 65296,
+			"miId": 1689,
+			"eventType": 5,
+			"desc": "Fired Scroll event",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d7127eaa-a662-4ce3-921e-e70b6192320e",
+			"name": "NOTIFY_FPS",
+			"maId": 65296,
+			"miId": 1642,
+			"eventType": 5,
+			"desc": "Fired if a FPS update is send from the FpsCounter",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "aaa5ad6a-332e-4b91-886d-987ed797ba72",
+			"name": "CLEAR_LOCAL_STORAGE",
+			"maId": 65296,
+			"miId": 1643,
+			"eventType": 5,
+			"desc": "If this event is fired, all internal system varaibles, which are stored in the local storage of the browser are removed from the storage",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f72fca16-74eb-48e8-93b1-adbc25949215",
+			"name": "RESET_WINDOWS",
+			"maId": 65296,
+			"miId": 1647,
+			"eventType": 5,
+			"desc": "If this events is fired, all windows are closed and reset to their default settings",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "87719590-c8f2-43d2-8c36-e1350faf737c",
+			"name": "REGISTER_WS_EVENTS",
+			"maId": 65296,
+			"miId": 1644,
+			"eventType": 5,
+			"desc": "Fired to notify the ws to register his events",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ded134e7-dca0-42c1-b1bd-953de204bc92",
+			"name": "VIEW_SELECTION_MANAGERS_READY",
+			"maId": 65296,
+			"miId": 1645,
+			"eventType": 5,
+			"desc": "Fired if all managers supported in view selection callback are ready",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c218944d-58bf-4bd8-9787-6658969cf409",
+			"name": "MANAGERS_READY",
+			"maId": 65296,
+			"miId": 1646,
+			"eventType": 5,
+			"desc": "Fired if all critical managers are ready",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bd0bdc78-66c5-45a6-a5bc-dbea2884ed76",
+			"name": "RT_READY",
+			"maId": 65296,
+			"miId": 1650,
+			"eventType": 5,
+			"desc": "Fired if the RT is ready",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "02239818-8f51-4388-9535-2fc9439205db",
+			"name": "DASHBOARD_OPENED",
+			"maId": 65296,
+			"miId": 1648,
+			"eventType": 5,
+			"desc": "Fired if a dashboard has been opened. The parameter is the instanceId of the opened dashboard",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "494f5ca2-f6b1-4af5-b37a-911cd850802a",
+			"name": "DASHBOARD_CLOSED",
+			"maId": 65296,
+			"miId": 1649,
+			"eventType": 5,
+			"desc": "Fired if a dashboard has been closed. The parameter is the instanceId of the closed dashboard",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e04ebdcc-8fe8-4807-b723-b255a7b81144",
+			"name": "BROWSER_ORIENTATION_CHANGED",
+			"maId": 65296,
+			"miId": 1651,
+			"eventType": 5,
+			"desc": "Fired if the orientation of the browser has changed",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "197a1b46-d617-4320-afb2-8790a743eeea",
+			"name": "STATE_CHANGED",
+			"maId": 65296,
+			"miId": 1652,
+			"eventType": 5,
+			"desc": "Fired if a corresponding status change occurs. The content of the passed parameters depends on the respective status change",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9e299fc0-8d6d-4db9-8058-5da613aad753",
+			"name": "DS_VERSION_RSP",
+			"maId": 65296,
+			"miId": 1653,
+			"eventType": 5,
+			"desc": "Fired if the the version of the dataservice is known",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ad8e64c1-9aff-4595-9948-119a433938bd",
+			"name": "WS_STATE_CHG",
+			"maId": 65296,
+			"miId": 61968,
+			"eventType": 5,
+			"desc": "Fired if the state of the websocket changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f6b20f61-b068-43d5-b4d9-0fc296403708",
+			"name": "DPM_STATE_CHG",
+			"maId": 65296,
+			"miId": 62465,
+			"eventType": 5,
+			"desc": "Fired if the state of the Datapoint Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d41032d3-edca-4952-8d6d-1e34c004fac0",
+			"name": "USER_STATE_CHG",
+			"maId": 65296,
+			"miId": 62720,
+			"eventType": 5,
+			"desc": "Fired if the state of the User Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "24c1ce4f-175d-4721-9fe0-6a92d711c102",
+			"name": "ROUTER_STATE_CHG",
+			"maId": 65296,
+			"miId": 62800,
+			"eventType": 5,
+			"desc": "Fired if the state of the Router changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "45138f41-bbe1-4969-a09c-575431d86fd0",
+			"name": "TYPE_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62801,
+			"eventType": 5,
+			"desc": "Fired if the state of the Type Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "14213cf5-02b7-4464-8bc1-dd29b4a30b5d",
+			"name": "RULE_ENGINE_STATE_CHG",
+			"maId": 65296,
+			"miId": 62802,
+			"eventType": 5,
+			"desc": "Fired if the state of the Rule Engine changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c5918bb1-88c9-42f0-9e7e-fc8436bceffb",
+			"name": "UNIT_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62803,
+			"eventType": 5,
+			"desc": "Fired if the state of the Unit Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c08bc713-fa85-48ff-a39b-f4fc8508b1c9",
+			"name": "EVENTJOURNAL_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62804,
+			"eventType": 5,
+			"desc": "Fired if the state of the EventJournal Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ef61004a-ce5b-4c58-88fb-e64777e64081",
+			"name": "SCHEME_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62805,
+			"eventType": 5,
+			"desc": "Fired if the state of the Scheme Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8f196c2b-70e2-404f-b46f-03bbb8af08ea",
+			"name": "EVENTS_STATE_CHG",
+			"maId": 65296,
+			"miId": 62806,
+			"eventType": 5,
+			"desc": "Fired if the state of the events changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d0e6cd38-9a6e-4ae4-9c5b-b3751c9cb2c4",
+			"name": "COMP_CONTROL_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62807,
+			"eventType": 5,
+			"desc": "Fired if the state of the Composite Control Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d94a0614-347f-4e50-8de2-cbe001b483c4",
+			"name": "TEXT_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62808,
+			"eventType": 5,
+			"desc": "Fired if the state of the TextManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c88ddea6-0a2a-4563-ac9c-4344e73d68e6",
+			"name": "DEFAULT_TEXT_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62809,
+			"eventType": 5,
+			"desc": "Fired if the state of the DefaultTextManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "092d3bdc-d278-44ea-92a8-be1d8993a5b5",
+			"name": "LANGUAGE_STATE_CHG",
+			"maId": 65296,
+			"miId": 62810,
+			"eventType": 5,
+			"desc": "Fired if the state of the Language changes (Nothing loaded, LangInfo loaded or LangInfo and TextLists loaded)",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "11bd6458-2763-40db-b5b2-55ce36394c3e",
+			"name": "RESOURCE_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62811,
+			"eventType": 5,
+			"desc": "Fired if the state of the resourceManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "57fc4a0c-6cfa-4b35-adea-5143c811f71b",
+			"name": "FONT_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62812,
+			"eventType": 5,
+			"desc": "Fired if the state of the fontManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "32fc84a1-38d0-473f-964f-8bd68c262089",
+			"name": "FORMAT_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62813,
+			"eventType": 5,
+			"desc": "Fired if the state of the formatManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ae5055ae-f075-44f2-9206-5ba083fded9b",
+			"name": "WINDOW_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62814,
+			"eventType": 5,
+			"desc": "Fired if the state of the windowManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "866be6ce-61d9-4325-8749-f1b9d1d56083",
+			"name": "STATION_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62815,
+			"eventType": 5,
+			"desc": "Fired if hte state of the stationManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1dab2061-86b8-4c7a-b85f-6192732efaf4",
+			"name": "SYS_WINDOW_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62816,
+			"eventType": 5,
+			"desc": "Fired if the state of the system-windowManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bdcdba4d-6a18-458f-8a43-6459fc93f255",
+			"name": "DRAG_AND_DROP_MRG_STATE_CHG",
+			"maId": 65296,
+			"miId": 62817,
+			"eventType": 5,
+			"desc": "Fired if the state of the drag-and-drop-windowManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b9264b66-2efd-4c4c-8f7e-3d93e5417854",
+			"name": "CHECKBIT_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62818,
+			"eventType": 5,
+			"desc": "Fired if the state of the checkbitManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "adbd0a30-25ac-4f6d-9233-a5e35bbdf80e",
+			"name": "DEFAULT_STYLE_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62819,
+			"eventType": 5,
+			"desc": "Fired if the state of the defaultStyleManager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "714d4bec-904b-4b40-a411-bbf069a14f3c",
+			"name": "TEMP_ALARM_MGR_ALARM_STATE_CHG",
+			"maId": 65296,
+			"miId": 62820,
+			"eventType": 5,
+			"desc": "Fired if the state of the alarm list in Alarm Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5b501637-6735-4c06-91bc-aee21e7b18c4",
+			"name": "TEMP_ALARM_MGR_HOTALARM_STATE_CHG",
+			"maId": 65296,
+			"miId": 62821,
+			"eventType": 5,
+			"desc": "Fired if the state of a hotalarm in Alarm Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bca19ca7-9e41-4bda-a143-68a0a0d30310",
+			"name": "BROWSER_UTILS_STATE_CHG",
+			"maId": 65296,
+			"miId": 62822,
+			"eventType": 5,
+			"desc": "Fired if the state of the browser utils changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cb8c2e9d-0fa9-45db-a350-af90fe5002d8",
+			"name": "MENU_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62823,
+			"eventType": 5,
+			"desc": "Fired if the state of the Menu Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d2377b56-dd90-46ff-a592-bc5cb911cddc",
+			"name": "EVENTJOURNAL_FILTER_SORT_RESULT_CHG",
+			"maId": 65296,
+			"miId": 62824,
+			"eventType": 5,
+			"desc": "Fired if the filter and/or sort result of the EventJournal Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "277c2fac-13fe-45df-b315-0b7a85a47842",
+			"name": "STATION_STATE_CHG",
+			"maId": 65296,
+			"miId": 62976,
+			"eventType": 5,
+			"desc": "Fired if the state of the station Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5b927c29-c28e-4259-87fe-8e1c26220a34",
+			"name": "ALARMS_MGR_STATE_CHG",
+			"maId": 65296,
+			"miId": 62977,
+			"eventType": 5,
+			"desc": "Fired if the state of the Alarm Config Manager changes",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1ed2d0a6-638b-48d4-870f-01c8660d39b8",
+			"name": "SHOW_SPLASH_SCREEN",
+			"maId": 65296,
+			"miId": 62992,
+			"eventType": 5,
+			"desc": "Fired when the splash screen should be shown",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8529d791-e55b-4e55-a6fa-a348ba4fb092",
+			"name": "HIDE_SPLASH_SCREEN",
+			"maId": 65296,
+			"miId": 62993,
+			"eventType": 5,
+			"desc": "Fired when the splash screen should be hidden",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "742b1fd3-20e9-4fff-9698-de7ae18c2f0f",
+			"name": "SEND_TO_ALL",
+			"maId": 65280,
+			"miId": 157,
+			"eventType": 5,
+			"desc": "Recive a multi-command Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bb8fea2a-6395-467e-a42d-b2436f55e264",
+			"name": "SEND_TO_ALL_RSP",
+			"maId": 65280,
+			"miId": 158,
+			"eventType": 5,
+			"desc": "Received a multi-command response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cd38a539-559c-4fa6-8836-483eef18c3b3",
+			"name": "SEND_FRAGMENT_RT_RSP",
+			"maId": 65280,
+			"miId": 50,
+			"eventType": 5,
+			"desc": "Receives a response for a fragment",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5d9fcaf8-4e0e-4dbe-ad83-a4553c843cd0",
+			"name": "SEND_FRAGMENT_DS",
+			"maId": 65280,
+			"miId": 49,
+			"eventType": 5,
+			"desc": "Receives a fragment of a frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "24a70be5-cc30-4a78-b4db-9148da502a9e",
+			"name": "USER_EVENT_RSP",
+			"maId": 65280,
+			"miId": 32,
+			"eventType": 5,
+			"desc": "Receives a user events response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7f1f17db-b21a-4bab-87a6-56d2d279a2a0",
+			"name": "GET_VERSION_RSP",
+			"maId": 65280,
+			"miId": 17,
+			"eventType": 5,
+			"desc": "Received a Get Version Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1873f048-e6b6-492d-aa3a-293294050351",
+			"name": "GET_PROJECTINFO_RSP",
+			"maId": 65280,
+			"miId": 23,
+			"eventType": 5,
+			"desc": "Received a Get Project Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "10afb02e-237e-41d1-82c0-f011284f5fda",
+			"name": "GET_CLIENT_CONNECTION_INFO_RSP",
+			"maId": 65280,
+			"miId": 25,
+			"eventType": 5,
+			"desc": "Received a Get Client Connection Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "3f771134-4571-414a-9f76-e1d03f259ffc",
+			"name": "LOOP_RSP",
+			"maId": 65280,
+			"miId": 99,
+			"eventType": 5,
+			"desc": "Received a Loop Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a397293f-8ba1-4f28-bf11-6b63711fbc8d",
+			"name": "USER_LOGIN_RSP",
+			"maId": 65280,
+			"miId": 257,
+			"eventType": 5,
+			"desc": "Received a User Login Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d47173c1-a427-4345-8b2d-f696df8a5700",
+			"name": "USER_LOGOUT_RSP",
+			"maId": 65280,
+			"miId": 259,
+			"eventType": 5,
+			"desc": "Received a User Logout Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "02d3c847-4292-4d0d-a132-7fa05214c634",
+			"name": "USER_PW_CHANGE_RSP",
+			"maId": 65280,
+			"miId": 261,
+			"eventType": 5,
+			"desc": "Received a Password Change Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "986b01d0-5ab3-44dd-b41c-cda6520eda0a",
+			"name": "USER_LOGIN_REQ",
+			"maId": 65280,
+			"miId": 262,
+			"eventType": 5,
+			"desc": "Received a User Login Request Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ef7f8b5b-d6a3-4ded-9b61-740977c3092c",
+			"name": "USER_LOGOUT_REQ",
+			"maId": 65280,
+			"miId": 264,
+			"eventType": 5,
+			"desc": "Received a User Logout Request Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b7496540-5844-47b1-a3b2-e53f4acef7ef",
+			"name": "USER_LOGIN_PSH",
+			"maId": 65280,
+			"miId": 265,
+			"eventType": 5,
+			"desc": "Received a User Login Request Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2a6d476f-d0e4-490b-b95b-e8a12a025795",
+			"name": "CHECK_ACCESS_LEVEL_RSP",
+			"maId": 65280,
+			"miId": 267,
+			"eventType": 5,
+			"desc": "Received a User Logout Request Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1ed3e30b-b375-40db-b424-69f581a2cc6b",
+			"name": "USER_CREATE_RSP",
+			"maId": 65280,
+			"miId": 273,
+			"eventType": 5,
+			"desc": "Received a User Create Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cf0c5829-9931-4f77-9050-36efda0bbe10",
+			"name": "USER_CHANGE_RSP",
+			"maId": 65280,
+			"miId": 275,
+			"eventType": 5,
+			"desc": "Received a User Settings Change Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c1003d6a-2437-4b6a-8a46-8f3e0315f008",
+			"name": "USER_DELETE_RSP",
+			"maId": 65280,
+			"miId": 277,
+			"eventType": 5,
+			"desc": "Received a User Delete Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7448fbe7-417d-42a5-93a3-d799e36c3f06",
+			"name": "USER_LIST_RSP",
+			"maId": 65280,
+			"miId": 279,
+			"eventType": 5,
+			"desc": "Received a User List Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "250357a0-fdfb-4644-840d-56e2ba6f0779",
+			"name": "USER_DETAIL_RSP",
+			"maId": 65280,
+			"miId": 281,
+			"eventType": 5,
+			"desc": "Received a User Detail Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1f91ce72-7dc4-4528-bf7f-ba44641bd790",
+			"name": "USER_RESTORE_RSP",
+			"maId": 65280,
+			"miId": 283,
+			"eventType": 5,
+			"desc": "Received a User Restore Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "08cf8b41-893a-430b-93c4-da5a6e27ffe9",
+			"name": "USERS_CLEAN_UP_RSP",
+			"maId": 65280,
+			"miId": 312,
+			"eventType": 5,
+			"desc": "Received a Users Clean Up Restore Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "deae1fb4-554d-4a8a-98f5-2747c71c9b3b",
+			"name": "USER_EXPORT_RSP",
+			"maId": 65280,
+			"miId": 320,
+			"eventType": 5,
+			"desc": "Received a User Export Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "dbfb2f35-8914-4529-a005-a7306311c088",
+			"name": "USER_IMPORT_RSP",
+			"maId": 65280,
+			"miId": 322,
+			"eventType": 5,
+			"desc": "Received a User Import Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e3eb75c4-949b-454e-8760-a0a64db4cedb",
+			"name": "ROLE_CREATE_RSP",
+			"maId": 65280,
+			"miId": 289,
+			"eventType": 5,
+			"desc": "Received a Role Create Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "09ad51b2-e310-420f-a244-35b27bef9735",
+			"name": "ROLE_CHANGE_RSP",
+			"maId": 65280,
+			"miId": 291,
+			"eventType": 5,
+			"desc": "Received a Role Change Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7ffeb7f3-4c34-4841-9a74-1bfbbf18856f",
+			"name": "ROLE_DELETE_RSP",
+			"maId": 65280,
+			"miId": 293,
+			"eventType": 5,
+			"desc": "Received a Role Delete Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d6c8ba38-2d31-47c2-9e64-b5c444cab001",
+			"name": "ROLE_LIST_RSP",
+			"maId": 65280,
+			"miId": 295,
+			"eventType": 5,
+			"desc": "Received a Role List Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a404277c-c857-446a-9339-948c62cc19a6",
+			"name": "ROLE_DETAIL_RSP",
+			"maId": 65280,
+			"miId": 297,
+			"eventType": 5,
+			"desc": "Received a Role Detail Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "3e24f4d9-d230-4f06-8655-3ea298c74a28",
+			"name": "ROLE_EXPORT_RSP",
+			"maId": 65280,
+			"miId": 324,
+			"eventType": 5,
+			"desc": "Received a Role Export Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c73b7748-267b-4c94-aac0-614202cc41f6",
+			"name": "ROLE_IMPORT_RSP",
+			"maId": 65280,
+			"miId": 326,
+			"eventType": 5,
+			"desc": "Received a Role Import Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b1739c8b-3d64-4850-96d9-320bf87675c7",
+			"name": "USERS_DETAILS_PSH",
+			"maId": 65280,
+			"miId": 303,
+			"eventType": 5,
+			"desc": "Received a Users Details Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "941fdd9e-a0e7-4bd4-8bcf-558753d81218",
+			"name": "ROLES_DETAILS_PSH",
+			"maId": 65280,
+			"miId": 304,
+			"eventType": 5,
+			"desc": "Received a Roles Details Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "35e19031-1c84-41e7-88d4-dfe804a50168",
+			"name": "USER_LIST_PSH",
+			"maId": 65280,
+			"miId": 305,
+			"eventType": 5,
+			"desc": "Received a User List Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c4207351-7818-45a9-8532-db056700ff42",
+			"name": "ROLE_LIST_PSH",
+			"maId": 65280,
+			"miId": 306,
+			"eventType": 5,
+			"desc": "Received a Role List Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "35c221b5-4781-4ebc-9411-963b4b4baf3b",
+			"name": "IS_VAR_VALIDE_RSP",
+			"maId": 65280,
+			"miId": 513,
+			"eventType": 5,
+			"desc": "Received a Is Var Valid Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "32e689fe-3baa-4557-bf42-549e2e66699b",
+			"name": "CREATE_VAR_RSP",
+			"maId": 65280,
+			"miId": 515,
+			"eventType": 5,
+			"desc": "Received a Create Variable Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "06136ab5-8eb7-42c7-b3e2-1c2166f0acf0",
+			"name": "GET_VAR_ID_FROM_NAME_RSP",
+			"maId": 65280,
+			"miId": 517,
+			"eventType": 5,
+			"desc": "Received a Get Var Id From Name Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c173815e-cda1-4faa-87d5-865008bdec29",
+			"name": "GET_VAR_ID_FROM_LASAL_ID_RSP",
+			"maId": 65280,
+			"miId": 519,
+			"eventType": 5,
+			"desc": "Received a Get Var Id From Lasal Id Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b21f8536-7ece-410a-a1c1-e695e15940c6",
+			"name": "GET_LASAL_ID_FROM_NAME_RSP",
+			"maId": 65280,
+			"miId": 521,
+			"eventType": 5,
+			"desc": "Received a Get Lasal Id From Name Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cc191da6-6f0b-423c-b724-91498e101ab9",
+			"name": "GET_LASAL_ID_FROM_VAR_ID_RSP",
+			"maId": 65280,
+			"miId": 523,
+			"eventType": 5,
+			"desc": "Received a Get Lasal Id From Var Id Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b4b57d00-ecf2-4fa5-8ff9-ce321acfeddd",
+			"name": "GET_NAME_FROM_VAR_ID_RSP",
+			"maId": 65280,
+			"miId": 525,
+			"eventType": 5,
+			"desc": "Received a Get Name From Var Id Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2502f04f-4b26-4a19-8601-bd5421ebc3ab",
+			"name": "GET_NAME_FROM_LASAL_ID_RSP",
+			"maId": 65280,
+			"miId": 527,
+			"eventType": 5,
+			"desc": "Received a Get Name From Var Id Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "75046ea9-6d18-4983-aec6-22ef44287642",
+			"name": "GET_DP_LIST_RSP",
+			"maId": 65280,
+			"miId": 529,
+			"eventType": 5,
+			"desc": "Received a Get Dp List Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4a048166-40eb-4323-a92c-37bc3c14ae31",
+			"name": "GET_DP_INFO_RSP",
+			"maId": 65280,
+			"miId": 531,
+			"eventType": 5,
+			"desc": "Received a Get DP Info Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d6a81621-83a7-415b-8915-50537412f7b5",
+			"name": "GET_VAR_ID_FROM_CRC_RSP",
+			"maId": 65280,
+			"miId": 533,
+			"eventType": 5,
+			"desc": "Received a Get Var Id from CRC Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f31ad050-e821-4d21-a487-672b081202fe",
+			"name": "GET_CRC_FROM_VAR_ID_RSP",
+			"maId": 65280,
+			"miId": 535,
+			"eventType": 5,
+			"desc": "Received a Get CRC From Var Id Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6dfb75d9-21bd-499a-b65a-3c8106cd464c",
+			"name": "GET_VALUE_RSP",
+			"maId": 65280,
+			"miId": 545,
+			"eventType": 5,
+			"desc": "Received a Get Value Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f0845b58-0165-4c54-93dd-8fb0b6cdad31",
+			"name": "GET_STRING_RSP",
+			"maId": 65280,
+			"miId": 547,
+			"eventType": 5,
+			"desc": "Received a Get String Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d8d45570-e535-4d27-842a-8e9013fed7b6",
+			"name": "GET_DATA_RSP",
+			"maId": 65280,
+			"miId": 549,
+			"eventType": 5,
+			"desc": "Received a Get Data Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "185f7e22-20b6-4915-9e9c-2457d13b87d2",
+			"name": "SET_VALUE_RSP",
+			"maId": 65280,
+			"miId": 561,
+			"eventType": 5,
+			"desc": "Received a Set Value Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "79fac965-ba29-4932-aa4c-c5d9cc83d261",
+			"name": "SET_STRING_RSP",
+			"maId": 65280,
+			"miId": 563,
+			"eventType": 5,
+			"desc": "Received a Set String Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1d04c339-daac-434b-80fc-fc0aa8da8a2d",
+			"name": "SET_DATA_RSP",
+			"maId": 65280,
+			"miId": 565,
+			"eventType": 5,
+			"desc": "Received a Set Data Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "03c0bfee-46db-40d6-a9d4-08d4df58a76f",
+			"name": "ADD_REFLIST_RSP",
+			"maId": 65280,
+			"miId": 577,
+			"eventType": 5,
+			"desc": "Received a Add Ref List Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9b28a36b-b69b-404c-9761-8c8d1962eeb5",
+			"name": "SUB_REFLIST_RSP",
+			"maId": 65280,
+			"miId": 579,
+			"eventType": 5,
+			"desc": "Received a Sub Reflist Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c35879b3-0a7c-478a-8cd0-1abec81536b1",
+			"name": "CLEAR_REFLIST_RSP",
+			"maId": 65280,
+			"miId": 581,
+			"eventType": 5,
+			"desc": "Received a Clear Reflist Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f21426f7-53e1-4937-b294-7de516805e1b",
+			"name": "START_REFLIST_RSP",
+			"maId": 65280,
+			"miId": 583,
+			"eventType": 5,
+			"desc": "Received a Start Reflist Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5f3cdd70-2071-4d69-9986-652cbfd126f6",
+			"name": "STOP_REFLIST_RSP",
+			"maId": 65280,
+			"miId": 585,
+			"eventType": 5,
+			"desc": "Received a Stop Reflist Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "784888cb-08a2-4f95-acc1-89df100a107b",
+			"name": "UPDATE_REFLIST",
+			"maId": 65280,
+			"miId": 586,
+			"eventType": 5,
+			"desc": "Received a Update Reflist Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5f22cf31-7c72-4d53-929e-213e4250b729",
+			"name": "UPDATE_STR_REFLIST",
+			"maId": 65280,
+			"miId": 587,
+			"eventType": 5,
+			"desc": "Received a Update String Reflist Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "646a5b38-5a02-4ce5-95a9-27c685b8a212",
+			"name": "CHANGE_STATION_PARAMETERS_RSP",
+			"maId": 65280,
+			"miId": 59,
+			"eventType": 5,
+			"desc": "Received a Change Station Parameters Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8a711806-441f-4e7d-bf18-6344c0c2334e",
+			"name": "STATION_INFO_PSH",
+			"maId": 65280,
+			"miId": 60,
+			"eventType": 5,
+			"desc": "Received a Station Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "47acab26-e276-4722-90db-50af1ac2a398",
+			"name": "STATION_CON_RSP",
+			"maId": 65280,
+			"miId": 769,
+			"eventType": 5,
+			"desc": "Received a Station Connection Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "18b59636-9416-44ae-a208-27974c2e3c74",
+			"name": "STATION_DISCON_RSP",
+			"maId": 65280,
+			"miId": 771,
+			"eventType": 5,
+			"desc": "Received a Station Disconnection Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9312b80b-368b-4e18-bbbf-ae0bd18e55a7",
+			"name": "STATION_UPDATE",
+			"maId": 65280,
+			"miId": 772,
+			"eventType": 5,
+			"desc": "Received a Station Update Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "907de575-680f-4d5b-8e50-1dbc7b725487",
+			"name": "STATION_SETCON_RSP",
+			"maId": 65280,
+			"miId": 774,
+			"eventType": 5,
+			"desc": "Received a Set Connection Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d2d7e083-a435-425f-81ff-a94a12dda90a",
+			"name": "EVENTJOURNAL_ADD_RSP",
+			"maId": 65281,
+			"miId": 1025,
+			"eventType": 5,
+			"desc": "Received a Add EventJournal Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0cdcac81-40e9-4b72-9c3c-93de974e759a",
+			"name": "EVENTJOURNAL_GET_RSP",
+			"maId": 65281,
+			"miId": 1027,
+			"eventType": 5,
+			"desc": "Received a Get EventJournal Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2ad4c895-c864-489e-b594-5b4cbd428f17",
+			"name": "EVENTJOURNAL_GET_ALL_RSP",
+			"maId": 65281,
+			"miId": 1029,
+			"eventType": 5,
+			"desc": "Received a Get All EventJournal Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "366ab465-36ab-4fb8-9080-bce750d25ccd",
+			"name": "EVENTJOURNAL_DEL_RSP",
+			"maId": 65281,
+			"miId": 1031,
+			"eventType": 5,
+			"desc": "Received a Del EventJournal Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "34cf5b93-abbf-422a-b9cc-80b898d311bd",
+			"name": "EVENTJOURNAL_DEL_ALL_RSP",
+			"maId": 65281,
+			"miId": 1033,
+			"eventType": 5,
+			"desc": "Received a Del All EventJournal Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "62fdee3c-3d3e-4195-a642-2271025169ec",
+			"name": "EVENTJOURNAL_UPDATE",
+			"maId": 65281,
+			"miId": 1036,
+			"eventType": 5,
+			"desc": "Received a EventJournal Update Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "71f976e1-7289-4712-bffd-adfb2fd1f596",
+			"name": "EVENTJOURNAL_ALARM_QUIT_RSP",
+			"maId": 65281,
+			"miId": 1041,
+			"eventType": 5,
+			"desc": "Received a Alarm Quit EventJournal Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cdbb46f3-c506-4e55-b1a2-041f51f414cc",
+			"name": "EVENTJOURNAL_ALARM_QUIT_ALL_RSP",
+			"maId": 65281,
+			"miId": 1043,
+			"eventType": 5,
+			"desc": "Received a Alarm Quit All EventJournal Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8d728466-a782-4612-8107-fda1ec89e1fd",
+			"name": "EVENTJOURNAL_UPDATE_ADD_RSP",
+			"maId": 65281,
+			"miId": 1068,
+			"eventType": 5,
+			"desc": "Received a EventJournal Update Add Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1c3f4cf6-0b10-4073-880b-b3d70031b7cf",
+			"name": "EVENTJOURNAL_UPDATE_SUB_RSP",
+			"maId": 65281,
+			"miId": 1070,
+			"eventType": 5,
+			"desc": "Received a EventJournal Update Sub Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4a983210-8464-4278-8fc5-9a30d6ea999f",
+			"name": "ALARMLIST_UPDATE_ADD_RSP",
+			"maId": 65281,
+			"miId": 1045,
+			"eventType": 5,
+			"desc": "Received a Alarmlist Update Add Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d0132575-c06b-437f-90af-98ea61ebde86",
+			"name": "ALARMLIST_UPDATE_SUB_RSP",
+			"maId": 65281,
+			"miId": 1047,
+			"eventType": 5,
+			"desc": "Received a Alarmlist Update Sub Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bbcf1860-e67b-473b-b33a-13a136f662e5",
+			"name": "ALARMLIST_UPDATE",
+			"maId": 65281,
+			"miId": 1049,
+			"eventType": 5,
+			"desc": "Received a Alarmlist Update Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "453de422-5a69-4957-ae88-7d2cc7f3d4f3",
+			"name": "HOTALARM_UPDATE_ADD_RSP",
+			"maId": 65281,
+			"miId": 1057,
+			"eventType": 5,
+			"desc": "Received a Hotalarm Update Add Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f450b22c-d154-4453-bccf-b9fba1be3fee",
+			"name": "HOTALARM_UPDATE_SUB_RSP",
+			"maId": 65281,
+			"miId": 1059,
+			"eventType": 5,
+			"desc": "Received a Hotalarm Update Sub Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7625e486-67e6-4516-8116-a02b3e04859e",
+			"name": "HOTALARM_UPDATE",
+			"maId": 65281,
+			"miId": 1061,
+			"eventType": 5,
+			"desc": "Received a Hotalarm Update Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8838bc9d-8612-4670-9778-db0f101b6c6d",
+			"name": "ALARM_DEL_RSP",
+			"maId": 65281,
+			"miId": 1063,
+			"eventType": 5,
+			"desc": "Received a Del Alarm Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b3763d8c-d3a6-4b69-bf0c-767faea5ab45",
+			"name": "ALARM_DEL_ALL_RSP",
+			"maId": 65281,
+			"miId": 1065,
+			"eventType": 5,
+			"desc": "Received a Del All Alarm Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e45a7139-9129-4aed-ad38-7bcd4d3b894d",
+			"name": "ALARM_DEL_UPDATE",
+			"maId": 65281,
+			"miId": 1066,
+			"eventType": 5,
+			"desc": "Received a del Alarm Update Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "71883a2d-0972-4fd1-9d4f-55577de9c213",
+			"name": "ALARM_INFO_UPDATE_ADD_RSP",
+			"maId": 65281,
+			"miId": 1072,
+			"eventType": 5,
+			"desc": "Received a Alarm Info Update Add Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e9ea3498-9dcd-4c61-915f-12a35cfd5e61",
+			"name": "ALARM_INFO_PSH",
+			"maId": 65281,
+			"miId": 1073,
+			"eventType": 5,
+			"desc": "Received a Alarm Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ba1ddac8-e0a6-4dfb-804d-ad6f5ae34572",
+			"name": "RECIPE_SAVE_RSP",
+			"maId": 65280,
+			"miId": 146,
+			"eventType": 5,
+			"desc": "Received a Save Recipe Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d3e97f63-25d0-4e5a-9117-41efe97ccd2d",
+			"name": "RECIPE_LOAD_RSP",
+			"maId": 65280,
+			"miId": 144,
+			"eventType": 5,
+			"desc": "Received a Save Recipe Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cdeacd07-a1be-4316-b489-1abc58d3f697",
+			"name": "PROGRESS_STATUS",
+			"maId": 65280,
+			"miId": 128,
+			"eventType": 5,
+			"desc": "Received a Progress Status Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5cf89c89-b851-45b0-82fc-fdd17d455e41",
+			"name": "FILE_OPEN_RSP",
+			"maId": 65280,
+			"miId": 1281,
+			"eventType": 5,
+			"desc": "Received a File Open Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1a030c95-afde-4c99-b0d6-df01025e7ce9",
+			"name": "FILE_CLOSE_RSP",
+			"maId": 65280,
+			"miId": 1283,
+			"eventType": 5,
+			"desc": "Received a File Close Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "11739737-0b81-4f58-b35f-d6d38d185d2a",
+			"name": "FILE_SEEK_RSP",
+			"maId": 65280,
+			"miId": 1285,
+			"eventType": 5,
+			"desc": "Received a File Seek Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "61d0c98b-9f0e-4df1-87a0-0d5ca4b835f7",
+			"name": "FILE_TELL_RSP",
+			"maId": 65280,
+			"miId": 1287,
+			"eventType": 5,
+			"desc": "Received a File Tell Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "35a36aed-95d1-451e-92c6-92308e741d66",
+			"name": "FILE_READ_RSP",
+			"maId": 65280,
+			"miId": 1289,
+			"eventType": 5,
+			"desc": "Received a File Read Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "800fbee5-5492-4bd9-80c8-0bb0c5b22193",
+			"name": "FILE_WRITE_RSP",
+			"maId": 65280,
+			"miId": 1291,
+			"eventType": 5,
+			"desc": "Received a File Write Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "31d819ff-f8a5-4034-b98c-8543870fca11",
+			"name": "FILE_GET_RSP",
+			"maId": 65280,
+			"miId": 1293,
+			"eventType": 5,
+			"desc": "Received a File Get Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "87360e9c-42b0-4e82-9f99-5daf50165c37",
+			"name": "FILE_PUT_RSP",
+			"maId": 65280,
+			"miId": 1295,
+			"eventType": 5,
+			"desc": "Received a File Put Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "64246fd6-b029-437b-b350-c5f2dde89cd0",
+			"name": "FILE_LENGTH_RSP",
+			"maId": 65280,
+			"miId": 1297,
+			"eventType": 5,
+			"desc": "Received a File Length Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e5600828-6ad9-4583-8b25-f0657935c4aa",
+			"name": "FILE_CONTENT_RSP",
+			"maId": 65280,
+			"miId": 1299,
+			"eventType": 5,
+			"desc": "Received a File Content Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9b760790-b66e-4da1-baed-7d0c74016c51",
+			"name": "DIR_CREATE_RSP",
+			"maId": 65280,
+			"miId": 1313,
+			"eventType": 5,
+			"desc": "Received a Create Dir/File Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a5ce1869-086f-455c-add1-c34e579bff9d",
+			"name": "DIR_READ_RSP",
+			"maId": 65280,
+			"miId": 1315,
+			"eventType": 5,
+			"desc": "Received a Directory Read Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1b680f4d-fc09-49e6-8f94-d5f718a3c704",
+			"name": "FILE_REMOVE_RSP",
+			"maId": 65280,
+			"miId": 1329,
+			"eventType": 5,
+			"desc": "Received a Remove Dir/File Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a53cf7d3-a458-41a7-891a-b05cd4b295c8",
+			"name": "FILE_COPY_RSP",
+			"maId": 65280,
+			"miId": 1331,
+			"eventType": 5,
+			"desc": "Received a Copy Dir/File Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "776effe4-0b29-4e98-b772-36df1345d375",
+			"name": "FILE_INFO_RSP",
+			"maId": 65280,
+			"miId": 1333,
+			"eventType": 5,
+			"desc": "Received a File Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e2299eaf-a27b-45f3-b26b-d0b34e65f766",
+			"name": "FILE_RENAME_RSP",
+			"maId": 65280,
+			"miId": 1335,
+			"eventType": 5,
+			"desc": "Received a File Rename Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "982ab49c-98d5-4cf0-87d0-afe743f18c39",
+			"name": "FILE_SET_ATT_RSP",
+			"maId": 65280,
+			"miId": 1337,
+			"eventType": 5,
+			"desc": "Received a File Set Attribut Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5563cff1-aec3-4a36-b60b-ebcaa76d2e44",
+			"name": "GET_DRIVE_LIST_RSP",
+			"maId": 65280,
+			"miId": 1339,
+			"eventType": 5,
+			"desc": "Received a Drive List Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6e477dad-15f0-4e31-9d74-c5f611b6e0aa",
+			"name": "FILE_MOVE_RSP",
+			"maId": 65280,
+			"miId": 1341,
+			"eventType": 5,
+			"desc": "Received a Move Dir/File Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4180c269-5224-4d7a-ac4e-0025ffbf4a7b",
+			"name": "GET_DRIVE_INFO_RSP",
+			"maId": 65280,
+			"miId": 1343,
+			"eventType": 5,
+			"desc": "Received a Drive Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6aa73799-0f2c-463f-8f09-64b655a7edfd",
+			"name": "DIRECTORY_EVENT_REGISTRATION_RSP",
+			"maId": 65280,
+			"miId": 1345,
+			"eventType": 5,
+			"desc": "Received a Directory Event Registration Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "168fe762-51ff-4831-afa2-856bf6dc6dc1",
+			"name": "DIRECTORY_EVENT_DEREGISTRATION_RSP",
+			"maId": 65280,
+			"miId": 1347,
+			"eventType": 5,
+			"desc": "Received a Directory Event Deregistration Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cbf281e9-58b4-44a9-95ed-33fda1ce5ba9",
+			"name": "DIRECTORY_EVENT_UPDATE",
+			"maId": 65280,
+			"miId": 1348,
+			"eventType": 5,
+			"desc": "Received a Directory Event Update",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7c891020-81cc-4e77-bc8a-ea06cd705877",
+			"name": "CANCEL_COMMAND_RSP",
+			"maId": 65280,
+			"miId": 15,
+			"eventType": 5,
+			"desc": "Received a Cancel Command Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cbdd6cc7-6cf3-473c-bdcf-908468783e01",
+			"name": "USER_CREATED",
+			"maId": 65296,
+			"miId": 1536,
+			"eventType": 5,
+			"desc": "Fired if an user was created",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "641a20ad-cd7b-4899-8143-aef828749580",
+			"name": "USER_UPDATED",
+			"maId": 65296,
+			"miId": 1537,
+			"eventType": 5,
+			"desc": "Fired if an user was updated",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "97b7009d-acfd-48f6-9b56-3ec9d5e364c0",
+			"name": "USER_DELETED",
+			"maId": 65296,
+			"miId": 1538,
+			"eventType": 5,
+			"desc": "Fired if an user was deleted",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b49dd985-39e7-4f0c-83fb-2ad992468d82",
+			"name": "USERS_IMPORTED",
+			"maId": 65296,
+			"miId": 1539,
+			"eventType": 5,
+			"desc": "Fired if users were imported",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "42c9c9f1-c5d3-48b4-882a-184825d7fa17",
+			"name": "USER_RESTORED",
+			"maId": 65296,
+			"miId": 1540,
+			"eventType": 5,
+			"desc": "Fired if an user was restored",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "02c7eb6c-88bf-49cf-b587-43ffd9cf66a7",
+			"name": "REGISTERD_TOKEN",
+			"maId": 65296,
+			"miId": 1546,
+			"eventType": 5,
+			"desc": "Fired if an login-token was registered",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d9f3b9ba-af53-4400-b033-a94aa6b87a67",
+			"name": "UNREGISTERD_TOKEN",
+			"maId": 65296,
+			"miId": 1547,
+			"eventType": 5,
+			"desc": "Fired if an login-token was unregistered",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "df4901a8-8de7-4798-9cf1-794b54f986c1",
+			"name": "ROLE_CREATED",
+			"maId": 65296,
+			"miId": 1552,
+			"eventType": 5,
+			"desc": "Fired if an role was created",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "fe10713f-e490-4375-b167-293e0b5c85f6",
+			"name": "ROLE_UPDATED",
+			"maId": 65296,
+			"miId": 1553,
+			"eventType": 5,
+			"desc": "Fired if an role was updated",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5c1626ff-222c-4245-8596-ae9bf6bbb809",
+			"name": "ROLE_DELETED",
+			"maId": 65296,
+			"miId": 1554,
+			"eventType": 5,
+			"desc": "Fired if an role was deleted",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "183391ca-8976-4bc8-af2d-6772afa045c9",
+			"name": "ROLES_IMPORTED",
+			"maId": 65296,
+			"miId": 1555,
+			"eventType": 5,
+			"desc": "Fired if roles were imported",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "927df0e1-8f8e-4049-aefb-4cc14ed8c3bd",
+			"name": "USER_LOGGED_IN",
+			"maId": 65296,
+			"miId": 1568,
+			"eventType": 5,
+			"desc": "Fired if an user logged in",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e4438932-f4b7-43f1-b6e9-27e25ce408d1",
+			"name": "USER_LOGGED_OUT",
+			"maId": 65296,
+			"miId": 1569,
+			"eventType": 5,
+			"desc": "Fired if an user logged out",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "494fd7af-5334-42c5-bdb7-a2df889aca3c",
+			"name": "CURR_USER_UPDATE",
+			"maId": 65296,
+			"miId": 1570,
+			"eventType": 5,
+			"desc": "Fired if an dataupdate for the current user occured",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c4f57ea5-baa1-43bf-8a3a-d19fb989e9b1",
+			"name": "SEND_USER_DATA",
+			"maId": 65296,
+			"miId": 1578,
+			"eventType": 5,
+			"desc": "Used by the usermanagement controls for communication",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "68e3327f-002c-4b86-9aca-fbdf51a514bf",
+			"name": "RECEIVE_USER_DATA",
+			"maId": 65296,
+			"miId": 1579,
+			"eventType": 5,
+			"desc": "Used by the usermanagement controls for communication",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "3e8b7ffb-1327-4105-96e9-34b6289e7f37",
+			"name": "CANCLED_COMMAND",
+			"maId": 65296,
+			"miId": 1583,
+			"eventType": 5,
+			"desc": "Fired if an command was cancled",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8e311348-e3ce-4ddf-b059-a61cf5e6dab5",
+			"name": "ACCESS_SEQUENCE_READY_STATE_CHANGED",
+			"maId": 65296,
+			"miId": 1584,
+			"eventType": 5,
+			"desc": "Fired if the ready state of the access sequence changes. The state (true/false) is passed in the message argument.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b192a31f-d4af-40e1-ae0c-073710c99140",
+			"name": "ACCESS_SEQUENCE_CHANGED",
+			"maId": 65296,
+			"miId": 1585,
+			"eventType": 5,
+			"desc": "Fired if the access sequence changes and needs to be checked again.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "fca6a751-ec1e-4177-84ad-9765cfc034a1",
+			"name": "DRAG_DROP_ENABLED",
+			"maId": 65296,
+			"miId": 2304,
+			"eventType": 5,
+			"desc": "Send if drag and drop mode is enable",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "363c00e0-2dd0-4a05-b773-d391c92f12d7",
+			"name": "DRAG_DROP_DISABLED",
+			"maId": 65296,
+			"miId": 2305,
+			"eventType": 5,
+			"desc": "Send if drag and drop mode is disabled",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6c812a9e-62e4-4aaf-b4f5-202127fda986",
+			"name": "DRAG_START",
+			"maId": 65296,
+			"miId": 2306,
+			"eventType": 5,
+			"desc": "Send if drag of component starts",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b2f034e8-7468-42cd-89b8-f4a722cde359",
+			"name": "DRAG_MOVE",
+			"maId": 65296,
+			"miId": 2307,
+			"eventType": 5,
+			"desc": "Send if drag of component ends",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1dcb5074-b1e8-4144-9635-07499abab5d5",
+			"name": "DRAG_ENTER",
+			"maId": 65296,
+			"miId": 2308,
+			"eventType": 5,
+			"desc": "Send if the dragged component enters a dropzone",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "120cd6e8-d6c6-4755-ac50-6c2b30dac34e",
+			"name": "DRAG_OVER",
+			"maId": 65296,
+			"miId": 2309,
+			"eventType": 5,
+			"desc": "Send if the dragged component is over a dropzone",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "786b381c-65c5-4aa4-8ae1-f41fcc89d0b4",
+			"name": "DRAG_LEAVE",
+			"maId": 65296,
+			"miId": 2310,
+			"eventType": 5,
+			"desc": "Send if the dragged component leaves a dropzone",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2c20be45-ceb3-4227-b7af-94c543bf1e39",
+			"name": "DRAG_DROP",
+			"maId": 65296,
+			"miId": 2312,
+			"eventType": 5,
+			"desc": "Send if the dragged component is dropped over a dropzone",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d45852a3-a247-4ead-b0cf-c8df4707a891",
+			"name": "DRAG_END",
+			"maId": 65296,
+			"miId": 2313,
+			"eventType": 5,
+			"desc": "Send if drag of component ends",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "df9c3b23-0608-414d-9bde-f3ba1ac344dd",
+			"name": "SYSWIN_CONFIRM",
+			"maId": 65296,
+			"miId": 1792,
+			"eventType": 5,
+			"desc": "Send if a dialog is confirmed",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5dd13290-bfb8-40cd-9eda-ec0ae7e77e71",
+			"name": "SYSWIN_CANCEL",
+			"maId": 65296,
+			"miId": 1793,
+			"eventType": 5,
+			"desc": "Send if a dialog is cancled",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "aaac9dbd-6fce-48b7-80e1-7a5e91d4d8b5",
+			"name": "SYSWIN_KEYBOARD_OPEN",
+			"maId": 65296,
+			"miId": 1794,
+			"eventType": 5,
+			"desc": "Is fired to open an keyboard",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "afff719b-ffa1-46b7-808a-6c5a44197e57",
+			"name": "SYSWIN_KEYBOARD_VALUE",
+			"maId": 65296,
+			"miId": 1795,
+			"eventType": 5,
+			"desc": "Fired if a keyboard value was entered",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "97b129e6-0dfd-4873-be73-a9fa2e1df3ef",
+			"name": "SYSWIN_KEYBOARD_EXIT",
+			"maId": 65296,
+			"miId": 1796,
+			"eventType": 5,
+			"desc": "Fired if the keyboard was closed without updating a value",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1dc661c7-fbdd-4c05-913a-3de96508b61b",
+			"name": "SYSWIN_KEYBOARD_CLOSE",
+			"maId": 65296,
+			"miId": 1797,
+			"eventType": 5,
+			"desc": "Fired if the keyboard window was closed",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "31118c76-412d-43aa-9b64-ddf8171692b8",
+			"name": "ADD_LOCAL_CLIENT_RSP",
+			"maId": 65280,
+			"miId": 177,
+			"eventType": 5,
+			"desc": "Received a add an local client frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d4229c9a-efb1-4d67-8d85-882376aba8b2",
+			"name": "ADD_LOCAL_CLIENT_RANGE_RSP",
+			"maId": 65280,
+			"miId": 179,
+			"eventType": 5,
+			"desc": "Received a add an local client range frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "136da27d-d7c2-4f1a-9cd2-c9e7de6fd7a6",
+			"name": "REMOVE_THIS_AS_LOCAL_CLIENT_RSP",
+			"maId": 65280,
+			"miId": 181,
+			"eventType": 5,
+			"desc": "Received a remove this as local client frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0e947fd7-be18-44a3-bb38-22bab3397b43",
+			"name": "REMOVE_LOCAL_CLIENT_RSP",
+			"maId": 65280,
+			"miId": 183,
+			"eventType": 5,
+			"desc": "Received a remove local client frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f9ae9616-ea09-472c-af69-7e826c35a0eb",
+			"name": "REMOVE_LOCAL_CLIENT_RANGE_RSP",
+			"maId": 65280,
+			"miId": 185,
+			"eventType": 5,
+			"desc": "Received a remove local client range frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "14a8e541-13f3-42ae-b976-b8a9f38f2d34",
+			"name": "CLEAR_LOCAL_CLIENT_LIST_RSP",
+			"maId": 65280,
+			"miId": 187,
+			"eventType": 5,
+			"desc": "Received a clear local client list frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0cff1c88-60b9-4342-b075-1105f79f1d2c",
+			"name": "GET_CURRENT_ID_RSP",
+			"maId": 65280,
+			"miId": 189,
+			"eventType": 5,
+			"desc": "Received a get current id frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "fbb5d003-d275-4952-8242-fa2dd94133e7",
+			"name": "GET_LOCAL_CLIENT_LIST_RSP",
+			"maId": 65280,
+			"miId": 191,
+			"eventType": 5,
+			"desc": "Received a get local client list frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "786f2da1-d482-43ef-aa48-1651fb021d0d",
+			"name": "GET_LOCAL_CLIENT_LIST_DETAILS_RSP",
+			"maId": 65280,
+			"miId": 193,
+			"eventType": 5,
+			"desc": "Received a get local client list details frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ee4c1083-1590-43cb-80fb-0f2cc0d65f76",
+			"name": "GET_LOCAL_CLIENT_BY_ID_RSP",
+			"maId": 65280,
+			"miId": 195,
+			"eventType": 5,
+			"desc": "Received a get local client by id frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4b859e8e-228f-4302-b643-26df6b545ee5",
+			"name": "SUBSCRIBE_STATE_RSP",
+			"maId": 65280,
+			"miId": 54,
+			"eventType": 5,
+			"desc": "Received a subscribe state frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "53eb8083-ad99-447f-9dc7-c8cfc52d2ddc",
+			"name": "UNSUBSCRIBE_STATE_RSP",
+			"maId": 65280,
+			"miId": 56,
+			"eventType": 5,
+			"desc": "Received a unsubscribe state frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "df74d91c-dba2-45db-9d26-b020baa27e96",
+			"name": "UPDATE_STATE",
+			"maId": 65280,
+			"miId": 57,
+			"eventType": 5,
+			"desc": "Received a update state Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "96e8c424-8c9f-4d13-af41-49478b65584c",
+			"name": "GET_STATE_RSP",
+			"maId": 65280,
+			"miId": 65,
+			"eventType": 5,
+			"desc": "Received a get state frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "56e8e9ad-3e79-41a1-9250-494387ab69de",
+			"name": "ENABLE_LOG_TO_FILE_RSP",
+			"maId": 65280,
+			"miId": 81,
+			"eventType": 5,
+			"desc": "Received a enable persisted browser log frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "465a9f85-4c47-42b0-b692-cd11ddf64596",
+			"name": "DISABLE_LOG_TO_FILE_RSP",
+			"maId": 65280,
+			"miId": 83,
+			"eventType": 5,
+			"desc": "Received a disable persisted browser log frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9bc5156f-edf9-4cc9-b66f-6e85e974f80f",
+			"name": "LASAL_EVENT_0_RECEIVED",
+			"maId": 65283,
+			"miId": 80,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_0_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4888ac95-b87c-4cb2-a7c1-75f26e0936e2",
+			"name": "LASAL_EVENT_1_RECEIVED",
+			"maId": 65283,
+			"miId": 81,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_1_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9080ba11-bb56-4d02-aeb9-e326d5adba20",
+			"name": "LASAL_EVENT_2_RECEIVED",
+			"maId": 65283,
+			"miId": 82,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_2_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "657ab7d7-e7ff-4192-bd25-685ac9035361",
+			"name": "LASAL_EVENT_3_RECEIVED",
+			"maId": 65283,
+			"miId": 83,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_3_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e2b80c08-53d3-4c69-9abf-86c6ed4b8acf",
+			"name": "LASAL_EVENT_4_RECEIVED",
+			"maId": 65283,
+			"miId": 84,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_4_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "70a0d47e-99bb-4ef8-9fbd-d47a6ce054a1",
+			"name": "LASAL_EVENT_5_RECEIVED",
+			"maId": 65283,
+			"miId": 85,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_5_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d19dfb84-9d85-448f-8c6b-180cf4207b34",
+			"name": "LASAL_EVENT_6_RECEIVED",
+			"maId": 65283,
+			"miId": 86,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_6_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c5e1fc79-63b3-495e-bc13-e9a7f0dac559",
+			"name": "LASAL_EVENT_7_RECEIVED",
+			"maId": 65283,
+			"miId": 87,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_7_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f8b6da5e-23b4-4de6-a967-d6385e5b97da",
+			"name": "LASAL_EVENT_8_RECEIVED",
+			"maId": 65283,
+			"miId": 88,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_8_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8d013725-8c14-4b15-8877-ea374680c45f",
+			"name": "LASAL_EVENT_9_RECEIVED",
+			"maId": 65283,
+			"miId": 89,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_9_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a1361683-fd80-41bf-906c-3fad96ad9cf4",
+			"name": "LASAL_EVENT_10_RECEIVED",
+			"maId": 65283,
+			"miId": 96,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_10_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d96ac51f-9a77-4429-903d-af4a7a4b992b",
+			"name": "LASAL_EVENT_11_RECEIVED",
+			"maId": 65283,
+			"miId": 97,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_11_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5038c62b-c8f1-44a8-b38d-3f495d3d3332",
+			"name": "LASAL_EVENT_12_RECEIVED",
+			"maId": 65283,
+			"miId": 98,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_12_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ceb661d3-d6ad-48a3-a55d-5baacf4d6b5c",
+			"name": "LASAL_EVENT_13_RECEIVED",
+			"maId": 65283,
+			"miId": 99,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_13_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d9c0f67d-2b30-4db6-9801-54558ea67d53",
+			"name": "LASAL_EVENT_14_RECEIVED",
+			"maId": 65283,
+			"miId": 100,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_14_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "374d97dd-3768-47b2-bcb0-6b7976cb5510",
+			"name": "LASAL_EVENT_15_RECEIVED",
+			"maId": 65283,
+			"miId": 101,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_15_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f71bd9c6-7906-44be-bc2c-8632e0d93892",
+			"name": "LASAL_EVENT_16_RECEIVED",
+			"maId": 65283,
+			"miId": 102,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_16_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ab38708f-6721-46f3-a92a-cad916ff5db5",
+			"name": "LASAL_EVENT_17_RECEIVED",
+			"maId": 65283,
+			"miId": 103,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_17_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9069a127-f1f7-4d37-80af-08a912baf0fd",
+			"name": "LASAL_EVENT_18_RECEIVED",
+			"maId": 65283,
+			"miId": 104,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_18_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "84e12a79-1f90-494c-9cbb-bc43a617158d",
+			"name": "LASAL_EVENT_19_RECEIVED",
+			"maId": 65283,
+			"miId": 105,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_19_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "eabdc7b5-dd02-47c1-b551-39d546370005",
+			"name": "LASAL_EVENT_20_RECEIVED",
+			"maId": 65283,
+			"miId": 112,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_20_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0b8c7bf2-2852-43ee-b7b8-61505e03c095",
+			"name": "LASAL_EVENT_21_RECEIVED",
+			"maId": 65283,
+			"miId": 113,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_21_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "3d1594e0-9f04-432f-995c-0c493af4e2cc",
+			"name": "LASAL_EVENT_22_RECEIVED",
+			"maId": 65283,
+			"miId": 114,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_22_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "97e418b7-f0d9-4f6c-9ae3-385f7659a0a5",
+			"name": "LASAL_EVENT_23_RECEIVED",
+			"maId": 65283,
+			"miId": 115,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_23_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8391e630-1c2a-4b26-bd3e-31eabb7f29b2",
+			"name": "LASAL_EVENT_24_RECEIVED",
+			"maId": 65283,
+			"miId": 116,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_24_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9d6b0d07-dc5d-4358-9bb5-5cbb0bc3dfe9",
+			"name": "LASAL_EVENT_25_RECEIVED",
+			"maId": 65283,
+			"miId": 117,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_25_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2d9905d9-a9a3-4352-b130-59377e993af8",
+			"name": "LASAL_EVENT_26_RECEIVED",
+			"maId": 65283,
+			"miId": 118,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_26_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5c9a44b8-1931-4ddd-a3cc-10aac65f8c0a",
+			"name": "LASAL_EVENT_27_RECEIVED",
+			"maId": 65283,
+			"miId": 119,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_27_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "07987a96-b37f-4d7e-a5a8-a90f3ad5666d",
+			"name": "LASAL_EVENT_28_RECEIVED",
+			"maId": 65283,
+			"miId": 120,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_28_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4f1d8d3e-f9bd-4b95-8e8d-24ccca4671a8",
+			"name": "LASAL_EVENT_29_RECEIVED",
+			"maId": 65283,
+			"miId": 121,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_29_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "85186068-1bd6-425f-ae10-2c5cdafc53b0",
+			"name": "LASAL_EVENT_30_RECEIVED",
+			"maId": 65283,
+			"miId": 128,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_30_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "aca2d626-b3f6-4da2-ba59-f922ab964019",
+			"name": "LASAL_EVENT_31_RECEIVED",
+			"maId": 65283,
+			"miId": 129,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_31_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e7ae3ace-8272-4cb5-9bd0-975dbe80444b",
+			"name": "LASAL_EVENT_32_RECEIVED",
+			"maId": 65283,
+			"miId": 130,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_32_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "56dfa84f-5702-46ac-90af-eb43154a7534",
+			"name": "LASAL_EVENT_33_RECEIVED",
+			"maId": 65283,
+			"miId": 131,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_33_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6cdce19d-effd-4669-98dd-244b54ee80cc",
+			"name": "LASAL_EVENT_34_RECEIVED",
+			"maId": 65283,
+			"miId": 132,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_34_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "75083ce2-7367-405e-8de8-9d6d0560d9c6",
+			"name": "LASAL_EVENT_35_RECEIVED",
+			"maId": 65283,
+			"miId": 133,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_35_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0b3554b0-c29b-44ce-9671-3ae06dbddad2",
+			"name": "LASAL_EVENT_36_RECEIVED",
+			"maId": 65283,
+			"miId": 134,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_36_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d622190d-2243-4123-b006-22abd4584517",
+			"name": "LASAL_EVENT_37_RECEIVED",
+			"maId": 65283,
+			"miId": 135,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_37_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2698d7ee-4c75-47d5-893e-20357b5f5aa4",
+			"name": "LASAL_EVENT_38_RECEIVED",
+			"maId": 65283,
+			"miId": 136,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_38_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c0474ab6-68ec-4a2c-a780-27de219d9b37",
+			"name": "LASAL_EVENT_39_RECEIVED",
+			"maId": 65283,
+			"miId": 137,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_39_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "52b1bc1e-33c6-4555-8a38-76ad50bfc0a9",
+			"name": "LASAL_EVENT_40_RECEIVED",
+			"maId": 65283,
+			"miId": 144,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_40_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a3df55a8-07a2-450f-a68d-61fe40655e2f",
+			"name": "LASAL_EVENT_41_RECEIVED",
+			"maId": 65283,
+			"miId": 145,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_41_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4a2d250d-c02c-4ae2-aeca-4611e6c95dfc",
+			"name": "LASAL_EVENT_42_RECEIVED",
+			"maId": 65283,
+			"miId": 146,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_42_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "463580a3-4d91-49a9-a938-1bd7414fca0e",
+			"name": "LASAL_EVENT_43_RECEIVED",
+			"maId": 65283,
+			"miId": 147,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_43_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "98b52fbd-7bf9-4d69-8d1a-b9c661da131c",
+			"name": "LASAL_EVENT_44_RECEIVED",
+			"maId": 65283,
+			"miId": 148,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_44_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "83a1e586-3710-46d5-9c0d-6bbc8a45e077",
+			"name": "LASAL_EVENT_45_RECEIVED",
+			"maId": 65283,
+			"miId": 149,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_45_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d04d01e5-6c1c-44f6-a89c-a3360b8a19dd",
+			"name": "LASAL_EVENT_46_RECEIVED",
+			"maId": 65283,
+			"miId": 150,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_46_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7546099a-a347-4d65-a733-505fdb1aa264",
+			"name": "LASAL_EVENT_47_RECEIVED",
+			"maId": 65283,
+			"miId": 151,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_47_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "fa2d54cd-3b95-4e1a-8d07-6d971d644e2e",
+			"name": "LASAL_EVENT_48_RECEIVED",
+			"maId": 65283,
+			"miId": 152,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_48_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8628f205-d07d-4279-9083-4bb63e6d2cf7",
+			"name": "LASAL_EVENT_49_RECEIVED",
+			"maId": 65283,
+			"miId": 153,
+			"eventType": 5,
+			"desc": "Received a LASAL_EVENT_49_RECEIVED frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cca969f2-5e7a-4b3e-ada1-08223e052fee",
+			"name": "CONTROL_INACTIVE_INTERACTION",
+			"maId": 65296,
+			"miId": 1654,
+			"eventType": 5,
+			"desc": "Fired if interaction was handled on an inactive component.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6e08d868-63fd-4ae8-bded-846b2bc4cb76",
+			"name": "INSUFFICIENT_PRIVILEGES_EVENT",
+			"maId": 65296,
+			"miId": 1655,
+			"eventType": 5,
+			"desc": "Fired if the access was denied because of insufficient privileges.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9b796e05-0aec-402f-a86f-10029892ba1c",
+			"name": "INSUFFICIENT_PRIVILEGES_WINDOW",
+			"maId": 65296,
+			"miId": 1656,
+			"eventType": 5,
+			"desc": "Fired if the access was denied because of insufficient privileges.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0bcd7331-1a3c-4fc1-9895-0d4b7d5a9755",
+			"name": "INSUFFICIENT_CHECKBITS_WINDOW",
+			"maId": 65296,
+			"miId": 1657,
+			"eventType": 5,
+			"desc": "Fired if the access was denied because of insufficient checkbits.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "208e05e8-4783-411b-ac45-4c847d42c428",
+			"name": "INSUFFICIENT_PRIVILEGES_ROUTE",
+			"maId": 65296,
+			"miId": 1658,
+			"eventType": 5,
+			"desc": "Fired if the access was denied because of insufficient privileges.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f0de35c8-7509-4e41-b0da-edbc710a5afe",
+			"name": "INSUFFICIENT_CHECKBITS_ROUTE",
+			"maId": 65296,
+			"miId": 1659,
+			"eventType": 5,
+			"desc": "Fired if the access was denied because of insufficient checkbits.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "24e55913-32b5-48c6-926c-62f892b07204",
+			"name": "CONTROL_INACTIVE_INTERACTION_TYPE_STATE",
+			"maId": 65296,
+			"miId": 1660,
+			"eventType": 5,
+			"desc": "Fired if interaction was handled on an inactive component.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1290f1a3-e219-4cc9-b828-9fe56a23185b",
+			"name": "CONTROL_INACTIVE_INTERACTION_TYPE_ACCESS_NUMBER_CONTROL",
+			"maId": 65296,
+			"miId": 1661,
+			"eventType": 5,
+			"desc": "Fired if interaction was handled on an inactive component.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2350ac44-0045-4113-8965-cf4d014df148",
+			"name": "CONTROL_INACTIVE_INTERACTION_TYPE_ACCESS_NUMBER_DATAPOINT",
+			"maId": 65296,
+			"miId": 1662,
+			"eventType": 5,
+			"desc": "Fired if interaction was handled on an inactive component.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4967ab3b-b820-4b04-9788-474cfb282ab8",
+			"name": "CONTROL_INACTIVE_INTERACTION_TYPE_WRITE_PROTECTED_DATAPOINT",
+			"maId": 65296,
+			"miId": 1663,
+			"eventType": 5,
+			"desc": "Fired if interaction was handled on an inactive component.",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "299b3b90-5a7d-48ce-b2c0-d1088e6867d8",
+			"name": "INT_WS_SEND",
+			"maId": 65296,
+			"miId": 61442,
+			"eventType": 9,
+			"desc": "Fired if some data needs to be send via the websocket",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "774ea8c0-d128-4128-9b92-83fe37010d55",
+			"name": "SEND_TO_ALL_PSH",
+			"maId": 65280,
+			"miId": 157,
+			"eventType": 9,
+			"desc": "Send a multi-command Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ace6f94f-f367-4f99-b24a-7b5c6dae375d",
+			"name": "SEND_FRAGMENT_RT",
+			"maId": 65280,
+			"miId": 49,
+			"eventType": 9,
+			"desc": "Send a fragment of a frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "3cdb4ab4-e6d9-4d67-8d40-72dc4dfe42d8",
+			"name": "SEND_FRAGMENT_DS_RSP",
+			"maId": 65280,
+			"miId": 50,
+			"eventType": 9,
+			"desc": "Send a response for a fragment",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e4470ec1-fb3c-4af8-8585-4e01b876161b",
+			"name": "GET_VERSION",
+			"maId": 65280,
+			"miId": 16,
+			"eventType": 9,
+			"desc": "Send a Get Version Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a723d010-74c3-40a5-b68a-8ca4a6d25218",
+			"name": "GET_VERSION_PSH",
+			"maId": 65280,
+			"miId": 17,
+			"eventType": 9,
+			"desc": "Send a Get Version Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0d6676a7-affb-4c16-b847-2a5b7bed8bcd",
+			"name": "GET_PROJECTINFO",
+			"maId": 65280,
+			"miId": 22,
+			"eventType": 9,
+			"desc": "Send a Get Project Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7b15329e-1fd0-484f-b522-14d4d2ebf142",
+			"name": "GET_CLIENT_CONNECTION_INFO",
+			"maId": 65280,
+			"miId": 24,
+			"eventType": 9,
+			"desc": "Send a Get Client Connection Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f46bfe17-ef8d-4bab-baed-636bfb94dd8e",
+			"name": "LOOP",
+			"maId": 65280,
+			"miId": 98,
+			"eventType": 9,
+			"desc": "Send a Loop Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "fe8b673b-e21a-4bb9-8da9-8bf7501700d8",
+			"name": "USER_LOGIN",
+			"maId": 65280,
+			"miId": 256,
+			"eventType": 9,
+			"desc": "Send a User Login Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a3968dc2-4da1-460a-984a-115fac46838c",
+			"name": "USER_LOGOUT",
+			"maId": 65280,
+			"miId": 258,
+			"eventType": 9,
+			"desc": "Send a User Logout Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f1d36d8f-781b-4918-bd28-56358d1addd7",
+			"name": "USER_PW_CHANGE",
+			"maId": 65280,
+			"miId": 260,
+			"eventType": 9,
+			"desc": "Send a Password Change Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "fd0fe3c4-2397-47bb-83e3-3f8863e7f4aa",
+			"name": "CHECK_ACCESS_LEVEL",
+			"maId": 65280,
+			"miId": 266,
+			"eventType": 9,
+			"desc": "Send a User Logout Response Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f7699604-cb63-4ab5-9730-f66d0b0cdf33",
+			"name": "USER_CREATE",
+			"maId": 65280,
+			"miId": 272,
+			"eventType": 9,
+			"desc": "Send a User Create Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cf9861a7-c336-452f-8929-c7c52e145cb3",
+			"name": "USER_CHANGE",
+			"maId": 65280,
+			"miId": 274,
+			"eventType": 9,
+			"desc": "Send a User Settings Change Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c2525c24-d17a-4e5e-bb8c-1251ef01bc3c",
+			"name": "USER_DELETE",
+			"maId": 65280,
+			"miId": 276,
+			"eventType": 9,
+			"desc": "Send a User Delete Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2ea457f6-721f-485f-ab37-38111601cf98",
+			"name": "USER_LIST",
+			"maId": 65280,
+			"miId": 278,
+			"eventType": 9,
+			"desc": "Send a Get User List Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "efe7db12-c77d-409f-9932-b1c58eb34d43",
+			"name": "USER_DETAIL",
+			"maId": 65280,
+			"miId": 280,
+			"eventType": 9,
+			"desc": "Send a User Detail Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6450414a-c26f-41e2-b6bb-a542e2b40170",
+			"name": "USER_RESTORE",
+			"maId": 65280,
+			"miId": 282,
+			"eventType": 9,
+			"desc": "Send a User Restore Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7849371b-1cdb-411f-bc13-a3cba8628c4c",
+			"name": "USERS_CLEAN_UP",
+			"maId": 65280,
+			"miId": 311,
+			"eventType": 9,
+			"desc": "Send a Users Clean Up Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "18a64268-e292-47e8-821d-646cbf680ef9",
+			"name": "USER_EXPORT",
+			"maId": 65280,
+			"miId": 313,
+			"eventType": 9,
+			"desc": "Send a User Export Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ca552534-2890-4fc6-a757-6b1777d86451",
+			"name": "USER_IMPORT",
+			"maId": 65280,
+			"miId": 321,
+			"eventType": 9,
+			"desc": "Send a User Import Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "23813e7c-093a-4d04-bb13-44d98ec90a53",
+			"name": "ROLE_CREATE",
+			"maId": 65280,
+			"miId": 288,
+			"eventType": 9,
+			"desc": "Send a Role Create Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "22e91ada-5026-42ca-abde-109ee38feff5",
+			"name": "ROLE_CHANGE",
+			"maId": 65280,
+			"miId": 290,
+			"eventType": 9,
+			"desc": "Send a Role Change Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "85504d5c-e86b-4ba6-af3a-0ec4459dbbd8",
+			"name": "ROLE_DELETE",
+			"maId": 65280,
+			"miId": 292,
+			"eventType": 9,
+			"desc": "Send a Role Delete Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "850e0181-5581-4b76-8d78-084b333dca1d",
+			"name": "ROLE_LIST",
+			"maId": 65280,
+			"miId": 294,
+			"eventType": 9,
+			"desc": "Send a Get Role List Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cabc267c-1e08-44f3-94f7-4c2be46922bd",
+			"name": "ROLE_DETAIL",
+			"maId": 65280,
+			"miId": 296,
+			"eventType": 9,
+			"desc": "Send a Get Role Detail Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "51e08ed5-7ac7-43f8-82a2-58306172d30a",
+			"name": "ROLE_EXPORT",
+			"maId": 65280,
+			"miId": 323,
+			"eventType": 9,
+			"desc": "Send a Role Export Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "eb48d793-0b9a-4f85-9c96-f33007d3b126",
+			"name": "ROLE_IMPORT",
+			"maId": 65280,
+			"miId": 325,
+			"eventType": 9,
+			"desc": "Send a Role Import Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "04d35eb3-2a86-44c7-81b4-7e1fbda8ff62",
+			"name": "IS_VAR_VALIDE",
+			"maId": 65280,
+			"miId": 512,
+			"eventType": 9,
+			"desc": "Send a Is Var Valid Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bf1b7a66-d2e2-4f0d-9274-3001abcdd3ba",
+			"name": "CREATE_VAR",
+			"maId": 65280,
+			"miId": 514,
+			"eventType": 9,
+			"desc": "Send a Create Variable Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c9c07ead-56cc-4c6f-8e0e-5e68b0069753",
+			"name": "GET_VAR_ID_FROM_NAME",
+			"maId": 65280,
+			"miId": 516,
+			"eventType": 9,
+			"desc": "Send a Get Var Id From Name Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5e08b66a-e1ca-463b-84af-daa69a92f3b9",
+			"name": "GET_VAR_ID_FROM_LASAL_ID",
+			"maId": 65280,
+			"miId": 518,
+			"eventType": 9,
+			"desc": "Send a Get Var Id From Lasal Id Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "33ba16d8-da7a-489e-9ab4-dfdd2e01767d",
+			"name": "GET_LASAL_ID_FROM_NAME",
+			"maId": 65280,
+			"miId": 520,
+			"eventType": 9,
+			"desc": "Send a Get Lasal Id From Name Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4d9f2321-5070-4cae-9514-60f7bfd11031",
+			"name": "GET_LASAL_ID_FROM_VAR_ID",
+			"maId": 65280,
+			"miId": 522,
+			"eventType": 9,
+			"desc": "Send a Get Lasal Id From Var Id Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0b0b8d21-724c-478d-a48a-1f93062b6f4b",
+			"name": "GET_NAME_FROM_VAR_ID",
+			"maId": 65280,
+			"miId": 524,
+			"eventType": 9,
+			"desc": "Send a Get Name From Var Id Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e0b9d050-fd9f-40c3-81d7-2da138c1e68b",
+			"name": "GET_NAME_FROM_LASAL_ID",
+			"maId": 65280,
+			"miId": 526,
+			"eventType": 9,
+			"desc": "Send a Get Name From Var Id Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2289d338-aa88-4ef1-b867-1dc69dcea406",
+			"name": "GET_DP_LIST",
+			"maId": 65280,
+			"miId": 528,
+			"eventType": 9,
+			"desc": "Send a Get DP List Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c318e139-d393-4e4d-afe7-60091c105d75",
+			"name": "GET_DP_INFO",
+			"maId": 65280,
+			"miId": 530,
+			"eventType": 9,
+			"desc": "Send a Get DP Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "01fa5746-6bb1-41fa-aa0d-031e4dc49871",
+			"name": "GET_VAR_ID_FROM_CRC",
+			"maId": 65280,
+			"miId": 532,
+			"eventType": 9,
+			"desc": "Send a Get Var Id from CRC Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "908c18f3-2aa7-4753-856c-fcd204e1bfbd",
+			"name": "GET_CRC_FROM_VAR_ID",
+			"maId": 65280,
+			"miId": 534,
+			"eventType": 9,
+			"desc": "Send a Get CRC From Var Id Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d0edd76f-fa7f-4612-b0dd-437c14602e77",
+			"name": "GET_VALUE",
+			"maId": 65280,
+			"miId": 544,
+			"eventType": 9,
+			"desc": "Send a Get Value Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5006b2eb-fb01-4628-8f56-061b7dc54ea3",
+			"name": "GET_STRING",
+			"maId": 65280,
+			"miId": 546,
+			"eventType": 9,
+			"desc": "Send a Get String Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2aececc8-d78e-48f1-97c5-1dd6f79e9682",
+			"name": "GET_DATA",
+			"maId": 65280,
+			"miId": 548,
+			"eventType": 9,
+			"desc": "Send a Get Data Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8c779bb5-2c91-4bd3-a26d-414b3a5b238f",
+			"name": "SET_VALUE",
+			"maId": 65280,
+			"miId": 560,
+			"eventType": 9,
+			"desc": "Send a Set Value Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ae92b687-9fb1-4a64-b7c1-85c97b45408b",
+			"name": "SET_STRING",
+			"maId": 65280,
+			"miId": 562,
+			"eventType": 9,
+			"desc": "Send a Set String Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6ff57323-a9e4-48a6-af14-56cbaa67d892",
+			"name": "SET_DATA",
+			"maId": 65280,
+			"miId": 564,
+			"eventType": 9,
+			"desc": "Send a Set Data Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8f9951fb-a5e5-4cb5-ae49-7ae54ad4a357",
+			"name": "ADD_REFLIST",
+			"maId": 65280,
+			"miId": 576,
+			"eventType": 9,
+			"desc": "Send a Add Ref List Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "846e9bad-eb43-46e6-8315-ae1b973b7e91",
+			"name": "SUB_REFLIST",
+			"maId": 65280,
+			"miId": 578,
+			"eventType": 9,
+			"desc": "Send a Sub Reflist Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ee439342-fd69-4a0e-ba64-647d0ca9ac81",
+			"name": "CLEAR_REFLIST",
+			"maId": 65280,
+			"miId": 580,
+			"eventType": 9,
+			"desc": "Send a Clear Reflist Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c2b9ae54-756d-4532-9f77-a945458bc8d7",
+			"name": "START_REFLIST",
+			"maId": 65280,
+			"miId": 582,
+			"eventType": 9,
+			"desc": "Send a Start Reflist Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bc464c9a-01a8-4be3-bb9d-ec34f79773f4",
+			"name": "STOP_REFLIST",
+			"maId": 65280,
+			"miId": 584,
+			"eventType": 9,
+			"desc": "Send a Stop Reflist Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a9011f1a-9cb2-409d-a0b1-77edd2018f2e",
+			"name": "CHANGE_STATION_PARAMETERS",
+			"maId": 65280,
+			"miId": 58,
+			"eventType": 9,
+			"desc": "Send a Change Station Parameters Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "31f76242-f707-4c3b-a539-7fa646936023",
+			"name": "STATION_CON",
+			"maId": 65280,
+			"miId": 768,
+			"eventType": 9,
+			"desc": "Send a Station Connection Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "39d8fba7-b160-4343-b7aa-dbf4e4acfa2c",
+			"name": "STATION_DISCON",
+			"maId": 65280,
+			"miId": 770,
+			"eventType": 9,
+			"desc": "Send a Station Disconnection Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1124eeec-bc0e-492d-aa3c-959d381c9209",
+			"name": "STATION_SETCON",
+			"maId": 65280,
+			"miId": 773,
+			"eventType": 9,
+			"desc": "Send a Set Connection Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c921b40a-e98d-4603-b361-216de96983af",
+			"name": "EVENTJOURNAL_ADD",
+			"maId": 65281,
+			"miId": 1024,
+			"eventType": 9,
+			"desc": "Send a Add EventJournal Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "14ffba51-53e5-4a00-b8cd-f31904a85434",
+			"name": "EVENTJOURNAL_GET",
+			"maId": 65281,
+			"miId": 1026,
+			"eventType": 9,
+			"desc": "Send a Get EventJournal Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "174ed2ff-f039-42da-ae88-c59c621326f1",
+			"name": "EVENTJOURNAL_GET_ALL",
+			"maId": 65281,
+			"miId": 1028,
+			"eventType": 9,
+			"desc": "Send a Get All EventJournal Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7fc55b41-0c20-4147-b5ee-f2318dd922a4",
+			"name": "EVENTJOURNAL_DEL",
+			"maId": 65281,
+			"miId": 1030,
+			"eventType": 9,
+			"desc": "Send a Del EventJournal Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "73e44b0f-e6db-49c5-8cd3-29468f3da3a7",
+			"name": "EVENTJOURNAL_DEL_ALL",
+			"maId": 65281,
+			"miId": 1032,
+			"eventType": 9,
+			"desc": "Send a Del All EventJournal Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b910a19b-4e34-44db-8dc0-df5e5f54e43d",
+			"name": "EVENTJOURNAL_ALARM_QUIT",
+			"maId": 65281,
+			"miId": 1040,
+			"eventType": 9,
+			"desc": "Send a Alarm Quit EventJournal Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "94354f43-6b72-4a3f-a313-607db6221061",
+			"name": "EVENTJOURNAL_ALARM_QUIT_ALL",
+			"maId": 65281,
+			"miId": 1042,
+			"eventType": 9,
+			"desc": "Send a Alarm Quit All EventJournal Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8ce12015-5408-4977-8300-f221f7d82ca6",
+			"name": "EVENTJOURNAL_UPDATE_ADD",
+			"maId": 65281,
+			"miId": 1067,
+			"eventType": 9,
+			"desc": "Send a EventJournal Update Add Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ad657363-6cda-4178-a2e0-98d7716fdb37",
+			"name": "EVENTJOURNAL_UPDATE_SUB",
+			"maId": 65281,
+			"miId": 1069,
+			"eventType": 9,
+			"desc": "Send a EventJournal Update Sub Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8872681a-9c1c-481c-9ca8-7c5fec17db8c",
+			"name": "ALARMLIST_UPDATE_ADD",
+			"maId": 65281,
+			"miId": 1044,
+			"eventType": 9,
+			"desc": "Send a Alarmlist Update Add Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a7771c4e-238e-4c48-848f-60ddf1bdcd70",
+			"name": "ALARMLIST_UPDATE_SUB",
+			"maId": 65281,
+			"miId": 1046,
+			"eventType": 9,
+			"desc": "Send a Alarmlist Update Sub Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "70def0dd-b315-40ef-b7f2-c2fbf7b3937d",
+			"name": "HOTALARM_UPDATE_ADD",
+			"maId": 65281,
+			"miId": 1056,
+			"eventType": 9,
+			"desc": "Send a Hotalarm Update Add Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "6ad5a034-1360-4dca-a39a-0007b0940608",
+			"name": "HOTALARM_UPDATE_SUB",
+			"maId": 65281,
+			"miId": 1058,
+			"eventType": 9,
+			"desc": "Send a Hotalarm Update Sub Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d0e54f88-d06f-4b09-b7aa-8897ae14b281",
+			"name": "ALARM_DEL",
+			"maId": 65281,
+			"miId": 1062,
+			"eventType": 9,
+			"desc": "Send a Del Alarm Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0602f12e-b8df-450e-b78e-3fb81baaa1f5",
+			"name": "ALARM_DEL_ALL",
+			"maId": 65281,
+			"miId": 1064,
+			"eventType": 9,
+			"desc": "Send a Del All Alarm Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "16eb3664-1f0a-47f0-8f6d-21db69a0e018",
+			"name": "ALARM_INFO_UPDATE_ADD",
+			"maId": 65281,
+			"miId": 1071,
+			"eventType": 9,
+			"desc": "Send a Alarm Info Update Add Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "aced8d18-a49a-43fc-b934-8d09cb745cfd",
+			"name": "RECIPE_SAVE",
+			"maId": 65280,
+			"miId": 147,
+			"eventType": 9,
+			"desc": "Send a Save Recipe Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8d412ec6-e9e7-4c23-aa69-da770682924e",
+			"name": "RECIPE_LOAD",
+			"maId": 65280,
+			"miId": 145,
+			"eventType": 9,
+			"desc": "Send a Load Recipe Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a2effea0-c5a6-4dbb-85e2-286e14ce5b7e",
+			"name": "FILE_OPEN",
+			"maId": 65280,
+			"miId": 1280,
+			"eventType": 9,
+			"desc": "Send a File Open Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "94672c01-d363-4431-9f8c-0ffc40267d0e",
+			"name": "FILE_CLOSE",
+			"maId": 65280,
+			"miId": 1282,
+			"eventType": 9,
+			"desc": "Send a File Close Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "259d0ae3-a311-48b7-a70a-cb45672f0347",
+			"name": "FILE_SEEK",
+			"maId": 65280,
+			"miId": 1284,
+			"eventType": 9,
+			"desc": "Send a File Seek Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e805db6f-3aee-41b1-8719-0bc3fba6853a",
+			"name": "FILE_TELL",
+			"maId": 65280,
+			"miId": 1286,
+			"eventType": 9,
+			"desc": "Send a File Tell Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e4f16bf8-69a4-41df-a998-fbdf1a2a4b70",
+			"name": "FILE_READ",
+			"maId": 65280,
+			"miId": 1288,
+			"eventType": 9,
+			"desc": "Send a File Read Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0e16cf27-cf0d-4fd0-ac72-9b5c7c6e37ee",
+			"name": "FILE_WRITE",
+			"maId": 65280,
+			"miId": 1290,
+			"eventType": 9,
+			"desc": "Send a File Write Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2bf51bed-8ceb-4dab-927e-e673bb1e5d0c",
+			"name": "FILE_GET",
+			"maId": 65280,
+			"miId": 1292,
+			"eventType": 9,
+			"desc": "Send a File Get Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8d76ad0a-05de-4cbe-bca6-e6c8aaa13c48",
+			"name": "FILE_PUT",
+			"maId": 65280,
+			"miId": 1294,
+			"eventType": 9,
+			"desc": "Send a File Put Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "aaa6bec3-d48d-494a-95be-a498d7b168b8",
+			"name": "FILE_LENGTH",
+			"maId": 65280,
+			"miId": 1296,
+			"eventType": 9,
+			"desc": "Send a File Length Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "0a258796-e2b3-48ff-9222-480518400f67",
+			"name": "FILE_CONTENT",
+			"maId": 65280,
+			"miId": 1298,
+			"eventType": 9,
+			"desc": "Send a File Content Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4d314533-265a-43de-86b8-7795cc4a49b6",
+			"name": "DIR_CREATE",
+			"maId": 65280,
+			"miId": 1312,
+			"eventType": 9,
+			"desc": "Send a Create Dir/File Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5c23f795-2d51-41a6-8f2e-2c7dea972750",
+			"name": "DIR_READ",
+			"maId": 65280,
+			"miId": 1314,
+			"eventType": 9,
+			"desc": "Send a Directory Read Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cdf6f452-1d8f-4f44-8331-f462f11f47c7",
+			"name": "FILE_REMOVE",
+			"maId": 65280,
+			"miId": 1328,
+			"eventType": 9,
+			"desc": "Send a Remove Dir/File Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9420dce9-d3ef-4ccf-b297-2cdfc3c94564",
+			"name": "FILE_COPY",
+			"maId": 65280,
+			"miId": 1330,
+			"eventType": 9,
+			"desc": "Send a Copy Dir/File Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8d8dd43e-d5cd-4022-b9c2-af54c175a9ae",
+			"name": "FILE_INFO",
+			"maId": 65280,
+			"miId": 1332,
+			"eventType": 9,
+			"desc": "Send a File Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d4d39be1-d80a-4958-9c39-a0551bd34663",
+			"name": "FILE_RENAME",
+			"maId": 65280,
+			"miId": 1334,
+			"eventType": 9,
+			"desc": "Send a File Rename Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "efe9b5f9-aef3-434c-b0a2-2489903ccaae",
+			"name": "FILE_SET_ATT",
+			"maId": 65280,
+			"miId": 1336,
+			"eventType": 9,
+			"desc": "Send a File Set Attribut Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "dd0f7b47-e4e3-4d86-9b07-3849f0278e5a",
+			"name": "GET_DRIVE_LIST",
+			"maId": 65280,
+			"miId": 1338,
+			"eventType": 9,
+			"desc": "Send a Drive List Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bc1a0fee-811c-4ac8-a84d-d68e40618a17",
+			"name": "FILE_MOVE",
+			"maId": 65280,
+			"miId": 1340,
+			"eventType": 9,
+			"desc": "Send a Move Dir/File Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "32a9a026-9107-490b-9b4b-69d31388c98e",
+			"name": "GET_DRIVE_INFO",
+			"maId": 65280,
+			"miId": 1342,
+			"eventType": 9,
+			"desc": "Send a Drive Info Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c69ee75a-1b62-4961-b05b-1354ce531170",
+			"name": "DIRECTORY_EVENT_REGISTRATION",
+			"maId": 65280,
+			"miId": 1344,
+			"eventType": 9,
+			"desc": "Send a Directory Event Registration Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b3c912fb-1873-4f89-aa54-57e29d092d98",
+			"name": "DIRECTORY_EVENT_DEREGISTRATION",
+			"maId": 65280,
+			"miId": 1346,
+			"eventType": 9,
+			"desc": "Send a Directory Event Deregistration Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f5bcb79c-57d1-422d-95c1-c6bb359ed029",
+			"name": "CANCEL_COMMAND",
+			"maId": 65280,
+			"miId": 14,
+			"eventType": 9,
+			"desc": "Send a Cancel Command Frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a51b3f99-6135-4184-872f-43fd5dffb17b",
+			"name": "ADD_LOCAL_CLIENT",
+			"maId": 65280,
+			"miId": 176,
+			"eventType": 9,
+			"desc": "Send a add an local client frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8ccfda18-3e63-477d-909b-aa2602727c9d",
+			"name": "ADD_LOCAL_CLIENT_RANGE",
+			"maId": 65280,
+			"miId": 178,
+			"eventType": 9,
+			"desc": "Send a add an local client range frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7eab678b-f8f7-430e-9734-6f925c1f3b25",
+			"name": "REMOVE_THIS_AS_LOCAL_CLIENT",
+			"maId": 65280,
+			"miId": 180,
+			"eventType": 9,
+			"desc": "Send a remove this as local client frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "37fd6e95-36ff-4d09-ac80-930fa5607565",
+			"name": "REMOVE_LOCAL_CLIENT",
+			"maId": 65280,
+			"miId": 182,
+			"eventType": 9,
+			"desc": "Send a remove local client frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e48df343-e618-48d8-8543-32109a8f9c7a",
+			"name": "REMOVE_LOCAL_CLIENT_RANGE",
+			"maId": 65280,
+			"miId": 184,
+			"eventType": 9,
+			"desc": "Send a remove local client range frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5e89e4a3-2e8c-4bb6-af3a-4d1eb4a057c1",
+			"name": "CLEAR_LOCAL_CLIENT_LIST",
+			"maId": 65280,
+			"miId": 186,
+			"eventType": 9,
+			"desc": "Send a clear local client list frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b15737c5-9e08-4d1f-9dd1-e8a5b8089e8b",
+			"name": "GET_CURRENT_ID",
+			"maId": 65280,
+			"miId": 188,
+			"eventType": 9,
+			"desc": "Send a get current id frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ec092880-5347-45f9-96eb-46270ee74b6f",
+			"name": "GET_LOCAL_CLIENT_LIST",
+			"maId": 65280,
+			"miId": 190,
+			"eventType": 9,
+			"desc": "Send a get local client list frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b87e92be-dac5-450b-90b3-8b0259a7509c",
+			"name": "GET_LOCAL_CLIENT_LIST_DETAILS",
+			"maId": 65280,
+			"miId": 192,
+			"eventType": 9,
+			"desc": "Send a get local client list details frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c2bd57b6-bc19-4d1f-8c53-d8566b4976bd",
+			"name": "GET_LOCAL_CLIENT_BY_ID",
+			"maId": 65280,
+			"miId": 194,
+			"eventType": 9,
+			"desc": "Send a get local client by id frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "3435097e-d296-47bd-84ca-08649dc22410",
+			"name": "SUBSCRIBE_STATE",
+			"maId": 65280,
+			"miId": 53,
+			"eventType": 9,
+			"desc": "Send a subscribe state frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "af5ee3ab-a63e-4ece-8dde-7395ec0017e6",
+			"name": "UNSUBSCRIBE_STATE",
+			"maId": 65280,
+			"miId": 55,
+			"eventType": 9,
+			"desc": "Send a unsubscribe state frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4e792682-5780-4972-80a4-a92b8ea144c4",
+			"name": "GET_STATE",
+			"maId": 65280,
+			"miId": 64,
+			"eventType": 9,
+			"desc": "Send a get state frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "75cd6b0f-3e0a-4347-8ac1-40cc96c77238",
+			"name": "ENABLE_LOG_TO_FILE",
+			"maId": 65280,
+			"miId": 80,
+			"eventType": 9,
+			"desc": "Send a enable persisted browser log frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "2d059370-7bf6-4426-98a9-58187fcb29ef",
+			"name": "DISABLE_LOG_TO_FILE",
+			"maId": 65280,
+			"miId": 82,
+			"eventType": 9,
+			"desc": "Send a disable persisted browser log frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4cb3f9cf-8a09-4169-b4f4-1b6848448afa",
+			"name": "LOG_TO_FILE",
+			"maId": 65280,
+			"miId": 84,
+			"eventType": 9,
+			"desc": "Send a persisted browser log frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "64c2d50a-9c8b-4a59-b067-a42a83e4a726",
+			"name": "LASAL_EVENT_0_SEND",
+			"maId": 65283,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_0_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e5629512-6af9-4a49-a413-1948bffa1c6a",
+			"name": "LASAL_EVENT_1_SEND",
+			"maId": 65283,
+			"miId": 1,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_1_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cfd6ccd3-1ebd-4c40-b6d3-2af6f941883d",
+			"name": "LASAL_EVENT_2_SEND",
+			"maId": 65283,
+			"miId": 2,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_2_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "3173574c-0b0e-4fa8-b9c2-84ce859cb50d",
+			"name": "LASAL_EVENT_3_SEND",
+			"maId": 65283,
+			"miId": 3,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_3_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b0838952-afc6-4fde-b777-ec49b2c2d68f",
+			"name": "LASAL_EVENT_4_SEND",
+			"maId": 65283,
+			"miId": 4,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_4_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "cf8448f9-abbd-4ec4-93e1-4e12a2d319d5",
+			"name": "LASAL_EVENT_5_SEND",
+			"maId": 65283,
+			"miId": 5,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_5_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1c7d5b90-89f4-45fb-9a45-cdb9a791137c",
+			"name": "LASAL_EVENT_6_SEND",
+			"maId": 65283,
+			"miId": 6,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_6_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "621b9ed1-05bc-4175-90da-2d6a7a50226c",
+			"name": "LASAL_EVENT_7_SEND",
+			"maId": 65283,
+			"miId": 7,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_7_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "931d479e-828f-43cb-bf73-2ca870ac73f2",
+			"name": "LASAL_EVENT_8_SEND",
+			"maId": 65283,
+			"miId": 8,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_8_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "be43cdf9-0cf9-41fa-a8e8-389787d2f6bc",
+			"name": "LASAL_EVENT_9_SEND",
+			"maId": 65283,
+			"miId": 9,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_9_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "da4504ef-8d4d-43ad-8b60-6515d4145b5d",
+			"name": "LASAL_EVENT_10_SEND",
+			"maId": 65283,
+			"miId": 16,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_10_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ff9833a3-2620-457e-9ae0-35e300d4f52e",
+			"name": "LASAL_EVENT_11_SEND",
+			"maId": 65283,
+			"miId": 17,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_11_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f151e3d5-2773-410e-aba4-53c5e471aec7",
+			"name": "LASAL_EVENT_12_SEND",
+			"maId": 65283,
+			"miId": 18,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_12_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "050be4c7-6c8a-47c9-bd6c-abacf01b06a0",
+			"name": "LASAL_EVENT_13_SEND",
+			"maId": 65283,
+			"miId": 19,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_13_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "a8a45c24-7cf4-4a23-8fda-47ec9b3f7640",
+			"name": "LASAL_EVENT_14_SEND",
+			"maId": 65283,
+			"miId": 20,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_14_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "aaccdfda-d0e1-4fa2-b9c9-6373d108a273",
+			"name": "LASAL_EVENT_15_SEND",
+			"maId": 65283,
+			"miId": 21,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_15_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ac314a8d-c03a-40ce-adc2-f398e6cb4803",
+			"name": "LASAL_EVENT_16_SEND",
+			"maId": 65283,
+			"miId": 22,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_16_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "96027cf9-0165-42cf-a7c0-50b595f12aa3",
+			"name": "LASAL_EVENT_17_SEND",
+			"maId": 65283,
+			"miId": 23,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_17_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "b523152f-3589-4a06-8cb8-fe1369d2eae4",
+			"name": "LASAL_EVENT_18_SEND",
+			"maId": 65283,
+			"miId": 24,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_18_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5b2daf0a-4e54-4991-8e8e-e2a93f1bc405",
+			"name": "LASAL_EVENT_19_SEND",
+			"maId": 65283,
+			"miId": 25,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_19_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c455c6ec-3540-4543-b8dd-16a80f659134",
+			"name": "LASAL_EVENT_20_SEND",
+			"maId": 65283,
+			"miId": 32,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_20_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "749a005c-e13b-439e-a224-9a587149ec0d",
+			"name": "LASAL_EVENT_21_SEND",
+			"maId": 65283,
+			"miId": 33,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_21_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "fe50aff3-658a-4c34-a886-686fec7b57b1",
+			"name": "LASAL_EVENT_22_SEND",
+			"maId": 65283,
+			"miId": 34,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_22_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5d262c9c-8fc2-4ed6-9f1d-cecc03a8873e",
+			"name": "LASAL_EVENT_23_SEND",
+			"maId": 65283,
+			"miId": 35,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_23_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "e28c36af-4ea8-456e-bfa7-f989f35c7e13",
+			"name": "LASAL_EVENT_24_SEND",
+			"maId": 65283,
+			"miId": 36,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_24_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "9f611cd2-5740-4bfa-82d7-7e56ddfdd8fe",
+			"name": "LASAL_EVENT_25_SEND",
+			"maId": 65283,
+			"miId": 37,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_25_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bbb29048-94c9-4a39-b042-60202a955b72",
+			"name": "LASAL_EVENT_26_SEND",
+			"maId": 65283,
+			"miId": 38,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_26_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "76474a62-878c-4d78-922a-005f820e8a0a",
+			"name": "LASAL_EVENT_27_SEND",
+			"maId": 65283,
+			"miId": 39,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_27_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f4c313b3-fb72-483d-81a8-427ea31d30e2",
+			"name": "LASAL_EVENT_28_SEND",
+			"maId": 65283,
+			"miId": 40,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_28_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f813508e-6abf-43e5-a8b5-8df829e07b3d",
+			"name": "LASAL_EVENT_29_SEND",
+			"maId": 65283,
+			"miId": 41,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_29_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "174a1d51-3127-4afd-8a6c-0376ca445d6f",
+			"name": "LASAL_EVENT_30_SEND",
+			"maId": 65283,
+			"miId": 48,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_30_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "1fc511e2-22ce-4d6a-8926-d8c9419c47cd",
+			"name": "LASAL_EVENT_31_SEND",
+			"maId": 65283,
+			"miId": 49,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_31_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "4b9b997e-25af-4c4e-bc4a-b70bee32be16",
+			"name": "LASAL_EVENT_32_SEND",
+			"maId": 65283,
+			"miId": 50,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_32_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "07c136eb-c52c-44ab-b22a-3979778bca7d",
+			"name": "LASAL_EVENT_33_SEND",
+			"maId": 65283,
+			"miId": 51,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_33_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5fc69082-2b35-4256-8c09-496526487cf3",
+			"name": "LASAL_EVENT_34_SEND",
+			"maId": 65283,
+			"miId": 52,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_34_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "80ae2c48-5df2-4d1e-b573-87a30516c350",
+			"name": "LASAL_EVENT_35_SEND",
+			"maId": 65283,
+			"miId": 53,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_35_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "dd010d09-8147-4f62-8f2e-d57628eadebd",
+			"name": "LASAL_EVENT_36_SEND",
+			"maId": 65283,
+			"miId": 54,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_36_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "461fc331-47bb-4b3c-b813-478ef402518e",
+			"name": "LASAL_EVENT_37_SEND",
+			"maId": 65283,
+			"miId": 55,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_37_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "bb4c04a3-df31-477a-b4d8-f96e50b06856",
+			"name": "LASAL_EVENT_38_SEND",
+			"maId": 65283,
+			"miId": 56,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_38_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "5c6c8f3a-c507-4035-ad90-bc443f6c5751",
+			"name": "LASAL_EVENT_39_SEND",
+			"maId": 65283,
+			"miId": 57,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_39_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "c7d245a2-8460-4eea-9748-410bc7141410",
+			"name": "LASAL_EVENT_40_SEND",
+			"maId": 65283,
+			"miId": 64,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_40_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "8f29e949-4d57-4db1-91ae-393b81ce97f7",
+			"name": "LASAL_EVENT_41_SEND",
+			"maId": 65283,
+			"miId": 65,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_41_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "f3910424-7b40-4b96-bd99-6810cab6dd8b",
+			"name": "LASAL_EVENT_42_SEND",
+			"maId": 65283,
+			"miId": 66,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_42_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d59e05fb-b29e-4eb4-a5b3-57630640282b",
+			"name": "LASAL_EVENT_43_SEND",
+			"maId": 65283,
+			"miId": 67,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_43_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "91657784-2740-428a-9230-79b3cb661c1a",
+			"name": "LASAL_EVENT_44_SEND",
+			"maId": 65283,
+			"miId": 68,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_44_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "37b3515a-0790-4123-b4a0-2242d05a5db4",
+			"name": "LASAL_EVENT_45_SEND",
+			"maId": 65283,
+			"miId": 69,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_45_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "d5fb5f87-fd10-4724-b735-c30245da6983",
+			"name": "LASAL_EVENT_46_SEND",
+			"maId": 65283,
+			"miId": 70,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_46_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "175f9684-b4c6-4821-a8e3-83a480cc74f7",
+			"name": "LASAL_EVENT_47_SEND",
+			"maId": 65283,
+			"miId": 71,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_47_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "ad92b00e-52e4-409d-b85d-320f1f38779b",
+			"name": "LASAL_EVENT_48_SEND",
+			"maId": 65283,
+			"miId": 72,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_48_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "771d0820-600c-466c-afbb-33262e8cbe1b",
+			"name": "LASAL_EVENT_49_SEND",
+			"maId": 65283,
+			"miId": 73,
+			"eventType": 9,
+			"desc": "Send a LASAL_EVENT_49_SEND frame",
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "RuntimeEvent",
+			"designTimeId": "7a753346-b64d-412c-a3a8-3906d5f49cb3",
+			"name": "SET_TEXT",
+			"maId": 65297,
+			"eventType": 9,
+			"desc": "Send a setText frame",
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
+}

@@ -1,0 +1,131 @@
+{
+	"type": "textList",
+	"version": "0.0.96",
+	"id": "2ee2a62a-98f4-4bb5-bbae-add9b09b1661",
+	"name": "UnitTexts",
+	"texts": [
+		{
+			"type": "textElement",
+			"id": "69f0910b-312b-44c5-bf02-53852df58f6c",
+			"aliasName": "RPM",
+			"text": "RPM"
+		},
+		{
+			"type": "textElement",
+			"id": "aefe4b6a-e7b6-4d38-be57-6c0a56bdde44",
+			"aliasName": "bar",
+			"text": "bar"
+		},
+		{
+			"type": "textElement",
+			"id": "4244cd6b-36c2-4c8a-afca-47a96e3cd4f1",
+			"aliasName": "mmPsec2",
+			"text": "mmPsec2"
+		},
+		{
+			"type": "textElement",
+			"id": "4a3bfe0f-befe-4a90-8481-46892ac2fc02",
+			"aliasName": "m",
+			"text": "m"
+		},
+		{
+			"type": "textElement",
+			"id": "330d0b75-f14d-43df-a6cf-64c3f98cb3ea",
+			"aliasName": "sec",
+			"text": "sec"
+		},
+		{
+			"type": "textElement",
+			"id": "887e41f4-a908-4afd-b0a9-d3e6daa84419",
+			"aliasName": "N",
+			"text": "N"
+		},
+		{
+			"type": "textElement",
+			"id": "d65d758a-e7da-4ffc-a865-dac4c4a48b6c",
+			"aliasName": "deg",
+			"text": "deg"
+		},
+		{
+			"type": "textElement",
+			"id": "8ebd3259-edc0-45f4-9fc4-d27a3b3d91ef",
+			"aliasName": "min",
+			"text": "min"
+		},
+		{
+			"type": "textElement",
+			"id": "fe71ae73-b8a6-400f-9a64-2197da106088",
+			"aliasName": "ms",
+			"text": "ms"
+		},
+		{
+			"type": "textElement",
+			"id": "0a9fa12f-8fd8-4c8a-8f58-f9d3aae47539",
+			"aliasName": "kN",
+			"text": "kN"
+		},
+		{
+			"type": "textElement",
+			"id": "9d46e8a4-65e7-411a-bc77-fa0143b1aef2",
+			"aliasName": "mmpsec",
+			"text": "mmpsec"
+		},
+		{
+			"type": "textElement",
+			"id": "cbcd936e-3b92-4d19-bad3-99b158e2d5e1",
+			"aliasName": "GB",
+			"text": "GB"
+		},
+		{
+			"type": "textElement",
+			"id": "2c16d553-9d59-4dab-bb2f-24ddf2eaec37",
+			"aliasName": "ccm",
+			"text": "ccm"
+		},
+		{
+			"type": "textElement",
+			"id": "41287488-fe1d-43d3-901a-d16db3b935da",
+			"aliasName": "MB",
+			"text": "MB"
+		},
+		{
+			"type": "textElement",
+			"id": "92750067-f17f-4ef3-892f-688275c76d8e",
+			"aliasName": "hours",
+			"text": "hours"
+		},
+		{
+			"type": "textElement",
+			"id": "8d627f4e-e8b5-46d9-b76c-6b3fd8de352c",
+			"aliasName": "mm",
+			"text": "mm"
+		},
+		{
+			"type": "textElement",
+			"id": "73e339d4-b339-42de-9618-773aa017e7b7",
+			"aliasName": "mm2",
+			"text": "mm2"
+		},
+		{
+			"type": "textElement",
+			"id": "c94ab859-d748-451e-9e4b-a72b8c4fb1cb",
+			"aliasName": "kB",
+			"text": "kB"
+		},
+		{
+			"type": "textElement",
+			"id": "6cf419cb-99b9-4ac3-90eb-1cca1f862eef",
+			"aliasName": "mlpmin",
+			"text": "mlpmin"
+		},
+		{
+			"type": "textElement",
+			"id": "828a4976-fa37-4722-a8b0-e02861fe75cc",
+			"aliasName": "secs",
+			"text": "secs"
+		}
+	],
+	"revision": {
+		"type": "Revision"
+	}
+}

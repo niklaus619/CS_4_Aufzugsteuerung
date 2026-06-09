@@ -1,3 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <HwVisualConfigManager>
+	<HwVisualConfig Key="__HW_MAIN_PLC__" DeviceType="CP112" Top="20" Left="20"/>
+	<HwVisualConfig Key="_DriveMng_DC0621" Top="237.87" Left="20"/>
+	<HwVisualConfig Key="_DriveMng_DC0621_Axis1" Top="237.87" Left="20"/>
+	<HwVisualConfig Key="_DriveMng_DC0622" Top="237.87" Left="20"/>
+	<HwVisualConfig Key="_DriveMng_DC0622_Axis1" Top="237.87" Left="20"/>
+	<HwVisualConfig Key="AI0431" Top="237.87" Left="20"/>
+	<HwVisualConfig Key="CP112_IOs1" Top="128.8" Left="20"/>
+	<HwVisualConfig Key="DM0811" Top="237.87" Left="20"/>
+	<HwVisualConfig Key="DM1611" Top="237.87" Left="20"/>
+	<HwVisualConfig Key="SCP1111" Top="237.87" Left="20"/>
+	<HwVisualConfig Key="SDM0811" Top="237.87" Left="20"/>
+	<HwVisualConfig Key="VaranManager_11" Top="128.8" Left="20"/>
+	<HwVisualConfig Key="VI0211" Top="256.8" Left="20"/>
+	<HwVisualConnection Source="VI0211.VaranIn" Destination="VaranManager_11.VaranOut_1" Vertices="(28.01,286),(6,286),(6,6),(41,6),(41,57.28),"/>
 </HwVisualConfigManager>

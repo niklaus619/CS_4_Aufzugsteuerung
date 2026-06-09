@@ -1,0 +1,426 @@
+{
+	"type": "UnitDefinitions",
+	"version": "0.0.96",
+	"units": [
+		{
+			"type": "Unit",
+			"designTimeId": "6de77ee8-1f1c-46a4-a7fb-aa0065579f81",
+			"name": "mmPsec2",
+			"group": "Acceleration",
+			"formula": {
+				"value": "Acceleration_mmPsec2",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "c8e954c2-d0e5-4b52-8bd9-dd2d93aba6d1"
+			},
+			"text": {
+				"value": "UnitTexts:mmPsec2",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "4244cd6b-36c2-4c8a-afca-47a96e3cd4f1"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "e530120e-21c3-4a7a-8951-9ae57ab04ffc",
+			"name": "deg",
+			"group": "Angle",
+			"formula": {
+				"value": "Angle_deg",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "a7973440-c5c8-4490-bc20-62f905b6965a"
+			},
+			"text": {
+				"value": "UnitTexts:deg",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "d65d758a-e7da-4ffc-a865-dac4c4a48b6c"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "1ab7fd05-29ac-4105-bf40-5370a9532390",
+			"name": "mm2",
+			"group": "Area",
+			"formula": {
+				"value": "Area_mm2",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "3d931258-9977-4a37-8994-20b0aafaa943"
+			},
+			"text": {
+				"value": "UnitTexts:mm2",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "73e339d4-b339-42de-9618-773aa017e7b7"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "c097f161-e6d4-4aea-9eb4-3e4af6ecd5a5",
+			"name": "kN",
+			"group": "Force",
+			"formula": {
+				"value": "Force_kN",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "c38d9a17-59e8-4d1b-b8f1-199296989c0d"
+			},
+			"text": {
+				"value": "UnitTexts:kN",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "0a9fa12f-8fd8-4c8a-8f58-f9d3aae47539"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "e95d1303-ddd4-469e-902c-ea1b7b39fee4",
+			"name": "N",
+			"group": "Force",
+			"formula": {
+				"value": "Force_N",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "71d579e9-b795-4ace-9f0d-22214f9af23c"
+			},
+			"text": {
+				"value": "UnitTexts:N",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "887e41f4-a908-4afd-b0a9-d3e6daa84419"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "54c52b45-cd31-4340-9628-905a2e6fd814",
+			"name": "m",
+			"group": "Length",
+			"formula": {
+				"value": "Length_m",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "092d9e03-e31f-48a9-8936-29baf5dd28bf"
+			},
+			"text": {
+				"value": "UnitTexts:m",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "4a3bfe0f-befe-4a90-8481-46892ac2fc02"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "ab6f9fd5-74d7-4446-aca2-8cb8b282e55e",
+			"name": "mm",
+			"group": "Length",
+			"formula": {
+				"value": "Length_mm",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "b53fb6f6-2019-4162-bd19-28aa1192d607"
+			},
+			"text": {
+				"value": "UnitTexts:mm",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "8d627f4e-e8b5-46d9-b76c-6b3fd8de352c"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "140edaa7-38b2-49af-a2aa-4eaf96393c6a",
+			"name": "GB",
+			"group": "Memory",
+			"formula": {
+				"value": "Memory_GB",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "93d06d55-d3b1-4907-87d7-31243c2353c7"
+			},
+			"text": {
+				"value": "UnitTexts:GB",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "cbcd936e-3b92-4d19-bad3-99b158e2d5e1"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "0c13013d-badd-4f35-92db-20a4f8197f3b",
+			"name": "kB",
+			"group": "Memory",
+			"formula": {
+				"value": "Memory_kB",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "f11511a5-a13b-4b12-a419-77f7368c3997"
+			},
+			"text": {
+				"value": "UnitTexts:kB",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "c94ab859-d748-451e-9e4b-a72b8c4fb1cb"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "67322e9f-008a-44de-8b1e-d3dcaffd2fb2",
+			"name": "MB",
+			"group": "Memory",
+			"formula": {
+				"value": "Memory_MB",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "2c5799e4-b83f-4b51-b3ef-80eea99aff7a"
+			},
+			"text": {
+				"value": "UnitTexts:MB",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "41287488-fe1d-43d3-901a-d16db3b935da"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "db9ef9b4-7ffd-458a-8214-2d87bac1b944",
+			"name": "bar",
+			"group": "Pressure",
+			"formula": {
+				"value": "Pressure_bar",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "399618e8-4ef3-462a-a814-cf248cd553ae"
+			},
+			"text": {
+				"value": "UnitTexts:bar",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "aefe4b6a-e7b6-4d38-be57-6c0a56bdde44"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "a239d991-5204-4134-9654-233489d147b7",
+			"name": "RPM",
+			"group": "Revolution",
+			"formula": {
+				"value": "Revolution_RPM",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "ec16c62b-37e3-44d6-b515-759bf3f4807c"
+			},
+			"text": {
+				"value": "UnitTexts:RPM",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "69f0910b-312b-44c5-bf02-53852df58f6c"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "c2b2971c-7bdc-4753-b4a5-dcc2320b72bc",
+			"name": "mlpmin",
+			"group": "Speed",
+			"formula": {
+				"value": "Speed_mlpmin",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "981eed86-6ad5-4554-835b-729250a43338"
+			},
+			"text": {
+				"value": "UnitTexts:mlpmin",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "6cf419cb-99b9-4ac3-90eb-1cca1f862eef"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "04fb158b-c584-4f4d-b082-d39a0d4e4f5a",
+			"name": "mmpsec",
+			"group": "Speed",
+			"formula": {
+				"value": "Speed_mmpsec",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "3c97848f-9bcb-4550-bcd3-96ce5b60a0e0"
+			},
+			"text": {
+				"value": "UnitTexts:mmpsec",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "9d46e8a4-65e7-411a-bc77-fa0143b1aef2"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "eba46535-60ed-4920-97c9-7658fcf77d1e",
+			"name": "hours",
+			"group": "Time",
+			"formula": {
+				"value": "Time_hours",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "669a9019-df59-4c01-b7f8-1fd708c2c472"
+			},
+			"text": {
+				"value": "UnitTexts:hours",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "92750067-f17f-4ef3-892f-688275c76d8e"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "df2ce406-e6a9-44d2-8a89-b4a172b159a9",
+			"name": "min",
+			"group": "Time",
+			"formula": {
+				"value": "Time_min",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "a31a5943-e231-4ae0-9a22-d0856b9c2202"
+			},
+			"text": {
+				"value": "UnitTexts:min",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "8ebd3259-edc0-45f4-9fc4-d27a3b3d91ef"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "f172e83b-14bf-4827-b463-033ad3a17457",
+			"name": "ms",
+			"group": "Time",
+			"formula": {
+				"value": "Time_ms",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "bb228d8b-cafe-4d2e-a590-c6d574230023"
+			},
+			"text": {
+				"value": "UnitTexts:ms",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "fe71ae73-b8a6-400f-9a64-2197da106088"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "88c5c11e-bf18-44b6-8572-49a29c660a5f",
+			"name": "sec",
+			"group": "Time",
+			"formula": {
+				"value": "Time_sec",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "03029888-9de7-428d-bc39-f7ece49c6e68"
+			},
+			"text": {
+				"value": "UnitTexts:sec",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "330d0b75-f14d-43df-a6cf-64c3f98cb3ea"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "0072664d-06bd-4245-ac59-6fa774f468fd",
+			"name": "secs",
+			"group": "Time",
+			"formula": {
+				"value": "Time_secs",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "662a1fea-6c12-41ae-a445-a9fcc981adbf"
+			},
+			"text": {
+				"value": "UnitTexts:secs",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "828a4976-fa37-4722-a8b0-e02861fe75cc"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Unit",
+			"designTimeId": "a5d1849e-b95a-4785-ab43-5516b7cda579",
+			"name": "ccm",
+			"group": "Volume",
+			"formula": {
+				"value": "Volume_ccm",
+				"typeId": 13,
+				"propTypeId": 1,
+				"refId": "3dae6ec6-a512-42ab-b721-820b397bd975"
+			},
+			"text": {
+				"value": "UnitTexts:ccm",
+				"typeId": 5,
+				"propTypeId": 1,
+				"refId": "2c16d553-9d59-4dab-bb2f-24ddf2eaec37"
+			},
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
+}

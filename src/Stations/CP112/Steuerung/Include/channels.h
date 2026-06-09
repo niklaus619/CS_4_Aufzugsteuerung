@@ -221,6 +221,16 @@ TYPE
     dData : DINT;
     pCmd : ^ASCII_BIN;
   END_STRUCT;
+  CltChCmd_clsTimer : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsTimer;
+  END_STRUCT;
+  CltChCmd_clsTuerSensorik : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsTuerSensorik;
+  END_STRUCT;
   CltChCmd_Controller : STRUCT
     pCh : ^SvrChCmd_DINT;
     dData : DINT;

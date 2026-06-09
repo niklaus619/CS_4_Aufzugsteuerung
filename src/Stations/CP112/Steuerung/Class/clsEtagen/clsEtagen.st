@@ -21,6 +21,7 @@
 	<Channels>
 		<Server Name="ClassSvr" GUID="{98BA7F3D-F58D-458B-895E-CE489FDE0932}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Server Name="sEtagestatus" GUID="{2318CDAE-FB9F-46B9-97D6-B32E9FCA26D3}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Client Name="cTimer" Required="true" Internal="false"/>
 	</Channels>
 </Class>
 *)
@@ -32,6 +33,7 @@ clsEtagen : CLASS
 	ClassSvr 	: SvrChCmd_DINT;
 	sEtagestatus 	: SvrCh_DINT;
   //Clients:
+	cTimer 	: CltChCmd_clsTimer;
   //Variables:
   //Functions:
 	
@@ -50,6 +52,9 @@ clsEtagen : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
+#pragma usingLtd clsTimer
+
+
 //}}LSL_DECLARATION
 
 
@@ -57,13 +62,14 @@ FUNCTION GLOBAL TAB clsEtagen::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSETAGEN
 0$UINT, 0$UINT, (SIZEOF(::clsEtagen))$UINT, 
-2$UINT, 0$UINT, 0$UINT, 
+2$UINT, 1$UINT, 0$UINT, 
 TO_UDINT(3037236986), "clsEtagen", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsEtagen.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
 (::clsEtagen.sEtagestatus.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(3781711963), "sEtagestatus", 
 //Clients:
+(::clsEtagen.cTimer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1671967446), "cTimer", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 

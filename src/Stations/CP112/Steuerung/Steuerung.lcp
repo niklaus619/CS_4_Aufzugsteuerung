@@ -214,6 +214,8 @@
 		<File Path=".\Class\_LMCRefBase\_LMCRefBase.st"/>
 		<File Path=".\Class\_LMCSafety\_LMCSafety.st"/>
 		<File Path=".\Class\clsEnableDrive\clsEnableDrive.st"/>
+		<File Path=".\Class\clsTimer\clsTimer.st"/>
+		<File Path=".\Class\clsSimpleCounter\clsSimpleCounter.st"/>
 	</ClassFiles>
 	<NetworkFiles>
 		<File Path=".\Network\NW1\NW1.lcn"/>

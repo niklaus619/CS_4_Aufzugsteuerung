@@ -21,6 +21,7 @@
 	<Channels>
 		<Server Name="ClassSvr" GUID="{8B8661B5-0101-4DCF-BCD2-5425B48FE841}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Server Name="sTuerstate" GUID="{D5885B28-1DC5-4675-9401-17833B38C3D9}" Visualized="false" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Client Name="cTimer" Required="true" Internal="false"/>
 	</Channels>
 </Class>
 *)
@@ -32,6 +33,7 @@ clsTuerSensorik : CLASS
 	ClassSvr 	: SvrChCmd_DINT;
 	sTuerstate 	: SvrCh_DINT;
   //Clients:
+	cTimer 	: CltChCmd_clsTuerSensorik;
   //Variables:
   //Functions:
 	
@@ -57,13 +59,14 @@ FUNCTION GLOBAL TAB clsTuerSensorik::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSTUERSENSORIK
 0$UINT, 0$UINT, (SIZEOF(::clsTuerSensorik))$UINT, 
-2$UINT, 0$UINT, 0$UINT, 
+2$UINT, 1$UINT, 0$UINT, 
 TO_UDINT(712717468), "clsTuerSensorik", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsTuerSensorik.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
 (::clsTuerSensorik.sTuerstate.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1178709137), "sTuerstate", 
 //Clients:
+(::clsTuerSensorik.cTimer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1671967446), "cTimer", TO_UDINT(712717468), "clsTuerSensorik", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 

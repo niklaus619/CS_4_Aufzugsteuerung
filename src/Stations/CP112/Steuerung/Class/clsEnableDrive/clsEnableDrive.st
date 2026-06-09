@@ -8,7 +8,8 @@
 	Revision           = "0.0"
 	GUID               = "{218B3F7E-46BC-49AD-9656-F85F0882347C}"
 	RealtimeTask       = "false"
-	CyclicTask         = "false"
+	CyclicTask         = "true"
+	DefCyclictime      = "1 ms"
 	BackgroundTask     = "false"
 	Sigmatek           = "false"
 	OSInterface        = "false"
@@ -38,6 +39,14 @@ clsEnableDrive : CLASS
 	cOut4 	: CltCh_DINT;
   //Variables:
   //Functions:
+	
+	FUNCTION VIRTUAL GLOBAL CyWork
+		VAR_INPUT
+			EAX 	: UDINT;
+		END_VAR
+		VAR_OUTPUT
+			state (EAX) 	: UDINT;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -80,9 +89,43 @@ FUNCTION clsEnableDrive::@STD
 	VAR_OUTPUT
 		ret_code	: CONFSTATES;
 	END_VAR
+	VAR
+		vmt	: _LSL_STD_VMETH;
+	END_VAR
 
-	ret_code := C_OK;
+	//Command Methods
+	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsEnableDrive, pCmd := #vmt.CmdTable);
+	vmt.CmdTable.CyWork		:= #CyWork();
+	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
+
+	IF ClassSvr.pMeth THEN
+		ret_code	:= C_OK;
+	ELSE
+		ret_code	:= C_OUTOF_NEAR;
+		RETURN;
+	END_IF;
 
 END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
+
+
+FUNCTION VIRTUAL GLOBAL clsEnableDrive::CyWork
+	VAR_INPUT
+		EAX 	: UDINT;
+	END_VAR
+	VAR_OUTPUT
+		state (EAX) 	: UDINT;
+	END_VAR
+  
+  cIn1 := cIn1.Read ();
+  
+  cOut1 := cOut2 := cOut3 := cOut4 := cIn1;
+  cOut1.Write (cOut1);
+  cOut2.Write (cOut2);
+  cOut3.Write (cOut3);
+  cOut4.Write (cOut4);
+
+	state := READY;
+
+END_FUNCTION

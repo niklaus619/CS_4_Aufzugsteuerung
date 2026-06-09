@@ -227,9 +227,6 @@
 	<ObjectFiles_Arm>
 		<File Path=".\Class\SigCLib\cObjLib.lba"/>
 	</ObjectFiles_Arm>
-	<LibraryFiles>
-		<File Path=".\Motion\MotionLib\MotionLib.lcp"/>
-	</LibraryFiles>
 	<DriveFiles>
 		<File Path=".\Drive\Axis 1_TSY041.lda" ObjectName="_DriveMng_DC0621_Axis1" Idx="0"/>
 		<File Path=".\Drive\Axis 2_TSY041.lda" ObjectName="_DriveMng_DC0622_Axis1" Idx="0"/>

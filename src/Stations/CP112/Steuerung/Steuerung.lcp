@@ -216,6 +216,7 @@
 		<File Path=".\Class\clsEnableDrive\clsEnableDrive.st"/>
 		<File Path=".\Class\clsTimer\clsTimer.st"/>
 		<File Path=".\Class\clsSimpleCounter\clsSimpleCounter.st"/>
+		<File Path=".\Class\clsCounter\clsCounter.st"/>
 	</ClassFiles>
 	<NetworkFiles>
 		<File Path=".\Network\NW1\NW1.lcn"/>

@@ -14,7 +14,7 @@ Internal
 *.ldi
 *.bak
 *.lob
-*.lba
+
 *.lcb
 *.lock
 *.plc

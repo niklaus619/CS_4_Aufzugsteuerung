@@ -406,7 +406,7 @@
 			Name       = "_DriveMng_DC0622"
 			GUID       = "{58B7CCC5-6573-4A90-A755-FBEA0148ED09}"
 			Class      = "_DriveMng_DC062"
-			Position   = "(367,1860)"
+			Position   = "(360,2280)"
 			Visualized = "true"
 			Remotely   = "true"
 			CyclicTime = "10 ms">
@@ -1618,7 +1618,7 @@
 			Name       = "clsEnableDrive1"
 			GUID       = "{95938709-FC00-458C-9250-A041D4D20C16}"
 			Class      = "clsEnableDrive"
-			Position   = "(510,1170)"
+			Position   = "(4890,1320)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
@@ -1628,6 +1628,44 @@
 				<Client Name="cOut2"/>
 				<Client Name="cOut3"/>
 				<Client Name="cOut4"/>
+			</Channels>
+		</Object>
+		<Object
+			Name       = "clsMotorControlAufzug"
+			GUID       = "{6F3228FF-CBA2-44AE-931C-22721F6E83CA}"
+			Class      = "clsMotorControl"
+			Position   = "(4020,180)"
+			Visualized = "false"
+			CyclicTime = "1 ms">
+			<Channels>
+				<Server Name="ClassSvr"/>
+				<Server Name="sAcceleration"/>
+				<Server Name="sCmd"/>
+				<Server Name="sDistance"/>
+				<Server Name="sMode"/>
+				<Server Name="sPosition"/>
+				<Server Name="sState"/>
+				<Server Name="sVelocity"/>
+				<Client Name="cAxis"/>
+			</Channels>
+		</Object>
+		<Object
+			Name       = "clsMotorControlTuer"
+			GUID       = "{F1C7706A-744B-4E09-8DA4-83127D7027DB}"
+			Class      = "clsMotorControl"
+			Position   = "(4020,2340)"
+			Visualized = "false"
+			CyclicTime = "1 ms">
+			<Channels>
+				<Server Name="ClassSvr"/>
+				<Server Name="sAcceleration"/>
+				<Server Name="sCmd"/>
+				<Server Name="sDistance"/>
+				<Server Name="sMode"/>
+				<Server Name="sPosition"/>
+				<Server Name="sState"/>
+				<Server Name="sVelocity"/>
+				<Client Name="cAxis"/>
 			</Channels>
 		</Object>
 		<Object
@@ -1706,26 +1744,28 @@
 		<Connection Source="_DriveMng_DC0621.SdiasIn" Destination="VI0211.SdiasOut_1"/>
 		<Connection Source="_DriveMng_DC0621_Axis1.DriveMng" Destination="_DriveMng_DC0621.CmdState" Vertices="(1170,300),(992,300),"/>
 		<Connection Source="_DriveMng_DC0622.SdiasIn" Destination="VI0211.SdiasOut_1"/>
-		<Connection Source="_DriveMng_DC0622_Axis1.DriveMng" Destination="_DriveMng_DC0622.CmdState" Vertices="(1110,2400),(969,1950),"/>
+		<Connection Source="_DriveMng_DC0622_Axis1.DriveMng" Destination="_DriveMng_DC0622.CmdState" Vertices="(1110,2400),(962,2370),"/>
 		<Connection Source="DrivePosControl1.cDriveAxis" Destination="_DriveMng_DC0621_Axis1.CmdState" Vertices="(2100,360),(1772,300),"/>
 		<Connection Source="_LMCAxis1.ActPosition" Destination="_DriveMng_DC0621_Axis1.ActPos" Vertices="(2970,270),(2610,840),(2130,840),(1772,480),"/>
 		<Connection Source="DrivePosControl2.cDriveAxis" Destination="_DriveMng_DC0622_Axis1.CmdState" Vertices="(2040,2490),(1712,2400),"/>
 		<Connection Source="_LMCAxis2.LMCController" Destination="DrivePosControl2.Signal_Input" Vertices="(2850,2490),(2554,2490),"/>
 		<Connection Source="_LMCAxis2.ActPosition" Destination="_DriveMng_DC0622_Axis1.ActPos" Vertices="(2850,2430),(2850,2430),(2550,2910),(2070,2910),(1712,2580),"/>
 		<Connection Source="_LMCAxis1.LMCController" Destination="DrivePosControl1.Signal_Input" Vertices="(2970,330),(2614,360),"/>
-		<Connection Source="clsEnableDrive1.cIn1" Destination="__IO_Element1" Vertices="(510,1260),(450,1260)," IOObject="IO_Element"/>
-		<Connection Source="clsEnableDrive1.cOut1" Destination="__IO_Element01" Vertices="(510,1320),(450,1320)," IOObject="IO_Element0"/>
-		<Connection Source="clsEnableDrive1.cOut2" Destination="__IO_Element51" Vertices="(510,1380),(450,1380)," IOObject="IO_Element5"/>
-		<Connection Source="clsEnableDrive1.cOut3" Destination="__IO_Element61" Vertices="(510,1440),(450,1440)," IOObject="IO_Element6"/>
-		<Connection Source="clsEnableDrive1.cOut4" Destination="__IO_Element71" Vertices="(510,1500),(450,1500)," IOObject="IO_Element7"/>
+		<Connection Source="clsEnableDrive1.cIn1" Destination="__IO_Element1" Vertices="(4890,1410),(4830,1410)," IOObject="IO_Element"/>
+		<Connection Source="clsEnableDrive1.cOut1" Destination="__IO_Element01" Vertices="(4890,1470),(4830,1470)," IOObject="IO_Element0"/>
+		<Connection Source="clsEnableDrive1.cOut2" Destination="__IO_Element51" Vertices="(4890,1530),(4830,1530)," IOObject="IO_Element5"/>
+		<Connection Source="clsEnableDrive1.cOut3" Destination="__IO_Element61" Vertices="(4890,1590),(4830,1590)," IOObject="IO_Element6"/>
+		<Connection Source="clsEnableDrive1.cOut4" Destination="__IO_Element71" Vertices="(4890,1650),(4830,1650)," IOObject="IO_Element7"/>
+		<Connection Source="clsMotorControlAufzug.cAxis" Destination="_LMCAxis1.Control" Vertices="(4020,270),(3636,270),"/>
+		<Connection Source="clsMotorControlTuer.cAxis" Destination="_LMCAxis2.Control" Vertices="(4020,2430),(3516,2430),"/>
 	</Connections>
 	<!-- List of temp data objects in this network -->
 	<IOObjects>
-		<IOObject KeyName="__IO_Element01" Name="IO_Element0" Position="(150,1290)" Client="clsEnableDrive1.cOut1"/>
-		<IOObject KeyName="__IO_Element1" Name="IO_Element" Position="(150,1230)" Client="clsEnableDrive1.cIn1"/>
-		<IOObject KeyName="__IO_Element51" Name="IO_Element5" Position="(150,1350)" Client="clsEnableDrive1.cOut2"/>
-		<IOObject KeyName="__IO_Element61" Name="IO_Element6" Position="(150,1410)" Client="clsEnableDrive1.cOut3"/>
-		<IOObject KeyName="__IO_Element71" Name="IO_Element7" Position="(150,1470)" Client="clsEnableDrive1.cOut4"/>
+		<IOObject KeyName="__IO_Element01" Name="IO_Element0" Position="(4530,1440)" Client="clsEnableDrive1.cOut1"/>
+		<IOObject KeyName="__IO_Element1" Name="IO_Element" Position="(4530,1380)" Client="clsEnableDrive1.cIn1"/>
+		<IOObject KeyName="__IO_Element51" Name="IO_Element5" Position="(4530,1500)" Client="clsEnableDrive1.cOut2"/>
+		<IOObject KeyName="__IO_Element61" Name="IO_Element6" Position="(4530,1560)" Client="clsEnableDrive1.cOut3"/>
+		<IOObject KeyName="__IO_Element71" Name="IO_Element7" Position="(4530,1620)" Client="clsEnableDrive1.cOut4"/>
 	</IOObjects>
 	<!-- Headerfiles -->
 	<Options>

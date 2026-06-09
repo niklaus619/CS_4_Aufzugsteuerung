@@ -20,10 +20,6 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{C52F73C5-07D1-4F55-AD73-C3455EF35DBC}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sAufzughoch" GUID="{A821B817-1DEC-4835-8F8B-71E559E36384}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sAufzugrunter" GUID="{46C18C06-26BF-43FD-BECE-6995F7B25D20}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sTuerauf" GUID="{F61C03ED-CA77-4F54-B43F-FCF603B90B8A}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sTuerzu" GUID="{79119F8D-E474-4C70-8849-524DD0DA9D0B}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cAnforderung" Required="true" Internal="false"/>
 		<Client Name="cEtagestatus" Required="true" Internal="false"/>
 		<Client Name="cTuerstatus" Required="true" Internal="false"/>
@@ -33,10 +29,6 @@
 clsAufzugmodul : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
-	sAufzughoch 	: SvrCh_DINT;
-	sAufzugrunter 	: SvrCh_DINT;
-	sTuerauf 	: SvrCh_DINT;
-	sTuerzu 	: SvrCh_DINT;
   //Clients:
 	cTuerstatus 	: CltChCmd_clsTuerSensorik;
 	cEtagestatus 	: CltChCmd_clsEtagenSensorik;
@@ -70,15 +62,11 @@ FUNCTION GLOBAL TAB clsAufzugmodul::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSAUFZUGMODUL
 0$UINT, 0$UINT, (SIZEOF(::clsAufzugmodul))$UINT, 
-5$UINT, 3$UINT, 0$UINT, 
+1$UINT, 3$UINT, 0$UINT, 
 TO_UDINT(1857403904), "clsAufzugmodul", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsAufzugmodul.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
-(::clsAufzugmodul.sAufzughoch.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2610195883), "sAufzughoch", 
-(::clsAufzugmodul.sAufzugrunter.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1477006883), "sAufzugrunter", 
-(::clsAufzugmodul.sTuerauf.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(3983459839), "sTuerauf", 
-(::clsAufzugmodul.sTuerzu.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1880777850), "sTuerzu", 
 //Clients:
 (::clsAufzugmodul.cTuerstatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1125833511), "cTuerstatus", TO_UDINT(712717468), "clsTuerSensorik", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cEtagestatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3983586727), "cEtagestatus", TO_UDINT(206957904), "clsEtagenSensorik", 0$UINT, 0$UINT, 

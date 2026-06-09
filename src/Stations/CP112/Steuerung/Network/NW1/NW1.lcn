@@ -3,16 +3,15 @@
 	<!-- List of Components in this network -->
 	<Components>
 		<Object
-			Name       = "clsAufzugantrieb1"
-			GUID       = "{57A96C9F-203F-4FD4-A78B-D1009FAA2929}"
+			Name       = "clsAufzugantrieb"
+			GUID       = "{CDD3F86A-B098-458F-AE43-A0C3C0242A11}"
 			Class      = "clsAufzugantrieb"
-			Position   = "(1740,660)"
+			Position   = "(1710,810)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
-				<Client Name="cHoch"/>
-				<Client Name="cRunter"/>
+				<Client Name="cFahrbefehl"/>
 			</Channels>
 		</Object>
 		<Object
@@ -24,10 +23,6 @@
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
-				<Server Name="sAufzughoch"/>
-				<Server Name="sAufzugrunter"/>
-				<Server Name="sTuerauf"/>
-				<Server Name="sTuerzu"/>
 				<Client Name="cAnforderung"/>
 				<Client Name="cEtagestatus"/>
 				<Client Name="cTuerstatus"/>
@@ -98,16 +93,15 @@
 			</Channels>
 		</Object>
 		<Object
-			Name       = "clsTuerantrieb1"
-			GUID       = "{4654F0F1-7C71-443D-87DC-8CBA41095C88}"
-			Class      = "clsTuerantrieb"
-			Position   = "(1740,900)"
+			Name       = "clsTuerantrieb"
+			GUID       = "{57A96C9F-203F-4FD4-A78B-D1009FAA2929}"
+			Class      = "clsAufzugantrieb"
+			Position   = "(1710,660)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
-				<Client Name="cAuf"/>
-				<Client Name="cZu"/>
+				<Client Name="cFahrbefehl"/>
 			</Channels>
 		</Object>
 		<Object
@@ -128,10 +122,8 @@
 	</Comments>
 	<!-- List of Connections in this network -->
 	<Connections>
-		<Connection Source="clsAufzugantrieb1.cHoch" Destination="clsAufzugmodul1.sAufzughoch" Vertices="(1740,750),(1560,810),"/>
-		<Connection Source="clsAufzugantrieb1.cRunter" Destination="clsAufzugmodul1.sAufzugrunter" Vertices="(1740,810),(1560,870),"/>
-		<Connection Source="clsTuerantrieb1.cAuf" Destination="clsAufzugmodul1.sTuerauf" Vertices="(1740,990),(1560,930),"/>
-		<Connection Source="clsTuerantrieb1.cZu" Destination="clsAufzugmodul1.sTuerzu" Vertices="(1740,1050),(1560,990),"/>
+		<Connection Source="clsAufzugantrieb.cFahrbefehl" Destination="clsAufzugmodul1.ClassSvr" Vertices="(1710,900),(1560,750),"/>
+		<Connection Source="clsTuerantrieb.cFahrbefehl" Destination="clsAufzugmodul1.ClassSvr" Vertices="(1710,750),(1560,750),"/>
 		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(1260,750),(1140,270),"/>
 		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(1260,810),(1140,510),"/>
 		<Connection Source="clsHauptablauf1.cHMI" Destination="clsHMI1.sUebergabeHA" Vertices="(840,960),(750,960),"/>

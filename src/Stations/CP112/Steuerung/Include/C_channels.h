@@ -175,6 +175,13 @@ typedef struct SvrChCmd__LMCAXIS_OPMODE
     SVRDSC *pDsc;
   } SvrChCmd__LMCAXIS_OPMODE;
 
+typedef struct CltChCmd__LMCAxis 
+  {
+    struct SvrChCmd__LMCAXIS_OPMODE *pCh;
+    _LMCAXIS_OPMODE dData;
+    _LMCAxis *pCmd;
+  } CltChCmd__LMCAxis;
+
 typedef struct CltChCmd__LMCAxisBase 
   {
     struct SvrChCmd__LMCAXIS_OPMODE *pCh;
@@ -307,6 +314,13 @@ typedef struct CltChCmd_ASCII_BIN
     DINT dData;
     ASCII_BIN *pCmd;
   } CltChCmd_ASCII_BIN;
+
+typedef struct CltChCmd_clsAufzugmodul 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsAufzugmodul *pCmd;
+  } CltChCmd_clsAufzugmodul;
 
 typedef struct CltChCmd_clsEtagenSensorik 
   {
@@ -741,6 +755,20 @@ typedef struct SvrCh_HDINT
     HDINT dData;
     SVRDSC *pDsc;
   } SvrCh_HDINT;
+
+typedef struct SvrCh_MOTOR_CMD_PTofCls_clsMotorControl 
+  {
+    CHMETH *pMeth;
+    MOTOR_CMD dData;
+    SVRDSC *pDsc;
+  } SvrCh_MOTOR_CMD_PTofCls_clsMotorControl;
+
+typedef struct SvrCh_MOTOR_MODE_PTofCls_clsMotorControl 
+  {
+    CHMETH *pMeth;
+    MOTOR_MODE dData;
+    SVRDSC *pDsc;
+  } SvrCh_MOTOR_MODE_PTofCls_clsMotorControl;
 
 typedef struct SvrCh_SafetyConfigStateType 
   {

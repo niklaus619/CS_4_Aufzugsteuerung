@@ -101,7 +101,6 @@
 		<File Path=".\Class\clsHauptablauf\clsHauptablauf.st"/>
 		<File Path=".\Class\clsAufzugmodul\clsAufzugmodul.st"/>
 		<File Path=".\Class\clsHMI\clsHMI.st"/>
-		<File Path=".\Class\clsTuerantrieb\clsTuerantrieb.st"/>
 		<File Path=".\Class\clsAufzugantrieb\clsAufzugantrieb.st"/>
 		<File Path=".\Class\clsEtagenSensorik\clsEtagenSensorik.st"/>
 		<File Path=".\Class\clsTuerSensorik\clsTuerSensorik.st"/>
@@ -217,6 +216,7 @@
 		<File Path=".\Class\clsTimer\clsTimer.st"/>
 		<File Path=".\Class\clsSimpleCounter\clsSimpleCounter.st"/>
 		<File Path=".\Class\clsCounter\clsCounter.st"/>
+		<File Path=".\Class\clsMotorControl\clsMotorControl.st"/>
 	</ClassFiles>
 	<NetworkFiles>
 		<File Path=".\Network\NW1\NW1.lcn"/>

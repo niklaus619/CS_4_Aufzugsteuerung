@@ -20,6 +20,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{8B8661B5-0101-4DCF-BCD2-5425B48FE841}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Client Name="cFahrzeit" Required="false" Internal="false"/>
 		<Client Name="cTimer" Required="true" Internal="false"/>
 	</Channels>
 </Class>
@@ -31,8 +32,11 @@ clsTuerSensorik : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
   //Clients:
-	cTimer 	: CltChCmd_clsTuerSensorik;
+	cTimer 	: CltChCmd_clsTimer;
+	cFahrzeit 	: CltCh_UDINT;
   //Variables:
+		xAuf 	: DINT;
+		xZu 	: DINT;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -42,6 +46,10 @@ clsTuerSensorik : CLASS
 		VAR_OUTPUT
 			state (EAX) 	: UDINT;
 		END_VAR;
+	
+	FUNCTION GLOBAL zu;
+	
+	FUNCTION GLOBAL auf;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -50,6 +58,9 @@ clsTuerSensorik : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
+#pragma usingLtd clsTimer
+
+
 //}}LSL_DECLARATION
 
 
@@ -57,13 +68,14 @@ FUNCTION GLOBAL TAB clsTuerSensorik::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSTUERSENSORIK
 0$UINT, 0$UINT, (SIZEOF(::clsTuerSensorik))$UINT, 
-1$UINT, 1$UINT, 0$UINT, 
+1$UINT, 2$UINT, 0$UINT, 
 TO_UDINT(712717468), "clsTuerSensorik", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsTuerSensorik.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
 //Clients:
-(::clsTuerSensorik.cTimer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1671967446), "cTimer", TO_UDINT(712717468), "clsTuerSensorik", 0$UINT, 0$UINT, 
+(::clsTuerSensorik.cTimer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1671967446), "cTimer", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
+(::clsTuerSensorik.cFahrzeit.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(840715053), "cFahrzeit", 
 END_FUNCTION
 
 
@@ -101,6 +113,7 @@ END_FUNCTION
 //{{LSL_IMPLEMENTATION
 
 
+
 FUNCTION VIRTUAL GLOBAL clsTuerSensorik::CyWork
 	VAR_INPUT
 		EAX 	: UDINT;
@@ -109,6 +122,39 @@ FUNCTION VIRTUAL GLOBAL clsTuerSensorik::CyWork
 		state (EAX) 	: UDINT;
 	END_VAR
 
+  cFahrzeit := cFahrzeit.Read();
+
 	state := READY;
 
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsTuerSensorik::zu
+   // Pruefen ob schon zu
+   IF NOT xZu THEN
+      cTimer.Start(_time:= cFahrzeit);
+      // Pruefen ob schon gefahren
+      IF cTimer.elapsed() THEN
+        xAuf := False;
+        xZu := TRUE;
+      ELSE 
+        xZu := FALSE;
+      END_IF;
+  END_IF;
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsTuerSensorik::auf
+
+   // Pruefen ob schon auf
+   IF NOT xAuf THEN
+      cTimer.Start(_time:= cFahrzeit);
+      // Pruefen ob schon gefahren
+      IF cTimer.elapsed() THEN
+        xZu := False;
+        xAuf := TRUE;
+      ELSE 
+        xAuf := FALSE;
+      END_IF;
+   END_IF;
 END_FUNCTION

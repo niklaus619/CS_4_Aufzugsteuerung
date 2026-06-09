@@ -20,8 +20,8 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{98BA7F3D-F58D-458B-895E-CE489FDE0932}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Client Name="cFahrzeit" Required="true" Internal="false"/>
-		<Client Name="cStockwerke" Required="true" Internal="false"/>
+		<Client Name="cFahrzeit" Required="false" Internal="false"/>
+		<Client Name="cStockwerke" Required="false" Internal="false"/>
 		<Client Name="cTimer" Required="true" Internal="false"/>
 	</Channels>
 </Class>
@@ -34,7 +34,7 @@ clsEtagenSensorik : CLASS
 	ClassSvr 	: SvrChCmd_DINT;
   //Clients:
 	cTimer 	: CltChCmd_clsTimer;
-	cFahrzeit 	: CltCh_DINT;
+	cFahrzeit 	: CltCh_UDINT;
 	cStockwerke 	: CltCh_DINT;
   //Variables:
 		xErreicht 	: DINT;
@@ -77,8 +77,8 @@ TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 (::clsEtagenSensorik.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
 //Clients:
 (::clsEtagenSensorik.cTimer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1671967446), "cTimer", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
-(::clsEtagenSensorik.cFahrzeit.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(840715053), "cFahrzeit", 
-(::clsEtagenSensorik.cStockwerke.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(3851142370), "cStockwerke", 
+(::clsEtagenSensorik.cFahrzeit.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(840715053), "cFahrzeit", 
+(::clsEtagenSensorik.cStockwerke.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(3851142370), "cStockwerke", 
 END_FUNCTION
 
 
@@ -124,9 +124,9 @@ FUNCTION VIRTUAL GLOBAL clsEtagenSensorik::CyWork
 		state (EAX) 	: UDINT;
 	END_VAR
 
-
-  cFahrzeit := Read(cFahrzeit);
-  cStockwerke := Read(cStockwerke);
+  // client einlesen
+  cFahrzeit := cFahrzeit.Read();
+  cStockwerke := cStockwerke.Read();
   
   
 	state := READY;
@@ -154,7 +154,7 @@ END_FUNCTION
 FUNCTION GLOBAL clsEtagenSensorik::runter
 
   // Pruefen ob schon zu unterst
-  IF iEtage =< 0 THEN 
+  IF iEtage <= 0 THEN 
     xErreicht := TRUE;
   ELSE
     cTimer.Start(_time:= cFahrzeit);

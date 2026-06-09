@@ -36,13 +36,14 @@
 		<Object
 			Name       = "clsEtagen1"
 			GUID       = "{161C8F9C-70DE-48E6-A140-C558235AA2BF}"
-			Class      = "clsEtagen"
-			Position   = "(840,300)"
+			Class      = "clsEtagenSensorik"
+			Position   = "(840,390)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
-				<Server Name="sEtagestatus"/>
+				<Client Name="cFahrzeit"/>
+				<Client Name="cStockwerke"/>
 				<Client Name="cTimer"/>
 			</Channels>
 		</Object>
@@ -80,7 +81,7 @@
 			Name       = "clsTimer1"
 			GUID       = "{E5FCE96B-5FED-4966-8802-710A313D9640}"
 			Class      = "clsTimer"
-			Position   = "(390,90)"
+			Position   = "(390,180)"
 			Visualized = "false">
 			<Channels>
 				<Server Name="ClassSvr"/>
@@ -90,7 +91,7 @@
 			Name       = "clsTimer1_Copy"
 			GUID       = "{D3F3E712-B216-40DD-9867-3F2E3CF567D6}"
 			Class      = "clsTimer"
-			Position   = "(390,300)"
+			Position   = "(390,390)"
 			Visualized = "false">
 			<Channels>
 				<Server Name="ClassSvr"/>
@@ -113,12 +114,11 @@
 			Name       = "clsTuerSensorik1"
 			GUID       = "{F2E6685D-EBB9-428D-9D74-9E3DEFC9E11D}"
 			Class      = "clsTuerSensorik"
-			Position   = "(840,90)"
+			Position   = "(840,180)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
-				<Server Name="sTuerstate"/>
 				<Client Name="cTimer"/>
 			</Channels>
 		</Object>
@@ -131,16 +131,16 @@
 		<Connection Source="clsAufzugantrieb1.cRunter" Destination="clsAufzugmodul1.sAufzugrunter" Vertices="(1740,630),(1560,690),"/>
 		<Connection Source="clsTuerantrieb1.cAuf" Destination="clsAufzugmodul1.sTuerauf" Vertices="(1740,810),(1560,750),"/>
 		<Connection Source="clsTuerantrieb1.cZu" Destination="clsAufzugmodul1.sTuerzu" Vertices="(1740,870),(1560,810),"/>
-		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.sTuerstate" Vertices="(1260,570),(1140,240),"/>
-		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.sEtagestatus" Vertices="(1260,630),(1140,450),"/>
+		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(1260,570),(1140,270),"/>
+		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(1260,630),(1140,480),"/>
 		<Connection Source="clsHauptablauf1.cHMI" Destination="clsHMI1.sUebergabeHA" Vertices="(840,780),(720,780),"/>
 		<Connection Source="clsHMI1.sTaster1" Destination="__IO_Element11" Vertices="(420,660),(360,660)," IOObject="IO_Element1"/>
 		<Connection Source="clsHMI1.sTaster2" Destination="__IO_Element22" Vertices="(420,720),(360,720)," IOObject="IO_Element2"/>
 		<Connection Source="clsHMI1.sTaster3" Destination="__IO_Element31" Vertices="(420,780),(360,780)," IOObject="IO_Element3"/>
 		<Connection Source="clsHMI1.sTaster4" Destination="__IO_Element41" Vertices="(420,840),(390,840),(360,840)," IOObject="IO_Element4"/>
 		<Connection Source="clsAufzugmodul1.cAnforderung" Destination="clsHauptablauf1.sAnforderung" Vertices="(1260,690),(1140,840),"/>
-		<Connection Source="clsTuerSensorik1.cTimer" Destination="clsTimer1.ClassSvr" Vertices="(840,180),(706,180),"/>
-		<Connection Source="clsEtagen1.cTimer" Destination="clsTimer1_Copy.ClassSvr" Vertices="(840,390),(706,390),"/>
+		<Connection Source="clsTuerSensorik1.cTimer" Destination="clsTimer1.ClassSvr" Vertices="(840,270),(706,270),"/>
+		<Connection Source="clsEtagen1.cTimer" Destination="clsTimer1_Copy.ClassSvr" Vertices="(840,480),(706,480),"/>
 	</Connections>
 	<!-- List of temp data objects in this network -->
 	<IOObjects>

@@ -308,6 +308,13 @@ typedef struct CltChCmd_ASCII_BIN
     ASCII_BIN *pCmd;
   } CltChCmd_ASCII_BIN;
 
+typedef struct CltChCmd_clsEtagenSensorik 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsEtagenSensorik *pCmd;
+  } CltChCmd_clsEtagenSensorik;
+
 typedef struct CltChCmd_clsTimer 
   {
     struct SvrChCmd_DINT *pCh;

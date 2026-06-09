@@ -103,7 +103,7 @@
 		<File Path=".\Class\clsHMI\clsHMI.st"/>
 		<File Path=".\Class\clsTuerantrieb\clsTuerantrieb.st"/>
 		<File Path=".\Class\clsAufzugantrieb\clsAufzugantrieb.st"/>
-		<File Path=".\Class\clsEtagen\clsEtagen.st"/>
+		<File Path=".\Class\clsEtagenSensorik\clsEtagenSensorik.st"/>
 		<File Path=".\Class\clsTuerSensorik\clsTuerSensorik.st"/>
 		<File Path=".\Class\BusInterfaceSDIASInternal\BusInterfaceSDIASInternal.st"/>
 		<File Path=".\Class\CP112_IOs\CP112_IOs.st"/>

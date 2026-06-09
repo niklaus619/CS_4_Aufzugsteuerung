@@ -38,8 +38,8 @@ clsAufzugmodul : CLASS
 	sTuerauf 	: SvrCh_DINT;
 	sTuerzu 	: SvrCh_DINT;
   //Clients:
-	cTuerstatus 	: CltCh_DINT;
-	cEtagestatus 	: CltCh_DINT;
+	cTuerstatus 	: CltChCmd_clsTuerSensorik;
+	cEtagestatus 	: CltChCmd_clsEtagenSensorik;
 	cAnforderung 	: CltCh_DINT;
   //Variables:
   //Functions:
@@ -59,6 +59,10 @@ clsAufzugmodul : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
+#pragma usingLtd clsEtagenSensorik
+#pragma usingLtd clsTuerSensorik
+
+
 //}}LSL_DECLARATION
 
 
@@ -76,8 +80,8 @@ TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 (::clsAufzugmodul.sTuerauf.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(3983459839), "sTuerauf", 
 (::clsAufzugmodul.sTuerzu.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1880777850), "sTuerzu", 
 //Clients:
-(::clsAufzugmodul.cTuerstatus.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(1125833511), "cTuerstatus", 
-(::clsAufzugmodul.cEtagestatus.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(3983586727), "cEtagestatus", 
+(::clsAufzugmodul.cTuerstatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1125833511), "cTuerstatus", TO_UDINT(712717468), "clsTuerSensorik", 0$UINT, 0$UINT, 
+(::clsAufzugmodul.cEtagestatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3983586727), "cEtagestatus", TO_UDINT(206957904), "clsEtagenSensorik", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cAnforderung.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(3406365320), "cAnforderung", 
 END_FUNCTION
 

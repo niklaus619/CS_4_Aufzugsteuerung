@@ -221,6 +221,11 @@ TYPE
     dData : DINT;
     pCmd : ^ASCII_BIN;
   END_STRUCT;
+  CltChCmd_clsEtagenSensorik : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsEtagenSensorik;
+  END_STRUCT;
   CltChCmd_clsTimer : STRUCT
     pCh : ^SvrChCmd_DINT;
     dData : DINT;

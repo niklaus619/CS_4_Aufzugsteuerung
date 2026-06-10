@@ -250,7 +250,7 @@
 			ConditionConstant       = "true"
 			ExactTypeChecking       = "true"
 			CheckConnectionTypes    = "true"
-			CompileCFiles           = "false"
+			CompileCFiles           = "true"
 			Alignment               = "4 Byte"
 			ReducedClientDependency = "true"
 			MaxModuleErrorCount     = "100"

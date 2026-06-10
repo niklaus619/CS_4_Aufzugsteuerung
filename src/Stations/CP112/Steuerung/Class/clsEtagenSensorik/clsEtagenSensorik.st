@@ -49,9 +49,15 @@ clsEtagenSensorik : CLASS
 			state (EAX) 	: UDINT;
 		END_VAR;
 	
-	FUNCTION GLOBAL hoch;
+	FUNCTION GLOBAL hoch
+		VAR_OUTPUT
+			Erreicht 	: DINT;
+		END_VAR;
 	
-	FUNCTION GLOBAL runter;
+	FUNCTION GLOBAL runter
+		VAR_OUTPUT
+			Erreicht 	: DINT;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -135,36 +141,46 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsEtagenSensorik::hoch
-  // Pruefen ob schon zu oberst
-  IF iEtage >= cStockwerke THEN 
-    xErreicht := TRUE;
-  ELSE
-    cTimer.Start(_time:= cFahrzeit);
-    // Pruefen ob schon gefahren
+VAR_OUTPUT
+    Erreicht : BOOL;
+END_VAR
+
+// Prüfen ob bereits in der obersten Etage
+IF iEtage >= cStockwerke THEN
+    Erreicht := TRUE;
+ELSE
+    cTimer.Start(_time := cFahrzeit);
+
+    // Prüfen ob Fahrzeit abgelaufen
     IF cTimer.elapsed() THEN
-      iEtage := iEtage + 1
-      xErreicht := TRUE
-    ELSE 
-      xErreicht := FALSE;
+        iEtage := iEtage + 1;
+        Erreicht := TRUE;
+    ELSE
+        Erreicht := FALSE;
     END_IF;
-  END_IF;
+END_IF;
+  xErreicht := Erreicht;
 END_FUNCTION
 
 
 FUNCTION GLOBAL clsEtagenSensorik::runter
+VAR_OUTPUT
+    Erreicht : BOOL;
+END_VAR
 
-  // Pruefen ob schon zu unterst
-  IF iEtage <= 0 THEN 
-    xErreicht := TRUE;
-  ELSE
-    cTimer.Start(_time:= cFahrzeit);
-    // Pruefen ob schon gefahren
+// Prüfen ob bereits in der untersten Etage
+IF iEtage <= 0 THEN
+    Erreicht := TRUE;
+ELSE
+    cTimer.Start(_time := cFahrzeit);
+
+    // Prüfen ob Fahrzeit abgelaufen
     IF cTimer.elapsed() THEN
-      iEtage := iEtage - 1
-      xErreicht := TRUE
-    ELSE 
-      xErreicht := FALSE;
+        iEtage := iEtage - 1;
+        Erreicht := TRUE;
+    ELSE
+        Erreicht := FALSE;
     END_IF;
-  END_IF;;
-
+END_IF;
+  xErreicht := Erreicht;
 END_FUNCTION

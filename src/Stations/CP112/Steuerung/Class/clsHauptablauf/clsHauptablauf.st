@@ -20,7 +20,6 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{F8330AE8-2493-4EA9-9D35-C4FD45810E95}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sAnforderung" GUID="{B3AC04EB-1261-4D56-9CD4-578B8F9CCA60}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cHMI" Required="true" Internal="false"/>
 	</Channels>
 </Class>
@@ -28,9 +27,8 @@
 clsHauptablauf : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
-	sAnforderung 	: SvrCh_DINT;
   //Clients:
-	cHMI 	: CltCh_DINT;
+	cHMI 	: CltChCmd_clsHMI;
   //Variables:
   //Functions:
 	
@@ -49,6 +47,9 @@ clsHauptablauf : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
+#pragma usingLtd clsHMI
+
+
 //}}LSL_DECLARATION
 
 
@@ -56,14 +57,13 @@ FUNCTION GLOBAL TAB clsHauptablauf::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSHAUPTABLAUF
 0$UINT, 0$UINT, (SIZEOF(::clsHauptablauf))$UINT, 
-2$UINT, 1$UINT, 0$UINT, 
+1$UINT, 1$UINT, 0$UINT, 
 TO_UDINT(971323912), "clsHauptablauf", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsHauptablauf.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
-(::clsHauptablauf.sAnforderung.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(3339841396), "sAnforderung", 
 //Clients:
-(::clsHauptablauf.cHMI.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(2629516491), "cHMI", 
+(::clsHauptablauf.cHMI.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(2629516491), "cHMI", TO_UDINT(1223415905), "clsHMI", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 

@@ -315,12 +315,12 @@ typedef struct CltChCmd_ASCII_BIN
     ASCII_BIN *pCmd;
   } CltChCmd_ASCII_BIN;
 
-typedef struct CltChCmd_clsAufzugmodul 
+typedef struct CltChCmd_clsAufzugantrieb 
   {
     struct SvrChCmd_DINT *pCh;
     DINT dData;
-    clsAufzugmodul *pCmd;
-  } CltChCmd_clsAufzugmodul;
+    clsAufzugantrieb *pCmd;
+  } CltChCmd_clsAufzugantrieb;
 
 typedef struct CltChCmd_clsEtagenSensorik 
   {
@@ -328,6 +328,27 @@ typedef struct CltChCmd_clsEtagenSensorik
     DINT dData;
     clsEtagenSensorik *pCmd;
   } CltChCmd_clsEtagenSensorik;
+
+typedef struct CltChCmd_clsHauptablauf 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsHauptablauf *pCmd;
+  } CltChCmd_clsHauptablauf;
+
+typedef struct CltChCmd_clsHMI 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsHMI *pCmd;
+  } CltChCmd_clsHMI;
+
+typedef struct CltChCmd_clsMotorControl 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsMotorControl *pCmd;
+  } CltChCmd_clsMotorControl;
 
 typedef struct CltChCmd_clsTimer 
   {

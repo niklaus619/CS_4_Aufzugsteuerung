@@ -21,6 +21,8 @@
 	<Channels>
 		<Server Name="ClassSvr" GUID="{C52F73C5-07D1-4F55-AD73-C3455EF35DBC}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cAnforderung" Required="true" Internal="false"/>
+		<Client Name="cAntriebAufzug" Required="true" Internal="false"/>
+		<Client Name="cAntriebTuer" Required="true" Internal="false"/>
 		<Client Name="cEtagestatus" Required="true" Internal="false"/>
 		<Client Name="cTuerstatus" Required="true" Internal="false"/>
 	</Channels>
@@ -32,7 +34,9 @@ clsAufzugmodul : CLASS
   //Clients:
 	cTuerstatus 	: CltChCmd_clsTuerSensorik;
 	cEtagestatus 	: CltChCmd_clsEtagenSensorik;
-	cAnforderung 	: CltCh_DINT;
+	cAntriebTuer 	: CltChCmd_clsAufzugantrieb;
+	cAntriebAufzug 	: CltChCmd_clsAufzugantrieb;
+	cAnforderung 	: CltChCmd_clsHauptablauf;
   //Variables:
   //Functions:
 	
@@ -43,6 +47,22 @@ clsAufzugmodul : CLASS
 		VAR_OUTPUT
 			state (EAX) 	: UDINT;
 		END_VAR;
+	
+	FUNCTION GLOBAL EtagenHoch
+		VAR_INPUT
+			Anzahl 	: DINT;
+		END_VAR
+		VAR_OUTPUT
+			Erreicht 	: DINT;
+		END_VAR;
+	
+	FUNCTION GLOBAL EtagenRunter
+		VAR_INPUT
+			Anzahl 	: DINT;
+		END_VAR
+		VAR_OUTPUT
+			Erreicht 	: DINT;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -51,7 +71,9 @@ clsAufzugmodul : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
+#pragma usingLtd clsAufzugantrieb
 #pragma usingLtd clsEtagenSensorik
+#pragma usingLtd clsHauptablauf
 #pragma usingLtd clsTuerSensorik
 
 
@@ -62,7 +84,7 @@ FUNCTION GLOBAL TAB clsAufzugmodul::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSAUFZUGMODUL
 0$UINT, 0$UINT, (SIZEOF(::clsAufzugmodul))$UINT, 
-1$UINT, 3$UINT, 0$UINT, 
+1$UINT, 5$UINT, 0$UINT, 
 TO_UDINT(1857403904), "clsAufzugmodul", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
@@ -70,7 +92,9 @@ TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Clients:
 (::clsAufzugmodul.cTuerstatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1125833511), "cTuerstatus", TO_UDINT(712717468), "clsTuerSensorik", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cEtagestatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3983586727), "cEtagestatus", TO_UDINT(206957904), "clsEtagenSensorik", 0$UINT, 0$UINT, 
-(::clsAufzugmodul.cAnforderung.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(3406365320), "cAnforderung", 
+(::clsAufzugmodul.cAntriebTuer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(426174968), "cAntriebTuer", TO_UDINT(1641204752), "clsAufzugantrieb", 0$UINT, 0$UINT, 
+(::clsAufzugmodul.cAntriebAufzug.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(614673068), "cAntriebAufzug", TO_UDINT(1641204752), "clsAufzugantrieb", 0$UINT, 0$UINT, 
+(::clsAufzugmodul.cAnforderung.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3406365320), "cAnforderung", TO_UDINT(971323912), "clsHauptablauf", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 
@@ -117,5 +141,29 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
 	END_VAR
 
 	state := READY;
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsAufzugmodul::EtagenHoch
+	VAR_INPUT
+		Anzahl 	: DINT;
+	END_VAR
+	VAR_OUTPUT
+		Erreicht 	: BOOL;
+	END_VAR
+
+
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsAufzugmodul::EtagenRunter
+	VAR_INPUT
+		Anzahl 	: DINT;
+	END_VAR
+	VAR_OUTPUT
+		Erreicht 	: DINT;
+	END_VAR
 
 END_FUNCTION

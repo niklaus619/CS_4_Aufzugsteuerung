@@ -47,9 +47,15 @@ clsTuerSensorik : CLASS
 			state (EAX) 	: UDINT;
 		END_VAR;
 	
-	FUNCTION GLOBAL zu;
+	FUNCTION GLOBAL zu
+		VAR_OUTPUT
+			istZu 	: DINT;
+		END_VAR;
 	
-	FUNCTION GLOBAL auf;
+	FUNCTION GLOBAL auf
+		VAR_OUTPUT
+			istAuf 	: DINT;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -130,21 +136,30 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsTuerSensorik::zu
-   // Pruefen ob schon zu
+	VAR_OUTPUT
+		istZu 	: DINT;
+	END_VAR
+  
+  // Pruefen ob schon zu
    IF NOT xZu THEN
       cTimer.Start(_time:= cFahrzeit);
       // Pruefen ob schon gefahren
       IF cTimer.elapsed() THEN
         xAuf := False;
         xZu := TRUE;
+        istZu := True;
       ELSE 
         xZu := FALSE;
+        istZu := False;
       END_IF;
   END_IF;
 END_FUNCTION
 
 
 FUNCTION GLOBAL clsTuerSensorik::auf
+	VAR_OUTPUT
+		istAuf 	: DINT;
+	END_VAR
 
    // Pruefen ob schon auf
    IF NOT xAuf THEN

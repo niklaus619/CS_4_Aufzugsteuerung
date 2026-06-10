@@ -226,15 +226,30 @@ TYPE
     dData : DINT;
     pCmd : ^ASCII_BIN;
   END_STRUCT;
-  CltChCmd_clsAufzugmodul : STRUCT
+  CltChCmd_clsAufzugantrieb : STRUCT
     pCh : ^SvrChCmd_DINT;
     dData : DINT;
-    pCmd : ^clsAufzugmodul;
+    pCmd : ^clsAufzugantrieb;
   END_STRUCT;
   CltChCmd_clsEtagenSensorik : STRUCT
     pCh : ^SvrChCmd_DINT;
     dData : DINT;
     pCmd : ^clsEtagenSensorik;
+  END_STRUCT;
+  CltChCmd_clsHauptablauf : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsHauptablauf;
+  END_STRUCT;
+  CltChCmd_clsHMI : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsHMI;
+  END_STRUCT;
+  CltChCmd_clsMotorControl : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsMotorControl;
   END_STRUCT;
   CltChCmd_clsTimer : STRUCT
     pCh : ^SvrChCmd_DINT;

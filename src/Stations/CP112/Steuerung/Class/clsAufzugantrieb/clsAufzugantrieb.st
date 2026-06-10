@@ -20,7 +20,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{8D9AD2EC-2B31-46C7-AFBD-5923DDDA9AD0}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Client Name="cFahrbefehl" Required="true" Internal="false"/>
+		<Client Name="cFahrbefehl" Required="false" Internal="false"/>
 	</Channels>
 </Class>
 *)
@@ -28,7 +28,7 @@ clsAufzugantrieb : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
   //Clients:
-	cFahrbefehl 	: CltChCmd_clsAufzugmodul;
+	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
   //Functions:
 	
@@ -47,7 +47,7 @@ clsAufzugantrieb : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
-#pragma usingLtd clsAufzugmodul
+#pragma usingLtd clsMotorControl
 
 
 //}}LSL_DECLARATION
@@ -63,7 +63,7 @@ TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsAufzugantrieb.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
 //Clients:
-(::clsAufzugantrieb.cFahrbefehl.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1832219461), "cFahrbefehl", TO_UDINT(1857403904), "clsAufzugmodul", 0$UINT, 0$UINT, 
+(::clsAufzugantrieb.cFahrbefehl.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000000$UINT, TO_UDINT(1832219461), "cFahrbefehl", TO_UDINT(3506464711), "clsMotorControl", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 

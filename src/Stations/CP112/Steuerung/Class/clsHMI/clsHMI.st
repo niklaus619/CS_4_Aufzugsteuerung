@@ -21,7 +21,6 @@
 	<Channels>
 		<Server Name="ClassSvr" GUID="{1E1C22E9-F020-4D38-B77E-2A0B7020F266}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Server Name="sUbergabeHMI" GUID="{6CE70355-F024-47E5-8DE2-8F426953621C}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
-		<Server Name="sUebergabeHA" GUID="{56077A3F-D967-4B40-9AAD-F653C4229384}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="sTaster1" Required="false" Internal="false"/>
 		<Client Name="sTaster2" Required="false" Internal="false"/>
 		<Client Name="sTaster3" Required="false" Internal="false"/>
@@ -33,7 +32,6 @@ clsHMI : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
 	sUbergabeHMI 	: SvrCh_DINT;
-	sUebergabeHA 	: SvrCh_DINT;
   //Clients:
 	sTaster1 	: CltCh_DINT;
 	sTaster2 	: CltCh_DINT;
@@ -64,13 +62,12 @@ FUNCTION GLOBAL TAB clsHMI::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSHMI
 0$UINT, 0$UINT, (SIZEOF(::clsHMI))$UINT, 
-3$UINT, 4$UINT, 0$UINT, 
+2$UINT, 4$UINT, 0$UINT, 
 TO_UDINT(1223415905), "clsHMI", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsHMI.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
 (::clsHMI.sUbergabeHMI.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(3751772039), "sUbergabeHMI", 
-(::clsHMI.sUebergabeHA.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1843448892), "sUebergabeHA", 
 //Clients:
 (::clsHMI.sTaster1.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(969630216), "sTaster1", 
 (::clsHMI.sTaster2.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(2697081778), "sTaster2", 

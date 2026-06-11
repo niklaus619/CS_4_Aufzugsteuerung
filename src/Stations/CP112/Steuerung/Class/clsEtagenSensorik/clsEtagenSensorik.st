@@ -20,6 +20,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{98BA7F3D-F58D-458B-895E-CE489FDE0932}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="VisuEtage" GUID="{63336E9B-FACE-4370-872C-13E96F5B9F3C}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cFahrzeit" Required="false" Internal="false"/>
 		<Client Name="cStockwerke" Required="false" Internal="false"/>
 		<Client Name="cTimer" Required="true" Internal="false"/>
@@ -32,6 +33,7 @@ clsEtagenSensorik : CLASS
 	END_TYPE
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
+	VisuEtage 	: SvrCh_DINT;
   //Clients:
 	cTimer 	: CltChCmd_clsTimer;
 	cFahrzeit 	: CltCh_UDINT;
@@ -51,12 +53,17 @@ clsEtagenSensorik : CLASS
 	
 	FUNCTION GLOBAL hoch
 		VAR_OUTPUT
-			Erreicht 	: DINT;
+			Erreicht 	: BOOL;
 		END_VAR;
 	
 	FUNCTION GLOBAL runter
 		VAR_OUTPUT
-			Erreicht 	: DINT;
+			Erreicht 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL AktEtage
+		VAR_OUTPUT
+			iOut 	: DINT;
 		END_VAR;
   //Tables:
 	FUNCTION @STD
@@ -76,11 +83,12 @@ FUNCTION GLOBAL TAB clsEtagenSensorik::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSETAGENSENSORIK
 0$UINT, 0$UINT, (SIZEOF(::clsEtagenSensorik))$UINT, 
-1$UINT, 3$UINT, 0$UINT, 
+2$UINT, 3$UINT, 0$UINT, 
 TO_UDINT(206957904), "clsEtagenSensorik", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsEtagenSensorik.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
+(::clsEtagenSensorik.VisuEtage.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2202491676), "VisuEtage", 
 //Clients:
 (::clsEtagenSensorik.cTimer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1671967446), "cTimer", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
 (::clsEtagenSensorik.cFahrzeit.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(840715053), "cFahrzeit", 
@@ -183,4 +191,14 @@ ELSE
     END_IF;
 END_IF;
   xErreicht := Erreicht;
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsEtagenSensorik::AktEtage
+	VAR_OUTPUT
+		iOut 	: DINT;
+	END_VAR
+iOut := iEtage; //Noch unklar ob und wie iEtage bei Steuerung aufstart initialisiert wird
+
+
 END_FUNCTION

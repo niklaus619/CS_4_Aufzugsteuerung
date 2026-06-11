@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<File CRC="9EFDA44B" Version="1.1" SubVersion="2">
+<File CRC="0761E8DE" Version="1.1" SubVersion="2">
 	<Types>
 		<Type Name="_DRIVETYPE" Datatype="UDINT" TypeId="ENUM">
 			<Elements>
@@ -943,7 +943,7 @@
 		<Class
 			Name     = "clsHMI"
 			Datatype = "DINT"
-			Size     = "84"
+			Size     = "144"
 			Guid     = "7FA8BFF6-E8AB-4A85-9515-8DBAD82A5670">
 			<Servers>
 				<Server Name="sUbergabeHMI" Datatype="DINT" Guid="6CE70355-F024-47E5-8DE2-8F426953621C" WriteProtected="false"/>

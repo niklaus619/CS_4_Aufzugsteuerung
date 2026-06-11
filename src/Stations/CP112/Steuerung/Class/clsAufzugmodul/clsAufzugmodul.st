@@ -53,7 +53,7 @@ clsAufzugmodul : CLASS
 			Anzahl 	: DINT;
 		END_VAR
 		VAR_OUTPUT
-			Erreicht 	: DINT;
+			Erreicht 	: BOOL;
 		END_VAR;
 	
 	FUNCTION GLOBAL EtagenRunter

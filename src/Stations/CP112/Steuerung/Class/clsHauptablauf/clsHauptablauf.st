@@ -114,7 +114,7 @@ FUNCTION clsHauptablauf::@STD
 END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
-99
+
 
 FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
 	VAR_INPUT
@@ -143,7 +143,7 @@ IF cHMI.Etage1() THEN
   iEtage := 0;
 ELSIF cHMI.Etage2() THEN
   iEtage := 1;
-IF cHMI.Etage3() THEN
+ELSIF cHMI.Etage3() THEN
   iEtage := 2;
 ELSIF cHMI.Etage4() THEN
   iEtage := 3;

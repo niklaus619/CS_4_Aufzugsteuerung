@@ -56,7 +56,7 @@ clsTuerSensorik : CLASS
 	
 	FUNCTION GLOBAL auf
 		VAR_OUTPUT
-			istAuf 	: DINT;
+			istAuf 	: BOOL;
 		END_VAR;
   //Tables:
 	FUNCTION @STD
@@ -147,8 +147,9 @@ END_FUNCTION
 
 FUNCTION GLOBAL clsTuerSensorik::zu
 	VAR_OUTPUT
-		istZu 	: BOOL;
+		istZu 	: DINT;
 	END_VAR
+
   
   // Pruefen ob schon zu
    IF NOT xZu THEN

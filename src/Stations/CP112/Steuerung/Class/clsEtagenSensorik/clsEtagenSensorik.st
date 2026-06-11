@@ -20,7 +20,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{98BA7F3D-F58D-458B-895E-CE489FDE0932}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="VisuEtage" GUID="{63336E9B-FACE-4370-872C-13E96F5B9F3C}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="VisuEtage" GUID="{63336E9B-FACE-4370-872C-13E96F5B9F3C}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Client Name="cFahrzeit" Required="false" Internal="false"/>
 		<Client Name="cStockwerke" Required="false" Internal="false"/>
 		<Client Name="cTimer" Required="true" Internal="false"/>
@@ -119,6 +119,13 @@ FUNCTION clsEtagenSensorik::@STD
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
 	IF ClassSvr.pMeth THEN
+		ret_code	:= C_OK;
+	ELSE
+		ret_code	:= C_OUTOF_NEAR;
+		RETURN;
+	END_IF;
+	VisuEtage.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF VisuEtage.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;

@@ -20,7 +20,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{8B8661B5-0101-4DCF-BCD2-5425B48FE841}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="VisuTuer" GUID="{EEE2F83E-5824-43C8-9793-FA2A7292B577}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="VisuTuer" GUID="{EEE2F83E-5824-43C8-9793-FA2A7292B577}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Client Name="cFahrzeit" Required="false" Internal="false"/>
 		<Client Name="cTimer" Required="true" Internal="false"/>
 	</Channels>
@@ -111,6 +111,13 @@ FUNCTION clsTuerSensorik::@STD
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
 	IF ClassSvr.pMeth THEN
+		ret_code	:= C_OK;
+	ELSE
+		ret_code	:= C_OUTOF_NEAR;
+		RETURN;
+	END_IF;
+	VisuTuer.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF VisuTuer.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;

@@ -39,6 +39,21 @@ clsHauptablauf : CLASS
 		VAR_OUTPUT
 			state (EAX) 	: UDINT;
 		END_VAR;
+	
+	FUNCTION GLOBAL Anforderung
+		VAR_OUTPUT
+			iEtage 	: DINT;
+		END_VAR;
+	
+	FUNCTION GLOBAL TuerZu
+		VAR_OUTPUT
+			xOut 	: DINT;
+		END_VAR;
+	
+	FUNCTION GLOBAL TuerAuf
+		VAR_OUTPUT
+			xOut 	: DINT;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -99,7 +114,7 @@ FUNCTION clsHauptablauf::@STD
 END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
-
+99
 
 FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
 	VAR_INPUT
@@ -108,7 +123,49 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
 	VAR_OUTPUT
 		state (EAX) 	: UDINT;
 	END_VAR
+  
+  
 
 	state := READY;
 
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHauptablauf::Anforderung
+	VAR_OUTPUT
+		iEtage 	: DINT;
+	END_VAR
+    
+  //Bit decoding von HMI
+  //Muss noch Enum erstellt werden
+  
+IF cHMI.Etage1() THEN
+  iEtage := 0;
+ELSIF cHMI.Etage2() THEN
+  iEtage := 1;
+IF cHMI.Etage3() THEN
+  iEtage := 2;
+ELSIF cHMI.Etage4() THEN
+  iEtage := 3;
+END_IF;
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHauptablauf::TuerZu
+	VAR_OUTPUT
+		xOut 	: DINT;
+	END_VAR
+  
+  //Weitergabe von IO
+xOut := cHMI.Tuerzu();
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHauptablauf::TuerAuf
+	VAR_OUTPUT
+		xOut 	: DINT;
+	END_VAR
+    
+  //Weitergabe von IO
+xOut := cHMI.Tuerauf();
 END_FUNCTION

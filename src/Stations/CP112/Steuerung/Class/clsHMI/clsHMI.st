@@ -21,10 +21,14 @@
 	<Channels>
 		<Server Name="ClassSvr" GUID="{1E1C22E9-F020-4D38-B77E-2A0B7020F266}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Server Name="sUbergabeHMI" GUID="{6CE70355-F024-47E5-8DE2-8F426953621C}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
-		<Client Name="sTaster1" Required="false" Internal="false"/>
-		<Client Name="sTaster2" Required="false" Internal="false"/>
-		<Client Name="sTaster3" Required="false" Internal="false"/>
-		<Client Name="sTaster4" Required="false" Internal="false"/>
+		<Client Name="cTaster1" Required="false" Internal="false"/>
+		<Client Name="cTaster2" Required="false" Internal="false"/>
+		<Client Name="cTaster3" Required="false" Internal="false"/>
+		<Client Name="cTaster4" Required="false" Internal="false"/>
+		<Client Name="cTimer1" Required="true" Internal="false"/>
+		<Client Name="cTimer2" Required="true" Internal="false"/>
+		<Client Name="cTimer3" Required="true" Internal="false"/>
+		<Client Name="cTimer4" Required="true" Internal="false"/>
 	</Channels>
 </Class>
 *)
@@ -33,11 +37,25 @@ clsHMI : CLASS
 	ClassSvr 	: SvrChCmd_DINT;
 	sUbergabeHMI 	: SvrCh_DINT;
   //Clients:
-	sTaster1 	: CltCh_DINT;
-	sTaster2 	: CltCh_DINT;
-	sTaster3 	: CltCh_DINT;
-	sTaster4 	: CltCh_DINT;
+	cTaster1 	: CltCh_DINT;
+	cTaster2 	: CltCh_DINT;
+	cTaster3 	: CltCh_DINT;
+	cTaster4 	: CltCh_DINT;
+	cTimer1 	: CltChCmd_clsTimer;
+	cTimer2 	: CltChCmd_clsTimer;
+	cTimer3 	: CltChCmd_clsTimer;
+	cTimer4 	: CltChCmd_clsTimer;
   //Variables:
+		xEtage1 	: BOOL;
+		xEtage2 	: DINT;
+		xEtage3 	: DINT;
+		xEtage4 	: DINT;
+		xAuf 	: DINT;
+		xZu 	: DINT;
+		xTaster1old 	: DINT;
+		xTaster2old 	: DINT;
+		xTaster3old 	: DINT;
+		xTaster4old 	: DINT;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -47,6 +65,26 @@ clsHMI : CLASS
 		VAR_OUTPUT
 			state (EAX) 	: UDINT;
 		END_VAR;
+	
+	FUNCTION GLOBAL Etage1
+		VAR_OUTPUT
+			xOut 	: DINT;
+		END_VAR;
+	
+	FUNCTION GLOBAL Etage2
+		VAR_OUTPUT
+			xOut 	: DINT;
+		END_VAR;
+	
+	FUNCTION GLOBAL Etage3
+		VAR_OUTPUT
+			xOut 	: DINT;
+		END_VAR;
+	
+	FUNCTION GLOBAL Etage4
+		VAR_OUTPUT
+			xOut 	: DINT;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -55,6 +93,9 @@ clsHMI : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
+#pragma usingLtd clsTimer
+
+
 //}}LSL_DECLARATION
 
 
@@ -62,17 +103,21 @@ FUNCTION GLOBAL TAB clsHMI::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSHMI
 0$UINT, 0$UINT, (SIZEOF(::clsHMI))$UINT, 
-2$UINT, 4$UINT, 0$UINT, 
+2$UINT, 8$UINT, 0$UINT, 
 TO_UDINT(1223415905), "clsHMI", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsHMI.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
 (::clsHMI.sUbergabeHMI.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(3751772039), "sUbergabeHMI", 
 //Clients:
-(::clsHMI.sTaster1.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(969630216), "sTaster1", 
-(::clsHMI.sTaster2.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(2697081778), "sTaster2", 
-(::clsHMI.sTaster3.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(3620012836), "sTaster3", 
-(::clsHMI.sTaster4.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(1235326599), "sTaster4", 
+(::clsHMI.cTaster1.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(1164989219), "cTaster1", 
+(::clsHMI.cTaster2.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(3698918041), "cTaster2", 
+(::clsHMI.cTaster3.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(2877174287), "cTaster3", 
+(::clsHMI.cTaster4.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(890939308), "cTaster4", 
+(::clsHMI.cTimer1.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3960418404), "cTimer1", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
+(::clsHMI.cTimer2.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1963352542), "cTimer2", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
+(::clsHMI.cTimer3.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(33640776), "cTimer3", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
+(::clsHMI.cTimer4.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(2623915243), "cTimer4", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 
@@ -124,7 +169,57 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	VAR_OUTPUT
 		state (EAX) 	: UDINT;
 	END_VAR
+  //Flankenerkennug
+  if cTaster1 <> xTaster1old then
+    cTimer1.start(_time:=1000);
+  end_if;
+  
+  if cTimer1.remaining() then
+    Etage1 := true;
+    
+    
+    
+    
+  
+  
+  
+  
+  
 
 	state := READY;
 
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHMI::Etage1
+	VAR_OUTPUT
+		xOut 	: DINT;
+	END_VAR
+  xOut := Etage1 //Erkennung falls vom HMI getastet oder von Schalter
+  
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHMI::Etage2
+	VAR_OUTPUT
+		xOut 	: DINT;
+	END_VAR
+  xOut := Etage1 //Erkennung falls vom HMI getastet oder von Schalter
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHMI::Etage4
+	VAR_OUTPUT
+		xOut 	: DINT;
+	END_VAR
+  xOut := Etage1 //Erkennung falls vom HMI getastet oder von Schalter
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHMI::Etage3
+	VAR_OUTPUT
+		xOut 	: DINT;
+	END_VAR
+  xOut := Etage1 //Erkennung falls vom HMI getastet oder von Schalter
 END_FUNCTION

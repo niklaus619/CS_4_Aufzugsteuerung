@@ -30,6 +30,7 @@ clsAufzugantrieb : CLASS
   //Clients:
 	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
+		iStep 	: DINT;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -38,6 +39,16 @@ clsAufzugantrieb : CLASS
 		END_VAR
 		VAR_OUTPUT
 			state (EAX) 	: UDINT;
+		END_VAR;
+	
+	FUNCTION GLOBAL FahrtPos
+		VAR_INPUT
+			xIn 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL FahrtNeg
+		VAR_INPUT
+			xIn 	: BOOL;
 		END_VAR;
   //Tables:
 	FUNCTION @STD
@@ -110,5 +121,21 @@ FUNCTION VIRTUAL GLOBAL clsAufzugantrieb::CyWork
 	END_VAR
 
 	state := READY;
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsAufzugantrieb::FahrtPos
+	VAR_INPUT
+		xIn 	: BOOL;
+	END_VAR
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsAufzugantrieb::FahrtNeg
+	VAR_INPUT
+		xIn 	: BOOL;
+	END_VAR
 
 END_FUNCTION

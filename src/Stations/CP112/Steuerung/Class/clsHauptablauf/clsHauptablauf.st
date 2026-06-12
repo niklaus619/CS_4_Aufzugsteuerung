@@ -41,8 +41,11 @@ clsHauptablauf : CLASS
 		END_VAR;
 	
 	FUNCTION GLOBAL Anforderung
+		VAR_INPUT
+			iAktEtage 	: DINT;
+		END_VAR
 		VAR_OUTPUT
-			iEtage 	: DINT;
+			iAnfragen 	: DINT;
 		END_VAR;
 	
 	FUNCTION GLOBAL TuerZu
@@ -132,22 +135,53 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsHauptablauf::Anforderung
+	VAR_INPUT
+		iAktEtage 	: DINT;
+	END_VAR
 	VAR_OUTPUT
-		iEtage 	: DINT;
+		iAnfragen 	: DINT;
 	END_VAR
     
   //Bit decoding von HMI
   //Muss noch Enum erstellt werden
+  //Wenn Anforderung getastet wird, muss diese in ein bit gespeichert werden und evaluiert werden,
+  //welche Fahrt abgearbeitet wurde und dieses Bit dann wieder löschen
   
+  
+  //Anfragen Speichern
 IF cHMI.Etage1() THEN
-  iEtage := 0;
-ELSIF cHMI.Etage2() THEN
-  iEtage := 1;
-ELSIF cHMI.Etage3() THEN
-  iEtage := 2;
-ELSIF cHMI.Etage4() THEN
-  iEtage := 3;
+    iAnfragen := iAnfragen OR 16#0001;   
 END_IF;
+
+IF cHMI.Etage2() THEN
+    iAnfragen := iAnfragen OR 16#0002;   
+END_IF;
+
+IF cHMI.Etage3() THEN
+    iAnfragen := iAnfragen OR 16#0004;   
+END_IF;
+
+IF cHMI.Etage4() THEN
+    iAnfragen := iAnfragen OR 16#0008;   
+END_IF;
+
+  //Anfragen zurüecksetzen
+IF (iAktEtage AND 16#0001) <> 0 THEN
+    iAktEtage := iAktEtage AND NOT 16#0001;
+END_IF;
+
+IF (iAktEtage AND 16#0002) <> 0 THEN
+    iAktEtage := iAktEtage AND NOT 16#0002;
+END_IF;
+
+IF (iAktEtage AND 16#0004) <> 0 THEN
+    iAktEtage := iAktEtage AND NOT 16#0004;
+END_IF;
+
+IF (iAktEtage AND 16#0008) <> 0 THEN
+    iAktEtage := iAktEtage AND NOT 16#0008;
+END_IF;
+
 END_FUNCTION
 
 

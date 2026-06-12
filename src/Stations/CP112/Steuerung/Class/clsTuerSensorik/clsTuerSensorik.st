@@ -50,11 +50,17 @@ clsTuerSensorik : CLASS
 		END_VAR;
 	
 	FUNCTION GLOBAL zu
+		VAR_INPUT
+			schliessen 	: BOOL;
+		END_VAR
 		VAR_OUTPUT
 			istZu 	: DINT;
 		END_VAR;
 	
 	FUNCTION GLOBAL auf
+		VAR_INPUT
+			oeffnen 	: BOOL;
+		END_VAR
 		VAR_OUTPUT
 			istAuf 	: BOOL;
 		END_VAR;
@@ -146,41 +152,69 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsTuerSensorik::zu
+	VAR_INPUT
+		schliessen 	: BOOL;
+	END_VAR
 	VAR_OUTPUT
 		istZu 	: DINT;
 	END_VAR
 
   
-  // Pruefen ob schon zu
-   IF NOT xZu THEN
-      cTimer.Start(_time:= cFahrzeit);
-      // Pruefen ob schon gefahren
-      IF cTimer.elapsed() THEN
-        xAuf := False;
-        xZu := TRUE;
-        istZu := True;
-      ELSE 
-        xZu := FALSE;
-        istZu := False;
+  IF NOT xZu THEN
+      //pruefen ob schon zu
+      IF schliessen THEN
+
+          IF NOT istZu THEN
+              cTimer.Start(_time := cFahrzeit);
+              istZu := TRUE; 
+          END_IF;
+
+          IF cTimer.elapsed() THEN
+              xAuf := FALSE;
+              xZu := TRUE;
+              istZu := TRUE;
+          END_IF;
+
+      ELSE
+          istZu := xZu;
       END_IF;
+
+  ELSE
+      istZu := xZu;
   END_IF;
+
+
 END_FUNCTION
 
 
 FUNCTION GLOBAL clsTuerSensorik::auf
+	VAR_INPUT
+		oeffnen 	: BOOL;
+	END_VAR
 	VAR_OUTPUT
 		istAuf 	: BOOL;
 	END_VAR
 
-   // Pruefen ob schon auf
-   IF NOT xAuf THEN
-      cTimer.Start(_time:= cFahrzeit);
-      // Pruefen ob schon gefahren
-      IF cTimer.elapsed() THEN
-        xZu := False;
-        xAuf := TRUE;
-      ELSE 
-        xAuf := FALSE;
+  // Pruefen ob schon offen
+  IF NOT xAuf THEN
+
+      IF oeffnen THEN
+          cTimer.Start(_time := cFahrzeit);
+
+          IF cTimer.elapsed() THEN
+              xZu := FALSE;
+              xAuf := TRUE;
+              istAuf := TRUE;
+          ELSE
+              istAuf := FALSE;
+          END_IF;
+
+      ELSE
+          istAuf := xAuf;
       END_IF;
-   END_IF;
+
+  ELSE
+      istAuf := TRUE;
+  END_IF;
+
 END_FUNCTION

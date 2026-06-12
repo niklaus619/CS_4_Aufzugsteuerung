@@ -18,7 +18,7 @@
 			Name       = "clsAufzugmodul1"
 			GUID       = "{33309781-816D-4182-9BA2-D13739D47D47}"
 			Class      = "clsAufzugmodul"
-			Position   = "(2850,660)"
+			Position   = "(2340,660)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
@@ -35,7 +35,7 @@
 			GUID       = "{161C8F9C-70DE-48E6-A140-C558235AA2BF}"
 			Class      = "clsEtagenSensorik"
 			Position   = "(1410,630)"
-			Visualized = "false"
+			Visualized = "true"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
@@ -154,7 +154,7 @@
 			GUID       = "{F2E6685D-EBB9-428D-9D74-9E3DEFC9E11D}"
 			Class      = "clsTuerSensorik"
 			Position   = "(1410,420)"
-			Visualized = "false"
+			Visualized = "true"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
@@ -168,13 +168,12 @@
 	</Comments>
 	<!-- List of Connections in this network -->
 	<Connections>
-		<Connection Source="clsAufzugmodul1.cAntriebAufzug" Destination="clsAufzugantrieb.ClassSvr" Vertices="(2850,930),(1710,1140),"/>
-		<Connection Source="clsAufzugmodul1.cAntriebTuer" Destination="clsTuerantrieb.ClassSvr" Vertices="(2850,870),(1710,990),"/>
-		<Connection Source="clsAufzugmodul1.cAnforderung" Destination="clsHauptablauf1.ClassSvr" Vertices="(2850,990),(1710,1290),"/>
+		<Connection Source="clsAufzugmodul1.cAntriebAufzug" Destination="clsAufzugantrieb.ClassSvr" Vertices="(2340,930),(1710,1140),"/>
+		<Connection Source="clsAufzugmodul1.cAntriebTuer" Destination="clsTuerantrieb.ClassSvr" Vertices="(2340,870),(1710,990),"/>
+		<Connection Source="clsAufzugmodul1.cAnforderung" Destination="clsHauptablauf1.ClassSvr" Vertices="(2340,990),(1710,1290),"/>
 		<Connection Source="clsHauptablauf1.cHMI" Destination="clsHMI1.ClassSvr" Vertices="(1410,1290),(1290,1290),"/>
-		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2850,750),(1710,510),"/>
-		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2850,810),(1710,720),"/>
-		<Connection Source="clsHMI1.cTaster1" Destination="__IO_Element11" Vertices="(990,1290),(540,1140)," IOObject="IO_Element1"/>
+		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2340,750),(1710,510),"/>
+		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2340,810),(1710,720),"/>
 		<Connection Source="clsHMI1.cTaster2" Destination="__IO_Element22" Vertices="(990,1350),(540,1230)," IOObject="IO_Element2"/>
 		<Connection Source="clsHMI1.cTaster3" Destination="__IO_Element31" Vertices="(990,1410),(540,1320)," IOObject="IO_Element3"/>
 		<Connection Source="clsHMI1.cTaster4" Destination="__IO_Element41" Vertices="(990,1470),(540,1410),(540,1410)," IOObject="IO_Element4"/>
@@ -187,7 +186,7 @@
 	</Connections>
 	<!-- List of temp data objects in this network -->
 	<IOObjects>
-		<IOObject KeyName="__IO_Element11" Name="IO_Element1" Position="(240,1110)" Client="clsHMI1.cTaster1"/>
+		<IOObject KeyName="__IO_Element11" Name="IO_Element1" Position="(240,1110)"/>
 		<IOObject KeyName="__IO_Element22" Name="IO_Element2" Position="(240,1200)" Client="clsHMI1.cTaster2"/>
 		<IOObject KeyName="__IO_Element31" Name="IO_Element3" Position="(240,1290)" Client="clsHMI1.cTaster3"/>
 		<IOObject KeyName="__IO_Element41" Name="IO_Element4" Position="(240,1380)" Client="clsHMI1.cTaster4"/>

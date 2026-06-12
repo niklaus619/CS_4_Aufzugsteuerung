@@ -40,7 +40,7 @@
 		TempObj    = "true">
 		<!-- List of Connections -->
 		<IOConnections>
-			<IOConnection ObjSrv="DM1611" Server="Input1" ObjClt="clsHMI1" Client="cTaster1" IOI="Input" Type="Digital" SortIndex="1" KeyName="000006" Advanced="0"/>
+			<IOConnection ObjSrv="DM1611" Server="Input1" IOI="Input" Type="Digital" SortIndex="1" KeyName="000006" Advanced="0"/>
 		</IOConnections>
 	</Entry>
 	<Entry

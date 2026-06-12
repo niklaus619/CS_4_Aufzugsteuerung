@@ -52,11 +52,17 @@ clsEtagenSensorik : CLASS
 		END_VAR;
 	
 	FUNCTION GLOBAL hoch
+		VAR_INPUT
+			fahre 	: DINT;
+		END_VAR
 		VAR_OUTPUT
 			Erreicht 	: BOOL;
 		END_VAR;
 	
 	FUNCTION GLOBAL runter
+		VAR_INPUT
+			fahre 	: DINT;
+		END_VAR
 		VAR_OUTPUT
 			Erreicht 	: BOOL;
 		END_VAR;
@@ -156,9 +162,12 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsEtagenSensorik::hoch
-VAR_OUTPUT
-    Erreicht : BOOL;
-END_VAR
+	VAR_INPUT
+		fahre 	: DINT;
+	END_VAR
+	VAR_OUTPUT
+		Erreicht 	: BOOL;
+	END_VAR
 
 // Prüfen ob bereits in der obersten Etage
 IF iEtage >= cStockwerke THEN
@@ -179,9 +188,12 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsEtagenSensorik::runter
-VAR_OUTPUT
-    Erreicht : BOOL;
-END_VAR
+	VAR_INPUT
+		fahre 	: DINT;
+	END_VAR
+	VAR_OUTPUT
+		Erreicht 	: BOOL;
+	END_VAR
 
 // Prüfen ob bereits in der untersten Etage
 IF iEtage <= 0 THEN

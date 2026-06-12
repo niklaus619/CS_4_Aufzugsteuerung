@@ -38,6 +38,13 @@ clsAufzugmodul : CLASS
 	cAntriebAufzug 	: CltChCmd_clsAufzugantrieb;
 	cAnforderung 	: CltChCmd_clsHauptablauf;
   //Variables:
+		iStep 	: DINT;
+		iAktEtage 	: DINT;
+		xZielOben 	: BOOL;
+		xZielUnten 	: BOOL;
+		iAnforderung 	: DINT;
+		xFahrtAuf 	: BOOL;
+		xFahrtAb 	: BOOL;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -46,22 +53,6 @@ clsAufzugmodul : CLASS
 		END_VAR
 		VAR_OUTPUT
 			state (EAX) 	: UDINT;
-		END_VAR;
-	
-	FUNCTION GLOBAL EtagenHoch
-		VAR_INPUT
-			Anzahl 	: DINT;
-		END_VAR
-		VAR_OUTPUT
-			Erreicht 	: BOOL;
-		END_VAR;
-	
-	FUNCTION GLOBAL EtagenRunter
-		VAR_INPUT
-			Anzahl 	: DINT;
-		END_VAR
-		VAR_OUTPUT
-			Erreicht 	: DINT;
 		END_VAR;
   //Tables:
 	FUNCTION @STD
@@ -141,29 +132,113 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
 	END_VAR
 
 	state := READY;
+//Client verlinkung
+//cTuerstatus := cTuerstatus.Read();
+//cEtagestatus := cEtagestatus.Read();
 
-END_FUNCTION
+//Einfuegen iStep := 0; als Init ist mir noch unklar
 
-
-FUNCTION GLOBAL clsAufzugmodul::EtagenHoch
-	VAR_INPUT
-		Anzahl 	: DINT;
-	END_VAR
-	VAR_OUTPUT
-		Erreicht 	: BOOL;
-	END_VAR
-
-
-
-END_FUNCTION
+//Aktuelle Etage an Hauptablauf uebergeben.
+//Etageist nur aktualisiert wenn die Tür offen war.
+IF cEtagestatus.AktEtage() AND cTuerstatus.auf(oeffnen:= FALSE) THEN
+  iAktEtage := cEtagestatus.AktEtage();
+END_IF;
 
 
-FUNCTION GLOBAL clsAufzugmodul::EtagenRunter
-	VAR_INPUT
-		Anzahl 	: DINT;
-	END_VAR
-	VAR_OUTPUT
-		Erreicht 	: DINT;
-	END_VAR
+Case iStep of
+  
+  
+  0: // Initialschritt
+  
+  cAntriebTuer.FahrtNeg(xIn:= False);
+  cAntriebAufzug.FahrtNeg(xIn:= False);
+  
+  iStep := 10;
+  
+  10: //Fahranforderung
+  
+    IF cAnforderung.Anforderung(iAktEtage:=iAktEtage) > 0 THEN
+      iStep := 20;
+    END_IF;
+  
+  20: // Fahrtrichtung evaluieren
+
+      iAnforderung := cAnforderung.Anforderung(iAktEtage := iAktEtage);
+
+      xZielOben := FALSE;
+      xZielUnten := FALSE;
+
+      CASE iAktEtage OF
+
+          0:
+              IF (iAnforderung AND 16#000E) <> 0 THEN
+                  xZielOben := TRUE;     // Etage 1, 2 oder 3
+              END_IF;
+
+          1:
+              IF (iAnforderung AND 16#000C) <> 0 THEN
+                  xZielOben := TRUE;     // Etage 2 oder 3
+              END_IF;
+
+              IF (iAnforderung AND 16#0001) <> 0 THEN
+                  xZielUnten := TRUE;    // Etage 0
+              END_IF;
+
+          2:
+              IF (iAnforderung AND 16#0008) <> 0 THEN
+                  xZielOben := TRUE;     // Etage 3
+              END_IF;
+
+              IF (iAnforderung AND 16#0003) <> 0 THEN
+                  xZielUnten := TRUE;    // Etage 0 oder 1
+              END_IF;
+
+          3:
+              IF (iAnforderung AND 16#0007) <> 0 THEN
+                  xZielUnten := TRUE;    // Etage 0, 1 oder 2
+              END_IF;
+
+      END_CASE;
+  
+      // Fahrt aufgeben
+      IF xZielOben THEN
+          xFahrtAuf := TRUE;
+          xFahrtAb := FALSE;
+          iStep := 30;
+
+      ELSIF xZielUnten THEN
+          xFahrtAuf := FALSE;
+          xFahrtAb := TRUE;
+          iStep := 40;
+
+      ELSE
+          xFahrtAuf := FALSE;
+          xFahrtAb := FALSE;
+          iStep := 10;
+      END_IF;
+      
+  30: // Fahrt nach oben
+    
+      //prüfen ob Türe zu
+      IF cTuerstatus.zu(schliessen:= False) THEN
+        
+        iStep := 31;
+      ELSE// zu machen
+        cTuerstatus.zu(schliessen:= True);
+        cAntriebTuer.FahrtPos(xIn:=TRUE);// schliessen
+      END_IF;
+  
+  
+  31: // Tuere geschlossen
+      cAntriebTuer.FahrtPos(xIn:=FALSE);// schliessen
+      
+      
+      
+  
+  40: // Fahrt nach unten
+  
+  
+END_CASE;  
+
 
 END_FUNCTION

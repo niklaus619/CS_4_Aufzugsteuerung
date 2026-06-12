@@ -184,7 +184,7 @@ FUNCTION GLOBAL clsTuerSensorik::istzu
 	VAR_OUTPUT
 		xOut 	: BOOL;
 	END_VAR
- xOut := xZu
+ xOut := xZu;
 END_FUNCTION
 
 
@@ -192,5 +192,5 @@ FUNCTION GLOBAL clsTuerSensorik::istauf
 	VAR_OUTPUT
 		xOut 	: BOOL;
 	END_VAR
- xOut := xAuf
+ xOut := xAuf;
 END_FUNCTION

@@ -187,9 +187,6 @@
 		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2340,750),(1710,510),"/>
 		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2340,810),(1710,720),"/>
 		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2340,1050),(1726,1440),"/>
-		<Connection Source="clsHMI1.cTaster2" Destination="__IO_Element22" Vertices="(990,1350),(540,1230)," IOObject="IO_Element2"/>
-		<Connection Source="clsHMI1.cTaster3" Destination="__IO_Element31" Vertices="(990,1410),(540,1320)," IOObject="IO_Element3"/>
-		<Connection Source="clsHMI1.cTaster4" Destination="__IO_Element41" Vertices="(990,1470),(540,1410),(540,1410)," IOObject="IO_Element4"/>
 		<Connection Source="clsTuerSensorik1.cTimer" Destination="clsSimFahrzeit1.ClassSvr" Vertices="(1410,510),(1276,510),"/>
 		<Connection Source="clsEtagen1.cTimer" Destination="clsSimFahrzeit2.ClassSvr" Vertices="(1410,720),(1276,720),"/>
 		<Connection Source="clsHMI1.cTimer1" Destination="clsImpuls1.ClassSvr" Vertices="(990,1530),(556,1560),"/>
@@ -200,9 +197,9 @@
 	<!-- List of temp data objects in this network -->
 	<IOObjects>
 		<IOObject KeyName="__IO_Element11" Name="IO_Element1" Position="(240,1110)"/>
-		<IOObject KeyName="__IO_Element22" Name="IO_Element2" Position="(240,1200)" Client="clsHMI1.cTaster2"/>
-		<IOObject KeyName="__IO_Element31" Name="IO_Element3" Position="(240,1290)" Client="clsHMI1.cTaster3"/>
-		<IOObject KeyName="__IO_Element41" Name="IO_Element4" Position="(240,1380)" Client="clsHMI1.cTaster4"/>
+		<IOObject KeyName="__IO_Element22" Name="IO_Element2" Position="(240,1200)"/>
+		<IOObject KeyName="__IO_Element31" Name="IO_Element3" Position="(240,1290)"/>
+		<IOObject KeyName="__IO_Element41" Name="IO_Element4" Position="(240,1380)"/>
 	</IOObjects>
 	<!-- Headerfiles -->
 	<Options>

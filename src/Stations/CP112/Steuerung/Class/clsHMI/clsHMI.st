@@ -46,10 +46,10 @@ clsHMI : CLASS
 	cTimer3 	: CltChCmd_clsTimer;
 	cTimer4 	: CltChCmd_clsTimer;
   //Variables:
+		xEtage0 	: BOOL;
 		xEtage1 	: BOOL;
 		xEtage2 	: BOOL;
 		xEtage3 	: BOOL;
-		xEtage4 	: BOOL;
 		xAuf 	: BOOL;
 		xZu 	: BOOL;
 		xTaster1old 	: DINT;
@@ -66,6 +66,11 @@ clsHMI : CLASS
 			state (EAX) 	: UDINT;
 		END_VAR;
 	
+	FUNCTION GLOBAL Etage0
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
+	
 	FUNCTION GLOBAL Etage1
 		VAR_OUTPUT
 			xOut 	: BOOL;
@@ -77,11 +82,6 @@ clsHMI : CLASS
 		END_VAR;
 	
 	FUNCTION GLOBAL Etage3
-		VAR_OUTPUT
-			xOut 	: BOOL;
-		END_VAR;
-	
-	FUNCTION GLOBAL Etage4
 		VAR_OUTPUT
 			xOut 	: BOOL;
 		END_VAR;
@@ -190,32 +190,40 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
   //Flankenerkennug
   if cTaster1 <> xTaster1old then
     cTimer1.start(_time:=1000);
-    xTaster1old := ctaster1;
+    IF cTimer1.elapsed() THEN
+     xTaster1old := ctaster1;
+    END_IF;
   end_if;
 
   //Flankenerkennug2
   if cTaster2 <> xTaster2old then
     cTimer2.start(_time:=1000);
-    xTaster2old := ctaster2;
+    IF cTimer2.elapsed() THEN
+     xTaster1old := ctaster1;
+    END_IF;
   end_if;
   
   //Flankenerkennug3
   if cTaster3 <> xTaster3old then
     cTimer3.start(_time:=1000);
-    xTaster3old := ctaster3;
+    IF cTimer3.elapsed() THEN
+     xTaster1old := ctaster1;
+    END_IF;
   end_if;
   
   //Flankenerkennug4
   if cTaster4 <> xTaster4old then
     cTimer4.start(_time:=1000);
-    xTaster4old := ctaster4;
+    IF cTimer4.elapsed() THEN
+     xTaster1old := ctaster1;
+    END_IF;
   end_if;
   
   // Output Verlinkung
-  xEtage1 := cTimer1.running();
-  xEtage2 := cTimer2.running();
-  xEtage3 := cTimer3.running();    
-  xEtage4 := cTimer4.running();    
+  xEtage0 := cTimer1.running();
+  xEtage1 := cTimer2.running();
+  xEtage2 := cTimer3.running();    
+  xEtage3 := cTimer4.running();    
     
 
   
@@ -227,38 +235,38 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 END_FUNCTION
 
 
+FUNCTION GLOBAL clsHMI::Etage0
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+  xOut := xEtage0; //Erkennung falls vom HMI getastet oder vom Schalter
+  
+
+END_FUNCTION
+
+
 FUNCTION GLOBAL clsHMI::Etage1
 	VAR_OUTPUT
 		xOut 	: BOOL;
 	END_VAR
-  xOut := xEtage1 //Erkennung falls vom HMI getastet oder vom Schalter
-  
-
+  xOut := xEtage1; //Erkennung falls vom HMI getastet oder vom Schalter
 END_FUNCTION
+
 
 
 FUNCTION GLOBAL clsHMI::Etage2
 	VAR_OUTPUT
 		xOut 	: BOOL;
 	END_VAR
-  xOut := xEtage2 //Erkennung falls vom HMI getastet oder vom Schalter
+  xOut := xEtage2; //Erkennung falls vom HMI getastet oder vom Schalter
 END_FUNCTION
-
 
 
 FUNCTION GLOBAL clsHMI::Etage3
 	VAR_OUTPUT
 		xOut 	: BOOL;
 	END_VAR
-  xOut := xEtage3 //Erkennung falls vom HMI getastet oder vom Schalter
-END_FUNCTION
-
-
-FUNCTION GLOBAL clsHMI::Etage4
-	VAR_OUTPUT
-		xOut 	: BOOL;
-	END_VAR
-  xOut := xEtage4 //Erkennung falls vom HMI getastet oder vom Schalter
+  xOut := xEtage3; //Erkennung falls vom HMI getastet oder vom Schalter
 END_FUNCTION
 
 
@@ -266,7 +274,7 @@ FUNCTION GLOBAL clsHMI::Tuerzu
 	VAR_OUTPUT
 		xOut 	: BOOL;
 	END_VAR
-  xOut := xZu //Erkennung falls vom HMI getastet oder vom Schalter
+  xOut := xZu; //Erkennung falls vom HMI getastet oder vom Schalter
 END_FUNCTION
 
 
@@ -274,5 +282,5 @@ FUNCTION GLOBAL clsHMI::Tuerauf
 	VAR_OUTPUT
 		xOut 	: BOOL;
 	END_VAR
-  xOut := xAuf //Erkennung falls vom HMI getastet oder vom Schalter
+  xOut := xAuf; //Erkennung falls vom HMI getastet oder vom Schalter
 END_FUNCTION

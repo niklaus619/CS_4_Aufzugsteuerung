@@ -40,15 +40,12 @@ clsAufzugmodul : CLASS
 	cAntriebAufzug 	: CltChCmd_clsAufzugantrieb;
 	cAnforderung 	: CltChCmd_clsHauptablauf;
 	cTimerOffen 	: CltChCmd_clsTimer;
-	cZeitOffen 	: CltCh_DINT;
+	cZeitOffen 	: CltCh_UDINT;
   //Variables:
 		iStep 	: DINT;
 		iAktEtage 	: DINT;
 		xZielOben 	: BOOL;
 		xZielUnten 	: BOOL;
-		iAnforderung 	: DINT;
-		xFahrtAuf 	: BOOL;
-		xFahrtAb 	: BOOL;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -144,11 +141,6 @@ cZeitOffen := cZeitOffen.Read();
 
 //Einfuegen iStep := 0; als Init ist mir noch unklar
 
-//Aktuelle Etage an Hauptablauf uebergeben.
-//Etageist fuer HMI nur aktualisiert wenn die Tür offen war.
-IF cEtagestatus.AktEtage() AND cTuerstatus.istauf() THEN
-  cAnforderung.Anforderung(iAktEtage:=cEtagestatus.AktEtage());
-END_IF;
 //Aktuelle Etage an Aufzugmodul uebergeben
 iAktEtage := cEtagestatus.AktEtage();
 
@@ -164,44 +156,53 @@ Case iStep of
   
   10: //Fahranforderung
   
-    IF cAnforderung.Anforderung(iAktEtage:=iAktEtage) > 0 THEN
+    IF cAnforderung.Anf0(xIn:=FALSE) OR
+       cAnforderung.Anf1(xIn:=FALSE) OR
+       cAnforderung.Anf2(xIn:=FALSE) OR
+       cAnforderung.Anf3(xIn:=FALSE) THEN
       iStep := 20;
+//    ELSE     String status koennte man da rein tun
+//      sStatus
     END_IF;
   
   20: // Fahrtrichtung evaluieren
-
-      iAnforderung := cAnforderung.Anforderung(iAktEtage := iAktEtage);
-
       xZielOben := FALSE;
       xZielUnten := FALSE;
 
       CASE iAktEtage OF
 
           0:
-              IF (iAnforderung AND 16#000E) <> 0 THEN
+              IF cAnforderung.Anf1(xIn:=FALSE) OR
+                 cAnforderung.Anf2(xIn:=FALSE) OR 
+                 cAnforderung.Anf3(xIn:=FALSE) THEN
                   xZielOben := TRUE;     // Etage 1, 2 oder 3
               END_IF;
 
           1:
-              IF (iAnforderung AND 16#000C) <> 0 THEN
+
+              IF cAnforderung.Anf2(xIn:=FALSE) OR 
+                 cAnforderung.Anf3(xIn:=FALSE) THEN
                   xZielOben := TRUE;     // Etage 2 oder 3
               END_IF;
 
-              IF (iAnforderung AND 16#0001) <> 0 THEN
+              IF cAnforderung.Anf0(xIn:=FALSE) THEN
                   xZielUnten := TRUE;    // Etage 0
               END_IF;
 
           2:
-              IF (iAnforderung AND 16#0008) <> 0 THEN
+              IF cAnforderung.Anf3(xIn:=FALSE) THEN
                   xZielOben := TRUE;     // Etage 3
               END_IF;
 
-              IF (iAnforderung AND 16#0003) <> 0 THEN
+              IF cAnforderung.Anf0(xIn:=FALSE) OR 
+                 cAnforderung.Anf1(xIn:=FALSE) THEN
                   xZielUnten := TRUE;    // Etage 0 oder 1
               END_IF;
 
           3:
-              IF (iAnforderung AND 16#0007) <> 0 THEN
+              IF cAnforderung.Anf0(xIn:=FALSE) OR
+                 cAnforderung.Anf1(xIn:=FALSE) OR 
+                 cAnforderung.Anf2(xIn:=FALSE) THEN
                   xZielUnten := TRUE;    // Etage 0, 1 oder 2
               END_IF;
 
@@ -209,18 +210,14 @@ Case iStep of
   
       // Fahrt aufgeben
       IF xZielOben THEN
-          xFahrtAuf := TRUE;
-          xFahrtAb := FALSE;
           iStep := 30;
 
       ELSIF xZielUnten THEN
-          xFahrtAuf := FALSE;
-          xFahrtAb := TRUE;
+
           iStep := 40;
 
       ELSE
-          xFahrtAuf := FALSE;
-          xFahrtAb := FALSE;
+
           iStep := 10;
       END_IF;
       
@@ -251,17 +248,21 @@ Case iStep of
       
   32: // pruefen ob aktuelle Etage angefordert ist
 
-      IF (iAnforderung AND SHL(1, iAktEtage)) <> 0 THEN
-          cAnforderung.Erledigt(iAktEtage := iAktEtage);
-          iStep := 33; // Tuer aufmachen
-      ELSE
-          iStep := 31; // Weiterfahren
-      END_IF;
-      
+
+    IF cAnforderung.Anf0(xIn:=FALSE) AND (iAktEtage = 0) OR
+       cAnforderung.Anf1(xIn:=FALSE) AND (iAktEtage = 1) OR
+       cAnforderung.Anf2(xIn:=FALSE) AND (iAktEtage = 2) OR
+       cAnforderung.Anf3(xIn:=FALSE) AND (iAktEtage = 3) THEN
+
+      iStep := 33; // Etage Anfahren 
+    ELSE
+      iStep := 31;// Weiter fharen
+    END_IF;
+
   33: //Tuer oefffnen
         cTuerstatus.auf();
         cAntriebTuer.FahrtNeg();// oeffen
-        
+
         IF cTuerstatus.istauf() AND NOT cTimerOffen.running() THEN
           cTimerOffen.start(_time:=cZeitOffen);
         END_IF;
@@ -277,7 +278,18 @@ Case iStep of
         cAntriebTuer.FahrtPos(); //Aktor schliessen
         
         
-        IF cTuerstatus.istzu() THEN        
+        IF cTuerstatus.istzu() THEN 
+        // Anfrage loeschen
+          IF iAktEtage = 0 THEN
+             cAnforderung.Anf0(xIn:=TRUE);
+          ELSIF iAktEtage = 1 THEN
+             cAnforderung.Anf1(xIn:=TRUE);
+          ELSIF iAktEtage = 2 THEN
+             cAnforderung.Anf2(xIn:=TRUE);          
+          ELSIF iAktEtage = 3 THEN
+             cAnforderung.Anf3(xIn:=TRUE);                 
+          END_IF;
+        
           iStep := 10;//Zurück zur prüfung Fahranforderung
         END_IF;
         
@@ -307,13 +319,16 @@ Case iStep of
       END_IF;
       
   42: // pruefen ob aktuelle Etage angefordert ist
-
-      IF (iAnforderung AND SHL(1, iAktEtage)) <> 0 THEN
-          cAnforderung.Erledigt(iAktEtage := iAktEtage);
-          iStep := 43; // Tuer aufmachen
-      ELSE
-          iStep := 41; // Weiterfahren
-      END_IF;
+  
+    IF cAnforderung.Anf0(xIn:=FALSE) AND (iAktEtage = 0) OR
+       cAnforderung.Anf1(xIn:=FALSE) AND (iAktEtage = 1) OR
+       cAnforderung.Anf2(xIn:=FALSE) AND (iAktEtage = 2) OR
+       cAnforderung.Anf3(xIn:=FALSE) AND (iAktEtage = 3) THEN
+       
+      iStep := 43; // Etage Anfahren 
+    ELSE
+      iStep := 41; // weiter fahren 
+    END_IF;
       
   43: //Tuer oefffnen
         cTuerstatus.auf();
@@ -334,7 +349,18 @@ Case iStep of
         cAntriebTuer.FahrtPos(); //Aktor schliessen
         
         
-        IF cTuerstatus.istzu() THEN        
+        IF cTuerstatus.istzu() THEN      
+          // Anfrage loeschen
+          IF iAktEtage = 0 THEN
+             cAnforderung.Anf0(xIn:=TRUE);
+          ELSIF iAktEtage = 1 THEN
+             cAnforderung.Anf1(xIn:=TRUE);
+          ELSIF iAktEtage = 2 THEN
+             cAnforderung.Anf2(xIn:=TRUE);          
+          ELSIF iAktEtage = 3 THEN
+             cAnforderung.Anf3(xIn:=TRUE);                 
+          END_IF;
+          
           iStep := 10;//Zurück zur prüfung Fahranforderung
         END_IF;
   

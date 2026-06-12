@@ -40,12 +40,36 @@ clsHauptablauf : CLASS
 			state (EAX) 	: UDINT;
 		END_VAR;
 	
-	FUNCTION GLOBAL Anforderung
+	FUNCTION GLOBAL Anf0
 		VAR_INPUT
-			iAktEtage 	: DINT;
+			xIn 	: BOOL;
 		END_VAR
 		VAR_OUTPUT
-			iAnfragen 	: DINT;
+			xOut 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL Anf1
+		VAR_INPUT
+			xIn 	: BOOL;
+		END_VAR
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL Anf2
+		VAR_INPUT
+			xIn 	: BOOL;
+		END_VAR
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL Anf3
+		VAR_INPUT
+			xIn 	: BOOL;
+		END_VAR
+		VAR_OUTPUT
+			xOut 	: BOOL;
 		END_VAR;
 	
 	FUNCTION GLOBAL TuerZu
@@ -134,55 +158,6 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
 END_FUNCTION
 
 
-FUNCTION GLOBAL clsHauptablauf::Anforderung
-	VAR_INPUT
-		iAktEtage 	: DINT;// 0-3
-	END_VAR
-	VAR_OUTPUT
-		iAnfragen 	: DINT;// 0000 0000 0000 0000
-	END_VAR
-    
-  //Bit decoding von HMI
-  //Muss noch Enum erstellt werden
-  //Wenn Anforderung getastet wird, muss diese in ein bit gespeichert werden und evaluiert werden,
-  //welche Fahrt abgearbeitet wurde und dieses Bit dann wieder löschen
-  
-  
-  //Anfragen Speichern
-IF cHMI.Etage1() THEN
-    iAnfragen := iAnfragen OR 16#0001;   
-END_IF;
-
-IF cHMI.Etage2() THEN
-    iAnfragen := iAnfragen OR 16#0002;   
-END_IF;
-
-IF cHMI.Etage3() THEN
-    iAnfragen := iAnfragen OR 16#0004;   
-END_IF;
-
-IF cHMI.Etage4() THEN
-    iAnfragen := iAnfragen OR 16#0008;   
-END_IF;
-
-  //Anfragen zurüecksetzen
-IF iAktEtage = 0 THEN
-    iAnfrage := iAnfrage AND NOT 16#0001;
-END_IF;
-
-IF iAktEtage = 1 THEN
-    iAnfrage := iAnfrage AND NOT 16#0002;
-END_IF;
-
-IF iAktEtage = 2 THEN
-    iAnfrage := iAnfrage AND NOT 16#0004;
-END_IF;
-
-IF iAktEtage = 3 THEN
-    iAnfrage := iAnfrage AND NOT 16#0008;
-END_IF;
-END_FUNCTION
-
 
 FUNCTION GLOBAL clsHauptablauf::TuerZu
 	VAR_OUTPUT
@@ -201,4 +176,73 @@ FUNCTION GLOBAL clsHauptablauf::TuerAuf
     
   //Weitergabe von IO
 xOut := cHMI.Tuerauf();
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHauptablauf::Anf0
+	VAR_INPUT
+		xIn 	: BOOL;
+	END_VAR
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+  //Anfrage Speichern
+  IF cHMI.Etage0() THEN
+    xOut := tRUE;
+  //Anfrage loeschen
+  ELSIF xIn THEN
+    xOut := FALSE;
+  END_IF;
+  
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHauptablauf::Anf1
+	VAR_INPUT
+		xIn 	: BOOL;
+	END_VAR
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+  //Anfrage Speichern
+  IF cHMI.Etage0() THEN
+    xOut := tRUE;
+  //Anfrage loeschen
+  ELSIF xIn THEN
+    xOut := FALSE;
+  END_IF;
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHauptablauf::Anf2
+	VAR_INPUT
+		xIn 	: BOOL;
+	END_VAR
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+  //Anfrage Speichern
+  IF cHMI.Etage1() THEN
+    xOut := tRUE;
+  //Anfrage loeschen
+  ELSIF xIn THEN
+    xOut := FALSE;
+  END_IF;
+END_FUNCTION
+
+FUNCTION GLOBAL clsHauptablauf::Anf3
+	VAR_INPUT
+		xIn 	: BOOL;
+	END_VAR
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+  //Anfrage Speichern
+  IF cHMI.Etage2() THEN
+    xOut := tRUE;
+  //Anfrage loeschen
+  ELSIF xIn THEN
+    xOut := FALSE;
+  END_IF;
 END_FUNCTION

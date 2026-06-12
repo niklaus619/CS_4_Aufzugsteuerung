@@ -50,7 +50,7 @@
 		TempObj    = "true">
 		<!-- List of Connections -->
 		<IOConnections>
-			<IOConnection ObjSrv="DM1611" Server="Input2" ObjClt="clsHMI1" Client="cTaster2" IOI="Input" Type="Digital" SortIndex="2" KeyName="000007" Advanced="0"/>
+			<IOConnection ObjSrv="DM1611" Server="Input2" IOI="Input" Type="Digital" SortIndex="2" KeyName="000007" Advanced="0"/>
 		</IOConnections>
 	</Entry>
 	<Entry
@@ -60,7 +60,7 @@
 		TempObj    = "true">
 		<!-- List of Connections -->
 		<IOConnections>
-			<IOConnection ObjSrv="DM1611" Server="Input3" ObjClt="clsHMI1" Client="cTaster3" IOI="Input" Type="Digital" SortIndex="3" KeyName="000008" Advanced="0"/>
+			<IOConnection ObjSrv="DM1611" Server="Input3" IOI="Input" Type="Digital" SortIndex="3" KeyName="000008" Advanced="0"/>
 		</IOConnections>
 	</Entry>
 	<Entry
@@ -70,7 +70,7 @@
 		TempObj    = "true">
 		<!-- List of Connections -->
 		<IOConnections>
-			<IOConnection ObjSrv="DM1611" Server="Input4" ObjClt="clsHMI1" Client="cTaster4" IOI="Input" Type="Digital" SortIndex="4" KeyName="000009" Advanced="0"/>
+			<IOConnection ObjSrv="DM1611" Server="Input4" IOI="Input" Type="Digital" SortIndex="4" KeyName="000009" Advanced="0"/>
 		</IOConnections>
 	</Entry>
 	<Entry

@@ -39,7 +39,7 @@ clsEtagenSensorik : CLASS
 	cFahrzeit 	: CltCh_UDINT;
 	cStockwerke 	: CltCh_DINT;
   //Variables:
-		xErreicht 	: DINT;
+		xErreicht 	: BOOL;
 		iEtage 	: DINT;
   //Functions:
 	
@@ -53,23 +53,22 @@ clsEtagenSensorik : CLASS
 	
 	FUNCTION GLOBAL hoch
 		VAR_INPUT
-			fahre 	: DINT;
-		END_VAR
-		VAR_OUTPUT
-			Erreicht 	: BOOL;
+			fahre 	: BOOL;
 		END_VAR;
 	
 	FUNCTION GLOBAL runter
 		VAR_INPUT
-			fahre 	: DINT;
-		END_VAR
-		VAR_OUTPUT
-			Erreicht 	: BOOL;
+			fahre 	: BOOL;
 		END_VAR;
 	
 	FUNCTION GLOBAL AktEtage
 		VAR_OUTPUT
 			iOut 	: DINT;
+		END_VAR;
+	
+	FUNCTION GLOBAL erreicht
+		VAR_OUTPUT
+			xOut 	: BOOL;
 		END_VAR;
   //Tables:
 	FUNCTION @STD
@@ -163,53 +162,57 @@ END_FUNCTION
 
 FUNCTION GLOBAL clsEtagenSensorik::hoch
 	VAR_INPUT
-		fahre 	: DINT;
+		fahre 	: BOOL;
 	END_VAR
-	VAR_OUTPUT
-		Erreicht 	: BOOL;
-	END_VAR
+  
+//Init
+xErreicht := false;
 
 // Prüfen ob bereits in der obersten Etage
 IF iEtage >= cStockwerke THEN
-    Erreicht := TRUE;
+    xErreicht := TRUE;
 ELSE
-    cTimer.Start(_time := cFahrzeit);
+    IF NOT cTimer.running() THEN
+      cTimer.Start(_time := cFahrzeit);
+    END_IF;
 
     // Prüfen ob Fahrzeit abgelaufen
     IF cTimer.elapsed() THEN
         iEtage := iEtage + 1;
-        Erreicht := TRUE;
+        xErreicht := TRUE;
     ELSE
-        Erreicht := FALSE;
+        xErreicht := FALSE;
     END_IF;
 END_IF;
-  xErreicht := Erreicht;
+
 END_FUNCTION
 
 
 FUNCTION GLOBAL clsEtagenSensorik::runter
 	VAR_INPUT
-		fahre 	: DINT;
+		fahre 	: BOOL;
 	END_VAR
-	VAR_OUTPUT
-		Erreicht 	: BOOL;
-	END_VAR
+
+//Init
+xErreicht := false;
 
 // Prüfen ob bereits in der untersten Etage
 IF iEtage <= 0 THEN
-    Erreicht := TRUE;
+    xErreicht := TRUE;
 ELSE
-    cTimer.Start(_time := cFahrzeit);
+    IF NOT cTimer.running() THEN
+      cTimer.Start(_time := cFahrzeit);
+    END_IF;
 
     // Prüfen ob Fahrzeit abgelaufen
     IF cTimer.elapsed() THEN
         iEtage := iEtage - 1;
-        Erreicht := TRUE;
+        xErreicht := TRUE;
     ELSE
-        Erreicht := FALSE;
+        xErreicht := FALSE;
     END_IF;
 END_IF;
-  xErreicht := Erreicht;
+
 END_FUNCTION
 
 
@@ -220,4 +223,12 @@ FUNCTION GLOBAL clsEtagenSensorik::AktEtage
 iOut := iEtage; //Noch unklar ob und wie iEtage bei Steuerung aufstart initialisiert wird
 
 
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsEtagenSensorik::erreicht
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+ xOut := xErreicht;
 END_FUNCTION

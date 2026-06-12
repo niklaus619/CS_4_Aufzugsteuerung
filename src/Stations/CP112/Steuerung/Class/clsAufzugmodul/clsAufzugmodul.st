@@ -24,7 +24,9 @@
 		<Client Name="cAntriebAufzug" Required="true" Internal="false"/>
 		<Client Name="cAntriebTuer" Required="true" Internal="false"/>
 		<Client Name="cEtagestatus" Required="true" Internal="false"/>
+		<Client Name="cTimerOffen" Required="true" Internal="false"/>
 		<Client Name="cTuerstatus" Required="true" Internal="false"/>
+		<Client Name="cZeitOffen" Required="false" Internal="false"/>
 	</Channels>
 </Class>
 *)
@@ -37,6 +39,8 @@ clsAufzugmodul : CLASS
 	cAntriebTuer 	: CltChCmd_clsAufzugantrieb;
 	cAntriebAufzug 	: CltChCmd_clsAufzugantrieb;
 	cAnforderung 	: CltChCmd_clsHauptablauf;
+	cTimerOffen 	: CltChCmd_clsTimer;
+	cZeitOffen 	: CltCh_DINT;
   //Variables:
 		iStep 	: DINT;
 		iAktEtage 	: DINT;
@@ -65,6 +69,7 @@ END_CLASS;
 #pragma usingLtd clsAufzugantrieb
 #pragma usingLtd clsEtagenSensorik
 #pragma usingLtd clsHauptablauf
+#pragma usingLtd clsTimer
 #pragma usingLtd clsTuerSensorik
 
 
@@ -75,7 +80,7 @@ FUNCTION GLOBAL TAB clsAufzugmodul::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSAUFZUGMODUL
 0$UINT, 0$UINT, (SIZEOF(::clsAufzugmodul))$UINT, 
-1$UINT, 5$UINT, 0$UINT, 
+1$UINT, 7$UINT, 0$UINT, 
 TO_UDINT(1857403904), "clsAufzugmodul", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
@@ -86,6 +91,8 @@ TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 (::clsAufzugmodul.cAntriebTuer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(426174968), "cAntriebTuer", TO_UDINT(1641204752), "clsAufzugantrieb", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cAntriebAufzug.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(614673068), "cAntriebAufzug", TO_UDINT(1641204752), "clsAufzugantrieb", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cAnforderung.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3406365320), "cAnforderung", TO_UDINT(971323912), "clsHauptablauf", 0$UINT, 0$UINT, 
+(::clsAufzugmodul.cTimerOffen.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(263165870), "cTimerOffen", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
+(::clsAufzugmodul.cZeitOffen.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(1512785699), "cZeitOffen", 
 END_FUNCTION
 
 
@@ -140,7 +147,7 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
 
 //Aktuelle Etage an Hauptablauf uebergeben.
 //Etageist nur aktualisiert wenn die Tür offen war.
-IF cEtagestatus.AktEtage() AND cTuerstatus.auf(oeffnen:= FALSE) THEN
+IF cEtagestatus.AktEtage() AND cTuerstatus.istauf() THEN
   iAktEtage := cEtagestatus.AktEtage();
 END_IF;
 
@@ -220,17 +227,21 @@ Case iStep of
   30: // Fahrt nach oben
     
       //prüfen ob Türe zu
-      IF cTuerstatus.zu(schliessen:= False) THEN
+      IF cTuerstatus.istzu() THEN
         
         iStep := 31;
-      ELSE// zu machen
-        cTuerstatus.zu(schliessen:= True);
+      ELSIF NOT cAnforderung.TuerAuf()   // zu machen
+        cTuerstatus.zu(schliessen:= TRUE);
         cAntriebTuer.FahrtPos(xIn:=TRUE);// schliessen
       END_IF;
   
   
   31: // Tuere geschlossen
-      cAntriebTuer.FahrtPos(xIn:=FALSE);// schliessen
+      cTuerstatus.zu(schliessen:= False);//Timer schliessung
+      cAntriebTuer.FahrtPos(xIn:=False);// schliessen
+      
+      
+      cEtagestatus.hoch(fahre:= TRUE);
       
       
       

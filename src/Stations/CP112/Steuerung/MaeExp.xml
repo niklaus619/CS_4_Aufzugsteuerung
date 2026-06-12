@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<File CRC="681EFE72" Version="1.1" SubVersion="2">
+<File CRC="38AA876A" Version="1.1" SubVersion="2">
 	<Types>
 		<Type Name="_DRIVETYPE" Datatype="UDINT" TypeId="ENUM">
 			<Elements>
@@ -961,7 +961,7 @@
 		<Class
 			Name     = "clsTuerSensorik"
 			Datatype = "DINT"
-			Size     = "56"
+			Size     = "52"
 			Guid     = "6009D391-F9B6-402A-826A-3ACE2DF3A016">
 			<Servers>
 				<Server Name="VisuTuer" Datatype="DINT" Guid="EEE2F83E-5824-43C8-9793-FA2A7292B577" WriteProtected="false"/>

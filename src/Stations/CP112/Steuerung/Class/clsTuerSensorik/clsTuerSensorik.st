@@ -37,8 +37,8 @@ clsTuerSensorik : CLASS
 	cTimer 	: CltChCmd_clsTimer;
 	cFahrzeit 	: CltCh_UDINT;
   //Variables:
-		xAuf 	: DINT;
-		xZu 	: DINT;
+		xAuf 	: BOOL;
+		xZu 	: BOOL;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -52,17 +52,21 @@ clsTuerSensorik : CLASS
 	FUNCTION GLOBAL zu
 		VAR_INPUT
 			schliessen 	: BOOL;
-		END_VAR
-		VAR_OUTPUT
-			istZu 	: DINT;
 		END_VAR;
 	
 	FUNCTION GLOBAL auf
 		VAR_INPUT
 			oeffnen 	: BOOL;
-		END_VAR
+		END_VAR;
+	
+	FUNCTION GLOBAL istzu
 		VAR_OUTPUT
-			istAuf 	: BOOL;
+			xOut 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL istauf
+		VAR_OUTPUT
+			xOut 	: BOOL;
 		END_VAR;
   //Tables:
 	FUNCTION @STD
@@ -155,34 +159,17 @@ FUNCTION GLOBAL clsTuerSensorik::zu
 	VAR_INPUT
 		schliessen 	: BOOL;
 	END_VAR
-	VAR_OUTPUT
-		istZu 	: DINT;
-	END_VAR
 
-  
-  IF NOT xZu THEN
-      //pruefen ob schon zu
-      IF schliessen THEN
 
-          IF NOT istZu THEN
-              cTimer.Start(_time := cFahrzeit);
-              istZu := TRUE; 
-          END_IF;
-
-          IF cTimer.elapsed() THEN
-              xAuf := FALSE;
-              xZu := TRUE;
-              istZu := TRUE;
-          END_IF;
-
-      ELSE
-          istZu := xZu;
-      END_IF;
-
-  ELSE
-      istZu := xZu;
+  //pruefen ob schon zu
+  IF NOT xZu AND NOT cTimer.running() THEN
+     cTimer.Start(_time := cFahrzeit); 
   END_IF;
 
+  IF cTimer.elapsed() THEN
+      xAuf := FALSE;
+      xZu := TRUE;
+  END_IF;
 
 END_FUNCTION
 
@@ -191,30 +178,31 @@ FUNCTION GLOBAL clsTuerSensorik::auf
 	VAR_INPUT
 		oeffnen 	: BOOL;
 	END_VAR
-	VAR_OUTPUT
-		istAuf 	: BOOL;
-	END_VAR
 
   // Pruefen ob schon offen
-  IF NOT xAuf THEN
-
-      IF oeffnen THEN
-          cTimer.Start(_time := cFahrzeit);
-
-          IF cTimer.elapsed() THEN
-              xZu := FALSE;
-              xAuf := TRUE;
-              istAuf := TRUE;
-          ELSE
-              istAuf := FALSE;
-          END_IF;
-
-      ELSE
-          istAuf := xAuf;
-      END_IF;
-
-  ELSE
-      istAuf := TRUE;
+  IF NOT xAuf AND cTimer.running() THEN
+    cTimer.Start(_time := cFahrzeit);
   END_IF;
 
+  IF cTimer.elapsed() THEN
+      xAuf := TRUE;
+      xZu := FALSE;
+  END_IF;
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsTuerSensorik::istzu
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+ xOut := xZu
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsTuerSensorik::istauf
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+ xOut := xAuf
 END_FUNCTION

@@ -27,7 +27,9 @@
 				<Client Name="cAntriebAufzug"/>
 				<Client Name="cAntriebTuer"/>
 				<Client Name="cEtagestatus"/>
+				<Client Name="cTimerOffen"/>
 				<Client Name="cTuerstatus"/>
+				<Client Name="cZeitOffen" Value="5000"/>
 			</Channels>
 		</Object>
 		<Object
@@ -78,27 +80,7 @@
 			</Channels>
 		</Object>
 		<Object
-			Name       = "clsTimer1"
-			GUID       = "{E5FCE96B-5FED-4966-8802-710A313D9640}"
-			Class      = "clsTimer"
-			Position   = "(960,420)"
-			Visualized = "false">
-			<Channels>
-				<Server Name="ClassSvr"/>
-			</Channels>
-		</Object>
-		<Object
-			Name       = "clsTimer2"
-			GUID       = "{D3F3E712-B216-40DD-9867-3F2E3CF567D6}"
-			Class      = "clsTimer"
-			Position   = "(960,630)"
-			Visualized = "false">
-			<Channels>
-				<Server Name="ClassSvr"/>
-			</Channels>
-		</Object>
-		<Object
-			Name       = "clsTimer3"
+			Name       = "clsImpuls1"
 			GUID       = "{10FE2173-70D2-4DF9-A7B2-DDD0EC22F4A3}"
 			Class      = "clsTimer"
 			Position   = "(240,1470)"
@@ -108,7 +90,7 @@
 			</Channels>
 		</Object>
 		<Object
-			Name       = "clsTimer4"
+			Name       = "clsImpuls2"
 			GUID       = "{ECD33523-D93B-4FAB-A31E-3FE984283FC0}"
 			Class      = "clsTimer"
 			Position   = "(240,1620)"
@@ -118,7 +100,7 @@
 			</Channels>
 		</Object>
 		<Object
-			Name       = "clsTimer5"
+			Name       = "clsImpuls3"
 			GUID       = "{6B85CCA6-8873-4254-837B-C7930EADD29D}"
 			Class      = "clsTimer"
 			Position   = "(240,1770)"
@@ -128,10 +110,40 @@
 			</Channels>
 		</Object>
 		<Object
-			Name       = "clsTimer6"
+			Name       = "clsImpuls4"
 			GUID       = "{1356581A-9B68-4DAE-AE44-EE5CD473F2D5}"
 			Class      = "clsTimer"
 			Position   = "(240,1920)"
+			Visualized = "false">
+			<Channels>
+				<Server Name="ClassSvr"/>
+			</Channels>
+		</Object>
+		<Object
+			Name       = "clsSimFahrzeit1"
+			GUID       = "{E5FCE96B-5FED-4966-8802-710A313D9640}"
+			Class      = "clsTimer"
+			Position   = "(960,420)"
+			Visualized = "false">
+			<Channels>
+				<Server Name="ClassSvr"/>
+			</Channels>
+		</Object>
+		<Object
+			Name       = "clsSimFahrzeit2"
+			GUID       = "{D3F3E712-B216-40DD-9867-3F2E3CF567D6}"
+			Class      = "clsTimer"
+			Position   = "(960,630)"
+			Visualized = "false">
+			<Channels>
+				<Server Name="ClassSvr"/>
+			</Channels>
+		</Object>
+		<Object
+			Name       = "clsSimFahrzeit2_Copy"
+			GUID       = "{D44480FC-FF98-4E64-8862-01CF437ADE1F}"
+			Class      = "clsTimer"
+			Position   = "(1410,1350)"
 			Visualized = "false">
 			<Channels>
 				<Server Name="ClassSvr"/>
@@ -174,15 +186,16 @@
 		<Connection Source="clsHauptablauf1.cHMI" Destination="clsHMI1.ClassSvr" Vertices="(1410,1290),(1290,1290),"/>
 		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2340,750),(1710,510),"/>
 		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2340,810),(1710,720),"/>
+		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2340,1050),(1726,1440),"/>
 		<Connection Source="clsHMI1.cTaster2" Destination="__IO_Element22" Vertices="(990,1350),(540,1230)," IOObject="IO_Element2"/>
 		<Connection Source="clsHMI1.cTaster3" Destination="__IO_Element31" Vertices="(990,1410),(540,1320)," IOObject="IO_Element3"/>
 		<Connection Source="clsHMI1.cTaster4" Destination="__IO_Element41" Vertices="(990,1470),(540,1410),(540,1410)," IOObject="IO_Element4"/>
-		<Connection Source="clsTuerSensorik1.cTimer" Destination="clsTimer1.ClassSvr" Vertices="(1410,510),(1276,510),"/>
-		<Connection Source="clsEtagen1.cTimer" Destination="clsTimer2.ClassSvr" Vertices="(1410,720),(1276,720),"/>
-		<Connection Source="clsHMI1.cTimer1" Destination="clsTimer3.ClassSvr" Vertices="(990,1530),(556,1560),"/>
-		<Connection Source="clsHMI1.cTimer2" Destination="clsTimer4.ClassSvr" Vertices="(990,1590),(556,1710),"/>
-		<Connection Source="clsHMI1.cTimer3" Destination="clsTimer5.ClassSvr" Vertices="(990,1650),(556,1860),"/>
-		<Connection Source="clsHMI1.cTimer4" Destination="clsTimer6.ClassSvr" Vertices="(990,1710),(556,2010),"/>
+		<Connection Source="clsTuerSensorik1.cTimer" Destination="clsSimFahrzeit1.ClassSvr" Vertices="(1410,510),(1276,510),"/>
+		<Connection Source="clsEtagen1.cTimer" Destination="clsSimFahrzeit2.ClassSvr" Vertices="(1410,720),(1276,720),"/>
+		<Connection Source="clsHMI1.cTimer1" Destination="clsImpuls1.ClassSvr" Vertices="(990,1530),(556,1560),"/>
+		<Connection Source="clsHMI1.cTimer2" Destination="clsImpuls2.ClassSvr" Vertices="(990,1590),(556,1710),"/>
+		<Connection Source="clsHMI1.cTimer3" Destination="clsImpuls3.ClassSvr" Vertices="(990,1650),(556,1860),"/>
+		<Connection Source="clsHMI1.cTimer4" Destination="clsImpuls4.ClassSvr" Vertices="(990,1710),(556,2010),"/>
 	</Connections>
 	<!-- List of temp data objects in this network -->
 	<IOObjects>

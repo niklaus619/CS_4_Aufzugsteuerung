@@ -49,15 +49,9 @@ clsTuerSensorik : CLASS
 			state (EAX) 	: UDINT;
 		END_VAR;
 	
-	FUNCTION GLOBAL zu
-		VAR_INPUT
-			schliessen 	: BOOL;
-		END_VAR;
+	FUNCTION GLOBAL zu;
 	
-	FUNCTION GLOBAL auf
-		VAR_INPUT
-			oeffnen 	: BOOL;
-		END_VAR;
+	FUNCTION GLOBAL auf;
 	
 	FUNCTION GLOBAL istzu
 		VAR_OUTPUT
@@ -156,9 +150,6 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsTuerSensorik::zu
-	VAR_INPUT
-		schliessen 	: BOOL;
-	END_VAR
 
 
   //pruefen ob schon zu
@@ -175,9 +166,6 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsTuerSensorik::auf
-	VAR_INPUT
-		oeffnen 	: BOOL;
-	END_VAR
 
   // Pruefen ob schon offen
   IF NOT xAuf AND cTimer.running() THEN

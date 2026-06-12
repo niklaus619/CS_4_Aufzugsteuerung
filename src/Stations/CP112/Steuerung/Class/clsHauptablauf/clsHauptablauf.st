@@ -136,10 +136,10 @@ END_FUNCTION
 
 FUNCTION GLOBAL clsHauptablauf::Anforderung
 	VAR_INPUT
-		iAktEtage 	: DINT;
+		iAktEtage 	: DINT;// 0-3
 	END_VAR
 	VAR_OUTPUT
-		iAnfragen 	: DINT;
+		iAnfragen 	: DINT;// 0000 0000 0000 0000
 	END_VAR
     
   //Bit decoding von HMI
@@ -166,22 +166,21 @@ IF cHMI.Etage4() THEN
 END_IF;
 
   //Anfragen zurüecksetzen
-IF (iAktEtage AND 16#0001) <> 0 THEN
-    iAktEtage := iAktEtage AND NOT 16#0001;
+IF iAktEtage = 0 THEN
+    iAnfrage := iAnfrage AND NOT 16#0001;
 END_IF;
 
-IF (iAktEtage AND 16#0002) <> 0 THEN
-    iAktEtage := iAktEtage AND NOT 16#0002;
+IF iAktEtage = 1 THEN
+    iAnfrage := iAnfrage AND NOT 16#0002;
 END_IF;
 
-IF (iAktEtage AND 16#0004) <> 0 THEN
-    iAktEtage := iAktEtage AND NOT 16#0004;
+IF iAktEtage = 2 THEN
+    iAnfrage := iAnfrage AND NOT 16#0004;
 END_IF;
 
-IF (iAktEtage AND 16#0008) <> 0 THEN
-    iAktEtage := iAktEtage AND NOT 16#0008;
+IF iAktEtage = 3 THEN
+    iAnfrage := iAnfrage AND NOT 16#0008;
 END_IF;
-
 END_FUNCTION
 
 

@@ -140,16 +140,18 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
 
 	state := READY;
 //Client verlinkung
-//cTuerstatus := cTuerstatus.Read();
-//cEtagestatus := cEtagestatus.Read();
+cZeitOffen := cZeitOffen.Read();
 
 //Einfuegen iStep := 0; als Init ist mir noch unklar
 
 //Aktuelle Etage an Hauptablauf uebergeben.
-//Etageist nur aktualisiert wenn die Tür offen war.
+//Etageist fuer HMI nur aktualisiert wenn die Tür offen war.
 IF cEtagestatus.AktEtage() AND cTuerstatus.istauf() THEN
-  iAktEtage := cEtagestatus.AktEtage();
+  cAnforderung.Anforderung(iAktEtage:=cEtagestatus.AktEtage());
 END_IF;
+//Aktuelle Etage an Aufzugmodul uebergeben
+iAktEtage := cEtagestatus.AktEtage();
+
 
 
 Case iStep of
@@ -157,8 +159,6 @@ Case iStep of
   
   0: // Initialschritt
   
-  cAntriebTuer.FahrtNeg(xIn:= False);
-  cAntriebAufzug.FahrtNeg(xIn:= False);
   
   iStep := 10;
   
@@ -224,30 +224,119 @@ Case iStep of
           iStep := 10;
       END_IF;
       
-  30: // Fahrt nach oben
+  30: // 30er = Fahrt nach oben
     
       //prüfen ob Türe zu
       IF cTuerstatus.istzu() THEN
         
         iStep := 31;
-      ELSIF NOT cAnforderung.TuerAuf()   // zu machen
-        cTuerstatus.zu(schliessen:= TRUE);
-        cAntriebTuer.FahrtPos(xIn:=TRUE);// schliessen
+      ELSIF NOT cAnforderung.TuerAuf() THEN  // unterbruch durch bedienung am HMI 
+      
+        cTuerstatus.zu();//Simulation
+        cAntriebTuer.FahrtPos(); //Aktor schliessen
+      ELSE
+      
+        iStep := 33; //Tuer Aufmachen
       END_IF;
   
+
+  31: // Hochfahren
+          
+        cEtagestatus.hoch();
+        cAntriebAufzug.FahrtPos(); //Hoch
+        
+      IF cEtagestatus.erreicht() THEN
+        iStep := 32;
+      END_IF;
+      
+  32: // pruefen ob aktuelle Etage angefordert ist
+
+      IF (iAnforderung AND SHL(1, iAktEtage)) <> 0 THEN
+          cAnforderung.Erledigt(iAktEtage := iAktEtage);
+          iStep := 33; // Tuer aufmachen
+      ELSE
+          iStep := 31; // Weiterfahren
+      END_IF;
+      
+  33: //Tuer oefffnen
+        cTuerstatus.auf();
+        cAntriebTuer.FahrtNeg();// oeffen
+        
+        IF cTuerstatus.istauf() AND NOT cTimerOffen.running() THEN
+          cTimerOffen.start(_time:=cZeitOffen);
+        END_IF;
+        
+        IF cTimerOffen.elapsed() THEN
+          iStep := 34; //Tuer schliessen
+        END_IF;
+    
+    
+   34: //Tuer schliessen
+        
+        cTuerstatus.zu();//Simulation
+        cAntriebTuer.FahrtPos(); //Aktor schliessen
+        
+        
+        IF cTuerstatus.istzu() THEN        
+          iStep := 10;//Zurück zur prüfung Fahranforderung
+        END_IF;
+        
+  40: // 40er = Fahrt nach unten
+    
+      //prüfen ob Türe zu
+      IF cTuerstatus.istzu() THEN
+        
+        iStep := 41;
+      ELSIF NOT cAnforderung.TuerAuf() THEN  // unterbruch durch bedienung am HMI 
+      
+        cTuerstatus.zu();//Simulation
+        cAntriebTuer.FahrtPos(); //Aktor schliessen
+      ELSE
+      
+        iStep := 42; //Tuer Aufmachen
+      END_IF;
   
-  31: // Tuere geschlossen
-      cTuerstatus.zu(schliessen:= False);//Timer schliessung
-      cAntriebTuer.FahrtPos(xIn:=False);// schliessen
+
+  41: // Runterfahren
+          
+        cEtagestatus.runter();
+        cAntriebAufzug.FahrtNeg(); //Runter
+        
+      IF cEtagestatus.erreicht() THEN
+        iStep := 42;
+      END_IF;
       
+  42: // pruefen ob aktuelle Etage angefordert ist
+
+      IF (iAnforderung AND SHL(1, iAktEtage)) <> 0 THEN
+          cAnforderung.Erledigt(iAktEtage := iAktEtage);
+          iStep := 43; // Tuer aufmachen
+      ELSE
+          iStep := 41; // Weiterfahren
+      END_IF;
       
-      cEtagestatus.hoch(fahre:= TRUE);
-      
-      
-      
-  
-  40: // Fahrt nach unten
-  
+  43: //Tuer oefffnen
+        cTuerstatus.auf();
+        cAntriebTuer.FahrtNeg();// oeffen
+        
+        IF cTuerstatus.istauf() AND NOT cTimerOffen.running() THEN
+          cTimerOffen.start(_time:=cZeitOffen);
+        END_IF;
+        
+        IF cTimerOffen.elapsed() THEN
+          iStep := 44; //Tuer schliessen
+        END_IF;
+    
+    
+   44: //Tuer schliessen
+        
+        cTuerstatus.zu();//Simulation
+        cAntriebTuer.FahrtPos(); //Aktor schliessen
+        
+        
+        IF cTuerstatus.istzu() THEN        
+          iStep := 10;//Zurück zur prüfung Fahranforderung
+        END_IF;
   
 END_CASE;  
 

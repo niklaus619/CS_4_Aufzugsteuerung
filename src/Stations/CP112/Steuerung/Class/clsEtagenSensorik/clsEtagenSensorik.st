@@ -51,15 +51,9 @@ clsEtagenSensorik : CLASS
 			state (EAX) 	: UDINT;
 		END_VAR;
 	
-	FUNCTION GLOBAL hoch
-		VAR_INPUT
-			fahre 	: BOOL;
-		END_VAR;
+	FUNCTION GLOBAL hoch;
 	
-	FUNCTION GLOBAL runter
-		VAR_INPUT
-			fahre 	: BOOL;
-		END_VAR;
+	FUNCTION GLOBAL runter;
 	
 	FUNCTION GLOBAL AktEtage
 		VAR_OUTPUT
@@ -161,9 +155,6 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsEtagenSensorik::hoch
-	VAR_INPUT
-		fahre 	: BOOL;
-	END_VAR
   
 //Init
 xErreicht := false;
@@ -189,9 +180,6 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsEtagenSensorik::runter
-	VAR_INPUT
-		fahre 	: BOOL;
-	END_VAR
 
 //Init
 xErreicht := false;

@@ -84,7 +84,8 @@
 			GUID       = "{10FE2173-70D2-4DF9-A7B2-DDD0EC22F4A3}"
 			Class      = "clsTimer"
 			Position   = "(240,1470)"
-			Visualized = "false">
+			Visualized = "false"
+			CyclicTime = "50 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
 			</Channels>
@@ -94,7 +95,8 @@
 			GUID       = "{ECD33523-D93B-4FAB-A31E-3FE984283FC0}"
 			Class      = "clsTimer"
 			Position   = "(240,1620)"
-			Visualized = "false">
+			Visualized = "false"
+			CyclicTime = "50 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
 			</Channels>
@@ -104,7 +106,8 @@
 			GUID       = "{6B85CCA6-8873-4254-837B-C7930EADD29D}"
 			Class      = "clsTimer"
 			Position   = "(240,1770)"
-			Visualized = "false">
+			Visualized = "false"
+			CyclicTime = "50 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
 			</Channels>
@@ -114,7 +117,8 @@
 			GUID       = "{1356581A-9B68-4DAE-AE44-EE5CD473F2D5}"
 			Class      = "clsTimer"
 			Position   = "(240,1920)"
-			Visualized = "false">
+			Visualized = "false"
+			CyclicTime = "50 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
 			</Channels>
@@ -124,7 +128,8 @@
 			GUID       = "{E5FCE96B-5FED-4966-8802-710A313D9640}"
 			Class      = "clsTimer"
 			Position   = "(960,420)"
-			Visualized = "false">
+			Visualized = "false"
+			CyclicTime = "50 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
 			</Channels>
@@ -134,7 +139,8 @@
 			GUID       = "{D3F3E712-B216-40DD-9867-3F2E3CF567D6}"
 			Class      = "clsTimer"
 			Position   = "(960,630)"
-			Visualized = "false">
+			Visualized = "false"
+			CyclicTime = "50 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
 			</Channels>

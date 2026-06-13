@@ -171,64 +171,65 @@ END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
 
-
 FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	VAR_INPUT
-		EAX 	: UDINT;
+		EAX : UDINT;
 	END_VAR
 	VAR_OUTPUT
-		state (EAX) 	: UDINT;
+		state (EAX) : UDINT;
 	END_VAR
-  //IO Verlinken1
-  cTaster1 := cTaster1.Read();
-  cTaster2 := cTaster2.Read();
-  cTaster3 := cTaster3.Read();
-  cTaster4 := cTaster4.Read();
-  
-  
-  
-  //Flankenerkennug
-  if cTaster1 <> xTaster1old then
-    cTimer1.start(_time:=1000);
-    IF cTimer1.elapsed() THEN
-     xTaster1old := ctaster1;
-    END_IF;
-  end_if;
 
-  //Flankenerkennug2
-  if cTaster2 <> xTaster2old then
-    cTimer2.start(_time:=1000);
-    IF cTimer2.elapsed() THEN
-     xTaster1old := ctaster1;
-    END_IF;
-  end_if;
-  
-  //Flankenerkennug3
-  if cTaster3 <> xTaster3old then
-    cTimer3.start(_time:=1000);
-    IF cTimer3.elapsed() THEN
-     xTaster1old := ctaster1;
-    END_IF;
-  end_if;
-  
-  //Flankenerkennug4
-  if cTaster4 <> xTaster4old then
-    cTimer4.start(_time:=1000);
-    IF cTimer4.elapsed() THEN
-     xTaster1old := ctaster1;
-    END_IF;
-  end_if;
-  
-  // Output Verlinkung
-  xEtage0 := cTimer1.running();
-  xEtage1 := cTimer2.running();
-  xEtage2 := cTimer3.running();    
-  xEtage3 := cTimer4.running();    
-    
+	// IO lesen
+	cTaster1 := cTaster1.Read();
+	cTaster2 := cTaster2.Read();
+	cTaster3 := cTaster3.Read();
+	cTaster4 := cTaster4.Read();
 
-  
-  
-  
+	// Etage 0
+	IF cTaster1 <> xTaster1old THEN
+		xTaster1old := cTaster1;
+		cTimer1.start(_time := 1000);
+	END_IF;
+
+	IF cTimer1.elapsed() THEN
+		cTimer1.reset();
+	END_IF;
+
+	// Etage 1
+	IF cTaster2 <> xTaster2old THEN
+		xTaster2old := cTaster2;
+		cTimer2.start(_time := 1000);
+	END_IF;
+
+	IF cTimer2.elapsed() THEN
+		cTimer2.reset();
+	END_IF;
+
+	// Etage 2
+	IF cTaster3 <> xTaster3old THEN
+		xTaster3old := cTaster3;
+		cTimer3.start(_time := 1000);
+	END_IF;
+
+	IF cTimer3.elapsed() THEN
+		cTimer3.reset();
+	END_IF;
+
+	// Etage 3
+	IF cTaster4 <> xTaster4old THEN
+		xTaster4old := cTaster4;
+		cTimer4.start(_time := 1000);
+	END_IF;
+
+	IF cTimer4.elapsed() THEN
+		cTimer4.reset();
+	END_IF;
+
+	// Ausgangspulse
+	xEtage0 := cTimer1.running();
+	xEtage1 := cTimer2.running();
+	xEtage2 := cTimer3.running();
+	xEtage3 := cTimer4.running();
 
 	state := READY;
 
@@ -240,8 +241,6 @@ FUNCTION GLOBAL clsHMI::Etage0
 		xOut 	: BOOL;
 	END_VAR
   xOut := xEtage0; //Erkennung falls vom HMI getastet oder vom Schalter
-  
-
 END_FUNCTION
 
 

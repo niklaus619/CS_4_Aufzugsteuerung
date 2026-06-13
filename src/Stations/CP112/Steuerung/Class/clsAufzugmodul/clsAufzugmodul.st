@@ -227,13 +227,15 @@ Case iStep of
       IF cTuerstatus.istzu() THEN
         
         iStep := 31;
-      ELSIF NOT cAnforderung.TuerAuf() THEN  // unterbruch durch bedienung am HMI 
-      
+      ELSIF cAnforderung.TuerAuf() THEN  // unterbruch durch bedienung am HMI 
+            
+        iStep := 33; //Tuer Aufmachen
+
+      ELSE
         cTuerstatus.zu();//Simulation
         cAntriebTuer.FahrtPos(); //Aktor schliessen
-      ELSE
       
-        iStep := 33; //Tuer Aufmachen
+
       END_IF;
   
 
@@ -246,18 +248,17 @@ Case iStep of
         iStep := 32;
       END_IF;
       
-  32: // pruefen ob aktuelle Etage angefordert ist
+  32: // Prüfen ob aktuelle Etage angefordert ist
 
+       IF (cAnforderung.Anf0(xIn := FALSE) AND (iAktEtage = 0)) OR
+          (cAnforderung.Anf1(xIn := FALSE) AND (iAktEtage = 1)) OR
+          (cAnforderung.Anf2(xIn := FALSE) AND (iAktEtage = 2)) OR
+          (cAnforderung.Anf3(xIn := FALSE) AND (iAktEtage = 3)) THEN
 
-    IF cAnforderung.Anf0(xIn:=FALSE) AND (iAktEtage = 0) OR
-       cAnforderung.Anf1(xIn:=FALSE) AND (iAktEtage = 1) OR
-       cAnforderung.Anf2(xIn:=FALSE) AND (iAktEtage = 2) OR
-       cAnforderung.Anf3(xIn:=FALSE) AND (iAktEtage = 3) THEN
-
-      iStep := 33; // Etage Anfahren 
-    ELSE
-      iStep := 31;// Weiter fharen
-    END_IF;
+          iStep := 33; // Aktuelle Etage bedienen
+       ELSE
+          iStep := 31; // Weiterfahren
+       END_IF;
 
   33: //Tuer oefffnen
         cTuerstatus.auf();
@@ -320,10 +321,10 @@ Case iStep of
       
   42: // pruefen ob aktuelle Etage angefordert ist
   
-    IF cAnforderung.Anf0(xIn:=FALSE) AND (iAktEtage = 0) OR
-       cAnforderung.Anf1(xIn:=FALSE) AND (iAktEtage = 1) OR
-       cAnforderung.Anf2(xIn:=FALSE) AND (iAktEtage = 2) OR
-       cAnforderung.Anf3(xIn:=FALSE) AND (iAktEtage = 3) THEN
+    IF (cAnforderung.Anf0(xIn:=FALSE) AND (iAktEtage = 0)) OR
+       (cAnforderung.Anf1(xIn:=FALSE) AND (iAktEtage = 1)) OR
+       (cAnforderung.Anf2(xIn:=FALSE) AND (iAktEtage = 2)) OR
+       (cAnforderung.Anf3(xIn:=FALSE) AND (iAktEtage = 3)) THEN
        
       iStep := 43; // Etage Anfahren 
     ELSE

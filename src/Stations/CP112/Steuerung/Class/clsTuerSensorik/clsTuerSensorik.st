@@ -168,7 +168,7 @@ END_FUNCTION
 FUNCTION GLOBAL clsTuerSensorik::auf
 
   // Pruefen ob schon offen
-  IF NOT xAuf AND cTimer.running() THEN
+  IF NOT xAuf AND NOT cTimer.running()  THEN
     cTimer.Start(_time := cFahrzeit);
   END_IF;
 

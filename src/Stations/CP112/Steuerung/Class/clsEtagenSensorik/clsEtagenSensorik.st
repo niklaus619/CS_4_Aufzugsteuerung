@@ -155,24 +155,23 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsEtagenSensorik::hoch
-  
-//Init
-xErreicht := false;
+
+// Init
+xErreicht := FALSE;
 
 // Prüfen ob bereits in der obersten Etage
 IF iEtage >= cStockwerke THEN
     xErreicht := TRUE;
 ELSE
     IF NOT cTimer.running() THEN
-      cTimer.Start(_time := cFahrzeit);
+        cTimer.Start(_time := cFahrzeit);
     END_IF;
 
-    // Prüfen ob Fahrzeit abgelaufen
+    // Fahrzeit abgelaufen
     IF cTimer.elapsed() THEN
         iEtage := iEtage + 1;
         xErreicht := TRUE;
-    ELSE
-        xErreicht := FALSE;
+        cTimer.reset();
     END_IF;
 END_IF;
 
@@ -181,23 +180,22 @@ END_FUNCTION
 
 FUNCTION GLOBAL clsEtagenSensorik::runter
 
-//Init
-xErreicht := false;
+// Init
+xErreicht := FALSE;
 
 // Prüfen ob bereits in der untersten Etage
 IF iEtage <= 0 THEN
     xErreicht := TRUE;
 ELSE
     IF NOT cTimer.running() THEN
-      cTimer.Start(_time := cFahrzeit);
+        cTimer.Start(_time := cFahrzeit);
     END_IF;
 
-    // Prüfen ob Fahrzeit abgelaufen
+    // Fahrzeit abgelaufen
     IF cTimer.elapsed() THEN
         iEtage := iEtage - 1;
         xErreicht := TRUE;
-    ELSE
-        xErreicht := FALSE;
+        cTimer.reset();
     END_IF;
 END_IF;
 

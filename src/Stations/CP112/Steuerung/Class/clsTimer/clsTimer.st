@@ -8,7 +8,8 @@
 	Revision           = "0.0"
 	GUID               = "{F540F1F3-952B-43B6-A90C-71A03AC78C61}"
 	RealtimeTask       = "false"
-	CyclicTask         = "false"
+	CyclicTask         = "true"
+	DefCyclictime      = "50 ms"
 	BackgroundTask     = "false"
 	Sigmatek           = "false"
 	OSInterface        = "false"
@@ -30,7 +31,24 @@ clsTimer : CLASS
 		vTime 	: UDINT;
 		vTimeOffset 	: UDINT;
 		vIsRunning 	: BOOL;
+		vlsElapsed 	: DINT;
   //Functions:
+	
+	FUNCTION VIRTUAL GLOBAL CyWork
+		VAR_INPUT
+			EAX 	: UDINT;
+		END_VAR
+		VAR_OUTPUT
+			state (EAX) 	: UDINT;
+		END_VAR;
+	
+	FUNCTION VIRTUAL GLOBAL RtWork
+		VAR_INPUT
+			EAX 	: UDINT;
+		END_VAR
+		VAR_OUTPUT
+			state (EAX) 	: UDINT;
+		END_VAR;
 	
 	FUNCTION GLOBAL start
 		VAR_INPUT
@@ -90,8 +108,22 @@ FUNCTION clsTimer::@STD
 	VAR_OUTPUT
 		ret_code	: CONFSTATES;
 	END_VAR
+	VAR
+		vmt	: _LSL_STD_VMETH;
+	END_VAR
 
-	ret_code := C_OK;
+	//Command Methods
+	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsTimer, pCmd := #vmt.CmdTable);
+	vmt.CmdTable.CyWork		:= #CyWork();
+	vmt.CmdTable.RtWork		:= #RtWork();
+	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
+
+	IF ClassSvr.pMeth THEN
+		ret_code	:= C_OK;
+	ELSE
+		ret_code	:= C_OUTOF_NEAR;
+		RETURN;
+	END_IF;
 
 END_FUNCTION
 
@@ -132,6 +164,7 @@ FUNCTION GLOBAL clsTimer::elapsed
     isElapsed := FALSE;
   END_IF;
   
+  vlsElapsed := isElapsed;
 
 END_FUNCTION
 
@@ -162,5 +195,31 @@ FUNCTION GLOBAL clsTimer::remaining
   ELSE
       remaining := vTimeOffset - (ops.tAbsolute - vTime);
   END_IF;
+
+END_FUNCTION
+
+
+FUNCTION VIRTUAL GLOBAL clsTimer::RtWork
+	VAR_INPUT
+		EAX 	: UDINT;
+	END_VAR
+	VAR_OUTPUT
+		state (EAX) 	: UDINT;
+	END_VAR
+
+	state := READY;
+
+END_FUNCTION
+
+
+FUNCTION VIRTUAL GLOBAL clsTimer::CyWork
+	VAR_INPUT
+		EAX 	: UDINT;
+	END_VAR
+	VAR_OUTPUT
+		state (EAX) 	: UDINT;
+	END_VAR
+
+	state := READY;
 
 END_FUNCTION

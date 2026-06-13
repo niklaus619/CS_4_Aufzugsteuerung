@@ -30,6 +30,10 @@ clsHauptablauf : CLASS
   //Clients:
 	cHMI 	: CltChCmd_clsHMI;
   //Variables:
+		xAnf0 	: BOOL;
+		xAnf1 	: BOOL;
+		xAnf2 	: BOOL;
+		xAnf3 	: BOOL;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -74,12 +78,12 @@ clsHauptablauf : CLASS
 	
 	FUNCTION GLOBAL TuerZu
 		VAR_OUTPUT
-			xOut 	: DINT;
+			xOut 	: BOOL;
 		END_VAR;
 	
 	FUNCTION GLOBAL TuerAuf
 		VAR_OUTPUT
-			xOut 	: DINT;
+			xOut 	: BOOL;
 		END_VAR;
   //Tables:
 	FUNCTION @STD
@@ -151,7 +155,9 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
 		state (EAX) 	: UDINT;
 	END_VAR
   
-  
+    // Hier werden zyklische Aufgaben des Hauptablaufs ausgeführt.
+    // Die Anforderungsverwaltung erfolgt direkt über die Funktionen
+    // Anf0() bis Anf3().
 
 	state := READY;
 
@@ -161,7 +167,7 @@ END_FUNCTION
 
 FUNCTION GLOBAL clsHauptablauf::TuerZu
 	VAR_OUTPUT
-		xOut 	: DINT;
+		xOut 	: BOOL;
 	END_VAR
   
   //Weitergabe von IO
@@ -171,7 +177,7 @@ END_FUNCTION
 
 FUNCTION GLOBAL clsHauptablauf::TuerAuf
 	VAR_OUTPUT
-		xOut 	: DINT;
+		xOut 	: BOOL;
 	END_VAR
     
   //Weitergabe von IO
@@ -181,68 +187,94 @@ END_FUNCTION
 
 FUNCTION GLOBAL clsHauptablauf::Anf0
 	VAR_INPUT
-		xIn 	: BOOL;
+		xIn : BOOL;          // TRUE = Anforderung zurücksetzen
 	END_VAR
 	VAR_OUTPUT
-		xOut 	: BOOL;
+		xOut : BOOL;
 	END_VAR
-  //Anfrage Speichern
-  IF cHMI.Etage0() THEN
-    xOut := tRUE;
-  //Anfrage loeschen
-  ELSIF xIn THEN
-    xOut := FALSE;
-  END_IF;
-  
+
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage0() THEN
+        xAnf0 := TRUE;
+    END_IF;
+
+    // Anforderung löschen (z.B. nach Bedienung der Etage)
+    IF xIn THEN
+        xAnf0 := FALSE;
+    END_IF;
+
+    // Aktuellen Status zurückgeben
+    xOut := xAnf0;
 
 END_FUNCTION
 
 
 FUNCTION GLOBAL clsHauptablauf::Anf1
 	VAR_INPUT
-		xIn 	: BOOL;
+		xIn : BOOL;
 	END_VAR
 	VAR_OUTPUT
-		xOut 	: BOOL;
+		xOut : BOOL;
 	END_VAR
-  //Anfrage Speichern
-  IF cHMI.Etage0() THEN
-    xOut := tRUE;
-  //Anfrage loeschen
-  ELSIF xIn THEN
-    xOut := FALSE;
-  END_IF;
+
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage1() THEN
+        xAnf1 := TRUE;
+    END_IF;
+
+    // Anforderung löschen
+    IF xIn THEN
+        xAnf1 := FALSE;
+    END_IF;
+
+    // Aktuellen Status zurückgeben
+    xOut := xAnf1;
+
 END_FUNCTION
 
 
 FUNCTION GLOBAL clsHauptablauf::Anf2
 	VAR_INPUT
-		xIn 	: BOOL;
+		xIn : BOOL;
 	END_VAR
 	VAR_OUTPUT
-		xOut 	: BOOL;
+		xOut : BOOL;
 	END_VAR
-  //Anfrage Speichern
-  IF cHMI.Etage1() THEN
-    xOut := tRUE;
-  //Anfrage loeschen
-  ELSIF xIn THEN
-    xOut := FALSE;
-  END_IF;
+
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage2() THEN
+        xAnf2 := TRUE;
+    END_IF;
+
+    // Anforderung löschen
+    IF xIn THEN
+        xAnf2 := FALSE;
+    END_IF;
+
+    // Aktuellen Status zurückgeben
+    xOut := xAnf2;
+
 END_FUNCTION
 
 FUNCTION GLOBAL clsHauptablauf::Anf3
 	VAR_INPUT
-		xIn 	: BOOL;
+		xIn : BOOL;
 	END_VAR
 	VAR_OUTPUT
-		xOut 	: BOOL;
+		xOut : BOOL;
 	END_VAR
-  //Anfrage Speichern
-  IF cHMI.Etage2() THEN
-    xOut := tRUE;
-  //Anfrage loeschen
-  ELSIF xIn THEN
-    xOut := FALSE;
-  END_IF;
+
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage3() THEN
+        xAnf3 := TRUE;
+    END_IF;
+
+    // Anforderung löschen
+    IF xIn THEN
+        xAnf3 := FALSE;
+    END_IF;
+
+    // Aktuellen Status zurückgeben
+    xOut := xAnf3;
+
 END_FUNCTION

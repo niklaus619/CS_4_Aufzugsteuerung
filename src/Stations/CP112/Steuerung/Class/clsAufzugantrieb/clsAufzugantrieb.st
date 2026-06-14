@@ -41,9 +41,15 @@ clsAufzugantrieb : CLASS
 			state (EAX) 	: UDINT;
 		END_VAR;
 	
-	FUNCTION GLOBAL FahrtPos;
+	FUNCTION GLOBAL FahrtPos
+		VAR_INPUT
+			xEn 	: DINT;
+		END_VAR;
 	
-	FUNCTION GLOBAL FahrtNeg;
+	FUNCTION GLOBAL FahrtNeg
+		VAR_INPUT
+			xEn 	: DINT;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -120,10 +126,16 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL clsAufzugantrieb::FahrtPos
+	VAR_INPUT
+		xEn 	: DINT;
+	END_VAR
 
 END_FUNCTION
 
 
 FUNCTION GLOBAL clsAufzugantrieb::FahrtNeg
+	VAR_INPUT
+		xEn 	: DINT;
+	END_VAR
 
 END_FUNCTION

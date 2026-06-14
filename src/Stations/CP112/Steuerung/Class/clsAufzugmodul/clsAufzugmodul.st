@@ -178,6 +178,12 @@ Case iStep of
                   xZielOben := TRUE;     // Etage 1, 2 oder 3
               END_IF;
 
+              //Wenn bereits auf Etage dann reset Anfrage
+               IF cAnforderung.Anf0(xIn:=FALSE) THEN
+                  cAnforderung.Anf0(xIn:=TRUE);
+               END_IF;
+
+
           1:
 
               IF cAnforderung.Anf2(xIn:=FALSE) OR 
@@ -188,6 +194,11 @@ Case iStep of
               IF cAnforderung.Anf0(xIn:=FALSE) THEN
                   xZielUnten := TRUE;    // Etage 0
               END_IF;
+              
+              //Wenn bereits auf Etage dann reset Anfrage
+               IF cAnforderung.Anf1(xIn:=FALSE) THEN
+                  cAnforderung.Anf1(xIn:=TRUE);
+               END_IF;
 
           2:
               IF cAnforderung.Anf3(xIn:=FALSE) THEN
@@ -198,13 +209,25 @@ Case iStep of
                  cAnforderung.Anf1(xIn:=FALSE) THEN
                   xZielUnten := TRUE;    // Etage 0 oder 1
               END_IF;
-
+              
+              //Wenn bereits auf Etage dann reset Anfrage
+               IF cAnforderung.Anf2(xIn:=FALSE) THEN
+                  cAnforderung.Anf2(xIn:=TRUE);
+               END_IF;              
+              
+              
           3:
               IF cAnforderung.Anf0(xIn:=FALSE) OR
                  cAnforderung.Anf1(xIn:=FALSE) OR 
                  cAnforderung.Anf2(xIn:=FALSE) THEN
                   xZielUnten := TRUE;    // Etage 0, 1 oder 2
               END_IF;
+              
+              //Wenn bereits auf Etage dann reset Anfrage
+               IF cAnforderung.Anf3(xIn:=FALSE) THEN
+                  cAnforderung.Anf3(xIn:=TRUE);
+               END_IF;              
+              
 
       END_CASE;
   
@@ -233,7 +256,7 @@ Case iStep of
 
       ELSE
         cTuerstatus.zu();//Simulation
-        cAntriebTuer.FahrtPos(); //Aktor schliessen
+        cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
       
 
       END_IF;
@@ -242,7 +265,7 @@ Case iStep of
   31: // Hochfahren
           
         cEtagestatus.hoch();
-        cAntriebAufzug.FahrtPos(); //Hoch
+        cAntriebAufzug.FahrtPos(xEn:=TRUE); //Hoch
         
       IF cEtagestatus.erreicht() THEN
         iStep := 32;
@@ -250,25 +273,31 @@ Case iStep of
       
   32: // Prüfen ob aktuelle Etage angefordert ist
 
+       cAntriebAufzug.FahrtPos(xEn:=FALSE); // Aufzug stoppen
+       iAktEtage := cEtagestatus.AktEtage(); // aktuelle Etage neu lesen
+
        IF (cAnforderung.Anf0(xIn := FALSE) AND (iAktEtage = 0)) OR
           (cAnforderung.Anf1(xIn := FALSE) AND (iAktEtage = 1)) OR
           (cAnforderung.Anf2(xIn := FALSE) AND (iAktEtage = 2)) OR
           (cAnforderung.Anf3(xIn := FALSE) AND (iAktEtage = 3)) THEN
 
-          iStep := 33; // Aktuelle Etage bedienen
+          iStep := 33;
        ELSE
-          iStep := 31; // Weiterfahren
+          iStep := 31;
        END_IF;
 
   33: //Tuer oefffnen
         cTuerstatus.auf();
-        cAntriebTuer.FahrtNeg();// oeffen
+        cAntriebTuer.FahrtNeg(xEn:=TRUE);// oeffen
 
         IF cTuerstatus.istauf() AND NOT cTimerOffen.running() THEN
+          // Tuerantrieb stoppen
+          cAntriebTuer.FahrtNeg(xEn:=FALSE); 
           cTimerOffen.start(_time:=cZeitOffen);
         END_IF;
         
-        IF cTimerOffen.elapsed() THEN
+        IF cTimerOffen.elapsed() OR cAnforderung.TuerZu() THEN //Wenn direkt schalter zu gedruekt wird
+          cTimerOffen.reset();        
           iStep := 34; //Tuer schliessen
         END_IF;
     
@@ -276,10 +305,12 @@ Case iStep of
    34: //Tuer schliessen
         
         cTuerstatus.zu();//Simulation
-        cAntriebTuer.FahrtPos(); //Aktor schliessen
+        cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
         
         
         IF cTuerstatus.istzu() THEN 
+        // Tuerantrieb stoppen
+          cAntriebTuer.FahrtPos(xEn:=FALSE); 
         // Anfrage loeschen
           IF iAktEtage = 0 THEN
              cAnforderung.Anf0(xIn:=TRUE);
@@ -303,43 +334,48 @@ Case iStep of
       ELSIF NOT cAnforderung.TuerAuf() THEN  // unterbruch durch bedienung am HMI 
       
         cTuerstatus.zu();//Simulation
-        cAntriebTuer.FahrtPos(); //Aktor schliessen
+        cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
       ELSE
       
-        iStep := 42; //Tuer Aufmachen
+        iStep := 43; //Tuer Aufmachen
       END_IF;
   
 
   41: // Runterfahren
           
         cEtagestatus.runter();
-        cAntriebAufzug.FahrtNeg(); //Runter
+        cAntriebAufzug.FahrtNeg(xEn:=TRUE); //Runter
         
       IF cEtagestatus.erreicht() THEN
         iStep := 42;
       END_IF;
       
-  42: // pruefen ob aktuelle Etage angefordert ist
+  42: // Prüfen ob aktuelle Etage angefordert ist
+  
+    cAntriebAufzug.FahrtNeg(xEn:=FALSE); // Aufzug stoppen
+    iAktEtage := cEtagestatus.AktEtage(); // aktuelle Etage neu lesen
   
     IF (cAnforderung.Anf0(xIn:=FALSE) AND (iAktEtage = 0)) OR
        (cAnforderung.Anf1(xIn:=FALSE) AND (iAktEtage = 1)) OR
        (cAnforderung.Anf2(xIn:=FALSE) AND (iAktEtage = 2)) OR
        (cAnforderung.Anf3(xIn:=FALSE) AND (iAktEtage = 3)) THEN
        
-      iStep := 43; // Etage Anfahren 
+      iStep := 43;
     ELSE
-      iStep := 41; // weiter fahren 
+      iStep := 41;
     END_IF;
       
   43: //Tuer oefffnen
         cTuerstatus.auf();
-        cAntriebTuer.FahrtNeg();// oeffen
+        cAntriebTuer.FahrtNeg(xEn:=TRUE);// oeffen
         
         IF cTuerstatus.istauf() AND NOT cTimerOffen.running() THEN
+          cAntriebTuer.FahrtNeg(xEn:=FALSE);
           cTimerOffen.start(_time:=cZeitOffen);
         END_IF;
         
-        IF cTimerOffen.elapsed() THEN
+        IF cTimerOffen.elapsed() OR cAnforderung.TuerZu() THEN //Wenn direkt schalter zu gedruekt wird
+          cTimerOffen.reset();
           iStep := 44; //Tuer schliessen
         END_IF;
     
@@ -347,10 +383,12 @@ Case iStep of
    44: //Tuer schliessen
         
         cTuerstatus.zu();//Simulation
-        cAntriebTuer.FahrtPos(); //Aktor schliessen
+        cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
         
         
-        IF cTuerstatus.istzu() THEN      
+        IF cTuerstatus.istzu() THEN
+          // Tuerantrieb stoppen
+          cAntriebTuer.FahrtPos(xEn:=FALSE); 
           // Anfrage loeschen
           IF iAktEtage = 0 THEN
              cAnforderung.Anf0(xIn:=TRUE);

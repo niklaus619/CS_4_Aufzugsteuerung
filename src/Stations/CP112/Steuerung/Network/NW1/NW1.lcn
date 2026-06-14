@@ -41,7 +41,7 @@
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
-				<Server Name="VisuEtage"/>
+				<Server Name="sVisuEtage"/>
 				<Client Name="cFahrzeit" Value="2000"/>
 				<Client Name="cStockwerke" Value="4"/>
 				<Client Name="cTimer"/>
@@ -68,7 +68,12 @@
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
-				<Server Name="sUbergabeHMI"/>
+				<Server Name="sAnf0"/>
+				<Server Name="sAnf1"/>
+				<Server Name="sAnf2"/>
+				<Server Name="sAnf3"/>
+				<Server Name="sAnfAuf"/>
+				<Server Name="sAnfZu"/>
 				<Client Name="cTaster1"/>
 				<Client Name="cTaster2"/>
 				<Client Name="cTaster3"/>
@@ -176,7 +181,7 @@
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
-				<Server Name="VisuTuer"/>
+				<Server Name="sVisuTuer"/>
 				<Client Name="cFahrzeit" Value="3000"/>
 				<Client Name="cTimer"/>
 			</Channels>

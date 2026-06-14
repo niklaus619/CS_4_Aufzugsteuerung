@@ -7,7 +7,7 @@
 			GUID       = "{E9E4E600-CDFB-4C07-B93F-050532BE4DDE}"
 			Class      = "_DriveMng_DC062"
 			Position   = "(390,210)"
-			Visualized = "true"
+			Visualized = "false"
 			Remotely   = "true"
 			CyclicTime = "10 ms">
 			<Channels>
@@ -257,7 +257,7 @@
 			GUID       = "{2058CCA8-66F5-4BA3-A153-9FFB9ED6BB86}"
 			Class      = "_DriveAxis"
 			Position   = "(1170,210)"
-			Visualized = "true"
+			Visualized = "false"
 			Remotely   = "true">
 			<Channels>
 				<Server Name="ActCurrent"/>
@@ -406,8 +406,8 @@
 			Name       = "_DriveMng_DC0622"
 			GUID       = "{58B7CCC5-6573-4A90-A755-FBEA0148ED09}"
 			Class      = "_DriveMng_DC062"
-			Position   = "(360,2280)"
-			Visualized = "true"
+			Position   = "(367,2280)"
+			Visualized = "false"
 			Remotely   = "true"
 			CyclicTime = "10 ms">
 			<Channels>
@@ -657,7 +657,7 @@
 			GUID       = "{956B6FE5-729A-414B-8BED-E8C61F250A0D}"
 			Class      = "_DriveAxis"
 			Position   = "(1110,2310)"
-			Visualized = "true"
+			Visualized = "false"
 			Remotely   = "true">
 			<Channels>
 				<Server Name="ActCurrent"/>
@@ -807,7 +807,7 @@
 			GUID           = "{0A7C13A8-7BBC-452F-9B64-082F441999A8}"
 			Class          = "_LMCAxis"
 			Position       = "(2970,180)"
-			Visualized     = "true"
+			Visualized     = "false"
 			Remotely       = "true"
 			RealTime       = "1 ms"
 			CyclicTime     = "10 ms"
@@ -1213,7 +1213,7 @@
 			GUID           = "{D3911EE7-8282-47C5-9720-FCF3BF0B5162}"
 			Class          = "_LMCAxis"
 			Position       = "(2850,2340)"
-			Visualized     = "true"
+			Visualized     = "false"
 			Remotely       = "true"
 			RealTime       = "1 ms"
 			CyclicTime     = "10 ms"
@@ -1673,7 +1673,7 @@
 			GUID       = "{898CE7A8-42E7-4CF7-82E5-D23BDB3AE9E7}"
 			Class      = "DrivePosControl"
 			Position   = "(2100,270)"
-			Visualized = "true"
+			Visualized = "false"
 			Remotely   = "true">
 			<Channels>
 				<Server Name="SetPosOut"/>
@@ -1707,7 +1707,7 @@
 			GUID       = "{D009CDCA-785E-4969-8E2D-2830B106EFE0}"
 			Class      = "DrivePosControl"
 			Position   = "(2040,2400)"
-			Visualized = "true"
+			Visualized = "false"
 			Remotely   = "true">
 			<Channels>
 				<Server Name="SetPosOut"/>
@@ -1744,7 +1744,7 @@
 		<Connection Source="_DriveMng_DC0621.SdiasIn" Destination="VI0211.SdiasOut_1"/>
 		<Connection Source="_DriveMng_DC0621_Axis1.DriveMng" Destination="_DriveMng_DC0621.CmdState" Vertices="(1170,300),(992,300),"/>
 		<Connection Source="_DriveMng_DC0622.SdiasIn" Destination="VI0211.SdiasOut_1"/>
-		<Connection Source="_DriveMng_DC0622_Axis1.DriveMng" Destination="_DriveMng_DC0622.CmdState" Vertices="(1110,2400),(962,2370),"/>
+		<Connection Source="_DriveMng_DC0622_Axis1.DriveMng" Destination="_DriveMng_DC0622.CmdState" Vertices="(1110,2400),(969,2370),"/>
 		<Connection Source="DrivePosControl1.cDriveAxis" Destination="_DriveMng_DC0621_Axis1.CmdState" Vertices="(2100,360),(1772,300),"/>
 		<Connection Source="_LMCAxis1.ActPosition" Destination="_DriveMng_DC0621_Axis1.ActPos" Vertices="(2970,270),(2610,840),(2130,840),(1772,480),"/>
 		<Connection Source="DrivePosControl2.cDriveAxis" Destination="_DriveMng_DC0622_Axis1.CmdState" Vertices="(2040,2490),(1712,2400),"/>

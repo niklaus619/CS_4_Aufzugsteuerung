@@ -20,7 +20,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{8B8661B5-0101-4DCF-BCD2-5425B48FE841}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="VisuTuer" GUID="{EEE2F83E-5824-43C8-9793-FA2A7292B577}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Server Name="sVisuTuer" GUID="{EEE2F83E-5824-43C8-9793-FA2A7292B577}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Client Name="cFahrzeit" Required="false" Internal="false"/>
 		<Client Name="cTimer" Required="true" Internal="false"/>
 	</Channels>
@@ -32,7 +32,7 @@ clsTuerSensorik : CLASS
 	END_TYPE
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
-	VisuTuer 	: SvrCh_DINT;
+	sVisuTuer 	: SvrCh_DINT;
   //Clients:
 	cTimer 	: CltChCmd_clsTimer;
 	cFahrzeit 	: CltCh_UDINT;
@@ -85,7 +85,7 @@ TO_UDINT(712717468), "clsTuerSensorik", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsTuerSensorik.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
-(::clsTuerSensorik.VisuTuer.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2070073430), "VisuTuer", 
+(::clsTuerSensorik.sVisuTuer.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(3012978210), "sVisuTuer", 
 //Clients:
 (::clsTuerSensorik.cTimer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1671967446), "cTimer", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
 (::clsTuerSensorik.cFahrzeit.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(840715053), "cFahrzeit", 
@@ -120,8 +120,8 @@ FUNCTION clsTuerSensorik::@STD
 		ret_code	:= C_OUTOF_NEAR;
 		RETURN;
 	END_IF;
-	VisuTuer.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
-	IF VisuTuer.pMeth THEN
+	sVisuTuer.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF sVisuTuer.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;
@@ -143,6 +143,9 @@ FUNCTION VIRTUAL GLOBAL clsTuerSensorik::CyWork
 	END_VAR
 
   cFahrzeit := cFahrzeit.Read();
+  
+  //Uebergabe an HMI
+  sVisuTuer := xAuf;
 
 	state := READY;
 

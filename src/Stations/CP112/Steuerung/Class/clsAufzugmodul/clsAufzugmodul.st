@@ -60,7 +60,7 @@ clsAufzugmodul : CLASS
 	cTimerOffen 	: CltChCmd_clsTimer;
 	cZeitOffen 	: CltCh_UDINT;
   //Variables:
-		iStep 	: DINT;
+		iStep 	: Schritkette;
 		iAktEtage 	: DINT;
 		xZielOben 	: BOOL;
 		xZielUnten 	: BOOL;

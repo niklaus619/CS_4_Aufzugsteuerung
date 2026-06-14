@@ -134,6 +134,10 @@ FUNCTION GLOBAL clsAufzugantrieb::FahrtPos
   
   0: 
   
+  1:
+  
+  2:
+  
   end_case;
 
 

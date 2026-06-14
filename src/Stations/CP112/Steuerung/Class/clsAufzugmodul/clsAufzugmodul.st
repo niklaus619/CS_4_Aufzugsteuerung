@@ -31,6 +31,19 @@
 </Class>
 *)
 clsAufzugmodul : CLASS
+	TYPE
+	  Schritkette :
+	  (
+	    Initialisierung:=0,
+	    Fahranforderung:=10,
+	    FahrrichtungSuchen:=20,
+	    InitFahrtnachOben:=30,
+	    Hochfahrt:=31,
+	    EtagenOben:=32,
+	    TuerObenOeffnen:=33,
+	    TuerObenSchliessen
+	  )$UDINT;
+	END_TYPE
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
   //Clients:

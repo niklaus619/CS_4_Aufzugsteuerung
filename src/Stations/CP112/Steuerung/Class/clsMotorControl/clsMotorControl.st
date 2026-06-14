@@ -303,6 +303,8 @@ FUNCTION VIRTUAL GLOBAL clsMotorControl::CyWork
              END_IF;
 
         END_CASE;
+        
+        
     
 
   END_CASE;

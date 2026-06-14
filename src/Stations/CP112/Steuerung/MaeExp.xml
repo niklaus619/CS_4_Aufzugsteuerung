@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<File CRC="9EFDA44B" Version="1.1" SubVersion="2">
+<File CRC="38AA876A" Version="1.1" SubVersion="2">
 	<Types>
 		<Type Name="_DRIVETYPE" Datatype="UDINT" TypeId="ENUM">
 			<Elements>
@@ -941,12 +941,30 @@
 			Guid     = "013BA757-940A-4EA8-B1BE-51A701626C2E">
 		</Class>
 		<Class
+			Name     = "clsEtagenSensorik"
+			Datatype = "DINT"
+			Size     = "68"
+			Guid     = "B4EA9235-9170-4556-8088-095D9599E984">
+			<Servers>
+				<Server Name="VisuEtage" Datatype="DINT" Guid="63336E9B-FACE-4370-872C-13E96F5B9F3C" WriteProtected="false"/>
+			</Servers>
+		</Class>
+		<Class
 			Name     = "clsHMI"
 			Datatype = "DINT"
-			Size     = "84"
+			Size     = "144"
 			Guid     = "7FA8BFF6-E8AB-4A85-9515-8DBAD82A5670">
 			<Servers>
 				<Server Name="sUbergabeHMI" Datatype="DINT" Guid="6CE70355-F024-47E5-8DE2-8F426953621C" WriteProtected="false"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "clsTuerSensorik"
+			Datatype = "DINT"
+			Size     = "52"
+			Guid     = "6009D391-F9B6-402A-826A-3ACE2DF3A016">
+			<Servers>
+				<Server Name="VisuTuer" Datatype="DINT" Guid="EEE2F83E-5824-43C8-9793-FA2A7292B577" WriteProtected="false"/>
 			</Servers>
 		</Class>
 		<Class
@@ -1447,7 +1465,9 @@
 		<Object Name="_LMCAxis1" Datatype="_LMCAxis" Guid="0A7C13A8-7BBC-452F-9B64-082F441999A8"/>
 		<Object Name="_LMCAxis2" Datatype="_LMCAxis" Guid="D3911EE7-8282-47C5-9720-FCF3BF0B5162"/>
 		<Object Name="AI0431" Datatype="AI043" Guid="A0B4511D-86CB-4BDC-80E4-EF644B408663"/>
+		<Object Name="clsEtagen1" Datatype="clsEtagenSensorik" Guid="161C8F9C-70DE-48E6-A140-C558235AA2BF"/>
 		<Object Name="clsHMI1" Datatype="clsHMI" Guid="0F050788-F273-4D92-8CFC-C809040FE77C"/>
+		<Object Name="clsTuerSensorik1" Datatype="clsTuerSensorik" Guid="F2E6685D-EBB9-428D-9D74-9E3DEFC9E11D"/>
 		<Object Name="CP112_IOs1" Datatype="CP112_IOs" Guid="EFEA7052-7C43-4FE7-9A8A-7320E5FFF8BF"/>
 		<Object Name="DM0811" Datatype="DM081" Guid="C3CEE9FF-F164-4375-97F7-0F25239F765B"/>
 		<Object Name="DM1611" Datatype="DM161" Guid="088393A8-EB4D-4081-9920-425FD67F5135"/>

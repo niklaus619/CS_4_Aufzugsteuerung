@@ -126,6 +126,11 @@ TYPE
     dData : _LMCAXIS_OPMODE;
     pDsc : ^SVRDSC;
   END_STRUCT;
+  CltChCmd__LMCAxis : STRUCT
+    pCh : ^SvrChCmd__LMCAXIS_OPMODE;
+    dData : _LMCAXIS_OPMODE;
+    pCmd : ^_LMCAxis;
+  END_STRUCT;
   CltChCmd__LMCAxisBase : STRUCT
     pCh : ^SvrChCmd__LMCAXIS_OPMODE;
     dData : _LMCAXIS_OPMODE;
@@ -220,6 +225,41 @@ TYPE
     pCh : ^SvrChCmd_DINT;
     dData : DINT;
     pCmd : ^ASCII_BIN;
+  END_STRUCT;
+  CltChCmd_clsAufzugantrieb : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsAufzugantrieb;
+  END_STRUCT;
+  CltChCmd_clsEtagenSensorik : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsEtagenSensorik;
+  END_STRUCT;
+  CltChCmd_clsHauptablauf : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsHauptablauf;
+  END_STRUCT;
+  CltChCmd_clsHMI : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsHMI;
+  END_STRUCT;
+  CltChCmd_clsMotorControl : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsMotorControl;
+  END_STRUCT;
+  CltChCmd_clsTimer : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsTimer;
+  END_STRUCT;
+  CltChCmd_clsTuerSensorik : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsTuerSensorik;
   END_STRUCT;
   CltChCmd_Controller : STRUCT
     pCh : ^SvrChCmd_DINT;
@@ -514,6 +554,16 @@ TYPE
   SvrCh_HDINT : STRUCT
     pMeth : ^CHMETH;
     dData : HDINT;
+    pDsc : ^SVRDSC;
+  END_STRUCT;
+  SvrCh_MOTOR_CMD_PTofCls_clsMotorControl : STRUCT
+    pMeth : ^CHMETH;
+    dData : clsMotorControl::MOTOR_CMD;
+    pDsc : ^SVRDSC;
+  END_STRUCT;
+  SvrCh_MOTOR_MODE_PTofCls_clsMotorControl : STRUCT
+    pMeth : ^CHMETH;
+    dData : clsMotorControl::MOTOR_MODE;
     pDsc : ^SVRDSC;
   END_STRUCT;
   SvrCh_SafetyConfigStateType : STRUCT

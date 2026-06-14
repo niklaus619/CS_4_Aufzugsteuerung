@@ -20,7 +20,6 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{F8330AE8-2493-4EA9-9D35-C4FD45810E95}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sAnforderung" GUID="{B3AC04EB-1261-4D56-9CD4-578B8F9CCA60}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cHMI" Required="true" Internal="false"/>
 	</Channels>
 </Class>
@@ -28,10 +27,13 @@
 clsHauptablauf : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
-	sAnforderung 	: SvrCh_DINT;
   //Clients:
-	cHMI 	: CltCh_DINT;
+	cHMI 	: CltChCmd_clsHMI;
   //Variables:
+		xAnf0 	: BOOL;
+		xAnf1 	: BOOL;
+		xAnf2 	: BOOL;
+		xAnf3 	: BOOL;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -41,6 +43,48 @@ clsHauptablauf : CLASS
 		VAR_OUTPUT
 			state (EAX) 	: UDINT;
 		END_VAR;
+	
+	FUNCTION GLOBAL Anf0
+		VAR_INPUT
+			xIn 	: BOOL;
+		END_VAR
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL Anf1
+		VAR_INPUT
+			xIn 	: BOOL;
+		END_VAR
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL Anf2
+		VAR_INPUT
+			xIn 	: BOOL;
+		END_VAR
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL Anf3
+		VAR_INPUT
+			xIn 	: BOOL;
+		END_VAR
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL TuerZu
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL TuerAuf
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -49,6 +93,9 @@ clsHauptablauf : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
+#pragma usingLtd clsHMI
+
+
 //}}LSL_DECLARATION
 
 
@@ -56,14 +103,13 @@ FUNCTION GLOBAL TAB clsHauptablauf::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSHAUPTABLAUF
 0$UINT, 0$UINT, (SIZEOF(::clsHauptablauf))$UINT, 
-2$UINT, 1$UINT, 0$UINT, 
+1$UINT, 1$UINT, 0$UINT, 
 TO_UDINT(971323912), "clsHauptablauf", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsHauptablauf.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
-(::clsHauptablauf.sAnforderung.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(3339841396), "sAnforderung", 
 //Clients:
-(::clsHauptablauf.cHMI.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(2629516491), "cHMI", 
+(::clsHauptablauf.cHMI.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(2629516491), "cHMI", TO_UDINT(1223415905), "clsHMI", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 
@@ -108,7 +154,127 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
 	VAR_OUTPUT
 		state (EAX) 	: UDINT;
 	END_VAR
+  
+    // Hier werden zyklische Aufgaben des Hauptablaufs ausgeführt.
+    // Die Anforderungsverwaltung erfolgt direkt über die Funktionen
+    // Anf0() bis Anf3().
 
 	state := READY;
+
+END_FUNCTION
+
+
+
+FUNCTION GLOBAL clsHauptablauf::TuerZu
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+  
+  //Weitergabe von IO
+xOut := cHMI.Tuerzu();
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHauptablauf::TuerAuf
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+    
+  //Weitergabe von IO
+xOut := cHMI.Tuerauf();
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHauptablauf::Anf0
+	VAR_INPUT
+		xIn : BOOL;          // TRUE = Anforderung zurücksetzen
+	END_VAR
+	VAR_OUTPUT
+		xOut : BOOL;
+	END_VAR
+
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage0() THEN
+        xAnf0 := TRUE;
+    END_IF;
+
+    // Anforderung löschen (z.B. nach Bedienung der Etage)
+    IF xIn THEN
+        xAnf0 := FALSE;
+    END_IF;
+
+    // Aktuellen Status zurückgeben
+    xOut := xAnf0;
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHauptablauf::Anf1
+	VAR_INPUT
+		xIn : BOOL;
+	END_VAR
+	VAR_OUTPUT
+		xOut : BOOL;
+	END_VAR
+
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage1() THEN
+        xAnf1 := TRUE;
+    END_IF;
+
+    // Anforderung löschen
+    IF xIn THEN
+        xAnf1 := FALSE;
+    END_IF;
+
+    // Aktuellen Status zurückgeben
+    xOut := xAnf1;
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHauptablauf::Anf2
+	VAR_INPUT
+		xIn : BOOL;
+	END_VAR
+	VAR_OUTPUT
+		xOut : BOOL;
+	END_VAR
+
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage2() THEN
+        xAnf2 := TRUE;
+    END_IF;
+
+    // Anforderung löschen
+    IF xIn THEN
+        xAnf2 := FALSE;
+    END_IF;
+
+    // Aktuellen Status zurückgeben
+    xOut := xAnf2;
+
+END_FUNCTION
+
+FUNCTION GLOBAL clsHauptablauf::Anf3
+	VAR_INPUT
+		xIn : BOOL;
+	END_VAR
+	VAR_OUTPUT
+		xOut : BOOL;
+	END_VAR
+
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage3() THEN
+        xAnf3 := TRUE;
+    END_IF;
+
+    // Anforderung löschen
+    IF xIn THEN
+        xAnf3 := FALSE;
+    END_IF;
+
+    // Aktuellen Status zurückgeben
+    xOut := xAnf3;
 
 END_FUNCTION

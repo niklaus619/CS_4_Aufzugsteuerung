@@ -20,8 +20,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{8D9AD2EC-2B31-46C7-AFBD-5923DDDA9AD0}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Client Name="cHoch" Required="true" Internal="false"/>
-		<Client Name="cRunter" Required="true" Internal="false"/>
+		<Client Name="cFahrbefehl" Required="false" Internal="false"/>
 	</Channels>
 </Class>
 *)
@@ -29,9 +28,9 @@ clsAufzugantrieb : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
   //Clients:
-	cHoch 	: CltCh_DINT;
-	cRunter 	: CltCh_DINT;
+	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
+		iStep 	: DINT;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -41,6 +40,16 @@ clsAufzugantrieb : CLASS
 		VAR_OUTPUT
 			state (EAX) 	: UDINT;
 		END_VAR;
+	
+	FUNCTION GLOBAL FahrtPos
+		VAR_INPUT
+			xEn 	: DINT;
+		END_VAR;
+	
+	FUNCTION GLOBAL FahrtNeg
+		VAR_INPUT
+			xEn 	: DINT;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -49,6 +58,9 @@ clsAufzugantrieb : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
+#pragma usingLtd clsMotorControl
+
+
 //}}LSL_DECLARATION
 
 
@@ -56,14 +68,13 @@ FUNCTION GLOBAL TAB clsAufzugantrieb::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSAUFZUGANTRIEB
 0$UINT, 0$UINT, (SIZEOF(::clsAufzugantrieb))$UINT, 
-1$UINT, 2$UINT, 0$UINT, 
+1$UINT, 1$UINT, 0$UINT, 
 TO_UDINT(1641204752), "clsAufzugantrieb", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsAufzugantrieb.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
 //Clients:
-(::clsAufzugantrieb.cHoch.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(1598339791), "cHoch", 
-(::clsAufzugantrieb.cRunter.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(1093630759), "cRunter", 
+(::clsAufzugantrieb.cFahrbefehl.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000000$UINT, TO_UDINT(1832219461), "cFahrbefehl", TO_UDINT(3506464711), "clsMotorControl", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 
@@ -110,5 +121,21 @@ FUNCTION VIRTUAL GLOBAL clsAufzugantrieb::CyWork
 	END_VAR
 
 	state := READY;
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsAufzugantrieb::FahrtPos
+	VAR_INPUT
+		xEn 	: DINT;
+	END_VAR
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsAufzugantrieb::FahrtNeg
+	VAR_INPUT
+		xEn 	: DINT;
+	END_VAR
 
 END_FUNCTION

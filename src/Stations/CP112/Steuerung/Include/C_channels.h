@@ -175,6 +175,13 @@ typedef struct SvrChCmd__LMCAXIS_OPMODE
     SVRDSC *pDsc;
   } SvrChCmd__LMCAXIS_OPMODE;
 
+typedef struct CltChCmd__LMCAxis 
+  {
+    struct SvrChCmd__LMCAXIS_OPMODE *pCh;
+    _LMCAXIS_OPMODE dData;
+    _LMCAxis *pCmd;
+  } CltChCmd__LMCAxis;
+
 typedef struct CltChCmd__LMCAxisBase 
   {
     struct SvrChCmd__LMCAXIS_OPMODE *pCh;
@@ -307,6 +314,55 @@ typedef struct CltChCmd_ASCII_BIN
     DINT dData;
     ASCII_BIN *pCmd;
   } CltChCmd_ASCII_BIN;
+
+typedef struct CltChCmd_clsAufzugantrieb 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsAufzugantrieb *pCmd;
+  } CltChCmd_clsAufzugantrieb;
+
+typedef struct CltChCmd_clsEtagenSensorik 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsEtagenSensorik *pCmd;
+  } CltChCmd_clsEtagenSensorik;
+
+typedef struct CltChCmd_clsHauptablauf 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsHauptablauf *pCmd;
+  } CltChCmd_clsHauptablauf;
+
+typedef struct CltChCmd_clsHMI 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsHMI *pCmd;
+  } CltChCmd_clsHMI;
+
+typedef struct CltChCmd_clsMotorControl 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsMotorControl *pCmd;
+  } CltChCmd_clsMotorControl;
+
+typedef struct CltChCmd_clsTimer 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsTimer *pCmd;
+  } CltChCmd_clsTimer;
+
+typedef struct CltChCmd_clsTuerSensorik 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsTuerSensorik *pCmd;
+  } CltChCmd_clsTuerSensorik;
 
 typedef struct CltChCmd_Controller 
   {
@@ -720,6 +776,20 @@ typedef struct SvrCh_HDINT
     HDINT dData;
     SVRDSC *pDsc;
   } SvrCh_HDINT;
+
+typedef struct SvrCh_MOTOR_CMD_PTofCls_clsMotorControl 
+  {
+    CHMETH *pMeth;
+    MOTOR_CMD dData;
+    SVRDSC *pDsc;
+  } SvrCh_MOTOR_CMD_PTofCls_clsMotorControl;
+
+typedef struct SvrCh_MOTOR_MODE_PTofCls_clsMotorControl 
+  {
+    CHMETH *pMeth;
+    MOTOR_MODE dData;
+    SVRDSC *pDsc;
+  } SvrCh_MOTOR_MODE_PTofCls_clsMotorControl;
 
 typedef struct SvrCh_SafetyConfigStateType 
   {

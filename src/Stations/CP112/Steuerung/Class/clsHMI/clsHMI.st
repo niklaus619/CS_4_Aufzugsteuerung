@@ -234,7 +234,7 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	cTaster4 := cTaster4.Read();
 
 	// Etage 0
-	IF cTaster1 <> xTaster1old OR sAnf0 THEN
+	IF (cTaster1 <> xTaster1old) OR sAnf0 THEN
 		xTaster1old := cTaster1;
 		cTimer1.start(_time := 1000);
 	END_IF;
@@ -244,7 +244,7 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	END_IF;
 
 	// Etage 1
-	IF cTaster2 <> xTaster2old OR sAnf1 THEN
+	IF (cTaster2 <> xTaster2old) OR sAnf1 THEN
 		xTaster2old := cTaster2;
 		cTimer2.start(_time := 1000);
 	END_IF;
@@ -254,7 +254,7 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	END_IF;
 
 	// Etage 2
-	IF cTaster3 <> xTaster3old OR sAnf2 THEN
+	IF (cTaster3 <> xTaster3old) OR sAnf2 THEN
 		xTaster3old := cTaster3;
 		cTimer3.start(_time := 1000);
 	END_IF;
@@ -264,7 +264,7 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	END_IF;
 
 	// Etage 3
-	IF cTaster4 <> xTaster4old OR sAnf3 THEN
+	IF (cTaster4 <> xTaster4old) OR sAnf3 THEN
 		xTaster4old := cTaster4;
 		cTimer4.start(_time := 1000);
 	END_IF;
@@ -321,7 +321,12 @@ FUNCTION GLOBAL clsHMI::Tuerzu
 	VAR_OUTPUT
 		xOut 	: BOOL;
 	END_VAR
-  xOut := sAnfZu; //Erkennung falls vom HMI getastet oder vom Schalter
+//Erkennung falls vom HMI getastet oder vom Schalter 
+  IF sAnfAuf > 0 THEN  
+    xOut := TRUE; 
+  ELSE
+    xOut := FALSE;
+  END_IF;
 END_FUNCTION
 
 
@@ -329,5 +334,10 @@ FUNCTION GLOBAL clsHMI::Tuerauf
 	VAR_OUTPUT
 		xOut 	: BOOL;
 	END_VAR
-  xOut := sAnfAuf; //Erkennung falls vom HMI getastet oder vom Schalter
+//Erkennung falls vom HMI getastet oder vom Schalter 
+  IF sAnfZu > 0 THEN  
+    xOut := TRUE; 
+  ELSE
+    xOut := FALSE;
+  END_IF;
 END_FUNCTION

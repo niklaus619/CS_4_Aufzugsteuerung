@@ -6,7 +6,7 @@
 			Name       = "clsAufzugantrieb"
 			GUID       = "{CDD3F86A-B098-458F-AE43-A0C3C0242A11}"
 			Class      = "clsAufzugantrieb"
-			Position   = "(1410,1050)"
+			Position   = "(1380,810)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
@@ -18,7 +18,7 @@
 			Name       = "clsAufzugmodul1"
 			GUID       = "{33309781-816D-4182-9BA2-D13739D47D47}"
 			Class      = "clsAufzugmodul"
-			Position   = "(2340,660)"
+			Position   = "(2310,420)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
@@ -36,7 +36,7 @@
 			Name       = "clsEtagen1"
 			GUID       = "{161C8F9C-70DE-48E6-A140-C558235AA2BF}"
 			Class      = "clsEtagenSensorik"
-			Position   = "(1410,630)"
+			Position   = "(1380,390)"
 			Visualized = "true"
 			CyclicTime = "1 ms">
 			<Channels>
@@ -51,7 +51,7 @@
 			Name       = "clsHauptablauf1"
 			GUID       = "{A41AD535-82C0-41F9-915D-F4F6ED4F2825}"
 			Class      = "clsHauptablauf"
-			Position   = "(1410,1200)"
+			Position   = "(1380,960)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
@@ -63,7 +63,7 @@
 			Name       = "clsHMI1"
 			GUID       = "{0F050788-F273-4D92-8CFC-C809040FE77C}"
 			Class      = "clsHMI"
-			Position   = "(990,1200)"
+			Position   = "(960,960)"
 			Visualized = "true"
 			CyclicTime = "1 ms">
 			<Channels>
@@ -88,7 +88,7 @@
 			Name       = "clsImpuls1"
 			GUID       = "{10FE2173-70D2-4DF9-A7B2-DDD0EC22F4A3}"
 			Class      = "clsTimer"
-			Position   = "(240,1470)"
+			Position   = "(210,1230)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -99,7 +99,7 @@
 			Name       = "clsImpuls2"
 			GUID       = "{ECD33523-D93B-4FAB-A31E-3FE984283FC0}"
 			Class      = "clsTimer"
-			Position   = "(240,1620)"
+			Position   = "(210,1380)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -110,7 +110,7 @@
 			Name       = "clsImpuls3"
 			GUID       = "{6B85CCA6-8873-4254-837B-C7930EADD29D}"
 			Class      = "clsTimer"
-			Position   = "(240,1770)"
+			Position   = "(210,1530)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -121,7 +121,7 @@
 			Name       = "clsImpuls4"
 			GUID       = "{1356581A-9B68-4DAE-AE44-EE5CD473F2D5}"
 			Class      = "clsTimer"
-			Position   = "(240,1920)"
+			Position   = "(210,1680)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -132,7 +132,7 @@
 			Name       = "clsSimFahrzeit1"
 			GUID       = "{E5FCE96B-5FED-4966-8802-710A313D9640}"
 			Class      = "clsTimer"
-			Position   = "(960,420)"
+			Position   = "(930,180)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -143,7 +143,7 @@
 			Name       = "clsSimFahrzeit2"
 			GUID       = "{D3F3E712-B216-40DD-9867-3F2E3CF567D6}"
 			Class      = "clsTimer"
-			Position   = "(960,630)"
+			Position   = "(930,390)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -154,7 +154,7 @@
 			Name       = "clsSimFahrzeit2_Copy"
 			GUID       = "{D44480FC-FF98-4E64-8862-01CF437ADE1F}"
 			Class      = "clsTimer"
-			Position   = "(1410,1350)"
+			Position   = "(1380,1110)"
 			Visualized = "false">
 			<Channels>
 				<Server Name="ClassSvr"/>
@@ -164,7 +164,7 @@
 			Name       = "clsTuerantrieb"
 			GUID       = "{57A96C9F-203F-4FD4-A78B-D1009FAA2929}"
 			Class      = "clsAufzugantrieb"
-			Position   = "(1410,900)"
+			Position   = "(1380,660)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
@@ -176,7 +176,7 @@
 			Name       = "clsTuerSensorik1"
 			GUID       = "{F2E6685D-EBB9-428D-9D74-9E3DEFC9E11D}"
 			Class      = "clsTuerSensorik"
-			Position   = "(1410,420)"
+			Position   = "(1380,180)"
 			Visualized = "true"
 			CyclicTime = "1 ms">
 			<Channels>
@@ -191,30 +191,32 @@
 	</Comments>
 	<!-- List of Connections in this network -->
 	<Connections>
-		<Connection Source="clsAufzugmodul1.cAntriebAufzug" Destination="clsAufzugantrieb.ClassSvr" Vertices="(2340,930),(1710,1140),"/>
-		<Connection Source="clsAufzugmodul1.cAntriebTuer" Destination="clsTuerantrieb.ClassSvr" Vertices="(2340,870),(1710,990),"/>
-		<Connection Source="clsAufzugmodul1.cAnforderung" Destination="clsHauptablauf1.ClassSvr" Vertices="(2340,990),(1710,1290),"/>
-		<Connection Source="clsHauptablauf1.cHMI" Destination="clsHMI1.ClassSvr" Vertices="(1410,1290),(1290,1290),"/>
-		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2340,750),(1710,510),"/>
-		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2340,810),(1710,720),"/>
-		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2340,1050),(1726,1440),"/>
-		<Connection Source="clsHMI1.cTaster1" Destination="__IO_Element11" Vertices="(990,1290),(540,1140)," IOObject="IO_Element1"/>
-		<Connection Source="clsHMI1.cTaster2" Destination="__IO_Element22" Vertices="(990,1350),(540,1230)," IOObject="IO_Element2"/>
-		<Connection Source="clsHMI1.cTaster3" Destination="__IO_Element31" Vertices="(990,1410),(540,1320)," IOObject="IO_Element3"/>
-		<Connection Source="clsTuerSensorik1.cTimer" Destination="clsSimFahrzeit1.ClassSvr" Vertices="(1410,510),(1276,510),"/>
-		<Connection Source="clsEtagen1.cTimer" Destination="clsSimFahrzeit2.ClassSvr" Vertices="(1410,720),(1276,720),"/>
-		<Connection Source="clsHMI1.cTimer1" Destination="clsImpuls1.ClassSvr" Vertices="(990,1530),(556,1560),"/>
-		<Connection Source="clsHMI1.cTimer2" Destination="clsImpuls2.ClassSvr" Vertices="(990,1590),(556,1710),"/>
-		<Connection Source="clsHMI1.cTimer3" Destination="clsImpuls3.ClassSvr" Vertices="(990,1650),(556,1860),"/>
-		<Connection Source="clsHMI1.cTimer4" Destination="clsImpuls4.ClassSvr" Vertices="(990,1710),(556,2010),"/>
-		<Connection Source="clsHMI1.cTaster4" Destination="__IO_Element41" Vertices="(990,1470),(540,1410)," IOObject="IO_Element4"/>
+		<Connection Source="clsAufzugmodul1.cAntriebAufzug" Destination="clsAufzugantrieb.ClassSvr" Vertices="(2310,690),(1680,900),"/>
+		<Connection Source="clsAufzugmodul1.cAntriebTuer" Destination="clsTuerantrieb.ClassSvr" Vertices="(2310,630),(1680,750),"/>
+		<Connection Source="clsAufzugmodul1.cAnforderung" Destination="clsHauptablauf1.ClassSvr" Vertices="(2310,750),(1680,1050),"/>
+		<Connection Source="clsHauptablauf1.cHMI" Destination="clsHMI1.ClassSvr" Vertices="(1380,1050),(1260,1050),"/>
+		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2310,510),(1680,270),"/>
+		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2310,570),(1680,480),"/>
+		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2310,810),(1696,1200),"/>
+		<Connection Source="clsHMI1.cTaster1" Destination="__IO_Element11" Vertices="(960,1050),(510,900)," IOObject="IO_Element1"/>
+		<Connection Source="clsHMI1.cTaster2" Destination="__IO_Element22" Vertices="(960,1110),(510,990)," IOObject="IO_Element2"/>
+		<Connection Source="clsHMI1.cTaster3" Destination="__IO_Element31" Vertices="(960,1170),(510,1080)," IOObject="IO_Element3"/>
+		<Connection Source="clsTuerSensorik1.cTimer" Destination="clsSimFahrzeit1.ClassSvr" Vertices="(1380,270),(1246,270),"/>
+		<Connection Source="clsEtagen1.cTimer" Destination="clsSimFahrzeit2.ClassSvr" Vertices="(1380,480),(1246,480),"/>
+		<Connection Source="clsHMI1.cTimer1" Destination="clsImpuls1.ClassSvr" Vertices="(960,1290),(526,1320),"/>
+		<Connection Source="clsHMI1.cTimer2" Destination="clsImpuls2.ClassSvr" Vertices="(960,1350),(526,1470),"/>
+		<Connection Source="clsHMI1.cTimer3" Destination="clsImpuls3.ClassSvr" Vertices="(960,1410),(526,1620),"/>
+		<Connection Source="clsHMI1.cTimer4" Destination="clsImpuls4.ClassSvr" Vertices="(960,1470),(526,1770),"/>
+		<Connection Source="clsHMI1.cTaster4" Destination="__IO_Element41" Vertices="(960,1230),(510,1170)," IOObject="IO_Element4"/>
+		<Connection Source="clsAufzugantrieb.cFahrbefehl" Destination="clsMotorControlAufzug.ClassSvr"/>
+		<Connection Source="clsTuerantrieb.cFahrbefehl" Destination="clsMotorControlTuer.ClassSvr"/>
 	</Connections>
 	<!-- List of temp data objects in this network -->
 	<IOObjects>
-		<IOObject KeyName="__IO_Element11" Name="IO_Element1" Position="(240,1110)" Client="clsHMI1.cTaster1"/>
-		<IOObject KeyName="__IO_Element22" Name="IO_Element2" Position="(240,1200)" Client="clsHMI1.cTaster2"/>
-		<IOObject KeyName="__IO_Element31" Name="IO_Element3" Position="(240,1290)" Client="clsHMI1.cTaster3"/>
-		<IOObject KeyName="__IO_Element41" Name="IO_Element4" Position="(240,1380)" Client="clsHMI1.cTaster4"/>
+		<IOObject KeyName="__IO_Element11" Name="IO_Element1" Position="(210,870)" Client="clsHMI1.cTaster1"/>
+		<IOObject KeyName="__IO_Element22" Name="IO_Element2" Position="(210,960)" Client="clsHMI1.cTaster2"/>
+		<IOObject KeyName="__IO_Element31" Name="IO_Element3" Position="(210,1050)" Client="clsHMI1.cTaster3"/>
+		<IOObject KeyName="__IO_Element41" Name="IO_Element4" Position="(210,1140)" Client="clsHMI1.cTaster4"/>
 	</IOObjects>
 	<!-- Headerfiles -->
 	<Options>

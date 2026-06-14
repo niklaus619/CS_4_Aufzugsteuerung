@@ -101,9 +101,8 @@
 		<File Path=".\Class\clsHauptablauf\clsHauptablauf.st"/>
 		<File Path=".\Class\clsAufzugmodul\clsAufzugmodul.st"/>
 		<File Path=".\Class\clsHMI\clsHMI.st"/>
-		<File Path=".\Class\clsTuerantrieb\clsTuerantrieb.st"/>
 		<File Path=".\Class\clsAufzugantrieb\clsAufzugantrieb.st"/>
-		<File Path=".\Class\clsEtagen\clsEtagen.st"/>
+		<File Path=".\Class\clsEtagenSensorik\clsEtagenSensorik.st"/>
 		<File Path=".\Class\clsTuerSensorik\clsTuerSensorik.st"/>
 		<File Path=".\Class\BusInterfaceSDIASInternal\BusInterfaceSDIASInternal.st"/>
 		<File Path=".\Class\CP112_IOs\CP112_IOs.st"/>
@@ -214,6 +213,10 @@
 		<File Path=".\Class\_LMCRefBase\_LMCRefBase.st"/>
 		<File Path=".\Class\_LMCSafety\_LMCSafety.st"/>
 		<File Path=".\Class\clsEnableDrive\clsEnableDrive.st"/>
+		<File Path=".\Class\clsTimer\clsTimer.st"/>
+		<File Path=".\Class\clsSimpleCounter\clsSimpleCounter.st"/>
+		<File Path=".\Class\clsCounter\clsCounter.st"/>
+		<File Path=".\Class\clsMotorControl\clsMotorControl.st"/>
 	</ClassFiles>
 	<NetworkFiles>
 		<File Path=".\Network\NW1\NW1.lcn"/>
@@ -235,7 +238,7 @@
 		<File Path=".\Class\_LMCAxis\_LMCAxis.vov"/>
 	</DocuFiles>
 	<Options>
-		<Target UseFPU="true">
+		<Target UseFPU="true" Processor="ARM">
 		</Target>
 		<Compiler
 			CompilerVersion         = "78"

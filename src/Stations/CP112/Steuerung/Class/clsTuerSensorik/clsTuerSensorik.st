@@ -20,7 +20,9 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{8B8661B5-0101-4DCF-BCD2-5425B48FE841}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sTuerstate" GUID="{D5885B28-1DC5-4675-9401-17833B38C3D9}" Visualized="false" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Server Name="VisuTuer" GUID="{EEE2F83E-5824-43C8-9793-FA2A7292B577}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Client Name="cFahrzeit" Required="false" Internal="false"/>
+		<Client Name="cTimer" Required="true" Internal="false"/>
 	</Channels>
 </Class>
 *)
@@ -30,9 +32,13 @@ clsTuerSensorik : CLASS
 	END_TYPE
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
-	sTuerstate 	: SvrCh_DINT;
+	VisuTuer 	: SvrCh_DINT;
   //Clients:
+	cTimer 	: CltChCmd_clsTimer;
+	cFahrzeit 	: CltCh_UDINT;
   //Variables:
+		xAuf 	: BOOL;
+		xZu 	: BOOL;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -42,6 +48,20 @@ clsTuerSensorik : CLASS
 		VAR_OUTPUT
 			state (EAX) 	: UDINT;
 		END_VAR;
+	
+	FUNCTION GLOBAL zu;
+	
+	FUNCTION GLOBAL auf;
+	
+	FUNCTION GLOBAL istzu
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
+	
+	FUNCTION GLOBAL istauf
+		VAR_OUTPUT
+			xOut 	: BOOL;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -50,6 +70,9 @@ clsTuerSensorik : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
+#pragma usingLtd clsTimer
+
+
 //}}LSL_DECLARATION
 
 
@@ -57,13 +80,15 @@ FUNCTION GLOBAL TAB clsTuerSensorik::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSTUERSENSORIK
 0$UINT, 0$UINT, (SIZEOF(::clsTuerSensorik))$UINT, 
-2$UINT, 0$UINT, 0$UINT, 
+2$UINT, 2$UINT, 0$UINT, 
 TO_UDINT(712717468), "clsTuerSensorik", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsTuerSensorik.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
-(::clsTuerSensorik.sTuerstate.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1178709137), "sTuerstate", 
+(::clsTuerSensorik.VisuTuer.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2070073430), "VisuTuer", 
 //Clients:
+(::clsTuerSensorik.cTimer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1671967446), "cTimer", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
+(::clsTuerSensorik.cFahrzeit.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(840715053), "cFahrzeit", 
 END_FUNCTION
 
 
@@ -95,8 +120,8 @@ FUNCTION clsTuerSensorik::@STD
 		ret_code	:= C_OUTOF_NEAR;
 		RETURN;
 	END_IF;
-	sTuerstate.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
-	IF sTuerstate.pMeth THEN
+	VisuTuer.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF VisuTuer.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;
@@ -108,6 +133,7 @@ END_FUNCTION
 //{{LSL_IMPLEMENTATION
 
 
+
 FUNCTION VIRTUAL GLOBAL clsTuerSensorik::CyWork
 	VAR_INPUT
 		EAX 	: UDINT;
@@ -116,6 +142,55 @@ FUNCTION VIRTUAL GLOBAL clsTuerSensorik::CyWork
 		state (EAX) 	: UDINT;
 	END_VAR
 
+  cFahrzeit := cFahrzeit.Read();
+
 	state := READY;
 
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsTuerSensorik::zu
+
+
+  //pruefen ob schon zu
+  IF NOT xZu AND NOT cTimer.running() THEN
+     cTimer.Start(_time := cFahrzeit); 
+  END_IF;
+
+  IF cTimer.elapsed() THEN
+      xAuf := FALSE;
+      xZu := TRUE;
+  END_IF;
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsTuerSensorik::auf
+
+  // Pruefen ob schon offen
+  IF NOT xAuf AND NOT cTimer.running()  THEN
+    cTimer.Start(_time := cFahrzeit);
+  END_IF;
+
+  IF cTimer.elapsed() THEN
+      xAuf := TRUE;
+      xZu := FALSE;
+  END_IF;
+
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsTuerSensorik::istzu
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+ xOut := xZu;
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsTuerSensorik::istauf
+	VAR_OUTPUT
+		xOut 	: BOOL;
+	END_VAR
+ xOut := xAuf;
 END_FUNCTION

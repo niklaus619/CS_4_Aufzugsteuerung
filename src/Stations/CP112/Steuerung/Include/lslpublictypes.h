@@ -581,6 +581,32 @@ _VaranDriveBase : CLASS_PUBLIC
 	END_TYPE
 END_CLASS;
 #pragma define (restore)
+clsMotorControl : CLASS_PUBLIC
+	TYPE
+	  MOTOR_CMD :
+	  (
+	    MOVE_ABS,
+	    MOVE_REL,
+	    STOP,
+	    POWER_ON,
+	    POWER_OFF,
+	    MOVE_INFINITE,
+	    STOP_EMG
+	  )$UDINT;
+	  MOTOR_MODE :
+	  (
+	    IDLE,
+	    MOVE_ABS,
+	    MOVE_REL,
+	    POWER_ON,
+	    POWER_OFF,
+	    STOP,
+	    STOP_EMG,
+	    MOVE_INFINITE
+	  )$UDINT;
+	END_TYPE
+END_CLASS;
+#pragma define (restore)
 Controller : CLASS_PUBLIC
 	TYPE
 	  _LMCCONTROLLER_SETPARAMETER :

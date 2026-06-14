@@ -41,7 +41,12 @@ clsAufzugmodul : CLASS
 	    Hochfahrt:=31,
 	    EtagenOben:=32,
 	    TuerObenOeffnen:=33,
-	    TuerObenSchliessen
+	    TuerObenSchliessen,
+	    InitFahrtnachUnten:=40,
+	    Unterfahrt:=41,
+	    EtageUnten:=42,
+	    TuerUntenOeffnen:=43,
+	    TuerUntenSchliessen:=44
 	  )$UDINT;
 	END_TYPE
   //Servers:
@@ -162,23 +167,23 @@ iAktEtage := cEtagestatus.AktEtage();
 Case iStep of
   
   
-  0: // Initialschritt
+  Initialisierung: // Initialschritt
   
   
-  iStep := 10;
+  iStep := Fahranforderung;
   
-  10: //Fahranforderung
+  Fahranforderung: //Fahranforderung
   
     IF cAnforderung.Anf0(xIn:=FALSE) OR
        cAnforderung.Anf1(xIn:=FALSE) OR
        cAnforderung.Anf2(xIn:=FALSE) OR
        cAnforderung.Anf3(xIn:=FALSE) THEN
-      iStep := 20;
+      iStep := FahrrichtungSuchen;
 //    ELSE     String status koennte man da rein tun
 //      sStatus
     END_IF;
   
-  20: // Fahrtrichtung evaluieren
+  FahrrichtungSuchen: // Fahrtrichtung evaluieren
       xZielOben := FALSE;
       xZielUnten := FALSE;
 
@@ -246,26 +251,26 @@ Case iStep of
   
       // Fahrt aufgeben
       IF xZielOben THEN
-          iStep := 30;
+          iStep := InitFahrtnachOben;
 
       ELSIF xZielUnten THEN
 
-          iStep := 40;
+          iStep := InitFahrtnachUnten;
 
       ELSE
 
-          iStep := 10;
+          iStep := Fahranforderung;
       END_IF;
       
-  30: // 30er = Fahrt nach oben
+  InitFahrtnachOben: // 30er = Fahrt nach oben
     
       //prüfen ob Türe zu
       IF cTuerstatus.istzu() THEN
         
-        iStep := 31;
+        iStep := Hochfahrt;
       ELSIF cAnforderung.TuerAuf() THEN  // unterbruch durch bedienung am HMI 
             
-        iStep := 33; //Tuer Aufmachen
+        iStep := TuerObenOeffnen; //Tuer Aufmachen
 
       ELSE
         cTuerstatus.zu();//Simulation
@@ -275,16 +280,16 @@ Case iStep of
       END_IF;
   
 
-  31: // Hochfahren
+  Hochfahrt: // Hochfahren
           
         cEtagestatus.hoch();
         cAntriebAufzug.FahrtPos(xEn:=TRUE); //Hoch
         
       IF cEtagestatus.erreicht() THEN
-        iStep := 32;
+        iStep := EtagenOben;
       END_IF;
       
-  32: // Prüfen ob aktuelle Etage angefordert ist
+  EtagenOben: // Prüfen ob aktuelle Etage angefordert ist
 
        cAntriebAufzug.FahrtPos(xEn:=FALSE); // Aufzug stoppen
        iAktEtage := cEtagestatus.AktEtage(); // aktuelle Etage neu lesen
@@ -294,12 +299,12 @@ Case iStep of
           (cAnforderung.Anf2(xIn := FALSE) AND (iAktEtage = 2)) OR
           (cAnforderung.Anf3(xIn := FALSE) AND (iAktEtage = 3)) THEN
 
-          iStep := 33;
+          iStep := TuerObenOeffnen;
        ELSE
-          iStep := 31;
+          iStep := Hochfahrt;
        END_IF;
 
-  33: //Tuer oefffnen
+  TuerObenOeffnen: //Tuer oefffnen
         cTuerstatus.auf();
         cAntriebTuer.FahrtNeg(xEn:=TRUE);// oeffen
 
@@ -311,11 +316,11 @@ Case iStep of
         
         IF cTimerOffen.elapsed() OR cAnforderung.TuerZu() THEN //Wenn direkt schalter zu gedruekt wird
           cTimerOffen.reset();        
-          iStep := 34; //Tuer schliessen
+          iStep := TuerObenSchliessen; //Tuer schliessen
         END_IF;
     
     
-   34: //Tuer schliessen
+   TuerObenSchliessen: //Tuer schliessen
         
         cTuerstatus.zu();//Simulation
         cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
@@ -335,35 +340,35 @@ Case iStep of
              cAnforderung.Anf3(xIn:=TRUE);                 
           END_IF;
         
-          iStep := 10;//Zurück zur prüfung Fahranforderung
+          iStep := Fahranforderung;//Zurück zur prüfung Fahranforderung
         END_IF;
         
-  40: // 40er = Fahrt nach unten
+  InitFahrtnachUnten: // 40er = Fahrt nach unten
     
       //prüfen ob Türe zu
       IF cTuerstatus.istzu() THEN
         
-        iStep := 41;
+        iStep := Unterfahrt;
       ELSIF NOT cAnforderung.TuerAuf() THEN  // unterbruch durch bedienung am HMI 
       
         cTuerstatus.zu();//Simulation
         cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
       ELSE
       
-        iStep := 43; //Tuer Aufmachen
+        iStep := TuerUntenOeffnen; //Tuer Aufmachen
       END_IF;
   
 
-  41: // Runterfahren
+  Unterfahrt: // Runterfahren
           
         cEtagestatus.runter();
         cAntriebAufzug.FahrtNeg(xEn:=TRUE); //Runter
         
       IF cEtagestatus.erreicht() THEN
-        iStep := 42;
+        iStep := EtageUnten;
       END_IF;
       
-  42: // Prüfen ob aktuelle Etage angefordert ist
+  EtageUnten: // Prüfen ob aktuelle Etage angefordert ist
   
     cAntriebAufzug.FahrtNeg(xEn:=FALSE); // Aufzug stoppen
     iAktEtage := cEtagestatus.AktEtage(); // aktuelle Etage neu lesen
@@ -373,12 +378,12 @@ Case iStep of
        (cAnforderung.Anf2(xIn:=FALSE) AND (iAktEtage = 2)) OR
        (cAnforderung.Anf3(xIn:=FALSE) AND (iAktEtage = 3)) THEN
        
-      iStep := 43;
+      iStep := TuerUntenOeffnen;
     ELSE
-      iStep := 41;
+      iStep := Unterfahrt;
     END_IF;
       
-  43: //Tuer oefffnen
+  TuerUntenOeffnen: //Tuer oefffnen
         cTuerstatus.auf();
         cAntriebTuer.FahrtNeg(xEn:=TRUE);// oeffen
         
@@ -389,11 +394,11 @@ Case iStep of
         
         IF cTimerOffen.elapsed() OR cAnforderung.TuerZu() THEN //Wenn direkt schalter zu gedruekt wird
           cTimerOffen.reset();
-          iStep := 44; //Tuer schliessen
+          iStep := TuerUntenSchliessen; //Tuer schliessen
         END_IF;
     
     
-   44: //Tuer schliessen
+   TuerUntenSchliessen: //Tuer schliessen
         
         cTuerstatus.zu();//Simulation
         cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
@@ -413,7 +418,7 @@ Case iStep of
              cAnforderung.Anf3(xIn:=TRUE);                 
           END_IF;
           
-          iStep := 10;//Zurück zur prüfung Fahranforderung
+          iStep := Fahranforderung;//Zurück zur prüfung Fahranforderung
         END_IF;
   
 END_CASE;  

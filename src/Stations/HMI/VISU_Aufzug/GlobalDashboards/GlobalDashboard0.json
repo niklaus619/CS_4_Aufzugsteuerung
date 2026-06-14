@@ -66,13 +66,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "171px",
+					"value": "130px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "154px",
+					"value": "30px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -118,13 +118,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "170px",
+					"value": "130px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "250px",
+					"value": "100px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -158,6 +158,214 @@
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "6d2c85a6-f8c5-4892-979b-906d8dcee5fd"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "0a4d4b22-d422-40d0-8131-3bf9869b0553",
+			"name": "Fast Button2",
+			"instanceId": "lvdb244452c7215492186509ca0fb66677e",
+			"controlId": "sig-control-fast-button",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "130px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "170px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "50px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "100px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "103",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf2",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "9dab67f6-a5cc-4588-900d-39f9a17f0edc"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "ac6878ca-56b9-43ed-aac6-ca6b42d28023",
+			"name": "Fast Button3",
+			"instanceId": "lvd83801dc0e0db41989e5228ad69998eb6",
+			"controlId": "sig-control-fast-button",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "130px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "240px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "50px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "100px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "104",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf3",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "b649d578-36a6-4e87-8412-36f39e8d222b"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "c73ec6d6-2b95-47f7-87b6-80505235efe0",
+			"name": "Fast Button4",
+			"instanceId": "lvdcd4c972df8bb4eef8f13ea248d98bfe7",
+			"controlId": "sig-control-fast-button",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "130px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "310px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "50px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "100px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "105",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnfAuf",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "35cf1c26-891e-4e45-932b-640ca4af05bf"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "0ee886a6-8f41-4472-81e3-8451604f7063",
+			"name": "Fast Button5",
+			"instanceId": "lvd75d33a7292144f178108f7c8421c0aeb",
+			"controlId": "sig-control-fast-button",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "130px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "380px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "50px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "100px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "106",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnfZu",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "73e43d11-945e-406f-943a-4cd659cf2b91"
 				}
 			]
 		}

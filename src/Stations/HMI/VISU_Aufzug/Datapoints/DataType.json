@@ -5561,13 +5561,83 @@
 				"propTypeId": 1,
 				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
 			},
-			"size": 84,
+			"size": 200,
 			"children": [
 				{
 					"type": "datatype",
 					"designTimeId": "29c778ea-7876-4d10-adfc-6f7154064d02",
-					"name": "sUbergabeHMI",
+					"name": "sAnf0",
 					"guid": "6ce70355-f024-47e5-8de2-8f426953621c",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"children": []
+				},
+				{
+					"type": "datatype",
+					"designTimeId": "f6b72837-125f-445e-b4c2-23ddbe5d8cb4",
+					"name": "sAnf1",
+					"guid": "06308cd2-00ac-48ed-b406-a9f977dc10ed",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"children": []
+				},
+				{
+					"type": "datatype",
+					"designTimeId": "6e2d7e9f-5011-4217-8e03-583cd5a17247",
+					"name": "sAnf2",
+					"guid": "628f15b3-0756-44c4-b4c3-37ff2c26b34f",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"children": []
+				},
+				{
+					"type": "datatype",
+					"designTimeId": "0fe03c7d-6d0d-4fcb-a727-448cb3b7980f",
+					"name": "sAnf3",
+					"guid": "0a0843e2-0c0a-4db2-836a-db8bcafacd2d",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"children": []
+				},
+				{
+					"type": "datatype",
+					"designTimeId": "3e8c73a2-7873-4b96-90e3-420275525c98",
+					"name": "sAnfAuf",
+					"guid": "74ae7a83-a1f8-4d07-be2c-a9c0caeb9be3",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"children": []
+				},
+				{
+					"type": "datatype",
+					"designTimeId": "bb046ea9-d588-4008-aafa-b86ad2387179",
+					"name": "sAnfZu",
+					"guid": "d92b9223-787e-4327-8748-6b79774b8f26",
 					"typeId": 1,
 					"datatype": {
 						"value": "DINT",
@@ -21617,6 +21687,64 @@
 			},
 			"size": 204,
 			"children": []
+		},
+		{
+			"type": "datatype",
+			"designTimeId": "c0a6b4f4-ecee-4d22-820b-26043111ea0e",
+			"name": "clsEtagenSensorik",
+			"guid": "b4ea9235-9170-4556-8088-095d9599e984",
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"size": 68,
+			"children": [
+				{
+					"type": "datatype",
+					"designTimeId": "4b757db7-a114-4b9f-b1da-9ba476f2cbd9",
+					"name": "sVisuEtage",
+					"guid": "63336e9b-face-4370-872c-13e96f5b9f3c",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"children": []
+				}
+			]
+		},
+		{
+			"type": "datatype",
+			"designTimeId": "9036cde7-a39a-4377-b738-6f14fa5d4d4d",
+			"name": "clsTuerSensorik",
+			"guid": "6009d391-f9b6-402a-826a-3ace2df3a016",
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"size": 52,
+			"children": [
+				{
+					"type": "datatype",
+					"designTimeId": "142695c6-b4f6-4269-808b-36b005f9f218",
+					"name": "sVisuTuer",
+					"guid": "eee2f83e-5824-43c8-9793-fa2a7292b577",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"children": []
+				}
+			]
 		}
 	]
 }

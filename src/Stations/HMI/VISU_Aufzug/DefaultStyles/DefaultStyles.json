@@ -232,6 +232,18 @@
 			"revision": {
 				"type": "Revision"
 			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "d9444411-d1a0-466d-874f-c8f227d684fc",
+			"componentId": "sig-control-fast-button",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
 		}
 	]
 }

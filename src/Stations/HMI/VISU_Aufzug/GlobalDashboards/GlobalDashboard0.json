@@ -55,5 +55,111 @@
 			"typeId": 0,
 			"propTypeId": 2
 		}
+	],
+	"dashboardelements": [
+		{
+			"type": "control",
+			"designTimeId": "41e5a3f2-b1e3-4d61-a4f9-3903ec12a594",
+			"name": "Fast Button0",
+			"instanceId": "lvda5382ea9f3fc4290afcfa9c9afa82b73",
+			"controlId": "sig-control-fast-button",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "171px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "154px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "50px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "100px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "101",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf0",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "7592cb5f-7954-4ff0-baea-124bac1df0b8"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "3b14070f-c6ff-430d-91c0-48e552ddd2a4",
+			"name": "Fast Button1",
+			"instanceId": "lvd9aac1ec455714224939d418f38f5c638",
+			"controlId": "sig-control-fast-button",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "170px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "250px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "50px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "100px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "102",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf1",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "6d2c85a6-f8c5-4892-979b-906d8dcee5fd"
+				}
+			]
+		}
 	]
 }

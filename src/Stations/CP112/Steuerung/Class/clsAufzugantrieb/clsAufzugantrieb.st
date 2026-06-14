@@ -129,6 +129,13 @@ FUNCTION GLOBAL clsAufzugantrieb::FahrtPos
 	VAR_INPUT
 		xEn 	: DINT;
 	END_VAR
+  
+  case iStep of
+  
+  0: 
+  
+  end_case;
+
 
 END_FUNCTION
 

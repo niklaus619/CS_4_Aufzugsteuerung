@@ -1481,9 +1481,10 @@
 				},
 				{
 					"name": "sigbtntext",
-					"value": "Etage 2",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "SystemTexts:Etage 1",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "8a55ae4c-4699-4cbb-b32d-c2c6c66d644c"
 				},
 				{
 					"name": "--theme-sig-control-button-font-size",
@@ -1527,7 +1528,7 @@
 		{
 			"type": "control",
 			"designTimeId": "ecaaf843-8657-4a5a-a6af-d6c50fe769c2",
-			"name": "Etage 1 Button",
+			"name": "Etage 0 Button",
 			"instanceId": "mock_btn_floor1",
 			"controlId": "sig-control-button",
 			"properties": [
@@ -1568,12 +1569,6 @@
 					"propTypeId": 2
 				},
 				{
-					"name": "sigbtntext",
-					"value": "Etage 1",
-					"typeId": 0,
-					"propTypeId": 1
-				},
-				{
 					"name": "--theme-sig-control-button-font-size",
 					"value": "16px",
 					"typeId": 0,
@@ -1609,6 +1604,13 @@
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "7592cb5f-7954-4ff0-baea-124bac1df0b8"
+				},
+				{
+					"name": "sigbtntext",
+					"value": "SystemTexts:Etage 0",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "63915d61-c310-47d8-9963-cf1976684e59"
 				}
 			]
 		},
@@ -4080,6 +4082,58 @@
 					"value": "none",
 					"typeId": 0,
 					"propTypeId": 2
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "1569b9fb-5429-4506-8718-b94dd4c207aa",
+			"name": "Datapoint Text0",
+			"instanceId": "lvd38efe8cc08af418285ac0b14a766a132",
+			"controlId": "sig-control-datapoint-text",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "600px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "110px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "20px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "40px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "150",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "sigtext",
+					"value": "0:clsEtagen1.sVisuEtage",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "f2115005-08e5-4a7a-a3ab-bb914748803e"
 				}
 			]
 		}

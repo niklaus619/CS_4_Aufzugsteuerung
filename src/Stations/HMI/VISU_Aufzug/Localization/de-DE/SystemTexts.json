@@ -3,7 +3,20 @@
 	"version": "0.0.96",
 	"id": "565014ee-2f46-4671-9c37-90087f2525a9",
 	"name": "SystemTexts",
-	"texts": [],
+	"texts": [
+		{
+			"type": "textElement",
+			"id": "63915d61-c310-47d8-9963-cf1976684e59",
+			"aliasName": "Etage 0",
+			"text": "Etage 0"
+		},
+		{
+			"type": "textElement",
+			"id": "8a55ae4c-4699-4cbb-b32d-c2c6c66d644c",
+			"aliasName": "Etage 1",
+			"text": "Etage 1"
+		}
+	],
 	"revision": {
 		"type": "Revision"
 	}

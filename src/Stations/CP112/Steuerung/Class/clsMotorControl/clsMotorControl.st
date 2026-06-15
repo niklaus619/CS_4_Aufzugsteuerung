@@ -19,7 +19,7 @@
 	SharedCommandTable = "true"
 	Objectsize         = "(480,600)">
 	<Channels>
-		<Server Name="ClassSvr" GUID="{BED641C7-7ED4-46CB-A77C-0913E9784FAA}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="ClassSvr" GUID="{BED641C7-7ED4-46CB-A77C-0913E9784FAA}" Visualized="false" Remotely="true" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Server Name="sAcceleration" GUID="{E90BDE18-B982-43C7-AD50-70711920B048}" Visualized="false" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Server Name="sCmd" GUID="{93A0B2C4-D774-4784-84FA-3EA41CC92DDF}" Visualized="false" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Server Name="sDistance" GUID="{EAE5F983-9B12-4DC8-8A95-9BE6E7E47768}" Visualized="false" Initialize="false" WriteProtected="false" Retentive="false"/>
@@ -180,6 +180,7 @@ FUNCTION clsMotorControl::@STD
 
 	//Command Methods
 	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsMotorControl, pCmd := #vmt.CmdTable);
+	vmt.CmdTable.Write		:= #M_WR_DIRECT();
 	vmt.CmdTable.CyWork		:= #CyWork();
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 

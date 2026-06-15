@@ -1338,6 +1338,13 @@
 					"value": "#28322D",
 					"typeId": 0,
 					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf3",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "b649d578-36a6-4e87-8412-36f39e8d222b"
 				}
 			]
 		},
@@ -1419,6 +1426,13 @@
 					"value": "#28322D",
 					"typeId": 0,
 					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf2",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "9dab67f6-a5cc-4588-900d-39f9a17f0edc"
 				}
 			]
 		},
@@ -1500,6 +1514,13 @@
 					"value": "#28322D",
 					"typeId": 0,
 					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf1",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "6d2c85a6-f8c5-4892-979b-906d8dcee5fd"
 				}
 			]
 		},
@@ -1581,6 +1602,13 @@
 					"value": "#28322D",
 					"typeId": 0,
 					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf0",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "7592cb5f-7954-4ff0-baea-124bac1df0b8"
 				}
 			]
 		},
@@ -2328,9 +2356,10 @@
 				},
 				{
 					"name": "sigtext",
-					"value": "TÃ¼r:",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "TextList0:Tür:",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "a2f24c92-7390-4b8a-842c-ae4507724c71"
 				},
 				{
 					"name": "--theme-sig-control-text-color",
@@ -2484,9 +2513,10 @@
 				},
 				{
 					"name": "sigtext",
-					"value": "TÃ¼rbedienung",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "TextList0:Türbedienung",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "6fa4c0f7-2e0c-46da-bf08-00d4b6930c1f"
 				},
 				{
 					"name": "--theme-sig-control-text-color",
@@ -2576,12 +2606,6 @@
 					"propTypeId": 2
 				},
 				{
-					"name": "sigbtntext",
-					"value": "TÃ¼r Auf",
-					"typeId": 0,
-					"propTypeId": 1
-				},
-				{
 					"name": "--theme-sig-control-button-font-size",
 					"value": "16px",
 					"typeId": 0,
@@ -2610,6 +2634,29 @@
 					"value": "#28322D",
 					"typeId": 0,
 					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnfAuf",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "35cf1c26-891e-4e45-932b-640ca4af05bf"
+				},
+				{
+					"name": "sigbtntext",
+					"value": "TextList0:Tür Auf",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "e74dcaa3-d06c-4b78-8da1-d96ff368a4dc",
+					"children": [
+						{
+							"name": "Param0",
+							"value": "TextList0:Tür Auf",
+							"typeId": 5,
+							"propTypeId": 1,
+							"refId": "e74dcaa3-d06c-4b78-8da1-d96ff368a4dc"
+						}
+					]
 				}
 			]
 		},
@@ -2658,9 +2705,10 @@
 				},
 				{
 					"name": "sigbtntext",
-					"value": "TÃ¼r Zu",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "TextList0:Tür Zu",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "1b2f26aa-81a1-4eb6-b251-2f2070d9a0eb"
 				},
 				{
 					"name": "--theme-sig-control-button-font-size",
@@ -2691,6 +2739,13 @@
 					"value": "#28322D",
 					"typeId": 0,
 					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnfZu",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "73e43d11-945e-406f-943a-4cd659cf2b91"
 				}
 			]
 		},
@@ -2847,6 +2902,13 @@
 					"value": "bold",
 					"typeId": 0,
 					"propTypeId": 2
+				},
+				{
+					"name": "sigtext",
+					"value": "TextList0:Störung / Bonus",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "b8c5d2ca-7d98-420f-9935-66b7f7190cc0"
 				}
 			]
 		},
@@ -2964,9 +3026,10 @@
 				},
 				{
 					"name": "sigtext",
-					"value": "StÃ¶rung",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "TextList0:Störung / Bonus",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "b8c5d2ca-7d98-420f-9935-66b7f7190cc0"
 				},
 				{
 					"name": "--theme-sig-control-text-color",

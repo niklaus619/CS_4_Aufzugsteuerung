@@ -50,6 +50,27 @@
 			"revision": {
 				"type": "Revision"
 			}
+		},
+		{
+			"type": "Scheme",
+			"designTimeId": "8f27c68d-b334-4bd0-8574-f19b24078afe",
+			"name": "Richtung",
+			"schemeId": 16,
+			"variable": {
+				"value": "0:clsAufzugmodul1.sRichtung",
+				"typeId": 4,
+				"propTypeId": 1,
+				"refId": "9f49c465-33e4-43b7-b841-9c4444b9bae6"
+			},
+			"schemeEntries": [
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "1c5e2521-ce1f-4cce-aee9-a0d433229bc7"
+				}
+			],
+			"revision": {
+				"type": "Revision"
+			}
 		}
 	]
 }

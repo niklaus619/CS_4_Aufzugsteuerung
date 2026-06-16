@@ -2327,7 +2327,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "480px",
+					"value": "490px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2339,13 +2339,13 @@
 				},
 				{
 					"name": "--theme-sig-element-height",
-					"value": "38px",
+					"value": "40px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "160px",
+					"value": "50px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -4169,7 +4169,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "110px",
+					"value": "80px",
 					"typeId": 17,
 					"propTypeId": 2
 				},

@@ -19298,6 +19298,109 @@
 				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
 			},
 			"children": []
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "5bd433a0-8c4b-4398-a208-452df97a76fe",
+			"name": "clsAufzugmodul1",
+			"guid": "33309781-816d-4182-9ba2-d13739d47d47",
+			"datatype": {
+				"value": "0:clsAufzugmodul",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "86e73e63-60ae-4670-8d69-512eb682e44a"
+			},
+			"children": [
+				{
+					"type": "datapoint",
+					"designTimeId": "9f49c465-33e4-43b7-b841-9c4444b9bae6",
+					"name": "sRichtung",
+					"guid": "074011eb-9853-4eae-82ed-04146cd68187",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				}
+			]
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "b7a482b5-bce3-4138-ab87-02d89ff00773",
+			"name": "clsHauptablauf1",
+			"guid": "a41ad535-82c0-41f9-915d-f4f6ed4f2825",
+			"datatype": {
+				"value": "0:clsHauptablauf",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "0787ea8a-7864-44bd-a7cf-f300591ad1a3"
+			},
+			"children": [
+				{
+					"type": "datapoint",
+					"designTimeId": "431a7e96-3b0a-4524-81fd-44699c0c7b28",
+					"name": "sAnf0",
+					"guid": "e4a1d0c9-d463-4ece-bb1a-921d0f2aaff2",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datapoint",
+					"designTimeId": "4d5242fe-89bc-460e-a3e2-3c2a5d26596b",
+					"name": "sAnf1",
+					"guid": "ed67bd7e-9602-4a87-8f29-00ec4fbb4020",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datapoint",
+					"designTimeId": "ff7257bb-9aa7-46db-b957-bdb4eb82a712",
+					"name": "sAnf2",
+					"guid": "54cefb8b-8fd1-4068-9bcf-32b4532763f5",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datapoint",
+					"designTimeId": "7bde8fff-d080-468a-b2cf-1dfc64ecd186",
+					"name": "sAnf3",
+					"guid": "d297cd8d-4336-4c90-88fe-d6551a3ec876",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				}
+			]
 		}
 	]
 }

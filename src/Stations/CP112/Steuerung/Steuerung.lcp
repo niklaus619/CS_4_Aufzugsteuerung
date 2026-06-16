@@ -2,7 +2,7 @@
 <Project
 	Version            = "14"
 	Name               = "Steuerung"
-	OnlineConnection   = "CP112"
+	OnlineConnection   = "CP112 (Project)"
 	SolutionType       = "Large"
 	WriteSrvListOnSave = "true"
 	CLASSType          = "true">
@@ -238,7 +238,7 @@
 		<File Path=".\Class\_LMCAxis\_LMCAxis.vov"/>
 	</DocuFiles>
 	<Options>
-		<Target UseFPU="true">
+		<Target UseFPU="true" Processor="ARM">
 		</Target>
 		<Compiler
 			CompilerVersion         = "78"

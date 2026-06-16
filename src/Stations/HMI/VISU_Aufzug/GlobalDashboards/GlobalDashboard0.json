@@ -771,9 +771,10 @@
 				},
 				{
 					"name": "sigtext",
-					"value": "4",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "SystemTexts:3",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "4d6add5c-1d2e-4da5-876e-4d2b3f4536ba"
 				},
 				{
 					"name": "--theme-sig-control-text-color",
@@ -864,9 +865,10 @@
 				},
 				{
 					"name": "sigtext",
-					"value": "3",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "SystemTexts:2",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "1ea2eb1b-e769-4839-99bc-03733b996b5e"
 				},
 				{
 					"name": "--theme-sig-control-text-color",
@@ -1050,9 +1052,10 @@
 				},
 				{
 					"name": "sigtext",
-					"value": "1",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "SystemTexts:0",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "e5ef0288-f7a0-43e8-99e3-05630b34b7fe"
 				},
 				{
 					"name": "--theme-sig-control-text-color",
@@ -1305,9 +1308,10 @@
 				},
 				{
 					"name": "sigbtntext",
-					"value": "Etage 4",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "SystemTexts:Etage 3",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "003f9883-3b22-44b9-a396-76ef2986fa95"
 				},
 				{
 					"name": "--theme-sig-control-button-font-size",
@@ -1393,9 +1397,10 @@
 				},
 				{
 					"name": "sigbtntext",
-					"value": "Etage 3",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "SystemTexts:Etage 2",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "2eb86014-5d02-47a9-bf55-73b3c4a59239"
 				},
 				{
 					"name": "--theme-sig-control-button-font-size",
@@ -1623,13 +1628,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "437px",
+					"value": "440px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "45px",
+					"value": "40px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -4134,6 +4139,58 @@
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "f2115005-08e5-4a7a-a3ab-bb914748803e"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "9903934f-37b4-4c84-94f2-ad4a89399e97",
+			"name": "Datapoint Text1",
+			"instanceId": "lvda7909287998b4ba380718fd6e8c24540",
+			"controlId": "sig-control-datapoint-text",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "540px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "260px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "20px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "90px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "151",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "sigtext",
+					"value": "0:clsTuerSensorik1.sVisuTuer",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "394ff998-3257-4a2e-b6c1-4a9c1e60482c"
 				}
 			]
 		}

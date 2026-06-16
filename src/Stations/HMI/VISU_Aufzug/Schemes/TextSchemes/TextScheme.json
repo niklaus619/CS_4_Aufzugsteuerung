@@ -1,4 +1,55 @@
 {
 	"type": "TextSchemeCollection",
-	"version": "0.0.96"
+	"version": "0.0.96",
+	"schemes": [
+		{
+			"type": "Scheme",
+			"designTimeId": "607a0a11-40df-4da6-985a-ad16622a49c7",
+			"name": "Türzustand",
+			"schemeId": 16,
+			"variable": {
+				"value": "0:clsTuerSensorik1.sVisuTuer",
+				"typeId": 4,
+				"propTypeId": 1,
+				"refId": "394ff998-3257-4a2e-b6c1-4a9c1e60482c"
+			},
+			"schemeEntries": [
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "6c11c701-e440-410d-bead-130a712f7a93",
+					"operator": 2,
+					"compareValue": {
+						"value": "0",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": {
+						"value": "TextList0:Tür Zu",
+						"typeId": 5,
+						"propTypeId": 1,
+						"refId": "1b2f26aa-81a1-4eb6-b251-2f2070d9a0eb"
+					}
+				},
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "d21453dc-67b9-4606-aa57-a6ddccdac47b",
+					"operator": 2,
+					"compareValue": {
+						"value": "1",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": {
+						"value": "TextList0:Tür Auf",
+						"typeId": 5,
+						"propTypeId": 1,
+						"refId": "e74dcaa3-d06c-4b78-8da1-d96ff368a4dc"
+					}
+				}
+			],
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
 }

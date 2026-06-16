@@ -4,8 +4,6 @@
 	PrjRev_DESC   = "Version of the project"
 	Project       = "Steuerung"
 	Project_DESC  = "Name of the project"
-	IP            = "10.10.150.1"
-	IP_DESC       = "IP address of this station"
 	Filename      = ".\CP112\Steuerung\Steuerung.lcp"
 	Filename_DESC = "File name to project">
 	<RemoteServers>

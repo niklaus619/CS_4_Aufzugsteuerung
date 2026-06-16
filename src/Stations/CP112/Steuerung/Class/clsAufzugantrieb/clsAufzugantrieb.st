@@ -109,114 +109,84 @@ FUNCTION clsAufzugantrieb::@STD
 END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
-
-
 FUNCTION VIRTUAL GLOBAL clsAufzugantrieb::CyWork
-	VAR_INPUT
-		EAX 	: UDINT;
-	END_VAR
-	VAR_OUTPUT
-		state (EAX) 	: UDINT;
-	END_VAR
-  
-CASE xPos OF
+VAR_INPUT
+    EAX : UDINT;
+END_VAR
+VAR_OUTPUT
+    state (EAX) : UDINT;
+END_VAR
 
-0: // Warten
-    xBusy := FALSE;
+CASE iStep OF
 
-    IF xNeg THEN
-        xBusy := TRUE;
-        xPos := 1;
-    END_IF;
+    0: // Stillstand
+        cFahrbefehl.stopNORMAL();
 
+    10: // PowerOn positiv
+        cFahrbefehl.powerOn();
 
-1: // Sicher PowerOff
-    xBusy := TRUE;
+        IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+            iStep := 20;
+        END_IF;
 
-    cFahrbefehl.powerOff();
-
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_OFF THEN
-        xPos := 2;
-    END_IF;
-
-
-2: // PowerOn
-    xBusy := TRUE;
-
-    cFahrbefehl.powerOn();
-
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
-        xPos := 3;
-    END_IF;
-
-
-3: // Fahren
-    xBusy := TRUE;
-
-    IF xPos THEN
+    20: // Fahren positiv
         cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
-    ELSE
-        cFahrbefehl.moveREL(distance:=-1000000, velocity:=800000, acceleration:=1215752192);
-    END_IF;
 
-    // 
-    IF NOT xNeg THEN
-        xPos := 10;
-    END_IF;
+    30: // PowerOn negativ
+        cFahrbefehl.powerOn();
 
+        IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+            iStep := 40;
+        END_IF;
 
-10: // Stoppen
-    xBusy := TRUE;
+    40: // Fahren negativ
+        cFahrbefehl.moveREL(distance:=-10000000, velocity:=800000, acceleration:=1215752192);
 
-    cFahrbefehl.stopNORMAL();
+    99: // Stop
+        cFahrbefehl.stopNORMAL();
+        iStep := 0;
 
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::STOP THEN
-        xPos := 11;
-    END_IF;
-
-
-11: // PowerOff
-    xBusy := TRUE;
-
-    cFahrbefehl.powerOff();
-
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_OFF THEN
-        xPos := 12;
-    END_IF;
-
-
-12: // Fertig
-    xBusy := FALSE;
-    xPos := 0;
-
-
+ELSE
+    iStep := 99;
 
 END_CASE;
 
-	state := READY;
+state := READY;
 
 END_FUNCTION
 
 
 FUNCTION GLOBAL clsAufzugantrieb::Fahrt
 VAR_INPUT
-    xDir   : BOOL;
+    xDir   : BOOL; // TRUE = hoch/positiv, FALSE = runter/negativ
     xStart : BOOL;
 END_VAR
 VAR_OUTPUT
     xBusy  : BOOL;
 END_VAR
-IF xStart AND xDir THEn
-  iStep := 0;//Pos
-  xBusy := TRUE;
-ELSIF xStart AND NOT xDir THEN
-  iStep := 10;//Neg
-  xBusy := TRUE;
+
+IF xStart THEN
+
+    IF xDir THEN
+        IF (iStep <> 10) AND (iStep <> 20) THEN
+            iStep := 10;
+        END_IF;
+    ELSE
+        IF (iStep <> 30) AND (iStep <> 40) THEN
+            iStep := 30;
+        END_IF;
+    END_IF;
+
+    xBusy := TRUE;
+
 ELSE
-  iStep := 99;//Stop
-  xBusy := FALSE;
+
+    IF iStep <> 0 THEN
+        iStep := 99;
+    END_IF;
+
+    xBusy := FALSE;
+
 END_IF;
-
-
 
 END_FUNCTION

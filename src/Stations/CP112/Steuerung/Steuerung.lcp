@@ -2,13 +2,9 @@
 <Project
 	Version            = "14"
 	Name               = "Steuerung"
-	OnlineConnection   = "CP112"
 	SolutionType       = "Large"
 	WriteSrvListOnSave = "true"
 	CLASSType          = "true">
-	<OnlineConnectionInfo>
-		<TCPIP ConfigName="CP112" BUS="3" Password="" IP="10.10.150.1" PORT="1954" SomeFlags="0" PLCID="" Repeater="0" SSLTLS="0" Favorite="1"/>
-	</OnlineConnectionInfo>
 	<HeaderFiles>
 		<File Path=".\Include\unit.h"/>
 		<File Path=".\Include\global.h"/>

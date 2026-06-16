@@ -4203,6 +4203,59 @@
 					"targetName": "sigtext"
 				}
 			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "0288029a-1524-444c-a02c-d322d3348b50",
+			"name": "Text1",
+			"instanceId": "lvd9e546f6dec8645d89b5979eaa9bb3583",
+			"controlId": "sig-control-text",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "520px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "200px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "30px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "150px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "152",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "sigtext_TextScheme",
+					"value": "Richtung",
+					"typeId": 16,
+					"propTypeId": 1,
+					"refId": "8f27c68d-b334-4bd0-8574-f19b24078afe",
+					"targetName": "sigtext"
+				}
+			]
 		}
 	]
 }

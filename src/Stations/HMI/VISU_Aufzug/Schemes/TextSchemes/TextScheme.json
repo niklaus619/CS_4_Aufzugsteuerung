@@ -65,7 +65,35 @@
 			"schemeEntries": [
 				{
 					"type": "SchemeEntry",
-					"designTimeId": "1c5e2521-ce1f-4cce-aee9-a0d433229bc7"
+					"designTimeId": "1c5e2521-ce1f-4cce-aee9-a0d433229bc7",
+					"operator": 2,
+					"compareValue": {
+						"value": "1",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": {
+						"value": "SystemTexts:Unten",
+						"typeId": 5,
+						"propTypeId": 1,
+						"refId": "c0618279-b60a-44d9-9ba1-aa2812cf4d17"
+					}
+				},
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "072485b8-1ad2-462e-8085-9915a32d1dd1",
+					"operator": 2,
+					"compareValue": {
+						"value": "2",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": {
+						"value": "SystemTexts:Oben",
+						"typeId": 5,
+						"propTypeId": 1,
+						"refId": "6778f3c9-a19b-44a6-8cf6-0a49fb0ae857"
+					}
 				}
 			],
 			"revision": {

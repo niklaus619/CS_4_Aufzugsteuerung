@@ -3,7 +3,44 @@
 	"version": "0.0.96",
 	"id": "98cdf8a1-6e29-4b55-8f37-f84bc4d34d53",
 	"name": "TextList0",
-	"texts": [],
+	"texts": [
+		{
+			"type": "textElement",
+			"id": "e74dcaa3-d06c-4b78-8da1-d96ff368a4dc",
+			"aliasName": "Tür Auf",
+			"text": "Tür Auf"
+		},
+		{
+			"type": "textElement",
+			"id": "1b2f26aa-81a1-4eb6-b251-2f2070d9a0eb",
+			"aliasName": "Tür Zu",
+			"text": "Tür Zu"
+		},
+		{
+			"type": "textElement",
+			"id": "b8c5d2ca-7d98-420f-9935-66b7f7190cc0",
+			"aliasName": "Störung / Bonus",
+			"text": "Störung / Bonus"
+		},
+		{
+			"type": "textElement",
+			"id": "7653af65-4232-4b3c-88de-b6bb0a7b9642",
+			"aliasName": "Störung",
+			"text": "Störung"
+		},
+		{
+			"type": "textElement",
+			"id": "6fa4c0f7-2e0c-46da-bf08-00d4b6930c1f",
+			"aliasName": "Türbedienung",
+			"text": "Türbedienung"
+		},
+		{
+			"type": "textElement",
+			"id": "a2f24c92-7390-4b8a-842c-ae4507724c71",
+			"aliasName": "Tür:",
+			"text": "Tür:"
+		}
+	],
 	"revision": {
 		"type": "Revision"
 	}

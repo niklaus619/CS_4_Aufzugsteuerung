@@ -42,17 +42,10 @@ clsTuerantrieb : CLASS
 			state (EAX) 	: UDINT;
 		END_VAR;
 	
-	FUNCTION GLOBAL FahrtPos
+	FUNCTION GLOBAL Fahrt
 		VAR_INPUT
-			xEn 	: BOOL;
-		END_VAR
-		VAR_OUTPUT
-			xBusy 	: BOOL;
-		END_VAR;
-	
-	FUNCTION GLOBAL FahrtNeg
-		VAR_INPUT
-			xEn 	: BOOL;
+			xDir 	: BOOL;
+			xStart 	: BOOL;
 		END_VAR
 		VAR_OUTPUT
 			xBusy 	: BOOL;
@@ -126,177 +119,94 @@ FUNCTION VIRTUAL GLOBAL clsTuerantrieb::CyWork
 	VAR_OUTPUT
 		state (EAX) 	: UDINT;
 	END_VAR
+  
 
 	state := READY;
 
 END_FUNCTION
 
 
-FUNCTION GLOBAL clsTuerantrieb::FahrtPos
-	VAR_INPUT
-		xEn 	: BOOL;
-	END_VAR
-	VAR_OUTPUT
-		xBusy 	: BOOL;
-	END_VAR
-  
+FUNCTION GLOBAL clsTuerantrieb::Fahrt
+VAR_INPUT
+    xDir   : BOOL;
+    xStart : BOOL;
+END_VAR
+VAR_OUTPUT
+    xBusy  : BOOL;
+END_VAR
 
-  
-  case iStepPos of
-  
-  0: 
-  
-   IF xEn THEN
-    iStepPos := 1;  //Start
+CASE iStepPos OF
+
+0: // Warten
+    xBusy := FALSE;
+
+    IF xStart THEN
+        xBusy := TRUE;
+        iStepPos := 1;
+    END_IF;
+
+
+1: // Sicher PowerOff
     xBusy := TRUE;
-   END_IF;
 
-  //*******************Hochfahren**************************
-  1: // Init
+    cFahrbefehl.powerOff();
 
-    cFahrbefehl.powerOn();
-
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN   
-     iStepPos := 2;
+    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_OFF THEN
+        iStepPos := 2;
     END_IF;
 
 
-    
-
-  2: // Power On
-  
-    cFahrbefehl.stopNORMAL();
-    
-
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::STOP THEN   
-     iStepPos := 3;
-    END_IF;
-
-  
-  3: // Rechtslauf drehen
-  
-    cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
-    
-    IF Not xEn THEN
-      iStepPos := 10;
-    END_IF;
-    
-  //*******************Runterfahren**************************
-
-  10: // Stoppen
-
-    
-    cFahrbefehl.stopNORMAL();
-    
-
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::STOP THEN   
-     iStepPos := 11;
-    END_IF;
-
-    
-
-  11: // Power Off
-  
-     cFahrbefehl.powerOff();
-    
-
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_OFF THEN   
-     iStepPos := 12;
-    END_IF;
-  
-  12: // Rechtslauf drehen
-  
-      xBusy := FALSE;
-
-      iStepPos := 0;  
-
-  end_case;
-
-
-END_FUNCTION
-
-
-FUNCTION GLOBAL clsTuerantrieb::FahrtNeg
-	VAR_INPUT
-		xEn 	: BOOL;
-	END_VAR
-	VAR_OUTPUT
-		xBusy 	: BOOL;
-	END_VAR
-
-  case iStepNeg of
-  
- 0: 
-   IF xEn THEN
-    iStepNeg := 1;  //Start
+2: // PowerOn
     xBusy := TRUE;
-   END_IF;
-   
-   
-  //*******************Hochfahren**************************
-  1: // Init
 
     cFahrbefehl.powerOn();
 
     IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
-     iStepNeg := 2;
+        iStepPos := 3;
     END_IF;
 
-    
 
-  2: // Power On
-  
+3: // Fahren
+    xBusy := TRUE;
+
+    IF xDir THEN
+        cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
+    ELSE
+        cFahrbefehl.moveREL(distance:=-1000000, velocity:=800000, acceleration:=1215752192);
+    END_IF;
+
+    // 
+    IF NOT xStart THEN
+        iStepPos := 10;
+    END_IF;
+
+
+10: // Stoppen
+    xBusy := TRUE;
+
     cFahrbefehl.stopNORMAL();
-    
 
     IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::STOP THEN
-     iStepNeg := 3;
+        iStepPos := 11;
     END_IF;
 
 
-  
-  3: // Rechtslauf drehen
-  
-    cFahrbefehl.moveREL(distance:=-10000000, velocity:=800000, acceleration:=1215752192);
-    
-    IF NOT xEn THEN
-     iStepNeg := 10;
-    END_IF;
-    
-  //*******************Runterfahren**************************
+11: // PowerOff
+    xBusy := TRUE;
 
-  10: // Stoppen
-
-    
-    cFahrbefehl.stopNORMAL();
-    
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::STOP THEN
-     iStepNeg := 11;
-    END_IF;
-
-    
-
-  11: // Power Off
-  
-     cFahrbefehl.powerOff();
-    
+    cFahrbefehl.powerOff();
 
     IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_OFF THEN
-     iStepNeg := 12;
+        iStepPos := 12;
     END_IF;
 
 
-
-  
-  12: // Rechtslauf drehen
-  
-      xBusy := FALSE;
+12: // Fertig
+    xBusy := FALSE;
+    iStepPos := 0;
 
 
-      iStepNeg := 0;
-  
 
-  end_case;
-  
+END_CASE;
 
 END_FUNCTION

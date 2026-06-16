@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<File CRC="A5539963" Version="1.1" SubVersion="2">
+<File CRC="590670BB" Version="1.1" SubVersion="2">
 	<Types>
 		<Type Name="SafetyConfigStateType" Datatype="UDINT" TypeId="ENUM">
 			<Elements>
@@ -173,12 +173,33 @@
 			Guid     = "013BA757-940A-4EA8-B1BE-51A701626C2E">
 		</Class>
 		<Class
+			Name     = "clsAufzugmodul"
+			Datatype = "DINT"
+			Size     = "120"
+			Guid     = "6DA5BEA4-29CA-4164-94B9-E39E374AD8FA">
+			<Servers>
+				<Server Name="sRichtung" Datatype="DINT" Guid="074011EB-9853-4EAE-82ED-04146CD68187" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
 			Name     = "clsEtagenSensorik"
 			Datatype = "DINT"
 			Size     = "68"
 			Guid     = "B4EA9235-9170-4556-8088-095D9599E984">
 			<Servers>
 				<Server Name="sVisuEtage" Datatype="DINT" Guid="63336E9B-FACE-4370-872C-13E96F5B9F3C" WriteProtected="false"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "clsHauptablauf"
+			Datatype = "DINT"
+			Size     = "76"
+			Guid     = "2501AED8-6955-4DEB-A38C-9CA5133938AC">
+			<Servers>
+				<Server Name="sAnf0" Datatype="DINT" Guid="E4A1D0C9-D463-4ECE-BB1A-921D0F2AAFF2" WriteProtected="true"/>
+				<Server Name="sAnf1" Datatype="DINT" Guid="ED67BD7E-9602-4A87-8F29-00EC4FBB4020" WriteProtected="true"/>
+				<Server Name="sAnf2" Datatype="DINT" Guid="54CEFB8B-8FD1-4068-9BCF-32B4532763F5" WriteProtected="true"/>
+				<Server Name="sAnf3" Datatype="DINT" Guid="D297CD8D-4336-4C90-88FE-D6551A3EC876" WriteProtected="true"/>
 			</Servers>
 		</Class>
 		<Class
@@ -678,7 +699,9 @@
 	</Classes>
 	<Objects>
 		<Object Name="AI0431" Datatype="AI043" Guid="A0B4511D-86CB-4BDC-80E4-EF644B408663"/>
+		<Object Name="clsAufzugmodul1" Datatype="clsAufzugmodul" Guid="33309781-816D-4182-9BA2-D13739D47D47"/>
 		<Object Name="clsEtagen1" Datatype="clsEtagenSensorik" Guid="161C8F9C-70DE-48E6-A140-C558235AA2BF"/>
+		<Object Name="clsHauptablauf1" Datatype="clsHauptablauf" Guid="A41AD535-82C0-41F9-915D-F4F6ED4F2825"/>
 		<Object Name="clsHMI1" Datatype="clsHMI" Guid="0F050788-F273-4D92-8CFC-C809040FE77C"/>
 		<Object Name="clsTuerSensorik1" Datatype="clsTuerSensorik" Guid="F2E6685D-EBB9-428D-9D74-9E3DEFC9E11D"/>
 		<Object Name="CP112_IOs1" Datatype="CP112_IOs" Guid="EFEA7052-7C43-4FE7-9A8A-7320E5FFF8BF"/>

@@ -30,7 +30,8 @@ clsAufzugantrieb : CLASS
   //Clients:
 	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
-		iStep 	: DINT;
+		iStepNeg 	: DINT;
+		iStepPos 	: DINT;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -41,17 +42,10 @@ clsAufzugantrieb : CLASS
 			state (EAX) 	: UDINT;
 		END_VAR;
 	
-	FUNCTION GLOBAL FahrtPos
+	FUNCTION GLOBAL Fahrt
 		VAR_INPUT
-			xEn 	: BOOL;
-		END_VAR
-		VAR_OUTPUT
-			xBusy 	: BOOL;
-		END_VAR;
-	
-	FUNCTION GLOBAL FahrtNeg
-		VAR_INPUT
-			xEn 	: BOOL;
+			xDir 	: BOOL;
+			xStart 	: BOOL;
 		END_VAR
 		VAR_OUTPUT
 			xBusy 	: BOOL;
@@ -125,160 +119,96 @@ FUNCTION VIRTUAL GLOBAL clsAufzugantrieb::CyWork
 	VAR_OUTPUT
 		state (EAX) 	: UDINT;
 	END_VAR
+  
 
 	state := READY;
 
 END_FUNCTION
 
 
-FUNCTION GLOBAL clsAufzugantrieb::FahrtPos
-	VAR_INPUT
-		xEn 	: BOOL;
-	END_VAR
-	VAR_OUTPUT
-		xBusy 	: BOOL;
-	END_VAR
-  
-  case iStep of
-  
-  0: IF xEn THEN
-      iStep := 1;  //Start
-      xBusy := TRUE;
-     ELSE
-      iSTep := 10; //Stop
-     END_IF;
-  //*******************Hochfahren**************************
-  1: // Motordaten uebergeben und Init
-    cFahrbefehl.sPosition := 1215752192;
-    cFahrbefehl.sDistance := -1215752192;
-    cFahrbefehl.sVelocity := 3000000;
-    cFahrbefehl.sAcceleration := 500000;
-    
-    cFahrbefehl.sCmd := clsMotorControl::MOTOR_CMD::STOP;
-    
-   
-     iStep := 2;
+FUNCTION GLOBAL clsAufzugantrieb::Fahrt
+VAR_INPUT
+    xDir   : BOOL;
+    xStart : BOOL;
+END_VAR
+VAR_OUTPUT
+    xBusy  : BOOL;
+END_VAR
+
+CASE iStepPos OF
+
+0: // Warten
+    xBusy := FALSE;
+
+    IF xStart THEN
+        xBusy := TRUE;
+        iStepPos := 1;
+    END_IF;
 
 
-    
+1: // Sicher PowerOff
+    xBusy := TRUE;
 
-  2: // Power On
-  
-    cFahrbefehl.sCmd := clsMotorControl::MOTOR_CMD::POWER_ON;
-    
+    cFahrbefehl.powerOff();
 
-     iStep := 3;
-
-
-  
-  3: // Rechtslauf drehen
-  
-    cFahrbefehl.sCmd := clsMotorControl::MOTOR_CMD::MOVE_ABS;
-    
-  //*******************Runterfahren**************************
-
-  10: // Stoppen
-
-    
-    cFahrbefehl.sCmd := clsMotorControl::MOTOR_CMD::STOP;
-    
-    if cFahrbefehl.isReady() then
-     iStep := 11;
-    end_if;
-
-    
-
-  11: // Power Off
-  
-    cFahrbefehl.sCmd := clsMotorControl::MOTOR_CMD::POWER_OFF;
-    
-
-     iStep := 12;
+    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_OFF THEN
+        iStepPos := 2;
+    END_IF;
 
 
-  
-  12: // Rechtslauf drehen
-  
-      xBusy := FALSE;
+2: // PowerOn
+    xBusy := TRUE;
 
-  
+    cFahrbefehl.powerOn();
 
-  end_case;
-
-
-END_FUNCTION
+    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+        iStepPos := 3;
+    END_IF;
 
 
-FUNCTION GLOBAL clsAufzugantrieb::FahrtNeg
-	VAR_INPUT
-		xEn 	: BOOL;
-	END_VAR
-	VAR_OUTPUT
-		xBusy 	: BOOL;
-	END_VAR
-  case iStep of
-  
-  0: IF xEn THEN
-      iStep := 1;  //Start
-      xBusy := TRUE;
-     ELSE
-      iSTep := 10; //Stop
-     END_IF;
-  //*******************Hochfahren**************************
-  1: // Motordaten uebergeben und Init
-    cFahrbefehl.sPosition := 1215752192;
-    cFahrbefehl.sDistance := -1215752192;
-    cFahrbefehl.sVelocity := 3000000;
-    cFahrbefehl.sAcceleration := 500000;
-    
-    cFahrbefehl.sCmd := clsMotorControl::MOTOR_CMD::STOP;
-    
+3: // Fahren
+    xBusy := TRUE;
 
-     iStep := 2;
+    IF xDir THEN
+        cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
+    ELSE
+        cFahrbefehl.moveREL(distance:=-1000000, velocity:=800000, acceleration:=1215752192);
+    END_IF;
+
+    // 
+    IF NOT xStart THEN
+        iStepPos := 10;
+    END_IF;
 
 
-    
+10: // Stoppen
+    xBusy := TRUE;
 
-  2: // Power On
-  
-    cFahrbefehl.sCmd := clsMotorControl::MOTOR_CMD::POWER_ON;
-    
+    cFahrbefehl.stopNORMAL();
 
-     iStep := 3;
-
-
-  
-  3: // Linkslauf drehen
-  
-    cFahrbefehl.sCmd := clsMotorControl::MOTOR_CMD::MOVE_REL;
-    
-  //*******************Runterfahren**************************
-
-  10: // Stoppen
-
-    
-    cFahrbefehl.sCmd := clsMotorControl::MOTOR_CMD::STOP;
-    
-    if cFahrbefehl.isReady() then
-     iStep := 11;
-    end_if;
-
-    
-
-  11: // Power Off
-  
-    cFahrbefehl.sCmd := clsMotorControl::MOTOR_CMD::POWER_OFF;
-    
-
-     iStep := 12;
+    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::STOP THEN
+        iStepPos := 11;
+    END_IF;
 
 
-  
-  12: // Rechtslauf drehen
-  
-      xBusy := FALSE;
+11: // PowerOff
+    xBusy := TRUE;
 
-  
+    cFahrbefehl.powerOff();
 
-  end_case;
+    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_OFF THEN
+        iStepPos := 12;
+    END_IF;
+
+
+12: // Fertig
+    xBusy := FALSE;
+    iStepPos := 0;
+
+
+
+END_CASE;
+
+
+
 END_FUNCTION

@@ -357,6 +357,13 @@ typedef struct CltChCmd_clsTimer
     clsTimer *pCmd;
   } CltChCmd_clsTimer;
 
+typedef struct CltChCmd_clsTuerantrieb 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsTuerantrieb *pCmd;
+  } CltChCmd_clsTuerantrieb;
+
 typedef struct CltChCmd_clsTuerSensorik 
   {
     struct SvrChCmd_DINT *pCh;

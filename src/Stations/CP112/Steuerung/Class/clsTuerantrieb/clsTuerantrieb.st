@@ -30,8 +30,7 @@ clsTuerantrieb : CLASS
   //Clients:
 	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
-		iStepNeg 	: DINT;
-		iStepPos 	: DINT;
+		iStep 	: DINT;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -110,103 +109,84 @@ FUNCTION clsTuerantrieb::@STD
 END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
+FUNCTION VIRTUAL GLOBAL  clsTuerantrieb::CyWork
+VAR_INPUT
+    EAX : UDINT;
+END_VAR
+VAR_OUTPUT
+    state (EAX) : UDINT;
+END_VAR
 
+CASE iStep OF
 
-FUNCTION VIRTUAL GLOBAL clsTuerantrieb::CyWork
-	VAR_INPUT
-		EAX 	: UDINT;
-	END_VAR
-	VAR_OUTPUT
-		state (EAX) 	: UDINT;
-	END_VAR
-  
+    0: // Stillstand
+        cFahrbefehl.stopNORMAL();
 
-	state := READY;
+    10: // PowerOn positiv
+        cFahrbefehl.powerOn();
+
+        IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+            iStep := 20;
+        END_IF;
+
+    20: // Fahren positiv
+        cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
+
+    30: // PowerOn negativ
+        cFahrbefehl.powerOn();
+
+        IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+            iStep := 40;
+        END_IF;
+
+    40: // Fahren negativ
+        cFahrbefehl.moveREL(distance:=-10000000, velocity:=800000, acceleration:=1215752192);
+
+    99: // Stop
+        cFahrbefehl.stopNORMAL();
+        iStep := 0;
+
+ELSE
+    iStep := 99;
+
+END_CASE;
+
+state := READY;
 
 END_FUNCTION
 
 
 FUNCTION GLOBAL clsTuerantrieb::Fahrt
 VAR_INPUT
-    xDir   : BOOL;
+    xDir   : BOOL; // TRUE = hoch/positiv, FALSE = runter/negativ
     xStart : BOOL;
 END_VAR
 VAR_OUTPUT
     xBusy  : BOOL;
 END_VAR
 
-CASE iStepPos OF
-
-0: // Warten
-    xBusy := FALSE;
-
-    IF xStart THEN
-        xBusy := TRUE;
-        iStepPos := 1;
-    END_IF;
-
-
-1: // Sicher PowerOff
-    xBusy := TRUE;
-
-    cFahrbefehl.powerOff();
-
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_OFF THEN
-        iStepPos := 2;
-    END_IF;
-
-
-2: // PowerOn
-    xBusy := TRUE;
-
-    cFahrbefehl.powerOn();
-
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
-        iStepPos := 3;
-    END_IF;
-
-
-3: // Fahren
-    xBusy := TRUE;
+IF xStart THEN
 
     IF xDir THEN
-        cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
+        IF (iStep <> 10) AND (iStep <> 20) THEN
+            iStep := 10;
+        END_IF;
     ELSE
-        cFahrbefehl.moveREL(distance:=-1000000, velocity:=800000, acceleration:=1215752192);
+        IF (iStep <> 30) AND (iStep <> 40) THEN
+            iStep := 30;
+        END_IF;
     END_IF;
 
-    // 
-    IF NOT xStart THEN
-        iStepPos := 10;
-    END_IF;
-
-
-10: // Stoppen
     xBusy := TRUE;
 
-    cFahrbefehl.stopNORMAL();
+ELSE
 
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::STOP THEN
-        iStepPos := 11;
+    IF iStep <> 0 THEN
+        iStep := 99;
     END_IF;
 
-
-11: // PowerOff
-    xBusy := TRUE;
-
-    cFahrbefehl.powerOff();
-
-    IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_OFF THEN
-        iStepPos := 12;
-    END_IF;
-
-
-12: // Fertig
     xBusy := FALSE;
-    iStepPos := 0;
 
-
-
-END_CASE;
+END_IF;
 
 END_FUNCTION

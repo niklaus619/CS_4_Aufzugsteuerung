@@ -20,7 +20,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{C52F73C5-07D1-4F55-AD73-C3455EF35DBC}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sRichtung" GUID="{074011EB-9853-4EAE-82ED-04146CD68187}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sRichtung" GUID="{074011EB-9853-4EAE-82ED-04146CD68187}" Visualized="true" Initialize="true" WriteProtected="true" Retentive="false"/>
 		<Client Name="cAnforderung" Required="true" Internal="false"/>
 		<Client Name="cAntriebAufzug" Required="true" Internal="false"/>
 		<Client Name="cAntriebTuer" Required="true" Internal="false"/>

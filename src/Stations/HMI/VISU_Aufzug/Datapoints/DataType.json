@@ -21745,6 +21745,111 @@
 					"children": []
 				}
 			]
+		},
+		{
+			"type": "datatype",
+			"designTimeId": "86e73e63-60ae-4670-8d69-512eb682e44a",
+			"name": "clsAufzugmodul",
+			"guid": "6da5bea4-29ca-4164-94b9-e39e374ad8fa",
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"size": 120,
+			"children": [
+				{
+					"type": "datatype",
+					"designTimeId": "54402ec8-c61f-43b5-a21c-968243731051",
+					"name": "sRichtung",
+					"guid": "074011eb-9853-4eae-82ed-04146cd68187",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				}
+			]
+		},
+		{
+			"type": "datatype",
+			"designTimeId": "0787ea8a-7864-44bd-a7cf-f300591ad1a3",
+			"name": "clsHauptablauf",
+			"guid": "2501aed8-6955-4deb-a38c-9ca5133938ac",
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"size": 76,
+			"children": [
+				{
+					"type": "datatype",
+					"designTimeId": "bb640af1-c1f3-45a3-a776-953c0d48df6a",
+					"name": "sAnf0",
+					"guid": "e4a1d0c9-d463-4ece-bb1a-921d0f2aaff2",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datatype",
+					"designTimeId": "25ff02e3-c195-4381-8ab5-fcc034c6452a",
+					"name": "sAnf1",
+					"guid": "ed67bd7e-9602-4a87-8f29-00ec4fbb4020",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datatype",
+					"designTimeId": "253d80e8-c994-4fa7-98d7-ab83aa32bc7d",
+					"name": "sAnf2",
+					"guid": "54cefb8b-8fd1-4068-9bcf-32b4532763f5",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datatype",
+					"designTimeId": "177d1f2d-7a89-4277-a81f-470bcb42693d",
+					"name": "sAnf3",
+					"guid": "d297cd8d-4336-4c90-88fe-d6551a3ec876",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				}
+			]
 		}
 	]
 }

@@ -42,7 +42,7 @@
 			<Channels>
 				<Server Name="ClassSvr"/>
 				<Server Name="sVisuEtage"/>
-				<Client Name="cFahrzeit" Value="2000"/>
+				<Client Name="cFahrzeit" Value="5000"/>
 				<Client Name="cStockwerke" Value="4"/>
 				<Client Name="cTimer"/>
 			</Channels>
@@ -155,15 +155,16 @@
 			GUID       = "{D44480FC-FF98-4E64-8862-01CF437ADE1F}"
 			Class      = "clsTimer"
 			Position   = "(1380,1110)"
-			Visualized = "false">
+			Visualized = "false"
+			CyclicTime = "50 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
 			</Channels>
 		</Object>
 		<Object
-			Name       = "clsTuerantrieb"
-			GUID       = "{57A96C9F-203F-4FD4-A78B-D1009FAA2929}"
-			Class      = "clsAufzugantrieb"
+			Name       = "clsTuerantrieb1"
+			GUID       = "{A62EE0CC-5455-4531-8CBA-B91A17AC9252}"
+			Class      = "clsTuerantrieb"
 			Position   = "(1380,660)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
@@ -182,7 +183,7 @@
 			<Channels>
 				<Server Name="ClassSvr"/>
 				<Server Name="sVisuTuer"/>
-				<Client Name="cFahrzeit" Value="3000"/>
+				<Client Name="cFahrzeit" Value="5000"/>
 				<Client Name="cTimer"/>
 			</Channels>
 		</Object>
@@ -192,7 +193,7 @@
 	<!-- List of Connections in this network -->
 	<Connections>
 		<Connection Source="clsAufzugmodul1.cAntriebAufzug" Destination="clsAufzugantrieb.ClassSvr" Vertices="(2310,690),(1680,900),"/>
-		<Connection Source="clsAufzugmodul1.cAntriebTuer" Destination="clsTuerantrieb.ClassSvr" Vertices="(2310,630),(1680,750),"/>
+		<Connection Source="clsAufzugmodul1.cAntriebTuer" Destination="clsTuerantrieb1.ClassSvr" Vertices="(2310,630),(1680,750),"/>
 		<Connection Source="clsAufzugmodul1.cAnforderung" Destination="clsHauptablauf1.ClassSvr" Vertices="(2310,750),(1680,1050),"/>
 		<Connection Source="clsHauptablauf1.cHMI" Destination="clsHMI1.ClassSvr" Vertices="(1380,1050),(1260,1050),"/>
 		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2310,510),(1680,270),"/>
@@ -209,7 +210,7 @@
 		<Connection Source="clsHMI1.cTimer4" Destination="clsImpuls4.ClassSvr" Vertices="(960,1470),(526,1770),"/>
 		<Connection Source="clsHMI1.cTaster4" Destination="__IO_Element41" Vertices="(960,1230),(510,1170)," IOObject="IO_Element4"/>
 		<Connection Source="clsAufzugantrieb.cFahrbefehl" Destination="clsMotorControlAufzug.ClassSvr"/>
-		<Connection Source="clsTuerantrieb.cFahrbefehl" Destination="clsMotorControlTuer.ClassSvr"/>
+		<Connection Source="clsTuerantrieb1.cFahrbefehl" Destination="clsMotorControlAufzug.ClassSvr"/>
 	</Connections>
 	<!-- List of temp data objects in this network -->
 	<IOObjects>

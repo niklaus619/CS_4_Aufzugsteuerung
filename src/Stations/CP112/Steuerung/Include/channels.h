@@ -256,6 +256,11 @@ TYPE
     dData : DINT;
     pCmd : ^clsTimer;
   END_STRUCT;
+  CltChCmd_clsTuerantrieb : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsTuerantrieb;
+  END_STRUCT;
   CltChCmd_clsTuerSensorik : STRUCT
     pCh : ^SvrChCmd_DINT;
     dData : DINT;

@@ -3,7 +3,13 @@
 	"version": "0.0.96",
 	"id": "e2f8aedf-acbd-45a4-8fda-d5519fe16c1c",
 	"name": "VariableTexts",
-	"texts": [],
+	"texts": [
+		{
+			"type": "textElement",
+			"id": "6ce473ae-eae8-4b11-9398-f12e4ac80cd4",
+			"aliasName": "1"
+		}
+	],
 	"revision": {
 		"type": "Revision"
 	}

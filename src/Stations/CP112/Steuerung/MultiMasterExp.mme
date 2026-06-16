@@ -6,7 +6,7 @@
 	Project_DESC  = "Name of the project"
 	IP            = "10.10.150.1"
 	IP_DESC       = "IP address of this station"
-	Filename      = "C:\git\CS_4_Aufzugsteuerung\src\Stations\CP112\Steuerung\Steuerung.lcp"
+	Filename      = ".\CP112\Steuerung\Steuerung.lcp"
 	Filename_DESC = "File name to project">
 	<RemoteServers>
 		<RemoteServer Name="AI0431.ClassState" Name_DESC="Name" GUID_Svr="{070CD62D-F011-403B-A668-118E2A1842A7}" GUID_Svr_DESC="GUID of the server" Class="SdiasBase" Class_DESC="Class" DataType="t_e_VaranErrors" DataType_DESC="DataType" GUID_Obj="{A0B4511D-86CB-4BDC-80E4-EF644B408663}" GUID_Obj_DESC="GUID of the object" Type="Object Channel" Type_DESC="Type" HasNewInst="true" HasNewInst_DESC="Multimaster server has NewInst commands" WriteProtected="true" WriteProtected_DESC="Write protection of multimaster server" Comment="Server shows the current Status of the Hardware Class." Comment_DESC="Comment of server"/>

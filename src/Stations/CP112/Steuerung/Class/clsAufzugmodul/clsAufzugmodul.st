@@ -20,7 +20,6 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{C52F73C5-07D1-4F55-AD73-C3455EF35DBC}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sRichtung" GUID="{074011EB-9853-4EAE-82ED-04146CD68187}" Visualized="true" Initialize="true" WriteProtected="true" Retentive="false"/>
 		<Client Name="cAnforderung" Required="true" Internal="false"/>
 		<Client Name="cAntriebAufzug" Required="true" Internal="false"/>
 		<Client Name="cAntriebTuer" Required="true" Internal="false"/>
@@ -50,12 +49,11 @@ clsAufzugmodul : CLASS
 	END_TYPE
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
-	sRichtung 	: SvrCh_DINT;
   //Clients:
 	cEtagestatus 	: CltChCmd_clsEtagenSensorik;
 	cTuerstatus 	: CltChCmd_clsTuerSensorik;
-	cAntriebAufzug 	: CltChCmd_clsAufzugantrieb;
-	cAntriebTuer 	: CltChCmd_clsTuerantrieb;
+	cAntriebAufzug 	: CltChCmd_clsAntrieb;
+	cAntriebTuer 	: CltChCmd_clsAntrieb;
 	cAnforderung 	: CltChCmd_clsHauptablauf;
 	cTimerOffen 	: CltChCmd_clsTimer;
 	cZeitOffen 	: CltCh_UDINT;
@@ -81,11 +79,10 @@ clsAufzugmodul : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
-#pragma usingLtd clsAufzugantrieb
+#pragma usingLtd clsAntrieb
 #pragma usingLtd clsEtagenSensorik
 #pragma usingLtd clsHauptablauf
 #pragma usingLtd clsTimer
-#pragma usingLtd clsTuerantrieb
 #pragma usingLtd clsTuerSensorik
 
 
@@ -96,17 +93,16 @@ FUNCTION GLOBAL TAB clsAufzugmodul::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSAUFZUGMODUL
 0$UINT, 0$UINT, (SIZEOF(::clsAufzugmodul))$UINT, 
-2$UINT, 7$UINT, 0$UINT, 
+1$UINT, 7$UINT, 0$UINT, 
 TO_UDINT(1857403904), "clsAufzugmodul", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsAufzugmodul.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
-(::clsAufzugmodul.sRichtung.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(575865936), "sRichtung", 
 //Clients:
 (::clsAufzugmodul.cEtagestatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3983586727), "cEtagestatus", TO_UDINT(206957904), "clsEtagenSensorik", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cTuerstatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1125833511), "cTuerstatus", TO_UDINT(712717468), "clsTuerSensorik", 0$UINT, 0$UINT, 
-(::clsAufzugmodul.cAntriebAufzug.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(614673068), "cAntriebAufzug", TO_UDINT(1641204752), "clsAufzugantrieb", 0$UINT, 0$UINT, 
-(::clsAufzugmodul.cAntriebTuer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(426174968), "cAntriebTuer", TO_UDINT(2244201560), "clsTuerantrieb", 0$UINT, 0$UINT, 
+(::clsAufzugmodul.cAntriebAufzug.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(614673068), "cAntriebAufzug", TO_UDINT(1680230051), "clsAntrieb", 0$UINT, 0$UINT, 
+(::clsAufzugmodul.cAntriebTuer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(426174968), "cAntriebTuer", TO_UDINT(1680230051), "clsAntrieb", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cAnforderung.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3406365320), "cAnforderung", TO_UDINT(971323912), "clsHauptablauf", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cTimerOffen.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(263165870), "cTimerOffen", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cZeitOffen.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(1512785699), "cZeitOffen", 
@@ -184,6 +180,9 @@ Fahranforderung:
        cAnforderung.Anf3(xIn := FALSE) THEN
 
         iStep := FahrrichtungSuchen;
+        
+    ELSIF cAnforderung.TuerAuf() THEN // falls jemand im Lift bleibt und nach schliessung aufmachen will
+       iStep := TuerOeffnen;
     END_IF;
 
 
@@ -258,7 +257,7 @@ FahrrichtungSuchen:
         iStep := InitFahrtnachUnten;
 
     ELSE
-        iStep := Initialisierung;
+        iStep := TuerOeffnen; //wenn die Anforderung auf der bereits stehenden Etage kommt,oeffnen
     END_IF;
 
 
@@ -430,16 +429,6 @@ ELSE
     iStep := Initialisierung;
 
 END_CASE;
-
-//Parameter fuer HMI schreiben
-// sRichtung
-IF xZielOben THEN
-  sRichtung := 2;
-ELSIF xZielUnten THEN
-  sRichtung := 1;
-ELSE
-  sRichtung := 0;
-END_IF;
 
 
 

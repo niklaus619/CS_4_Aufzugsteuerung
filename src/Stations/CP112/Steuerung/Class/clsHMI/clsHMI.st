@@ -20,12 +20,12 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{1E1C22E9-F020-4D38-B77E-2A0B7020F266}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sAnf0" GUID="{6CE70355-F024-47E5-8DE2-8F426953621C}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
-		<Server Name="sAnf1" GUID="{06308CD2-00AC-48ED-B406-A9F977DC10ED}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
-		<Server Name="sAnf2" GUID="{628F15B3-0756-44C4-B4C3-37FF2C26B34F}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
-		<Server Name="sAnf3" GUID="{0A0843E2-0C0A-4DB2-836A-DB8BCAFACD2D}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
-		<Server Name="sAnfAuf" GUID="{74AE7A83-A1F8-4D07-BE2C-A9C0CAEB9BE3}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
-		<Server Name="sAnfZu" GUID="{D92B9223-787E-4327-8748-6B79774B8F26}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Server Name="sAnf_HMI0" GUID="{6CE70355-F024-47E5-8DE2-8F426953621C}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Server Name="sAnf_HMI1" GUID="{06308CD2-00AC-48ED-B406-A9F977DC10ED}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Server Name="sAnf_HMI2" GUID="{628F15B3-0756-44C4-B4C3-37FF2C26B34F}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Server Name="sAnf_HMI3" GUID="{0A0843E2-0C0A-4DB2-836A-DB8BCAFACD2D}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Server Name="sAnf_HMIAuf" GUID="{74AE7A83-A1F8-4D07-BE2C-A9C0CAEB9BE3}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Server Name="sAnf_HMIZu" GUID="{D92B9223-787E-4327-8748-6B79774B8F26}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Client Name="cTaster1" Required="false" Internal="false"/>
 		<Client Name="cTaster2" Required="false" Internal="false"/>
 		<Client Name="cTaster3" Required="false" Internal="false"/>
@@ -40,12 +40,12 @@
 clsHMI : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
-	sAnf0 	: SvrCh_DINT;
-	sAnf1 	: SvrCh_DINT;
-	sAnf2 	: SvrCh_DINT;
-	sAnf3 	: SvrCh_DINT;
-	sAnfAuf 	: SvrCh_DINT;
-	sAnfZu 	: SvrCh_DINT;
+	sAnf_HMI0 	: SvrCh_DINT;
+	sAnf_HMI1 	: SvrCh_DINT;
+	sAnf_HMI2 	: SvrCh_DINT;
+	sAnf_HMI3 	: SvrCh_DINT;
+	sAnf_HMIAuf 	: SvrCh_DINT;
+	sAnf_HMIZu 	: SvrCh_DINT;
   //Clients:
 	cTaster1 	: CltCh_DINT;
 	cTaster2 	: CltCh_DINT;
@@ -126,12 +126,12 @@ TO_UDINT(1223415905), "clsHMI", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsHMI.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
-(::clsHMI.sAnf0.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1623655867), "sAnf0", 
-(::clsHMI.sAnf1.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(398472493), "sAnf1", 
-(::clsHMI.sAnf2.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2395563159), "sAnf2", 
-(::clsHMI.sAnf3.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(4191048705), "sAnf3", 
-(::clsHMI.sAnfAuf.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1002618391), "sAnfAuf", 
-(::clsHMI.sAnfZu.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(180511962), "sAnfZu", 
+(::clsHMI.sAnf_HMI0.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(504872576), "sAnf_HMI0", 
+(::clsHMI.sAnf_HMI1.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1762692630), "sAnf_HMI1", 
+(::clsHMI.sAnf_HMI2.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(4028227500), "sAnf_HMI2", 
+(::clsHMI.sAnf_HMI3.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2266951482), "sAnf_HMI3", 
+(::clsHMI.sAnf_HMIAuf.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1539524091), "sAnf_HMIAuf", 
+(::clsHMI.sAnf_HMIZu.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(3149356357), "sAnf_HMIZu", 
 //Clients:
 (::clsHMI.cTaster1.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(1164989219), "cTaster1", 
 (::clsHMI.cTaster2.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(3698918041), "cTaster2", 
@@ -172,43 +172,43 @@ FUNCTION clsHMI::@STD
 		ret_code	:= C_OUTOF_NEAR;
 		RETURN;
 	END_IF;
-	sAnf0.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
-	IF sAnf0.pMeth THEN
+	sAnf_HMI0.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF sAnf_HMI0.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;
 		RETURN;
 	END_IF;
-	sAnf1.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
-	IF sAnf1.pMeth THEN
+	sAnf_HMI1.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF sAnf_HMI1.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;
 		RETURN;
 	END_IF;
-	sAnf2.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
-	IF sAnf2.pMeth THEN
+	sAnf_HMI2.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF sAnf_HMI2.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;
 		RETURN;
 	END_IF;
-	sAnf3.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
-	IF sAnf3.pMeth THEN
+	sAnf_HMI3.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF sAnf_HMI3.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;
 		RETURN;
 	END_IF;
-	sAnfAuf.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
-	IF sAnfAuf.pMeth THEN
+	sAnf_HMIAuf.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF sAnf_HMIAuf.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;
 		RETURN;
 	END_IF;
-	sAnfZu.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
-	IF sAnfZu.pMeth THEN
+	sAnf_HMIZu.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF sAnf_HMIZu.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;
@@ -234,7 +234,7 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	cTaster4 := cTaster4.Read();
 
 	// Etage 0
-	IF (cTaster1 <> xTaster1old) OR sAnf0 THEN
+	IF (cTaster1 <> xTaster1old) OR sAnf_HMI0 THEN
 		xTaster1old := cTaster1;
 		cTimer1.start(_time := 1000);
 	END_IF;
@@ -244,7 +244,7 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	END_IF;
 
 	// Etage 1
-	IF (cTaster2 <> xTaster2old) OR sAnf1 THEN
+	IF (cTaster2 <> xTaster2old) OR sAnf_HMI1 THEN
 		xTaster2old := cTaster2;
 		cTimer2.start(_time := 1000);
 	END_IF;
@@ -254,7 +254,7 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	END_IF;
 
 	// Etage 2
-	IF (cTaster3 <> xTaster3old) OR sAnf2 THEN
+	IF (cTaster3 <> xTaster3old) OR sAnf_HMI2 THEN
 		xTaster3old := cTaster3;
 		cTimer3.start(_time := 1000);
 	END_IF;
@@ -264,7 +264,7 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	END_IF;
 
 	// Etage 3
-	IF (cTaster4 <> xTaster4old) OR sAnf3 THEN
+	IF (cTaster4 <> xTaster4old) OR sAnf_HMI3 THEN
 		xTaster4old := cTaster4;
 		cTimer4.start(_time := 1000);
 	END_IF;
@@ -322,7 +322,7 @@ FUNCTION GLOBAL clsHMI::Tuerzu
 		xOut 	: BOOL;
 	END_VAR
 //Erkennung falls vom HMI getastet oder vom Schalter 
-  IF sAnfAuf > 0 THEN  
+  IF sAnf_HMIAuf > 0 THEN  
     xOut := TRUE; 
   ELSE
     xOut := FALSE;
@@ -335,7 +335,7 @@ FUNCTION GLOBAL clsHMI::Tuerauf
 		xOut 	: BOOL;
 	END_VAR
 //Erkennung falls vom HMI getastet oder vom Schalter 
-  IF sAnfZu > 0 THEN  
+  IF sAnf_HMIZu > 0 THEN  
     xOut := TRUE; 
   ELSE
     xOut := FALSE;

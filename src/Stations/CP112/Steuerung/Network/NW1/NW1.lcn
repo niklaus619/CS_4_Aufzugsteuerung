@@ -19,11 +19,10 @@
 			GUID       = "{33309781-816D-4182-9BA2-D13739D47D47}"
 			Class      = "clsAufzugmodul"
 			Position   = "(2280,570)"
-			Visualized = "true"
+			Visualized = "false"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
-				<Server Name="sRichtung"/>
 				<Client Name="cAnforderung"/>
 				<Client Name="cAntriebAufzug"/>
 				<Client Name="cAntriebTuer"/>
@@ -73,12 +72,12 @@
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
-				<Server Name="sAnf0"/>
-				<Server Name="sAnf1"/>
-				<Server Name="sAnf2"/>
-				<Server Name="sAnf3"/>
-				<Server Name="sAnfAuf"/>
-				<Server Name="sAnfZu"/>
+				<Server Name="sAnf_HMI0"/>
+				<Server Name="sAnf_HMI1"/>
+				<Server Name="sAnf_HMI2"/>
+				<Server Name="sAnf_HMI3"/>
+				<Server Name="sAnf_HMIAuf"/>
+				<Server Name="sAnf_HMIZu"/>
 				<Client Name="cTaster1"/>
 				<Client Name="cTaster2"/>
 				<Client Name="cTaster3"/>
@@ -188,7 +187,7 @@
 			<Channels>
 				<Server Name="ClassSvr"/>
 				<Server Name="sVisuTuer"/>
-				<Client Name="cFahrzeit" Value="5000"/>
+				<Client Name="cFahrzeit" Value="2000"/>
 				<Client Name="cTimer"/>
 			</Channels>
 		</Object>
@@ -204,9 +203,9 @@
 		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2280,720),(1680,540),"/>
 		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2280,660),(1680,270),"/>
 		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2280,960),(1696,1440),"/>
-		<Connection Source="clsHMI1.cTaster1" Destination="__IO_Element11" Vertices="(960,1050),(510,900)," IOObject="IO_Element1"/>
-		<Connection Source="clsHMI1.cTaster2" Destination="__IO_Element22" Vertices="(960,1110),(510,990)," IOObject="IO_Element2"/>
 		<Connection Source="clsHMI1.cTaster3" Destination="__IO_Element31" Vertices="(960,1170),(510,1080)," IOObject="IO_Element3"/>
+		<Connection Source="clsHMI1.cTaster2" Destination="__IO_Element22" Vertices="(960,1110),(510,990)," IOObject="IO_Element2"/>
+		<Connection Source="clsHMI1.cTaster1" Destination="__IO_Element11" Vertices="(960,1050),(510,900)," IOObject="IO_Element1"/>
 		<Connection Source="clsTuerSensorik1.cTimer" Destination="clsSimFahrzeit1.ClassSvr" Vertices="(1380,540),(1246,540),"/>
 		<Connection Source="clsEtagen1.cTimer" Destination="clsSimFahrzeit2.ClassSvr" Vertices="(1380,270),(1246,270),"/>
 		<Connection Source="clsHMI1.cTimer1" Destination="clsImpuls1.ClassSvr" Vertices="(960,1290),(526,1320),"/>

@@ -42,7 +42,7 @@ clsAntrieb : CLASS
   //Clients:
 	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
-		iStep 	: DINT;
+		iStep 	: Statusautomat;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -186,11 +186,11 @@ FUNCTION GLOBAL clsAntrieb::Fahrt
 IF xStart THEN
 
     IF xDir THEN
-        IF (iStep <> 10) AND (iStep <> 20) THEN
+        IF (iStep <> PowOnPos) AND (iStep <> FahrenPos) THEN
             iStep := PowOnPos;
         END_IF;
     ELSE
-        IF (iStep <> 30) AND (iStep <> 40) THEN
+        IF (iStep <> PowOnNeg) AND (iStep <> FahrenNeg) THEN
             iStep := PowOnNeg;
         END_IF;
     END_IF;
@@ -199,7 +199,7 @@ IF xStart THEN
 
 ELSE
 
-    IF iStep <> 0 THEN
+    IF iStep <> Stillstand THEN
         iStep := StopNormal;
     END_IF;
 

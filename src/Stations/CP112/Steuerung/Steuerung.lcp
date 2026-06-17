@@ -234,7 +234,7 @@
 		<File Path=".\Class\_LMCAxis\_LMCAxis.vov"/>
 	</DocuFiles>
 	<Options>
-		<Target UseFPU="true" Processor="ARM">
+		<Target UseFPU="true">
 		</Target>
 		<Compiler
 			CompilerVersion         = "78"

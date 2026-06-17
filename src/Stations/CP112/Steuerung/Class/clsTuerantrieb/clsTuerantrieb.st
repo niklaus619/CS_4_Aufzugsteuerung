@@ -140,7 +140,7 @@ CASE iStep OF
         END_IF;
 
     40: // Fahren negativ
-        cFahrbefehl.moveREL(distance:=-10000000, velocity:=800000, acceleration:=1215752192);
+        cFahrbefehl.moveABS(position:=-1215752192, velocity:=800000, acceleration:=1215752192);
 
     99: // Stop
         cFahrbefehl.stopNORMAL();

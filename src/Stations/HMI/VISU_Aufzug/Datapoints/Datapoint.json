@@ -5889,7 +5889,7 @@
 				{
 					"type": "datapoint",
 					"designTimeId": "7592cb5f-7954-4ff0-baea-124bac1df0b8",
-					"name": "sAnf0",
+					"name": "sAnf_HMI0",
 					"guid": "6ce70355-f024-47e5-8de2-8f426953621c",
 					"typeId": 1,
 					"datatype": {
@@ -5903,7 +5903,7 @@
 				{
 					"type": "datapoint",
 					"designTimeId": "6d2c85a6-f8c5-4892-979b-906d8dcee5fd",
-					"name": "sAnf1",
+					"name": "sAnf_HMI1",
 					"guid": "06308cd2-00ac-48ed-b406-a9f977dc10ed",
 					"typeId": 1,
 					"datatype": {
@@ -5917,7 +5917,7 @@
 				{
 					"type": "datapoint",
 					"designTimeId": "9dab67f6-a5cc-4588-900d-39f9a17f0edc",
-					"name": "sAnf2",
+					"name": "sAnf_HMI2",
 					"guid": "628f15b3-0756-44c4-b4c3-37ff2c26b34f",
 					"typeId": 1,
 					"datatype": {
@@ -5931,7 +5931,7 @@
 				{
 					"type": "datapoint",
 					"designTimeId": "b649d578-36a6-4e87-8412-36f39e8d222b",
-					"name": "sAnf3",
+					"name": "sAnf_HMI3",
 					"guid": "0a0843e2-0c0a-4db2-836a-db8bcafacd2d",
 					"typeId": 1,
 					"datatype": {
@@ -5945,7 +5945,7 @@
 				{
 					"type": "datapoint",
 					"designTimeId": "35cf1c26-891e-4e45-932b-640ca4af05bf",
-					"name": "sAnfAuf",
+					"name": "sAnf_HMIAuf",
 					"guid": "74ae7a83-a1f8-4d07-be2c-a9c0caeb9be3",
 					"typeId": 1,
 					"datatype": {
@@ -5959,7 +5959,7 @@
 				{
 					"type": "datapoint",
 					"designTimeId": "73e43d11-945e-406f-943a-4cd659cf2b91",
-					"name": "sAnfZu",
+					"name": "sAnf_HMIZu",
 					"guid": "d92b9223-787e-4327-8748-6b79774b8f26",
 					"typeId": 1,
 					"datatype": {
@@ -19298,6 +19298,138 @@
 				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
 			},
 			"children": []
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "5bd433a0-8c4b-4398-a208-452df97a76fe",
+			"name": "clsAufzugmodul1",
+			"guid": "33309781-816d-4182-9ba2-d13739d47d47",
+			"datatype": {
+				"value": "0:clsAufzugmodul",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "86e73e63-60ae-4670-8d69-512eb682e44a"
+			},
+			"children": [
+				{
+					"type": "datapoint",
+					"designTimeId": "9f49c465-33e4-43b7-b841-9c4444b9bae6",
+					"name": "sRichtung",
+					"guid": "074011eb-9853-4eae-82ed-04146cd68187",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				}
+			]
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "b7a482b5-bce3-4138-ab87-02d89ff00773",
+			"name": "clsHauptablauf1",
+			"guid": "a41ad535-82c0-41f9-915d-f4f6ed4f2825",
+			"datatype": {
+				"value": "0:clsHauptablauf",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "0787ea8a-7864-44bd-a7cf-f300591ad1a3"
+			},
+			"children": [
+				{
+					"type": "datapoint",
+					"designTimeId": "431a7e96-3b0a-4524-81fd-44699c0c7b28",
+					"name": "sAnf0",
+					"guid": "e4a1d0c9-d463-4ece-bb1a-921d0f2aaff2",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datapoint",
+					"designTimeId": "4d5242fe-89bc-460e-a3e2-3c2a5d26596b",
+					"name": "sAnf1",
+					"guid": "ed67bd7e-9602-4a87-8f29-00ec4fbb4020",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datapoint",
+					"designTimeId": "ff7257bb-9aa7-46db-b957-bdb4eb82a712",
+					"name": "sAnf2",
+					"guid": "54cefb8b-8fd1-4068-9bcf-32b4532763f5",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datapoint",
+					"designTimeId": "7bde8fff-d080-468a-b2cf-1dfc64ecd186",
+					"name": "sAnf3",
+					"guid": "d297cd8d-4336-4c90-88fe-d6551a3ec876",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				}
+			]
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "e2972044-37c7-475e-b83e-3e4b14bcff90",
+			"name": "clsAufzugantrieb",
+			"guid": "cdd3f86a-b098-458f-ae43-a0c3c0242a11",
+			"datatype": {
+				"value": "0:clsAntrieb",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "3305144e-097f-4713-9bff-f9595f3e2285"
+			},
+			"children": [
+				{
+					"type": "datapoint",
+					"designTimeId": "08618675-8274-40dc-9807-5fa29409a55a",
+					"name": "sState",
+					"guid": "06d7d9a4-7426-49a2-a4a1-442e7a4e210d",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				}
+			]
 		}
 	]
 }

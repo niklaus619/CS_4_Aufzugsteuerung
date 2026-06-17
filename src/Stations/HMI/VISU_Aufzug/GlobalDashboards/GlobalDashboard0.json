@@ -1345,7 +1345,7 @@
 				},
 				{
 					"name": "value",
-					"value": "0:clsHMI1.sAnf3",
+					"value": "0:clsHMI1.sAnf_HMI3",
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "b649d578-36a6-4e87-8412-36f39e8d222b"
@@ -1434,7 +1434,7 @@
 				},
 				{
 					"name": "value",
-					"value": "0:clsHMI1.sAnf2",
+					"value": "0:clsHMI1.sAnf_HMI2",
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "9dab67f6-a5cc-4588-900d-39f9a17f0edc"
@@ -1523,7 +1523,7 @@
 				},
 				{
 					"name": "value",
-					"value": "0:clsHMI1.sAnf1",
+					"value": "0:clsHMI1.sAnf_HMI1",
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "6d2c85a6-f8c5-4892-979b-906d8dcee5fd"
@@ -1604,18 +1604,18 @@
 					"propTypeId": 2
 				},
 				{
-					"name": "value",
-					"value": "0:clsHMI1.sAnf0",
-					"typeId": 4,
-					"propTypeId": 1,
-					"refId": "7592cb5f-7954-4ff0-baea-124bac1df0b8"
-				},
-				{
 					"name": "sigbtntext",
 					"value": "SystemTexts:Etage 0",
 					"typeId": 5,
 					"propTypeId": 1,
 					"refId": "63915d61-c310-47d8-9963-cf1976684e59"
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf_HMI0",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "7592cb5f-7954-4ff0-baea-124bac1df0b8"
 				}
 			]
 		},
@@ -1790,7 +1790,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "472px",
+					"value": "450px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -1808,7 +1808,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "190px",
+					"value": "240px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -1826,13 +1826,13 @@
 				},
 				{
 					"name": "--theme-sig-control-rectangle-background-color",
-					"value": "#e8f1ff",
+					"value": "#fff2cc",
 					"typeId": 0,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-control-rectangle-border-color",
-					"value": "#4c78a8",
+					"value": "#d6b656",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1859,25 +1859,25 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "486px",
+					"value": "465px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "100px",
+					"value": "110px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-height",
-					"value": "38px",
+					"value": "20px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "160px",
+					"value": "150px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -1907,13 +1907,13 @@
 				},
 				{
 					"name": "--theme-sig-control-text-font-size",
-					"value": "17px",
+					"value": "15px",
 					"typeId": 0,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-control-text-value-align",
-					"value": "left",
+					"value": "center",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1946,7 +1946,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "472px",
+					"value": "450px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -1964,7 +1964,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "190px",
+					"value": "240px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2015,7 +2015,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "486px",
+					"value": "485px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2033,7 +2033,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "160px",
+					"value": "100px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2069,7 +2069,7 @@
 				},
 				{
 					"name": "--theme-sig-control-text-value-align",
-					"value": "left",
+					"value": "center",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2102,7 +2102,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "472px",
+					"value": "450px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2120,7 +2120,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "190px",
+					"value": "240px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2171,7 +2171,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "486px",
+					"value": "485px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2189,7 +2189,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "160px",
+					"value": "100px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2225,7 +2225,7 @@
 				},
 				{
 					"name": "--theme-sig-control-text-value-align",
-					"value": "left",
+					"value": "center",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2258,7 +2258,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "472px",
+					"value": "450px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2276,7 +2276,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "190px",
+					"value": "240px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2327,7 +2327,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "480px",
+					"value": "490px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2339,13 +2339,13 @@
 				},
 				{
 					"name": "--theme-sig-element-height",
-					"value": "38px",
+					"value": "40px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "160px",
+					"value": "55px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2382,7 +2382,7 @@
 				},
 				{
 					"name": "--theme-sig-control-text-value-align",
-					"value": "left",
+					"value": "center",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2643,13 +2643,6 @@
 					"propTypeId": 2
 				},
 				{
-					"name": "value",
-					"value": "0:clsHMI1.sAnfAuf",
-					"typeId": 4,
-					"propTypeId": 1,
-					"refId": "35cf1c26-891e-4e45-932b-640ca4af05bf"
-				},
-				{
 					"name": "sigbtntext",
 					"value": "TextList0:Tür Auf",
 					"typeId": 5,
@@ -2664,6 +2657,13 @@
 							"refId": "e74dcaa3-d06c-4b78-8da1-d96ff368a4dc"
 						}
 					]
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf_HMIAuf",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "35cf1c26-891e-4e45-932b-640ca4af05bf"
 				}
 			]
 		},
@@ -2749,7 +2749,7 @@
 				},
 				{
 					"name": "value",
-					"value": "0:clsHMI1.sAnfZu",
+					"value": "0:clsHMI1.sAnf_HMIZu",
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "73e43d11-945e-406f-943a-4cd659cf2b91"
@@ -3403,7 +3403,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "590px",
+					"value": "625px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -3421,7 +3421,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "60px",
+					"value": "55px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -3490,7 +3490,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "590px",
+					"value": "595px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -3508,7 +3508,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "60px",
+					"value": "80px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -3577,7 +3577,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "570px",
+					"value": "595px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -3595,7 +3595,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "82px",
+					"value": "80px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -3664,7 +3664,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "540px",
+					"value": "560px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -3682,7 +3682,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "112px",
+					"value": "115px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -4117,7 +4117,7 @@
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "40px",
+					"value": "20px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -4139,6 +4139,25 @@
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "f2115005-08e5-4a7a-a3ab-bb914748803e"
+				},
+				{
+					"name": "--theme-sig-control-datapoint-text-background-color",
+					"value": "#FFF2CC",
+					"typeId": 9,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-datapoint-text-color",
+					"value": "DefaultColors:color228",
+					"typeId": 9,
+					"propTypeId": 2,
+					"refId": "2ba9b441-bf15-40f7-985f-d83a3139ff9b"
+				},
+				{
+					"name": "--theme-sig-control-datapoint-text-border-color",
+					"value": "#D6B656",
+					"typeId": 9,
+					"propTypeId": 2
 				}
 			]
 		},
@@ -4151,25 +4170,25 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "510px",
+					"value": "520px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "260px",
+					"value": "250px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-height",
-					"value": "20px",
+					"value": "40px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-width",
-					"value": "110px",
+					"value": "80px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -4200,6 +4219,59 @@
 					"typeId": 4,
 					"propTypeId": 0,
 					"refId": "394ff998-3257-4a2e-b6c1-4a9c1e60482c",
+					"targetName": "sigtext"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "0288029a-1524-444c-a02c-d322d3348b50",
+			"name": "Text1",
+			"instanceId": "lvd9e546f6dec8645d89b5979eaa9bb3583",
+			"controlId": "sig-control-text",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "520px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "200px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "40px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "150px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "152",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "sigtext_TextScheme",
+					"value": "Richtung",
+					"typeId": 16,
+					"propTypeId": 1,
+					"refId": "8f27c68d-b334-4bd0-8574-f19b24078afe",
 					"targetName": "sigtext"
 				}
 			]

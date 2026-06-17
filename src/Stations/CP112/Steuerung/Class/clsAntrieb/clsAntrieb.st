@@ -4,7 +4,7 @@
 
 (*!
 <Class
-	Name               = "clsAufzugantrieb"
+	Name               = "clsAntrieb"
 	Revision           = "0.0"
 	GUID               = "{CAD7F03D-B702-49B8-B0EC-DEB134A6D755}"
 	RealtimeTask       = "false"
@@ -20,17 +20,31 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{8D9AD2EC-2B31-46C7-AFBD-5923DDDA9AD0}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sState" GUID="{06D7D9A4-7426-49A2-A4A1-442E7A4E210D}" Visualized="true" Remotely="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cFahrbefehl" Required="false" Internal="false"/>
 	</Channels>
 </Class>
 *)
-clsAufzugantrieb : CLASS
+clsAntrieb : CLASS
+	TYPE
+	  Statusautomat :
+	  (
+	    Stillstand:=0,
+	    PowOnPos:=10,
+	    FahrenPos:=20,
+	    PowOnNeg:=30,
+	    FahrenNeg:=40,
+	    StopNormal:=99,
+	    StopNot:=100
+	  )$UDINT;
+	END_TYPE
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
+	sState 	: SvrCh_DINT;
   //Clients:
 	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
-		iStep 	: DINT;
+		iStep 	: Statusautomat;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -63,30 +77,31 @@ END_CLASS;
 //}}LSL_DECLARATION
 
 
-FUNCTION GLOBAL TAB clsAufzugantrieb::@CT_
+FUNCTION GLOBAL TAB clsAntrieb::@CT_
 0$UINT,
-2#0100000000000010$UINT, //TY_CLSAUFZUGANTRIEB
-0$UINT, 0$UINT, (SIZEOF(::clsAufzugantrieb))$UINT, 
-1$UINT, 1$UINT, 0$UINT, 
-TO_UDINT(1641204752), "clsAufzugantrieb", //Class
+2#0100000000000010$UINT, //TY_CLSANTRIEB
+0$UINT, 0$UINT, (SIZEOF(::clsAntrieb))$UINT, 
+2$UINT, 1$UINT, 0$UINT, 
+TO_UDINT(1680230051), "clsAntrieb", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
-(::clsAufzugantrieb.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
+(::clsAntrieb.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
+(::clsAntrieb.sState.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2839362732), "sState", 
 //Clients:
-(::clsAufzugantrieb.cFahrbefehl.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000000$UINT, TO_UDINT(1832219461), "cFahrbefehl", TO_UDINT(3506464711), "clsMotorControl", 0$UINT, 0$UINT, 
+(::clsAntrieb.cFahrbefehl.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000000$UINT, TO_UDINT(1832219461), "cFahrbefehl", TO_UDINT(3506464711), "clsMotorControl", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 
-#define USER_CNT_clsAufzugantrieb 0
+#define USER_CNT_clsAntrieb 0
 
 TYPE
 	_LSL_STD_VMETH	: STRUCT
 			CmdTable	: CMDMETH;
-			UserFcts	: ARRAY[0..USER_CNT_clsAufzugantrieb] OF ^Void;
+			UserFcts	: ARRAY[0..USER_CNT_clsAntrieb] OF ^Void;
 	END_STRUCT;
 END_TYPE
 
-FUNCTION clsAufzugantrieb::@STD
+FUNCTION clsAntrieb::@STD
 	VAR_OUTPUT
 		ret_code	: CONFSTATES;
 	END_VAR
@@ -95,7 +110,7 @@ FUNCTION clsAufzugantrieb::@STD
 	END_VAR
 
 	//Command Methods
-	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsAufzugantrieb, pCmd := #vmt.CmdTable);
+	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsAntrieb, pCmd := #vmt.CmdTable);
 	vmt.CmdTable.CyWork		:= #CyWork();
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
@@ -109,45 +124,60 @@ FUNCTION clsAufzugantrieb::@STD
 END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
-FUNCTION VIRTUAL GLOBAL clsAufzugantrieb::CyWork
-VAR_INPUT
-    EAX : UDINT;
-END_VAR
-VAR_OUTPUT
-    state (EAX) : UDINT;
-END_VAR
+FUNCTION VIRTUAL GLOBAL clsAntrieb::CyWork
+	VAR_INPUT
+		EAX 	: UDINT;
+	END_VAR
+	VAR_OUTPUT
+		state (EAX) 	: UDINT;
+	END_VAR
+  
+  //uebergabe an HMI
+  IF iStep = Stillstand THEN
+    sState := 0;
+  ELSIF iStep = FahrenPos THEN
+    sState := 1;
+  ELSIF iStep = FahrenNeg THEN
+    sState := 2;
+  END_IF;
 
 CASE iStep OF
 
-    0: // Stillstand
+    Stillstand: 
         cFahrbefehl.stopNORMAL();
 
-    10: // PowerOn positiv
+    PowOnPos: 
         cFahrbefehl.powerOn();
 
         IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
-            iStep := 20;
+            iStep := FahrenPos;
         END_IF;
+        
 
-    20: // Fahren positiv
+    FahrenPos: 
         cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
 
-    30: // PowerOn negativ
+    PowOnNeg: 
         cFahrbefehl.powerOn();
 
         IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
-            iStep := 40;
+            iStep := FahrenNeg;
         END_IF;
 
-    40: // Fahren negativ
-        cFahrbefehl.moveREL(distance:=-10000000, velocity:=800000, acceleration:=1215752192);
 
-    99: // Stop
+    FahrenNeg: 
+        cFahrbefehl.moveABS(position:=-1215752192, velocity:=800000, acceleration:=1215752192);
+
+    StopNormal: 
         cFahrbefehl.stopNORMAL();
-        iStep := 0;
+        iStep := Stillstand;
+        
+    StopNot: // Vorbereitet
+        cFahrbefehl.stopEMG();
+        iStep := Stillstand;
 
 ELSE
-    iStep := 99;
+    iStep := StopNot; 
 
 END_CASE;
 
@@ -156,24 +186,24 @@ state := READY;
 END_FUNCTION
 
 
-FUNCTION GLOBAL clsAufzugantrieb::Fahrt
-VAR_INPUT
-    xDir   : BOOL; // TRUE = hoch/positiv, FALSE = runter/negativ
-    xStart : BOOL;
-END_VAR
-VAR_OUTPUT
-    xBusy  : BOOL;
-END_VAR
+FUNCTION GLOBAL clsAntrieb::Fahrt
+	VAR_INPUT
+		xDir 	: BOOL;
+		xStart 	: BOOL;
+	END_VAR
+	VAR_OUTPUT
+		xBusy 	: BOOL;
+	END_VAR
 
 IF xStart THEN
 
     IF xDir THEN
-        IF (iStep <> 10) AND (iStep <> 20) THEN
-            iStep := 10;
+        IF (iStep <> PowOnPos) AND (iStep <> FahrenPos) THEN
+            iStep := PowOnPos;
         END_IF;
     ELSE
-        IF (iStep <> 30) AND (iStep <> 40) THEN
-            iStep := 30;
+        IF (iStep <> PowOnNeg) AND (iStep <> FahrenNeg) THEN
+            iStep := PowOnNeg;
         END_IF;
     END_IF;
 
@@ -181,8 +211,8 @@ IF xStart THEN
 
 ELSE
 
-    IF iStep <> 0 THEN
-        iStep := 99;
+    IF iStep <> Stillstand THEN
+        iStep := StopNormal;
     END_IF;
 
     xBusy := FALSE;

@@ -1345,7 +1345,7 @@
 				},
 				{
 					"name": "value",
-					"value": "0:clsHMI1.sAnf3",
+					"value": "0:clsHMI1.sAnf_HMI3",
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "b649d578-36a6-4e87-8412-36f39e8d222b"
@@ -1434,7 +1434,7 @@
 				},
 				{
 					"name": "value",
-					"value": "0:clsHMI1.sAnf2",
+					"value": "0:clsHMI1.sAnf_HMI2",
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "9dab67f6-a5cc-4588-900d-39f9a17f0edc"
@@ -1523,7 +1523,7 @@
 				},
 				{
 					"name": "value",
-					"value": "0:clsHMI1.sAnf1",
+					"value": "0:clsHMI1.sAnf_HMI1",
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "6d2c85a6-f8c5-4892-979b-906d8dcee5fd"
@@ -1604,18 +1604,18 @@
 					"propTypeId": 2
 				},
 				{
-					"name": "value",
-					"value": "0:clsHMI1.sAnf0",
-					"typeId": 4,
-					"propTypeId": 1,
-					"refId": "7592cb5f-7954-4ff0-baea-124bac1df0b8"
-				},
-				{
 					"name": "sigbtntext",
 					"value": "SystemTexts:Etage 0",
 					"typeId": 5,
 					"propTypeId": 1,
 					"refId": "63915d61-c310-47d8-9963-cf1976684e59"
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf_HMI0",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "7592cb5f-7954-4ff0-baea-124bac1df0b8"
 				}
 			]
 		},
@@ -2643,13 +2643,6 @@
 					"propTypeId": 2
 				},
 				{
-					"name": "value",
-					"value": "0:clsHMI1.sAnfAuf",
-					"typeId": 4,
-					"propTypeId": 1,
-					"refId": "35cf1c26-891e-4e45-932b-640ca4af05bf"
-				},
-				{
 					"name": "sigbtntext",
 					"value": "TextList0:Tür Auf",
 					"typeId": 5,
@@ -2664,6 +2657,13 @@
 							"refId": "e74dcaa3-d06c-4b78-8da1-d96ff368a4dc"
 						}
 					]
+				},
+				{
+					"name": "value",
+					"value": "0:clsHMI1.sAnf_HMIAuf",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "35cf1c26-891e-4e45-932b-640ca4af05bf"
 				}
 			]
 		},
@@ -2749,7 +2749,7 @@
 				},
 				{
 					"name": "value",
-					"value": "0:clsHMI1.sAnfZu",
+					"value": "0:clsHMI1.sAnf_HMIZu",
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "73e43d11-945e-406f-943a-4cd659cf2b91"

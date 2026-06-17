@@ -5566,7 +5566,7 @@
 				{
 					"type": "datatype",
 					"designTimeId": "29c778ea-7876-4d10-adfc-6f7154064d02",
-					"name": "sAnf0",
+					"name": "sAnf_HMI0",
 					"guid": "6ce70355-f024-47e5-8de2-8f426953621c",
 					"typeId": 1,
 					"datatype": {
@@ -5580,7 +5580,7 @@
 				{
 					"type": "datatype",
 					"designTimeId": "f6b72837-125f-445e-b4c2-23ddbe5d8cb4",
-					"name": "sAnf1",
+					"name": "sAnf_HMI1",
 					"guid": "06308cd2-00ac-48ed-b406-a9f977dc10ed",
 					"typeId": 1,
 					"datatype": {
@@ -5594,7 +5594,7 @@
 				{
 					"type": "datatype",
 					"designTimeId": "6e2d7e9f-5011-4217-8e03-583cd5a17247",
-					"name": "sAnf2",
+					"name": "sAnf_HMI2",
 					"guid": "628f15b3-0756-44c4-b4c3-37ff2c26b34f",
 					"typeId": 1,
 					"datatype": {
@@ -5608,7 +5608,7 @@
 				{
 					"type": "datatype",
 					"designTimeId": "0fe03c7d-6d0d-4fcb-a727-448cb3b7980f",
-					"name": "sAnf3",
+					"name": "sAnf_HMI3",
 					"guid": "0a0843e2-0c0a-4db2-836a-db8bcafacd2d",
 					"typeId": 1,
 					"datatype": {
@@ -5622,7 +5622,7 @@
 				{
 					"type": "datatype",
 					"designTimeId": "3e8c73a2-7873-4b96-90e3-420275525c98",
-					"name": "sAnfAuf",
+					"name": "sAnf_HMIAuf",
 					"guid": "74ae7a83-a1f8-4d07-be2c-a9c0caeb9be3",
 					"typeId": 1,
 					"datatype": {
@@ -5636,7 +5636,7 @@
 				{
 					"type": "datatype",
 					"designTimeId": "bb046ea9-d588-4008-aafa-b86ad2387179",
-					"name": "sAnfZu",
+					"name": "sAnf_HMIZu",
 					"guid": "d92b9223-787e-4327-8748-6b79774b8f26",
 					"typeId": 1,
 					"datatype": {
@@ -21839,6 +21839,36 @@
 					"designTimeId": "177d1f2d-7a89-4277-a81f-470bcb42693d",
 					"name": "sAnf3",
 					"guid": "d297cd8d-4336-4c90-88fe-d6551a3ec876",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				}
+			]
+		},
+		{
+			"type": "datatype",
+			"designTimeId": "3305144e-097f-4713-9bff-f9595f3e2285",
+			"name": "clsAntrieb",
+			"guid": "cad7f03d-b702-49b8-b0ec-deb134a6d755",
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"size": 40,
+			"children": [
+				{
+					"type": "datatype",
+					"designTimeId": "905d0380-00e0-4fbb-856f-e0ba8b6337c0",
+					"name": "sState",
+					"guid": "06d7d9a4-7426-49a2-a4a1-442e7a4e210d",
 					"typeId": 1,
 					"datatype": {
 						"value": "DINT",

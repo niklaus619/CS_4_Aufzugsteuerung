@@ -20,6 +20,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{8D9AD2EC-2B31-46C7-AFBD-5923DDDA9AD0}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sState" GUID="{06D7D9A4-7426-49A2-A4A1-442E7A4E210D}" Visualized="true" Remotely="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cFahrbefehl" Required="false" Internal="false"/>
 	</Channels>
 </Class>
@@ -39,6 +40,7 @@ clsAntrieb : CLASS
 	END_TYPE
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
+	sState 	: SvrCh_DINT;
   //Clients:
 	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
@@ -79,11 +81,12 @@ FUNCTION GLOBAL TAB clsAntrieb::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSANTRIEB
 0$UINT, 0$UINT, (SIZEOF(::clsAntrieb))$UINT, 
-1$UINT, 1$UINT, 0$UINT, 
+2$UINT, 1$UINT, 0$UINT, 
 TO_UDINT(1680230051), "clsAntrieb", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsAntrieb.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
+(::clsAntrieb.sState.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2839362732), "sState", 
 //Clients:
 (::clsAntrieb.cFahrbefehl.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000000$UINT, TO_UDINT(1832219461), "cFahrbefehl", TO_UDINT(3506464711), "clsMotorControl", 0$UINT, 0$UINT, 
 END_FUNCTION
@@ -128,6 +131,15 @@ FUNCTION VIRTUAL GLOBAL clsAntrieb::CyWork
 	VAR_OUTPUT
 		state (EAX) 	: UDINT;
 	END_VAR
+  
+  //uebergabe an HMI
+  IF iStep = Stillstand THEN
+    sState := 0;
+  ELSIF iStep = FahrenPos THEN
+    sState := 1;
+  ELSIF iStep = FahrenNeg THEN
+    sState := 2;
+  END_IF;
 
 CASE iStep OF
 

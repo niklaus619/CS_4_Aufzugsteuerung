@@ -1,44 +1,4 @@
 {
 	"type": "StateSchemeCollection",
-	"version": "0.0.96",
-	"schemes": [
-		{
-			"type": "Scheme",
-			"designTimeId": "349f24a5-44d7-4c50-8117-b049f27ae425",
-			"name": "Ziel",
-			"schemeId": 21,
-			"variable": {
-				"value": "0:clsHauptablauf1.sAnf0",
-				"typeId": 4,
-				"propTypeId": 1,
-				"refId": "431a7e96-3b0a-4524-81fd-44699c0c7b28"
-			},
-			"schemeEntries": [
-				{
-					"type": "SchemeEntry",
-					"designTimeId": "c32e351e-1a02-4481-a922-6620e5b54eab",
-					"setValue": 0
-				}
-			],
-			"revision": {
-				"type": "Revision"
-			}
-		},
-		{
-			"type": "Scheme",
-			"designTimeId": "80ec16e1-f53e-4999-b3db-f64d6ab7fbcb",
-			"name": "StateScheme0",
-			"schemeId": 21,
-			"schemeEntries": [
-				{
-					"type": "SchemeEntry",
-					"designTimeId": "8e4757ea-efa8-4c22-a606-ca7288f27c1a",
-					"setValue": 0
-				}
-			],
-			"revision": {
-				"type": "Revision"
-			}
-		}
-	]
+	"version": "0.0.96"
 }

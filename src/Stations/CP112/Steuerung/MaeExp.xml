@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<File CRC="773B3B50" Version="1.1" SubVersion="2">
+<File CRC="AE807259" Version="1.1" SubVersion="2">
 	<Types>
 		<Type Name="SafetyConfigStateType" Datatype="UDINT" TypeId="ENUM">
 			<Elements>
@@ -171,6 +171,15 @@
 			Base     = "Varan_Base"
 			Size     = "13076"
 			Guid     = "013BA757-940A-4EA8-B1BE-51A701626C2E">
+		</Class>
+		<Class
+			Name     = "clsAntrieb"
+			Datatype = "DINT"
+			Size     = "40"
+			Guid     = "CAD7F03D-B702-49B8-B0EC-DEB134A6D755">
+			<Servers>
+				<Server Name="sState" Datatype="DINT" Guid="06D7D9A4-7426-49A2-A4A1-442E7A4E210D" WriteProtected="true"/>
+			</Servers>
 		</Class>
 		<Class
 			Name     = "clsEtagenSensorik"
@@ -690,6 +699,7 @@
 	</Classes>
 	<Objects>
 		<Object Name="AI0431" Datatype="AI043" Guid="A0B4511D-86CB-4BDC-80E4-EF644B408663"/>
+		<Object Name="clsAufzugantrieb" Datatype="clsAntrieb" Guid="CDD3F86A-B098-458F-AE43-A0C3C0242A11"/>
 		<Object Name="clsEtagen1" Datatype="clsEtagenSensorik" Guid="161C8F9C-70DE-48E6-A140-C558235AA2BF"/>
 		<Object Name="clsHauptablauf1" Datatype="clsHauptablauf" Guid="A41AD535-82C0-41F9-915D-F4F6ED4F2825"/>
 		<Object Name="clsHMI1" Datatype="clsHMI" Guid="0F050788-F273-4D92-8CFC-C809040FE77C"/>

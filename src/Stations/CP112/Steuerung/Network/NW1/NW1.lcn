@@ -5,7 +5,7 @@
 		<Object
 			Name       = "clsAufzugantrieb"
 			GUID       = "{CDD3F86A-B098-458F-AE43-A0C3C0242A11}"
-			Class      = "clsAufzugantrieb"
+			Class      = "clsAntrieb"
 			Position   = "(1380,660)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
@@ -18,7 +18,7 @@
 			Name       = "clsAufzugmodul1"
 			GUID       = "{33309781-816D-4182-9BA2-D13739D47D47}"
 			Class      = "clsAufzugmodul"
-			Position   = "(2280,540)"
+			Position   = "(2280,570)"
 			Visualized = "true"
 			CyclicTime = "1 ms">
 			<Channels>
@@ -167,9 +167,9 @@
 			</Channels>
 		</Object>
 		<Object
-			Name       = "clsTuerantrieb1"
-			GUID       = "{A62EE0CC-5455-4531-8CBA-B91A17AC9252}"
-			Class      = "clsTuerantrieb"
+			Name       = "clsTuerantrieb"
+			GUID       = "{D3AE6E87-B2A7-4B0A-811D-51524055D31B}"
+			Class      = "clsAntrieb"
 			Position   = "(1380,810)"
 			Visualized = "false"
 			CyclicTime = "1 ms">
@@ -197,13 +197,13 @@
 	</Comments>
 	<!-- List of Connections in this network -->
 	<Connections>
-		<Connection Source="clsAufzugmodul1.cAntriebAufzug" Destination="clsAufzugantrieb.ClassSvr" Vertices="(2280,750),(1680,750),"/>
-		<Connection Source="clsAufzugmodul1.cAntriebTuer" Destination="clsTuerantrieb1.ClassSvr" Vertices="(2280,810),(1680,900),"/>
-		<Connection Source="clsAufzugmodul1.cAnforderung" Destination="clsHauptablauf1.ClassSvr" Vertices="(2280,870),(1680,1050),"/>
+		<Connection Source="clsAufzugmodul1.cAntriebAufzug" Destination="clsAufzugantrieb.ClassSvr" Vertices="(2280,780),(1680,750),"/>
+		<Connection Source="clsTuerantrieb.cFahrbefehl" Destination="clsMotorControlTuer.ClassSvr"/>
+		<Connection Source="clsAufzugmodul1.cAnforderung" Destination="clsHauptablauf1.ClassSvr" Vertices="(2280,900),(1680,1050),"/>
 		<Connection Source="clsHauptablauf1.cHMI" Destination="clsHMI1.ClassSvr" Vertices="(1380,1050),(1260,1050),"/>
-		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2280,690),(1680,540),"/>
-		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2280,630),(1680,270),"/>
-		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2280,930),(1696,1440),"/>
+		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2280,720),(1680,540),"/>
+		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2280,660),(1680,270),"/>
+		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2280,960),(1696,1440),"/>
 		<Connection Source="clsHMI1.cTaster1" Destination="__IO_Element11" Vertices="(960,1050),(510,900)," IOObject="IO_Element1"/>
 		<Connection Source="clsHMI1.cTaster2" Destination="__IO_Element22" Vertices="(960,1110),(510,990)," IOObject="IO_Element2"/>
 		<Connection Source="clsHMI1.cTaster3" Destination="__IO_Element31" Vertices="(960,1170),(510,1080)," IOObject="IO_Element3"/>
@@ -215,7 +215,7 @@
 		<Connection Source="clsHMI1.cTimer4" Destination="clsImpuls4.ClassSvr" Vertices="(960,1470),(526,1770),"/>
 		<Connection Source="clsHMI1.cTaster4" Destination="__IO_Element41" Vertices="(960,1230),(510,1170)," IOObject="IO_Element4"/>
 		<Connection Source="clsAufzugantrieb.cFahrbefehl" Destination="clsMotorControlAufzug.ClassSvr"/>
-		<Connection Source="clsTuerantrieb1.cFahrbefehl" Destination="clsMotorControlTuer.ClassSvr"/>
+		<Connection Source="clsAufzugmodul1.cAntriebTuer" Destination="clsTuerantrieb.ClassSvr" Vertices="(2280,840),(1680,900),"/>
 	</Connections>
 	<!-- List of temp data objects in this network -->
 	<IOObjects>

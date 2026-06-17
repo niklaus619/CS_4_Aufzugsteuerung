@@ -226,10 +226,10 @@ TYPE
     dData : DINT;
     pCmd : ^ASCII_BIN;
   END_STRUCT;
-  CltChCmd_clsAufzugantrieb : STRUCT
+  CltChCmd_clsAntrieb : STRUCT
     pCh : ^SvrChCmd_DINT;
     dData : DINT;
-    pCmd : ^clsAufzugantrieb;
+    pCmd : ^clsAntrieb;
   END_STRUCT;
   CltChCmd_clsEtagenSensorik : STRUCT
     pCh : ^SvrChCmd_DINT;
@@ -255,11 +255,6 @@ TYPE
     pCh : ^SvrChCmd_DINT;
     dData : DINT;
     pCmd : ^clsTimer;
-  END_STRUCT;
-  CltChCmd_clsTuerantrieb : STRUCT
-    pCh : ^SvrChCmd_DINT;
-    dData : DINT;
-    pCmd : ^clsTuerantrieb;
   END_STRUCT;
   CltChCmd_clsTuerSensorik : STRUCT
     pCh : ^SvrChCmd_DINT;

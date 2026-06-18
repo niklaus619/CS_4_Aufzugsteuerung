@@ -213,9 +213,6 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
       CASE iAktEtage OF
 
           0:
-              IF cAnforderung.Anf0(xIn := FALSE) THEN
-                  cAnforderung.Anf0(xIn := TRUE);
-              END_IF;
 
               IF cAnforderung.Anf1(xIn := FALSE) OR
                  cAnforderung.Anf2(xIn := FALSE) OR
@@ -225,9 +222,6 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
 
 
           1:
-              IF cAnforderung.Anf1(xIn := FALSE) THEN
-                  cAnforderung.Anf1(xIn := TRUE);
-              END_IF;
 
               IF cAnforderung.Anf2(xIn := FALSE) OR
                  cAnforderung.Anf3(xIn := FALSE) THEN
@@ -240,9 +234,6 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
 
 
           2:
-              IF cAnforderung.Anf2(xIn := FALSE) THEN
-                  cAnforderung.Anf2(xIn := TRUE);
-              END_IF;
 
               IF cAnforderung.Anf3(xIn := FALSE) THEN
                   xZielOben := TRUE;
@@ -255,9 +246,6 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
 
 
           3:
-              IF cAnforderung.Anf3(xIn := FALSE) THEN
-                  cAnforderung.Anf3(xIn := TRUE);
-              END_IF;
 
               IF cAnforderung.Anf0(xIn := FALSE) OR
                  cAnforderung.Anf1(xIn := FALSE) OR
@@ -419,7 +407,7 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
           cAntriebTuer.Fahrt(xDir := TRUE, xStart := FALSE);
 
           iAktEtage := cEtagestatus.AktEtage();
-
+          //Anfrage loeschen
           IF iAktEtage = 0 THEN
               cAnforderung.Anf0(xIn := TRUE);
 

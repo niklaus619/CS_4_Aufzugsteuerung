@@ -7,8 +7,8 @@
 	Name               = "clsMotorControl"
 	Revision           = "0.0"
 	GUID               = "{110A3238-0488-4A75-98CA-30E85CA32F54}"
-	RealtimeTask       = "false"
-	CyclicTask         = "true"
+	RealtimeTask       = "true"
+	CyclicTask         = "false"
 	DefCyclictime      = "1 ms"
 	BackgroundTask     = "false"
 	Sigmatek           = "false"
@@ -79,6 +79,14 @@ clsMotorControl : CLASS
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
+		VAR_INPUT
+			EAX 	: UDINT;
+		END_VAR
+		VAR_OUTPUT
+			state (EAX) 	: UDINT;
+		END_VAR;
+	
+	FUNCTION VIRTUAL GLOBAL RtWork
 		VAR_INPUT
 			EAX 	: UDINT;
 		END_VAR
@@ -182,6 +190,7 @@ FUNCTION clsMotorControl::@STD
 	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsMotorControl, pCmd := #vmt.CmdTable);
 	vmt.CmdTable.Write		:= #M_WR_DIRECT();
 	vmt.CmdTable.CyWork		:= #CyWork();
+	vmt.CmdTable.RtWork		:= #RtWork();
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
 	IF ClassSvr.pMeth THEN
@@ -443,4 +452,17 @@ FUNCTION GLOBAL clsMotorControl::isReady
   
   isReady := FALSE;
   
+END_FUNCTION
+
+
+FUNCTION VIRTUAL GLOBAL clsMotorControl::RtWork
+	VAR_INPUT
+		EAX 	: UDINT;
+	END_VAR
+	VAR_OUTPUT
+		state (EAX) 	: UDINT;
+	END_VAR
+
+	state := READY;
+
 END_FUNCTION

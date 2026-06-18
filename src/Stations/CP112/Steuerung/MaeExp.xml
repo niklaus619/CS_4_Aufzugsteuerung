@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<File CRC="AE807259" Version="1.1" SubVersion="2">
+<File CRC="E9D68678" Version="1.1" SubVersion="2">
 	<Types>
 		<Type Name="SafetyConfigStateType" Datatype="UDINT" TypeId="ENUM">
 			<Elements>
@@ -175,10 +175,19 @@
 		<Class
 			Name     = "clsAntrieb"
 			Datatype = "DINT"
-			Size     = "40"
+			Size     = "44"
 			Guid     = "CAD7F03D-B702-49B8-B0EC-DEB134A6D755">
 			<Servers>
 				<Server Name="sState" Datatype="DINT" Guid="06D7D9A4-7426-49A2-A4A1-442E7A4E210D" WriteProtected="true"/>
+			</Servers>
+		</Class>
+		<Class
+			Name     = "clsEmgStop_1"
+			Datatype = "DINT"
+			Size     = "76"
+			Guid     = "EFB88055-B439-41CE-9391-1C0838255D75">
+			<Servers>
+				<Server Name="sVisuNotStop" Datatype="DINT" Guid="FBF3FE60-66A9-455E-A1BA-47E743600935" WriteProtected="true"/>
 			</Servers>
 		</Class>
 		<Class
@@ -193,19 +202,20 @@
 		<Class
 			Name     = "clsHauptablauf"
 			Datatype = "DINT"
-			Size     = "76"
+			Size     = "88"
 			Guid     = "2501AED8-6955-4DEB-A38C-9CA5133938AC">
 			<Servers>
 				<Server Name="sAnf0" Datatype="DINT" Guid="E4A1D0C9-D463-4ECE-BB1A-921D0F2AAFF2" WriteProtected="true"/>
 				<Server Name="sAnf1" Datatype="DINT" Guid="ED67BD7E-9602-4A87-8F29-00EC4FBB4020" WriteProtected="true"/>
 				<Server Name="sAnf2" Datatype="DINT" Guid="54CEFB8B-8FD1-4068-9BCF-32B4532763F5" WriteProtected="true"/>
 				<Server Name="sAnf3" Datatype="DINT" Guid="D297CD8D-4336-4C90-88FE-D6551A3EC876" WriteProtected="true"/>
+				<Server Name="sLichtschranke" Datatype="DINT" Guid="0E04B578-FA18-411C-B2A6-C69DDF7EFE97" WriteProtected="true"/>
 			</Servers>
 		</Class>
 		<Class
 			Name     = "clsHMI"
 			Datatype = "DINT"
-			Size     = "200"
+			Size     = "212"
 			Guid     = "7FA8BFF6-E8AB-4A85-9515-8DBAD82A5670">
 			<Servers>
 				<Server Name="sAnf_HMI0" Datatype="DINT" Guid="6CE70355-F024-47E5-8DE2-8F426953621C" WriteProtected="false"/>
@@ -700,6 +710,7 @@
 	<Objects>
 		<Object Name="AI0431" Datatype="AI043" Guid="A0B4511D-86CB-4BDC-80E4-EF644B408663"/>
 		<Object Name="clsAufzugantrieb" Datatype="clsAntrieb" Guid="CDD3F86A-B098-458F-AE43-A0C3C0242A11"/>
+		<Object Name="clsEmgStop_1" Datatype="clsEmgStop_1" Guid="9195496D-276A-419B-9CD3-558C57849CE3"/>
 		<Object Name="clsEtagen1" Datatype="clsEtagenSensorik" Guid="161C8F9C-70DE-48E6-A140-C558235AA2BF"/>
 		<Object Name="clsHauptablauf1" Datatype="clsHauptablauf" Guid="A41AD535-82C0-41F9-915D-F4F6ED4F2825"/>
 		<Object Name="clsHMI1" Datatype="clsHMI" Guid="0F050788-F273-4D92-8CFC-C809040FE77C"/>
@@ -715,15 +726,20 @@
 		<Object Name="VI0211" Datatype="VI021" Guid="907AEC32-8BA5-44B4-AF33-5A7F6C4F9047"/>
 	</Objects>
 	<IOElements>
-		<IOElement Name="IO_Element" IOType="Input" Type="Digital" Datatype="DINT" Guid="1B1FBF7F-BD8D-4062-BB64-37009F707FDC"/>
 		<IOElement Name="IO_Element0" IOType="Output" Type="Digital" Datatype="DINT" Guid="5421467A-4154-47B1-8671-9C215A35A6BB"/>
-		<IOElement Name="IO_Element1" IOType="Input" Type="Digital" Datatype="DINT" Guid="A9980A06-AE0C-4504-838F-363C51F06801"/>
-		<IOElement Name="IO_Element2" IOType="Input" Type="Digital" Datatype="DINT" Guid="1CB4956A-8FEA-4160-A071-61D65219C967"/>
-		<IOElement Name="IO_Element3" IOType="Input" Type="Digital" Datatype="DINT" Guid="0C4F6025-12EF-42E4-8999-731E84AF0109"/>
-		<IOElement Name="IO_Element4" IOType="Input" Type="Digital" Datatype="DINT" Guid="1921FDC2-96DC-47AD-992D-1E777B75E3C5"/>
 		<IOElement Name="IO_Element5" IOType="Output" Type="Digital" Datatype="DINT" Guid="47EEE55E-EECF-4ECF-B6DC-624E2310D8D4"/>
 		<IOElement Name="IO_Element6" IOType="Output" Type="Digital" Datatype="DINT" Guid="F96515EC-C3A6-4256-82EB-F6867DB63F97"/>
 		<IOElement Name="IO_Element7" IOType="Output" Type="Digital" Datatype="DINT" Guid="F458EB1F-7409-4B7A-B24E-5AB00D95B1A1"/>
+		<IOElement Name="xI_Emg1_1" IOType="Input" Type="Digital" Datatype="DINT" Guid="3069C101-2317-4F40-B9FC-510B7B83DD91"/>
+		<IOElement Name="xI_Emg1_2" IOType="Input" Type="Digital" Datatype="DINT" Guid="C00BE271-ECD7-4167-A02F-F4DAFE944A78"/>
+		<IOElement Name="xI_Emg1_3" IOType="Input" Type="Digital" Datatype="DINT" Guid="CD5E5D53-803C-4526-8DB2-742BA589D567"/>
+		<IOElement Name="xI_Emg1_4" IOType="Input" Type="Digital" Datatype="DINT" Guid="1F218862-D811-4C17-BC44-0BD5143630AC"/>
+		<IOElement Name="xI_EnMotoren" IOType="Input" Type="Digital" Datatype="DINT" Guid="1B1FBF7F-BD8D-4062-BB64-37009F707FDC"/>
+		<IOElement Name="xI_Etage0" IOType="Input" Type="Digital" Datatype="DINT" Guid="A9980A06-AE0C-4504-838F-363C51F06801"/>
+		<IOElement Name="xI_Etage1" IOType="Input" Type="Digital" Datatype="DINT" Guid="1CB4956A-8FEA-4160-A071-61D65219C967"/>
+		<IOElement Name="xI_Etage2" IOType="Input" Type="Digital" Datatype="DINT" Guid="0C4F6025-12EF-42E4-8999-731E84AF0109"/>
+		<IOElement Name="xI_Etage3" IOType="Input" Type="Digital" Datatype="DINT" Guid="1921FDC2-96DC-47AD-992D-1E777B75E3C5"/>
+		<IOElement Name="xI_Lichtschranke" IOType="Input" Type="Digital" Datatype="DINT" Guid="AA5ABEF9-9E63-475C-AB85-53F03C9776C6"/>
 	</IOElements>
 	<UnitDefinitions>
 		<UnitGrp Name="Acceleration">

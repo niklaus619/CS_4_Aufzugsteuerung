@@ -24,6 +24,7 @@
 		<Server Name="sAnf1" GUID="{ED67BD7E-9602-4A87-8F29-00EC4FBB4020}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Server Name="sAnf2" GUID="{54CEFB8B-8FD1-4068-9BCF-32B4532763F5}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Server Name="sAnf3" GUID="{D297CD8D-4336-4C90-88FE-D6551A3EC876}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sLichtschranke" GUID="{0E04B578-FA18-411C-B2A6-C69DDF7EFE97}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cHMI" Required="true" Internal="false"/>
 	</Channels>
 </Class>
@@ -35,6 +36,7 @@ clsHauptablauf : CLASS
 	sAnf1 	: SvrCh_DINT;
 	sAnf2 	: SvrCh_DINT;
 	sAnf3 	: SvrCh_DINT;
+	sLichtschranke 	: SvrCh_DINT;
   //Clients:
 	cHMI 	: CltChCmd_clsHMI;
   //Variables:
@@ -111,7 +113,7 @@ FUNCTION GLOBAL TAB clsHauptablauf::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSHAUPTABLAUF
 0$UINT, 0$UINT, (SIZEOF(::clsHauptablauf))$UINT, 
-5$UINT, 1$UINT, 0$UINT, 
+6$UINT, 1$UINT, 0$UINT, 
 TO_UDINT(971323912), "clsHauptablauf", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
@@ -120,6 +122,7 @@ TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 (::clsHauptablauf.sAnf1.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(398472493), "sAnf1", 
 (::clsHauptablauf.sAnf2.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2395563159), "sAnf2", 
 (::clsHauptablauf.sAnf3.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(4191048705), "sAnf3", 
+(::clsHauptablauf.sLichtschranke.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2924489048), "sLichtschranke", 
 //Clients:
 (::clsHauptablauf.cHMI.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(2629516491), "cHMI", TO_UDINT(1223415905), "clsHMI", 0$UINT, 0$UINT, 
 END_FUNCTION
@@ -172,6 +175,7 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
     // Anf0() bis Anf3().
     
     // Weiterleitung an HMI
+    //Anfragen
     IF xAnf0 THEN
       sAnf0 := 1;
     ELSE
@@ -196,6 +200,12 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
       sAnf3 := 0;
     END_IF;
 
+    //Lichtschranke
+    sLichtschranke := cHMI.Lichtschranke();
+   
+
+
+
 	state := READY;
 
 END_FUNCTION
@@ -218,7 +228,13 @@ FUNCTION GLOBAL clsHauptablauf::TuerAuf
 	END_VAR
     
   //Weitergabe von IO
-xOut := cHMI.Tuerauf();
+  IF cHMI.Tuerauf() OR (cHMI.Lichtschranke() <> 1) THEN //Lichtschranke MUSS 1 sein 
+    xOut := TRUE;
+  ELSE
+    xOut := FALSE;
+  END_IF;
+ 
+
 END_FUNCTION
 
 

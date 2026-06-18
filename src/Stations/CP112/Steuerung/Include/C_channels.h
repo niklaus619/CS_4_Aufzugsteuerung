@@ -322,6 +322,13 @@ typedef struct CltChCmd_clsAntrieb
     clsAntrieb *pCmd;
   } CltChCmd_clsAntrieb;
 
+typedef struct CltChCmd_clsEmgStop_1 
+  {
+    struct SvrChCmd_DINT *pCh;
+    DINT dData;
+    clsEmgStop_1 *pCmd;
+  } CltChCmd_clsEmgStop_1;
+
 typedef struct CltChCmd_clsEtagenSensorik 
   {
     struct SvrChCmd_DINT *pCh;

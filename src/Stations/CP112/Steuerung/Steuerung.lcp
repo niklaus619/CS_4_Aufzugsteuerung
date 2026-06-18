@@ -217,11 +217,13 @@
 		<File Path=".\Class\clsSimpleCounter\clsSimpleCounter.st"/>
 		<File Path=".\Class\clsCounter\clsCounter.st"/>
 		<File Path=".\Class\clsMotorControl\clsMotorControl.st"/>
+		<File Path=".\Class\clsEmgStop_1\clsEmgStop_1.st"/>
 	</ClassFiles>
 	<NetworkFiles>
 		<File Path=".\Network\NW1\NW1.lcn"/>
 		<File Path=".\Network\HW_Network0\HW_Network0.lcn"/>
 		<File Path=".\Network\Motion\Motion.lcn"/>
+		<File Path=".\Network\RT_EMG\RT_EMG.lcn"/>
 	</NetworkFiles>
 	<ObjectFiles>
 		<File Path=".\Loader\Source\Loader.lob" Downloadable="false"/>

@@ -26,6 +26,7 @@
 		<Server Name="sAnf_HMI3" GUID="{0A0843E2-0C0A-4DB2-836A-DB8BCAFACD2D}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Server Name="sAnf_HMIAuf" GUID="{74AE7A83-A1F8-4D07-BE2C-A9C0CAEB9BE3}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Server Name="sAnf_HMIZu" GUID="{D92B9223-787E-4327-8748-6B79774B8F26}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Client Name="cLichtschranke" Required="true" Internal="false"/>
 		<Client Name="cTaster1" Required="false" Internal="false"/>
 		<Client Name="cTaster2" Required="false" Internal="false"/>
 		<Client Name="cTaster3" Required="false" Internal="false"/>
@@ -51,6 +52,7 @@ clsHMI : CLASS
 	cTaster2 	: CltCh_DINT;
 	cTaster3 	: CltCh_DINT;
 	cTaster4 	: CltCh_DINT;
+	cLichtschranke 	: CltCh_DINT;
 	cTimer1 	: CltChCmd_clsTimer;
 	cTimer2 	: CltChCmd_clsTimer;
 	cTimer3 	: CltChCmd_clsTimer;
@@ -103,6 +105,11 @@ clsHMI : CLASS
 		VAR_OUTPUT
 			xOut 	: BOOL;
 		END_VAR;
+	
+	FUNCTION GLOBAL Lichtschranke
+		VAR_OUTPUT
+			xOut 	: DINT;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -121,7 +128,7 @@ FUNCTION GLOBAL TAB clsHMI::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSHMI
 0$UINT, 0$UINT, (SIZEOF(::clsHMI))$UINT, 
-7$UINT, 8$UINT, 0$UINT, 
+7$UINT, 9$UINT, 0$UINT, 
 TO_UDINT(1223415905), "clsHMI", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
@@ -137,6 +144,7 @@ TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 (::clsHMI.cTaster2.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(3698918041), "cTaster2", 
 (::clsHMI.cTaster3.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(2877174287), "cTaster3", 
 (::clsHMI.cTaster4.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(890939308), "cTaster4", 
+(::clsHMI.cLichtschranke.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(3370259764), "cLichtschranke", 
 (::clsHMI.cTimer1.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3960418404), "cTimer1", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
 (::clsHMI.cTimer2.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1963352542), "cTimer2", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
 (::clsHMI.cTimer3.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(33640776), "cTimer3", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
@@ -228,10 +236,11 @@ FUNCTION VIRTUAL GLOBAL clsHMI::CyWork
 	END_VAR
 
 	// IO lesen
-	cTaster1 := cTaster1.Read();
-	cTaster2 := cTaster2.Read();
-	cTaster3 := cTaster3.Read();
-	cTaster4 := cTaster4.Read();
+	cTaster1 :=       cTaster1.Read();
+	cTaster2 :=       cTaster2.Read();
+	cTaster3 :=       cTaster3.Read();
+	cTaster4 :=       cTaster4.Read();
+  cLichtschranke := cLichtschranke.Read();
 
 	// Etage 0
 	IF (cTaster1 <> xTaster1old) OR sAnf_HMI0 THEN
@@ -322,7 +331,7 @@ FUNCTION GLOBAL clsHMI::Tuerzu
 		xOut 	: BOOL;
 	END_VAR
 //Erkennung falls vom HMI getastet oder vom Schalter 
-  IF sAnf_HMIAuf > 0 THEN  
+  IF sAnf_HMIZu > 0 THEN  
     xOut := TRUE; 
   ELSE
     xOut := FALSE;
@@ -335,9 +344,19 @@ FUNCTION GLOBAL clsHMI::Tuerauf
 		xOut 	: BOOL;
 	END_VAR
 //Erkennung falls vom HMI getastet oder vom Schalter 
-  IF sAnf_HMIZu > 0 THEN  
+  IF sAnf_HMIAuf > 0  THEN  
     xOut := TRUE; 
   ELSE
     xOut := FALSE;
   END_IF;
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHMI::Lichtschranke
+	VAR_OUTPUT
+		xOut 	: DINT;
+	END_VAR
+  
+  xOut :=  cLichtschranke;
+
 END_FUNCTION

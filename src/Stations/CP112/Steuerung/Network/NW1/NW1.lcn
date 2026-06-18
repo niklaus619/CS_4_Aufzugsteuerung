@@ -8,6 +8,7 @@
 			Class      = "clsAntrieb"
 			Position   = "(1380,660)"
 			Visualized = "true"
+			RealTime   = "10 ms"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
@@ -21,12 +22,14 @@
 			Class      = "clsAufzugmodul"
 			Position   = "(2280,570)"
 			Visualized = "false"
+			RealTime   = "10 ms"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
 				<Client Name="cAnforderung"/>
 				<Client Name="cAntriebAufzug"/>
 				<Client Name="cAntriebTuer"/>
+				<Client Name="cEMG_Stop"/>
 				<Client Name="cEtagestatus"/>
 				<Client Name="cTimerOffen"/>
 				<Client Name="cTuerstatus"/>
@@ -61,6 +64,7 @@
 				<Server Name="sAnf1"/>
 				<Server Name="sAnf2"/>
 				<Server Name="sAnf3"/>
+				<Server Name="sLichtschranke"/>
 				<Client Name="cHMI"/>
 			</Channels>
 		</Object>
@@ -79,6 +83,7 @@
 				<Server Name="sAnf_HMI3"/>
 				<Server Name="sAnf_HMIAuf"/>
 				<Server Name="sAnf_HMIZu"/>
+				<Client Name="cLichtschranke"/>
 				<Client Name="cTaster1"/>
 				<Client Name="cTaster2"/>
 				<Client Name="cTaster3"/>
@@ -93,7 +98,7 @@
 			Name       = "clsImpuls1"
 			GUID       = "{10FE2173-70D2-4DF9-A7B2-DDD0EC22F4A3}"
 			Class      = "clsTimer"
-			Position   = "(210,1350)"
+			Position   = "(210,1500)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -104,7 +109,7 @@
 			Name       = "clsImpuls2"
 			GUID       = "{ECD33523-D93B-4FAB-A31E-3FE984283FC0}"
 			Class      = "clsTimer"
-			Position   = "(210,1500)"
+			Position   = "(210,1650)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -115,7 +120,7 @@
 			Name       = "clsImpuls3"
 			GUID       = "{6B85CCA6-8873-4254-837B-C7930EADD29D}"
 			Class      = "clsTimer"
-			Position   = "(210,1650)"
+			Position   = "(210,1800)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -126,7 +131,7 @@
 			Name       = "clsImpuls4"
 			GUID       = "{1356581A-9B68-4DAE-AE44-EE5CD473F2D5}"
 			Class      = "clsTimer"
-			Position   = "(210,1800)"
+			Position   = "(210,1950)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -159,7 +164,7 @@
 			Name       = "clsSimFahrzeit2_Copy"
 			GUID       = "{D44480FC-FF98-4E64-8862-01CF437ADE1F}"
 			Class      = "clsTimer"
-			Position   = "(1380,1470)"
+			Position   = "(1380,1530)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -172,6 +177,7 @@
 			Class      = "clsAntrieb"
 			Position   = "(1380,870)"
 			Visualized = "false"
+			RealTime   = "10 ms"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
@@ -204,26 +210,29 @@
 		<Connection Source="clsHauptablauf1.cHMI" Destination="clsHMI1.ClassSvr" Vertices="(1380,1170),(1260,1170),"/>
 		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2280,720),(1680,540),"/>
 		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2280,660),(1680,270),"/>
-		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2280,960),(1696,1560),"/>
-		<Connection Source="clsHMI1.cTaster3" Destination="__IO_Element31" Vertices="(960,1290),(510,1200)," IOObject="IO_Element3"/>
-		<Connection Source="clsHMI1.cTaster2" Destination="__IO_Element22" Vertices="(960,1230),(510,1110)," IOObject="IO_Element2"/>
-		<Connection Source="clsHMI1.cTaster1" Destination="__IO_Element11" Vertices="(960,1170),(510,1020)," IOObject="IO_Element1"/>
+		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2280,960),(1696,1620),"/>
+		<Connection Source="clsHMI1.cTaster3" Destination="__xI_Etage21" Vertices="(960,1290),(510,1200)," IOObject="xI_Etage2"/>
+		<Connection Source="clsHMI1.cTaster2" Destination="__xI_Etage11" Vertices="(960,1230),(510,1110)," IOObject="xI_Etage1"/>
+		<Connection Source="clsHMI1.cTaster1" Destination="__xI_Etage01" Vertices="(960,1170),(510,1020)," IOObject="xI_Etage0"/>
 		<Connection Source="clsTuerSensorik1.cTimer" Destination="clsSimFahrzeit1.ClassSvr" Vertices="(1380,540),(1246,540),"/>
 		<Connection Source="clsEtagen1.cTimer" Destination="clsSimFahrzeit2.ClassSvr" Vertices="(1380,270),(1246,270),"/>
-		<Connection Source="clsHMI1.cTimer1" Destination="clsImpuls1.ClassSvr" Vertices="(960,1410),(526,1440),"/>
-		<Connection Source="clsHMI1.cTimer2" Destination="clsImpuls2.ClassSvr" Vertices="(960,1470),(526,1590),"/>
-		<Connection Source="clsHMI1.cTimer3" Destination="clsImpuls3.ClassSvr" Vertices="(960,1530),(526,1740),"/>
-		<Connection Source="clsHMI1.cTimer4" Destination="clsImpuls4.ClassSvr" Vertices="(960,1590),(526,1890),"/>
-		<Connection Source="clsHMI1.cTaster4" Destination="__IO_Element41" Vertices="(960,1350),(510,1290)," IOObject="IO_Element4"/>
+		<Connection Source="clsHMI1.cTimer1" Destination="clsImpuls1.ClassSvr" Vertices="(960,1470),(526,1590),"/>
+		<Connection Source="clsHMI1.cTimer2" Destination="clsImpuls2.ClassSvr" Vertices="(960,1530),(526,1740),"/>
+		<Connection Source="clsHMI1.cTimer3" Destination="clsImpuls3.ClassSvr" Vertices="(960,1590),(526,1890),"/>
+		<Connection Source="clsHMI1.cTimer4" Destination="clsImpuls4.ClassSvr" Vertices="(960,1650),(526,2040),"/>
+		<Connection Source="clsHMI1.cTaster4" Destination="__xI_Etage31" Vertices="(960,1350),(510,1290)," IOObject="xI_Etage3"/>
 		<Connection Source="clsAufzugantrieb.cFahrbefehl" Destination="clsMotorControlAufzug.ClassSvr"/>
 		<Connection Source="clsAufzugmodul1.cAntriebTuer" Destination="clsTuerantrieb.ClassSvr" Vertices="(2280,840),(1680,960),"/>
+		<Connection Source="clsAufzugmodul1.cEMG_Stop" Destination="clsEmgStop_1.ClassSvr"/>
+		<Connection Source="clsHMI1.cLichtschranke" Destination="__xI_Lichtschranke1" Vertices="(960,1410),(510,1380)," IOObject="xI_Lichtschranke"/>
 	</Connections>
 	<!-- List of temp data objects in this network -->
 	<IOObjects>
-		<IOObject KeyName="__IO_Element11" Name="IO_Element1" Position="(210,990)" Client="clsHMI1.cTaster1"/>
-		<IOObject KeyName="__IO_Element22" Name="IO_Element2" Position="(210,1080)" Client="clsHMI1.cTaster2"/>
-		<IOObject KeyName="__IO_Element31" Name="IO_Element3" Position="(210,1170)" Client="clsHMI1.cTaster3"/>
-		<IOObject KeyName="__IO_Element41" Name="IO_Element4" Position="(210,1260)" Client="clsHMI1.cTaster4"/>
+		<IOObject KeyName="__xI_Etage01" Name="xI_Etage0" Position="(210,990)" Client="clsHMI1.cTaster1"/>
+		<IOObject KeyName="__xI_Etage11" Name="xI_Etage1" Position="(210,1080)" Client="clsHMI1.cTaster2"/>
+		<IOObject KeyName="__xI_Etage21" Name="xI_Etage2" Position="(210,1170)" Client="clsHMI1.cTaster3"/>
+		<IOObject KeyName="__xI_Etage31" Name="xI_Etage3" Position="(210,1260)" Client="clsHMI1.cTaster4"/>
+		<IOObject KeyName="__xI_Lichtschranke1" Name="xI_Lichtschranke" Position="(210,1350)" Client="clsHMI1.cLichtschranke"/>
 	</IOObjects>
 	<!-- Headerfiles -->
 	<Options>

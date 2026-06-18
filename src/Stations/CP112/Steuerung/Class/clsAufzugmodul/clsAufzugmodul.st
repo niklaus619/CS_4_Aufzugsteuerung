@@ -7,8 +7,8 @@
 	Name               = "clsAufzugmodul"
 	Revision           = "0.0"
 	GUID               = "{6DA5BEA4-29CA-4164-94B9-E39E374AD8FA}"
-	RealtimeTask       = "false"
-	CyclicTask         = "true"
+	RealtimeTask       = "true"
+	CyclicTask         = "false"
 	DefCyclictime      = "1 ms"
 	BackgroundTask     = "false"
 	Sigmatek           = "false"
@@ -23,6 +23,7 @@
 		<Client Name="cAnforderung" Required="true" Internal="false"/>
 		<Client Name="cAntriebAufzug" Required="true" Internal="false"/>
 		<Client Name="cAntriebTuer" Required="true" Internal="false"/>
+		<Client Name="cEMG_Stop" Required="true" Internal="false"/>
 		<Client Name="cEtagestatus" Required="true" Internal="false"/>
 		<Client Name="cTimerOffen" Required="true" Internal="false"/>
 		<Client Name="cTuerstatus" Required="true" Internal="false"/>
@@ -44,7 +45,8 @@ clsAufzugmodul : CLASS
 	    TuerSchliessen,
 	    InitFahrtnachUnten:=40,
 	    Unterfahrt:=41,
-	    EtageUnten:=42
+	    EtageUnten:=42,
+	    NotAus
 	  )$UDINT;
 	END_TYPE
   //Servers:
@@ -57,6 +59,7 @@ clsAufzugmodul : CLASS
 	cAnforderung 	: CltChCmd_clsHauptablauf;
 	cTimerOffen 	: CltChCmd_clsTimer;
 	cZeitOffen 	: CltCh_UDINT;
+	cEMG_Stop 	: CltChCmd_clsEmgStop_1;
   //Variables:
 		iStep 	: Schritkette;
 		iAktEtage 	: DINT;
@@ -65,6 +68,14 @@ clsAufzugmodul : CLASS
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
+		VAR_INPUT
+			EAX 	: UDINT;
+		END_VAR
+		VAR_OUTPUT
+			state (EAX) 	: UDINT;
+		END_VAR;
+	
+	FUNCTION VIRTUAL GLOBAL RtWork
 		VAR_INPUT
 			EAX 	: UDINT;
 		END_VAR
@@ -80,6 +91,7 @@ clsAufzugmodul : CLASS
 END_CLASS;
 
 #pragma usingLtd clsAntrieb
+#pragma usingLtd clsEmgStop_1
 #pragma usingLtd clsEtagenSensorik
 #pragma usingLtd clsHauptablauf
 #pragma usingLtd clsTimer
@@ -93,7 +105,7 @@ FUNCTION GLOBAL TAB clsAufzugmodul::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSAUFZUGMODUL
 0$UINT, 0$UINT, (SIZEOF(::clsAufzugmodul))$UINT, 
-1$UINT, 7$UINT, 0$UINT, 
+1$UINT, 8$UINT, 0$UINT, 
 TO_UDINT(1857403904), "clsAufzugmodul", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
@@ -106,6 +118,7 @@ TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 (::clsAufzugmodul.cAnforderung.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3406365320), "cAnforderung", TO_UDINT(971323912), "clsHauptablauf", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cTimerOffen.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(263165870), "cTimerOffen", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cZeitOffen.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(1512785699), "cZeitOffen", 
+(::clsAufzugmodul.cEMG_Stop.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1127134604), "cEMG_Stop", TO_UDINT(2446850983), "clsEmgStop_1", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 
@@ -129,6 +142,7 @@ FUNCTION clsAufzugmodul::@STD
 	//Command Methods
 	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsAufzugmodul, pCmd := #vmt.CmdTable);
 	vmt.CmdTable.CyWork		:= #CyWork();
+	vmt.CmdTable.RtWork		:= #RtWork();
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
 	IF ClassSvr.pMeth THEN
@@ -151,6 +165,8 @@ END_VAR
 
 state := READY;
 
+//Notaus zustand
+IF cEMG_Stop.
 
 
 // Parameter lesen
@@ -431,5 +447,17 @@ ELSE
 END_CASE;
 
 
+
+END_FUNCTION
+
+FUNCTION VIRTUAL GLOBAL clsAufzugmodul::RtWork
+	VAR_INPUT
+		EAX 	: UDINT;
+	END_VAR
+	VAR_OUTPUT
+		state (EAX) 	: UDINT;
+	END_VAR
+
+	state := READY;
 
 END_FUNCTION

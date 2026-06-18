@@ -1636,6 +1636,7 @@
 			Class      = "clsMotorControl"
 			Position   = "(4020,180)"
 			Visualized = "false"
+			RealTime   = "10 ms"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
@@ -1656,6 +1657,7 @@
 			Position   = "(4020,2340)"
 			Visualized = "false"
 			Remotely   = "true"
+			RealTime   = "10 ms"
 			CyclicTime = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>

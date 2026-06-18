@@ -7,8 +7,8 @@
 	Name               = "clsAntrieb"
 	Revision           = "0.0"
 	GUID               = "{CAD7F03D-B702-49B8-B0EC-DEB134A6D755}"
-	RealtimeTask       = "false"
-	CyclicTask         = "true"
+	RealtimeTask       = "true"
+	CyclicTask         = "false"
 	DefCyclictime      = "1 ms"
 	BackgroundTask     = "false"
 	Sigmatek           = "false"
@@ -48,6 +48,14 @@ clsAntrieb : CLASS
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
+		VAR_INPUT
+			EAX 	: UDINT;
+		END_VAR
+		VAR_OUTPUT
+			state (EAX) 	: UDINT;
+		END_VAR;
+	
+	FUNCTION VIRTUAL GLOBAL RtWork
 		VAR_INPUT
 			EAX 	: UDINT;
 		END_VAR
@@ -112,6 +120,7 @@ FUNCTION clsAntrieb::@STD
 	//Command Methods
 	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsAntrieb, pCmd := #vmt.CmdTable);
 	vmt.CmdTable.CyWork		:= #CyWork();
+	vmt.CmdTable.RtWork		:= #RtWork();
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
 	IF ClassSvr.pMeth THEN
@@ -218,5 +227,17 @@ ELSE
     xBusy := FALSE;
 
 END_IF;
+
+END_FUNCTION
+
+FUNCTION VIRTUAL GLOBAL clsAntrieb::RtWork
+	VAR_INPUT
+		EAX 	: UDINT;
+	END_VAR
+	VAR_OUTPUT
+		state (EAX) 	: UDINT;
+	END_VAR
+
+	state := READY;
 
 END_FUNCTION

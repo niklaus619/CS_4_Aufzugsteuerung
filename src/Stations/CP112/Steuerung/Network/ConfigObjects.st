@@ -25,7 +25,7 @@ END_FUNCTION
 
 
 FUNCTION GLOBAL TAB CONFIG_TABLES
-00095$UINT, 
+00096$UINT, 
 0$UINT, 1, 58, "_AXISBASE", 
 0$UINT, 1, 15, "_BUSINTERFACESDIASDRIVEMNG", 
 0$UINT, 0, 5, "_CAN", 
@@ -66,6 +66,7 @@ FUNCTION GLOBAL TAB CONFIG_TABLES
 0$UINT, 0, 0, "CLSANTRIEB", 
 0$UINT, 0, 0, "CLSAUFZUGMODUL", 
 0$UINT, 0, 0, "CLSCOUNTER", 
+0$UINT, 0, 0, "CLSEMGSTOP_1", 
 0$UINT, 0, 0, "CLSENABLEDRIVE", 
 0$UINT, 0, 0, "CLSETAGENSENSORIK", 
 0$UINT, 0, 0, "CLSHAUPTABLAUF", 
@@ -124,6 +125,7 @@ FUNCTION GLOBAL TAB CONFIG_TABLES
 ONE_CFG$UINT, 0, 0, "ONE_HW_Network0", 
 ONE_CFG$UINT, 0, 0, "ONE_Motion", 
 ONE_CFG$UINT, 0, 0, "ONE_NW1", 
+ONE_CFG$UINT, 0, 0, "ONE_RT_EMG", 
 TASK_CFG$UINT, 0, 0, "TASK_CONF", 
 IPR_CFG$UINT, 0, 0, "IPR_CONF", 
 PRJ_CFG$UINT, 0, 0, "Steuerung", 
@@ -131,18 +133,22 @@ END_FUNCTION
 
 #ifdef __LSLLDR_IOELEMENTS__
 FUNCTION GLOBAL TAB _IO_ELEMENTS_TAB
-0001$UINT, 0010$UINT, 
+0001$UINT, 0014$UINT, 
 "**IOCONN_EMPTY**", "_DriveMng_DC0621.CmdState", 
 "IO_Element", "DM0811.Input1", 
 "IO_Element0", "DM0811.Output1", 
-"IO_Element1", "DM1611.Input1", 
-"IO_Element2", "DM1611.Input2", 
-"IO_Element3", "DM1611.Input3", 
 "IO_Element4", "DM1611.Input4", 
 "IO_Element5", "DM0811.Output2", 
 "IO_Element6", "DM0811.Output3", 
 "IO_Element7", "DM0811.Output4", 
-0015$UINT, 
+"xI_Emg1_1", "DM1611.Input1", 
+"xI_Emg1_2", "DM1611.Input2", 
+"xI_Emg1_3", "DM1611.Input3", 
+"xI_Emg1_4", "DM1611.Input4", 
+"xI_Etage0", "DM1611.Input1", 
+"xI_Etage1", "DM1611.Input2", 
+"xI_Etage2", "DM1611.Input3", 
+0019$UINT, 
 "**IOCONN_EMPTY**", "_DriveMng_DC0621_Axis1.DriveMng", 
 "**IOCONN_EMPTY**", "_DriveMng_DC0622_Axis1.DriveMng", 
 "**IOCONN_EMPTY**", "DrivePosControl1.cDriveAxis", 
@@ -151,13 +157,17 @@ FUNCTION GLOBAL TAB _IO_ELEMENTS_TAB
 "**IOCONN_EMPTY**", "_LMCAxis2.ActPosition", 
 "IO_Element", "clsEnableDrive1.cIn1", 
 "IO_Element0", "clsEnableDrive1.cOut1", 
-"IO_Element1", "clsHMI1.cTaster1", 
-"IO_Element2", "clsHMI1.cTaster2", 
-"IO_Element3", "clsHMI1.cTaster3", 
 "IO_Element4", "clsHMI1.cTaster4", 
 "IO_Element5", "clsEnableDrive1.cOut2", 
 "IO_Element6", "clsEnableDrive1.cOut3", 
 "IO_Element7", "clsEnableDrive1.cOut4", 
+"xI_Emg1_1", "clsEmgStop_1.c1", 
+"xI_Emg1_2", "clsEmgStop_1.c2", 
+"xI_Emg1_3", "clsEmgStop_1.c3", 
+"xI_Emg1_4", "clsEmgStop_1.c4", 
+"xI_Etage0", "clsHMI1.cTaster1", 
+"xI_Etage1", "clsHMI1.cTaster2", 
+"xI_Etage2", "clsHMI1.cTaster3", 
 END_FUNCTION
 #endif //__LSLLDR_IOELEMENTS__
 

@@ -218,7 +218,7 @@ FUNCTION GLOBAL clsHauptablauf::TuerZu
 	END_VAR
   
   //Weitergabe von IO
-xOut := cHMI.Tuerzu();
+   xOut := cHMI.Tuerzu();
 END_FUNCTION
 
 

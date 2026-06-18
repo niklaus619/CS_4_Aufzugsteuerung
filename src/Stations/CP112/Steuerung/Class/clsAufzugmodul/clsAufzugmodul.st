@@ -67,14 +67,6 @@ clsAufzugmodul : CLASS
 		xZielUnten 	: BOOL;
   //Functions:
 	
-	FUNCTION VIRTUAL GLOBAL CyWork
-		VAR_INPUT
-			EAX 	: UDINT;
-		END_VAR
-		VAR_OUTPUT
-			state (EAX) 	: UDINT;
-		END_VAR;
-	
 	FUNCTION VIRTUAL GLOBAL RtWork
 		VAR_INPUT
 			EAX 	: UDINT;
@@ -141,7 +133,6 @@ FUNCTION clsAufzugmodul::@STD
 
 	//Command Methods
 	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsAufzugmodul, pCmd := #vmt.CmdTable);
-	vmt.CmdTable.CyWork		:= #CyWork();
 	vmt.CmdTable.RtWork		:= #RtWork();
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
@@ -155,16 +146,17 @@ FUNCTION clsAufzugmodul::@STD
 END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
-FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
-  VAR_INPUT
-      EAX : UDINT;
-  END_VAR
-  VAR_OUTPUT
-      state (EAX) : UDINT;
-  END_VAR
 
-  state := READY;
 
+FUNCTION VIRTUAL GLOBAL clsAufzugmodul::RtWork
+	VAR_INPUT
+		EAX 	: UDINT;
+	END_VAR
+	VAR_OUTPUT
+		state (EAX) 	: UDINT;
+	END_VAr
+  
+  
   //Notaus zustand
   IF cEMG_Stop.EmgStop() THEN
     iStep := NotAus;
@@ -172,6 +164,7 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
 
 
   // Parameter lesen
+  cEMG_Stop := cEMG_Stop.Read();
   cZeitOffen := cZeitOffen.Read();
 
   // Aktuelle Etage lesen
@@ -426,28 +419,20 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
 
 
   NotAus:
-    cAntriebAufzug.NotAus();
-
-
-  ELSE
-
-      cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
-      cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
+    cAntriebAufzug.NotAus(xIn:=TRUE);
+    cAntriebTuer.NotAus(xIn:=TRUE);
+  
+    IF NOT cEMG_Stop.EmgStop()  THEN
+      cAntriebAufzug.NotAus(xIn:=FALSE);
+      cAntriebTuer.NotAus(xIn:=FALSE);
       iStep := Initialisierung;
+    END_IF;
+
+    
 
   END_CASE;
 
 
-
-END_FUNCTION
-
-FUNCTION VIRTUAL GLOBAL clsAufzugmodul::RtWork
-	VAR_INPUT
-		EAX 	: UDINT;
-	END_VAR
-	VAR_OUTPUT
-		state (EAX) 	: UDINT;
-	END_VAR
 
 	state := READY;
 

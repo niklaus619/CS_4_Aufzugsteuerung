@@ -45,16 +45,8 @@ clsAntrieb : CLASS
 	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
 		iStep 	: Statusautomat;
-		xNotStop 	: DINT;
+		xNotStop 	: BOOL;
   //Functions:
-	
-	FUNCTION VIRTUAL GLOBAL CyWork
-		VAR_INPUT
-			EAX 	: UDINT;
-		END_VAR
-		VAR_OUTPUT
-			state (EAX) 	: UDINT;
-		END_VAR;
 	
 	FUNCTION VIRTUAL GLOBAL RtWork
 		VAR_INPUT
@@ -73,7 +65,10 @@ clsAntrieb : CLASS
 			xBusy 	: BOOL;
 		END_VAR;
 	
-	FUNCTION GLOBAL NotAus;
+	FUNCTION GLOBAL NotAus
+		VAR_INPUT
+			xIn 	: BOOL;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -122,7 +117,6 @@ FUNCTION clsAntrieb::@STD
 
 	//Command Methods
 	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsAntrieb, pCmd := #vmt.CmdTable);
-	vmt.CmdTable.CyWork		:= #CyWork();
 	vmt.CmdTable.RtWork		:= #RtWork();
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
@@ -136,75 +130,6 @@ FUNCTION clsAntrieb::@STD
 END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
-FUNCTION VIRTUAL GLOBAL clsAntrieb::CyWork
-	VAR_INPUT
-		EAX 	: UDINT;
-	END_VAR
-	VAR_OUTPUT
-		state (EAX) 	: UDINT;
-	END_VAR
-  
-  //uebergabe an HMI
-  IF iStep = Stillstand THEN
-    sState := 0;
-  ELSIF iStep = FahrenPos THEN
-    sState := 1;
-  ELSIF iStep = FahrenNeg THEN
-    sState := 2;
-  END_IF;
-  
-  //Notstop uebergabe
-  IF xNotStop THEN
-    iStep := StopNot; 
-  END_IF;
-
-
-  CASE iStep OF
-
-      Stillstand: 
-
-          cFahrbefehl.stopNORMAL();
-
-      PowOnPos: 
-          cFahrbefehl.powerOn();
-
-          IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
-              iStep := FahrenPos;
-          END_IF;
-          
-
-      FahrenPos: 
-          cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
-
-      PowOnNeg: 
-          cFahrbefehl.powerOn();
-
-          IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
-              iStep := FahrenNeg;
-          END_IF;
-
-
-      FahrenNeg: 
-          cFahrbefehl.moveABS(position:=-1215752192, velocity:=800000, acceleration:=1215752192);
-
-      StopNormal: 
-          cFahrbefehl.stopNORMAL();
-          iStep := Stillstand;
-          
-      StopNot: 
-          cFahrbefehl.stopEMG();
-          //Notstop zuruecksetzen
-          xNotStop:= FALSE;
-          iStep := Stillstand;
-          
-
-
-
-  END_CASE;
-
-  state := READY;
-
-END_FUNCTION
 
 
 FUNCTION GLOBAL clsAntrieb::Fahrt
@@ -252,11 +177,74 @@ FUNCTION VIRTUAL GLOBAL clsAntrieb::RtWork
 
 	state := READY;
 
+
+  //uebergabe an HMI
+  IF iStep = Stillstand THEN
+    sState := 0;
+  ELSIF iStep = FahrenPos THEN
+    sState := 1;
+  ELSIF iStep = FahrenNeg THEN
+    sState := 2;
+  END_IF;
+  
+  //Notstop uebergabe
+  IF xNotStop THEN
+    iStep := StopNot; 
+  END_IF;
+
+
+  CASE iStep OF
+
+      Stillstand: 
+
+          cFahrbefehl.stopNORMAL();
+
+      PowOnPos: 
+          cFahrbefehl.powerOn();
+
+          IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+              iStep := FahrenPos;
+          END_IF;
+          
+
+      FahrenPos: 
+          cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=600000);
+
+      PowOnNeg: 
+          cFahrbefehl.powerOn();
+
+          IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+              iStep := FahrenNeg;
+          END_IF;
+
+
+      FahrenNeg: 
+          cFahrbefehl.moveABS(position:=-1215752192, velocity:=800000, acceleration:=600000);
+
+      StopNormal: 
+          cFahrbefehl.stopNORMAL();
+          iStep := Stillstand;
+          
+      StopNot: 
+          cFahrbefehl.stopEMG();
+          //Notstop zuruecksetzen
+          IF NOT xNotStop THEN
+          
+            iStep := Stillstand;
+          END_IF;
+
+
+
+  END_CASE;
+
 END_FUNCTION
 
 
 FUNCTION GLOBAL clsAntrieb::NotAus
-
-  xNotStop := TRUE;
+	VAR_INPUT
+		xIn 	: BOOL;
+	END_VAR
+  
+  xNotStop := xIn;
   
 END_FUNCTION

@@ -22,8 +22,6 @@
 		<Server Name="sVisuNotStop" GUID="{FBF3FE60-66A9-455E-A1BA-47E743600935}" Visualized="true" Remotely="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="c1" Required="true" Internal="false"/>
 		<Client Name="c2" Required="true" Internal="false"/>
-		<Client Name="c3" Required="true" Internal="false"/>
-		<Client Name="c4" Required="true" Internal="false"/>
 	</Channels>
 </Class>
 *)
@@ -34,10 +32,8 @@ clsEmgStop_1 : CLASS
   //Clients:
 	c1 	: CltCh_DINT;
 	c2 	: CltCh_DINT;
-	c3 	: CltCh_DINT;
-	c4 	: CltCh_DINT;
   //Variables:
-		xEmgStop 	: DINT;
+		xEmgStop 	: BOOL;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL RtWork
@@ -50,7 +46,7 @@ clsEmgStop_1 : CLASS
 	
 	FUNCTION GLOBAL EmgStop
 		VAR_OUTPUT
-			xOut 	: DINT;
+			xOut 	: BOOL;
 		END_VAR;
   //Tables:
 	FUNCTION @STD
@@ -67,7 +63,7 @@ FUNCTION GLOBAL TAB clsEmgStop_1::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSEMGSTOP_1
 0$UINT, 0$UINT, (SIZEOF(::clsEmgStop_1))$UINT, 
-2$UINT, 4$UINT, 0$UINT, 
+2$UINT, 2$UINT, 0$UINT, 
 TO_UDINT(2446850983), "clsEmgStop_1", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
@@ -76,8 +72,6 @@ TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Clients:
 (::clsEmgStop_1.c1.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(3411217923), "c1", 
 (::clsEmgStop_1.c2.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(1381654457), "c2", 
-(::clsEmgStop_1.c3.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(626880303), "c3", 
-(::clsEmgStop_1.c4.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(3141139084), "c4", 
 END_FUNCTION
 
 
@@ -127,14 +121,13 @@ FUNCTION VIRTUAL GLOBAL clsEmgStop_1::RtWork
   //IO uebergeben
   c1 := c1.Read();
   c2 := c2.Read();
-  c3 := c3.Read();
-  c4 := c4.Read();
+
   
   //HMI uebergeben
   sVisuNotStop := xEmgStop;
 
   // monitoring
-  IF c1 AND c2 AND c3 AND c4 THEN
+  IF c1 AND c2  THEN
     xEmgStop := FALSE;
   ELSE
     xEmgStop := TRUE;
@@ -147,7 +140,7 @@ END_FUNCTION
 
 FUNCTION GLOBAL clsEmgStop_1::EmgStop
 	VAR_OUTPUT
-		xOut 	: DINT;
+		xOut 	: BOOL;
 	END_VAR
   
   //uebergabe an Methodenaufrud

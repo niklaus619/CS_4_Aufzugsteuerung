@@ -156,295 +156,300 @@ END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
 FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
-VAR_INPUT
-    EAX : UDINT;
-END_VAR
-VAR_OUTPUT
-    state (EAX) : UDINT;
-END_VAR
+  VAR_INPUT
+      EAX : UDINT;
+  END_VAR
+  VAR_OUTPUT
+      state (EAX) : UDINT;
+  END_VAR
 
-state := READY;
+  state := READY;
 
-//Notaus zustand
-IF cEMG_Stop.
+  //Notaus zustand
+  IF cEMG_Stop.EmgStop() THEN
+    iStep := NotAus;
+  END_IF;
 
 
-// Parameter lesen
-cZeitOffen := cZeitOffen.Read();
+  // Parameter lesen
+  cZeitOffen := cZeitOffen.Read();
 
-// Aktuelle Etage lesen
-iAktEtage := cEtagestatus.AktEtage();
+  // Aktuelle Etage lesen
+  iAktEtage := cEtagestatus.AktEtage();
 
 
-CASE iStep OF
+  CASE iStep OF
 
 
-Initialisierung:
+  Initialisierung:
 
-    cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
-    cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
+      cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
+      cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
 
-    iStep := Fahranforderung;
+      iStep := Fahranforderung;
 
 
 
-Fahranforderung:
+  Fahranforderung:
 
-    IF cAnforderung.Anf0(xIn := FALSE) OR
-       cAnforderung.Anf1(xIn := FALSE) OR
-       cAnforderung.Anf2(xIn := FALSE) OR
-       cAnforderung.Anf3(xIn := FALSE) THEN
+      IF cAnforderung.Anf0(xIn := FALSE) OR
+         cAnforderung.Anf1(xIn := FALSE) OR
+         cAnforderung.Anf2(xIn := FALSE) OR
+         cAnforderung.Anf3(xIn := FALSE) THEN
 
-        iStep := FahrrichtungSuchen;
-        
-    ELSIF cAnforderung.TuerAuf() THEN // falls jemand im Lift bleibt und nach schliessung aufmachen will
-       iStep := TuerOeffnen;
-    END_IF;
+          iStep := FahrrichtungSuchen;
+          
+      ELSIF cAnforderung.TuerAuf() THEN // falls jemand im Lift bleibt und nach schliessung aufmachen will
+         iStep := TuerOeffnen;
+      END_IF;
 
 
 
-FahrrichtungSuchen:
+  FahrrichtungSuchen:
 
-    xZielOben := FALSE;
-    xZielUnten := FALSE;
+      xZielOben := FALSE;
+      xZielUnten := FALSE;
 
-    CASE iAktEtage OF
+      CASE iAktEtage OF
 
-        0:
-            IF cAnforderung.Anf0(xIn := FALSE) THEN
-                cAnforderung.Anf0(xIn := TRUE);
-            END_IF;
+          0:
+              IF cAnforderung.Anf0(xIn := FALSE) THEN
+                  cAnforderung.Anf0(xIn := TRUE);
+              END_IF;
 
-            IF cAnforderung.Anf1(xIn := FALSE) OR
-               cAnforderung.Anf2(xIn := FALSE) OR
-               cAnforderung.Anf3(xIn := FALSE) THEN
-                xZielOben := TRUE;
-            END_IF;
+              IF cAnforderung.Anf1(xIn := FALSE) OR
+                 cAnforderung.Anf2(xIn := FALSE) OR
+                 cAnforderung.Anf3(xIn := FALSE) THEN
+                  xZielOben := TRUE;
+              END_IF;
 
 
-        1:
-            IF cAnforderung.Anf1(xIn := FALSE) THEN
-                cAnforderung.Anf1(xIn := TRUE);
-            END_IF;
+          1:
+              IF cAnforderung.Anf1(xIn := FALSE) THEN
+                  cAnforderung.Anf1(xIn := TRUE);
+              END_IF;
 
-            IF cAnforderung.Anf2(xIn := FALSE) OR
-               cAnforderung.Anf3(xIn := FALSE) THEN
-                xZielOben := TRUE;
-            END_IF;
+              IF cAnforderung.Anf2(xIn := FALSE) OR
+                 cAnforderung.Anf3(xIn := FALSE) THEN
+                  xZielOben := TRUE;
+              END_IF;
 
-            IF cAnforderung.Anf0(xIn := FALSE) THEN
-                xZielUnten := TRUE;
-            END_IF;
+              IF cAnforderung.Anf0(xIn := FALSE) THEN
+                  xZielUnten := TRUE;
+              END_IF;
 
 
-        2:
-            IF cAnforderung.Anf2(xIn := FALSE) THEN
-                cAnforderung.Anf2(xIn := TRUE);
-            END_IF;
+          2:
+              IF cAnforderung.Anf2(xIn := FALSE) THEN
+                  cAnforderung.Anf2(xIn := TRUE);
+              END_IF;
 
-            IF cAnforderung.Anf3(xIn := FALSE) THEN
-                xZielOben := TRUE;
-            END_IF;
+              IF cAnforderung.Anf3(xIn := FALSE) THEN
+                  xZielOben := TRUE;
+              END_IF;
 
-            IF cAnforderung.Anf0(xIn := FALSE) OR
-               cAnforderung.Anf1(xIn := FALSE) THEN
-                xZielUnten := TRUE;
-            END_IF;
+              IF cAnforderung.Anf0(xIn := FALSE) OR
+                 cAnforderung.Anf1(xIn := FALSE) THEN
+                  xZielUnten := TRUE;
+              END_IF;
 
 
-        3:
-            IF cAnforderung.Anf3(xIn := FALSE) THEN
-                cAnforderung.Anf3(xIn := TRUE);
-            END_IF;
+          3:
+              IF cAnforderung.Anf3(xIn := FALSE) THEN
+                  cAnforderung.Anf3(xIn := TRUE);
+              END_IF;
 
-            IF cAnforderung.Anf0(xIn := FALSE) OR
-               cAnforderung.Anf1(xIn := FALSE) OR
-               cAnforderung.Anf2(xIn := FALSE) THEN
-                xZielUnten := TRUE;
-            END_IF;
+              IF cAnforderung.Anf0(xIn := FALSE) OR
+                 cAnforderung.Anf1(xIn := FALSE) OR
+                 cAnforderung.Anf2(xIn := FALSE) THEN
+                  xZielUnten := TRUE;
+              END_IF;
 
-    END_CASE;
+      END_CASE;
 
 
-    IF xZielOben THEN
-        iStep := InitFahrtnachOben;
+      IF xZielOben THEN
+          iStep := InitFahrtnachOben;
 
-    ELSIF xZielUnten THEN
-        iStep := InitFahrtnachUnten;
+      ELSIF xZielUnten THEN
+          iStep := InitFahrtnachUnten;
 
-    ELSE
-        iStep := TuerOeffnen; //wenn die Anforderung auf der bereits stehenden Etage kommt,oeffnen
-    END_IF;
+      ELSE
+          iStep := TuerOeffnen; //wenn die Anforderung auf der bereits stehenden Etage kommt,oeffnen
+      END_IF;
 
 
 
-InitFahrtnachOben:
+  InitFahrtnachOben:
 
-    IF cTuerstatus.istzu() THEN
+      IF cTuerstatus.istzu() THEN
 
-        cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
-        iStep := Hochfahrt;
+          cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
+          iStep := Hochfahrt;
 
-    ELSIF cAnforderung.TuerAuf() THEN
+      ELSIF cAnforderung.TuerAuf() THEN
 
-        iStep := TuerOeffnen;
+          iStep := TuerOeffnen;
 
-    ELSE
+      ELSE
 
-        cTuerstatus.zu(); // Simulation
-        cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
+          cTuerstatus.zu(); // Simulation
+          cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
 
-    END_IF;
+      END_IF;
 
 
 
-Hochfahrt:
+  Hochfahrt:
 
-    cEtagestatus.hoch();
-    cAntriebAufzug.Fahrt(xDir := TRUE, xStart := TRUE);
+      cEtagestatus.hoch();
+      cAntriebAufzug.Fahrt(xDir := TRUE, xStart := TRUE);
 
-    IF cEtagestatus.erreicht() THEN
-        cAntriebAufzug.Fahrt(xDir := TRUE, xStart := FALSE);
-        iStep := EtagenOben;
-    END_IF;
+      IF cEtagestatus.erreicht() THEN
+          cAntriebAufzug.Fahrt(xDir := TRUE, xStart := FALSE);
+          iStep := EtagenOben;
+      END_IF;
 
 
 
-EtagenOben:
+  EtagenOben:
 
-    iAktEtage := cEtagestatus.AktEtage();
+      iAktEtage := cEtagestatus.AktEtage();
 
-    IF (cAnforderung.Anf0(xIn := FALSE) AND (iAktEtage = 0)) OR
-       (cAnforderung.Anf1(xIn := FALSE) AND (iAktEtage = 1)) OR
-       (cAnforderung.Anf2(xIn := FALSE) AND (iAktEtage = 2)) OR
-       (cAnforderung.Anf3(xIn := FALSE) AND (iAktEtage = 3)) THEN
+      IF (cAnforderung.Anf0(xIn := FALSE) AND (iAktEtage = 0)) OR
+         (cAnforderung.Anf1(xIn := FALSE) AND (iAktEtage = 1)) OR
+         (cAnforderung.Anf2(xIn := FALSE) AND (iAktEtage = 2)) OR
+         (cAnforderung.Anf3(xIn := FALSE) AND (iAktEtage = 3)) THEN
 
-        cAntriebAufzug.Fahrt(xDir := TRUE, xStart := FALSE);
-        iStep := TuerOeffnen;
+          cAntriebAufzug.Fahrt(xDir := TRUE, xStart := FALSE);
+          iStep := TuerOeffnen;
 
-    ELSE
+      ELSE
 
-        iStep := Hochfahrt;
+          iStep := Hochfahrt;
 
-    END_IF;
+      END_IF;
 
 
 
-InitFahrtnachUnten:
+  InitFahrtnachUnten:
 
-    IF cTuerstatus.istzu() THEN
+      IF cTuerstatus.istzu() THEN
 
-        cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
-        iStep := Unterfahrt;
+          cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
+          iStep := Unterfahrt;
 
-    ELSIF cAnforderung.TuerAuf() THEN
+      ELSIF cAnforderung.TuerAuf() THEN
 
-        iStep := TuerOeffnen;
+          iStep := TuerOeffnen;
 
-    ELSE
+      ELSE
 
-        cTuerstatus.zu(); // Simulation
-        cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
+          cTuerstatus.zu(); // Simulation
+          cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
 
-    END_IF;
+      END_IF;
 
 
 
-Unterfahrt:
+  Unterfahrt:
 
-    cEtagestatus.runter();
-    cAntriebAufzug.Fahrt(xDir := FALSE, xStart := TRUE);
+      cEtagestatus.runter();
+      cAntriebAufzug.Fahrt(xDir := FALSE, xStart := TRUE);
 
-    IF cEtagestatus.erreicht() THEN
-        cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
-        iStep := EtageUnten;
-    END_IF;
+      IF cEtagestatus.erreicht() THEN
+          cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
+          iStep := EtageUnten;
+      END_IF;
 
 
 
-EtageUnten:
+  EtageUnten:
 
-    iAktEtage := cEtagestatus.AktEtage();
+      iAktEtage := cEtagestatus.AktEtage();
 
-    IF (cAnforderung.Anf0(xIn := FALSE) AND (iAktEtage = 0)) OR
-       (cAnforderung.Anf1(xIn := FALSE) AND (iAktEtage = 1)) OR
-       (cAnforderung.Anf2(xIn := FALSE) AND (iAktEtage = 2)) OR
-       (cAnforderung.Anf3(xIn := FALSE) AND (iAktEtage = 3)) THEN
+      IF (cAnforderung.Anf0(xIn := FALSE) AND (iAktEtage = 0)) OR
+         (cAnforderung.Anf1(xIn := FALSE) AND (iAktEtage = 1)) OR
+         (cAnforderung.Anf2(xIn := FALSE) AND (iAktEtage = 2)) OR
+         (cAnforderung.Anf3(xIn := FALSE) AND (iAktEtage = 3)) THEN
 
-        cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
-        iStep := TuerOeffnen;
+          cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
+          iStep := TuerOeffnen;
 
-    ELSE
+      ELSE
 
-        iStep := Unterfahrt;
+          iStep := Unterfahrt;
 
-    END_IF;
+      END_IF;
 
 
 
-TuerOeffnen:
+  TuerOeffnen:
 
-    cTuerstatus.auf(); // Simulation
-    cAntriebTuer.Fahrt(xDir := FALSE, xStart := TRUE); // Tür öffnen
+      cTuerstatus.auf(); // Simulation
+      cAntriebTuer.Fahrt(xDir := FALSE, xStart := TRUE); // Tür öffnen
 
-    IF cTuerstatus.istauf() THEN
+      IF cTuerstatus.istauf() THEN
 
-        cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
+          cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
 
-        IF NOT cTimerOffen.running() THEN
-            cTimerOffen.start(_time := cZeitOffen);
-        END_IF;
+          IF NOT cTimerOffen.running() THEN
+              cTimerOffen.start(_time := cZeitOffen);
+          END_IF;
 
-    END_IF;
+      END_IF;
 
 
-    IF cTimerOffen.elapsed() OR cAnforderung.TuerZu() THEN
+      IF cTimerOffen.elapsed() OR cAnforderung.TuerZu() THEN
 
-        cTimerOffen.reset();
-        iStep := TuerSchliessen;
+          cTimerOffen.reset();
+          iStep := TuerSchliessen;
 
-    END_IF;
+      END_IF;
 
 
 
-TuerSchliessen:
+  TuerSchliessen:
 
-    cTuerstatus.zu(); // Simulation
-    cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
+      cTuerstatus.zu(); // Simulation
+      cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
 
-    IF cTuerstatus.istzu() THEN
+      IF cTuerstatus.istzu() THEN
 
-        cAntriebTuer.Fahrt(xDir := TRUE, xStart := FALSE);
+          cAntriebTuer.Fahrt(xDir := TRUE, xStart := FALSE);
 
-        iAktEtage := cEtagestatus.AktEtage();
+          iAktEtage := cEtagestatus.AktEtage();
 
-        IF iAktEtage = 0 THEN
-            cAnforderung.Anf0(xIn := TRUE);
+          IF iAktEtage = 0 THEN
+              cAnforderung.Anf0(xIn := TRUE);
 
-        ELSIF iAktEtage = 1 THEN
-            cAnforderung.Anf1(xIn := TRUE);
+          ELSIF iAktEtage = 1 THEN
+              cAnforderung.Anf1(xIn := TRUE);
 
-        ELSIF iAktEtage = 2 THEN
-            cAnforderung.Anf2(xIn := TRUE);
+          ELSIF iAktEtage = 2 THEN
+              cAnforderung.Anf2(xIn := TRUE);
 
-        ELSIF iAktEtage = 3 THEN
-            cAnforderung.Anf3(xIn := TRUE);
+          ELSIF iAktEtage = 3 THEN
+              cAnforderung.Anf3(xIn := TRUE);
 
-        END_IF;
+          END_IF;
 
-        iStep := Initialisierung;
+          iStep := Initialisierung;
 
-    END_IF;
+      END_IF;
 
 
+  NotAus:
+    cAntriebAufzug.NotAus();
 
-ELSE
 
-    cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
-    cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
-    iStep := Initialisierung;
+  ELSE
 
-END_CASE;
+      cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
+      cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
+      iStep := Initialisierung;
+
+  END_CASE;
 
 
 

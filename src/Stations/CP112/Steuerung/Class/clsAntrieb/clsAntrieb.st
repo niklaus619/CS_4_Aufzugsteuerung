@@ -35,7 +35,7 @@ clsAntrieb : CLASS
 	    PowOnNeg:=30,
 	    FahrenNeg:=40,
 	    StopNormal:=99,
-	    StopNot:=100
+	    StopNot
 	  )$UDINT;
 	END_TYPE
   //Servers:
@@ -45,6 +45,7 @@ clsAntrieb : CLASS
 	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
 		iStep 	: Statusautomat;
+		xNotStop 	: DINT;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -71,6 +72,8 @@ clsAntrieb : CLASS
 		VAR_OUTPUT
 			xBusy 	: BOOL;
 		END_VAR;
+	
+	FUNCTION GLOBAL NotAus;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -149,48 +152,57 @@ FUNCTION VIRTUAL GLOBAL clsAntrieb::CyWork
   ELSIF iStep = FahrenNeg THEN
     sState := 2;
   END_IF;
-
-CASE iStep OF
-
-    Stillstand: 
-        cFahrbefehl.stopNORMAL();
-
-    PowOnPos: 
-        cFahrbefehl.powerOn();
-
-        IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
-            iStep := FahrenPos;
-        END_IF;
-        
-
-    FahrenPos: 
-        cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
-
-    PowOnNeg: 
-        cFahrbefehl.powerOn();
-
-        IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
-            iStep := FahrenNeg;
-        END_IF;
-
-
-    FahrenNeg: 
-        cFahrbefehl.moveABS(position:=-1215752192, velocity:=800000, acceleration:=1215752192);
-
-    StopNormal: 
-        cFahrbefehl.stopNORMAL();
-        iStep := Stillstand;
-        
-    StopNot: // Vorbereitet
-        cFahrbefehl.stopEMG();
-        iStep := Stillstand;
-
-ELSE
+  
+  //Notstop uebergabe
+  IF xNotStop THEN
     iStep := StopNot; 
+  END_IF;
 
-END_CASE;
 
-state := READY;
+  CASE iStep OF
+
+      Stillstand: 
+
+          cFahrbefehl.stopNORMAL();
+
+      PowOnPos: 
+          cFahrbefehl.powerOn();
+
+          IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+              iStep := FahrenPos;
+          END_IF;
+          
+
+      FahrenPos: 
+          cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
+
+      PowOnNeg: 
+          cFahrbefehl.powerOn();
+
+          IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+              iStep := FahrenNeg;
+          END_IF;
+
+
+      FahrenNeg: 
+          cFahrbefehl.moveABS(position:=-1215752192, velocity:=800000, acceleration:=1215752192);
+
+      StopNormal: 
+          cFahrbefehl.stopNORMAL();
+          iStep := Stillstand;
+          
+      StopNot: 
+          cFahrbefehl.stopEMG();
+          //Notstop zuruecksetzen
+          xNotStop:= FALSE;
+          iStep := Stillstand;
+          
+
+
+
+  END_CASE;
+
+  state := READY;
 
 END_FUNCTION
 
@@ -204,7 +216,7 @@ FUNCTION GLOBAL clsAntrieb::Fahrt
 		xBusy 	: BOOL;
 	END_VAR
 
-IF xStart THEN
+  IF xStart THEN
 
     IF xDir THEN
         IF (iStep <> PowOnPos) AND (iStep <> FahrenPos) THEN
@@ -218,7 +230,7 @@ IF xStart THEN
 
     xBusy := TRUE;
 
-ELSE
+  ELSE
 
     IF iStep <> Stillstand THEN
         iStep := StopNormal;
@@ -240,4 +252,11 @@ FUNCTION VIRTUAL GLOBAL clsAntrieb::RtWork
 
 	state := READY;
 
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsAntrieb::NotAus
+
+  xNotStop := TRUE;
+  
 END_FUNCTION

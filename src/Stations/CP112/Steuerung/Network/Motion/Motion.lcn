@@ -1754,7 +1754,7 @@
 		<Connection Source="_LMCAxis2.LMCController" Destination="DrivePosControl2.Signal_Input" Vertices="(2850,2490),(2554,2490),"/>
 		<Connection Source="_LMCAxis2.ActPosition" Destination="_DriveMng_DC0622_Axis1.ActPos" Vertices="(2850,2430),(2850,2430),(2550,2910),(2070,2910),(1712,2580),"/>
 		<Connection Source="_LMCAxis1.LMCController" Destination="DrivePosControl1.Signal_Input" Vertices="(2970,330),(2614,360),"/>
-		<Connection Source="clsEnableDrive1.cIn1" Destination="__IO_Element1" Vertices="(4890,1410),(4830,1410)," IOObject="IO_Element"/>
+		<Connection Source="clsEnableDrive1.cIn1" Destination="__xI_EnMotoren1" Vertices="(4890,1410),(4830,1410)," IOObject="xI_EnMotoren"/>
 		<Connection Source="clsEnableDrive1.cOut1" Destination="__IO_Element01" Vertices="(4890,1470),(4830,1470)," IOObject="IO_Element0"/>
 		<Connection Source="clsEnableDrive1.cOut2" Destination="__IO_Element51" Vertices="(4890,1530),(4830,1530)," IOObject="IO_Element5"/>
 		<Connection Source="clsEnableDrive1.cOut3" Destination="__IO_Element61" Vertices="(4890,1590),(4830,1590)," IOObject="IO_Element6"/>
@@ -1765,10 +1765,10 @@
 	<!-- List of temp data objects in this network -->
 	<IOObjects>
 		<IOObject KeyName="__IO_Element01" Name="IO_Element0" Position="(4530,1440)" Client="clsEnableDrive1.cOut1"/>
-		<IOObject KeyName="__IO_Element1" Name="IO_Element" Position="(4530,1380)" Client="clsEnableDrive1.cIn1"/>
 		<IOObject KeyName="__IO_Element51" Name="IO_Element5" Position="(4530,1500)" Client="clsEnableDrive1.cOut2"/>
 		<IOObject KeyName="__IO_Element61" Name="IO_Element6" Position="(4530,1560)" Client="clsEnableDrive1.cOut3"/>
 		<IOObject KeyName="__IO_Element71" Name="IO_Element7" Position="(4530,1620)" Client="clsEnableDrive1.cOut4"/>
+		<IOObject KeyName="__xI_EnMotoren1" Name="xI_EnMotoren" Position="(4530,1380)" Client="clsEnableDrive1.cIn1"/>
 	</IOObjects>
 	<!-- Headerfiles -->
 	<Options>

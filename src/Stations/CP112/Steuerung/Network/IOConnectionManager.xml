@@ -14,16 +14,6 @@
 		</IOConnections>
 	</Entry>
 	<Entry
-		Name       = "IO_Element"
-		GUID       = "{1B1FBF7F-BD8D-4062-BB64-37009F707FDC}"
-		Objectsize = "284"
-		TempObj    = "true">
-		<!-- List of Connections -->
-		<IOConnections>
-			<IOConnection ObjSrv="DM0811" Server="Input1" ObjClt="clsEnableDrive1" Client="cIn1" IOI="Input" Type="Digital" SortIndex="11" KeyName="000011" Advanced="0"/>
-		</IOConnections>
-	</Entry>
-	<Entry
 		Name       = "IO_Element0"
 		GUID       = "{5421467A-4154-47B1-8671-9C215A35A6BB}"
 		Objectsize = "284"
@@ -31,16 +21,6 @@
 		<!-- List of Connections -->
 		<IOConnections>
 			<IOConnection ObjSrv="DM0811" Server="Output1" ObjClt="clsEnableDrive1" Client="cOut1" IOI="Output" Type="Digital" SortIndex="12" KeyName="000012" Advanced="0"/>
-		</IOConnections>
-	</Entry>
-	<Entry
-		Name       = "IO_Element4"
-		GUID       = "{1921FDC2-96DC-47AD-992D-1E777B75E3C5}"
-		Objectsize = "284"
-		TempObj    = "true">
-		<!-- List of Connections -->
-		<IOConnections>
-			<IOConnection ObjSrv="DM1611" Server="Input4" ObjClt="clsHMI1" Client="cTaster4" IOI="Input" Type="Digital" SortIndex="4" KeyName="000009" Advanced="0"/>
 		</IOConnections>
 	</Entry>
 	<Entry
@@ -114,6 +94,16 @@
 		</IOConnections>
 	</Entry>
 	<Entry
+		Name       = "xI_EnMotoren"
+		GUID       = "{1B1FBF7F-BD8D-4062-BB64-37009F707FDC}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM0811" Server="Input4" ObjClt="clsEnableDrive1" Client="cIn1" IOI="Input" Type="Digital" SortIndex="11" KeyName="000011" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
 		Name       = "xI_Etage0"
 		GUID       = "{A9980A06-AE0C-4504-838F-363C51F06801}"
 		Objectsize = "284"
@@ -141,6 +131,26 @@
 		<!-- List of Connections -->
 		<IOConnections>
 			<IOConnection ObjSrv="DM1611" Server="Input3" ObjClt="clsHMI1" Client="cTaster3" IOI="Input" Type="Digital" SortIndex="3" KeyName="000008" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "xI_Etage3"
+		GUID       = "{1921FDC2-96DC-47AD-992D-1E777B75E3C5}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM1611" Server="Input4" ObjClt="clsHMI1" Client="cTaster4" IOI="Input" Type="Digital" SortIndex="4" KeyName="000009" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "xI_Lichtschranke"
+		GUID       = "{AA5ABEF9-9E63-475C-AB85-53F03C9776C6}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM0811" Server="Input1" ObjClt="clsHMI1" Client="cLichtschranke" IOI="Input" Type="Digital" SortIndex="20" KeyName="000020" Advanced="0"/>
 		</IOConnections>
 	</Entry>
 	<!-- List of Folders -->

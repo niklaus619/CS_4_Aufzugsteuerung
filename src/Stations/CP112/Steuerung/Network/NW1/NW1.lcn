@@ -159,7 +159,7 @@
 			Name       = "clsSimFahrzeit2_Copy"
 			GUID       = "{D44480FC-FF98-4E64-8862-01CF437ADE1F}"
 			Class      = "clsTimer"
-			Position   = "(1380,1470)"
+			Position   = "(1380,1530)"
 			Visualized = "false"
 			CyclicTime = "50 ms">
 			<Channels>
@@ -204,7 +204,7 @@
 		<Connection Source="clsHauptablauf1.cHMI" Destination="clsHMI1.ClassSvr" Vertices="(1380,1170),(1260,1170),"/>
 		<Connection Source="clsAufzugmodul1.cTuerstatus" Destination="clsTuerSensorik1.ClassSvr" Vertices="(2280,720),(1680,540),"/>
 		<Connection Source="clsAufzugmodul1.cEtagestatus" Destination="clsEtagen1.ClassSvr" Vertices="(2280,660),(1680,270),"/>
-		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2280,960),(1696,1560),"/>
+		<Connection Source="clsAufzugmodul1.cTimerOffen" Destination="clsSimFahrzeit2_Copy.ClassSvr" Vertices="(2280,960),(1696,1620),"/>
 		<Connection Source="clsHMI1.cTaster3" Destination="__IO_Element31" Vertices="(960,1290),(510,1200)," IOObject="IO_Element3"/>
 		<Connection Source="clsHMI1.cTaster2" Destination="__IO_Element22" Vertices="(960,1230),(510,1110)," IOObject="IO_Element2"/>
 		<Connection Source="clsHMI1.cTaster1" Destination="__IO_Element11" Vertices="(960,1170),(510,1020)," IOObject="IO_Element1"/>

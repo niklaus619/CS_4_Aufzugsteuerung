@@ -322,7 +322,7 @@ FUNCTION GLOBAL clsHMI::Tuerzu
 		xOut 	: BOOL;
 	END_VAR
 //Erkennung falls vom HMI getastet oder vom Schalter 
-  IF sAnf_HMIAuf > 0 THEN  
+  IF sAnf_HMIZu > 0 THEN  
     xOut := TRUE; 
   ELSE
     xOut := FALSE;
@@ -335,7 +335,7 @@ FUNCTION GLOBAL clsHMI::Tuerauf
 		xOut 	: BOOL;
 	END_VAR
 //Erkennung falls vom HMI getastet oder vom Schalter 
-  IF sAnf_HMIZu > 0 THEN  
+  IF sAnf_HMIAuf > 0 THEN  
     xOut := TRUE; 
   ELSE
     xOut := FALSE;

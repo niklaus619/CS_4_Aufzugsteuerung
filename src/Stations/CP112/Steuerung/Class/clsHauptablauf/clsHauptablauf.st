@@ -196,6 +196,11 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
       sAnf3 := 0;
     END_IF;
 
+
+   
+
+
+
 	state := READY;
 
 END_FUNCTION

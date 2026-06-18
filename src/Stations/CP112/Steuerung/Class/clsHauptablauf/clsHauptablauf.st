@@ -196,8 +196,23 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
       sAnf3 := 0;
     END_IF;
 
+    //Anfragen Remanent machen
+    IF cHMI.Etage0() THEN
+    xAnf0 := TRUE;
+    END_IF;
 
-   
+    IF cHMI.Etage1() THEN
+        xAnf1 := TRUE;
+    END_IF;
+
+    IF cHMI.Etage2() THEN
+        xAnf2 := TRUE;
+    END_IF;
+
+    IF cHMI.Etage3() THEN
+        xAnf3 := TRUE;
+    END_IF;
+       
 
 
 
@@ -235,10 +250,6 @@ FUNCTION GLOBAL clsHauptablauf::Anf0
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage0() THEN
-        xAnf0 := TRUE;
-    END_IF;
 
     // Anforderung löschen (z.B. nach Bedienung der Etage)
     IF xIn THEN
@@ -259,10 +270,6 @@ FUNCTION GLOBAL clsHauptablauf::Anf1
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage1() THEN
-        xAnf1 := TRUE;
-    END_IF;
 
     // Anforderung löschen
     IF xIn THEN
@@ -283,10 +290,6 @@ FUNCTION GLOBAL clsHauptablauf::Anf2
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage2() THEN
-        xAnf2 := TRUE;
-    END_IF;
 
     // Anforderung löschen
     IF xIn THEN
@@ -306,10 +309,6 @@ FUNCTION GLOBAL clsHauptablauf::Anf3
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage3() THEN
-        xAnf3 := TRUE;
-    END_IF;
 
     // Anforderung löschen
     IF xIn THEN

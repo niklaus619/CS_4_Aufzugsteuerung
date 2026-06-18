@@ -19,6 +19,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{9BD7849D-C695-4A51-A4A9-A4DAAB62A964}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sVisuNotStop" GUID="{FBF3FE60-66A9-455E-A1BA-47E743600935}" Visualized="true" Remotely="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="c1" Required="true" Internal="false"/>
 		<Client Name="c2" Required="true" Internal="false"/>
 		<Client Name="c3" Required="true" Internal="false"/>
@@ -29,6 +30,7 @@
 clsEmgStop_1 : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
+	sVisuNotStop 	: SvrCh_DINT;
   //Clients:
 	c1 	: CltCh_DINT;
 	c2 	: CltCh_DINT;
@@ -65,11 +67,12 @@ FUNCTION GLOBAL TAB clsEmgStop_1::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSEMGSTOP_1
 0$UINT, 0$UINT, (SIZEOF(::clsEmgStop_1))$UINT, 
-1$UINT, 4$UINT, 0$UINT, 
+2$UINT, 4$UINT, 0$UINT, 
 TO_UDINT(2446850983), "clsEmgStop_1", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsEmgStop_1.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
+(::clsEmgStop_1.sVisuNotStop.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(497225223), "sVisuNotStop", 
 //Clients:
 (::clsEmgStop_1.c1.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(3411217923), "c1", 
 (::clsEmgStop_1.c2.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(1381654457), "c2", 
@@ -126,6 +129,9 @@ FUNCTION VIRTUAL GLOBAL clsEmgStop_1::RtWork
   c2 := c2.Read();
   c3 := c3.Read();
   c4 := c4.Read();
+  
+  //HMI uebergeben
+  sVisuNotStop := xEmgStop;
 
   // monitoring
   IF c1 AND c2 AND c3 AND c4 THEN

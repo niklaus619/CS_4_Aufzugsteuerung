@@ -105,6 +105,11 @@ clsHMI : CLASS
 		VAR_OUTPUT
 			xOut 	: BOOL;
 		END_VAR;
+	
+	FUNCTION GLOBAL Lichtschranke
+		VAR_OUTPUT
+			xOut 	: DINT;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -339,9 +344,19 @@ FUNCTION GLOBAL clsHMI::Tuerauf
 		xOut 	: BOOL;
 	END_VAR
 //Erkennung falls vom HMI getastet oder vom Schalter 
-  IF sAnf_HMIAuf > 0 OR cLichtschranke THEN  
+  IF sAnf_HMIAuf > 0  THEN  
     xOut := TRUE; 
   ELSE
     xOut := FALSE;
   END_IF;
+END_FUNCTION
+
+
+FUNCTION GLOBAL clsHMI::Lichtschranke
+	VAR_OUTPUT
+		xOut 	: DINT;
+	END_VAR
+  
+  xOut :=  cLichtschranke;
+
 END_FUNCTION

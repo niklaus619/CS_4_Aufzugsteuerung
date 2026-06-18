@@ -7,10 +7,11 @@
 			GUID       = "{9195496D-276A-419B-9CD3-558C57849CE3}"
 			Class      = "clsEmgStop_1"
 			Position   = "(660,60)"
-			Visualized = "false"
+			Visualized = "true"
 			RealTime   = "1 ms">
 			<Channels>
 				<Server Name="ClassSvr"/>
+				<Server Name="sVisuNotStop"/>
 				<Client Name="c1"/>
 				<Client Name="c2"/>
 				<Client Name="c3"/>

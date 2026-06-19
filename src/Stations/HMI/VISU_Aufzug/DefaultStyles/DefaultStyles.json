@@ -244,6 +244,18 @@
 			"revision": {
 				"type": "Revision"
 			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "700abd19-8281-442b-96af-0567307ecadf",
+			"componentId": "sig-control-state-led",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
 		}
 	]
 }

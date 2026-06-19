@@ -228,13 +228,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "42px",
+					"value": "50px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "45px",
+					"value": "30px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -459,13 +459,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "92px",
+					"value": "90px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "95px",
+					"value": "90px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -528,13 +528,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "92px",
+					"value": "90px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "174px",
+					"value": "170px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -590,20 +590,20 @@
 		},
 		{
 			"type": "control",
-			"designTimeId": "b4f1e367-6ee8-45b0-955c-c3526c17e64b",
-			"name": "Floor 2 Box",
-			"instanceId": "mock_floor2_box",
+			"designTimeId": "34e6afb4-146e-4dbf-9fc6-c582c8b1f427",
+			"name": "Floor 1 Box",
+			"instanceId": "mock_floor1_box",
 			"controlId": "sig-control-rectangle",
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "92px",
+					"value": "90px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "253px",
+					"value": "330px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -628,75 +628,6 @@
 				{
 					"name": "--theme-sig-element-zindex",
 					"value": "129",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-background-color",
-					"value": "#fff2cc",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-border-color",
-					"value": "#d6b656",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-border-width",
-					"value": "1px",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-border-style",
-					"value": "solid",
-					"typeId": 0,
-					"propTypeId": 2
-				}
-			]
-		},
-		{
-			"type": "control",
-			"designTimeId": "34e6afb4-146e-4dbf-9fc6-c582c8b1f427",
-			"name": "Floor 1 Box",
-			"instanceId": "mock_floor1_box",
-			"controlId": "sig-control-rectangle",
-			"properties": [
-				{
-					"name": "--theme-sig-element-left",
-					"value": "92px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-top",
-					"value": "332px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-height",
-					"value": "79px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-width",
-					"value": "130px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "rotation",
-					"value": 0,
-					"typeId": 17,
-					"propTypeId": 12
-				},
-				{
-					"name": "--theme-sig-element-zindex",
-					"value": "130",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -735,13 +666,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "92px",
+					"value": "90px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "95px",
+					"value": "90px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -765,7 +696,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "138",
+					"value": "137",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -829,13 +760,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "92px",
+					"value": "90px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "174px",
+					"value": "170px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -859,7 +790,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "139",
+					"value": "138",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -916,99 +847,6 @@
 		},
 		{
 			"type": "control",
-			"designTimeId": "49c7087c-d593-4d85-b415-90f668f6a5b9",
-			"name": "Floor 2 Label",
-			"instanceId": "mock_floor2_label",
-			"controlId": "sig-control-text",
-			"properties": [
-				{
-					"name": "--theme-sig-element-left",
-					"value": "92px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-top",
-					"value": "253px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-height",
-					"value": "79px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-width",
-					"value": "130px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "rotation",
-					"value": 0,
-					"typeId": 17,
-					"propTypeId": 12
-				},
-				{
-					"name": "--theme-sig-element-zindex",
-					"value": "140",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "sigtext",
-					"value": "2",
-					"typeId": 0,
-					"propTypeId": 1
-				},
-				{
-					"name": "--theme-sig-control-text-color",
-					"value": "#222222",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-font-size",
-					"value": "20px",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-value-align",
-					"value": "center",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-value-vertical-align",
-					"value": "middle",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-background-color",
-					"value": "rgba(255,255,255,0)",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-border-style",
-					"value": "none",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "font-weight",
-					"value": "bold",
-					"typeId": 0,
-					"propTypeId": 2
-				}
-			]
-		},
-		{
-			"type": "control",
 			"designTimeId": "26571d7c-0477-4988-898e-ebd5e0777884",
 			"name": "Floor 1 Label",
 			"instanceId": "mock_floor1_label",
@@ -1016,13 +854,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "92px",
+					"value": "90px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "332px",
+					"value": "330px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -1046,7 +884,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "141",
+					"value": "139",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1066,168 +904,6 @@
 				{
 					"name": "--theme-sig-control-text-font-size",
 					"value": "20px",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-value-align",
-					"value": "center",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-value-vertical-align",
-					"value": "middle",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-background-color",
-					"value": "rgba(255,255,255,0)",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-border-style",
-					"value": "none",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "font-weight",
-					"value": "bold",
-					"typeId": 0,
-					"propTypeId": 2
-				}
-			]
-		},
-		{
-			"type": "control",
-			"designTimeId": "e8d4f232-dd07-44d4-84ab-af1f41b78219",
-			"name": "Cabin",
-			"instanceId": "mock_cabin",
-			"controlId": "sig-control-rectangle",
-			"properties": [
-				{
-					"name": "--theme-sig-element-left",
-					"value": "112px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-top",
-					"value": "265px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-height",
-					"value": "55px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-width",
-					"value": "90px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "rotation",
-					"value": 0,
-					"typeId": 17,
-					"propTypeId": 12
-				},
-				{
-					"name": "--theme-sig-element-zindex",
-					"value": "142",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-background-color",
-					"value": "#ffd966",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-border-color",
-					"value": "#b08800",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-border-width",
-					"value": "1px",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-border-style",
-					"value": "solid",
-					"typeId": 0,
-					"propTypeId": 2
-				}
-			]
-		},
-		{
-			"type": "control",
-			"designTimeId": "cf1c555e-8764-439a-9014-3cfcf583b686",
-			"name": "Cabin Label",
-			"instanceId": "mock_cabin_label",
-			"controlId": "sig-control-text",
-			"properties": [
-				{
-					"name": "--theme-sig-element-left",
-					"value": "112px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-top",
-					"value": "265px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-height",
-					"value": "55px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-width",
-					"value": "90px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "rotation",
-					"value": 0,
-					"typeId": 17,
-					"propTypeId": 12
-				},
-				{
-					"name": "--theme-sig-element-zindex",
-					"value": "143",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "sigtext",
-					"value": "Kabine",
-					"typeId": 0,
-					"propTypeId": 1
-				},
-				{
-					"name": "--theme-sig-control-text-color",
-					"value": "#222222",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-font-size",
-					"value": "16px",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1302,7 +978,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "144",
+					"value": "140",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1391,7 +1067,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "145",
+					"value": "141",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1480,7 +1156,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "146",
+					"value": "142",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1569,7 +1245,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "147",
+					"value": "143",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1889,7 +1565,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "131",
+					"value": "130",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2045,7 +1721,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "132",
+					"value": "131",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2201,7 +1877,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "133",
+					"value": "132",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2357,7 +2033,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "134",
+					"value": "133",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2608,7 +2284,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "148",
+					"value": "144",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2697,7 +2373,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "149",
+					"value": "145",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -3018,7 +2694,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "135",
+					"value": "134",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -3181,7 +2857,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "136",
+					"value": "135",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -3337,7 +3013,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "137",
+					"value": "136",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4120,7 +3796,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "150",
+					"value": "146",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4191,7 +3867,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "151",
+					"value": "147",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4253,7 +3929,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "152",
+					"value": "148",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4306,7 +3982,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "153",
+					"value": "150",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4317,6 +3993,405 @@
 					"propTypeId": 1,
 					"refId": "3329d7c1-78b2-4a43-a406-e7613372f86d",
 					"targetName": "sigtext"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "7680d6db-da2e-4628-b5c3-943b33932b01",
+			"name": "Rectangle0",
+			"instanceId": "lvd7cdc541d9eac4904a247feec6f77e793",
+			"controlId": "sig-control-rectangle",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "90px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "250px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "80px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "130px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "149",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-rectangle-background-color",
+					"value": "#ffffff",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-rectangle-border-color",
+					"value": "#999999",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-rectangle-border-width",
+					"value": "1px",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-rectangle-border-style",
+					"value": "solid",
+					"typeId": 0,
+					"propTypeId": 2
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "ddffd4fe-d1ee-4eab-9416-294a5702f110",
+			"name": "Text3",
+			"instanceId": "lvd8c62bc7a266c4700a1fec6466bfa7425",
+			"controlId": "sig-control-text",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "90px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "250px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "79px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "130px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "151",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "sigtext",
+					"value": "SystemTexts:1",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "480ac2cb-2391-4f45-a605-d28c525555b7"
+				},
+				{
+					"name": "--theme-sig-control-text-color",
+					"value": "#222222",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-text-font-size",
+					"value": "20px",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-text-value-align",
+					"value": "center",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-text-value-vertical-align",
+					"value": "middle",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-text-background-color",
+					"value": "rgba(255,255,255,0)",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-text-border-style",
+					"value": "none",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "font-weight",
+					"value": "bold",
+					"typeId": 0,
+					"propTypeId": 2
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "ad526c13-8626-49f8-a096-b75b67be323e",
+			"name": "State Led1",
+			"instanceId": "lvd5d734eda6527420ab91110fc21ecffbe",
+			"controlId": "sig-control-state-led",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "180px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "280px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "152",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHauptablauf1.sAnf1",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "4d5242fe-89bc-460e-a3e2-3c2a5d26596b"
+				},
+				{
+					"name": "--theme-sig-control-state-led-pressed-background-color",
+					"value": "DefaultColors:color235",
+					"typeId": 9,
+					"propTypeId": 2,
+					"refId": "2a6d8336-a42f-49f5-a849-ad2fb26c051c"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "40bdf6b8-d271-42ef-b79a-0c024a243dc3",
+			"name": "State Led2",
+			"instanceId": "lvd17bb8c04cc7c44fbb99a3a0db3cebbf3",
+			"controlId": "sig-control-state-led",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "180px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "360px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "153",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-state-led-pressed-background-color",
+					"value": "DefaultColors:color235",
+					"typeId": 9,
+					"propTypeId": 2,
+					"refId": "2a6d8336-a42f-49f5-a849-ad2fb26c051c"
+				},
+				{
+					"name": "value",
+					"value": "0:clsHauptablauf1.sAnf0",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "431a7e96-3b0a-4524-81fd-44699c0c7b28"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "56c5d223-6d3a-4d0f-a41f-ec952d84c29a",
+			"name": "State Led0",
+			"instanceId": "lvd761330959b5a447b9823dbd1c629f5f6",
+			"controlId": "sig-control-state-led",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "180px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "200px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "154",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHauptablauf1.sAnf2",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "ff7257bb-9aa7-46db-b957-bdb4eb82a712"
+				},
+				{
+					"name": "--theme-sig-control-state-led-pressed-background-color",
+					"value": "DefaultColors:color235",
+					"typeId": 9,
+					"propTypeId": 2,
+					"refId": "2a6d8336-a42f-49f5-a849-ad2fb26c051c"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "c58ed668-b8eb-4677-bea4-5c9748e1df64",
+			"name": "State Led3",
+			"instanceId": "lvd489d229e60984b99bd53646a7b12f9b8",
+			"controlId": "sig-control-state-led",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "180px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "120px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "155",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "value",
+					"value": "0:clsHauptablauf1.sAnf3",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "7bde8fff-d080-468a-b2cf-1dfc64ecd186"
+				},
+				{
+					"name": "--theme-sig-control-state-led-pressed-background-color",
+					"value": "DefaultColors:color235",
+					"typeId": 9,
+					"propTypeId": 2,
+					"refId": "2a6d8336-a42f-49f5-a849-ad2fb26c051c"
 				}
 			]
 		}

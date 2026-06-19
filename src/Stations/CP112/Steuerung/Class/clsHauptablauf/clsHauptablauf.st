@@ -25,6 +25,7 @@
 		<Server Name="sAnf2" GUID="{54CEFB8B-8FD1-4068-9BCF-32B4532763F5}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Server Name="sAnf3" GUID="{D297CD8D-4336-4C90-88FE-D6551A3EC876}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Server Name="sLichtschranke" GUID="{0E04B578-FA18-411C-B2A6-C69DDF7EFE97}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sZielEtage" GUID="{36A9561C-728D-42E2-9BD7-14C899FA08C6}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cHMI" Required="true" Internal="false"/>
 	</Channels>
 </Class>
@@ -37,6 +38,7 @@ clsHauptablauf : CLASS
 	sAnf2 	: SvrCh_DINT;
 	sAnf3 	: SvrCh_DINT;
 	sLichtschranke 	: SvrCh_DINT;
+	sZielEtage 	: SvrCh_DINT;
   //Clients:
 	cHMI 	: CltChCmd_clsHMI;
   //Variables:
@@ -113,7 +115,7 @@ FUNCTION GLOBAL TAB clsHauptablauf::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSHAUPTABLAUF
 0$UINT, 0$UINT, (SIZEOF(::clsHauptablauf))$UINT, 
-6$UINT, 1$UINT, 0$UINT, 
+7$UINT, 1$UINT, 0$UINT, 
 TO_UDINT(971323912), "clsHauptablauf", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
@@ -123,6 +125,7 @@ TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 (::clsHauptablauf.sAnf2.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2395563159), "sAnf2", 
 (::clsHauptablauf.sAnf3.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(4191048705), "sAnf3", 
 (::clsHauptablauf.sLichtschranke.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2924489048), "sLichtschranke", 
+(::clsHauptablauf.sZielEtage.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(302256956), "sZielEtage", 
 //Clients:
 (::clsHauptablauf.cHMI.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(2629516491), "cHMI", TO_UDINT(1223415905), "clsHMI", 0$UINT, 0$UINT, 
 END_FUNCTION
@@ -225,7 +228,18 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
     sLichtschranke := cHMI.Lichtschranke();
    
 
-
+    IF xAnf0 THEN
+      sZielEtage := 0;
+    ELSIF xAnf1 THEN
+      sZielEtage := 1;
+    ELSIF xAnf2 THEN
+      sZielEtage := 2;
+    ELSIF xAnf3 THEN
+      sZielEtage := 3;
+    ELSE
+    sZielEtage := -1; // keine Ziel-Etage
+    END_IF;
+  
 
 	state := READY;
 

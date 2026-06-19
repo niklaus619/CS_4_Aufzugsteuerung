@@ -5561,7 +5561,7 @@
 				"propTypeId": 1,
 				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
 			},
-			"size": 200,
+			"size": 212,
 			"children": [
 				{
 					"type": "datatype",
@@ -21787,7 +21787,7 @@
 				"propTypeId": 1,
 				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
 			},
-			"size": 76,
+			"size": 100,
 			"children": [
 				{
 					"type": "datatype",
@@ -21848,6 +21848,36 @@
 					},
 					"writeProtected": true,
 					"children": []
+				},
+				{
+					"type": "datatype",
+					"designTimeId": "118b129c-88d0-4706-a18b-4c8eb0cbec97",
+					"name": "sLichtschranke",
+					"guid": "0e04b578-fa18-411c-b2a6-c69ddf7efe97",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datatype",
+					"designTimeId": "915417d7-7523-459d-b374-fe059c45b007",
+					"name": "sZielEtage",
+					"guid": "36a9561c-728d-42e2-9bd7-14c899fa08c6",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
 				}
 			]
 		},
@@ -21862,13 +21892,43 @@
 				"propTypeId": 1,
 				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
 			},
-			"size": 40,
+			"size": 44,
 			"children": [
 				{
 					"type": "datatype",
 					"designTimeId": "905d0380-00e0-4fbb-856f-e0ba8b6337c0",
 					"name": "sState",
 					"guid": "06d7d9a4-7426-49a2-a4a1-442e7a4e210d",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				}
+			]
+		},
+		{
+			"type": "datatype",
+			"designTimeId": "894e5908-3312-4406-b216-398e051014b5",
+			"name": "clsEmgStop_1",
+			"guid": "efb88055-b439-41ce-9391-1c0838255d75",
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"size": 52,
+			"children": [
+				{
+					"type": "datatype",
+					"designTimeId": "2f8f7561-59f1-4df0-b09f-9ac3f456ba1a",
+					"name": "sVisuNotStop",
+					"guid": "fbf3fe60-66a9-455e-a1ba-47e743600935",
 					"typeId": 1,
 					"datatype": {
 						"value": "DINT",

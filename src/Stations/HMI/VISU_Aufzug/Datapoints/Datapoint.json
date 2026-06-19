@@ -19120,7 +19120,7 @@
 		{
 			"type": "datapoint",
 			"designTimeId": "b59d535e-8e59-46f8-b04b-3c1635525a4c",
-			"name": "IO_Element1",
+			"name": "xI_Etage0",
 			"guid": "a9980a06-ae0c-4504-838f-363c51f06801",
 			"typeId": 19,
 			"datatype": {
@@ -19134,7 +19134,7 @@
 		{
 			"type": "datapoint",
 			"designTimeId": "2566fe79-e979-4204-91aa-3475ff1366e5",
-			"name": "IO_Element2",
+			"name": "xI_Etage1",
 			"guid": "1cb4956a-8fea-4160-a071-61d65219c967",
 			"typeId": 19,
 			"datatype": {
@@ -19148,7 +19148,7 @@
 		{
 			"type": "datapoint",
 			"designTimeId": "abb1b332-4d76-4f76-a418-da8d6169d607",
-			"name": "IO_Element3",
+			"name": "xI_Etage2",
 			"guid": "0c4f6025-12ef-42e4-8999-731e84af0109",
 			"typeId": 19,
 			"datatype": {
@@ -19162,7 +19162,7 @@
 		{
 			"type": "datapoint",
 			"designTimeId": "b0ca2247-6680-489f-8821-4dd107bf7a0e",
-			"name": "IO_Element4",
+			"name": "xI_Etage3",
 			"guid": "1921fdc2-96dc-47ad-992d-1e777b75e3c5",
 			"typeId": 19,
 			"datatype": {
@@ -19232,7 +19232,7 @@
 		{
 			"type": "datapoint",
 			"designTimeId": "ca3b7221-aae4-4c26-ad58-d8de38b7bb65",
-			"name": "IO_Element",
+			"name": "xI_EnMotoren",
 			"guid": "1b1fbf7f-bd8d-4062-bb64-37009f707fdc",
 			"typeId": 19,
 			"datatype": {
@@ -19399,6 +19399,36 @@
 					},
 					"writeProtected": true,
 					"children": []
+				},
+				{
+					"type": "datapoint",
+					"designTimeId": "36decadd-1919-411d-9849-dccd8ffd4aed",
+					"name": "sLichtschranke",
+					"guid": "0e04b578-fa18-411c-b2a6-c69ddf7efe97",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				},
+				{
+					"type": "datapoint",
+					"designTimeId": "152069ea-8727-410d-899c-18aa5b7db4fb",
+					"name": "sZielEtage",
+					"guid": "36a9561c-728d-42e2-9bd7-14c899fa08c6",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
 				}
 			]
 		},
@@ -19430,6 +19460,105 @@
 					"children": []
 				}
 			]
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "a3d54727-c005-4a1c-b728-ced7e3e00faa",
+			"name": "clsEmgStop_1",
+			"guid": "9195496d-276a-419b-9cd3-558c57849ce3",
+			"datatype": {
+				"value": "0:clsEmgStop_1",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "894e5908-3312-4406-b216-398e051014b5"
+			},
+			"children": [
+				{
+					"type": "datapoint",
+					"designTimeId": "ad310dc8-88a7-47c7-bbd8-195e9860d457",
+					"name": "sVisuNotStop",
+					"guid": "fbf3fe60-66a9-455e-a1ba-47e743600935",
+					"typeId": 1,
+					"datatype": {
+						"value": "DINT",
+						"typeId": 8,
+						"propTypeId": 1,
+						"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+					},
+					"writeProtected": true,
+					"children": []
+				}
+			]
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "3a814c86-62c3-45dd-ac80-35360cf9a982",
+			"name": "xI_Emg1_1",
+			"guid": "3069c101-2317-4f40-b9fc-510b7b83dd91",
+			"typeId": 19,
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"children": []
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "c3e1a6b8-d8d1-4d8e-8e89-7972e29a7691",
+			"name": "xI_Emg1_2",
+			"guid": "c00be271-ecd7-4167-a02f-f4dafe944a78",
+			"typeId": 19,
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"children": []
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "1ca3fdd0-31bc-4b44-a782-e9ae12a09de2",
+			"name": "xI_Emg1_3",
+			"guid": "cd5e5d53-803c-4526-8db2-742ba589d567",
+			"typeId": 19,
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"children": []
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "2b90622a-8ac0-472a-87be-b7f983363781",
+			"name": "xI_Emg1_4",
+			"guid": "1f218862-d811-4c17-bc44-0bd5143630ac",
+			"typeId": 19,
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"children": []
+		},
+		{
+			"type": "datapoint",
+			"designTimeId": "9a9fee45-b3f2-4dae-8dc1-464658f7fad1",
+			"name": "xI_Lichtschranke",
+			"guid": "aa5abef9-9e63-475c-ab85-53f03c9776c6",
+			"typeId": 19,
+			"datatype": {
+				"value": "DINT",
+				"typeId": 8,
+				"propTypeId": 1,
+				"refId": "65579062-bd8f-4c7a-a7ff-b1cd0632d65e"
+			},
+			"children": []
 		}
 	]
 }

@@ -2021,13 +2021,13 @@
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "150px",
+					"value": "160px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-height",
-					"value": "38px",
+					"value": "20px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2643,27 +2643,18 @@
 					"propTypeId": 2
 				},
 				{
-					"name": "sigbtntext",
-					"value": "TextList0:Tür Auf",
-					"typeId": 5,
-					"propTypeId": 1,
-					"refId": "e74dcaa3-d06c-4b78-8da1-d96ff368a4dc",
-					"children": [
-						{
-							"name": "Param0",
-							"value": "TextList0:Tür Auf",
-							"typeId": 5,
-							"propTypeId": 1,
-							"refId": "e74dcaa3-d06c-4b78-8da1-d96ff368a4dc"
-						}
-					]
-				},
-				{
 					"name": "value",
 					"value": "0:clsHMI1.sAnf_HMIAuf",
 					"typeId": 4,
 					"propTypeId": 1,
 					"refId": "35cf1c26-891e-4e45-932b-640ca4af05bf"
+				},
+				{
+					"name": "sigbtntext",
+					"value": "SystemTexts:Tür",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "7de73a3d-5485-420a-a5d2-13d9f90be8d8"
 				}
 			]
 		},
@@ -4170,7 +4161,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "520px",
+					"value": "570px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -4232,7 +4223,7 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "520px",
+					"value": "530px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -4272,6 +4263,59 @@
 					"typeId": 16,
 					"propTypeId": 1,
 					"refId": "8f27c68d-b334-4bd0-8574-f19b24078afe",
+					"targetName": "sigtext"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "49922a76-0af7-440d-aec0-1c4e3187beeb",
+			"name": "Text2",
+			"instanceId": "lvdd5ce7636732a47f7aa6f9ebd2b9f5520",
+			"controlId": "sig-control-text",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "530px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "160px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "20px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "150px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "153",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "sigtext_TextScheme",
+					"value": "Ziel Etage",
+					"typeId": 16,
+					"propTypeId": 1,
+					"refId": "3329d7c1-78b2-4a43-a406-e7613372f86d",
 					"targetName": "sigtext"
 				}
 			]

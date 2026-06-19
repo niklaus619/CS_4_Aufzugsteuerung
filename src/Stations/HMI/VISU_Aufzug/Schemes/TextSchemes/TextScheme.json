@@ -115,6 +115,87 @@
 			"revision": {
 				"type": "Revision"
 			}
+		},
+		{
+			"type": "Scheme",
+			"designTimeId": "3329d7c1-78b2-4a43-a406-e7613372f86d",
+			"name": "Ziel Etage",
+			"schemeId": 16,
+			"variable": {
+				"value": "0:clsHauptablauf1.sZielEtage",
+				"typeId": 4,
+				"propTypeId": 1,
+				"refId": "152069ea-8727-410d-899c-18aa5b7db4fb"
+			},
+			"schemeEntries": [
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "8450ac22-1987-4b0a-90de-6e4eec1155dd",
+					"operator": 2,
+					"compareValue": {
+						"value": "0 ",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": {
+						"value": "SystemTexts:0",
+						"typeId": 5,
+						"propTypeId": 1,
+						"refId": "e5ef0288-f7a0-43e8-99e3-05630b34b7fe"
+					}
+				},
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "deeef99d-0e80-47cf-b9ba-343f62bc181c",
+					"operator": 2,
+					"compareValue": {
+						"value": "1 ",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": {
+						"value": "SystemTexts:1",
+						"typeId": 5,
+						"propTypeId": 1,
+						"refId": "480ac2cb-2391-4f45-a605-d28c525555b7"
+					}
+				},
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "05170a62-327b-43ca-9df0-ecc151561e3c",
+					"operator": 2,
+					"compareValue": {
+						"value": "2 ",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": {
+						"value": "SystemTexts:2",
+						"typeId": 5,
+						"propTypeId": 1,
+						"refId": "1ea2eb1b-e769-4839-99bc-03733b996b5e"
+					}
+				},
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "53db16fc-42ce-4bf4-8ed0-cfe71a0e9bc8",
+					"operator": 2,
+					"compareValue": {
+						"value": "3 ",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": {
+						"value": "SystemTexts:3",
+						"typeId": 5,
+						"propTypeId": 1,
+						"refId": "4d6add5c-1d2e-4da5-876e-4d2b3f4536ba"
+					}
+				}
+			],
+			"revision": {
+				"type": "Revision"
+			}
 		}
 	]
 }

@@ -65,6 +65,7 @@
 				<Server Name="sAnf2"/>
 				<Server Name="sAnf3"/>
 				<Server Name="sLichtschranke"/>
+				<Server Name="sZielEtage"/>
 				<Client Name="cHMI"/>
 			</Channels>
 		</Object>

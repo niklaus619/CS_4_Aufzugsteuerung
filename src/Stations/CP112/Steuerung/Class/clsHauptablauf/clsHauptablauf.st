@@ -174,6 +174,27 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
     // Die Anforderungsverwaltung erfolgt direkt über die Funktionen
     // Anf0() bis Anf3().
     
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage0() THEN
+        xAnf0 := TRUE;
+    END_IF;
+    
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage1() THEN
+        xAnf1 := TRUE;
+    END_IF;
+    
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage2() THEN
+        xAnf2 := TRUE;
+    END_IF;
+    
+     // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage3() THEN
+        xAnf3 := TRUE;
+    END_IF;
+    
+    
     // Weiterleitung an HMI
     //Anfragen
     IF xAnf0 THEN
@@ -218,7 +239,7 @@ FUNCTION GLOBAL clsHauptablauf::TuerZu
 	END_VAR
   
   //Weitergabe von IO
-xOut := cHMI.Tuerzu();
+   xOut := cHMI.Tuerzu();
 END_FUNCTION
 
 
@@ -228,7 +249,7 @@ FUNCTION GLOBAL clsHauptablauf::TuerAuf
 	END_VAR
     
   //Weitergabe von IO
-  IF cHMI.Tuerauf() OR (cHMI.Lichtschranke() <> 1) THEN //Lichtschranke MUSS 1 sein 
+  IF cHMI.Tuerauf() OR (sLichtschranke <> 1) THEN //Lichtschranke MUSS 1 sein 
     xOut := TRUE;
   ELSE
     xOut := FALSE;
@@ -246,10 +267,7 @@ FUNCTION GLOBAL clsHauptablauf::Anf0
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage0() THEN
-        xAnf0 := TRUE;
-    END_IF;
+
 
     // Anforderung löschen (z.B. nach Bedienung der Etage)
     IF xIn THEN
@@ -270,10 +288,6 @@ FUNCTION GLOBAL clsHauptablauf::Anf1
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage1() THEN
-        xAnf1 := TRUE;
-    END_IF;
 
     // Anforderung löschen
     IF xIn THEN
@@ -294,10 +308,6 @@ FUNCTION GLOBAL clsHauptablauf::Anf2
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage2() THEN
-        xAnf2 := TRUE;
-    END_IF;
 
     // Anforderung löschen
     IF xIn THEN
@@ -316,11 +326,6 @@ FUNCTION GLOBAL clsHauptablauf::Anf3
 	VAR_OUTPUT
 		xOut : BOOL;
 	END_VAR
-
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage3() THEN
-        xAnf3 := TRUE;
-    END_IF;
 
     // Anforderung löschen
     IF xIn THEN

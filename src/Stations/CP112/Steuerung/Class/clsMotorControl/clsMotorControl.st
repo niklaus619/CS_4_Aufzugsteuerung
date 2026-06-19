@@ -78,14 +78,6 @@ clsMotorControl : CLASS
   //Variables:
   //Functions:
 	
-	FUNCTION VIRTUAL GLOBAL CyWork
-		VAR_INPUT
-			EAX 	: UDINT;
-		END_VAR
-		VAR_OUTPUT
-			state (EAX) 	: UDINT;
-		END_VAR;
-	
 	FUNCTION VIRTUAL GLOBAL RtWork
 		VAR_INPUT
 			EAX 	: UDINT;
@@ -189,7 +181,6 @@ FUNCTION clsMotorControl::@STD
 	//Command Methods
 	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsMotorControl, pCmd := #vmt.CmdTable);
 	vmt.CmdTable.Write		:= #M_WR_DIRECT();
-	vmt.CmdTable.CyWork		:= #CyWork();
 	vmt.CmdTable.RtWork		:= #RtWork();
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
@@ -238,90 +229,6 @@ FUNCTION clsMotorControl::@STD
 END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
-
-
-FUNCTION VIRTUAL GLOBAL clsMotorControl::CyWork
-	VAR_INPUT
-		EAX 	: UDINT;
-	END_VAR
-	VAR_OUTPUT
-		state (EAX) 	: UDINT;
-	END_VAR
-  
-  CASE sMode OF
-    
-    MOTOR_MODE::IDLE:;
-    
-    MOTOR_MODE::STOP:
-        cAxis.StopMove(Decel:=999999999, Jerk:=1);
-        sState := 0;
-        sMode := MOTOR_MODE::IDLE;
-        
-    MOTOR_MODE::STOP_EMG:
-        cAxis.QuickStop(Decel:=999999999);
-        sState := 0;
-        sMode := MOTOR_MODE::IDLE;
-        
-    MOTOR_MODE::POWER_ON:
-        CASE sState OF
-        
-          1: IF cAxis.AxisStatus.ReadyToPowerOn THEN
-              cAxis.PowerOn(Mode:= ::_LMCAXIS_MOVEDIRECTION::LMCAXIS_MOVE_ANY_WAY);
-              sState := 2;
-             END_IF;
-             
-          2: IF cAxis.AxisStatus.PowerOn THEN
-              sState := 0;
-              sMode := MOTOR_MODE::IDLE;
-             END_IF;
-
-        END_CASE;
-        
-        
-     MOTOR_MODE::POWER_OFF:
-        cAxis.PowerOff(Mode:=::_LMCAXIS_POWER_OFF_MODE::LMCAXIS_SMOOTH_STOPP);
-        sState := 0;
-        sMode := MOTOR_MODE::IDLE;
-        
-     MOTOR_MODE::MOVE_ABS:
-        CASE sState OF
-        
-          1: IF cAxis.AxisStatus.PowerOn THEN
-              cAxis.MoveAbsolute(Position:=sPosition, Speed:=sVelocity, Accel:=sAcceleration, Decel:=sAcceleration, Jerk:=1);
-              sState := 2;
-             END_IF;
-             
-          2: IF cAxis.AxisStatus.InPosition THEN
-              sState := 0;
-              sMode := MOTOR_MODE::IDLE;
-             END_IF;
-
-        END_CASE;
-        
-        
-      MOTOR_MODE::MOVE_REL:
-        CASE sState OF
-        
-          1: IF cAxis.AxisStatus.PowerOn THEN
-                cAxis.MoveRelative(Position:=sDistance, Mode:= _LMCAXIS_MOVE_RELATIVE_MODE::LMCAXIS_MOVE_RELATIVE_TO_DESTINATION, Speed:=sVelocity, Accel:=sAcceleration, Decel:=sAcceleration, Jerk:=1);
-              sState := 2;
-             END_IF;
-             
-          2: IF cAxis.AxisStatus.InPosition THEN
-              sState := 0;
-              sMode := MOTOR_MODE::IDLE;
-             END_IF;
-
-        END_CASE;
-        
-        
-    
-
-  END_CASE;
-
-	state := READY;
-
-END_FUNCTION
 
 
 FUNCTION VIRTUAL GLOBAL clsMotorControl::sCmd::Write
@@ -462,6 +369,77 @@ FUNCTION VIRTUAL GLOBAL clsMotorControl::RtWork
 	VAR_OUTPUT
 		state (EAX) 	: UDINT;
 	END_VAR
+
+  CASE sMode OF
+    
+    MOTOR_MODE::IDLE:;
+    
+    MOTOR_MODE::STOP:
+        cAxis.StopMove(Decel:=600000, Jerk:=1);
+        sState := 0;
+        sMode := MOTOR_MODE::IDLE;
+        
+    MOTOR_MODE::STOP_EMG:
+        cAxis.QuickStop(Decel:=999999999);
+        sState := 0;
+        sMode := MOTOR_MODE::IDLE;
+        
+    MOTOR_MODE::POWER_ON:
+        CASE sState OF
+        
+          1: IF cAxis.AxisStatus.ReadyToPowerOn THEN
+              cAxis.PowerOn(Mode:= ::_LMCAXIS_MOVEDIRECTION::LMCAXIS_MOVE_ANY_WAY);
+              sState := 2;
+             END_IF;
+             
+          2: IF cAxis.AxisStatus.PowerOn THEN
+              sState := 0;
+              sMode := MOTOR_MODE::IDLE;
+             END_IF;
+
+        END_CASE;
+        
+        
+     MOTOR_MODE::POWER_OFF:
+        cAxis.PowerOff(Mode:=::_LMCAXIS_POWER_OFF_MODE::LMCAXIS_SMOOTH_STOPP);
+        sState := 0;
+        sMode := MOTOR_MODE::IDLE;
+        
+     MOTOR_MODE::MOVE_ABS:
+        CASE sState OF
+        
+          1: IF cAxis.AxisStatus.PowerOn THEN
+              cAxis.MoveAbsolute(Position:=sPosition, Speed:=sVelocity, Accel:=sAcceleration, Decel:=sAcceleration, Jerk:=1);
+              sState := 2;
+             END_IF;
+             
+          2: IF cAxis.AxisStatus.InPosition THEN
+              sState := 0;
+              sMode := MOTOR_MODE::IDLE;
+             END_IF;
+
+        END_CASE;
+        
+        
+      MOTOR_MODE::MOVE_REL:
+        CASE sState OF
+        
+          1: IF cAxis.AxisStatus.PowerOn THEN
+                cAxis.MoveRelative(Position:=sDistance, Mode:= _LMCAXIS_MOVE_RELATIVE_MODE::LMCAXIS_MOVE_RELATIVE_TO_DESTINATION, Speed:=sVelocity, Accel:=sAcceleration, Decel:=sAcceleration, Jerk:=1);
+              sState := 2;
+             END_IF;
+             
+          2: IF cAxis.AxisStatus.InPosition THEN
+              sState := 0;
+              sMode := MOTOR_MODE::IDLE;
+             END_IF;
+
+        END_CASE;
+        
+        
+    
+
+  END_CASE;
 
 	state := READY;
 

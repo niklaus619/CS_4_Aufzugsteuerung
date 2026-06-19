@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<File CRC="6C88464B" Version="1.1" SubVersion="2">
+<File CRC="02F48B28" Version="1.1" SubVersion="2">
 	<Types>
 		<Type Name="SafetyConfigStateType" Datatype="UDINT" TypeId="ENUM">
 			<Elements>
@@ -728,6 +728,7 @@
 	</Objects>
 	<IOElements>
 		<IOElement Name="IO_Element0" IOType="Output" Type="Digital" Datatype="DINT" Guid="5421467A-4154-47B1-8671-9C215A35A6BB"/>
+		<IOElement Name="IO_Element1" IOType="Output" Type="Digital" Datatype="DINT" Guid="603FE153-9B8D-4F4E-945D-579391346734"/>
 		<IOElement Name="IO_Element5" IOType="Output" Type="Digital" Datatype="DINT" Guid="47EEE55E-EECF-4ECF-B6DC-624E2310D8D4"/>
 		<IOElement Name="IO_Element6" IOType="Output" Type="Digital" Datatype="DINT" Guid="F96515EC-C3A6-4256-82EB-F6867DB63F97"/>
 		<IOElement Name="IO_Element7" IOType="Output" Type="Digital" Datatype="DINT" Guid="F458EB1F-7409-4B7A-B24E-5AB00D95B1A1"/>

@@ -133,9 +133,10 @@ END_FUNCTION
 
 #ifdef __LSLLDR_IOELEMENTS__
 FUNCTION GLOBAL TAB _IO_ELEMENTS_TAB
-0001$UINT, 0013$UINT, 
+0001$UINT, 0014$UINT, 
 "**IOCONN_EMPTY**", "_DriveMng_DC0621.CmdState", 
 "IO_Element0", "DM0811.Output1", 
+"IO_Element1", "SCP1111.QuitComError", 
 "IO_Element5", "DM0811.Output2", 
 "IO_Element6", "DM0811.Output3", 
 "IO_Element7", "DM0811.Output4", 

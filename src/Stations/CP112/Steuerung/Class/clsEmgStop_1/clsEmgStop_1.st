@@ -127,7 +127,7 @@ FUNCTION VIRTUAL GLOBAL clsEmgStop_1::RtWork
   sVisuNotStop := xEmgStop;
 
   // monitoring
-  IF c1 AND c2  THEN
+  IF (c1 = 1) AND (c2 = 1) THEN
     xEmgStop := FALSE;
   ELSE
     xEmgStop := TRUE;

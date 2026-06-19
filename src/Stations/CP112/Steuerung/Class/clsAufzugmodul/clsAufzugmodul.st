@@ -388,34 +388,43 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::RtWork
 
 
 
-  TuerSchliessen:
+ TuerSchliessen:
 
-      cTuerstatus.zu(); // Simulation
-      cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
+    IF cAnforderung.TuerAuf() THEN
 
-      IF cTuerstatus.istzu() THEN
+        cAntriebTuer.Fahrt(xDir := TRUE, xStart := FALSE);
+        iStep := TuerOeffnen;
 
-          cAntriebTuer.Fahrt(xDir := TRUE, xStart := FALSE);
+    ELSE
 
-          iAktEtage := cEtagestatus.AktEtage();
+        cTuerstatus.zu(); // Simulation
+        cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
 
-          IF iAktEtage = 0 THEN
-              cAnforderung.Anf0(xIn := TRUE);
+        IF cTuerstatus.istzu() THEN
 
-          ELSIF iAktEtage = 1 THEN
-              cAnforderung.Anf1(xIn := TRUE);
+            cAntriebTuer.Fahrt(xDir := TRUE, xStart := FALSE);
 
-          ELSIF iAktEtage = 2 THEN
-              cAnforderung.Anf2(xIn := TRUE);
+            iAktEtage := cEtagestatus.AktEtage();
 
-          ELSIF iAktEtage = 3 THEN
-              cAnforderung.Anf3(xIn := TRUE);
+            IF iAktEtage = 0 THEN
+                cAnforderung.Anf0(xIn := TRUE);
 
-          END_IF;
+            ELSIF iAktEtage = 1 THEN
+                cAnforderung.Anf1(xIn := TRUE);
 
-          iStep := Initialisierung;
+            ELSIF iAktEtage = 2 THEN
+                cAnforderung.Anf2(xIn := TRUE);
 
-      END_IF;
+            ELSIF iAktEtage = 3 THEN
+                cAnforderung.Anf3(xIn := TRUE);
+
+            END_IF;
+
+            iStep := Initialisierung;
+
+        END_IF;
+
+    END_IF;
 
 
   NotAus:

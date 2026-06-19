@@ -23,6 +23,12 @@
 			<IOConnection ObjSrv="DM0811" Server="Output1" ObjClt="clsEnableDrive1" Client="cOut1" IOI="Output" Type="Digital" SortIndex="12" KeyName="000012" Advanced="0"/>
 		</IOConnections>
 	</Entry>
+	<Entry Name="IO_Element1" GUID="{603FE153-9B8D-4F4E-945D-579391346734}" Objectsize="284">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="SCP1111" Server="QuitComError" IOI="Output" Type="Digital" SortIndex="22" KeyName="000019" Advanced="0"/>
+		</IOConnections>
+	</Entry>
 	<Entry
 		Name       = "IO_Element5"
 		GUID       = "{47EEE55E-EECF-4ECF-B6DC-624E2310D8D4}"

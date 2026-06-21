@@ -489,7 +489,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "127",
+					"value": "126",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -558,7 +558,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "128",
+					"value": "127",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -627,7 +627,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "129",
+					"value": "128",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -696,7 +696,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "137",
+					"value": "135",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -790,7 +790,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "138",
+					"value": "136",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -884,7 +884,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "139",
+					"value": "137",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -978,7 +978,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "140",
+					"value": "138",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1067,7 +1067,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "141",
+					"value": "139",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1156,7 +1156,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "142",
+					"value": "140",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1245,7 +1245,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "143",
+					"value": "141",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1409,9 +1409,10 @@
 				},
 				{
 					"name": "sigtext",
-					"value": "Status",
-					"typeId": 0,
-					"propTypeId": 1
+					"value": "TextList0:Tür Bedinung",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "51ce08fb-b138-4f22-9bc6-a8bee206e9f8"
 				},
 				{
 					"name": "--theme-sig-control-text-color",
@@ -1565,7 +1566,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "130",
+					"value": "129",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1721,7 +1722,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "131",
+					"value": "130",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -1877,7 +1878,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "132",
+					"value": "131",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2033,7 +2034,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "133",
+					"value": "132",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2195,13 +2196,6 @@
 					"propTypeId": 2
 				},
 				{
-					"name": "sigtext",
-					"value": "TextList0:Türbedienung",
-					"typeId": 5,
-					"propTypeId": 1,
-					"refId": "6fa4c0f7-2e0c-46da-bf08-00d4b6930c1f"
-				},
-				{
 					"name": "--theme-sig-control-text-color",
 					"value": "#222222",
 					"typeId": 0,
@@ -2242,6 +2236,13 @@
 					"value": "bold",
 					"typeId": 0,
 					"propTypeId": 2
+				},
+				{
+					"name": "sigtext",
+					"value": "TextList0:Tür Bedinung",
+					"typeId": 5,
+					"propTypeId": 1,
+					"refId": "51ce08fb-b138-4f22-9bc6-a8bee206e9f8"
 				}
 			]
 		},
@@ -2284,7 +2285,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "144",
+					"value": "142",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2373,7 +2374,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "145",
+					"value": "143",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2432,19 +2433,19 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "737px",
+					"value": "740px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "45px",
+					"value": "40px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-height",
-					"value": "260px",
+					"value": "255px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2579,173 +2580,10 @@
 				},
 				{
 					"name": "sigtext",
-					"value": "TextList0:Störung / Bonus",
+					"value": "TextList0:Störung.",
 					"typeId": 5,
 					"propTypeId": 1,
 					"refId": "b8c5d2ca-7d98-420f-9935-66b7f7190cc0"
-				}
-			]
-		},
-		{
-			"type": "control",
-			"designTimeId": "ad305242-7fa8-4836-9b18-11de5c100ff9",
-			"name": "Fault Box",
-			"instanceId": "mock_fault_box",
-			"controlId": "sig-control-rectangle",
-			"properties": [
-				{
-					"name": "--theme-sig-element-left",
-					"value": "772px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-top",
-					"value": "105px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-height",
-					"value": "45px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-width",
-					"value": "175px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "rotation",
-					"value": 0,
-					"typeId": 17,
-					"propTypeId": 12
-				},
-				{
-					"name": "--theme-sig-element-zindex",
-					"value": "124",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-background-color",
-					"value": "#d5e8d4",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-border-color",
-					"value": "#82b366",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-border-width",
-					"value": "1px",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-rectangle-border-style",
-					"value": "solid",
-					"typeId": 0,
-					"propTypeId": 2
-				}
-			]
-		},
-		{
-			"type": "control",
-			"designTimeId": "9cda78ae-1cab-4c00-a831-15afd1eb6e2e",
-			"name": "Fault Label",
-			"instanceId": "mock_fault_label",
-			"controlId": "sig-control-text",
-			"properties": [
-				{
-					"name": "--theme-sig-element-left",
-					"value": "772px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-top",
-					"value": "105px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-height",
-					"value": "45px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-element-width",
-					"value": "175px",
-					"typeId": 17,
-					"propTypeId": 2
-				},
-				{
-					"name": "rotation",
-					"value": 0,
-					"typeId": 17,
-					"propTypeId": 12
-				},
-				{
-					"name": "--theme-sig-element-zindex",
-					"value": "134",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "sigtext",
-					"value": "TextList0:Störung / Bonus",
-					"typeId": 5,
-					"propTypeId": 1,
-					"refId": "b8c5d2ca-7d98-420f-9935-66b7f7190cc0"
-				},
-				{
-					"name": "--theme-sig-control-text-color",
-					"value": "#222222",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-font-size",
-					"value": "17px",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-value-align",
-					"value": "center",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-value-vertical-align",
-					"value": "middle",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-background-color",
-					"value": "rgba(255,255,255,0)",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "--theme-sig-control-text-border-style",
-					"value": "none",
-					"typeId": 0,
-					"propTypeId": 2
-				},
-				{
-					"name": "font-weight",
-					"value": "bold",
-					"typeId": 0,
-					"propTypeId": 2
 				}
 			]
 		},
@@ -2758,13 +2596,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "772px",
+					"value": "780px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "170px",
+					"value": "100px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2788,7 +2626,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "125",
+					"value": "124",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2827,13 +2665,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "772px",
+					"value": "770px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "170px",
+					"value": "100px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2857,7 +2695,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "135",
+					"value": "133",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2914,13 +2752,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "772px",
+					"value": "780px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "225px",
+					"value": "170px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -2944,7 +2782,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "126",
+					"value": "125",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -2983,13 +2821,13 @@
 			"properties": [
 				{
 					"name": "--theme-sig-element-left",
-					"value": "772px",
+					"value": "780px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
 				{
 					"name": "--theme-sig-element-top",
-					"value": "225px",
+					"value": "170px",
 					"typeId": 17,
 					"propTypeId": 2
 				},
@@ -3013,7 +2851,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "136",
+					"value": "134",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -3796,7 +3634,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "146",
+					"value": "144",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -3867,7 +3705,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "147",
+					"value": "145",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -3929,7 +3767,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "148",
+					"value": "146",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -3982,7 +3820,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "150",
+					"value": "148",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4035,7 +3873,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "149",
+					"value": "147",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4104,7 +3942,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "151",
+					"value": "149",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4198,7 +4036,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "152",
+					"value": "150",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4257,7 +4095,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "153",
+					"value": "151",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4316,7 +4154,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "154",
+					"value": "152",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4375,7 +4213,7 @@
 				},
 				{
 					"name": "--theme-sig-element-zindex",
-					"value": "155",
+					"value": "153",
 					"typeId": 0,
 					"propTypeId": 2
 				},
@@ -4392,6 +4230,130 @@
 					"typeId": 9,
 					"propTypeId": 2,
 					"refId": "2a6d8336-a42f-49f5-a849-ad2fb26c051c"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "55885b16-2b60-4f17-a826-126dbce3ceb1",
+			"name": "State Led5",
+			"instanceId": "lvd9a011046ad1e4c3db7ebeaa7e8ef880d",
+			"controlId": "sig-control-state-led",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "920px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "110px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "154",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-state-led-pressed-background-color",
+					"value": "DefaultColors:color235",
+					"typeId": 9,
+					"propTypeId": 2,
+					"refId": "2a6d8336-a42f-49f5-a849-ad2fb26c051c"
+				},
+				{
+					"name": "value",
+					"value": "0:clsEmgStop_1.sVisuNotStop",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "ad310dc8-88a7-47c7-bbd8-195e9860d457"
+				}
+			]
+		},
+		{
+			"type": "control",
+			"designTimeId": "9172afa8-03a3-4d14-9fb6-88346fa712d3",
+			"name": "State Led6",
+			"instanceId": "lvd99e6429c6fd74accb2745a2f2ad8827b",
+			"controlId": "sig-control-state-led",
+			"properties": [
+				{
+					"name": "--theme-sig-element-left",
+					"value": "920px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-top",
+					"value": "180px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-height",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-element-width",
+					"value": "25px",
+					"typeId": 17,
+					"propTypeId": 2
+				},
+				{
+					"name": "rotation",
+					"value": 0.0,
+					"typeId": 17,
+					"propTypeId": 12
+				},
+				{
+					"name": "--theme-sig-element-zindex",
+					"value": "155",
+					"typeId": 0,
+					"propTypeId": 2
+				},
+				{
+					"name": "--theme-sig-control-state-led-pressed-background-color",
+					"value": "DefaultColors:color235",
+					"typeId": 9,
+					"propTypeId": 2,
+					"refId": "2a6d8336-a42f-49f5-a849-ad2fb26c051c"
+				},
+				{
+					"name": "state",
+					"value": 2.0,
+					"typeId": 0,
+					"propTypeId": 1
+				},
+				{
+					"name": "value",
+					"value": "0:clsHauptablauf1.sLichtschranke",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "36decadd-1919-411d-9849-dccd8ffd4aed"
 				}
 			]
 		}

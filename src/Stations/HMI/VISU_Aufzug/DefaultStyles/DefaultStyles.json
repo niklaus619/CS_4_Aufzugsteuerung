@@ -256,6 +256,18 @@
 			"revision": {
 				"type": "Revision"
 			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "5792cfdd-1ed4-4bb5-aa2c-6d5444e01cd9",
+			"componentId": "sig-control-switch-button2",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
 		}
 	]
 }

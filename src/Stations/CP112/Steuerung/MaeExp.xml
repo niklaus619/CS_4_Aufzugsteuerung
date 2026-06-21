@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<File CRC="02F48B28" Version="1.1" SubVersion="2">
+<File CRC="11E9CF15" Version="1.1" SubVersion="2">
 	<Types>
 		<Type Name="SafetyConfigStateType" Datatype="UDINT" TypeId="ENUM">
 			<Elements>
@@ -209,7 +209,7 @@
 				<Server Name="sAnf1" Datatype="DINT" Guid="ED67BD7E-9602-4A87-8F29-00EC4FBB4020" WriteProtected="true"/>
 				<Server Name="sAnf2" Datatype="DINT" Guid="54CEFB8B-8FD1-4068-9BCF-32B4532763F5" WriteProtected="true"/>
 				<Server Name="sAnf3" Datatype="DINT" Guid="D297CD8D-4336-4C90-88FE-D6551A3EC876" WriteProtected="true"/>
-				<Server Name="sLichtschranke" Datatype="DINT" Guid="0E04B578-FA18-411C-B2A6-C69DDF7EFE97" WriteProtected="true"/>
+				<Server Name="sLichtschranke" Datatype="DINT" Guid="0E04B578-FA18-411C-B2A6-C69DDF7EFE97" WriteProtected="false"/>
 				<Server Name="sZielEtage" Datatype="DINT" Guid="36A9561C-728D-42E2-9BD7-14C899FA08C6" WriteProtected="true"/>
 			</Servers>
 		</Class>

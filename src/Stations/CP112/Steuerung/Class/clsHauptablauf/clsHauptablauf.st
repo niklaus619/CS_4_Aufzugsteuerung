@@ -24,7 +24,7 @@
 		<Server Name="sAnf1" GUID="{ED67BD7E-9602-4A87-8F29-00EC4FBB4020}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Server Name="sAnf2" GUID="{54CEFB8B-8FD1-4068-9BCF-32B4532763F5}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Server Name="sAnf3" GUID="{D297CD8D-4336-4C90-88FE-D6551A3EC876}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="sLichtschranke" GUID="{0E04B578-FA18-411C-B2A6-C69DDF7EFE97}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sLichtschranke" GUID="{0E04B578-FA18-411C-B2A6-C69DDF7EFE97}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Server Name="sZielEtage" GUID="{36A9561C-728D-42E2-9BD7-14C899FA08C6}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cHMI" Required="true" Internal="false"/>
 	</Channels>
@@ -154,6 +154,13 @@ FUNCTION clsHauptablauf::@STD
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
 	IF ClassSvr.pMeth THEN
+		ret_code	:= C_OK;
+	ELSE
+		ret_code	:= C_OUTOF_NEAR;
+		RETURN;
+	END_IF;
+	sLichtschranke.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF sLichtschranke.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;
@@ -348,5 +355,7 @@ FUNCTION GLOBAL clsHauptablauf::Anf3
 
     // Aktuellen Status zurückgeben
     xOut := xAnf3;
+
+  sLichtschranke := 1;
 
 END_FUNCTION

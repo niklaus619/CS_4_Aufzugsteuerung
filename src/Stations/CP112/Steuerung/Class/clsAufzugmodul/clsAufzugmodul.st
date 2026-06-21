@@ -156,6 +156,8 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::RtWork
 		state (EAX) 	: UDINT;
 	END_VAr
   
+
+
   
   //Notaus zustand
   IF cEMG_Stop.EmgStop() THEN
@@ -441,6 +443,7 @@ FUNCTION VIRTUAL GLOBAL clsAufzugmodul::RtWork
 
   END_CASE;
 
+ cEMG_Stop:= 1;
 
 
 	state := READY;

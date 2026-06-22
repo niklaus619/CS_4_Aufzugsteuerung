@@ -4337,10 +4337,17 @@
 				},
 				{
 					"name": "--theme-sig-control-state-led-pressed-background-color",
-					"value": "DefaultColors:color235",
+					"value": "DefaultColors:color231",
 					"typeId": 9,
 					"propTypeId": 2,
-					"refId": "2a6d8336-a42f-49f5-a849-ad2fb26c051c"
+					"refId": "6621d12b-ed38-4ed3-b097-2e28730d2193"
+				},
+				{
+					"name": "value",
+					"value": "0:clsHauptablauf1.sLichtschranke",
+					"typeId": 4,
+					"propTypeId": 1,
+					"refId": "36decadd-1919-411d-9849-dccd8ffd4aed"
 				},
 				{
 					"name": "state",
@@ -4349,11 +4356,11 @@
 					"propTypeId": 1
 				},
 				{
-					"name": "value",
-					"value": "0:clsHauptablauf1.sLichtschranke",
-					"typeId": 4,
-					"propTypeId": 1,
-					"refId": "36decadd-1919-411d-9849-dccd8ffd4aed"
+					"name": "--theme-sig-control-state-led-background-color",
+					"value": "DefaultColors:color235",
+					"typeId": 9,
+					"propTypeId": 2,
+					"refId": "2a6d8336-a42f-49f5-a849-ad2fb26c051c"
 				}
 			]
 		}

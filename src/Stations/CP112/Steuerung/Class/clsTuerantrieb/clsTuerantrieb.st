@@ -6,7 +6,7 @@
 <Class
 	Name               = "clsTuerantrieb"
 	Revision           = "0.0"
-	GUID               = "{81752E66-C7DD-4E81-B2C6-BFB66B5A423B}"
+	GUID               = "{EA810283-31C7-42B4-8639-95BBACEA349D}"
 	RealtimeTask       = "false"
 	CyclicTask         = "true"
 	DefCyclictime      = "1 ms"
@@ -19,9 +19,8 @@
 	SharedCommandTable = "true"
 	Objectsize         = "(284,120)">
 	<Channels>
-		<Server Name="ClassSvr" GUID="{20554CFF-8F4A-4DFA-AA9C-0622145B9770}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Client Name="cAuf" Required="true" Internal="false"/>
-		<Client Name="cZu" Required="true" Internal="false"/>
+		<Server Name="ClassSvr" GUID="{E4B2D172-8AC0-4A1A-9D4C-A760138BE3B0}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Client Name="cFahrbefehl" Required="false" Internal="false"/>
 	</Channels>
 </Class>
 *)
@@ -29,9 +28,9 @@ clsTuerantrieb : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
   //Clients:
-	cAuf 	: CltCh_DINT;
-	cZu 	: CltCh_DINT;
+	cFahrbefehl 	: CltChCmd_clsMotorControl;
   //Variables:
+		iStep 	: DINT;
   //Functions:
 	
 	FUNCTION VIRTUAL GLOBAL CyWork
@@ -41,6 +40,15 @@ clsTuerantrieb : CLASS
 		VAR_OUTPUT
 			state (EAX) 	: UDINT;
 		END_VAR;
+	
+	FUNCTION GLOBAL Fahrt
+		VAR_INPUT
+			xDir 	: BOOL;
+			xStart 	: BOOL;
+		END_VAR
+		VAR_OUTPUT
+			xBusy 	: BOOL;
+		END_VAR;
   //Tables:
 	FUNCTION @STD
 		VAR_OUTPUT
@@ -49,6 +57,9 @@ clsTuerantrieb : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
+#pragma usingLtd clsMotorControl
+
+
 //}}LSL_DECLARATION
 
 
@@ -56,14 +67,13 @@ FUNCTION GLOBAL TAB clsTuerantrieb::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSTUERANTRIEB
 0$UINT, 0$UINT, (SIZEOF(::clsTuerantrieb))$UINT, 
-1$UINT, 2$UINT, 0$UINT, 
+1$UINT, 1$UINT, 0$UINT, 
 TO_UDINT(2244201560), "clsTuerantrieb", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsTuerantrieb.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
 //Clients:
-(::clsTuerantrieb.cAuf.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(2177794700), "cAuf", 
-(::clsTuerantrieb.cZu.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000010$UINT, TO_UDINT(3603495470), "cZu", 
+(::clsTuerantrieb.cFahrbefehl.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000000$UINT, TO_UDINT(1832219461), "cFahrbefehl", TO_UDINT(3506464711), "clsMotorControl", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 
@@ -99,16 +109,84 @@ FUNCTION clsTuerantrieb::@STD
 END_FUNCTION
 
 //{{LSL_IMPLEMENTATION
+FUNCTION VIRTUAL GLOBAL  clsTuerantrieb::CyWork
+VAR_INPUT
+    EAX : UDINT;
+END_VAR
+VAR_OUTPUT
+    state (EAX) : UDINT;
+END_VAR
+
+CASE iStep OF
+
+    0: // Stillstand
+        cFahrbefehl.stopNORMAL();
+
+    10: // PowerOn positiv
+        cFahrbefehl.powerOn();
+
+        IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+            iStep := 20;
+        END_IF;
+
+    20: // Fahren positiv
+        cFahrbefehl.moveABS(position:=1215752192, velocity:=800000, acceleration:=1215752192);
+
+    30: // PowerOn negativ
+        cFahrbefehl.powerOn();
+
+        IF cFahrbefehl.sMode = clsMotorControl::MOTOR_MODE::POWER_ON THEN
+            iStep := 40;
+        END_IF;
+
+    40: // Fahren negativ
+        cFahrbefehl.moveABS(position:=-1215752192, velocity:=800000, acceleration:=1215752192);
+
+    99: // Stop
+        cFahrbefehl.stopNORMAL();
+        iStep := 0;
+
+ELSE
+    iStep := 99;
+
+END_CASE;
+
+state := READY;
+
+END_FUNCTION
 
 
-FUNCTION VIRTUAL GLOBAL clsTuerantrieb::CyWork
-	VAR_INPUT
-		EAX 	: UDINT;
-	END_VAR
-	VAR_OUTPUT
-		state (EAX) 	: UDINT;
-	END_VAR
+FUNCTION GLOBAL clsTuerantrieb::Fahrt
+VAR_INPUT
+    xDir   : BOOL; // TRUE = hoch/positiv, FALSE = runter/negativ
+    xStart : BOOL;
+END_VAR
+VAR_OUTPUT
+    xBusy  : BOOL;
+END_VAR
 
-	state := READY;
+IF xStart THEN
+
+    IF xDir THEN
+        IF (iStep <> 10) AND (iStep <> 20) THEN
+            iStep := 10;
+        END_IF;
+    ELSE
+        IF (iStep <> 30) AND (iStep <> 40) THEN
+            iStep := 30;
+        END_IF;
+    END_IF;
+
+    xBusy := TRUE;
+
+ELSE
+
+    IF iStep <> 0 THEN
+        iStep := 99;
+    END_IF;
+
+    xBusy := FALSE;
+
+END_IF;
 
 END_FUNCTION

@@ -7,8 +7,8 @@
 	Name               = "clsAufzugmodul"
 	Revision           = "0.0"
 	GUID               = "{6DA5BEA4-29CA-4164-94B9-E39E374AD8FA}"
-	RealtimeTask       = "false"
-	CyclicTask         = "true"
+	RealtimeTask       = "true"
+	CyclicTask         = "false"
 	DefCyclictime      = "1 ms"
 	BackgroundTask     = "false"
 	Sigmatek           = "false"
@@ -23,6 +23,7 @@
 		<Client Name="cAnforderung" Required="true" Internal="false"/>
 		<Client Name="cAntriebAufzug" Required="true" Internal="false"/>
 		<Client Name="cAntriebTuer" Required="true" Internal="false"/>
+		<Client Name="cEMG_Stop" Required="true" Internal="false"/>
 		<Client Name="cEtagestatus" Required="true" Internal="false"/>
 		<Client Name="cTimerOffen" Required="true" Internal="false"/>
 		<Client Name="cTuerstatus" Required="true" Internal="false"/>
@@ -40,28 +41,33 @@ clsAufzugmodul : CLASS
 	    InitFahrtnachOben:=30,
 	    Hochfahrt:=31,
 	    EtagenOben:=32,
-	    TuerObenOeffnen:=33,
-	    TuerObenSchliessen
+	    TuerOeffnen:=33,
+	    TuerSchliessen,
+	    InitFahrtnachUnten:=40,
+	    Unterfahrt:=41,
+	    EtageUnten:=42,
+	    NotAus
 	  )$UDINT;
 	END_TYPE
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
   //Clients:
-	cTuerstatus 	: CltChCmd_clsTuerSensorik;
 	cEtagestatus 	: CltChCmd_clsEtagenSensorik;
-	cAntriebTuer 	: CltChCmd_clsAufzugantrieb;
-	cAntriebAufzug 	: CltChCmd_clsAufzugantrieb;
+	cTuerstatus 	: CltChCmd_clsTuerSensorik;
+	cAntriebAufzug 	: CltChCmd_clsAntrieb;
+	cAntriebTuer 	: CltChCmd_clsAntrieb;
 	cAnforderung 	: CltChCmd_clsHauptablauf;
 	cTimerOffen 	: CltChCmd_clsTimer;
 	cZeitOffen 	: CltCh_UDINT;
+	cEMG_Stop 	: CltChCmd_clsEmgStop_1;
   //Variables:
-		iStep 	: DINT;
+		iStep 	: Schritkette;
 		iAktEtage 	: DINT;
 		xZielOben 	: BOOL;
 		xZielUnten 	: BOOL;
   //Functions:
 	
-	FUNCTION VIRTUAL GLOBAL CyWork
+	FUNCTION VIRTUAL GLOBAL RtWork
 		VAR_INPUT
 			EAX 	: UDINT;
 		END_VAR
@@ -76,7 +82,8 @@ clsAufzugmodul : CLASS
 	FUNCTION GLOBAL TAB @CT_;
 END_CLASS;
 
-#pragma usingLtd clsAufzugantrieb
+#pragma usingLtd clsAntrieb
+#pragma usingLtd clsEmgStop_1
 #pragma usingLtd clsEtagenSensorik
 #pragma usingLtd clsHauptablauf
 #pragma usingLtd clsTimer
@@ -90,19 +97,20 @@ FUNCTION GLOBAL TAB clsAufzugmodul::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSAUFZUGMODUL
 0$UINT, 0$UINT, (SIZEOF(::clsAufzugmodul))$UINT, 
-1$UINT, 7$UINT, 0$UINT, 
+1$UINT, 8$UINT, 0$UINT, 
 TO_UDINT(1857403904), "clsAufzugmodul", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsAufzugmodul.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
 //Clients:
-(::clsAufzugmodul.cTuerstatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1125833511), "cTuerstatus", TO_UDINT(712717468), "clsTuerSensorik", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cEtagestatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3983586727), "cEtagestatus", TO_UDINT(206957904), "clsEtagenSensorik", 0$UINT, 0$UINT, 
-(::clsAufzugmodul.cAntriebTuer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(426174968), "cAntriebTuer", TO_UDINT(1641204752), "clsAufzugantrieb", 0$UINT, 0$UINT, 
-(::clsAufzugmodul.cAntriebAufzug.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(614673068), "cAntriebAufzug", TO_UDINT(1641204752), "clsAufzugantrieb", 0$UINT, 0$UINT, 
+(::clsAufzugmodul.cTuerstatus.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1125833511), "cTuerstatus", TO_UDINT(712717468), "clsTuerSensorik", 0$UINT, 0$UINT, 
+(::clsAufzugmodul.cAntriebAufzug.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(614673068), "cAntriebAufzug", TO_UDINT(1680230051), "clsAntrieb", 0$UINT, 0$UINT, 
+(::clsAufzugmodul.cAntriebTuer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(426174968), "cAntriebTuer", TO_UDINT(1680230051), "clsAntrieb", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cAnforderung.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(3406365320), "cAnforderung", TO_UDINT(971323912), "clsHauptablauf", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cTimerOffen.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(263165870), "cTimerOffen", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
 (::clsAufzugmodul.cZeitOffen.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(1512785699), "cZeitOffen", 
+(::clsAufzugmodul.cEMG_Stop.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1127134604), "cEMG_Stop", TO_UDINT(2446850983), "clsEmgStop_1", 0$UINT, 0$UINT, 
 END_FUNCTION
 
 
@@ -125,7 +133,7 @@ FUNCTION clsAufzugmodul::@STD
 
 	//Command Methods
 	InitCmdTable (nCmd := nSTDCMD + USER_CNT_clsAufzugmodul, pCmd := #vmt.CmdTable);
-	vmt.CmdTable.CyWork		:= #CyWork();
+	vmt.CmdTable.RtWork		:= #RtWork();
 	ClassSvr.pMeth		:= StoreCmd (pCmd := #vmt.CmdTable, SHARED);
 
 	IF ClassSvr.pMeth THEN
@@ -140,283 +148,304 @@ END_FUNCTION
 //{{LSL_IMPLEMENTATION
 
 
-FUNCTION VIRTUAL GLOBAL clsAufzugmodul::CyWork
+FUNCTION VIRTUAL GLOBAL clsAufzugmodul::RtWork
 	VAR_INPUT
 		EAX 	: UDINT;
 	END_VAR
 	VAR_OUTPUT
 		state (EAX) 	: UDINT;
-	END_VAR
-
-	state := READY;
-//Client verlinkung
-cZeitOffen := cZeitOffen.Read();
-
-//Einfuegen iStep := 0; als Init ist mir noch unklar
-
-//Aktuelle Etage an Aufzugmodul uebergeben
-iAktEtage := cEtagestatus.AktEtage();
+	END_VAr
+  
 
 
+  
+  //Notaus zustand
+  IF cEMG_Stop.EmgStop() THEN
+    iStep := NotAus;
+  END_IF;
 
-Case iStep of
-  
-  
-  0: // Initialschritt
-  
-  
-  iStep := 10;
-  
-  10: //Fahranforderung
-  
-    IF cAnforderung.Anf0(xIn:=FALSE) OR
-       cAnforderung.Anf1(xIn:=FALSE) OR
-       cAnforderung.Anf2(xIn:=FALSE) OR
-       cAnforderung.Anf3(xIn:=FALSE) THEN
-      iStep := 20;
-//    ELSE     String status koennte man da rein tun
-//      sStatus
-    END_IF;
-  
-  20: // Fahrtrichtung evaluieren
+
+  // Parameter lesen
+  cEMG_Stop := cEMG_Stop.Read();
+  cZeitOffen := cZeitOffen.Read();
+
+  // Aktuelle Etage lesen
+  iAktEtage := cEtagestatus.AktEtage();
+
+
+  CASE iStep OF
+
+
+  Initialisierung:
+
+      cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
+      cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
+
+      iStep := Fahranforderung;
+
+
+
+  Fahranforderung:
+
+      IF cAnforderung.Anf0(xIn := FALSE) OR
+         cAnforderung.Anf1(xIn := FALSE) OR
+         cAnforderung.Anf2(xIn := FALSE) OR
+         cAnforderung.Anf3(xIn := FALSE) THEN
+
+          iStep := FahrrichtungSuchen;
+          
+      ELSIF cAnforderung.TuerAuf() THEN // falls jemand im Lift bleibt und nach schliessung aufmachen will
+         iStep := TuerOeffnen;
+      END_IF;
+
+
+
+  FahrrichtungSuchen:
+
       xZielOben := FALSE;
       xZielUnten := FALSE;
 
       CASE iAktEtage OF
 
           0:
-              IF cAnforderung.Anf1(xIn:=FALSE) OR
-                 cAnforderung.Anf2(xIn:=FALSE) OR 
-                 cAnforderung.Anf3(xIn:=FALSE) THEN
-                  xZielOben := TRUE;     // Etage 1, 2 oder 3
+              IF cAnforderung.Anf1(xIn := FALSE) OR
+                 cAnforderung.Anf2(xIn := FALSE) OR
+                 cAnforderung.Anf3(xIn := FALSE) THEN
+                  xZielOben := TRUE;
               END_IF;
-
-              //Wenn bereits auf Etage dann reset Anfrage
-               IF cAnforderung.Anf0(xIn:=FALSE) THEN
-                  cAnforderung.Anf0(xIn:=TRUE);
-               END_IF;
 
 
           1:
-
-              IF cAnforderung.Anf2(xIn:=FALSE) OR 
-                 cAnforderung.Anf3(xIn:=FALSE) THEN
-                  xZielOben := TRUE;     // Etage 2 oder 3
+              IF cAnforderung.Anf2(xIn := FALSE) OR
+                 cAnforderung.Anf3(xIn := FALSE) THEN
+                  xZielOben := TRUE;
               END_IF;
 
-              IF cAnforderung.Anf0(xIn:=FALSE) THEN
-                  xZielUnten := TRUE;    // Etage 0
+              IF cAnforderung.Anf0(xIn := FALSE) THEN
+                  xZielUnten := TRUE;
               END_IF;
-              
-              //Wenn bereits auf Etage dann reset Anfrage
-               IF cAnforderung.Anf1(xIn:=FALSE) THEN
-                  cAnforderung.Anf1(xIn:=TRUE);
-               END_IF;
+
 
           2:
-              IF cAnforderung.Anf3(xIn:=FALSE) THEN
-                  xZielOben := TRUE;     // Etage 3
+
+              IF cAnforderung.Anf3(xIn := FALSE) THEN
+                  xZielOben := TRUE;
               END_IF;
 
-              IF cAnforderung.Anf0(xIn:=FALSE) OR 
-                 cAnforderung.Anf1(xIn:=FALSE) THEN
-                  xZielUnten := TRUE;    // Etage 0 oder 1
+              IF cAnforderung.Anf0(xIn := FALSE) OR
+                 cAnforderung.Anf1(xIn := FALSE) THEN
+                  xZielUnten := TRUE;
               END_IF;
-              
-              //Wenn bereits auf Etage dann reset Anfrage
-               IF cAnforderung.Anf2(xIn:=FALSE) THEN
-                  cAnforderung.Anf2(xIn:=TRUE);
-               END_IF;              
-              
-              
+
+
           3:
-              IF cAnforderung.Anf0(xIn:=FALSE) OR
-                 cAnforderung.Anf1(xIn:=FALSE) OR 
-                 cAnforderung.Anf2(xIn:=FALSE) THEN
-                  xZielUnten := TRUE;    // Etage 0, 1 oder 2
+
+              IF cAnforderung.Anf0(xIn := FALSE) OR
+                 cAnforderung.Anf1(xIn := FALSE) OR
+                 cAnforderung.Anf2(xIn := FALSE) THEN
+                  xZielUnten := TRUE;
               END_IF;
-              
-              //Wenn bereits auf Etage dann reset Anfrage
-               IF cAnforderung.Anf3(xIn:=FALSE) THEN
-                  cAnforderung.Anf3(xIn:=TRUE);
-               END_IF;              
-              
 
       END_CASE;
-  
-      // Fahrt aufgeben
+
+
       IF xZielOben THEN
-          iStep := 30;
+          iStep := InitFahrtnachOben;
 
       ELSIF xZielUnten THEN
-
-          iStep := 40;
+          iStep := InitFahrtnachUnten;
 
       ELSE
-
-          iStep := 10;
+          iStep := TuerOeffnen; //wenn die Anforderung auf der bereits stehenden Etage kommt,oeffnen
       END_IF;
-      
-  30: // 30er = Fahrt nach oben
-    
-      //prüfen ob Türe zu
+
+
+
+  InitFahrtnachOben:
+
       IF cTuerstatus.istzu() THEN
-        
-        iStep := 31;
-      ELSIF cAnforderung.TuerAuf() THEN  // unterbruch durch bedienung am HMI 
-            
-        iStep := 33; //Tuer Aufmachen
+
+          cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
+          iStep := Hochfahrt;
+
+      ELSIF cAnforderung.TuerAuf() THEN
+
+          iStep := TuerOeffnen;
 
       ELSE
-        cTuerstatus.zu();//Simulation
-        cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
-      
+
+          cTuerstatus.zu(); // Simulation
+          cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
 
       END_IF;
-  
 
-  31: // Hochfahren
-          
-        cEtagestatus.hoch();
-        cAntriebAufzug.FahrtPos(xEn:=TRUE); //Hoch
-        
+
+
+  Hochfahrt:
+
+      cEtagestatus.hoch();
+      cAntriebAufzug.Fahrt(xDir := TRUE, xStart := TRUE);
+
       IF cEtagestatus.erreicht() THEN
-        iStep := 32;
+          cAntriebAufzug.Fahrt(xDir := TRUE, xStart := FALSE);
+          iStep := EtagenOben;
       END_IF;
-      
-  32: // Prüfen ob aktuelle Etage angefordert ist
 
-       cAntriebAufzug.FahrtPos(xEn:=FALSE); // Aufzug stoppen
-       iAktEtage := cEtagestatus.AktEtage(); // aktuelle Etage neu lesen
 
-       IF (cAnforderung.Anf0(xIn := FALSE) AND (iAktEtage = 0)) OR
-          (cAnforderung.Anf1(xIn := FALSE) AND (iAktEtage = 1)) OR
-          (cAnforderung.Anf2(xIn := FALSE) AND (iAktEtage = 2)) OR
-          (cAnforderung.Anf3(xIn := FALSE) AND (iAktEtage = 3)) THEN
 
-          iStep := 33;
-       ELSE
-          iStep := 31;
-       END_IF;
+  EtagenOben:
 
-  33: //Tuer oefffnen
-        cTuerstatus.auf();
-        cAntriebTuer.FahrtNeg(xEn:=TRUE);// oeffen
+      iAktEtage := cEtagestatus.AktEtage();
 
-        IF cTuerstatus.istauf() AND NOT cTimerOffen.running() THEN
-          // Tuerantrieb stoppen
-          cAntriebTuer.FahrtNeg(xEn:=FALSE); 
-          cTimerOffen.start(_time:=cZeitOffen);
-        END_IF;
-        
-        IF cTimerOffen.elapsed() OR cAnforderung.TuerZu() THEN //Wenn direkt schalter zu gedruekt wird
-          cTimerOffen.reset();        
-          iStep := 34; //Tuer schliessen
-        END_IF;
-    
-    
-   34: //Tuer schliessen
-        
-        cTuerstatus.zu();//Simulation
-        cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
-        
-        
-        IF cTuerstatus.istzu() THEN 
-        // Tuerantrieb stoppen
-          cAntriebTuer.FahrtPos(xEn:=FALSE); 
-        // Anfrage loeschen
-          IF iAktEtage = 0 THEN
-             cAnforderung.Anf0(xIn:=TRUE);
-          ELSIF iAktEtage = 1 THEN
-             cAnforderung.Anf1(xIn:=TRUE);
-          ELSIF iAktEtage = 2 THEN
-             cAnforderung.Anf2(xIn:=TRUE);          
-          ELSIF iAktEtage = 3 THEN
-             cAnforderung.Anf3(xIn:=TRUE);                 
+      IF (cAnforderung.Anf0(xIn := FALSE) AND (iAktEtage = 0)) OR
+         (cAnforderung.Anf1(xIn := FALSE) AND (iAktEtage = 1)) OR
+         (cAnforderung.Anf2(xIn := FALSE) AND (iAktEtage = 2)) OR
+         (cAnforderung.Anf3(xIn := FALSE) AND (iAktEtage = 3)) THEN
+
+          cAntriebAufzug.Fahrt(xDir := TRUE, xStart := FALSE);
+          iStep := TuerOeffnen;
+
+      ELSE
+
+          iStep := Hochfahrt;
+
+      END_IF;
+
+
+
+  InitFahrtnachUnten:
+
+      IF cTuerstatus.istzu() THEN
+
+          cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
+          iStep := Unterfahrt;
+
+      ELSIF cAnforderung.TuerAuf() THEN
+
+          iStep := TuerOeffnen;
+
+      ELSE
+
+          cTuerstatus.zu(); // Simulation
+          cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
+
+      END_IF;
+
+
+
+  Unterfahrt:
+
+      cEtagestatus.runter();
+      cAntriebAufzug.Fahrt(xDir := FALSE, xStart := TRUE);
+
+      IF cEtagestatus.erreicht() THEN
+          cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
+          iStep := EtageUnten;
+      END_IF;
+
+
+
+  EtageUnten:
+
+      iAktEtage := cEtagestatus.AktEtage();
+
+      IF (cAnforderung.Anf0(xIn := FALSE) AND (iAktEtage = 0)) OR
+         (cAnforderung.Anf1(xIn := FALSE) AND (iAktEtage = 1)) OR
+         (cAnforderung.Anf2(xIn := FALSE) AND (iAktEtage = 2)) OR
+         (cAnforderung.Anf3(xIn := FALSE) AND (iAktEtage = 3)) THEN
+
+          cAntriebAufzug.Fahrt(xDir := FALSE, xStart := FALSE);
+          iStep := TuerOeffnen;
+
+      ELSE
+
+          iStep := Unterfahrt;
+
+      END_IF;
+
+
+
+  TuerOeffnen:
+
+      cTuerstatus.auf(); // Simulation
+      cAntriebTuer.Fahrt(xDir := FALSE, xStart := TRUE); // Tür öffnen
+
+      IF cTuerstatus.istauf() THEN
+
+          cAntriebTuer.Fahrt(xDir := FALSE, xStart := FALSE);
+
+          IF NOT cTimerOffen.running() THEN
+              cTimerOffen.start(_time := cZeitOffen);
           END_IF;
-        
-          iStep := 10;//Zurück zur prüfung Fahranforderung
-        END_IF;
-        
-  40: // 40er = Fahrt nach unten
-    
-      //prüfen ob Türe zu
-      IF cTuerstatus.istzu() THEN
-        
-        iStep := 41;
-      ELSIF NOT cAnforderung.TuerAuf() THEN  // unterbruch durch bedienung am HMI 
-      
-        cTuerstatus.zu();//Simulation
-        cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
-      ELSE
-      
-        iStep := 43; //Tuer Aufmachen
-      END_IF;
-  
 
-  41: // Runterfahren
-          
-        cEtagestatus.runter();
-        cAntriebAufzug.FahrtNeg(xEn:=TRUE); //Runter
-        
-      IF cEtagestatus.erreicht() THEN
-        iStep := 42;
       END_IF;
-      
-  42: // Prüfen ob aktuelle Etage angefordert ist
-  
-    cAntriebAufzug.FahrtNeg(xEn:=FALSE); // Aufzug stoppen
-    iAktEtage := cEtagestatus.AktEtage(); // aktuelle Etage neu lesen
-  
-    IF (cAnforderung.Anf0(xIn:=FALSE) AND (iAktEtage = 0)) OR
-       (cAnforderung.Anf1(xIn:=FALSE) AND (iAktEtage = 1)) OR
-       (cAnforderung.Anf2(xIn:=FALSE) AND (iAktEtage = 2)) OR
-       (cAnforderung.Anf3(xIn:=FALSE) AND (iAktEtage = 3)) THEN
-       
-      iStep := 43;
-    ELSE
-      iStep := 41;
-    END_IF;
-      
-  43: //Tuer oefffnen
-        cTuerstatus.auf();
-        cAntriebTuer.FahrtNeg(xEn:=TRUE);// oeffen
-        
-        IF cTuerstatus.istauf() AND NOT cTimerOffen.running() THEN
-          cAntriebTuer.FahrtNeg(xEn:=FALSE);
-          cTimerOffen.start(_time:=cZeitOffen);
-        END_IF;
-        
-        IF cTimerOffen.elapsed() OR cAnforderung.TuerZu() THEN //Wenn direkt schalter zu gedruekt wird
+
+
+      IF cTimerOffen.elapsed() OR cAnforderung.TuerZu() THEN
+
           cTimerOffen.reset();
-          iStep := 44; //Tuer schliessen
-        END_IF;
-    
-    
-   44: //Tuer schliessen
-        
-        cTuerstatus.zu();//Simulation
-        cAntriebTuer.FahrtPos(xEn:=TRUE); //Aktor schliessen
-        
-        
-        IF cTuerstatus.istzu() THEN
-          // Tuerantrieb stoppen
-          cAntriebTuer.FahrtPos(xEn:=FALSE); 
-          // Anfrage loeschen
-          IF iAktEtage = 0 THEN
-             cAnforderung.Anf0(xIn:=TRUE);
-          ELSIF iAktEtage = 1 THEN
-             cAnforderung.Anf1(xIn:=TRUE);
-          ELSIF iAktEtage = 2 THEN
-             cAnforderung.Anf2(xIn:=TRUE);          
-          ELSIF iAktEtage = 3 THEN
-             cAnforderung.Anf3(xIn:=TRUE);                 
-          END_IF;
-          
-          iStep := 10;//Zurück zur prüfung Fahranforderung
-        END_IF;
-  
-END_CASE;  
+          iStep := TuerSchliessen;
 
+      END_IF;
+
+
+
+ TuerSchliessen:
+
+    IF cAnforderung.TuerAuf() THEN
+
+        cAntriebTuer.Fahrt(xDir := TRUE, xStart := FALSE);
+        iStep := TuerOeffnen;
+
+    ELSE
+
+        cTuerstatus.zu(); // Simulation
+        cAntriebTuer.Fahrt(xDir := TRUE, xStart := TRUE); // Tür schliessen
+
+        IF cTuerstatus.istzu() THEN
+
+            cAntriebTuer.Fahrt(xDir := TRUE, xStart := FALSE);
+
+            iAktEtage := cEtagestatus.AktEtage();
+
+            IF iAktEtage = 0 THEN
+                cAnforderung.Anf0(xIn := TRUE);
+
+            ELSIF iAktEtage = 1 THEN
+                cAnforderung.Anf1(xIn := TRUE);
+
+            ELSIF iAktEtage = 2 THEN
+                cAnforderung.Anf2(xIn := TRUE);
+
+            ELSIF iAktEtage = 3 THEN
+                cAnforderung.Anf3(xIn := TRUE);
+
+            END_IF;
+
+            iStep := Initialisierung;
+
+        END_IF;
+
+    END_IF;
+
+
+  NotAus:
+    cAntriebAufzug.NotAus(xIn:=TRUE);
+    cAntriebTuer.NotAus(xIn:=TRUE);
+  
+    IF NOT cEMG_Stop.EmgStop()  THEN
+      cAntriebAufzug.NotAus(xIn:=FALSE);
+      cAntriebTuer.NotAus(xIn:=FALSE);
+      iStep := Initialisierung;
+    END_IF;
+
+    
+
+  END_CASE;
+
+ cEMG_Stop:= 1;
+
+
+	state := READY;
 
 END_FUNCTION

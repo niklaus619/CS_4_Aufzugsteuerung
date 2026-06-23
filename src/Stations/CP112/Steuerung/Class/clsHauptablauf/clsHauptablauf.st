@@ -20,6 +20,12 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{F8330AE8-2493-4EA9-9D35-C4FD45810E95}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sAnf0" GUID="{E4A1D0C9-D463-4ECE-BB1A-921D0F2AAFF2}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sAnf1" GUID="{ED67BD7E-9602-4A87-8F29-00EC4FBB4020}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sAnf2" GUID="{54CEFB8B-8FD1-4068-9BCF-32B4532763F5}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sAnf3" GUID="{D297CD8D-4336-4C90-88FE-D6551A3EC876}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
+		<Server Name="sLichtschranke" GUID="{0E04B578-FA18-411C-B2A6-C69DDF7EFE97}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Server Name="sZielEtage" GUID="{36A9561C-728D-42E2-9BD7-14C899FA08C6}" Visualized="true" Initialize="false" WriteProtected="true" Retentive="false"/>
 		<Client Name="cHMI" Required="true" Internal="false"/>
 	</Channels>
 </Class>
@@ -27,6 +33,12 @@
 clsHauptablauf : CLASS
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
+	sAnf0 	: SvrCh_DINT;
+	sAnf1 	: SvrCh_DINT;
+	sAnf2 	: SvrCh_DINT;
+	sAnf3 	: SvrCh_DINT;
+	sLichtschranke 	: SvrCh_DINT;
+	sZielEtage 	: SvrCh_DINT;
   //Clients:
 	cHMI 	: CltChCmd_clsHMI;
   //Variables:
@@ -103,11 +115,17 @@ FUNCTION GLOBAL TAB clsHauptablauf::@CT_
 0$UINT,
 2#0100000000000010$UINT, //TY_CLSHAUPTABLAUF
 0$UINT, 0$UINT, (SIZEOF(::clsHauptablauf))$UINT, 
-1$UINT, 1$UINT, 0$UINT, 
+7$UINT, 1$UINT, 0$UINT, 
 TO_UDINT(971323912), "clsHauptablauf", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsHauptablauf.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
+(::clsHauptablauf.sAnf0.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(1623655867), "sAnf0", 
+(::clsHauptablauf.sAnf1.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(398472493), "sAnf1", 
+(::clsHauptablauf.sAnf2.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2395563159), "sAnf2", 
+(::clsHauptablauf.sAnf3.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(4191048705), "sAnf3", 
+(::clsHauptablauf.sLichtschranke.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2924489048), "sLichtschranke", 
+(::clsHauptablauf.sZielEtage.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(302256956), "sZielEtage", 
 //Clients:
 (::clsHauptablauf.cHMI.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(2629516491), "cHMI", TO_UDINT(1223415905), "clsHMI", 0$UINT, 0$UINT, 
 END_FUNCTION
@@ -141,6 +159,13 @@ FUNCTION clsHauptablauf::@STD
 		ret_code	:= C_OUTOF_NEAR;
 		RETURN;
 	END_IF;
+	sLichtschranke.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF sLichtschranke.pMeth THEN
+		ret_code	:= C_OK;
+	ELSE
+		ret_code	:= C_OUTOF_NEAR;
+		RETURN;
+	END_IF;
 
 END_FUNCTION
 
@@ -158,6 +183,70 @@ FUNCTION VIRTUAL GLOBAL clsHauptablauf::CyWork
     // Hier werden zyklische Aufgaben des Hauptablaufs ausgeführt.
     // Die Anforderungsverwaltung erfolgt direkt über die Funktionen
     // Anf0() bis Anf3().
+    
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage0() THEN
+        xAnf0 := TRUE;
+    END_IF;
+    
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage1() THEN
+        xAnf1 := TRUE;
+    END_IF;
+    
+    // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage2() THEN
+        xAnf2 := TRUE;
+    END_IF;
+    
+     // Neue Anforderung von HMI übernehmen
+    IF cHMI.Etage3() THEN
+        xAnf3 := TRUE;
+    END_IF;
+    
+    
+    // Weiterleitung an HMI
+    //Anfragen
+    IF xAnf0 THEN
+      sAnf0 := 1;
+    ELSE
+      sAnf0 := 0;
+    END_IF;
+
+    IF xAnf1 THEN
+      sAnf1 := 1;
+    ELSE
+      sAnf1 := 0;
+    END_IF;
+
+    IF xAnf2 THEN
+      sAnf2 := 1;
+    ELSE
+      sAnf2 := 0;
+    END_IF;
+
+    IF xAnf3 THEN
+      sAnf3 := 1;
+    ELSE
+      sAnf3 := 0;
+    END_IF;
+
+    //Lichtschranke
+    sLichtschranke := cHMI.Lichtschranke();
+   
+
+    IF xAnf0 THEN
+      sZielEtage := 0;
+    ELSIF xAnf1 THEN
+      sZielEtage := 1;
+    ELSIF xAnf2 THEN
+      sZielEtage := 2;
+    ELSIF xAnf3 THEN
+      sZielEtage := 3;
+    ELSE
+    sZielEtage := -1; // keine Ziel-Etage
+    END_IF;
+  
 
 	state := READY;
 
@@ -171,7 +260,7 @@ FUNCTION GLOBAL clsHauptablauf::TuerZu
 	END_VAR
   
   //Weitergabe von IO
-xOut := cHMI.Tuerzu();
+   xOut := cHMI.Tuerzu();
 END_FUNCTION
 
 
@@ -181,7 +270,13 @@ FUNCTION GLOBAL clsHauptablauf::TuerAuf
 	END_VAR
     
   //Weitergabe von IO
-xOut := cHMI.Tuerauf();
+  IF cHMI.Tuerauf() OR (sLichtschranke <> 1) THEN //Lichtschranke MUSS 1 sein 
+    xOut := TRUE;
+  ELSE
+    xOut := FALSE;
+  END_IF;
+ 
+
 END_FUNCTION
 
 
@@ -193,10 +288,7 @@ FUNCTION GLOBAL clsHauptablauf::Anf0
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage0() THEN
-        xAnf0 := TRUE;
-    END_IF;
+
 
     // Anforderung löschen (z.B. nach Bedienung der Etage)
     IF xIn THEN
@@ -217,10 +309,6 @@ FUNCTION GLOBAL clsHauptablauf::Anf1
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage1() THEN
-        xAnf1 := TRUE;
-    END_IF;
 
     // Anforderung löschen
     IF xIn THEN
@@ -241,10 +329,6 @@ FUNCTION GLOBAL clsHauptablauf::Anf2
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage2() THEN
-        xAnf2 := TRUE;
-    END_IF;
 
     // Anforderung löschen
     IF xIn THEN
@@ -264,11 +348,6 @@ FUNCTION GLOBAL clsHauptablauf::Anf3
 		xOut : BOOL;
 	END_VAR
 
-    // Neue Anforderung von HMI übernehmen
-    IF cHMI.Etage3() THEN
-        xAnf3 := TRUE;
-    END_IF;
-
     // Anforderung löschen
     IF xIn THEN
         xAnf3 := FALSE;
@@ -276,5 +355,7 @@ FUNCTION GLOBAL clsHauptablauf::Anf3
 
     // Aktuellen Status zurückgeben
     xOut := xAnf3;
+
+  sLichtschranke := 1;
 
 END_FUNCTION

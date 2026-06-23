@@ -14,16 +14,6 @@
 		</IOConnections>
 	</Entry>
 	<Entry
-		Name       = "IO_Element"
-		GUID       = "{1B1FBF7F-BD8D-4062-BB64-37009F707FDC}"
-		Objectsize = "284"
-		TempObj    = "true">
-		<!-- List of Connections -->
-		<IOConnections>
-			<IOConnection ObjSrv="DM0811" Server="Input1" ObjClt="clsEnableDrive1" Client="cIn1" IOI="Input" Type="Digital" SortIndex="11" KeyName="000011" Advanced="0"/>
-		</IOConnections>
-	</Entry>
-	<Entry
 		Name       = "IO_Element0"
 		GUID       = "{5421467A-4154-47B1-8671-9C215A35A6BB}"
 		Objectsize = "284"
@@ -33,44 +23,10 @@
 			<IOConnection ObjSrv="DM0811" Server="Output1" ObjClt="clsEnableDrive1" Client="cOut1" IOI="Output" Type="Digital" SortIndex="12" KeyName="000012" Advanced="0"/>
 		</IOConnections>
 	</Entry>
-	<Entry
-		Name       = "IO_Element1"
-		GUID       = "{A9980A06-AE0C-4504-838F-363C51F06801}"
-		Objectsize = "284"
-		TempObj    = "true">
+	<Entry Name="IO_Element1" GUID="{603FE153-9B8D-4F4E-945D-579391346734}" Objectsize="284">
 		<!-- List of Connections -->
 		<IOConnections>
-			<IOConnection ObjSrv="DM1611" Server="Input1" ObjClt="clsHMI1" Client="cTaster1" IOI="Input" Type="Digital" SortIndex="1" KeyName="000006" Advanced="0"/>
-		</IOConnections>
-	</Entry>
-	<Entry
-		Name       = "IO_Element2"
-		GUID       = "{1CB4956A-8FEA-4160-A071-61D65219C967}"
-		Objectsize = "284"
-		TempObj    = "true">
-		<!-- List of Connections -->
-		<IOConnections>
-			<IOConnection ObjSrv="DM1611" Server="Input2" ObjClt="clsHMI1" Client="cTaster2" IOI="Input" Type="Digital" SortIndex="2" KeyName="000007" Advanced="0"/>
-		</IOConnections>
-	</Entry>
-	<Entry
-		Name       = "IO_Element3"
-		GUID       = "{0C4F6025-12EF-42E4-8999-731E84AF0109}"
-		Objectsize = "284"
-		TempObj    = "true">
-		<!-- List of Connections -->
-		<IOConnections>
-			<IOConnection ObjSrv="DM1611" Server="Input3" ObjClt="clsHMI1" Client="cTaster3" IOI="Input" Type="Digital" SortIndex="3" KeyName="000008" Advanced="0"/>
-		</IOConnections>
-	</Entry>
-	<Entry
-		Name       = "IO_Element4"
-		GUID       = "{1921FDC2-96DC-47AD-992D-1E777B75E3C5}"
-		Objectsize = "284"
-		TempObj    = "true">
-		<!-- List of Connections -->
-		<IOConnections>
-			<IOConnection ObjSrv="DM1611" Server="Input4" ObjClt="clsHMI1" Client="cTaster4" IOI="Input" Type="Digital" SortIndex="4" KeyName="000009" Advanced="0"/>
+			<IOConnection ObjSrv="SCP1111" Server="QuitComError" IOI="Output" Type="Digital" SortIndex="22" KeyName="000019" Advanced="0"/>
 		</IOConnections>
 	</Entry>
 	<Entry
@@ -101,6 +57,86 @@
 		<!-- List of Connections -->
 		<IOConnections>
 			<IOConnection ObjSrv="DM0811" Server="Output4" ObjClt="clsEnableDrive1" Client="cOut4" IOI="Output" Type="Digital" SortIndex="15" KeyName="000015" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "xI_Emg1_1"
+		GUID       = "{3069C101-2317-4F40-B9FC-510B7B83DD91}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="SDM0811" Server="Safe_Input1" ObjClt="clsEmgStop_1" Client="c1" IOI="Input" Type="Digital" SortIndex="16" KeyName="000016" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "xI_Emg1_2"
+		GUID       = "{C00BE271-ECD7-4167-A02F-F4DAFE944A78}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="SDM0811" Server="Safe_Input2" ObjClt="clsEmgStop_1" Client="c2" IOI="Input" Type="Digital" SortIndex="17" KeyName="000017" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "xI_EnMotoren"
+		GUID       = "{1B1FBF7F-BD8D-4062-BB64-37009F707FDC}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM0811" Server="Input4" ObjClt="clsEnableDrive1" Client="cIn1" IOI="Input" Type="Digital" SortIndex="11" KeyName="000011" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "xI_Etage0"
+		GUID       = "{A9980A06-AE0C-4504-838F-363C51F06801}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM1611" Server="Input1" ObjClt="clsHMI1" Client="cTaster1" IOI="Input" Type="Digital" SortIndex="1" KeyName="000006" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "xI_Etage1"
+		GUID       = "{1CB4956A-8FEA-4160-A071-61D65219C967}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM1611" Server="Input2" ObjClt="clsHMI1" Client="cTaster2" IOI="Input" Type="Digital" SortIndex="2" KeyName="000007" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "xI_Etage2"
+		GUID       = "{0C4F6025-12EF-42E4-8999-731E84AF0109}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM1611" Server="Input3" ObjClt="clsHMI1" Client="cTaster3" IOI="Input" Type="Digital" SortIndex="3" KeyName="000008" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "xI_Etage3"
+		GUID       = "{1921FDC2-96DC-47AD-992D-1E777B75E3C5}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM1611" Server="Input4" ObjClt="clsHMI1" Client="cTaster4" IOI="Input" Type="Digital" SortIndex="4" KeyName="000009" Advanced="0"/>
+		</IOConnections>
+	</Entry>
+	<Entry
+		Name       = "xI_Lichtschranke"
+		GUID       = "{AA5ABEF9-9E63-475C-AB85-53F03C9776C6}"
+		Objectsize = "284"
+		TempObj    = "true">
+		<!-- List of Connections -->
+		<IOConnections>
+			<IOConnection ObjSrv="DM0811" Server="Input1" ObjClt="clsHMI1" Client="cLichtschranke" IOI="Input" Type="Digital" SortIndex="20" KeyName="000020" Advanced="0"/>
 		</IOConnections>
 	</Entry>
 	<!-- List of Folders -->

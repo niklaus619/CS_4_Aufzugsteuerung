@@ -7,7 +7,7 @@
 	WriteSrvListOnSave = "true"
 	CLASSType          = "true">
 	<OnlineConnectionInfo>
-		<TCPIP ConfigName="CP112" BUS="3" Password="" IP="10.10.150.1" PORT="1954" SomeFlags="0" PLCID="" Repeater="0" SSLTLS="0" Favorite="0"/>
+		<TCPIP ConfigName="CP112" BUS="3" Password="" IP="10.10.150.1" PORT="1954" SomeFlags="0" PLCID="" Repeater="0" SSLTLS="0" Favorite="1"/>
 	</OnlineConnectionInfo>
 	<HeaderFiles>
 		<File Path=".\Include\unit.h"/>
@@ -101,7 +101,7 @@
 		<File Path=".\Class\clsHauptablauf\clsHauptablauf.st"/>
 		<File Path=".\Class\clsAufzugmodul\clsAufzugmodul.st"/>
 		<File Path=".\Class\clsHMI\clsHMI.st"/>
-		<File Path=".\Class\clsAufzugantrieb\clsAufzugantrieb.st"/>
+		<File Path=".\Class\clsAntrieb\clsAntrieb.st"/>
 		<File Path=".\Class\clsEtagenSensorik\clsEtagenSensorik.st"/>
 		<File Path=".\Class\clsTuerSensorik\clsTuerSensorik.st"/>
 		<File Path=".\Class\BusInterfaceSDIASInternal\BusInterfaceSDIASInternal.st"/>
@@ -217,11 +217,13 @@
 		<File Path=".\Class\clsSimpleCounter\clsSimpleCounter.st"/>
 		<File Path=".\Class\clsCounter\clsCounter.st"/>
 		<File Path=".\Class\clsMotorControl\clsMotorControl.st"/>
+		<File Path=".\Class\clsEmgStop_1\clsEmgStop_1.st"/>
 	</ClassFiles>
 	<NetworkFiles>
 		<File Path=".\Network\NW1\NW1.lcn"/>
 		<File Path=".\Network\HW_Network0\HW_Network0.lcn"/>
 		<File Path=".\Network\Motion\Motion.lcn"/>
+		<File Path=".\Network\RT_EMG\RT_EMG.lcn"/>
 	</NetworkFiles>
 	<ObjectFiles>
 		<File Path=".\Loader\Source\Loader.lob" Downloadable="false"/>
@@ -238,7 +240,7 @@
 		<File Path=".\Class\_LMCAxis\_LMCAxis.vov"/>
 	</DocuFiles>
 	<Options>
-		<Target UseFPU="true" Processor="ARM">
+		<Target UseFPU="true">
 		</Target>
 		<Compiler
 			CompilerVersion         = "78"
@@ -253,7 +255,7 @@
 			ConditionConstant       = "true"
 			ExactTypeChecking       = "true"
 			CheckConnectionTypes    = "true"
-			CompileCFiles           = "true"
+			CompileCFiles           = "false"
 			Alignment               = "4 Byte"
 			ReducedClientDependency = "true"
 			MaxModuleErrorCount     = "100"

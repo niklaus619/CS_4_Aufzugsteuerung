@@ -3,7 +3,86 @@
 	"version": "0.0.96",
 	"id": "565014ee-2f46-4671-9c37-90087f2525a9",
 	"name": "SystemTexts",
-	"texts": [],
+	"texts": [
+		{
+			"type": "textElement",
+			"id": "63915d61-c310-47d8-9963-cf1976684e59",
+			"aliasName": "Etage 0",
+			"text": "Etage 0"
+		},
+		{
+			"type": "textElement",
+			"id": "8a55ae4c-4699-4cbb-b32d-c2c6c66d644c",
+			"aliasName": "Etage 1",
+			"text": "Etage 1"
+		},
+		{
+			"type": "textElement",
+			"id": "e5ef0288-f7a0-43e8-99e3-05630b34b7fe",
+			"aliasName": "0",
+			"text": "0"
+		},
+		{
+			"type": "textElement",
+			"id": "480ac2cb-2391-4f45-a605-d28c525555b7",
+			"aliasName": "1",
+			"text": "1"
+		},
+		{
+			"type": "textElement",
+			"id": "1ea2eb1b-e769-4839-99bc-03733b996b5e",
+			"aliasName": "2",
+			"text": "2"
+		},
+		{
+			"type": "textElement",
+			"id": "4d6add5c-1d2e-4da5-876e-4d2b3f4536ba",
+			"aliasName": "3",
+			"text": "3"
+		},
+		{
+			"type": "textElement",
+			"id": "2eb86014-5d02-47a9-bf55-73b3c4a59239",
+			"aliasName": "Etage 2",
+			"text": "Etage 2"
+		},
+		{
+			"type": "textElement",
+			"id": "003f9883-3b22-44b9-a396-76ef2986fa95",
+			"aliasName": "Etage 3",
+			"text": "Etage 3"
+		},
+		{
+			"type": "textElement",
+			"id": "4a78413c-e525-4208-bd48-8fc3b937f51c",
+			"aliasName": "Etage 4 ",
+			"text": "Etage 4"
+		},
+		{
+			"type": "textElement",
+			"id": "c0618279-b60a-44d9-9ba1-aa2812cf4d17",
+			"aliasName": "Unten",
+			"text": "Unten"
+		},
+		{
+			"type": "textElement",
+			"id": "6778f3c9-a19b-44a6-8cf6-0a49fb0ae857",
+			"aliasName": "Oben",
+			"text": "Oben"
+		},
+		{
+			"type": "textElement",
+			"id": "6759a860-579c-434d-8fa5-39f8b4334bee",
+			"aliasName": "/",
+			"text": "/"
+		},
+		{
+			"type": "textElement",
+			"id": "7de73a3d-5485-420a-a5d2-13d9f90be8d8",
+			"aliasName": "Tür",
+			"text": "Tür Auf"
+		}
+	],
 	"revision": {
 		"type": "Revision"
 	}

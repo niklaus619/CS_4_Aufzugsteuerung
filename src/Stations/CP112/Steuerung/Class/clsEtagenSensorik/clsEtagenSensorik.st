@@ -20,7 +20,7 @@
 	Objectsize         = "(284,120)">
 	<Channels>
 		<Server Name="ClassSvr" GUID="{98BA7F3D-F58D-458B-895E-CE489FDE0932}" Visualized="false" Initialize="false" WriteProtected="true" Retentive="false"/>
-		<Server Name="VisuEtage" GUID="{63336E9B-FACE-4370-872C-13E96F5B9F3C}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
+		<Server Name="sVisuEtage" GUID="{63336E9B-FACE-4370-872C-13E96F5B9F3C}" Visualized="true" Initialize="false" WriteProtected="false" Retentive="false"/>
 		<Client Name="cFahrzeit" Required="false" Internal="false"/>
 		<Client Name="cStockwerke" Required="false" Internal="false"/>
 		<Client Name="cTimer" Required="true" Internal="false"/>
@@ -28,12 +28,9 @@
 </Class>
 *)
 clsEtagenSensorik : CLASS
-	TYPE
-	  tEtage : DINT;
-	END_TYPE
   //Servers:
 	ClassSvr 	: SvrChCmd_DINT;
-	VisuEtage 	: SvrCh_DINT;
+	sVisuEtage 	: SvrCh_DINT;
   //Clients:
 	cTimer 	: CltChCmd_clsTimer;
 	cFahrzeit 	: CltCh_UDINT;
@@ -87,7 +84,7 @@ TO_UDINT(206957904), "clsEtagenSensorik", //Class
 TO_UDINT(0), 0, 0$UINT, 0$UINT, //Baseclass
 //Servers:
 (::clsEtagenSensorik.ClassSvr.pMeth)$UINT, _CH_CMD$UINT, 2#0000000000000000$UINT, TO_UDINT(619352855), "ClassSvr", 
-(::clsEtagenSensorik.VisuEtage.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(2202491676), "VisuEtage", 
+(::clsEtagenSensorik.sVisuEtage.pMeth)$UINT, _CH_SVR$UINT, 2#0000000000000000$UINT, TO_UDINT(3571915407), "sVisuEtage", 
 //Clients:
 (::clsEtagenSensorik.cTimer.pCh)$UINT, _CH_CLT_OBJ$UINT, 2#0000000000000010$UINT, TO_UDINT(1671967446), "cTimer", TO_UDINT(2418513028), "clsTimer", 0$UINT, 0$UINT, 
 (::clsEtagenSensorik.cFahrzeit.pCh)$UINT, _CH_CLT_DATA$UINT, 2#0000000000000000$UINT, TO_UDINT(840715053), "cFahrzeit", 
@@ -123,8 +120,8 @@ FUNCTION clsEtagenSensorik::@STD
 		ret_code	:= C_OUTOF_NEAR;
 		RETURN;
 	END_IF;
-	VisuEtage.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
-	IF VisuEtage.pMeth THEN
+	sVisuEtage.pMeth			:= StoreMethod( #M_RD_DIRECT(), #M_WR_DIRECT() );
+	IF sVisuEtage.pMeth THEN
 		ret_code	:= C_OK;
 	ELSE
 		ret_code	:= C_OUTOF_NEAR;
@@ -148,6 +145,8 @@ FUNCTION VIRTUAL GLOBAL clsEtagenSensorik::CyWork
   cFahrzeit := cFahrzeit.Read();
   cStockwerke := cStockwerke.Read();
   
+  //Uebergabe an HMI
+  sVisuEtage := iEtage;
   
 	state := READY;
 

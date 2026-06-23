@@ -1,4 +1,170 @@
 {
 	"type": "StateSchemeCollection",
-	"version": "0.0.96"
+	"version": "0.0.96",
+	"schemes": [
+		{
+			"type": "Scheme",
+			"designTimeId": "ad1763d8-7ebc-4856-acfb-85ba3ecbc541",
+			"name": "KabineState0",
+			"schemeId": 21,
+			"lockOverloadCompareValue": false,
+			"lockOverloadSetValue": false,
+			"variable": {
+				"value": "0:clsEtagen1.sVisuEtage",
+				"typeId": 4,
+				"propTypeId": 1,
+				"refId": "f2115005-08e5-4a7a-a3ab-bb914748803e"
+			},
+			"schemeEntries": [
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "d144b03b-c057-4f45-8e98-4cc24efcf60a",
+					"operator": 2,
+					"compareValue": {
+						"value": "0",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": 1
+				},
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "f3052497-a57e-4fb5-a272-fcdb02f944b8",
+					"operator": 5,
+					"compareValue": {
+						"value": "0",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": 2
+				}
+			],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Scheme",
+			"designTimeId": "416add5c-9d92-44e6-80d6-9d45eaa5f3cc",
+			"name": "KabineState1",
+			"schemeId": 21,
+			"lockOverloadCompareValue": false,
+			"lockOverloadSetValue": false,
+			"variable": {
+				"value": "0:clsEtagen1.sVisuEtage",
+				"typeId": 4,
+				"propTypeId": 1,
+				"refId": "f2115005-08e5-4a7a-a3ab-bb914748803e"
+			},
+			"schemeEntries": [
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "fd47b39d-58db-42f4-85bb-5cd75bbc7dc9",
+					"operator": 2,
+					"compareValue": {
+						"value": "1",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": 1
+				},
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "db33eb8c-4b8c-4125-8d0b-57ecbbb0f282",
+					"operator": 5,
+					"compareValue": {
+						"value": "1",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": 2
+				}
+			],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Scheme",
+			"designTimeId": "c5830d92-fcbe-434e-b123-16471c4fc030",
+			"name": "KabineState2",
+			"schemeId": 21,
+			"lockOverloadCompareValue": false,
+			"lockOverloadSetValue": false,
+			"variable": {
+				"value": "0:clsEtagen1.sVisuEtage",
+				"typeId": 4,
+				"propTypeId": 1,
+				"refId": "f2115005-08e5-4a7a-a3ab-bb914748803e"
+			},
+			"schemeEntries": [
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "b04b311c-afde-4249-b770-be4871618fc3",
+					"operator": 2,
+					"compareValue": {
+						"value": "2",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": 1
+				},
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "75644c00-e59d-48b0-bcf0-aa5322283f58",
+					"operator": 5,
+					"compareValue": {
+						"value": "2",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": 2
+				}
+			],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "Scheme",
+			"designTimeId": "180c9d10-46e9-49d9-b173-e6caf43d0ae2",
+			"name": "KabineState3",
+			"schemeId": 21,
+			"lockOverloadCompareValue": false,
+			"lockOverloadSetValue": false,
+			"variable": {
+				"value": "0:clsEtagen1.sVisuEtage",
+				"typeId": 4,
+				"propTypeId": 1,
+				"refId": "f2115005-08e5-4a7a-a3ab-bb914748803e"
+			},
+			"schemeEntries": [
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "02061113-0842-4c11-9fa7-6d54bdb0de56",
+					"operator": 2,
+					"compareValue": {
+						"value": "3",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": 1
+				},
+				{
+					"type": "SchemeEntry",
+					"designTimeId": "24e92b3c-56d4-4416-ae0c-8c7bbbf95036",
+					"operator": 5,
+					"compareValue": {
+						"value": "3",
+						"typeId": 4,
+						"propTypeId": 1
+					},
+					"setValue": 2
+				}
+			],
+			"revision": {
+				"type": "Revision"
+			}
+		}
+	]
 }

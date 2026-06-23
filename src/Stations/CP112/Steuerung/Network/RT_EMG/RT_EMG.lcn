@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Network Name="RT_EMG" Revision="0.0">
+	<!-- List of Components in this network -->
+	<Components>
+		<Object
+			Name       = "clsEmgStop_1"
+			GUID       = "{9195496D-276A-419B-9CD3-558C57849CE3}"
+			Class      = "clsEmgStop_1"
+			Position   = "(660,60)"
+			Visualized = "true"
+			RealTime   = "1 ms">
+			<Channels>
+				<Server Name="ClassSvr"/>
+				<Server Name="sVisuNotStop"/>
+				<Client Name="c1"/>
+				<Client Name="c2"/>
+			</Channels>
+		</Object>
+	</Components>
+	<Comments>
+	</Comments>
+	<!-- List of Connections in this network -->
+	<Connections>
+		<Connection Source="clsEmgStop_1.c1" Destination="__xI_Emg1_11" Vertices="(660,150),(390,120)," IOObject="xI_Emg1_1"/>
+		<Connection Source="clsEmgStop_1.c2" Destination="__xI_Emg1_21" Vertices="(660,210),(390,210)," IOObject="xI_Emg1_2"/>
+	</Connections>
+	<!-- List of temp data objects in this network -->
+	<IOObjects>
+		<IOObject KeyName="__xI_Emg1_11" Name="xI_Emg1_1" Position="(90,90)" Client="clsEmgStop_1.c1"/>
+		<IOObject KeyName="__xI_Emg1_21" Name="xI_Emg1_2" Position="(90,180)" Client="clsEmgStop_1.c2"/>
+	</IOObjects>
+	<!-- Headerfiles -->
+	<Options>
+	</Options>
+</Network>

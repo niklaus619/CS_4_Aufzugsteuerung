@@ -226,10 +226,15 @@ TYPE
     dData : DINT;
     pCmd : ^ASCII_BIN;
   END_STRUCT;
-  CltChCmd_clsAufzugantrieb : STRUCT
+  CltChCmd_clsAntrieb : STRUCT
     pCh : ^SvrChCmd_DINT;
     dData : DINT;
-    pCmd : ^clsAufzugantrieb;
+    pCmd : ^clsAntrieb;
+  END_STRUCT;
+  CltChCmd_clsEmgStop_1 : STRUCT
+    pCh : ^SvrChCmd_DINT;
+    dData : DINT;
+    pCmd : ^clsEmgStop_1;
   END_STRUCT;
   CltChCmd_clsEtagenSensorik : STRUCT
     pCh : ^SvrChCmd_DINT;

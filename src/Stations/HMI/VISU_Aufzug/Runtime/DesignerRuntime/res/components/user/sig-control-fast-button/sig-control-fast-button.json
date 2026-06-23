@@ -1,0 +1,2673 @@
+{
+    "name": "sig-control-fast-button",
+    "shortName": {
+        "en": "Fast Button",
+        "de": "Fast Button"
+    },
+    "controlType": {
+        "en": "Button",
+        "de": "Button"
+    },
+    "version": "01.00.000",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "A button which can be used for time critical applications like moving an axis.\nTherefore a corresponding class _LVDButtonHandler of the tools library is required in the Lasal Class 2 application. It uses an os interface to evaluate touches within the class application. Therefore, a minimum OS version of 09.07.173 and it's corresponding interface class _OSEventQueue is needed!",
+        "de": "Ein Button der für zeitkritische Anwendungen wie z.B.: Verfahren einer Achse verwendet werden kann.\nDafür wird die Klasse _LVDButtonHandler der Tools-Library in der Lasal Class 2 Applikation benötigt. Diese verwendet Betriebssystem-Schnittstellen um Touch-Events in der Class Applikation auszuwerden. Hierzu wird eine minimale OS-Version von 09.07.173 und die zugehörige OS-Interface Klasse _OSEventQueue benötigt!"
+    },
+    "main": [
+        "sig-control-fast-button.js"
+    ],
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-fast-button.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "controls/sigmatek/sig-element#^1.3.2",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-control-fast-button-css.js"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "100px",
+        "height": "50px"
+    },
+    "toolbox": true,
+    "slotted": false,
+    "styleClassEditor": true,
+    "usableInShadowDom": true,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [
+        {
+            "default": true,
+            "name": "place-datapoint-default",
+            "shortName": {
+                "en": "Fast Button",
+                "de": "Fast Button"
+            },
+            "typeId": "datapoint",
+            "value": []
+        }
+    ],
+    "properties": [
+        /*****************************************************************************************************
+        // Hide properties from the base
+        *****************************************************************************************************/
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-dragged-opacity",
+            "userLevel": -1,
+            "userLevelStyling": -1
+        },
+        /*****************************************************************************************************
+        // State
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Access number
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "accessNumber"
+            ],
+            "propertyType": "none",
+            "name": "accessNumber",
+            "sortIndex": 200500,
+            "dataType": "number",
+            "shortName": {
+                "en": "Access number",
+                "de": "Access number"
+            },
+            "description": {
+                "en": "The access number needed to use this control.",
+                "de": "Die benötigte Zugriffsnummer, um die Komponente verwenden zu können."
+            },
+            "group": {
+                "en": "State",
+                "de": "State"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Data
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property ID
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "variable",
+            "name": "btnid",
+            "sortIndex": 100,
+            "dataType": "number",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "ID",
+                "de": "ID"
+            },
+            "description": {
+                "en": "Unique ID of the button used for identification in the corresponding classes.\nThe id is optional and only needed when working with separate objects of _LVDFastButton class.",
+                "de": "Eindeutige ID des Buttons für die Kennung in den zugehörigen Klassen.\nDie ID ist optional und wird nur benötigt wenn mit Objekten der Klasse _LVDFastButton gearbeitet wird."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },        
+		/*----------------------------------------------------------------------------------------------------
+        // property Value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "value",
+            "sortIndex": 200,
+            "dataType": "number",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Value",
+                "de": "Value"
+            },
+            "description": {
+                "en": "Datapoint which gets written in the interval.",
+                "de": "Datenpunkt der im Interval geschrieben wird."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+		/*----------------------------------------------------------------------------------------------------
+        // property Operating mode
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "datapoint"
+            ],
+            "propertyType": "variable",
+            "name": "opmode",
+            "sortIndex": 300,
+            "dataType": "number",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Operating mode",
+                "de": "Operating mode"
+            },
+            "description": {
+                "en": "The current operating mode gets written to the data point assigned to this property.\n0 .. Default behavior. The value data point gets written by the browser interval (low deterministic).\n1 .. The write interval gets executed in the corresponding classes evaluating the touches via an os interface.",
+                "de": "Der aktuelle Betriebsmodus wird auf den Datenpunkt geschrieben der hier konfiguriert ist.\n0 .. Standardverhalten. Der Datenpunkt, der am Value property konfiguriert ist, wird im Browser Intervall geschrieben (wenig deterministisch).\n1 .. Der Schreibzyklus wird von der zugehörigen Klasse ausgeführt unter Auswertung der Touch-Events mittels Betriebssystem-Schnittstelle."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },        
+        /*----------------------------------------------------------------------------------------------------
+        // property Text
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "text",
+                "textScheme"
+            ],
+            "propertyType": "variable",
+            "name": "btntext",
+            "sortIndex": 400,
+            "default": "",
+            "lockStyleCopy": true,
+            "dataType": "string",
+            "shortName": {
+                "en": "Text",
+                "de": "Text"
+            },
+            "description": {
+                "en": "The text source of the button. By using the <br> tag in the text, a line break can be inserted at the respective positions.",
+                "de": "Die Textquelle des Buttons. Durch Verwendung des <br> Tags im Text kann an den jeweiligen Stellen ein Zeilenumbruch eingefügt werden."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text pressed state
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "text",
+                "textScheme"
+            ],
+            "propertyType": "variable",
+            "name": "btntextpressed",
+            "sortIndex": 500,
+            "default": "",
+            "dataType": "string",
+            "lockStyleCopy": true,
+            "shortName": {
+                "en": "Text pressed state",
+                "de": "Text pressed state"
+            },
+            "description": {
+                "en": "The text source of the pressed button. By using the <br> tag in the text, a line break can be inserted at the respective positions.",
+                "de": "Die Textquelle des gedrückten Buttons. Durch Verwendung des <br> Tags im Text kann an den jeweiligen Stellen ein Zeilenumbruch eingefügt werden."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "variable",
+            "name": "btnimage",
+            "sortIndex": 600,
+            "default": "",
+            "dataType": "string",
+            "shortName": {
+                "en": "Image",
+                "de": "Image"
+            },
+            "description": {
+                "en": "The Image Source of the Button. If the svg doesn't provide any height or width information, it is not possible to display the image via height/width set to auto. In this case, the desired height and width must be set manually.",
+                "de": "Die Bildquelle des Buttons. Wenn das SVG keine Höhe bzw. Breite definiert hat, kann dieses nicht angezeigt werden, wenn die Höhe und Breite auf auto gestellt ist. In diesem Fall muss die gewünschte Höhe und Breite manuell eingestellt werden."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Image pressed state
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "variable",
+            "name": "btnimagepressed",
+            "sortIndex": 700,
+            "default": "",
+            "dataType": "string",
+            "shortName": {
+                "en": "Image pressed state",
+                "de": "Image pressed state"
+            },
+            "description": {
+                "en": "The Image Source when the Button is in pressed state. If the svg doesn't provide any height or width information, it is not possible to display the image via height/width set to auto. In this case, the desired height and width must be set manually.",
+                "de": "Das Bild des Buttons wenn der Button gedrückt ist. Wenn das SVG keine Höhe bzw. Breite definiert hat, kann dieses nicht angezeigt werden, wenn die Höhe und Breite auf auto gestellt ist. In diesem Fall muss die gewünschte Höhe und Breite manuell eingestellt werden."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property OFF value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constNumber",
+                "datapoint"
+            ],
+            "dataType": "number",
+            "propertyType": "variable",
+            "name": "offvalue",
+            "sortIndex": 800,
+            "default": 0,
+            "shortName": {
+                "en": "OFF value",
+                "de": "OFF value"
+            },
+            "description": {
+                "en": "The value which is written to the value data point, when the button is released.",
+                "de": "Der Wert der auf den Datenpunkt, der am Value Property konfiguriert ist, geschrieben wird, wenn der Button losgelassen wird."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },       
+        /*----------------------------------------------------------------------------------------------------
+        // property ON value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constNumber",
+                "datapoint"
+            ],
+            "dataType": "number",
+            "propertyType": "variable",
+            "name": "onvalue",
+            "sortIndex": 900,
+            "default": 1,
+            "shortName": {
+                "en": "ON value",
+                "de": "ON value"
+            },
+            "description": {
+                "en": "The value which is written to the value data point, when the button is pressed.",
+                "de": "Der Wert der auf den Datenpunkt, der am Value Property konfiguriert ist, geschrieben wird, wenn der Button gedrückt wird."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Start delay
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "dataType": "number",
+            "propertyType": "variable",
+            "name": "startdelay",
+            "sortIndex": 1000,
+            "default": 0,
+            "shortName": {
+                "en": "Start delay",
+                "de": "Start delay"
+            },
+            "description": {
+                "en": "The timeout before writing the data point is executed. It is used to avoid unintended button presses.\n[ms]",
+                "de": "Zeit die abgewartet wird bevor der Datenpunkt geschrieben wird. Dies wird verwendet, um unbeabsichtigte Button Bedienungen zu vermeiden.\n[ms]"
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        }, 
+        /*----------------------------------------------------------------------------------------------------
+        // property Interval time
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "dataType": "number",
+            "propertyType": "variable",
+            "name": "intervaltime",
+            "sortIndex": 1100,
+            "default": 100,
+            "shortName": {
+                "en": "Interval time",
+                "de": "Interval time"
+            },
+            "description": {
+                "en": "The interval time in which the value data point gets written when the button is pressed.\n[ms]",
+                "de": "Das Intervall in dem der Datenpunkt, der beim Value Property konfiguriert ist, geschrieben wird.\n[ms]"
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },    
+        /*****************************************************************************************************
+        // Preview settings
+        *****************************************************************************************************/
+        /*----------------------------------------------------------------------------------------------------
+        // property Pressed state
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "dataType": "boolean",
+            "default": false,
+            "name": "previewpressedstate",
+            "sortIndex": 10100,
+            "shortName": {
+                "en": "Pressed state",
+                "de": "Pressed state"
+            },
+            "description": {
+                "en": "Displays the button in the pressed state to be able to style it.",
+                "de": "Zeigt den Button im gedrückten Zustand, um ihn zu stylen."
+            },
+            "group": {
+                "en": "Preview settings",
+                "de": "Preview settings"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Preview text
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "variable",
+            "name": "previewtext",
+            "sortIndex": 10200,
+            "dataType": "string",
+            "default": "-- Fast Button --",
+            "shortName": {
+                "en": "Preview text",
+                "de": "Preview text"
+            },
+            "description": {
+                "en": "The preview text of the component in the style class editor.",
+                "de": "Der Vorschautext der Komponente im style class Editor."
+            },
+            "group": {
+                "en": "Preview settings",
+                "de": "Preview settings"
+            },
+            "userLevel": -1,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Content placement
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "name": "--theme-sig-control-fast-button-flex-direction",
+            "sortIndex": 500100,
+            "propertyType": "css",
+            "dataType": "string",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "row",
+                        "de": "row"
+                    },
+                    "value": "row"
+                },
+                {
+                    "shortName": {
+                        "en": "column",
+                        "de": "column"
+                    },
+                    "value": "column"
+                },
+                {
+                    "shortName": {
+                        "en": "row reverse",
+                        "de": "row reverse"
+                    },
+                    "value": "row-reverse"
+                },
+                {
+                    "shortName": {
+                        "en": "column reverse",
+                        "de": "column reverse"
+                    },
+                    "value": "column-reverse"
+                }
+            ],
+            "multiSelect": false,
+            "default": "row",
+            "shortName": {
+                "en": "Direction",
+                "de": "Direction"
+            },
+            "description": {
+                "en": "Specifies the direction (column - top to bottom; row - left to right) of the Text and Image. The keyword reverse, changes the order of the Text and Image.",
+                "de": "Gibt die Richtung (column - von oben nach unten; row - von links nach rechts) an, in der Text und Bild dargestellt werden. Der Zusatz reverse dreht dabei die Reihenfolge von Text und Bild um."
+            },
+            "group": {
+                "en": "Content placement",
+                "de": "Content placement"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Justify content
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "name": "--theme-sig-control-fast-button-justify-content",
+            "sortIndex": 500200,
+            "propertyType": "css",
+            "dataType": "string",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "flex start",
+                        "de": "flex start"
+                    },
+                    "value": "flex-start"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "flex end",
+                        "de": "flex end"
+                    },
+                    "value": "flex-end"
+                },
+                {
+                    "shortName": {
+                        "en": "space between",
+                        "de": "space between"
+                    },
+                    "value": "space-between"
+                },
+                {
+                    "shortName": {
+                        "en": "space around",
+                        "de": "space around"
+                    },
+                    "value": "space-around"
+                },
+                {
+                    "shortName": {
+                        "en": "space evenly",
+                        "de": "space evenly"
+                    },
+                    "value": "space-evenly"
+                }
+            ],
+            "multiSelect": false,
+            "default": "space-evenly",
+            "shortName": {
+                "en": "Justify content",
+                "de": "Justify content"
+            },
+            "description": {
+                "en": "Aligns the Items when the Items don't use all available space on the main axis. For direction row/row reverse this affects the horizontal alignment. For column/column reverse, this affects the vertical alignment.",
+                "de": "Richtet den Text und das Bild aus, wenn diese nicht bereits den gesamtem Platz auf der Hauptachse verbrauchen. Wenn direction row/row reverse ist, gibt dieser Wert die horizontale Ausrichtung an. Für column/column reverse gibt er die vertikale Ausrichtung an."
+            },
+            "group": {
+                "en": "Content placement",
+                "de": "Content placement"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Align items
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "name": "--theme-sig-control-fast-button-align-items",
+            "sortIndex": 500300,
+            "propertyType": "css",
+            "dataType": "string",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "flex start",
+                        "de": "flex start"
+                    },
+                    "value": "flex-start"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "flex end",
+                        "de": "flex end"
+                    },
+                    "value": "flex-end"
+                }
+            ],
+            "multiSelect": false,
+            "default": "center",
+            "shortName": {
+                "en": "Align items",
+                "de": "Align items"
+            },
+            "description": {
+                "en": "The Alignment for the Text and Image.  For direction row/row reverse this affects the vertical alignment. For column/column reverse, this affects the horizontal alignment.",
+                "de": "Passt die Ausrichtung des Text und des Bildes rechtwinklig zur Hauptachse an. Wenn direction row/row reverse ist, gibt dieser Wert die vertikale Ausrichtung an. Für column/column reverse gibt er die horizontale Ausrichtung an."
+            },
+            "group": {
+                "en": "Content placement",
+                "de": "Content placement"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // Text styling
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Padding
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-text-padding",
+            "sortIndex": 510100,
+            "default": "0px",
+            "units": "px",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "dataType": "string",
+            "shortName": {
+                "en": "Padding",
+                "de": "Padding"
+            },
+            "description": {
+                "en": "Padding of the button text. Can be set as a shorthand property.",
+                "de": "Padding des Button-Texts. Kann als Shorthand-Property gesetzt werden."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Align text
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "name": "--theme-sig-control-fast-button-text-align-self",
+            "sortIndex": 510200,
+            "propertyType": "css",
+            "dataType": "string",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "flex start",
+                        "de": "flex start"
+                    },
+                    "value": "flex-start"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "flex end",
+                        "de": "flex end"
+                    },
+                    "value": "flex-end"
+                },
+                {
+                    "shortName": {
+                        "en": "inherit",
+                        "de": "inherit"
+                    },
+                    "value": "inherit"
+                }
+            ],
+            "multiSelect": false,
+            "default": "inherit",
+            "shortName": {
+                "en": "Align text",
+                "de": "Align text"
+            },
+            "description": {
+                "en": "The Alignment for the text container. If direction is row/row reverse, then this property defines the vertical alignment. For column/column reverse it defines the horizontal alignment.",
+                "de": "Passt die Position des Textes an. Wenn direction row/row reverse ist, gibt dieser Wert die vertikale Ausrichtung an. Für column/column reverse gibt er die horizontale Ausrichtung an."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text align horizontal
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-text-align-horizontal",
+            "sortIndex": 510300,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "left"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Text align horizontal",
+                "de": "Text align horizontal"
+            },
+            "description": {
+                "en": "The horizontal alignment of the text.",
+                "de": "Die horizontale Ausrichtung des Textes."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },        
+        /*----------------------------------------------------------------------------------------------------
+        // property Margin
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-text-margin",
+            "sortIndex": 510400,
+            "default": "0px",
+            "units": "px",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "dataType": "string",
+            "shortName": {
+                "en": "Margin",
+                "de": "Margin"
+            },
+            "description": {
+                "en": "Margin of the button text. Can be set as a shorthand property.",
+                "de": "Margin des Button-Texts. Kann als Shorthand-Property gesetzt werden."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // Image styling
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Padding
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-image-padding",
+            "sortIndex": 520100,
+            "default": "0px",
+            "units": "px",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "dataType": "string",
+            "shortName": {
+                "en": "Padding",
+                "de": "Padding"
+            },
+            "description": {
+                "en": "Padding of the button image. Can be set as a shorthand property.",
+                "de": "Padding des Button-Bildes. Kann als Shorthand-Property gesetzt werden."
+            },
+            "group": {
+                "en": "Image styling",
+                "de": "Image styling"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Align image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "name": "--theme-sig-control-fast-button-image-align-self",
+            "sortIndex": 520200,
+            "propertyType": "css",
+            "dataType": "string",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "flex start",
+                        "de": "flex start"
+                    },
+                    "value": "flex-start"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "flex end",
+                        "de": "flex end"
+                    },
+                    "value": "flex-end"
+                },
+                {
+                    "shortName": {
+                        "en": "inherit",
+                        "de": "inherit"
+                    },
+                    "value": "inherit"
+                }
+            ],
+            "multiSelect": false,
+            "default": "inherit",
+            "shortName": {
+                "en": "Align image",
+                "de": "Align image"
+            },
+            "description": {
+                "en": "The Alignment for the image. If direction is row/row reverse, then this property defines the vertical alignment. For column/column reverse it defines the horizontal alignment.",
+                "de": "Passt die Ausrichtung des Bildes an. Wenn direction row/row reverse ist, gibt dieser Wert die vertikale Ausrichtung an. Für column/column reverse gibt er die horizontale Ausrichtung an."
+            },
+            "group": {
+                "en": "Image styling",
+                "de": "Image styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Margin
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-image-margin",
+            "sortIndex": 520300,
+            "default": "0px",
+            "units": "px",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "dataType": "string",
+            "shortName": {
+                "en": "Margin",
+                "de": "Margin"
+            },
+            "description": {
+                "en": "Margin of the button image. Can be set as a shorthand property.",
+                "de": "Margin des Button-Bildes. Kann als Shorthand-Property gesetzt werden."
+            },
+            "group": {
+                "en": "Image styling",
+                "de": "Image styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Height
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-image-height",
+            "sortIndex": 520400,
+            "default": "auto",
+            "units": "px",
+            "dataType": "string",
+            "shortName": {
+                "en": "Height",
+                "de": "Height"
+            },
+            "description": {
+                "en": "The Height of the Image. Some svg images cannot be displayed if Height and Width are set to auto. In this case, the desired height and width has to be set manually.",
+                "de": "Die Höhe des Bildes. Manche svg Bilder können nicht angezeigt werden, wenn Height und Width auf auto gesetzt sind. In diesem Fall muss die gewünschte Höhe und Breite manuell eingestellt werden."
+            },
+            "group": {
+                "en": "Image styling",
+                "de": "Image styling"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Width
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-image-width",
+            "sortIndex": 520500,
+            "default": "auto",
+            "units": "px",
+            "dataType": "string",
+            "shortName": {
+                "en": "Width",
+                "de": "Width"
+            },
+            "description": {
+                "en": "The Width of the Image. Some svg images cannot be displayed if Height and Width are set to auto. In this case, the desired height and width has to be set manually.",
+                "de": "Die Breite des Bildes. Manche svg Bilder können nicht angezeigt werden, wenn Height und Width auf auto gesetzt sind. In diesem Fall muss die gewünschte Höhe und Breite manuell eingestellt werden."
+            },
+            "group": {
+                "en": "Image styling",
+                "de": "Image styling"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // General styling
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Background color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-background-color",
+            "sortIndex": 530100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component.",
+                "de": "Die Hintergrundfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Background color stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-background-color-stop",
+            "sortIndex": 530200,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color stop",
+                "de": "Background color stop"
+            },
+            "description": {
+                "en": "The stop color of the background gradient.",
+                "de": "Der Farbstopp des Hintergrund Farbverlaufs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                10,
+                20,
+                20
+            ],
+            "userLevelStyling": [
+                10,
+                20,
+                20
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Background gradient direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-background-color-direction",
+            "sortIndex": 530300,
+            "dataType": "string",
+            "default": "to bottom",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "to bottom",
+                        "de": "to bottom"
+                    },
+                    "value": "to bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to top",
+                        "de": "to top"
+                    },
+                    "value": "to top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left",
+                        "de": "to left"
+                    },
+                    "value": "to left"
+                },
+                {
+                    "shortName": {
+                        "en": "to right",
+                        "de": "to right"
+                    },
+                    "value": "to right"
+                },
+                {
+                    "shortName": {
+                        "en": "to right bottom",
+                        "de": "to right bottom"
+                    },
+                    "value": "to right bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to left bottom",
+                        "de": "to left bottom"
+                    },
+                    "value": "to left bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to right top",
+                        "de": "to right top"
+                    },
+                    "value": "to right top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left top",
+                        "de": "to left top"
+                    },
+                    "value": "to left top"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Background gradient direction",
+                "de": "Background gradient direction"
+            },
+            "description": {
+                "en": "The direction of the background gradient.",
+                "de": "Die Richtung der Hintergrund Farbverlaufs."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-color",
+            "sortIndex": 530400,
+            "dataType": "string",
+            "default": "inherit",
+            "units": "#,rgba",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "The text color of the component.",
+                "de": "Die Textfarbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-border-color",
+            "sortIndex": 530500,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the component.",
+                "de": "Die Rahmen Farbe der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-border-color-stop",
+            "sortIndex": 530600,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color stop",
+                "de": "Border color stop"
+            },
+            "description": {
+                "en": "The stop color of the border gradient. To activate it, the checkbox Border gradient must also be set to yes.",
+                "de": "Die Farbstopp Farbe des Rahmen Farbverlaufes. Um es zu aktivieren, muss zusätzlich die Checkbox Border gradient auf ja gestellt werden."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border gradient
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "bordergradient",
+            "sortIndex": 530700,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Border gradient",
+                "de": "Border gradient"
+            },
+            "description": {
+                "en": "Activates the border gradient of the component. Note: If active, shorthand values for the border width are invalid.",
+                "de": "Aktiviert den Farbverlauf des Rahmens der Komponente. Hinweis: Wenn aktiv, sind shorthand-Werte für die Rahmenbeite unzulässig."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border gradient direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-border-color-direction",
+            "sortIndex": 530800,
+            "dataType": "string",
+            "default": "to bottom",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "to bottom",
+                        "de": "to bottom"
+                    },
+                    "value": "to bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to top",
+                        "de": "to top"
+                    },
+                    "value": "to top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left",
+                        "de": "to left"
+                    },
+                    "value": "to left"
+                },
+                {
+                    "shortName": {
+                        "en": "to right",
+                        "de": "to right"
+                    },
+                    "value": "to right"
+                },
+                {
+                    "shortName": {
+                        "en": "to right bottom",
+                        "de": "to right bottom"
+                    },
+                    "value": "to right bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to left bottom",
+                        "de": "to left bottom"
+                    },
+                    "value": "to left bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to right top",
+                        "de": "to right top"
+                    },
+                    "value": "to right top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left top",
+                        "de": "to left top"
+                    },
+                    "value": "to left top"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border gradient direction",
+                "de": "Border gradient direction"
+            },
+            "description": {
+                "en": "The direction of the border gradient.",
+                "de": "Die Richtung des Farbverlaufes des Rahmens."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border width
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-border-width",
+            "sortIndex": 530900,
+            "dataType": "string",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border width",
+                "de": "Border width"
+            },
+            "description": {
+                "en": "The border width of the component. This value can be set as shorthand property. Note: If the border gradient is active, shorthand values are invalid.",
+                "de": "Die Rahmenbreite der Komponente. Dieser Wert kann als shorthand property angegeben werden. Hinweis: Wenn der Farbverlauf für den Rahmen aktiv ist, sind shorthand-Werte unzulässig."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border style
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-border-style",
+            "sortIndex": 531000,
+            "dataType": "string",
+            "default": "solid",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "none",
+                        "de": "none"
+                    },
+                    "value": "none"
+                },
+                {
+                    "shortName": {
+                        "en": "dotted",
+                        "de": "dotted"
+                    },
+                    "value": "dotted"
+                },
+                {
+                    "shortName": {
+                        "en": "dashed",
+                        "de": "dashed"
+                    },
+                    "value": "dashed"
+                },
+                {
+                    "shortName": {
+                        "en": "solid",
+                        "de": "solid"
+                    },
+                    "value": "solid"
+                },
+                {
+                    "shortName": {
+                        "en": "double",
+                        "de": "double"
+                    },
+                    "value": "double"
+                },
+                {
+                    "shortName": {
+                        "en": "groove",
+                        "de": "groove"
+                    },
+                    "value": "groove"
+                },
+                {
+                    "shortName": {
+                        "en": "ridge",
+                        "de": "ridge"
+                    },
+                    "value": "ridge"
+                },
+                {
+                    "shortName": {
+                        "en": "inset",
+                        "de": "inset"
+                    },
+                    "value": "inset"
+                },
+                {
+                    "shortName": {
+                        "en": "outset",
+                        "de": "outset"
+                    },
+                    "value": "outset"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border style",
+                "de": "Border style"
+            },
+            "description": {
+                "en": "The border style of the component.",
+                "de": "Die Rahmenart der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-border-radius",
+            "sortIndex": 531100,
+            "dataType": "string",
+            "units": "px",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "default": "3px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The border radius of the component. Can be set as a shorthand property.",
+                "de": "Der Rahmenradius der Komponente. Kann als Shorthand-Property gesetzt werden."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "shadowactive",
+            "sortIndex": 531200,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Border shadow",
+                "de": "Border shadow"
+            },
+            "description": {
+                "en": "Activates the border shadow of the component.",
+                "de": "Aktiviert den Rahmenschatten der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow size
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-shadow-size",
+            "sortIndex": 531300,
+            "dataType": "string",
+            "units": "px",
+            "default": "5px",
+            "shortName": {
+                "en": "Border shadow size",
+                "de": "Border shadow size"
+            },
+            "description": {
+                "en": "The size of the border shadow of the component.",
+                "de": "Die Größe des Rahmenschattens der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-shadow-color",
+            "sortIndex": 531400,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border shadow color",
+                "de": "Border shadow color"
+            },
+            "description": {
+                "en": "The color of the border shadow of the component.",
+                "de": "Die Farbe des Rahmenschatten der Komponente."
+            },
+            "group": {
+                "en": "General styling",
+                "de": "General styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // General styling pressed state
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Background color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-pressed-background-color",
+            "sortIndex": 540100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color",
+                "de": "Background color"
+            },
+            "description": {
+                "en": "The background color of the component in pressed state.",
+                "de": "Die Hintergrundfarbe der Komponente im gedrückten Zustand."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Background color stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-pressed-background-color-stop",
+            "sortIndex": 540200,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Background color stop",
+                "de": "Background color stop"
+            },
+            "description": {
+                "en": "The stop color of the background gradient of the component in pressed state.",
+                "de": "Die Farbstopp Farbe des Hintergrund Farbverlaufes der Komponente im gedrückten Zustand."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Background gradient direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-pressed-background-color-direction",
+            "sortIndex": 540300,
+            "dataType": "string",
+            "default": "to bottom",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "to bottom",
+                        "de": "to bottom"
+                    },
+                    "value": "to bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to top",
+                        "de": "to top"
+                    },
+                    "value": "to top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left",
+                        "de": "to left"
+                    },
+                    "value": "to left"
+                },
+                {
+                    "shortName": {
+                        "en": "to right",
+                        "de": "to right"
+                    },
+                    "value": "to right"
+                },
+                {
+                    "shortName": {
+                        "en": "to right bottom",
+                        "de": "to right bottom"
+                    },
+                    "value": "to right bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to left bottom",
+                        "de": "to left bottom"
+                    },
+                    "value": "to left bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to right top",
+                        "de": "to right top"
+                    },
+                    "value": "to right top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left top",
+                        "de": "to left top"
+                    },
+                    "value": "to left top"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Background gradient direction",
+                "de": "Background gradient direction"
+            },
+            "description": {
+                "en": "The direction of the background gradient of the component in pressed state.",
+                "de": "Die Richtung des Hintergrund Farbverlaufes des Compontents im gedrückten Zustand."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Text color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-pressed-color",
+            "sortIndex": 540400,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Text color",
+                "de": "Text color"
+            },
+            "description": {
+                "en": "The text color of the component in pressed state.",
+                "de": "Die Textfarbe der Komponente im gedrückten Zustand."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-pressed-border-color",
+            "sortIndex": 540500,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color",
+                "de": "Border color"
+            },
+            "description": {
+                "en": "The border color of the component in pressed state.",
+                "de": "Die Rahmenfarbe der Komponente im gedrückten Zustand."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border color stop
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-pressed-border-color-stop",
+            "sortIndex": 540600,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border color stop",
+                "de": "Border color stop"
+            },
+            "description": {
+                "en": "The stop color of the border gradient of the component in pressed state.",
+                "de": "Die Farbstopp Farbe des Rahmen Farbverlaufs der Komponente im gedrückten Zustand."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border gradient
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "bordergradientpressed",
+            "sortIndex": 540700,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Border gradient",
+                "de": "Border gradient"
+            },
+            "description": {
+                "en": "Activates the border gradient of the component in pressed state. Note: If active, shorthand values for the border width are invalid.",
+                "de": "Aktiviert den Rahmen Farbverlauf der Komponente im gedrückten Zustand. Hinweis: Wenn aktiv, sind shorthand-Werte für die Rahmenbeite unzulässig."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border gradient direction
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-pressed-border-color-direction",
+            "sortIndex": 540800,
+            "dataType": "string",
+            "default": "to bottom",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "to bottom",
+                        "de": "to bottom"
+                    },
+                    "value": "to bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to top",
+                        "de": "to top"
+                    },
+                    "value": "to top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left",
+                        "de": "to left"
+                    },
+                    "value": "to left"
+                },
+                {
+                    "shortName": {
+                        "en": "to right",
+                        "de": "to right"
+                    },
+                    "value": "to right"
+                },
+                {
+                    "shortName": {
+                        "en": "to right bottom",
+                        "de": "to right bottom"
+                    },
+                    "value": "to right bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to left bottom",
+                        "de": "to left bottom"
+                    },
+                    "value": "to left bottom"
+                },
+                {
+                    "shortName": {
+                        "en": "to right top",
+                        "de": "to right top"
+                    },
+                    "value": "to right top"
+                },
+                {
+                    "shortName": {
+                        "en": "to left top",
+                        "de": "to left top"
+                    },
+                    "value": "to left top"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Border gradient direction",
+                "de": "Border gradient direction"
+            },
+            "description": {
+                "en": "The direction of the border gradient of the component in pressed state.",
+                "de": "Die Richtung des Rahmen Farbverlaufs der Komponente im gedrückten Zustand."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constBool",
+            "propertyType": "variable",
+            "name": "shadowpressedactive",
+            "sortIndex": 540900,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Border shadow",
+                "de": "Border shadow"
+            },
+            "description": {
+                "en": "Activates the border shadow of the component in the pressed state.",
+                "de": "Aktiviert den Rahmenschatten der Komponente im gedrückten Zustand."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow size
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-pressed-shadow-size",
+            "sortIndex": 541000,
+            "dataType": "string",
+            "units": "px",
+            "default": "0px",
+            "shortName": {
+                "en": "Border shadow size",
+                "de": "Border shadow size"
+            },
+            "description": {
+                "en": "The size of the border shadow of the component in pressed state.",
+                "de": "Die Größe des Rahmenschattens der Komponente im gedrückten Zustand."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border shadow color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-pressed-shadow-color",
+            "sortIndex": 541100,
+            "dataType": "string",
+            "units": "#,rgba",
+            "default": "inherit",
+            "editor": "colorpicker",
+            "shortName": {
+                "en": "Border shadow color",
+                "de": "Border shadow color"
+            },
+            "description": {
+                "en": "The color of the border shadow of the component in pressed state.",
+                "de": "Die Farbe des Rahmenschattens der Komponente im gedrückten Zustand."
+            },
+            "group": {
+                "en": "General styling pressed state",
+                "de": "General styling pressed state"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // Background image
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-background-image",
+            "sortIndex": 550100,
+            "dataType": "string",
+            "units": "url",
+            "default": "none",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Image",
+                "de": "Image"
+            },
+            "description": {
+                "en": "The background image of the component.",
+                "de": "Das Hintergrundbild der Komponente."
+            },
+            "group": {
+                "en": "Background image",
+                "de": "Background image"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+		/*----------------------------------------------------------------------------------------------------
+        // property Image pressed
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem",
+                "mediaItemScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-pressed-background-image",
+            "sortIndex": 550200,
+            "dataType": "string",
+            "units": "url",
+            "default": "inherit",
+            "editor": "urlpicker",
+            "shortName": {
+                "en": "Image pressed",
+                "de": "Image pressed"
+            },
+            "description": {
+                "en": "The background image of the button in pressed state.",
+                "de": "Das Hintergrund Bild im gedrückten Zustand."
+            },
+            "group": {
+                "en": "Background image pressed state",
+                "de": "Background image pressed state"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },        
+        /*----------------------------------------------------------------------------------------------------
+        // property Stretchmode
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-background-size",
+            "sortIndex": 550300,
+            "dataType": "string",
+            "default": "contain",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "automatic",
+                        "de": "automatic"
+                    },
+                    "value": "auto"
+                },
+                {
+                    "shortName": {
+                        "en": "cover",
+                        "de": "cover"
+                    },
+                    "value": "cover"
+                },
+                {
+                    "shortName": {
+                        "en": "contain",
+                        "de": "contain"
+                    },
+                    "value": "contain"
+                },
+                {
+                    "shortName": {
+                        "en": "stretch",
+                        "de": "stretch"
+                    },
+                    "value": "100% 100%"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Stretchmode",
+                "de": "Stretchmode"
+            },
+            "description": {
+                "en": "Defines how the background image is scaled.",
+                "de": "Definiert wie das Hintergrundbild skaliert wird."
+            },
+            "group": {
+                "en": "Background image",
+                "de": "Background image"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Horizontal alignment
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-background-position-x",
+            "sortIndex": 550400,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "left",
+                        "de": "left"
+                    },
+                    "value": "left"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "right",
+                        "de": "right"
+                    },
+                    "value": "right"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Horizontal alignment",
+                "de": "Horizontal alignment"
+            },
+            "description": {
+                "en": "The horizontal alignment of the background image of the component.",
+                "de": "Die horizontale Ausrichtung des Hintergrundbildes der Komponente."
+            },
+            "group": {
+                "en": "Background image",
+                "de": "Background image"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Vertical alignment
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-background-position-y",
+            "sortIndex": 550500,
+            "dataType": "string",
+            "default": "center",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "top"
+                },
+                {
+                    "shortName": {
+                        "en": "center",
+                        "de": "center"
+                    },
+                    "value": "center"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "bottom"
+                }
+            ],
+            "multiSelect": false,
+            "shortName": {
+                "en": "Vertical alignment",
+                "de": "Vertical alignment"
+            },
+            "description": {
+                "en": "The vertical alignment of the background image of the component.",
+                "de": "Die vertikale Ausrichtung des Hintergrundbildes der Komponente."
+            },
+            "group": {
+                "en": "Background image",
+                "de": "Background image"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Padding
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-fast-button-background-padding",
+            "sortIndex": 550600,
+            "default": "0px",
+            "units": "px",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "dataType": "string",
+            "shortName": {
+                "en": "Padding",
+                "de": "Padding"
+            },
+            "description": {
+                "en": "Padding of the background image. Overwrites setting of \"Stretchmode\". Can be set as a shorthand property.",
+                "de": "Padding des Hintergrundbildes. Überschreibt Einstellung von \"Stretchmode\". Kann als Shorthand-Property gesetzt werden."
+            },
+            "group": {
+                "en": "Background image",
+                "de": "Background image"
+            },
+            "userLevel": 10,
+            "userLevelStyling": 10,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        }
+    ],
+    "helpFiles": [
+        {
+            "language": "de",
+            "default": true,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Fast Button_DE.chm"
+                }
+            ]
+        },
+        {
+            "language": "en",
+            "default": false,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Fast Button_EN.chm"
+                }
+            ]
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

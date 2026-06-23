@@ -1,0 +1,1534 @@
+{
+    "name": "sig-control-switch-button2",
+    "shortName": {
+        "en": "Switch Button v2",
+        "de": "Switch Button v2"
+    },
+    "controlType": "Button",
+    "version": "02.01.001",
+    "authors": [
+        "SIGMATEK GmbH & Co KG"
+    ],
+    "description": {
+        "en": "Implements a radio button control as a Polymer Custom Element.",
+        "de": "Implementiert ein Radio-Button Steuerelement als Polymer Custom Element"
+    },
+    "main": "sig-control-switch-button2.js",
+    "moduleType": [
+        "es6"
+    ],
+    "license": "http://www.sigmatek-automation.com/LICENSE.txt",
+    "homepage": "http://www.sigmatek-automation.com/sig-control-switch-button2.html",
+    "private": true,
+    "baseComponent": "sig-element",
+    "dependencies": {
+        "sig-element": "controls/sigmatek/sig-element#^1.1.1",
+        "polymer": "Polymer/polymer#^3.3.0"
+    },
+    "resources": [
+        {
+            "designerAction": "addToPublish",
+            "path": "./sig-control-switch-button2-css.js"
+        }
+    ],
+    "defaultDimensions": {
+        "width": "90px",
+        "height": "50px"
+    },
+    "toolbox": true,
+    "slotted": false,
+    "styleClassEditor": true,
+    "usableInShadowDom": true,
+    "moduleImport": {
+        "importType": "dynamic",
+        "area": [
+            "index",
+            "designer",
+            "designerToolbox"
+        ],
+        "section": "head",
+        "position": "bottom"
+    },
+    "placementTemplates": [
+        {
+            "default": true,
+            "name": "place-datapoint-default",
+            "shortName": {
+                "en": "Switch Button v2",
+                "de": "Switch Button v2"
+            },
+            "typeId": "datapoint",
+            "value": []
+        }
+    ],
+    "properties": [
+        /*****************************************************************************************************
+        // Hide properties from the base
+        *****************************************************************************************************/
+        {
+            "valueSourceTypes": [
+                "constNumber"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-element-dragged-opacity",
+            "userLevel": -1,
+            "userLevelStyling": -1
+        },
+        /*****************************************************************************************************
+        // State
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Access number
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "accessNumber"
+            ],
+            "propertyType": "none",
+            "name": "accessNumber",
+            "sortIndex": 200500,
+            "dataType": "number",
+            "shortName": {
+                "en": "Access number",
+                "de": "Access number"
+            },
+            "description": {
+                "en": "The access number needed to use this control.",
+                "de": "Die benötigte Zugriffsnummer, um die Komponente verwenden zu können."
+            },
+            "group": {
+                "en": "State",
+                "de": "State"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Data
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "datapoint",
+                "datapointScheme"
+            ],
+            "propertyType": "variable",
+            "name": "value",
+            "sortIndex": 150000,
+            "dataType": "number",
+            "default": "",
+            "shortName": {
+                "en": "Value",
+                "de": "Value"
+            },
+            "description": {
+                "en": "The Value of the Control. Can be set via a Datapoint. If the Control is tapped, it writes its value to the specified Datapoint.",
+                "de": "Der Wert des Controls. Kann über einen Datenpunkt gesetzt werden. Wenn der Button gedrückt wird schreibt er seinen Wert auf den angegebenen Datenpunkt."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property OFF value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constNumber",
+                "datapoint"
+            ],
+            "propertyType": "variable",
+            "name": "offvalue",
+            "sortIndex": 150100,
+            "dataType": "number",
+            "default": 0,
+            "shortName": {
+                "en": "OFF value",
+                "de": "OFF value"
+            },
+            "description": {
+                "en": "The value of the switch in the OFF state.",
+                "de": "Der Wert des Switch Buttons im AUS Zustand."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Ignore OFF value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "name": "ignoreoffvalue",
+            "sortIndex": 150150,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Ignore OFF value",
+                "de": "Ignore OFF value"
+            },
+            "description": {
+                "en": "If this option is activated, the OFF value is not written to the datapoint configured when the button is released. This makes it possible to only set a value by pressing the button.",
+                "de": "Wenn diese Option aktiviert ist, wird der OFF value nicht auf den am Value Property hinterlegten Datenpunkt geschrieben beim Loslassen des Buttons. Damit ist es möglich, ausschließlich einen Wert durch die Betätigung des Buttons zu setzen."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },        
+        /*----------------------------------------------------------------------------------------------------
+        // property ON value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constNumber",
+                "datapoint"
+            ],
+            "propertyType": "variable",
+            "name": "onvalue",
+            "sortIndex": 150200,
+            "dataType": "number",
+            "default": 1,
+            "shortName": {
+                "en": "ON value",
+                "de": "ON value"
+            },
+            "description": {
+                "en": "The value of the switch in the ON state.",
+                "de": "Der Wert des Switch Buttons im EIN Zustand."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Ignore ON value
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "name": "ignoreonvalue",
+            "sortIndex": 150250,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Ignore ON value",
+                "de": "Ignore ON value"
+            },
+            "description": {
+                "en": "If this option is activated, the ON value is not written to the datapoint configured when the button is pressed. This makes it possible to only set a value by releasing the button.",
+                "de": "Wenn diese Option aktiviert ist, wird der ON value nicht auf den am Value Property hinterlegten Datenpunkt geschrieben beim Drücken des Buttons. Damit ist es möglich, ausschließlich durch das Loslassen des Buttons einen Wert zu setzen."
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },        
+        /*----------------------------------------------------------------------------------------------------
+        // property Show undefined as ON/OFF
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "name": "showundefinedon",
+            "sortIndex": 150300,
+            "dataType": "boolean",
+            "default": true,
+            "shortName": {
+                "en": "Show undefined as ON/OFF",
+                "de": "Show undefined as ON/OFF"
+            },
+            "description": {
+                "en": "If the value is set to a value that isn't either the ON or OFF value, show the button as ON/OFF.\ntrue = ON, false = OFF",
+                "de": "Wenn der Wert der Buttons auf einen Wert ungleich dem EIN/AUS Wert gesetzt wird, den Button als EIN/AUS anzeigen.\ntrue = ON, false = OFF"
+            },
+            "group": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Settings
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property OFF text
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "text",
+                "textScheme"
+            ],
+            "propertyType": "variable",
+            "name": "offtext",
+            "sortIndex": 150400,
+            "dataType": "string",
+            "default": "",
+            "shortName": {
+                "en": "OFF text",
+                "de": "OFF text"
+            },
+            "description": {
+                "en": "The Text shown if the switch is OFF. By using the <br> tag in the text, a line break can be inserted at the respective positions.",
+                "de": "Der Text der angezeigt wird wenn der Button im AUS Zustand ist. Durch Verwendung des <br> Tags im Text kann an den jeweiligen Stellen ein Zeilenumbruch eingefügt werden."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property ON text
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "text",
+                "textScheme"
+            ],
+            "propertyType": "variable",
+            "name": "ontext",
+            "sortIndex": 150500,
+            "dataType": "string",
+            "default": "",
+            "shortName": {
+                "en": "ON text",
+                "de": "ON text"
+            },
+            "description": {
+                "en": "The Text shown if the switch is ON. By using the <br> tag in the text, a line break can be inserted at the respective positions.",
+                "de": "Der Text der angezeigt wird wenn der Button im EIN Zustand ist. Durch Verwendung des <br> Tags im Text kann an den jeweiligen Stellen ein Zeilenumbruch eingefügt werden."
+            },
+            "group": {
+                "en": "Settings",
+                "de": "Settings"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Preview settings
+        *****************************************************************************************************/
+        /*----------------------------------------------------------------------------------------------------
+        // property Preview
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constBool"
+            ],
+            "propertyType": "variable",
+            "name": "previewstate",
+            "sortIndex": 150600,
+            "dataType": "boolean",
+            "default": false,
+            "shortName": {
+                "en": "Preview active button",
+                "de": "Preview active button"
+            },
+            "description": {
+                "en": "Set the Switch in the ON/OFF state as preview in the Designer.",
+                "de": "Setzt den Button in den EIN/AUS Modus als Vorschau im Designer."
+            },
+            "group": {
+                "en": "Preview settings",
+                "de": "Preview settings"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Data",
+                "de": "Data"
+            },
+            "tabIndex": 10
+        },
+        /*****************************************************************************************************
+        // Track styling
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Height
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-switch-button2-track-height",
+            "sortIndex": 500000,
+            "dataType": "string",
+            "default": "50%",
+            "units": "%,px",
+            "shortName": {
+                "en": "Height",
+                "de": "Height"
+            },
+            "description": {
+                "en": "Sets the height of the track.",
+                "de": "Setzt die Höhe des Tracks."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property OFF color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-switch-button2-track-color",
+            "sortIndex": 500100,
+            "dataType": "string",
+            "editor": "colorpicker",
+            "default": "inherit",
+            "shortName": {
+                "en": "OFF color",
+                "de": "OFF color"
+            },
+            "description": {
+                "en": "Color of the Track in the OFF state.",
+                "de": "Setzt die Farbe des Tracks im AUS Zustand."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property ON color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-switch-button2-track-color-active",
+            "sortIndex": 500200,
+            "dataType": "string",
+            "editor": "colorpicker",
+            "default": "inherit",
+            "shortName": {
+                "en": "ON color",
+                "de": "ON color"
+            },
+            "description": {
+                "en": "Color of the Track when the switch is ON.",
+                "de": "Setzt die Farbe des Tracks im EIN Zustand."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property OFF image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-track-background-image",
+            "sortIndex": 500300,
+            "default": "",
+            "shortName": {
+                "en": "OFF image",
+                "de": "OFF image"
+            },
+            "description": {
+                "en": "Background Image for the Track in the OFF state.",
+                "de": "Hintergrund Bild des Tracks im AUS Zustand."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property ON image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-track-background-image-active",
+            "sortIndex": 500400,
+            "default": "",
+            "shortName": {
+                "en": "ON image",
+                "de": "ON image"
+            },
+            "description": {
+                "en": "Background Image for the Track when the Button is ON.",
+                "de": "Setzt das Hintergrund Bild des Tracks im EIN Zustand."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Position
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-track-top-position",
+            "sortIndex": 500500,
+            "default": "50%",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "0%"
+                },
+                {
+                    "shortName": {
+                        "en": "middle",
+                        "de": "middle"
+                    },
+                    "value": "50%"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "100%"
+                }
+            ],
+            "shortName": {
+                "en": "Position",
+                "de": "Position"
+            },
+            "description": {
+                "en": "The vertical position of the track.",
+                "de": "Die Vertikale Position des Tracks."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-switch-button2-track-border-radius",
+            "sortIndex": 500600,
+            "dataType": "string",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "units": "px",
+            "default": "25px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The Border Radius of the track. This value can be set as shorthand property.",
+                "de": "Der Rahmen Radius des Tracks. Dieser Wert kann als shorthand property angegeben werden."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Padding left right
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-track-padding-left-right",
+            "sortIndex": 500700,
+            "default": "35px",
+            "units": "px,%",
+            "shortName": {
+                "en": "Padding left right",
+                "de": "Padding left right"
+            },
+            "description": {
+                "en": "Padding between the tracks left and right border and the control bounds.",
+                "de": "Abstand zwischen dem linken und rechten Rand des Tracks, und den Rändern des Controls."
+            },
+            "group": {
+                "en": "Track styling",
+                "de": "Track styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // Thumb styling
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property Width
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "sortIndex": 500800,
+            "default": "56%",
+            "units": "px,%",
+            "name": "--theme-sig-control-switch-button2-thumb-width",
+            "shortName": {
+                "en": "Width",
+                "de": "Width"
+            },
+            "description": {
+                "en": "The width of the thumb.",
+                "de": "Die Breite des Thumbs."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Height
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "sortIndex": 500900,
+            "default": "60%",
+            "units": "px,%",
+            "name": "--theme-sig-control-switch-button2-thumb-height",
+            "shortName": {
+                "en": "Height",
+                "de": "Height"
+            },
+            "description": {
+                "en": "The height of the thumb.",
+                "de": "Die Höhe des Thumbs."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Margin
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-switch-button2-thumb-container-padding",
+            "sortIndex": 501000,
+            "dataType": "string",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "units": "px",
+            "default": "5px 13px",
+            "shortName": {
+                "en": "Margin",
+                "de": "Margin"
+            },
+            "description": {
+                "en": "The Distance between the Thumb and the Bounds of the Control. This value can be set as shorthand property.",
+                "de": "Der Abstand zwischen Thumb und dem Rand des Controls. Dieser Wert kann als shorthand property angegeben werden."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property OFF color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-thumb-color",
+            "sortIndex": 501100,
+            "editor": "colorpicker",
+            "default": "inherit",
+            "shortName": {
+                "en": "OFF color",
+                "de": "OFF color"
+            },
+            "description": {
+                "en": "Color for the OFF state.",
+                "de": "Farbe des Thumbs im AUS Zustand."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property ON color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-thumb-color-active",
+            "sortIndex": 501200,
+            "editor": "colorpicker",
+            "default": "inherit",
+            "shortName": {
+                "en": "ON color",
+                "de": "ON color"
+            },
+            "description": {
+                "en": "Color for the ON state.",
+                "de": "Farbe des Thumbs im EIN Zustand."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property OFF image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "variable",
+            "dataType": "string",
+            "name": "imgsrcinactive",
+            "sortIndex": 501300,
+            "default": "",
+            "shortName": {
+                "en": "OFF image",
+                "de": "OFF image"
+            },
+            "description": {
+                "en": "The Image used for the Thumb in OFF state. The default is a 1x1 transparent Image needed to draw a nice circle.",
+                "de": "Das Bild das für den Thumb verwendet wird wenn er sich im AUS Zustand befindet. Die Standard Einstellung ist ein 1x1 transparentes Bild, das benötigt wird um einen Kreis zu Zeichnen."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property ON image
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "mediaItem"
+            ],
+            "propertyType": "variable",
+            "dataType": "string",
+            "name": "imgsrcactive",
+            "sortIndex": 501400,
+            "default": "",
+            "shortName": {
+                "en": "ON image",
+                "de": "ON image"
+            },
+            "description": {
+                "en": "The Image used for the Thumb in ON state. The default is a 1x1 transparent Image needed to draw a nice circle.",
+                "de": "Das Bild das für den Thumb verwendet wird wenn er sich im EIN Zustand befindet. Die Standard Einstellung ist ein 1x1 transparentes Bild, das benötigt wird um einen Kreis zu Zeichnen."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Image padding
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": "constString",
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-thumb-image-padding",
+            "sortIndex": 501500,
+            "default": "0",
+            "units": "px",
+            "shortName": {
+                "en": "Image padding",
+                "de": "Image padding"
+            },
+            "description": {
+                "en": "The padding of the thumb images",
+                "de": "Das Padding für das Thumb Bild"
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Position
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-thumb-top-position",
+            "sortIndex": 501600,
+            "default": "50%",
+            "options": [
+                {
+                    "shortName": {
+                        "en": "top",
+                        "de": "top"
+                    },
+                    "value": "0%"
+                },
+                {
+                    "shortName": {
+                        "en": "middle",
+                        "de": "middle"
+                    },
+                    "value": "50%"
+                },
+                {
+                    "shortName": {
+                        "en": "bottom",
+                        "de": "bottom"
+                    },
+                    "value": "100%"
+                }
+            ],
+            "shortName": {
+                "en": "Position",
+                "de": "Position"
+            },
+            "description": {
+                "en": "The vertical position of the thumb.",
+                "de": "Die vertikale Position des Thumbs."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property Border radius
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "name": "--theme-sig-control-switch-button2-thumb-container-border-radius",
+            "sortIndex": 501700,
+            "dataType": "string",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "units": "px",
+            "default": "20px",
+            "shortName": {
+                "en": "Border radius",
+                "de": "Border radius"
+            },
+            "description": {
+                "en": "The Border Radius of the Thumb. This value can be set as shorthand property.",
+                "de": "Der Rahmen Radius des Thumbs. Dieser Wert kann als shorthand property angegeben werden."
+            },
+            "group": {
+                "en": "Thumb styling",
+                "de": "Thumb styling"
+            },
+            "userLevel": 0,
+            "userLevelStyling": 0,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*****************************************************************************************************
+        // Text styling
+        *****************************************************************************************************/
+		/*----------------------------------------------------------------------------------------------------
+        // property OFF color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-text-off-color",
+            "sortIndex": 501800,
+            "editor": "colorpicker",
+            "default": "inherit",
+            "shortName": {
+                "en": "OFF color",
+                "de": "OFF color"
+            },
+            "description": {
+                "en": "Text color for the OFF state.",
+                "de": "Textfarbe im AUS Zustand."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property ON color
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "color",
+                "colorScheme"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-text-on-color",
+            "sortIndex": 501900,
+            "editor": "colorpicker",
+            "default": "inherit",
+            "shortName": {
+                "en": "ON color",
+                "de": "ON color"
+            },
+            "description": {
+                "en": "Text color for the ON state.",
+                "de": "Textfarbe im EIN Zustand."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": [
+                0,
+                10,
+                10
+            ],
+            "userLevelStyling": [
+                0,
+                10,
+                10
+            ],
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property OFF text vertical position
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-text-off-top",
+            "sortIndex": 502000,
+            "default": "50%",
+            "options": [
+                {
+                    "shortName": {
+                        "de": "top",
+                        "en": "top"
+                    },
+                    "value": "0%"
+                },
+                {
+                    "shortName": {
+                        "de": "middle",
+                        "en": "middle"
+                    },
+                    "value": "50%"
+                },
+                {
+                    "shortName": {
+                        "de": "bottom",
+                        "en": "bottom"
+                    },
+                    "value": "100%"
+                }
+            ],
+            "shortName": {
+                "en": "OFF text vertical position",
+                "de": "OFF text vertical position"
+            },
+            "description": {
+                "en": "Vertical Placement for the OFF Text.",
+                "de": "Vertikale Positionierung für den AUS Text."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property OFF text horizontal position
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-text-off-left",
+            "sortIndex": 502100,
+            "default": "50%",
+            "options": [
+                {
+                    "shortName": {
+                        "de": "left",
+                        "en": "left"
+                    },
+                    "value": "0%"
+                },
+                {
+                    "shortName": {
+                        "de": "middle",
+                        "en": "middle"
+                    },
+                    "value": "50%"
+                },
+                {
+                    "shortName": {
+                        "de": "right",
+                        "en": "right"
+                    },
+                    "value": "100%"
+                }
+            ],
+            "shortName": {
+                "en": "OFF text horizontal position",
+                "de": "OFF text horizontal position"
+            },
+            "description": {
+                "en": "Horizontal Placement for the OFF Text.",
+                "de": "Horizontale Positionierung für den AUS Text."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property ON text vertical position
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-text-top",
+            "sortIndex": 502200,
+            "default": "50%",
+            "options": [
+                {
+                    "shortName": {
+                        "de": "top",
+                        "en": "top"
+                    },
+                    "value": "0%"
+                },
+                {
+                    "shortName": {
+                        "de": "middle",
+                        "en": "middle"
+                    },
+                    "value": "50%"
+                },
+                {
+                    "shortName": {
+                        "de": "bottom",
+                        "en": "bottom"
+                    },
+                    "value": "100%"
+                }
+            ],
+            "shortName": {
+                "en": "ON text vertical position",
+                "de": "ON text vertical position"
+            },
+            "description": {
+                "en": "Vertical Placement for the ON Text.",
+                "de": "Vertikale Positionierung für den EIN Text."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property ON text horizontal position
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "name": "--theme-sig-control-switch-button2-text-left",
+            "sortIndex": 502300,
+            "default": "50%",
+            "options": [
+                {
+                    "shortName": {
+                        "de": "left",
+                        "en": "left"
+                    },
+                    "value": "0%"
+                },
+                {
+                    "shortName": {
+                        "de": "middle",
+                        "en": "middle"
+                    },
+                    "value": "50%"
+                },
+                {
+                    "shortName": {
+                        "de": "right",
+                        "en": "right"
+                    },
+                    "value": "100%"
+                }
+            ],
+            "shortName": {
+                "en": "ON text horizontal position",
+                "de": "ON text horizontal position"
+            },
+            "description": {
+                "en": "Horizontal Placement for the ON Text.",
+                "de": "Horizontale Positionierung für den EIN Text."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property OFF text padding
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "units": "px",
+            "default": "0px",
+            "name": "--theme-sig-control-switch-button2-text-off-padding",
+            "sortIndex": 502400,
+            "shortName": {
+                "en": "OFF text padding",
+                "de": "OFF text padding"
+            },
+            "description": {
+                "en": "The Top Padding for the OFF Text. This value can be set as shorthand property.",
+                "de": "Das obere Padding für den AUS Text. Dieser Wert kann als shorthand property angegeben werden."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        },
+        /*----------------------------------------------------------------------------------------------------
+        // property ON text padding
+        ------------------------------------------------------------------------------------------------------*/
+        {
+            "valueSourceTypes": [
+                "constString"
+            ],
+            "propertyType": "css",
+            "dataType": "string",
+            "validationRule": "/^\\d+px(?:\\s\\d+px){0,3}$/",
+            "units": "px",
+            "default": "0px",
+            "name": "--theme-sig-control-switch-button2-text-on-padding",
+            "sortIndex": 502500,
+            "shortName": {
+                "en": "ON text padding",
+                "de": "ON text padding"
+            },
+            "description": {
+                "en": "The Top Padding for the ON Text. This value can be set as shorthand property.",
+                "de": "Das obere Padding für den EIN Text. Dieser Wert kann als shorthand property angegeben werden."
+            },
+            "group": {
+                "en": "Text styling",
+                "de": "Text styling"
+            },
+            "userLevel": 20,
+            "userLevelStyling": 20,
+            "tab": {
+                "en": "Style",
+                "de": "Style"
+            },
+            "tabIndex": 20
+        }
+    ],
+    "helpFiles": [
+        {
+            "language": "de",
+            "default": true,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Switch Button v2_DE.chm"
+                }
+            ]
+        },
+        {
+            "language": "en",
+            "default": false,
+            "files": [
+                {
+                    "name": "Prog_Manual",
+                    "path": "Switch Button v2_EN.chm"
+                }
+            ]
+        }
+    ],
+    "designs": [
+        {
+            "name": "Deep Blue Theme",
+            "path": "../designs/DeepBlueTheme_v01.00.000.lvz"
+        }
+    ]
+}

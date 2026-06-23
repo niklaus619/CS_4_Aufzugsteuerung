@@ -232,6 +232,42 @@
 			"revision": {
 				"type": "Revision"
 			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "d9444411-d1a0-466d-874f-c8f227d684fc",
+			"componentId": "sig-control-fast-button",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "700abd19-8281-442b-96af-0567307ecadf",
+			"componentId": "sig-control-state-led",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
+		},
+		{
+			"type": "ComponentStyle",
+			"designTimeId": "5792cfdd-1ed4-4bb5-aa2c-6d5444e01cd9",
+			"componentId": "sig-control-switch-button2",
+			"showInDefaultStyling": true,
+			"defaultStyleOnCreate": true,
+			"isBaseStyle": true,
+			"children": [],
+			"revision": {
+				"type": "Revision"
+			}
 		}
 	]
 }
